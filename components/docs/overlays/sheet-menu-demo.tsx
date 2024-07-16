@@ -87,8 +87,8 @@ export default function SheetMenuDemo() {
                                 src='https://github.com/dq-alhq.png'
                             />
                             <div>
-                                <Sheet.Title>dq-alhq</Sheet.Title>
-                                <Sheet.Description>Diqi Nahdliyan</Sheet.Description>
+                                <Sheet.Title>Diqi Al-Haqqi</Sheet.Title>
+                                <Sheet.Description>@dq-alhq</Sheet.Description>
                             </div>
                         </Sheet.Header>
                         <PrimitiveMenu aria-labelledby='Sheet'>
