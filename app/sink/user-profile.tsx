@@ -34,7 +34,7 @@ export default function UserProfileSink() {
                         className='!size-32'
                     />
                     <div className='flex flex-col items-center text-center mt-2'>
-                        <Heading level={3}>DQ Nahdliyan</Heading>
+                        <Heading level={3}>DQ Al-Haqqi</Heading>
                         <Heading level={5} className='text-muted-foreground'>
                             Developer
                         </Heading>
