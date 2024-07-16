@@ -185,7 +185,7 @@ export function ResponsiveAside({ open, setOpen }: OpenCloseProps) {
                                     <StickyNoteIcon /> Docs
                                 </AsideLink>
                                 <AsideLink
-                                    href='https://github.com/dqnahdliyan'
+                                    href='https://github.com/dq-alhq'
                                     target='_blank'
                                 >
                                     <GithubLogo /> Github
@@ -244,7 +244,7 @@ export function NavbarDropdown() {
             </Button>
             <Menu.Content placement='bottom' className='w-64'>
                 <Menu.Section>
-                    <Menu.Item href='https://github.com/dqnahdliyan' target='_blank'>
+                    <Menu.Item href='https://github.com/dq-alhq' target='_blank'>
                         <GithubLogo />
                         Github
                     </Menu.Item>

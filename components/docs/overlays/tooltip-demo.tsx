@@ -28,7 +28,7 @@ export default function TooltipDemo() {
                 >
                     <GithubLogo className='h-4 w-4' />
                 </Tooltip.Trigger>
-                <Tooltip.Content>Follow me on Github @dqnahdliyan</Tooltip.Content>
+                <Tooltip.Content>Follow me on Github @dq-alhq</Tooltip.Content>
             </Tooltip>
         </div>
     )

@@ -6,14 +6,14 @@ export default function AvatarShapeDemo() {
             <Avatar
                 shape='square'
                 initials='DQ'
-                alt='dqnahdliyan'
-                src='https://github.com/dqnahdliyan.png'
+                alt='dq-alhq'
+                src='https://github.com/dq-alhq.png'
             />
             <Avatar
                 shape='circle'
                 initials='DQ'
-                alt='dqnahdliyan'
-                src='https://github.com/dqnahdliyan.png'
+                alt='dq-alhq'
+                src='https://github.com/dq-alhq.png'
             />
         </div>
     )

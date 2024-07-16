@@ -76,11 +76,7 @@ export default function SheetMenuDemo() {
             </Modal.Overlay>
             <Sheet>
                 <Sheet.Trigger aria-labelledby='open' aria-label='Open menu'>
-                    <Avatar
-                        initials='DQ'
-                        alt='DQ'
-                        src='https://github.com/dqnahdliyan.png'
-                    />
+                    <Avatar initials='DQ' alt='DQ' src='https://github.com/dq-alhq.png' />
                 </Sheet.Trigger>
                 <Sheet.Overlay>
                     <Sheet.Content closeButton={false}>
@@ -88,10 +84,10 @@ export default function SheetMenuDemo() {
                             <Avatar
                                 initials='DQ'
                                 alt='DQ'
-                                src='https://github.com/dqnahdliyan.png'
+                                src='https://github.com/dq-alhq.png'
                             />
                             <div>
-                                <Sheet.Title>dqnahdliyan</Sheet.Title>
+                                <Sheet.Title>dq-alhq</Sheet.Title>
                                 <Sheet.Description>Diqi Nahdliyan</Sheet.Description>
                             </div>
                         </Sheet.Header>
