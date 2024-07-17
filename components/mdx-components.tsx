@@ -7,6 +7,7 @@ import type { LinkProps } from 'react-aria-components'
 import { Link, Snippet, type SnippetProps } from 'ui'
 
 import { DocHow } from './doc-how'
+import { DocsNote } from './doc-note'
 
 interface MdxProps {
     code: string
@@ -27,6 +28,7 @@ export function MDXContent({ code }: MdxProps) {
                         className='not-prose font-medium text-accent hover:underline'
                     />
                 ),
+                Note: DocsNote,
                 SourceCode: SourceCode,
                 PlainCode: PlainCode,
                 Snippet: (props: SnippetProps) => (

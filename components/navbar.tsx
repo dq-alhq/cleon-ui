@@ -71,6 +71,7 @@ export function Navbar() {
                                 <div className='flex items-center gap-x-2'>
                                     <>
                                         <Button
+                                            className='flex-shrink-0'
                                             onPress={() =>
                                                 setOpen((open: boolean) => !open)
                                             }
@@ -161,6 +162,7 @@ export function ResponsiveAside({ open, setOpen }: OpenCloseProps) {
                         size='icon'
                         variant='outline'
                         aria-label='Open command palette'
+                        className='flex-shrink-0'
                     >
                         <SearchIcon />
                         <Menu.Keyboard className='-mr-2 [&_kbd]:min-w-[3ch]' keys='⌘K' />
@@ -178,17 +180,17 @@ export function ResponsiveAside({ open, setOpen }: OpenCloseProps) {
                             </Sheet.Header>
                             <LayoutGroup id={id}>
                                 <AsideLink href='/'>
-                                    <HomeIcon />
+                                    <HomeIcon className='size-4' />
                                     Home
                                 </AsideLink>
                                 <AsideLink href='/docs/getting-started/introduction'>
-                                    <StickyNoteIcon /> Docs
+                                    <StickyNoteIcon className='size-4' /> Docs
                                 </AsideLink>
                                 <AsideLink
                                     href='https://github.com/dq-alhq'
                                     target='_blank'
                                 >
-                                    <GithubLogo /> Github
+                                    <GithubLogo className='size-4' /> Github
                                 </AsideLink>
                             </LayoutGroup>
                         </Sheet.Content>

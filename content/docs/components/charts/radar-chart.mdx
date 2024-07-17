@@ -1,0 +1,104 @@
+---
+title: 'Radar Chart'
+description: Radar chart uses multiple axes to compare values across different variables from a central point.
+order: 5
+published: true
+references: ['https://recharts.org/en-US/api/RadarChart']
+---
+
+## Basic
+
+A radar chart, also known as a spider chart or web chart, is a graphical method of displaying multivariate data in the form of a two-dimensional chart with multiple axes originating from a common center point. Each axis represents a different variable or category, and data points are plotted along each axis to show values relative to each category.
+
+Radar charts are useful for comparing the overall "shape" or pattern of data across multiple variables. They are particularly effective for visualizing strengths and weaknesses across different dimensions or attributes, making them popular in fields such as performance evaluation, market analysis, and sports analytics. Radar charts allow for a quick visual assessment of where certain variables excel or lag behind others, providing a comprehensive overview of complex datasets in a compact and intuitive manner.
+
+<How className="w-full" toUse='charts/radar-chart-simple-demo' />
+
+## Installation
+
+<Install items={['recharts']} />
+
+<Note variant="danger">Note: If you are trying to use charts with React 19 or the Next.js 15, you will need the recharts@alpha release currently.</Note>
+
+<Install items={['recharts@alpha']} />
+
+<SourceCode toShow='charts' />
+
+Then add these lines to your `css` file
+
+```tsx {2-17}
+/* Rest of your styles */
+@layer base {
+    :root {
+        --chart-1: 12 76% 61%;
+        --chart-2: 173 58% 39%;
+        --chart-3: 197 37% 24%;
+        --chart-4: 43 74% 66%;
+        --chart-5: 27 87% 67%;
+    }
+    .dark {
+        --chart-1: 220 70% 50%;
+        --chart-2: 160 60% 45%;
+        --chart-3: 30 80% 55%;
+        --chart-4: 280 65% 60%;
+        --chart-5: 340 75% 55%;
+    }
+}
+/* Rest of your styles */
+```
+
+## Radar Chart Simple
+
+<How className="w-full" toUse='charts/radar-chart-simple-demo' />
+
+## Radar Chart Dots
+
+<How className="w-full" toUse='charts/radar-chart-dots-demo' />
+
+## Radar Chart Multiple
+
+<How className="w-full" toUse='charts/radar-chart-multiple-demo' />
+
+## Radar Chart Lines Only
+
+<How className="w-full" toUse='charts/radar-chart-lines-only-demo' />
+
+## Radar Chart Custom Label
+
+<How className="w-full" toUse='charts/radar-chart-custom-label-demo' />
+
+## Radar Chart Radius Axis
+
+<How className="w-full" toUse='charts/radar-chart-radius-axis-demo' />
+
+## Radar Chart Grid Custom
+
+<How className="w-full" toUse='charts/radar-chart-grid-custom-demo' />
+
+## Radar Chart Grid Filled
+
+<How className="w-full" toUse='charts/radar-chart-grid-filled-demo' />
+
+## Radar Chart Grid None
+
+<How className="w-full" toUse='charts/radar-chart-grid-none-demo' />
+
+## Radar Chart Grid Circle
+
+<How className="w-full" toUse='charts/radar-chart-grid-circle-demo' />
+
+## Radar Chart Grid Circle No Lines
+
+<How className="w-full" toUse='charts/radar-chart-grid-circle-no-lines-demo' />
+
+## Radar Chart Grid Circle Filled
+
+<How className="w-full" toUse='charts/radar-chart-grid-circle-filled-demo' />
+
+## Radar Chart Legend
+
+<How className="w-full" toUse='charts/radar-chart-legend-demo' />
+
+## Radar Chart Lcons
+
+<How className="w-full" toUse='charts/radar-chart-icons-demo' />

@@ -1,0 +1,72 @@
+---
+title: 'Radial Chart'
+description: Radial chart displays data with bars radiating from a central point, useful for cyclic or directional trends.
+order: 6
+published: true
+references: ['https://recharts.org/en-US/api/RadialChart']
+---
+
+## Basic
+
+A radial chart, also known as a radial bar chart or circular bar chart, is a variation of the traditional bar chart where bars radiate from a central point instead of being aligned horizontally or vertically. Each bar's length corresponds to the value it represents, and the angle around the central point determines the category or grouping.
+
+Radial charts are effective for displaying data that is cyclic or directional, such as time-based trends or periodic data. They offer a visually appealing way to compare values across categories while maintaining a clear connection to a central theme or reference point. Radial charts are often used in dashboards, infographics, and presentations to highlight relationships and trends in data that may not be as effectively communicated through traditional linear charts.
+
+<How className="w-full" toUse='charts/radial-chart-simple-demo' />
+
+## Installation
+
+<Install items={['recharts']} />
+
+<Note variant="danger">Note: If you are trying to use charts with React 19 or the Next.js 15, you will need the recharts@alpha release currently.</Note>
+
+<Install items={['recharts@alpha']} />
+
+<SourceCode toShow='charts' />
+
+Then add these lines to your `css` file
+
+```tsx {2-17}
+/* Rest of your styles */
+@layer base {
+    :root {
+        --chart-1: 12 76% 61%;
+        --chart-2: 173 58% 39%;
+        --chart-3: 197 37% 24%;
+        --chart-4: 43 74% 66%;
+        --chart-5: 27 87% 67%;
+    }
+    .dark {
+        --chart-1: 220 70% 50%;
+        --chart-2: 160 60% 45%;
+        --chart-3: 30 80% 55%;
+        --chart-4: 280 65% 60%;
+        --chart-5: 340 75% 55%;
+    }
+}
+/* Rest of your styles */
+```
+
+## Radial Chart Simple
+
+<How className="w-full" toUse='charts/radial-chart-simple-demo' />
+
+## Radial Chart Label
+
+<How className="w-full" toUse='charts/radial-chart-label-demo' />
+
+## Radial Chart Grid
+
+<How className="w-full" toUse='charts/radial-chart-grid-demo' />
+
+## Radial Chart Text
+
+<How className="w-full" toUse='charts/radial-chart-text-demo' />
+
+## Radial Chart Shape
+
+<How className="w-full" toUse='charts/radial-chart-shape-demo' />
+
+## Radial Chart Stacked
+
+<How className="w-full" toUse='charts/radial-chart-stacked-demo' />

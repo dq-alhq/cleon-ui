@@ -1,0 +1,86 @@
+---
+title: 'Line Chart'
+description: Line chart connects data points with straight lines to display trends over time or categories.
+order: 3
+published: true
+references: ['https://recharts.org/en-US/api/LineChart']
+---
+
+## Basic
+
+A line chart is a type of graph that displays data as a series of points (markers) connected by straight line segments. It's commonly used to show trends over time or to compare changes in values of different categories. Each point on the chart represents a data value, and the lines between them emphasize the continuity or progression of the data. Line charts are useful for visualizing patterns, identifying trends, and understanding relationships between variables in a clear and straightforward manner. They are widely employed in various fields such as economics, science, finance, and social sciences for data analysis and presentation.
+
+<How className="w-full" toUse='charts/line-chart-simple-demo' />
+
+## Installation
+
+<Install items={['recharts']} />
+
+<Note variant="danger">Note: If you are trying to use charts with React 19 or the Next.js 15, you will need the recharts@alpha release currently.</Note>
+
+<Install items={['recharts@alpha']} />
+
+<SourceCode toShow='charts' />
+
+Then add these lines to your `css` file
+
+```tsx {2-17}
+/* Rest of your styles */
+@layer base {
+    :root {
+        --chart-1: 12 76% 61%;
+        --chart-2: 173 58% 39%;
+        --chart-3: 197 37% 24%;
+        --chart-4: 43 74% 66%;
+        --chart-5: 27 87% 67%;
+    }
+    .dark {
+        --chart-1: 220 70% 50%;
+        --chart-2: 160 60% 45%;
+        --chart-3: 30 80% 55%;
+        --chart-4: 280 65% 60%;
+        --chart-5: 340 75% 55%;
+    }
+}
+/* Rest of your styles */
+```
+
+## Line Chart Simple
+
+<How className="w-full" toUse='charts/line-chart-simple-demo' />
+
+## Line Chart Linear
+
+<How className="w-full" toUse='charts/line-chart-linear-demo' />
+
+## Line Chart Step
+
+<How className="w-full" toUse='charts/line-chart-step-demo' />
+
+## Line Chart Multiple
+
+<How className="w-full" toUse='charts/line-chart-multiple-demo' />
+
+## Line Chart Dots
+
+<How className="w-full" toUse='charts/line-chart-dots-demo' />
+
+## Line Chart Custom Dots
+
+<How className="w-full" toUse='charts/line-chart-custom-dots-demo' />
+
+## Line Chart Dots Colors
+
+<How className="w-full" toUse='charts/line-chart-dots-colors-demo' />
+
+## Line Chart Label
+
+<How className="w-full" toUse='charts/line-chart-label-demo' />
+
+## Line Chart Custom Label
+
+<How className="w-full" toUse='charts/line-chart-custom-label-demo' />
+
+## Line Chart Interactive
+
+<How className="w-full" toUse='charts/line-chart-interactive-demo' />

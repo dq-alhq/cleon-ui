@@ -1,0 +1,90 @@
+---
+title: 'Pie Chart'
+description: Pie chart divides a circle into slices to represent proportions of a whole.
+order: 4
+published: true
+references: ['https://recharts.org/en-US/api/PieChart']
+---
+
+## Basic
+
+A pie chart is a circular graph divided into slices to illustrate numerical proportions. Each slice represents a category's contribution to the whole, typically displayed as percentages of the total. The size of each slice is proportional to the quantity it represents, making it easy to compare the relative sizes of different categories at a glance. Pie charts are effective for showing distribution patterns and highlighting the significance of each category within a dataset. They are widely used in business presentations, statistics, and data analysis to communicate proportions and percentages visually.
+
+<How className="w-full" toUse='charts/pie-chart-simple-demo' />
+
+## Installation
+
+<Install items={['recharts']} />
+
+<Note variant="danger">Note: If you are trying to use charts with React 19 or the Next.js 15, you will need the recharts@alpha release currently.</Note>
+
+<Install items={['recharts@alpha']} />
+
+<SourceCode toShow='charts' />
+
+Then add these lines to your `css` file
+
+```tsx {2-17}
+/* Rest of your styles */
+@layer base {
+    :root {
+        --chart-1: 12 76% 61%;
+        --chart-2: 173 58% 39%;
+        --chart-3: 197 37% 24%;
+        --chart-4: 43 74% 66%;
+        --chart-5: 27 87% 67%;
+    }
+    .dark {
+        --chart-1: 220 70% 50%;
+        --chart-2: 160 60% 45%;
+        --chart-3: 30 80% 55%;
+        --chart-4: 280 65% 60%;
+        --chart-5: 340 75% 55%;
+    }
+}
+/* Rest of your styles */
+```
+
+## Pie Chart Simple
+
+<How className="w-full" toUse='charts/pie-chart-simple-demo' />
+
+## Pie Chart Separator None
+
+<How className="w-full" toUse='charts/pie-chart-separator-none-demo' />
+
+## Pie Chart Label
+
+<How className="w-full" toUse='charts/pie-chart-label-demo' />
+
+## Pie Chart Custom Label
+
+<How className="w-full" toUse='charts/pie-chart-custom-label-demo' />
+
+## Pie Chart Label List
+
+<How className="w-full" toUse='charts/pie-chart-label-list-demo' />
+
+## Pie Chart Legend
+
+<How className="w-full" toUse='charts/pie-chart-legend-demo' />
+
+## Pie Chart Donut
+
+<How className="w-full" toUse='charts/pie-chart-donut-demo' />
+
+## Pie Chart Donut Active
+
+<How className="w-full" toUse='charts/pie-chart-donut-active-demo' />
+
+## Pie Chart Donut With Text
+
+<How className="w-full" toUse='charts/pie-chart-donut-with-text-demo' />
+
+## Pie Chart Stacked
+
+<How className="w-full" toUse='charts/pie-chart-stacked-demo' />
+
+## Pie Chart Interactive
+
+<How className="w-full" toUse='charts/pie-chart-interactive-demo' />

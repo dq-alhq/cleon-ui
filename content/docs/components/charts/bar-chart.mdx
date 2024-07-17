@@ -1,0 +1,86 @@
+---
+title: 'Bar Chart'
+description: A bar chart provides a way of showing data values represented as vertical bars. It is sometimes used to show trend data, and the comparison of multiple data sets side by side.
+order: 1
+published: true
+references: ['https://recharts.org/en-US/api/BarChart']
+---
+
+## Basic
+
+The bar chart allows a number of properties to be specified for each dataset. These are used to set display properties for a specific dataset. For example, the color of the bars is generally set this way. Only the data option needs to be specified in the dataset namespace.
+
+<How className="w-full" toUse='charts/bar-chart-simple-demo' />
+
+## Installation
+
+<Install items={['recharts']} />
+
+<Note variant="danger">Note: If you are trying to use charts with React 19 or the Next.js 15, you will need the recharts@alpha release currently.</Note>
+
+<Install items={['recharts@alpha']} />
+
+<SourceCode toShow='charts' />
+
+Then add these lines to your `css` file
+
+```tsx {2-17}
+/* Rest of your styles */
+@layer base {
+    :root {
+        --chart-1: 12 76% 61%;
+        --chart-2: 173 58% 39%;
+        --chart-3: 197 37% 24%;
+        --chart-4: 43 74% 66%;
+        --chart-5: 27 87% 67%;
+    }
+    .dark {
+        --chart-1: 220 70% 50%;
+        --chart-2: 160 60% 45%;
+        --chart-3: 30 80% 55%;
+        --chart-4: 280 65% 60%;
+        --chart-5: 340 75% 55%;
+    }
+}
+/* Rest of your styles */
+```
+
+## Bar Chart Simple
+
+<How className="w-full" toUse='charts/bar-chart-simple-demo' />
+
+## Bar Chart Horizontal
+
+<How className="w-full" toUse='charts/bar-chart-horizontal-demo' />
+
+## Bar Chart Multiple
+
+<How className="w-full" toUse='charts/bar-chart-multiple-demo' />
+
+## Bar Chart With Label
+
+<How className="w-full" toUse='charts/bar-chart-label-demo' />
+
+## Bar Chart With Custom Label
+
+<How className="w-full" toUse='charts/bar-chart-custom-label-demo' />
+
+## Bar Chart Mixed
+
+<How className="w-full" toUse='charts/bar-chart-mixed-demo' />
+
+## Bar Chart Stacked with Legend
+
+<How className="w-full" toUse='charts/bar-chart-stacked-demo' />
+
+## Bar Chart Active
+
+<How className="w-full" toUse='charts/bar-chart-active-demo' />
+
+## Bar Chart Negative
+
+<How className="w-full" toUse='charts/bar-chart-negative-demo' />
+
+## Bar Chart Interactive
+
+<How className="w-full" toUse='charts/bar-chart-interactive-demo' />

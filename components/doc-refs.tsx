@@ -18,7 +18,7 @@ import {
     ViteLogo
 } from '@/components/logo'
 import { cn } from '@/lib/utils'
-import { BellIcon } from 'lucide-react'
+import { BarChart3Icon, BellIcon } from 'lucide-react'
 import { Menu, MenuItem } from 'react-aria-components'
 import { buttonVariants } from 'ui'
 
@@ -43,6 +43,10 @@ export function DocRefs({ references }: any) {
             case url.includes('inertia'):
                 title = 'Inertia.Js'
                 icon = InertiaLogo
+                break
+            case url.includes('recharts'):
+                title = 'Recharts'
+                icon = BarChart3Icon
                 break
             case url.includes('remix.run'):
                 title = 'Remix'

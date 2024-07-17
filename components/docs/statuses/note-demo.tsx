@@ -5,17 +5,11 @@ import React from 'react'
 import { OptionPreview } from '@/components/docs/outside/option-preview'
 import { Note, Select } from '@/components/ui'
 
-const notes = [
-    'info',
-    'primary',
-    'secondary',
-    'warning',
-    'danger',
-    'success',
-    'outline'
-].map((n) => ({
-    name: n
-}))
+const notes = ['info', 'primary', 'secondary', 'warning', 'danger', 'success'].map(
+    (n) => ({
+        name: n
+    })
+)
 export default function NoteDemo() {
     const [selected, setSelected] = React.useState<any>('secondary')
     return (
@@ -37,8 +31,8 @@ export default function NoteDemo() {
                 </Select>
             </OptionPreview>
             <Note variant={selected as any}>
-                <Note.Title>Note Title</Note.Title>
-                <Note.Description>Note Description</Note.Description>
+                This is just basic note, you can use it like alert or reminder. You can
+                add more text to it. You can use it as you wish.
             </Note>
         </>
     )

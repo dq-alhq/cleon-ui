@@ -1,0 +1,85 @@
+---
+title: 'Area Chart'
+description: Area chart shows data trends with shaded areas under lines.
+order: 2
+published: true
+references: ['https://recharts.org/en-US/api/AreaChart']
+---
+
+## Basic
+
+An area chart is a graphical representation that displays quantitative data using shaded areas to depict cumulative totals over time or categories. It's similar to a line graph but with the area below the line filled in, making it easier to visualize trends in data distribution or progression. Area charts are effective for showing how different components contribute to a whole and for highlighting overall patterns and trends across different datasets.
+<How className="w-full" toUse='charts/area-chart-simple-demo' />
+
+## Installation
+
+<Install items={['recharts']} />
+
+<Note variant="danger">Note: If you are trying to use charts with React 19 or the Next.js 15, you will need the recharts@alpha release currently.</Note>
+
+<Install items={['recharts@alpha']} />
+
+<SourceCode toShow='charts' />
+
+Then add these lines to your `css` file
+
+```tsx {2-17}
+/* Rest of your styles */
+@layer base {
+    :root {
+        --chart-1: 12 76% 61%;
+        --chart-2: 173 58% 39%;
+        --chart-3: 197 37% 24%;
+        --chart-4: 43 74% 66%;
+        --chart-5: 27 87% 67%;
+    }
+    .dark {
+        --chart-1: 220 70% 50%;
+        --chart-2: 160 60% 45%;
+        --chart-3: 30 80% 55%;
+        --chart-4: 280 65% 60%;
+        --chart-5: 340 75% 55%;
+    }
+}
+/* Rest of your styles */
+```
+
+## Area Chart Simple
+
+<How className="w-full" toUse='charts/area-chart-simple-demo' />
+
+## Area Chart Linear
+
+<How className="w-full" toUse='charts/area-chart-linear-demo' />
+
+## Area Chart Step
+
+<How className="w-full" toUse='charts/area-chart-step-demo' />
+
+## Area Chart Stacked
+
+<How className="w-full" toUse='charts/area-chart-stacked-demo' />
+
+## Area Chart Stacked Expanded
+
+<How className="w-full" toUse='charts/area-chart-stacked-expanded-demo' />
+
+## Area Chart Legend
+
+<How className="w-full" toUse='charts/area-chart-legend-demo' />
+
+## Area Chart Icons
+
+<How className="w-full" toUse='charts/area-chart-icons-demo' />
+
+## Area Chart Gradient
+
+<How className="w-full" toUse='charts/area-chart-gradient-demo' />
+
+## Area Chart Axes
+
+<How className="w-full" toUse='charts/area-chart-axes-demo' />
+
+## Area Chart Interactive
+
+<How className="w-full" toUse='charts/area-chart-interactive-demo' />

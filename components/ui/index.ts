@@ -3,6 +3,7 @@ export * from './note';
 export * from './list-box';
 export * from './pagination';
 export * from './link';
+export * from './charts';
 export * from './tabs';
 export * from './card';
 export * from './slider';
