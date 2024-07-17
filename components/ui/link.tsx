@@ -7,7 +7,7 @@ const Link = (props: Primitive.LinkProps) => (
     <Primitive.Link
         {...props}
         className={cn(
-            'rounded transition hover:text-accent focus:outline-none disabled:cursor-default disabled:text-muted-foreground disabled:no-underline',
+            'rounded transition focus:outline-none disabled:cursor-default disabled:text-muted-foreground disabled:no-underline',
             props.className
         )}
     />
