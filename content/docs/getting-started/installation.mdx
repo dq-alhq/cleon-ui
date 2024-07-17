@@ -31,51 +31,37 @@ Below that you need to add the following code:
 
 <PlainCode lang='css' code={`@layer base {
     :root {
-        --font-sans: 'GT Walsheim Pro';
-        --font-mono: 'Jetbrains Mono';
+        --font-sans: 'Inter';
+        --font-mono: 'Fira Code';
 
         --background: 0 0% 98%;
         --foreground: 240 10% 4%;
 
         /* Blue */
         --primary: 240 100% 42%;
-        --primary-lighter: 240 100% 50%;
-        --primary-darker: 240 100% 33%;
         --primary-foreground: 0 0% 98%;
 
         /* Zinc */
         --secondary: 240 5% 84%;
-        --secondary-lighter: 240 6% 90%;
-        --secondary-darker: 240 5% 65%;
         --secondary-foreground: 240 10% 4%;
 
         /* Rose */
         --danger: 347 77% 50%;
-        --danger-lighter: 350 89% 60%;
-        --danger-darker: 345 83% 41%;
         --danger-foreground: 0 0% 98%;
 
         /* Green*/
         --success: 120 100% 21%;
-        --success-lighter: 120 100% 25%;
-        --success-darker: 120 100% 17%;
         --success-foreground: 0 0% 98%;
 
         /* Slate Blue */
         --info: 248 39% 48%;
-        --info-lighter: 248 53% 58%;
-        --info-darker: 248 39% 38%;
         --info-foreground: 0 0% 98%;
 
         /* Amber */
         --warning: 32 95% 44%;
-        --warning-lighter: 38 92% 50%;
-        --warning-darker: 26 90% 37%;
         --warning-foreground: 0 0% 98%;
 
         --dark: 240 10% 4%;
-        --dark-lighter: 240 4% 16%;
-        --dark-darker: 240 6% 10%;
         --dark-foreground: 0 0% 98%;
 
         --muted: 240 5% 84%;
@@ -94,43 +80,29 @@ Below that you need to add the following code:
 
         /* Dark Blue */
         --primary: 240 58% 39%;
-        --primary-lighter: 240 37% 51%;
-        --primary-darker: 240 100% 27%;
         --primary-foreground: 0 0% 98%;
 
         /* Zinc */
         --secondary: 240 5% 26%;
-        --secondary-lighter: 240 5% 34%;
-        --secondary-darker: 240 4% 16%;
         --secondary-foreground: 0 0% 98%;
 
         /* Crimson */
         --danger: 348 83% 47%;
-        --danger-lighter: 348 73% 56%;
-        --danger-darker: 348 84% 39%;
         --danger-foreground: 0 0% 98%;
 
         /* Dark Green */
         --success: 120 100% 20%;
-        --success-lighter: 120 50% 33%;
-        --success-darker: 120 100% 16%;
         --success-foreground: 0 0% 98%;
 
         /* Dark Slate Blue */
         --info: 248 39% 39%;
-        --info-lighter: 248 26% 49%;
-        --info-darker: 249 39% 32%;
         --info-foreground: 0 0% 98%;
 
         /* Dark Orange */
         --warning: 32 95% 44%;
-        --warning-lighter: 38 92% 50%;
-        --warning-darker: 26 90% 37%;
         --warning-foreground: 0 0% 98%;
 
         --dark: 0 0% 98%;
-        --dark-lighter: 240 6% 90%;
-        --dark-darker: 240 5% 65%;
         --dark-foreground: 240 10% 4%;
 
         --muted: 240 5% 26%;
@@ -156,9 +128,32 @@ Below that you need to add the following code:
 
     body {
         @apply bg-background text-foreground;
-        font-feature-settings: 'rlig' 1,
-        'calt' 1;
+        font-feature-settings:
+            'rlig' 1,
+            'calt' 1;
     }
+    *,
+    .overflow-auto,
+    .overflow-y-auto,
+    .overflow-x-auto {
+        @apply ease-in-out scrollbar-none scrollbar-track-background scrollbar-thumb-background scrollbar-thumb-rounded-full;
+    }
+
+    *,
+    .overflow-auto:hover,
+    .overflow-y-auto:hover,
+    .overflow-x-auto:hover {
+        @apply scrollbar-thin scrollbar-thumb-border;
+    }
+}
+
+.react-aria-Button,
+.react-aria-Dialog {
+    outline: none;
+}
+
+.react-aria-DropIndicator[data-drop-target] {
+    outline: 1px solid hsl(var(--primary));
 }
 `} />
 
