@@ -6,7 +6,7 @@ export const Logo = (props: Props) => (
     <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 375 375' {...props}>
         <path
             fill='none'
-            stroke='#000'
+            stroke='currentColor'
             strokeLinecap='round'
             strokeLinejoin='round'
             strokeWidth='75'
@@ -15,7 +15,7 @@ export const Logo = (props: Props) => (
         ></path>
         <path
             fill='none'
-            stroke='#000'
+            stroke='currentColor'
             strokeLinecap='round'
             strokeLinejoin='round'
             strokeWidth='75'
@@ -23,12 +23,14 @@ export const Logo = (props: Props) => (
             transform='rotate(-60 329.394 -53.885)'
         ></path>
         <ellipse
+            fill='currentColor'
             strokeWidth='0'
             rx='38.46'
             ry='38.46'
             transform='translate(63.862 296.071)'
         ></ellipse>
         <ellipse
+            fill='currentColor'
             strokeWidth='0'
             rx='38.46'
             ry='38.46'
