@@ -25,13 +25,14 @@ import {
     PaletteIcon,
     SearchIcon,
     SmileIcon,
-    StickyNoteIcon,
     SunIcon
 } from 'lucide-react'
 import { useTheme } from 'next-themes'
 import { usePathname } from 'next/navigation'
 import { Collection, type LinkProps } from 'react-aria-components'
 import { Button, Keyboard, Link, Menu, Separator, Sheet } from 'ui'
+
+import { Aside } from './aside'
 
 const menuItems = [
     { id: 1, label: 'Home', url: '/' },
@@ -136,7 +137,7 @@ export function ResponsiveAside({ open, setOpen }: OpenCloseProps) {
 
     const isDesktop = useMediaQuery('(min-width: 1024px)')
     return (
-        <nav className='relative z-10 sm:hidden'>
+        <nav className='z-10 sm:hidden h-14 bg-background/60 backdrop-blur-xl rounded-b-lg sticky top-0'>
             {!isDesktop && <CommandPalette setOpen={setOpen} open={open} />}
             <div className={cn('-mb-2 flex items-center justify-between pl-4 pr-2 pt-2')}>
                 <Button
@@ -179,19 +180,7 @@ export function ResponsiveAside({ open, setOpen }: OpenCloseProps) {
                                 <NavbarDropdown />
                             </Sheet.Header>
                             <LayoutGroup id={id}>
-                                <AsideLink href='/'>
-                                    <HomeIcon className='size-4' />
-                                    Home
-                                </AsideLink>
-                                <AsideLink href='/docs/getting-started/introduction'>
-                                    <StickyNoteIcon className='size-4' /> Docs
-                                </AsideLink>
-                                <AsideLink
-                                    href='https://github.com/dq-alhq'
-                                    target='_blank'
-                                >
-                                    <GithubLogo className='size-4' /> Github
-                                </AsideLink>
+                                <Aside />
                             </LayoutGroup>
                         </Sheet.Content>
                     </Sheet.Overlay>

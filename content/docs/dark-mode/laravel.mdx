@@ -160,7 +160,7 @@ declare module 'react-aria-components' {
 }
 `}/>
 
-    ## Root App
+## Root App
 You can stash it in your `resources/js/app.tsx` like this:
 
 <PlainCode code={`import "./bootstrap";
@@ -201,10 +201,10 @@ createInertiaApp({
 
 ## Theme Switcher
 <Install items={['lucide-react']}/>
-    ```tsx
-import { Moon, Sun } from 'lucide-react'
-import { Button } from '@/Components/ui/button'
-import { useTheme } from '@/Components/theme-provider'
+
+<PlainCode lang="tsx" code={`import { Moon, Sun } from 'lucide-react'
+import { Button } from '@/Components/ui'
+import { useTheme } from '@/Components/provider'
 
 export function ThemeSwitcher() {
   const { theme, setTheme } = useTheme()
@@ -221,4 +221,4 @@ export function ThemeSwitcher() {
     </Button>
   )
 }
-```
+`} />
