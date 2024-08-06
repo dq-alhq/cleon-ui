@@ -1,168 +1,183 @@
 'use client'
 
-import React, { createContext, useContext, useState } from 'react'
+import * as React from 'react'
 
 import { cn } from '@/lib/utils'
-import { AnimatePresence, motion } from 'framer-motion'
-import { Button } from 'react-aria-components'
+import { AnimatePresence, motion, type MotionProps } from 'framer-motion'
+import { ChevronDownIcon } from 'lucide-react'
+import * as Primitive from 'react-aria-components'
 
-interface AccordionContext {
-    isActive: boolean
-    index: number
-    onChangeIndex: (index: number) => void
-    className?: string
+interface AccordionContextType extends React.HtmlHTMLAttributes<HTMLDivElement> {
+    hideBorder?: boolean
+    hideIndicator?: boolean
+    disabledKeys?: number[]
+    defaultExpandedKeys?: number[] | string[]
 }
 
-const AccordionContext = createContext<AccordionContext>({
-    isActive: false,
-    index: 0,
-    onChangeIndex: () => {},
-    className: ''
-})
-const useAccordion = () => useContext(AccordionContext)
+const AccordionContext = React.createContext<AccordionContextType>({})
+const useAccordion = () => React.useContext(AccordionContext)
 
-interface AccordionProps {
+interface AccordionProps extends AccordionContextType {
     children: React.ReactNode
-    multiple?: boolean
-    defaultValue?: any
-    className?: string
 }
 
-function Accordion({ className, children, multiple, defaultValue }: AccordionProps) {
-    const [activeIndex, setActiveIndex] = useState(
-        defaultValue !== undefined ? defaultValue : 0
-    )
-
-    function onChangeIndex(index: any) {
-        setActiveIndex((currentActiveIndex: any) => {
-            if (!multiple && typeof index === 'number') {
-                return index === activeIndex ? -1 : index
-            }
-
-            if (Array.isArray(currentActiveIndex) && currentActiveIndex.includes(index)) {
-                return currentActiveIndex.filter((i) => i !== index)
-            }
-
-            if (Array.isArray(currentActiveIndex)) {
-                return currentActiveIndex.concat(index)
-            }
-
-            return [index as any]
-        })
-    }
-
-    return React.Children.map(children, (child, index) => {
-        const isActive =
-            multiple && Array.isArray(activeIndex)
-                ? activeIndex.includes(index)
-                : activeIndex === index
-        return (
-            <AccordionContext.Provider
-                value={{ isActive, index, onChangeIndex, className }}
-            >
-                {child}
-            </AccordionContext.Provider>
-        )
-    })
-}
-
-interface AccordionItemProps {
-    children: React.ReactNode
-    className?: string
-}
-
-function AccordionItem({ className, children, ...props }: AccordionItemProps) {
-    const { isActive } = useAccordion()
-    return (
-        <div
-            data-state={isActive ? 'open' : 'closed'}
-            className={cn('relative w-full overflow-hidden border-b', className)}
-            {...props}
-        >
-            {children}
-        </div>
-    )
-}
-
-interface AccordionTriggerProps {
-    children: React.ReactNode
-    className?: string
-}
-
-function AccordionTrigger({ className, children, ...props }: AccordionTriggerProps) {
-    const { isActive, index, onChangeIndex } = useAccordion()
-
-    return (
-        <Button
-            data-state={isActive ? 'open' : 'closed'}
-            className={cn(
-                'flex w-full flex-1 items-center justify-between rounded-md py-4 text-base font-medium outline-none transition-all',
-                className
-            )}
-            onPress={() => onChangeIndex(index)}
-            {...props}
-        >
-            <span className='flex items-center gap-2'>{children}</span>
-            <svg
-                className={`${isActive ? 'rotate-180' : 'rotate-0'} ms-auto size-4 transition`}
-                xmlns='http://www.w3.org/2000/svg'
-                viewBox='0 0 24 24'
-            >
-                <path
-                    fill='none'
-                    stroke='currentColor'
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
-                    strokeWidth={2}
-                    d='m6 9l6 6l6-6'
-                ></path>
-            </svg>
-        </Button>
-    )
-}
-
-interface AccordionContentProps {
-    children: React.ReactNode
-    className?: string
-    active?: boolean
-}
-
-function AccordionContent({
-    className,
-    active,
+const Accordion = ({
     children,
+    disabledKeys,
+    hideIndicator,
+    hideBorder,
+    defaultExpandedKeys,
     ...props
-}: AccordionContentProps) {
-    const { isActive } = useAccordion()
-
-    const open = isActive || active
-
+}: AccordionProps) => {
     return (
-        <AnimatePresence initial={open}>
-            {open && (
-                <motion.div
-                    initial={{ height: 0 }}
-                    animate={{ height: 'auto' }}
-                    exit={{ height: 0 }}
-                    transition={{ type: 'spring', duration: 0.4, bounce: 0 }}
+        <AccordionContext.Provider
+            value={{ hideIndicator, defaultExpandedKeys, hideBorder, disabledKeys }}
+        >
+            <div {...props}>{children}</div>
+        </AccordionContext.Provider>
+    )
+}
+
+interface AccordionItemContextProps {
+    setExpanded?: (index: null | number | string) => void
+    isOpen?: boolean
+    currentId: number | string
+}
+
+const AccordionItemContext = React.createContext<AccordionItemContextProps | undefined>(
+    undefined
+)
+const useAccordionItem = () => {
+    const context = React.useContext(AccordionItemContext)
+    if (!context) {
+        throw new Error('AccordionItem must be used within an Accordion')
+    }
+    return context
+}
+
+interface AccordionItemProps extends React.HTMLAttributes<HTMLDivElement> {
+    currentId: number | string
+}
+
+const AccordionItem = ({ className, children, currentId }: AccordionItemProps) => {
+    const { defaultExpandedKeys, disabledKeys } = useAccordion()
+    const [expanded, setExpanded] = React.useState<any>(
+        // @ts-ignore - TS doesn't know that defaultExpandedKeys is an array of numbers
+        defaultExpandedKeys?.includes(currentId) ? currentId : false
+    )
+    const isOpen = currentId === expanded
+    const isLocked = disabledKeys?.includes(currentId as number)
+    return (
+        <AccordionItemContext.Provider value={{ setExpanded, isOpen, currentId }}>
+            <div
+                data-slot='item'
+                data-locked={isLocked ?? undefined}
+                data-open={isOpen ?? undefined}
+                className={cn(
+                    'flex group pb-3 relative w-full flex-col border-b accordion-item',
+                    className
+                )}
+            >
+                {children}
+            </div>
+        </AccordionItemContext.Provider>
+    )
+}
+
+interface AccordionContentProps extends React.HTMLAttributes<HTMLDivElement> {
+    children: React.ReactNode
+}
+
+const AccordionContent = ({ className, children }: AccordionContentProps) => {
+    const { isOpen } = useAccordionItem()
+    return (
+        <AnimatePresence initial={false}>
+            {isOpen && (
+                <motion.section
+                    className={cn('overflow-hidden pr-6 accordion-content', className)}
+                    initial='collapsed'
+                    animate='open'
+                    exit='collapsed'
+                    variants={{
+                        open: { opacity: 1, height: 'initial' },
+                        collapsed: { opacity: 0, height: 0 }
+                    }}
+                    transition={{ duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }}
                 >
-                    <div
-                        className={cn(
-                            'overflow-hidden pb-4 text-sm transition-all',
-                            className
-                        )}
-                        {...props}
-                    >
-                        {children}
-                    </div>
-                </motion.div>
+                    <div className='pb-0 pt-1'>{children}</div>
+                </motion.section>
             )}
         </AnimatePresence>
     )
 }
 
-Accordion.Item = AccordionItem
+interface AccordionTriggerProps
+    extends Omit<
+        Primitive.ButtonProps & React.RefAttributes<HTMLButtonElement> & MotionProps,
+        'ref'
+    > {
+    children: React.ReactNode
+}
+
+const AccordionTrigger = ({ className, children, ...props }: AccordionTriggerProps) => {
+    const { setExpanded, isOpen, currentId } = useAccordionItem()
+    const { hideIndicator, disabledKeys } = useAccordion()
+    const isLocked = disabledKeys?.includes(currentId as number)
+
+    const handlePress = () => {
+        if (setExpanded) {
+            setExpanded(isOpen ? null : currentId)
+        }
+    }
+
+    const onKeyDownHandler = (e: React.KeyboardEvent<HTMLButtonElement>) => {
+        if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+            e.preventDefault()
+            const buttons = document.querySelectorAll('div[data-slot="item"] > button')
+            const currentButton = e.currentTarget
+            const currentIndex = Array.from(buttons).indexOf(currentButton)
+            const totalItems = buttons.length
+            let nextIndex = currentIndex + (e.key === 'ArrowDown' ? 1 : -1)
+
+            if (nextIndex >= totalItems) {
+                nextIndex = 0
+            } else if (nextIndex < 0) {
+                nextIndex = totalItems - 1
+            }
+
+            ;(buttons[nextIndex] as HTMLElement).focus()
+        }
+    }
+
+    return (
+        <Primitive.Button
+            {...props}
+            isDisabled={isLocked}
+            onKeyDown={onKeyDownHandler}
+            onPress={handlePress}
+            className={cn(
+                'flex flex-1 rounded-lg text-foreground hover:text-primary [&_svg]:size-4 items-center gap-x-2 pt-3 font-medium',
+                'focus:outline-none focus:text-primary',
+                'disabled:opacity-70 disabled:pointer-events-none',
+                isOpen && 'text-primary',
+                className
+            )}
+        >
+            {children}
+            {!hideIndicator && (
+                <ChevronDownIcon
+                    className={cn(
+                        'ml-auto transition duration-300 group-disabled:rotate-0',
+                        isOpen ? 'rotate-180' : 'rotate-0'
+                    )}
+                />
+            )}
+        </Primitive.Button>
+    )
+}
+
 Accordion.Trigger = AccordionTrigger
+Accordion.Item = AccordionItem
 Accordion.Content = AccordionContent
 
-export { Accordion }
+export { Accordion, type AccordionTriggerProps }

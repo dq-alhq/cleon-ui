@@ -19,7 +19,6 @@ import { LayoutGroup, motion } from 'framer-motion'
 import {
     ChevronDownIcon,
     ComputerIcon,
-    HomeIcon,
     MenuIcon,
     MoonIcon,
     PaletteIcon,

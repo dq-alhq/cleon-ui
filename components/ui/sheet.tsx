@@ -7,7 +7,7 @@ import * as Primitive from 'react-aria-components'
 import { tv, type VariantProps } from 'tailwind-variants'
 
 import { Dialog } from './dialog'
-import { CloseButtonIndicator, Modal } from './modal'
+import { Modal } from './modal'
 
 interface SheetSubComponents {
     Close: typeof SheetClose
@@ -109,7 +109,7 @@ const SheetContent = (props: SheetContentProps) => {
                     <>
                         {typeof children === 'function' ? children(values) : children}
                         {closeButton && (
-                            <CloseButtonIndicator
+                            <Dialog.CloseIndicator
                                 className='right-2.5 top-2.5'
                                 close={values.close}
                             />

@@ -48,7 +48,7 @@ const fieldGroupStyles = tv({
     base: [
         'group flex h-10 items-center overflow-hidden rounded-lg border border-input bg-background transition disabled:bg-secondary disabled:opacity-50',
         'focus-within:border-primary focus-within:ring-4 focus-within:ring-primary/20',
-        'focus-within:invalid:border-danger focus-within:invalid:ring-4 focus-within:invalid:ring-danger/20',
+        'focus-within:invalid:border-danger focus-wi    thin:invalid:ring-4 focus-within:invalid:ring-danger/20',
         'invalid:border-danger',
         'has-[.atrs]:shrink-0 has-[.isPfx]:pl-2.5 has-[.isSfx]:pr-2.5 has-[.atrs]:text-muted-foreground [&_[data-slot=icon]]:size-4'
     ]

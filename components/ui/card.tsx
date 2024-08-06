@@ -1,25 +1,6 @@
-'use client'
-
 import * as React from 'react'
 
-import * as Primitive from 'react-aria-components'
-import { tv } from 'tailwind-variants'
-
-import { Description } from './field'
-
-const card = tv({
-    slots: {
-        root: 'rounded-md border bg-card text-card-foreground shadow-sm [&_table]:overflow-hidden',
-        header: 'flex flex-col space-y-1.5 px-6 py-5',
-        title: 'text-xl font-semibold leading-none tracking-tight',
-        description: 'text-base text-muted-foreground sm:text-sm',
-        content:
-            'px-6 pb-6 has-[table]:p-0 [&:has(table)]:border-t [&_.t-cel]:px-6 [&_.t-col]:px-6',
-        footer: 'flex items-center p-6 pt-0'
-    }
-})
-
-const { root, header, title, description, content, footer } = card()
+import { cn } from '@/lib/utils'
 
 interface CardSubComponents {
     Header: typeof CardHeader
@@ -39,48 +20,85 @@ const Card: CardComponent = React.forwardRef<
     HTMLDivElement,
     React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => (
-    <div ref={ref} className={root({ className })} {...props} />
+    <div
+        ref={ref}
+        className={cn(
+            'rounded-lg border bg-background text-foreground shadow-sm [&_table]:overflow-hidden',
+            className
+        )}
+        {...props}
+    />
 )) as CardComponent
 Card.displayName = 'Card'
 
 const CardHeader = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
     ({ className, ...props }, ref) => (
-        <div ref={ref} className={header({ className })} {...props} />
+        <div
+            ref={ref}
+            className={cn('flex flex-col space-y-1.5 px-6 py-5', className)}
+            {...props}
+        />
     )
 )
 CardHeader.displayName = 'CardHeader'
 
-function CardTitle(props: Primitive.HeadingProps) {
-    return (
-        <Primitive.Heading className={title({ className: props.className })} {...props} />
-    )
-}
+const CardTitle = React.forwardRef<
+    HTMLParagraphElement,
+    React.HTMLAttributes<HTMLHeadingElement>
+>(({ className, ...props }, ref) => (
+    <h3
+        ref={ref}
+        className={cn(
+            'text-lg klda font-semibold leading-none tracking-tight',
+            className
+        )}
+        {...props}
+    />
+))
+CardTitle.displayName = 'CardTitle'
 
-function CardDescription(props: Primitive.TextProps) {
-    return (
-        <Description className={description({ className: props.className })} {...props} />
-    )
-}
+const CardDescription = React.forwardRef<
+    HTMLParagraphElement,
+    React.HTMLAttributes<HTMLParagraphElement>
+>(({ className, ...props }, ref) => (
+    <p
+        ref={ref}
+        className={cn('sm:text-sm text-base text-muted-foreground', className)}
+        {...props}
+    />
+))
+CardDescription.displayName = 'CardDescription'
 
 const CardContent = React.forwardRef<
     HTMLDivElement,
     React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => (
-    <div ref={ref} className={content({ className })} {...props} />
+    <div
+        ref={ref}
+        className={cn(
+            'px-6 pb-6 has-[table]:p-0 [&:has(table)]:border-t [&_.t-cel]:px-6 [&_.t-col]:px-6',
+            className
+        )}
+        {...props}
+    />
 ))
 CardContent.displayName = 'CardContent'
 
 const CardFooter = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
     ({ className, ...props }, ref) => (
-        <div ref={ref} className={footer({ className })} {...props} />
+        <div
+            ref={ref}
+            className={cn('flex items-center p-6 pt-0', className)}
+            {...props}
+        />
     )
 )
 CardFooter.displayName = 'CardFooter'
 
 Card.Header = CardHeader
+Card.Footer = CardFooter
 Card.Title = CardTitle
 Card.Description = CardDescription
 Card.Content = CardContent
-Card.Footer = CardFooter
 
 export { Card }

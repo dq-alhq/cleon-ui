@@ -32,7 +32,8 @@ export default function SheetMenuDemo() {
     const closeModal = () => setIsOpen(false)
     return (
         <>
-            <Modal.Overlay isOpen={isOpen} onOpenChange={setIsOpen}>
+            <Modal isOpen={isOpen} onOpenChange={setIsOpen}>
+                <Modal.Trigger className='sr-only'>Open Modal</Modal.Trigger>
                 <Modal.Content>
                     <Modal.Header>
                         <Modal.Title>Edit status</Modal.Title>
@@ -73,7 +74,7 @@ export default function SheetMenuDemo() {
                         <Button onPress={closeModal}>Set Status</Button>
                     </Modal.Footer>
                 </Modal.Content>
-            </Modal.Overlay>
+            </Modal>
             <Sheet>
                 <Sheet.Trigger aria-labelledby='open' aria-label='Open menu'>
                     <Avatar initials='DQ' alt='DQ' src='https://github.com/dq-alhq.png' />

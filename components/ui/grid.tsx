@@ -1,7 +1,5 @@
 'use client'
 
-import * as React from 'react'
-
 import { cn } from '@/lib/utils'
 import * as Primitive from 'react-aria-components'
 import { tv, type VariantProps } from 'tailwind-variants'
@@ -177,7 +175,7 @@ const Grid = <T extends object>({
 
 const gridItemStyles = tv(
     {
-        base: 'grid-cell',
+        base: 'grid-cell outline-none focus:outline-none',
         variants: {
             colSpan: {
                 auto: 'col-auto',

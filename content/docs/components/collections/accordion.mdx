@@ -3,7 +3,7 @@ title: 'Accordion'
 description: Accordion display a list of high-level options that can expand/collapse to reveal more information.
 order: 6
 published: true
-references: ['https://react-spectrum.adobe.com/react-aria/Tabs.html#props', 'https://www.framer.com/motion/layout-animations/']
+references: ['https://react-spectrum.adobe.com/react-aria/Button.html#props', 'https://www.framer.com/motion/animate-presence/']
 ---
 
 ## Basic
@@ -20,6 +20,18 @@ A vertically stacked set of interactive headings that each reveal a section of c
 
 ## Multiple Collapse
 
-If you add `multiple` attribute, then the Accordion will allow multiple items to be expanded at the same time.
+Set the initially expanded sections by providing an array of keys to the `defaultExpandedKeys` prop. These keys can be either numbers or strings.
 
 <How className="w-full" toUse='collections/accordion-multiple-demo' />
+
+## Hide Arrow Indicator
+
+Hide the visual indicator (arrow key on the right) by using the `hideIndicator` prop.
+
+<How className="w-full" toUse='collections/accordion-hide-indicator-demo' />
+
+## Disabled
+
+Disable specific sections by using the `disabledKeys` prop. For instance, keys 1, 2, and 4 are disabled in this example, making them non-interactive and unable to be expanded or collapsed.
+
+<How className="w-full" toUse='collections/accordion-disabled-demo' />

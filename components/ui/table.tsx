@@ -1,7 +1,7 @@
 'use client'
 
 import { cn } from '@/lib/utils'
-import { ChevronDown, ChevronUp, GripVertical } from 'lucide-react'
+import { ChevronDownIcon, ChevronUpIcon, GripHorizontalIcon } from 'lucide-react'
 import * as Primitive from 'react-aria-components'
 import { tv } from 'tailwind-variants'
 
@@ -10,10 +10,10 @@ import { Checkbox } from './checkbox'
 const table = tv({
     slots: {
         root: 'table w-full caption-bottom border-spacing-0 text-sm outline-none',
-        column: 'whitespace-nowrap px-4 py-3 text-left font-medium outline-none [&:has([slot=selection])]:pr-0',
-        header: 'border-b',
+        column: 'whitespace-nowrap allows-sorting:cursor-pointer px-3 py-3 text-left dragging:cursor-grabbing font-medium outline-none [&:has([slot=selection])]:pr-0',
+        header: 'border-b x32',
         row: 'tr group relative cursor-default border-b text-foreground/70 outline-none ring-primary focus-visible:ring-1 selected:bg-primary/15',
-        cell: 'whitespace-nowrap px-4 py-3 outline-none'
+        cell: 'whitespace-nowrap px-3 py-3 outline-none'
     }
 })
 
@@ -23,11 +23,11 @@ const TableBody = <T extends object>(props: Primitive.TableBodyProps<T>) => (
     <Primitive.TableBody {...props} className={cn('[&_.tr:last-child]:border-0')} />
 )
 
-const Table = ({
-    children,
-    className,
-    ...props
-}: Primitive.TableProps & { className?: string }) => (
+interface TableProps extends Primitive.TableProps {
+    className?: string
+}
+
+const Table = ({ children, className, ...props }: TableProps) => (
     <div className='relative w-full overflow-auto'>
         <Primitive.Table {...props} className={root({ className })}>
             {children}
@@ -35,33 +35,33 @@ const Table = ({
     </div>
 )
 
-const TableCell = ({
-    children,
-    className,
-    ...props
-}: Primitive.CellProps & { className?: string }) => (
+interface TableCellProps extends Primitive.CellProps {
+    className?: string
+}
+
+const TableCell = ({ children, className, ...props }: TableCellProps) => (
     <Primitive.Cell {...props} className={cell({ className })}>
         {children}
     </Primitive.Cell>
 )
 
-const TableColumn = ({
-    children,
-    className,
-    ...props
-}: Primitive.ColumnProps & { className?: string }) => (
-    <Primitive.Column isRowHeader {...props} className={column({ className })}>
+interface TableColumnProps extends Primitive.ColumnProps {
+    className?: string
+}
+
+const TableColumn = ({ children, className, ...props }: TableColumnProps) => (
+    <Primitive.Column {...props} className={column({ className })}>
         {({ allowsSorting, sortDirection }) => (
-            <div className='flex items-center gap-2'>
+            <div className='flex [&>[data-slot=icon]]:shrink-0 items-center gap-2'>
                 <>
                     {children}
                     {allowsSorting &&
                         (sortDirection === undefined ? (
-                            <div className='w-6'></div>
+                            <div className='w-6' />
                         ) : sortDirection === 'ascending' ? (
-                            <ChevronUp />
+                            <ChevronUpIcon />
                         ) : (
-                            <ChevronDown />
+                            <ChevronDownIcon />
                         ))}
                 </>
             </div>
@@ -78,7 +78,7 @@ const TableHeader = <T extends object>({
     const { selectionBehavior, selectionMode, allowsDragging } =
         Primitive.useTableOptions()
     return (
-        <Primitive.TableHeader {...props} className={header()}>
+        <Primitive.TableHeader {...props} className={header({ className })}>
             {allowsDragging && <Primitive.Column />}
             {selectionBehavior === 'toggle' && (
                 <Primitive.Column className='pl-4'>
@@ -103,16 +103,19 @@ const TableRow = <T extends object>({
             id={id}
             {...props}
             className={row({
-                className: 'href' in props ? 'cursor-pointer hover:bg-secondary/50' : ''
+                className:
+                    'href' in props
+                        ? cn('cursor-pointer hover:bg-secondary/50', className)
+                        : ''
             })}
         >
             {allowsDragging && (
-                <Primitive.Cell className='ring-primary'>
+                <Primitive.Cell className='ring-primary group cursor-grab dragging:cursor-grabbing'>
                     <Primitive.Button
-                        className='cursor-pointer bg-transparent p-1.5 text-muted-foreground pressed:cursor-grab pressed:text-foreground'
+                        className='bg-transparent pl-1.5 py-1.5 text-muted-foreground pressed:text-foreground'
                         slot='drag'
                     >
-                        <GripVertical className='size-5' />
+                        <GripHorizontalIcon />
                     </Primitive.Button>
                 </Primitive.Cell>
             )}
@@ -136,4 +139,4 @@ Table.Cell = TableCell
 Table.Column = TableColumn
 Table.Row = TableRow
 
-export { Table }
+export { Table, type TableCellProps, type TableColumnProps, type TableProps }

@@ -6,6 +6,8 @@ export default function AvatarSizeDemo() {
             <Avatar size='sm' src='https://github.com/dq-alhq.png' />
             <Avatar size='md' src='https://github.com/dq-alhq.png' />
             <Avatar size='lg' src='https://github.com/dq-alhq.png' />
+            <Avatar size='xl' src='https://github.com/dq-alhq.png' />
+            <Avatar size='2xl' src='https://github.com/dq-alhq.png' />
         </div>
     )
 }

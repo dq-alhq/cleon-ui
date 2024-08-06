@@ -1,35 +1,52 @@
 'use client'
 
-import { cn } from '@/lib/utils'
+import { isIOS } from '@react-aria/utils'
 import * as Primitive from 'react-aria-components'
+import { tv } from 'tailwind-variants'
 
-export function Heading({ className, level = 1, ...props }: Primitive.HeadingProps) {
-    const textSize: Record<number, string> = {
-        1: 'text-3xl',
-        2: 'text-2xl',
-        3: 'text-xl',
-        4: 'text-lg',
-        5: 'text-md',
-        6: 'text-sm'
+const headingStyles = tv({
+    base: 'font-sans tracking-tight text-fg',
+    variants: {
+        level: {
+            1: 'font-bold text-lg',
+            2: 'font-semibold text-base/6 sm:text-lg/5',
+            3: 'font-semibold text-base/6 sm:text-base/6',
+            4: 'font-medium text-base/6 sm:text-sm/6'
+        },
+        tracking: {
+            tighter: 'tracking-tighter',
+            tight: 'tracking-tight',
+            normal: 'tracking-normal',
+            wide: 'tracking-wide',
+            wider: 'tracking-wider',
+            widest: 'tracking-widest'
+        }
     }
+})
+
+interface HeadingProps extends Primitive.HeadingProps {
+    level?: 1 | 2 | 3 | 4
+    tracking?: 'tighter' | 'tight' | 'normal' | 'wide' | 'wider' | 'widest'
+    className?: string
+}
+
+const Heading = ({
+    className,
+    tracking = 'normal',
+    level = 1,
+    ...props
+}: HeadingProps) => {
     return (
         <Primitive.Heading
             level={level}
-            className={cn('font-semibold text-foreground', textSize[level], className)}
+            className={headingStyles({
+                level,
+                tracking,
+                className: isIOS() ? 'font-medium' : className
+            })}
             {...props}
         />
     )
 }
 
-export function Subheading({ className, level = 2, ...props }: Primitive.HeadingProps) {
-    return (
-        <Primitive.Heading
-            level={level}
-            {...props}
-            className={cn(
-                className,
-                'text-base/7 font-semibold text-foreground sm:text-sm/6'
-            )}
-        />
-    )
-}
+export { Heading, type HeadingProps }

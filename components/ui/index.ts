@@ -10,6 +10,7 @@ export * from './slider';
 export * from './popover';
 export * from './text-field';
 export * from './radio';
+export * from './keyboard';
 export * from './date-field';
 export * from './date-picker';
 export * from './toaster';

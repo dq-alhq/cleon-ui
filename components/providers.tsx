@@ -1,6 +1,6 @@
 'use client'
 
-import { ThemeProvider } from 'next-themes'
+import { ThemeProvider, useTheme } from 'next-themes'
 import { useRouter } from 'next/navigation'
 import { RouterProvider } from 'react-aria-components'
 import { Toaster } from 'ui'
@@ -11,7 +11,7 @@ declare module 'react-aria-components' {
     }
 }
 
-export function Providers({ children }: { children: React.ReactNode }) {
+const Providers = ({ children }: { children: React.ReactNode }) => {
     const router = useRouter()
 
     return (
@@ -23,3 +23,5 @@ export function Providers({ children }: { children: React.ReactNode }) {
         </RouterProvider>
     )
 }
+
+export { Providers, useTheme }

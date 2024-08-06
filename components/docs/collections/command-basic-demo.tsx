@@ -28,23 +28,23 @@ export default function CommandBasicDemo() {
             >
                 Press <kbd className='rounded border px-2 py-1 text-xs'>⌘J</kbd>
             </Button>
-            <Command.Modal isOpen={open} onOpenChange={setOpen}>
+            <Command isOpen={open} onOpenChange={setOpen}>
                 <Command.Input autoFocus={isDesktop} placeholder='Search Item' />
                 <Command.List>
                     <Command.Empty>No results found.</Command.Empty>
-                    <Command.Group heading='First Section'>
+                    <Command.Section heading='First Section'>
                         <Command.Item>First</Command.Item>
                         <Command.Item>Second</Command.Item>
                         <Command.Item>Third</Command.Item>
-                    </Command.Group>
+                    </Command.Section>
                     <Command.Separator />
-                    <Command.Group heading='Second Section'>
+                    <Command.Section heading='Second Section'>
                         <Command.Item>Fourth</Command.Item>
                         <Command.Item>Fifth</Command.Item>
                         <Command.Item>Sixth</Command.Item>
-                    </Command.Group>
+                    </Command.Section>
                 </Command.List>
-            </Command.Modal>
+            </Command>
         </>
     )
 }

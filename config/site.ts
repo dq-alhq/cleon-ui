@@ -7,7 +7,7 @@ export const siteConfig = {
     links: {
         twitter: 'https://twitter.com/dqnahdliyan',
         github: 'https://github.com/dq-alhq',
-        personalSite: 'https://teerakat.in'
+        personalSite: 'https://spesest.vercel.app'
     }
 }
 

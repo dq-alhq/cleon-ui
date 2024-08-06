@@ -79,5 +79,4 @@ interface DropdownSectionProps<T> extends Primitive.SectionProps<T> {
     title?: string
 }
 
-// Note: This is not exposed component, but it's used in other components to render dropdowns.
 export { DropdownItem, dropdownItemStyles, DropdownSection, type DropdownSectionProps }

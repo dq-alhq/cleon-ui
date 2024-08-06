@@ -7,7 +7,11 @@ import * as ButtonPrimitive from 'react-aria-components'
 import { tv, type VariantProps } from 'tailwind-variants'
 
 const buttonVariants = tv({
-    base: 'inline-flex items-center justify-center hover:brightness-110 pressed:brightness-90 gap-1.5 whitespace-nowrap text-sm font-medium transition focus:outline-none disabled:pointer-events-none disabled:opacity-50 [&_svg]:size-4',
+    base: [
+        'relative outline-none transition no-underline isolate inline-flex items-center justify-center gap-x-2 font-medium hover:brightness-110 pressed:brightness-90',
+        '[&_svg]:size-4 [&_svg]:shrink-0',
+        'disabled:cursor-default disabled:opacity-50'
+    ],
     variants: {
         variant: {
             primary:
@@ -26,13 +30,14 @@ const buttonVariants = tv({
             ghost: 'text-foreground bg-transparent hover:bg-muted pressed:bg-muted-foreground'
         },
         size: {
-            md: 'h-10 px-4 py-2',
-            sm: 'h-9 px-3',
-            lg: 'h-11 px-8',
-            icon: 'h-10 w-10'
+            xs: 'h-8 px-2 text-xs',
+            sm: 'h-9 px-3 text-sm',
+            md: 'h-10 px-4 py-2 text-sm',
+            lg: 'h-10 sm:h-11 px-6 sm:px-8 text-base',
+            icon: 'size-9 sm:size-10 shrink-0'
         },
         shape: {
-            square: 'rounded-md',
+            square: 'rounded-lg',
             circle: 'rounded-full'
         }
     },

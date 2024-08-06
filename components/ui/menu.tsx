@@ -6,8 +6,8 @@ import { cn } from '@/lib/utils'
 import { Check, ChevronsRight } from 'lucide-react'
 import * as Primitive from 'react-aria-components'
 import type { VariantProps } from 'tailwind-variants'
-
 import { dropdownItemStyles } from './dropdown'
+import { Keyboard } from './keyboard'
 
 interface MenuSubComponents {
     CheckboxItem: typeof MenuCheckboxItem
@@ -76,7 +76,7 @@ const MenuContent = <T extends object>({
                         width={12}
                         height={12}
                         viewBox='0 0 12 12'
-                        className='block fill-popover stroke-border group-placement-left:-rotate-90 group-placement-right:rotate-90 group-placement-bottom:rotate-180'
+                        className='block fill-background stroke-border group-placement-left:-rotate-90 group-placement-right:rotate-90 group-placement-bottom:rotate-180'
                     >
                         <path d='M0 0 L6 6 L12 0' />
                     </svg>
@@ -128,6 +128,8 @@ const MenuItem = ({
     </Primitive.MenuItem>
 )
 
+const MenuKeyboard = Keyboard
+
 export interface MenuHeaderProps extends React.ComponentProps<typeof Primitive.Header> {
     inset?: boolean
     separator?: boolean
@@ -156,36 +158,6 @@ const MenuSeparator = ({ className, ...props }: Primitive.SeparatorProps) => (
         {...props}
     />
 )
-
-interface MenuKeyboardProps extends React.HTMLAttributes<HTMLElement> {
-    keys: string | string[]
-}
-
-const MenuKeyboard = ({ keys, className, ...props }: MenuKeyboardProps) => {
-    return (
-        <Primitive.Keyboard
-            className={cn(
-                '-mr-1 ml-auto hidden items-center gap-[0.170rem] px-1 lg:inline-flex',
-                className
-            )}
-            {...props}
-        >
-            {(Array.isArray(keys) ? keys : keys.split('')).map((char, index) => (
-                <kbd
-                    key={index}
-                    className={cn([
-                        'min-w-[2ch] text-center font-sans capitalize text-muted-foreground group-focus:text-foreground',
-                        'inline-grid min-h-5 min-w-5 place-content-center rounded bg-background font-sans text-[.75rem] uppercase text-foreground ring-1 ring-foreground/10 group-focus:opacity-60',
-                        // Make sure key names that are longer than one character (like "Tab") have extra space
-                        index > 0 && char.length > 1 && 'pl-1'
-                    ])}
-                >
-                    {char}
-                </kbd>
-            ))}
-        </Primitive.Keyboard>
-    )
-}
 
 const MenuCheckboxItem = ({ className, children, ...props }: MenuItemProps) => (
     <MenuItem className={className} {...props}>
@@ -224,4 +196,4 @@ Menu.Separator = MenuSeparator
 Menu.Trigger = MenuTrigger
 Menu.SubTrigger = SubmenuTrigger
 
-export { MenuKeyboard as Keyboard, Menu, type MenuItemProps }
+export { Menu, type MenuItemProps }

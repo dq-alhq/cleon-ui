@@ -84,10 +84,10 @@ export default function CardTableDemo() {
                 <Card.Description>Manage users, groups, and roles.</Card.Description>
             </Card.Header>
             <Card.Content>
-                <Table aria-label='Bands'>
+                <Table aria-label='users'>
                     <Table.Header>
                         <Table.Column>#</Table.Column>
-                        <Table.Column>Name</Table.Column>
+                        <Table.Column isRowHeader>Name</Table.Column>
                         <Table.Column>Genre</Table.Column>
                         <Table.Column>Age</Table.Column>
                         <Table.Column>Occupation</Table.Column>
@@ -104,7 +104,7 @@ export default function CardTableDemo() {
                                 <Table.Cell className='flex justify-end'>
                                     <Menu>
                                         <Menu.Trigger>
-                                            <MoreVertical />
+                                            <MoreVertical className='size-4' />
                                         </Menu.Trigger>
                                         <Menu.Content showArrow placement='left'>
                                             <Menu.Item>

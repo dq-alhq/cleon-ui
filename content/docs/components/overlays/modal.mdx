@@ -24,6 +24,24 @@ If you want to create an alert dialog, you can do that too. Use the isDismissabl
 
 <How toUse='overlays/alert-dialog-demo' />
 
+## Sizes
+
+The modal is set to `lg` by default. You can adjust it to any size from the available options.
+
+<How toUse='overlays/modal-size-demo' />
+
+## Sticky Header
+
+You can use the `Modal.Body` component to make the header sticky.
+
+<How toUse='overlays/modal-sticky-demo' />
+
+## Nested Modal
+
+You can also nest modals. Try open it and confirm!
+
+<How toUse='overlays/modal-nested-demo' />
+
 ## Controlled
 
 Of course, you can controll the modal.
@@ -37,7 +55,7 @@ You can also trigger the modal by clicking on a menu item.
 <How toUse='overlays/modal-triggered-by-menu-demo' />
 But it would be better if we can extract the modal to a component.
 
-```
+```tsx
 interface ModalActionProps {
   title: string
   description: string
@@ -70,10 +88,9 @@ export function ModalAction(props: ModalActionProps) {
 
 Then you can use it like this.
 
-```
+```tsx
 <ModalAction {...actionType(state)} closeModal={closeModal} loading={loading} isOpen={!!state} />
 ```
-
 With that, now we can modify the `actionType` function to return the initial state.
 
 ```tsx

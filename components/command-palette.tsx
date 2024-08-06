@@ -2,7 +2,7 @@
 
 import React from 'react'
 
-import { docs } from '@/.velite'
+import { docs } from '#site/content'
 import { useMediaQuery } from '@/lib/utils'
 import { usePathname, useRouter } from 'next/navigation'
 import { Command } from 'ui'
@@ -36,11 +36,11 @@ export function CommandPalette({ open, setOpen }: OpenCloseProps) {
 
     const isDesktop = useMediaQuery('(min-width: 1024px)')
     return (
-        <Command.Modal isOpen={open} onOpenChange={setOpen}>
+        <Command isOpen={open} onOpenChange={setOpen}>
             <Command.Input autoFocus={isDesktop} placeholder='Search Component' />
             <Command.List>
                 <Command.Empty>No results found.</Command.Empty>
-                <Command.Group heading='Components'>
+                <Command.Section heading='Components'>
                     {docs.map((item, i) => (
                         <Command.Item
                             key={i}
@@ -49,8 +49,8 @@ export function CommandPalette({ open, setOpen }: OpenCloseProps) {
                             {item.title}
                         </Command.Item>
                     ))}
-                </Command.Group>
+                </Command.Section>
             </Command.List>
-        </Command.Modal>
+        </Command>
     )
 }

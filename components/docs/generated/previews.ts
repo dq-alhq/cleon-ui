@@ -5,362 +5,182 @@
 import React from 'react';
 
 export const previews: Record<string, any> = {
-  "collections/multiple-menu-demo": {
-    component: React.lazy(() => import("@/components/docs/collections/multiple-menu-demo")),
+  "media/avatar-initials-demo": {
+    component: React.lazy(() => import("@/components/docs/media/avatar-initials-demo")),
   },
-  "collections/grid-list-demo": {
-    component: React.lazy(() => import("@/components/docs/collections/grid-list-demo")),
+  "media/avatar-demo": {
+    component: React.lazy(() => import("@/components/docs/media/avatar-demo")),
   },
-  "collections/grid-list-drag-demo": {
-    component: React.lazy(() => import("@/components/docs/collections/grid-list-drag-demo")),
+  "media/avatar-group-demo": {
+    component: React.lazy(() => import("@/components/docs/media/avatar-group-demo")),
   },
-  "collections/grid-list-drag-between-item-demo": {
-    component: React.lazy(() => import("@/components/docs/collections/grid-list-drag-between-item-demo")),
+  "media/avatar-status-demo": {
+    component: React.lazy(() => import("@/components/docs/media/avatar-status-demo")),
   },
-  "collections/grid-list-disabled-demo": {
-    component: React.lazy(() => import("@/components/docs/collections/grid-list-disabled-demo")),
+  "media/avatar-fallback-demo": {
+    component: React.lazy(() => import("@/components/docs/media/avatar-fallback-demo")),
   },
-  "collections/tag-group-href-demo": {
-    component: React.lazy(() => import("@/components/docs/collections/tag-group-href-demo")),
+  "media/avatar-size-demo": {
+    component: React.lazy(() => import("@/components/docs/media/avatar-size-demo")),
   },
-  "collections/list-box-rearrange-demo": {
-    component: React.lazy(() => import("@/components/docs/collections/list-box-rearrange-demo")),
-  },
-  "collections/table-demo": {
-    component: React.lazy(() => import("@/components/docs/collections/table-demo")),
-  },
-  "collections/accordion-demo": {
-    component: React.lazy(() => import("@/components/docs/collections/accordion-demo")),
-  },
-  "collections/grid-list-controlled-demo": {
-    component: React.lazy(() => import("@/components/docs/collections/grid-list-controlled-demo")),
-  },
-  "collections/list-box-demo": {
-    component: React.lazy(() => import("@/components/docs/collections/list-box-demo")),
-  },
-  "collections/tag-group-demo": {
-    component: React.lazy(() => import("@/components/docs/collections/tag-group-demo")),
-  },
-  "collections/tag-group-disabled-demo": {
-    component: React.lazy(() => import("@/components/docs/collections/tag-group-disabled-demo")),
-  },
-  "collections/accordion-multiple-demo": {
-    component: React.lazy(() => import("@/components/docs/collections/accordion-multiple-demo")),
-  },
-  "collections/command-basic-demo": {
-    component: React.lazy(() => import("@/components/docs/collections/command-basic-demo")),
-  },
-  "collections/menu-basic-demo": {
-    component: React.lazy(() => import("@/components/docs/collections/menu-basic-demo")),
-  },
-  "collections/grid-list-multiple-demo": {
-    component: React.lazy(() => import("@/components/docs/collections/grid-list-multiple-demo")),
-  },
-  "collections/menu-with-icon-demo": {
-    component: React.lazy(() => import("@/components/docs/collections/menu-with-icon-demo")),
-  },
-  "collections/single-menu-demo": {
-    component: React.lazy(() => import("@/components/docs/collections/single-menu-demo")),
-  },
-  "collections/grid-list-render-empty-state-demo": {
-    component: React.lazy(() => import("@/components/docs/collections/grid-list-render-empty-state-demo")),
-  },
-  "collections/tag-group-with-remove-demo": {
-    component: React.lazy(() => import("@/components/docs/collections/tag-group-with-remove-demo")),
-  },
-  "collections/tag-group-controlled-demo": {
-    component: React.lazy(() => import("@/components/docs/collections/tag-group-controlled-demo")),
-  },
-  "pickers/select-invalid-demo": {
-    component: React.lazy(() => import("@/components/docs/pickers/select-invalid-demo")),
-  },
-  "pickers/combo-box-invalid-demo": {
-    component: React.lazy(() => import("@/components/docs/pickers/combo-box-invalid-demo")),
-  },
-  "pickers/combo-box-demo": {
-    component: React.lazy(() => import("@/components/docs/pickers/combo-box-demo")),
-  },
-  "pickers/combo-box-avatar-demo": {
-    component: React.lazy(() => import("@/components/docs/pickers/combo-box-avatar-demo")),
-  },
-  "pickers/select-demo": {
-    component: React.lazy(() => import("@/components/docs/pickers/select-demo")),
-  },
-  "pickers/select-disabled-demo": {
-    component: React.lazy(() => import("@/components/docs/pickers/select-disabled-demo")),
-  },
-  "pickers/combo-box-disabled-demo": {
-    component: React.lazy(() => import("@/components/docs/pickers/combo-box-disabled-demo")),
-  },
-  "pickers/multi-select-demo": {
-    component: React.lazy(() => import("@/components/docs/pickers/multi-select-demo")),
-  },
-  "surfaces/card-demo": {
-    component: React.lazy(() => import("@/components/docs/surfaces/card-demo")),
-  },
-  "surfaces/grid-debug-demo": {
-    component: React.lazy(() => import("@/components/docs/surfaces/grid-debug-demo")),
-  },
-  "surfaces/grid-collections-demo": {
-    component: React.lazy(() => import("@/components/docs/surfaces/grid-collections-demo")),
-  },
-  "surfaces/card-table-demo": {
-    component: React.lazy(() => import("@/components/docs/surfaces/card-table-demo")),
-  },
-  "surfaces/grid-gap-demo": {
-    component: React.lazy(() => import("@/components/docs/surfaces/grid-gap-demo")),
-  },
-  "surfaces/grid-responsive-demo": {
-    component: React.lazy(() => import("@/components/docs/surfaces/grid-responsive-demo")),
-  },
-  "surfaces/card-login-form-demo": {
-    component: React.lazy(() => import("@/components/docs/surfaces/card-login-form-demo")),
-  },
-  "surfaces/grid-gap-x-y-demo": {
-    component: React.lazy(() => import("@/components/docs/surfaces/grid-gap-x-y-demo")),
-  },
-  "surfaces/grid-item-demo": {
-    component: React.lazy(() => import("@/components/docs/surfaces/grid-item-demo")),
-  },
-  "surfaces/grid-basic-demo": {
-    component: React.lazy(() => import("@/components/docs/surfaces/grid-basic-demo")),
-  },
-  "drag-and-drop/drop-zone-demo": {
-    component: React.lazy(() => import("@/components/docs/drag-and-drop/drop-zone-demo")),
+  "media/avatar-shape-demo": {
+    component: React.lazy(() => import("@/components/docs/media/avatar-shape-demo")),
   },
   "drag-and-drop/drop-zone-and-file-trigger-demo": {
     component: React.lazy(() => import("@/components/docs/drag-and-drop/drop-zone-and-file-trigger-demo")),
   },
-  "date-and-time/date-picker-disabled-demo": {
-    component: React.lazy(() => import("@/components/docs/date-and-time/date-picker-disabled-demo")),
+  "drag-and-drop/drop-zone-demo": {
+    component: React.lazy(() => import("@/components/docs/drag-and-drop/drop-zone-demo")),
   },
-  "date-and-time/date-field-demo": {
-    component: React.lazy(() => import("@/components/docs/date-and-time/date-field-demo")),
+  "collections/table-bulk-actions-demo": {
+    component: React.lazy(() => import("@/components/docs/collections/table-bulk-actions-demo")),
   },
-  "date-and-time/date-range-picker-validation-demo": {
-    component: React.lazy(() => import("@/components/docs/date-and-time/date-range-picker-validation-demo")),
+  "collections/table-drag-drop-demo": {
+    component: React.lazy(() => import("@/components/docs/collections/table-drag-drop-demo")),
   },
-  "date-and-time/time-field-hc-demo": {
-    component: React.lazy(() => import("@/components/docs/date-and-time/time-field-hc-demo")),
+  "collections/multiple-menu-demo": {
+    component: React.lazy(() => import("@/components/docs/collections/multiple-menu-demo")),
   },
-  "date-and-time/date-field-controlled-demo": {
-    component: React.lazy(() => import("@/components/docs/date-and-time/date-field-controlled-demo")),
+  "collections/tag-group-disabled-demo": {
+    component: React.lazy(() => import("@/components/docs/collections/tag-group-disabled-demo")),
   },
-  "date-and-time/date-range-picker-demo": {
-    component: React.lazy(() => import("@/components/docs/date-and-time/date-range-picker-demo")),
+  "collections/single-menu-demo": {
+    component: React.lazy(() => import("@/components/docs/collections/single-menu-demo")),
   },
-  "date-and-time/time-field-controlled-demo": {
-    component: React.lazy(() => import("@/components/docs/date-and-time/time-field-controlled-demo")),
+  "collections/tag-group-href-demo": {
+    component: React.lazy(() => import("@/components/docs/collections/tag-group-href-demo")),
   },
-  "date-and-time/date-picker-required-demo": {
-    component: React.lazy(() => import("@/components/docs/date-and-time/date-picker-required-demo")),
+  "collections/menu-basic-demo": {
+    component: React.lazy(() => import("@/components/docs/collections/menu-basic-demo")),
   },
-  "date-and-time/date-field-disabled-demo": {
-    component: React.lazy(() => import("@/components/docs/date-and-time/date-field-disabled-demo")),
+  "collections/grid-list-drag-between-item-demo": {
+    component: React.lazy(() => import("@/components/docs/collections/grid-list-drag-between-item-demo")),
   },
-  "date-and-time/time-field-validation-demo": {
-    component: React.lazy(() => import("@/components/docs/date-and-time/time-field-validation-demo")),
+  "collections/grid-list-demo": {
+    component: React.lazy(() => import("@/components/docs/collections/grid-list-demo")),
   },
-  "date-and-time/time-field-disabled-demo": {
-    component: React.lazy(() => import("@/components/docs/date-and-time/time-field-disabled-demo")),
+  "collections/table-sorting-demo": {
+    component: React.lazy(() => import("@/components/docs/collections/table-sorting-demo")),
   },
-  "date-and-time/date-picker-demo": {
-    component: React.lazy(() => import("@/components/docs/date-and-time/date-picker-demo")),
+  "collections/list-box-rearrange-demo": {
+    component: React.lazy(() => import("@/components/docs/collections/list-box-rearrange-demo")),
   },
-  "date-and-time/date-range-picker-controlled-demo": {
-    component: React.lazy(() => import("@/components/docs/date-and-time/date-range-picker-controlled-demo")),
+  "collections/grid-list-controlled-demo": {
+    component: React.lazy(() => import("@/components/docs/collections/grid-list-controlled-demo")),
   },
-  "date-and-time/date-range-picker-disabled-demo": {
-    component: React.lazy(() => import("@/components/docs/date-and-time/date-range-picker-disabled-demo")),
+  "collections/tag-group-controlled-demo": {
+    component: React.lazy(() => import("@/components/docs/collections/tag-group-controlled-demo")),
   },
-  "date-and-time/date-range-picker-custom-validation-demo": {
-    component: React.lazy(() => import("@/components/docs/date-and-time/date-range-picker-custom-validation-demo")),
+  "collections/menu-with-icon-demo": {
+    component: React.lazy(() => import("@/components/docs/collections/menu-with-icon-demo")),
   },
-  "date-and-time/date-field-validation-demo": {
-    component: React.lazy(() => import("@/components/docs/date-and-time/date-field-validation-demo")),
+  "collections/tag-group-with-remove-demo": {
+    component: React.lazy(() => import("@/components/docs/collections/tag-group-with-remove-demo")),
   },
-  "date-and-time/date-picker-controlled-demo": {
-    component: React.lazy(() => import("@/components/docs/date-and-time/date-picker-controlled-demo")),
+  "collections/accordion-demo": {
+    component: React.lazy(() => import("@/components/docs/collections/accordion-demo")),
   },
-  "date-and-time/calendar-demo": {
-    component: React.lazy(() => import("@/components/docs/date-and-time/calendar-demo")),
+  "collections/grid-list-disabled-demo": {
+    component: React.lazy(() => import("@/components/docs/collections/grid-list-disabled-demo")),
   },
-  "date-and-time/time-field-demo": {
-    component: React.lazy(() => import("@/components/docs/date-and-time/time-field-demo")),
+  "collections/grid-list-drag-demo": {
+    component: React.lazy(() => import("@/components/docs/collections/grid-list-drag-demo")),
   },
-  "date-and-time/range-calendar-demo": {
-    component: React.lazy(() => import("@/components/docs/date-and-time/range-calendar-demo")),
+  "collections/accordion-hide-indicator-demo": {
+    component: React.lazy(() => import("@/components/docs/collections/accordion-hide-indicator-demo")),
   },
-  "date-and-time/date-picker-custom-validation-demo": {
-    component: React.lazy(() => import("@/components/docs/date-and-time/date-picker-custom-validation-demo")),
+  "collections/accordion-disabled-demo": {
+    component: React.lazy(() => import("@/components/docs/collections/accordion-disabled-demo")),
   },
-  "navigation/pagination-demo": {
-    component: React.lazy(() => import("@/components/docs/navigation/pagination-demo")),
+  "collections/table-demo": {
+    component: React.lazy(() => import("@/components/docs/collections/table-demo")),
   },
-  "navigation/breadcrumbs-demo": {
-    component: React.lazy(() => import("@/components/docs/navigation/breadcrumbs-demo")),
+  "collections/tag-group-demo": {
+    component: React.lazy(() => import("@/components/docs/collections/tag-group-demo")),
   },
-  "navigation/simple-pagination-demo": {
-    component: React.lazy(() => import("@/components/docs/navigation/simple-pagination-demo")),
+  "collections/command-basic-demo": {
+    component: React.lazy(() => import("@/components/docs/collections/command-basic-demo")),
   },
-  "navigation/link-demo": {
-    component: React.lazy(() => import("@/components/docs/navigation/link-demo")),
+  "collections/grid-list-multiple-demo": {
+    component: React.lazy(() => import("@/components/docs/collections/grid-list-multiple-demo")),
   },
-  "navigation/tabs-demo": {
-    component: React.lazy(() => import("@/components/docs/navigation/tabs-demo")),
+  "collections/grid-list-render-empty-state-demo": {
+    component: React.lazy(() => import("@/components/docs/collections/grid-list-render-empty-state-demo")),
   },
-  "navigation/tabs-orientation-demo": {
-    component: React.lazy(() => import("@/components/docs/navigation/tabs-orientation-demo")),
+  "collections/accordion-multiple-demo": {
+    component: React.lazy(() => import("@/components/docs/collections/accordion-multiple-demo")),
   },
-  "navigation/pagination-dynamic-demo": {
-    component: React.lazy(() => import("@/components/docs/navigation/pagination-dynamic-demo")),
-  },
-  "statuses/badge-shape-demo": {
-    component: React.lazy(() => import("@/components/docs/statuses/badge-shape-demo")),
-  },
-  "statuses/badge-demo": {
-    component: React.lazy(() => import("@/components/docs/statuses/badge-demo")),
-  },
-  "statuses/progress-bar-demo": {
-    component: React.lazy(() => import("@/components/docs/statuses/progress-bar-demo")),
-  },
-  "statuses/toaster-action-demo": {
-    component: React.lazy(() => import("@/components/docs/statuses/toaster-action-demo")),
-  },
-  "statuses/note-demo": {
-    component: React.lazy(() => import("@/components/docs/statuses/note-demo")),
-  },
-  "statuses/indeterminate-progress-bar-demo": {
-    component: React.lazy(() => import("@/components/docs/statuses/indeterminate-progress-bar-demo")),
-  },
-  "statuses/meter-demo": {
-    component: React.lazy(() => import("@/components/docs/statuses/meter-demo")),
-  },
-  "statuses/toaster-status-demo": {
-    component: React.lazy(() => import("@/components/docs/statuses/toaster-status-demo")),
-  },
-  "statuses/toaster-demo": {
-    component: React.lazy(() => import("@/components/docs/statuses/toaster-demo")),
-  },
-  "statuses/table-of-badges": {
-    component: React.lazy(() => import("@/components/docs/statuses/table-of-badges")),
-  },
-  "statuses/toaster-positions-demo": {
-    component: React.lazy(() => import("@/components/docs/statuses/toaster-positions-demo")),
-  },
-  "forms/slider-step-demo": {
-    component: React.lazy(() => import("@/components/docs/forms/slider-step-demo")),
-  },
-  "forms/form-demo": {
-    component: React.lazy(() => import("@/components/docs/forms/form-demo")),
-  },
-  "forms/textarea-disabled-demo": {
-    component: React.lazy(() => import("@/components/docs/forms/textarea-disabled-demo")),
-  },
-  "forms/input-otp-controlled-demo": {
-    component: React.lazy(() => import("@/components/docs/forms/input-otp-controlled-demo")),
-  },
-  "forms/text-field-loading-demo": {
-    component: React.lazy(() => import("@/components/docs/forms/text-field-loading-demo")),
-  },
-  "forms/search-field-with-label-demo": {
-    component: React.lazy(() => import("@/components/docs/forms/search-field-with-label-demo")),
-  },
-  "forms/switch-disabled-demo": {
-    component: React.lazy(() => import("@/components/docs/forms/switch-disabled-demo")),
-  },
-  "forms/radio-group-disabled-demo": {
-    component: React.lazy(() => import("@/components/docs/forms/radio-group-disabled-demo")),
-  },
-  "forms/textarea-validation-demo": {
-    component: React.lazy(() => import("@/components/docs/forms/textarea-validation-demo")),
-  },
-  "forms/slider-controlled-demo": {
-    component: React.lazy(() => import("@/components/docs/forms/slider-controlled-demo")),
-  },
-  "forms/checkbox-group-demo": {
-    component: React.lazy(() => import("@/components/docs/forms/checkbox-group-demo")),
-  },
-  "forms/checkbox-demo": {
-    component: React.lazy(() => import("@/components/docs/forms/checkbox-demo")),
-  },
-  "forms/search-field-validation-demo": {
-    component: React.lazy(() => import("@/components/docs/forms/search-field-validation-demo")),
-  },
-  "forms/radio-group-demo": {
-    component: React.lazy(() => import("@/components/docs/forms/radio-group-demo")),
+  "collections/list-box-demo": {
+    component: React.lazy(() => import("@/components/docs/collections/list-box-demo")),
   },
   "forms/radio-group-controlled-demo": {
     component: React.lazy(() => import("@/components/docs/forms/radio-group-controlled-demo")),
   },
-  "forms/slider-demo": {
-    component: React.lazy(() => import("@/components/docs/forms/slider-demo")),
-  },
-  "forms/number-field-disabled-demo": {
-    component: React.lazy(() => import("@/components/docs/forms/number-field-disabled-demo")),
-  },
-  "forms/number-field-demo": {
-    component: React.lazy(() => import("@/components/docs/forms/number-field-demo")),
-  },
-  "forms/form-validation-demo": {
-    component: React.lazy(() => import("@/components/docs/forms/form-validation-demo")),
-  },
-  "forms/text-field-validation-demo": {
-    component: React.lazy(() => import("@/components/docs/forms/text-field-validation-demo")),
-  },
-  "forms/textarea-controlled-demo": {
-    component: React.lazy(() => import("@/components/docs/forms/textarea-controlled-demo")),
-  },
-  "forms/search-field-disabled-demo": {
-    component: React.lazy(() => import("@/components/docs/forms/search-field-disabled-demo")),
-  },
-  "forms/slider-disabled-demo": {
-    component: React.lazy(() => import("@/components/docs/forms/slider-disabled-demo")),
-  },
-  "forms/input-otp-demo": {
-    component: React.lazy(() => import("@/components/docs/forms/input-otp-demo")),
-  },
-  "forms/input-otp-separator-demo": {
-    component: React.lazy(() => import("@/components/docs/forms/input-otp-separator-demo")),
-  },
-  "forms/radio-group-invalid-demo": {
-    component: React.lazy(() => import("@/components/docs/forms/radio-group-invalid-demo")),
-  },
-  "forms/text-field-demo": {
-    component: React.lazy(() => import("@/components/docs/forms/text-field-demo")),
-  },
-  "forms/switch-demo": {
-    component: React.lazy(() => import("@/components/docs/forms/switch-demo")),
-  },
-  "forms/checkbox-invalid-demo": {
-    component: React.lazy(() => import("@/components/docs/forms/checkbox-invalid-demo")),
-  },
-  "forms/number-field-invalid-demo": {
-    component: React.lazy(() => import("@/components/docs/forms/number-field-invalid-demo")),
-  },
-  "forms/text-field-disabled-demo": {
-    component: React.lazy(() => import("@/components/docs/forms/text-field-disabled-demo")),
-  },
-  "forms/text-field-prefix-suffix-demo": {
-    component: React.lazy(() => import("@/components/docs/forms/text-field-prefix-suffix-demo")),
-  },
-  "forms/text-field-controlled-demo": {
-    component: React.lazy(() => import("@/components/docs/forms/text-field-controlled-demo")),
+  "forms/search-field-with-label-demo": {
+    component: React.lazy(() => import("@/components/docs/forms/search-field-with-label-demo")),
   },
   "forms/search-field-demo": {
     component: React.lazy(() => import("@/components/docs/forms/search-field-demo")),
   },
+  "forms/textarea-disabled-demo": {
+    component: React.lazy(() => import("@/components/docs/forms/textarea-disabled-demo")),
+  },
+  "forms/slider-controlled-demo": {
+    component: React.lazy(() => import("@/components/docs/forms/slider-controlled-demo")),
+  },
+  "forms/search-field-disabled-demo": {
+    component: React.lazy(() => import("@/components/docs/forms/search-field-disabled-demo")),
+  },
+  "forms/text-field-prefix-suffix-demo": {
+    component: React.lazy(() => import("@/components/docs/forms/text-field-prefix-suffix-demo")),
+  },
+  "forms/textarea-validation-demo": {
+    component: React.lazy(() => import("@/components/docs/forms/textarea-validation-demo")),
+  },
+  "forms/switch-demo": {
+    component: React.lazy(() => import("@/components/docs/forms/switch-demo")),
+  },
   "forms/textarea-demo": {
     component: React.lazy(() => import("@/components/docs/forms/textarea-demo")),
   },
-  "forms/checkbox-disabled-demo": {
-    component: React.lazy(() => import("@/components/docs/forms/checkbox-disabled-demo")),
+  "forms/checkbox-group-demo": {
+    component: React.lazy(() => import("@/components/docs/forms/checkbox-group-demo")),
   },
-  "forms/checkbox-controlled-demo": {
-    component: React.lazy(() => import("@/components/docs/forms/checkbox-controlled-demo")),
+  "forms/radio-group-demo": {
+    component: React.lazy(() => import("@/components/docs/forms/radio-group-demo")),
+  },
+  "forms/input-otp-controlled-demo": {
+    component: React.lazy(() => import("@/components/docs/forms/input-otp-controlled-demo")),
+  },
+  "forms/switch-variant-demo": {
+    component: React.lazy(() => import("@/components/docs/forms/switch-variant-demo")),
   },
   "forms/slider-range-demo": {
     component: React.lazy(() => import("@/components/docs/forms/slider-range-demo")),
+  },
+  "forms/slider-demo": {
+    component: React.lazy(() => import("@/components/docs/forms/slider-demo")),
+  },
+  "forms/slider-disabled-demo": {
+    component: React.lazy(() => import("@/components/docs/forms/slider-disabled-demo")),
+  },
+  "forms/text-field-validation-demo": {
+    component: React.lazy(() => import("@/components/docs/forms/text-field-validation-demo")),
+  },
+  "forms/form-demo": {
+    component: React.lazy(() => import("@/components/docs/forms/form-demo")),
+  },
+  "forms/text-field-demo": {
+    component: React.lazy(() => import("@/components/docs/forms/text-field-demo")),
+  },
+  "forms/checkbox-invalid-demo": {
+    component: React.lazy(() => import("@/components/docs/forms/checkbox-invalid-demo")),
+  },
+  "forms/number-field-demo": {
+    component: React.lazy(() => import("@/components/docs/forms/number-field-demo")),
+  },
+  "forms/search-field-validation-demo": {
+    component: React.lazy(() => import("@/components/docs/forms/search-field-validation-demo")),
   },
   "forms/search-field-controlled-demo": {
     component: React.lazy(() => import("@/components/docs/forms/search-field-controlled-demo")),
@@ -368,68 +188,185 @@ export const previews: Record<string, any> = {
   "forms/switch-controlled-demo": {
     component: React.lazy(() => import("@/components/docs/forms/switch-controlled-demo")),
   },
-  "forms/switch-variant-demo": {
-    component: React.lazy(() => import("@/components/docs/forms/switch-variant-demo")),
+  "forms/form-validation-demo": {
+    component: React.lazy(() => import("@/components/docs/forms/form-validation-demo")),
   },
-  "colors/color-picker-disabled-demo": {
-    component: React.lazy(() => import("@/components/docs/colors/color-picker-disabled-demo")),
+  "forms/radio-group-disabled-demo": {
+    component: React.lazy(() => import("@/components/docs/forms/radio-group-disabled-demo")),
   },
-  "colors/color-swatch-demo": {
-    component: React.lazy(() => import("@/components/docs/colors/color-swatch-demo")),
+  "forms/text-field-loading-demo": {
+    component: React.lazy(() => import("@/components/docs/forms/text-field-loading-demo")),
   },
-  "colors/color-area-controlled-demo": {
-    component: React.lazy(() => import("@/components/docs/colors/color-area-controlled-demo")),
+  "forms/text-field-disabled-demo": {
+    component: React.lazy(() => import("@/components/docs/forms/text-field-disabled-demo")),
   },
-  "colors/color-swatch-controlled-demo": {
-    component: React.lazy(() => import("@/components/docs/colors/color-swatch-controlled-demo")),
+  "forms/number-field-invalid-demo": {
+    component: React.lazy(() => import("@/components/docs/forms/number-field-invalid-demo")),
   },
-  "colors/color-picker-combination-demo": {
-    component: React.lazy(() => import("@/components/docs/colors/color-picker-combination-demo")),
+  "forms/checkbox-demo": {
+    component: React.lazy(() => import("@/components/docs/forms/checkbox-demo")),
+  },
+  "forms/checkbox-controlled-demo": {
+    component: React.lazy(() => import("@/components/docs/forms/checkbox-controlled-demo")),
+  },
+  "forms/text-field-controlled-demo": {
+    component: React.lazy(() => import("@/components/docs/forms/text-field-controlled-demo")),
+  },
+  "forms/input-otp-separator-demo": {
+    component: React.lazy(() => import("@/components/docs/forms/input-otp-separator-demo")),
+  },
+  "forms/checkbox-disabled-demo": {
+    component: React.lazy(() => import("@/components/docs/forms/checkbox-disabled-demo")),
+  },
+  "forms/switch-disabled-demo": {
+    component: React.lazy(() => import("@/components/docs/forms/switch-disabled-demo")),
+  },
+  "forms/input-otp-demo": {
+    component: React.lazy(() => import("@/components/docs/forms/input-otp-demo")),
+  },
+  "forms/radio-group-invalid-demo": {
+    component: React.lazy(() => import("@/components/docs/forms/radio-group-invalid-demo")),
+  },
+  "forms/number-field-disabled-demo": {
+    component: React.lazy(() => import("@/components/docs/forms/number-field-disabled-demo")),
+  },
+  "forms/textarea-controlled-demo": {
+    component: React.lazy(() => import("@/components/docs/forms/textarea-controlled-demo")),
+  },
+  "forms/slider-step-demo": {
+    component: React.lazy(() => import("@/components/docs/forms/slider-step-demo")),
+  },
+  "surfaces/card-table-demo": {
+    component: React.lazy(() => import("@/components/docs/surfaces/card-table-demo")),
+  },
+  "surfaces/card-login-form-demo": {
+    component: React.lazy(() => import("@/components/docs/surfaces/card-login-form-demo")),
+  },
+  "surfaces/grid-responsive-demo": {
+    component: React.lazy(() => import("@/components/docs/surfaces/grid-responsive-demo")),
+  },
+  "surfaces/grid-item-demo": {
+    component: React.lazy(() => import("@/components/docs/surfaces/grid-item-demo")),
+  },
+  "surfaces/grid-collections-demo": {
+    component: React.lazy(() => import("@/components/docs/surfaces/grid-collections-demo")),
+  },
+  "surfaces/card-demo": {
+    component: React.lazy(() => import("@/components/docs/surfaces/card-demo")),
+  },
+  "surfaces/grid-gap-demo": {
+    component: React.lazy(() => import("@/components/docs/surfaces/grid-gap-demo")),
+  },
+  "surfaces/grid-basic-demo": {
+    component: React.lazy(() => import("@/components/docs/surfaces/grid-basic-demo")),
+  },
+  "surfaces/grid-gap-x-y-demo": {
+    component: React.lazy(() => import("@/components/docs/surfaces/grid-gap-x-y-demo")),
+  },
+  "surfaces/grid-debug-demo": {
+    component: React.lazy(() => import("@/components/docs/surfaces/grid-debug-demo")),
+  },
+  "overlays/popover-demo": {
+    component: React.lazy(() => import("@/components/docs/overlays/popover-demo")),
+  },
+  "overlays/sheet-menu-demo": {
+    component: React.lazy(() => import("@/components/docs/overlays/sheet-menu-demo")),
+  },
+  "overlays/modal-size-demo": {
+    component: React.lazy(() => import("@/components/docs/overlays/modal-size-demo")),
+  },
+  "overlays/modal-triggered-by-menu-demo": {
+    component: React.lazy(() => import("@/components/docs/overlays/modal-triggered-by-menu-demo")),
+  },
+  "overlays/drawer-controlled-demo": {
+    component: React.lazy(() => import("@/components/docs/overlays/drawer-controlled-demo")),
+  },
+  "overlays/modal-sticky-demo": {
+    component: React.lazy(() => import("@/components/docs/overlays/modal-sticky-demo")),
+  },
+  "overlays/sheet-demo": {
+    component: React.lazy(() => import("@/components/docs/overlays/sheet-demo")),
+  },
+  "overlays/sheet-basic-demo": {
+    component: React.lazy(() => import("@/components/docs/overlays/sheet-basic-demo")),
+  },
+  "overlays/modal-nested-demo": {
+    component: React.lazy(() => import("@/components/docs/overlays/modal-nested-demo")),
+  },
+  "overlays/modal-controlled-demo": {
+    component: React.lazy(() => import("@/components/docs/overlays/modal-controlled-demo")),
+  },
+  "overlays/modal-demo": {
+    component: React.lazy(() => import("@/components/docs/overlays/modal-demo")),
+  },
+  "overlays/drawer-with-footer-demo": {
+    component: React.lazy(() => import("@/components/docs/overlays/drawer-with-footer-demo")),
+  },
+  "overlays/tooltip-demo": {
+    component: React.lazy(() => import("@/components/docs/overlays/tooltip-demo")),
+  },
+  "overlays/drawer-basic-demo": {
+    component: React.lazy(() => import("@/components/docs/overlays/drawer-basic-demo")),
+  },
+  "overlays/alert-dialog-demo": {
+    component: React.lazy(() => import("@/components/docs/overlays/alert-dialog-demo")),
+  },
+  "statuses/note-demo": {
+    component: React.lazy(() => import("@/components/docs/statuses/note-demo")),
+  },
+  "statuses/progress-bar-demo": {
+    component: React.lazy(() => import("@/components/docs/statuses/progress-bar-demo")),
+  },
+  "statuses/toaster-action-demo": {
+    component: React.lazy(() => import("@/components/docs/statuses/toaster-action-demo")),
+  },
+  "statuses/toaster-status-demo": {
+    component: React.lazy(() => import("@/components/docs/statuses/toaster-status-demo")),
+  },
+  "statuses/table-of-badges": {
+    component: React.lazy(() => import("@/components/docs/statuses/table-of-badges")),
+  },
+  "statuses/badge-shape-demo": {
+    component: React.lazy(() => import("@/components/docs/statuses/badge-shape-demo")),
+  },
+  "statuses/meter-demo": {
+    component: React.lazy(() => import("@/components/docs/statuses/meter-demo")),
+  },
+  "statuses/toaster-demo": {
+    component: React.lazy(() => import("@/components/docs/statuses/toaster-demo")),
+  },
+  "statuses/toaster-positions-demo": {
+    component: React.lazy(() => import("@/components/docs/statuses/toaster-positions-demo")),
+  },
+  "statuses/indeterminate-progress-bar-demo": {
+    component: React.lazy(() => import("@/components/docs/statuses/indeterminate-progress-bar-demo")),
+  },
+  "statuses/badge-demo": {
+    component: React.lazy(() => import("@/components/docs/statuses/badge-demo")),
   },
   "colors/color-picker-controlled-demo": {
     component: React.lazy(() => import("@/components/docs/colors/color-picker-controlled-demo")),
   },
-  "colors/color-field-controlled-demo": {
-    component: React.lazy(() => import("@/components/docs/colors/color-field-controlled-demo")),
+  "colors/color-area-space-demo": {
+    component: React.lazy(() => import("@/components/docs/colors/color-area-space-demo")),
   },
   "colors/color-field-disabled-demo": {
     component: React.lazy(() => import("@/components/docs/colors/color-field-disabled-demo")),
   },
+  "colors/color-picker-with-description-demo": {
+    component: React.lazy(() => import("@/components/docs/colors/color-picker-with-description-demo")),
+  },
   "colors/color-picker-enable-swatch-demo": {
     component: React.lazy(() => import("@/components/docs/colors/color-picker-enable-swatch-demo")),
-  },
-  "colors/color-area-channel-demo": {
-    component: React.lazy(() => import("@/components/docs/colors/color-area-channel-demo")),
-  },
-  "colors/color-slider-demo": {
-    component: React.lazy(() => import("@/components/docs/colors/color-slider-demo")),
-  },
-  "colors/color-field-with-prefix-demo": {
-    component: React.lazy(() => import("@/components/docs/colors/color-field-with-prefix-demo")),
-  },
-  "colors/color-field-demo": {
-    component: React.lazy(() => import("@/components/docs/colors/color-field-demo")),
-  },
-  "colors/color-field-with-suffix-demo": {
-    component: React.lazy(() => import("@/components/docs/colors/color-field-with-suffix-demo")),
-  },
-  "colors/color-slider-with-label-demo": {
-    component: React.lazy(() => import("@/components/docs/colors/color-slider-with-label-demo")),
   },
   "colors/color-area-disabled-demo": {
     component: React.lazy(() => import("@/components/docs/colors/color-area-disabled-demo")),
   },
-  "colors/color-slider-without-output-demo": {
-    component: React.lazy(() => import("@/components/docs/colors/color-slider-without-output-demo")),
+  "colors/color-field-controlled-demo": {
+    component: React.lazy(() => import("@/components/docs/colors/color-field-controlled-demo")),
   },
-  "colors/color-picker-with-description-demo": {
-    component: React.lazy(() => import("@/components/docs/colors/color-picker-with-description-demo")),
-  },
-  "colors/color-picker-custom-colors-demo": {
-    component: React.lazy(() => import("@/components/docs/colors/color-picker-custom-colors-demo")),
-  },
-  "colors/color-picker-with-label-demo": {
-    component: React.lazy(() => import("@/components/docs/colors/color-picker-with-label-demo")),
+  "colors/color-picker-with-placeholder-demo": {
+    component: React.lazy(() => import("@/components/docs/colors/color-picker-with-placeholder-demo")),
   },
   "colors/color-picker-demo": {
     component: React.lazy(() => import("@/components/docs/colors/color-picker-demo")),
@@ -437,188 +374,233 @@ export const previews: Record<string, any> = {
   "colors/color-wheel-controlled-demo": {
     component: React.lazy(() => import("@/components/docs/colors/color-wheel-controlled-demo")),
   },
-  "colors/color-wheel-demo": {
-    component: React.lazy(() => import("@/components/docs/colors/color-wheel-demo")),
-  },
   "colors/color-swatch-picker-demo": {
     component: React.lazy(() => import("@/components/docs/colors/color-swatch-picker-demo")),
-  },
-  "colors/color-wheel-disabled-demo": {
-    component: React.lazy(() => import("@/components/docs/colors/color-wheel-disabled-demo")),
-  },
-  "colors/color-swatch-picker-item-disabled-demo": {
-    component: React.lazy(() => import("@/components/docs/colors/color-swatch-picker-item-disabled-demo")),
   },
   "colors/color-picker-enable-selection-format-demo": {
     component: React.lazy(() => import("@/components/docs/colors/color-picker-enable-selection-format-demo")),
   },
+  "colors/color-wheel-disabled-demo": {
+    component: React.lazy(() => import("@/components/docs/colors/color-wheel-disabled-demo")),
+  },
+  "colors/color-wheel-demo": {
+    component: React.lazy(() => import("@/components/docs/colors/color-wheel-demo")),
+  },
+  "colors/color-field-with-suffix-demo": {
+    component: React.lazy(() => import("@/components/docs/colors/color-field-with-suffix-demo")),
+  },
+  "colors/color-slider-demo": {
+    component: React.lazy(() => import("@/components/docs/colors/color-slider-demo")),
+  },
+  "colors/color-picker-custom-colors-demo": {
+    component: React.lazy(() => import("@/components/docs/colors/color-picker-custom-colors-demo")),
+  },
+  "colors/color-picker-combination-demo": {
+    component: React.lazy(() => import("@/components/docs/colors/color-picker-combination-demo")),
+  },
   "colors/color-area-demo": {
     component: React.lazy(() => import("@/components/docs/colors/color-area-demo")),
   },
-  "colors/color-picker-with-placeholder-demo": {
-    component: React.lazy(() => import("@/components/docs/colors/color-picker-with-placeholder-demo")),
+  "colors/color-swatch-controlled-demo": {
+    component: React.lazy(() => import("@/components/docs/colors/color-swatch-controlled-demo")),
   },
-  "colors/color-area-space-demo": {
-    component: React.lazy(() => import("@/components/docs/colors/color-area-space-demo")),
+  "colors/color-picker-disabled-demo": {
+    component: React.lazy(() => import("@/components/docs/colors/color-picker-disabled-demo")),
+  },
+  "colors/color-field-demo": {
+    component: React.lazy(() => import("@/components/docs/colors/color-field-demo")),
+  },
+  "colors/color-slider-with-label-demo": {
+    component: React.lazy(() => import("@/components/docs/colors/color-slider-with-label-demo")),
+  },
+  "colors/color-swatch-picker-item-disabled-demo": {
+    component: React.lazy(() => import("@/components/docs/colors/color-swatch-picker-item-disabled-demo")),
   },
   "colors/color-slider-disabled-demo": {
     component: React.lazy(() => import("@/components/docs/colors/color-slider-disabled-demo")),
   },
-  "charts/area-chart-icons-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/area-chart-icons-demo")),
+  "colors/color-area-controlled-demo": {
+    component: React.lazy(() => import("@/components/docs/colors/color-area-controlled-demo")),
   },
-  "charts/line-chart-dots-colors-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/line-chart-dots-colors-demo")),
+  "colors/color-swatch-demo": {
+    component: React.lazy(() => import("@/components/docs/colors/color-swatch-demo")),
   },
-  "charts/bar-chart-active-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/bar-chart-active-demo")),
+  "colors/color-field-with-prefix-demo": {
+    component: React.lazy(() => import("@/components/docs/colors/color-field-with-prefix-demo")),
   },
-  "charts/pie-chart-donut-with-text-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/pie-chart-donut-with-text-demo")),
+  "colors/color-slider-without-output-demo": {
+    component: React.lazy(() => import("@/components/docs/colors/color-slider-without-output-demo")),
   },
-  "charts/radar-chart-icons-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/radar-chart-icons-demo")),
+  "colors/color-picker-with-label-demo": {
+    component: React.lazy(() => import("@/components/docs/colors/color-picker-with-label-demo")),
   },
-  "charts/radar-chart-grid-circle-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/radar-chart-grid-circle-demo")),
+  "colors/color-area-channel-demo": {
+    component: React.lazy(() => import("@/components/docs/colors/color-area-channel-demo")),
   },
-  "charts/pie-chart-label-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/pie-chart-label-demo")),
+  "pickers/combo-box-demo": {
+    component: React.lazy(() => import("@/components/docs/pickers/combo-box-demo")),
   },
-  "charts/pie-chart-separator-none-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/pie-chart-separator-none-demo")),
+  "pickers/select-demo": {
+    component: React.lazy(() => import("@/components/docs/pickers/select-demo")),
   },
-  "charts/pie-chart-custom-label-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/pie-chart-custom-label-demo")),
+  "pickers/combo-box-disabled-demo": {
+    component: React.lazy(() => import("@/components/docs/pickers/combo-box-disabled-demo")),
   },
-  "charts/area-chart-stacked-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/area-chart-stacked-demo")),
+  "pickers/select-invalid-demo": {
+    component: React.lazy(() => import("@/components/docs/pickers/select-invalid-demo")),
   },
-  "charts/line-chart-multiple-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/line-chart-multiple-demo")),
+  "pickers/select-disabled-demo": {
+    component: React.lazy(() => import("@/components/docs/pickers/select-disabled-demo")),
   },
-  "charts/bar-chart-label-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/bar-chart-label-demo")),
+  "pickers/multi-select-demo": {
+    component: React.lazy(() => import("@/components/docs/pickers/multi-select-demo")),
   },
-  "charts/radar-chart-grid-filled-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/radar-chart-grid-filled-demo")),
+  "pickers/combo-box-invalid-demo": {
+    component: React.lazy(() => import("@/components/docs/pickers/combo-box-invalid-demo")),
   },
-  "charts/area-chart-legend-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/area-chart-legend-demo")),
-  },
-  "charts/line-chart-label-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/line-chart-label-demo")),
-  },
-  "charts/line-chart-linear-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/line-chart-linear-demo")),
-  },
-  "charts/line-chart-custom-dots-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/line-chart-custom-dots-demo")),
-  },
-  "charts/area-chart-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/area-chart-demo")),
-  },
-  "charts/bar-chart-mixed-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/bar-chart-mixed-demo")),
-  },
-  "charts/pie-chart-interactive-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/pie-chart-interactive-demo")),
-  },
-  "charts/line-chart-interactive-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/line-chart-interactive-demo")),
-  },
-  "charts/radial-chart-text-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/radial-chart-text-demo")),
-  },
-  "charts/area-chart-axes-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/area-chart-axes-demo")),
-  },
-  "charts/radar-chart-radius-axis-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/radar-chart-radius-axis-demo")),
-  },
-  "charts/line-chart-custom-label-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/line-chart-custom-label-demo")),
-  },
-  "charts/bar-chart-custom-label-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/bar-chart-custom-label-demo")),
-  },
-  "charts/radar-chart-multiple-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/radar-chart-multiple-demo")),
-  },
-  "charts/radar-chart-simple-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/radar-chart-simple-demo")),
+  "pickers/combo-box-avatar-demo": {
+    component: React.lazy(() => import("@/components/docs/pickers/combo-box-avatar-demo")),
   },
   "charts/radar-chart-dots-demo": {
     component: React.lazy(() => import("@/components/docs/charts/radar-chart-dots-demo")),
   },
-  "charts/radial-chart-grid-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/radial-chart-grid-demo")),
+  "charts/radar-chart-radius-axis-demo": {
+    component: React.lazy(() => import("@/components/docs/charts/radar-chart-radius-axis-demo")),
   },
-  "charts/area-chart-gradient-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/area-chart-gradient-demo")),
+  "charts/line-chart-dots-colors-demo": {
+    component: React.lazy(() => import("@/components/docs/charts/line-chart-dots-colors-demo")),
   },
-  "charts/line-chart-dots-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/line-chart-dots-demo")),
+  "charts/pie-chart-simple-demo": {
+    component: React.lazy(() => import("@/components/docs/charts/pie-chart-simple-demo")),
   },
   "charts/bar-chart-horizontal-demo": {
     component: React.lazy(() => import("@/components/docs/charts/bar-chart-horizontal-demo")),
   },
-  "charts/radar-chart-grid-custom-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/radar-chart-grid-custom-demo")),
-  },
-  "charts/pie-chart-legend-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/pie-chart-legend-demo")),
-  },
   "charts/line-chart-simple-demo": {
     component: React.lazy(() => import("@/components/docs/charts/line-chart-simple-demo")),
-  },
-  "charts/pie-chart-stacked-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/pie-chart-stacked-demo")),
-  },
-  "charts/radar-chart-grid-circle-filled-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/radar-chart-grid-circle-filled-demo")),
-  },
-  "charts/area-chart-step-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/area-chart-step-demo")),
-  },
-  "charts/bar-chart-interactive-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/bar-chart-interactive-demo")),
-  },
-  "charts/pie-chart-donut-active-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/pie-chart-donut-active-demo")),
-  },
-  "charts/area-chart-simple-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/area-chart-simple-demo")),
-  },
-  "charts/radar-chart-grid-none-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/radar-chart-grid-none-demo")),
-  },
-  "charts/bar-chart-stacked-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/bar-chart-stacked-demo")),
-  },
-  "charts/pie-chart-label-list-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/pie-chart-label-list-demo")),
-  },
-  "charts/radar-chart-custom-label-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/radar-chart-custom-label-demo")),
-  },
-  "charts/bar-chart-multiple-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/bar-chart-multiple-demo")),
-  },
-  "charts/radial-chart-stacked-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/radial-chart-stacked-demo")),
   },
   "charts/radar-chart-lines-only-demo": {
     component: React.lazy(() => import("@/components/docs/charts/radar-chart-lines-only-demo")),
   },
-  "charts/line-chart-step-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/line-chart-step-demo")),
+  "charts/line-chart-label-demo": {
+    component: React.lazy(() => import("@/components/docs/charts/line-chart-label-demo")),
   },
   "charts/bar-chart-simple-demo": {
     component: React.lazy(() => import("@/components/docs/charts/bar-chart-simple-demo")),
   },
+  "charts/radar-chart-multiple-demo": {
+    component: React.lazy(() => import("@/components/docs/charts/radar-chart-multiple-demo")),
+  },
+  "charts/bar-chart-custom-label-demo": {
+    component: React.lazy(() => import("@/components/docs/charts/bar-chart-custom-label-demo")),
+  },
+  "charts/area-chart-legend-demo": {
+    component: React.lazy(() => import("@/components/docs/charts/area-chart-legend-demo")),
+  },
+  "charts/pie-chart-label-demo": {
+    component: React.lazy(() => import("@/components/docs/charts/pie-chart-label-demo")),
+  },
+  "charts/pie-chart-donut-demo": {
+    component: React.lazy(() => import("@/components/docs/charts/pie-chart-donut-demo")),
+  },
+  "charts/line-chart-interactive-demo": {
+    component: React.lazy(() => import("@/components/docs/charts/line-chart-interactive-demo")),
+  },
+  "charts/bar-chart-mixed-demo": {
+    component: React.lazy(() => import("@/components/docs/charts/bar-chart-mixed-demo")),
+  },
+  "charts/area-chart-simple-demo": {
+    component: React.lazy(() => import("@/components/docs/charts/area-chart-simple-demo")),
+  },
+  "charts/bar-chart-label-demo": {
+    component: React.lazy(() => import("@/components/docs/charts/bar-chart-label-demo")),
+  },
+  "charts/bar-chart-stacked-demo": {
+    component: React.lazy(() => import("@/components/docs/charts/bar-chart-stacked-demo")),
+  },
+  "charts/radar-chart-grid-circle-demo": {
+    component: React.lazy(() => import("@/components/docs/charts/radar-chart-grid-circle-demo")),
+  },
+  "charts/line-chart-custom-label-demo": {
+    component: React.lazy(() => import("@/components/docs/charts/line-chart-custom-label-demo")),
+  },
+  "charts/area-chart-icons-demo": {
+    component: React.lazy(() => import("@/components/docs/charts/area-chart-icons-demo")),
+  },
+  "charts/pie-chart-legend-demo": {
+    component: React.lazy(() => import("@/components/docs/charts/pie-chart-legend-demo")),
+  },
+  "charts/bar-chart-active-demo": {
+    component: React.lazy(() => import("@/components/docs/charts/bar-chart-active-demo")),
+  },
+  "charts/radar-chart-grid-none-demo": {
+    component: React.lazy(() => import("@/components/docs/charts/radar-chart-grid-none-demo")),
+  },
+  "charts/radial-chart-grid-demo": {
+    component: React.lazy(() => import("@/components/docs/charts/radial-chart-grid-demo")),
+  },
+  "charts/pie-chart-interactive-demo": {
+    component: React.lazy(() => import("@/components/docs/charts/pie-chart-interactive-demo")),
+  },
+  "charts/pie-chart-separator-none-demo": {
+    component: React.lazy(() => import("@/components/docs/charts/pie-chart-separator-none-demo")),
+  },
+  "charts/radar-chart-legend-demo": {
+    component: React.lazy(() => import("@/components/docs/charts/radar-chart-legend-demo")),
+  },
+  "charts/pie-chart-donut-with-text-demo": {
+    component: React.lazy(() => import("@/components/docs/charts/pie-chart-donut-with-text-demo")),
+  },
+  "charts/line-chart-step-demo": {
+    component: React.lazy(() => import("@/components/docs/charts/line-chart-step-demo")),
+  },
+  "charts/area-chart-gradient-demo": {
+    component: React.lazy(() => import("@/components/docs/charts/area-chart-gradient-demo")),
+  },
+  "charts/pie-chart-donut-active-demo": {
+    component: React.lazy(() => import("@/components/docs/charts/pie-chart-donut-active-demo")),
+  },
+  "charts/radial-chart-stacked-demo": {
+    component: React.lazy(() => import("@/components/docs/charts/radial-chart-stacked-demo")),
+  },
+  "charts/bar-chart-negative-demo": {
+    component: React.lazy(() => import("@/components/docs/charts/bar-chart-negative-demo")),
+  },
+  "charts/radar-chart-simple-demo": {
+    component: React.lazy(() => import("@/components/docs/charts/radar-chart-simple-demo")),
+  },
+  "charts/area-chart-step-demo": {
+    component: React.lazy(() => import("@/components/docs/charts/area-chart-step-demo")),
+  },
+  "charts/bar-chart-multiple-demo": {
+    component: React.lazy(() => import("@/components/docs/charts/bar-chart-multiple-demo")),
+  },
+  "charts/line-chart-multiple-demo": {
+    component: React.lazy(() => import("@/components/docs/charts/line-chart-multiple-demo")),
+  },
+  "charts/pie-chart-custom-label-demo": {
+    component: React.lazy(() => import("@/components/docs/charts/pie-chart-custom-label-demo")),
+  },
+  "charts/line-chart-dots-demo": {
+    component: React.lazy(() => import("@/components/docs/charts/line-chart-dots-demo")),
+  },
+  "charts/area-chart-axes-demo": {
+    component: React.lazy(() => import("@/components/docs/charts/area-chart-axes-demo")),
+  },
+  "charts/area-chart-interactive-demo": {
+    component: React.lazy(() => import("@/components/docs/charts/area-chart-interactive-demo")),
+  },
+  "charts/radar-chart-grid-custom-demo": {
+    component: React.lazy(() => import("@/components/docs/charts/radar-chart-grid-custom-demo")),
+  },
   "charts/area-chart-stacked-expanded-demo": {
     component: React.lazy(() => import("@/components/docs/charts/area-chart-stacked-expanded-demo")),
+  },
+  "charts/line-chart-custom-dots-demo": {
+    component: React.lazy(() => import("@/components/docs/charts/line-chart-custom-dots-demo")),
+  },
+  "charts/radar-chart-icons-demo": {
+    component: React.lazy(() => import("@/components/docs/charts/radar-chart-icons-demo")),
   },
   "charts/radial-chart-shape-demo": {
     component: React.lazy(() => import("@/components/docs/charts/radial-chart-shape-demo")),
@@ -626,83 +608,47 @@ export const previews: Record<string, any> = {
   "charts/radial-chart-simple-demo": {
     component: React.lazy(() => import("@/components/docs/charts/radial-chart-simple-demo")),
   },
-  "charts/bar-chart-negative-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/bar-chart-negative-demo")),
+  "charts/radial-chart-text-demo": {
+    component: React.lazy(() => import("@/components/docs/charts/radial-chart-text-demo")),
   },
-  "charts/pie-chart-donut-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/pie-chart-donut-demo")),
+  "charts/radar-chart-grid-filled-demo": {
+    component: React.lazy(() => import("@/components/docs/charts/radar-chart-grid-filled-demo")),
   },
-  "charts/radar-chart-legend-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/radar-chart-legend-demo")),
+  "charts/pie-chart-stacked-demo": {
+    component: React.lazy(() => import("@/components/docs/charts/pie-chart-stacked-demo")),
   },
-  "charts/pie-chart-simple-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/pie-chart-simple-demo")),
+  "charts/area-chart-demo": {
+    component: React.lazy(() => import("@/components/docs/charts/area-chart-demo")),
   },
-  "charts/area-chart-interactive-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/area-chart-interactive-demo")),
+  "charts/radar-chart-custom-label-demo": {
+    component: React.lazy(() => import("@/components/docs/charts/radar-chart-custom-label-demo")),
+  },
+  "charts/line-chart-linear-demo": {
+    component: React.lazy(() => import("@/components/docs/charts/line-chart-linear-demo")),
   },
   "charts/area-chart-linear-demo": {
     component: React.lazy(() => import("@/components/docs/charts/area-chart-linear-demo")),
   },
-  "charts/radar-chart-grid-circle-no-lines-demo": {
-    component: React.lazy(() => import("@/components/docs/charts/radar-chart-grid-circle-no-lines-demo")),
+  "charts/pie-chart-label-list-demo": {
+    component: React.lazy(() => import("@/components/docs/charts/pie-chart-label-list-demo")),
+  },
+  "charts/area-chart-stacked-demo": {
+    component: React.lazy(() => import("@/components/docs/charts/area-chart-stacked-demo")),
+  },
+  "charts/radar-chart-grid-circle-filled-demo": {
+    component: React.lazy(() => import("@/components/docs/charts/radar-chart-grid-circle-filled-demo")),
   },
   "charts/radial-chart-label-demo": {
     component: React.lazy(() => import("@/components/docs/charts/radial-chart-label-demo")),
   },
-  "overlays/drawer-controlled-demo": {
-    component: React.lazy(() => import("@/components/docs/overlays/drawer-controlled-demo")),
+  "charts/bar-chart-interactive-demo": {
+    component: React.lazy(() => import("@/components/docs/charts/bar-chart-interactive-demo")),
   },
-  "overlays/modal-triggered-by-menu-demo": {
-    component: React.lazy(() => import("@/components/docs/overlays/modal-triggered-by-menu-demo")),
+  "charts/radar-chart-grid-circle-no-lines-demo": {
+    component: React.lazy(() => import("@/components/docs/charts/radar-chart-grid-circle-no-lines-demo")),
   },
-  "overlays/alert-dialog-demo": {
-    component: React.lazy(() => import("@/components/docs/overlays/alert-dialog-demo")),
-  },
-  "overlays/modal-demo": {
-    component: React.lazy(() => import("@/components/docs/overlays/modal-demo")),
-  },
-  "overlays/popover-demo": {
-    component: React.lazy(() => import("@/components/docs/overlays/popover-demo")),
-  },
-  "overlays/modal-controlled-demo": {
-    component: React.lazy(() => import("@/components/docs/overlays/modal-controlled-demo")),
-  },
-  "overlays/sheet-menu-demo": {
-    component: React.lazy(() => import("@/components/docs/overlays/sheet-menu-demo")),
-  },
-  "overlays/drawer-with-footer-demo": {
-    component: React.lazy(() => import("@/components/docs/overlays/drawer-with-footer-demo")),
-  },
-  "overlays/sheet-basic-demo": {
-    component: React.lazy(() => import("@/components/docs/overlays/sheet-basic-demo")),
-  },
-  "overlays/sheet-demo": {
-    component: React.lazy(() => import("@/components/docs/overlays/sheet-demo")),
-  },
-  "overlays/drawer-basic-demo": {
-    component: React.lazy(() => import("@/components/docs/overlays/drawer-basic-demo")),
-  },
-  "overlays/tooltip-demo": {
-    component: React.lazy(() => import("@/components/docs/overlays/tooltip-demo")),
-  },
-  "media/avatar-shape-demo": {
-    component: React.lazy(() => import("@/components/docs/media/avatar-shape-demo")),
-  },
-  "media/avatar-initials-demo": {
-    component: React.lazy(() => import("@/components/docs/media/avatar-initials-demo")),
-  },
-  "media/avatar-group-demo": {
-    component: React.lazy(() => import("@/components/docs/media/avatar-group-demo")),
-  },
-  "media/avatar-size-demo": {
-    component: React.lazy(() => import("@/components/docs/media/avatar-size-demo")),
-  },
-  "media/avatar-demo": {
-    component: React.lazy(() => import("@/components/docs/media/avatar-demo")),
-  },
-  "media/avatar-fallback-demo": {
-    component: React.lazy(() => import("@/components/docs/media/avatar-fallback-demo")),
+  "buttons/button-variant-demo": {
+    component: React.lazy(() => import("@/components/docs/buttons/button-variant-demo")),
   },
   "buttons/file-trigger-disabled-demo": {
     component: React.lazy(() => import("@/components/docs/buttons/file-trigger-disabled-demo")),
@@ -710,8 +656,17 @@ export const previews: Record<string, any> = {
   "buttons/file-trigger-folder-demo": {
     component: React.lazy(() => import("@/components/docs/buttons/file-trigger-folder-demo")),
   },
-  "buttons/button-disabled-demo": {
-    component: React.lazy(() => import("@/components/docs/buttons/button-disabled-demo")),
+  "buttons/button-size-demo": {
+    component: React.lazy(() => import("@/components/docs/buttons/button-size-demo")),
+  },
+  "buttons/toggle-button-demo": {
+    component: React.lazy(() => import("@/components/docs/buttons/toggle-button-demo")),
+  },
+  "buttons/button-icon-demo": {
+    component: React.lazy(() => import("@/components/docs/buttons/button-icon-demo")),
+  },
+  "buttons/file-trigger-demo": {
+    component: React.lazy(() => import("@/components/docs/buttons/file-trigger-demo")),
   },
   "buttons/button-only-icon-demo": {
     component: React.lazy(() => import("@/components/docs/buttons/button-only-icon-demo")),
@@ -719,28 +674,100 @@ export const previews: Record<string, any> = {
   "buttons/button-basic-demo": {
     component: React.lazy(() => import("@/components/docs/buttons/button-basic-demo")),
   },
-  "buttons/file-trigger-demo": {
-    component: React.lazy(() => import("@/components/docs/buttons/file-trigger-demo")),
+  "buttons/file-trigger-multiple-demo": {
+    component: React.lazy(() => import("@/components/docs/buttons/file-trigger-multiple-demo")),
   },
-  "buttons/button-variant-demo": {
-    component: React.lazy(() => import("@/components/docs/buttons/button-variant-demo")),
-  },
-  "buttons/button-icon-demo": {
-    component: React.lazy(() => import("@/components/docs/buttons/button-icon-demo")),
+  "buttons/button-disabled-demo": {
+    component: React.lazy(() => import("@/components/docs/buttons/button-disabled-demo")),
   },
   "buttons/button-shape-demo": {
     component: React.lazy(() => import("@/components/docs/buttons/button-shape-demo")),
   },
-  "buttons/toggle-button-demo": {
-    component: React.lazy(() => import("@/components/docs/buttons/toggle-button-demo")),
-  },
-  "buttons/file-trigger-multiple-demo": {
-    component: React.lazy(() => import("@/components/docs/buttons/file-trigger-multiple-demo")),
-  },
   "buttons/file-trigger-camera-demo": {
     component: React.lazy(() => import("@/components/docs/buttons/file-trigger-camera-demo")),
   },
-  "buttons/button-size-demo": {
-    component: React.lazy(() => import("@/components/docs/buttons/button-size-demo")),
+  "navigation/link-demo": {
+    component: React.lazy(() => import("@/components/docs/navigation/link-demo")),
+  },
+  "navigation/pagination-demo": {
+    component: React.lazy(() => import("@/components/docs/navigation/pagination-demo")),
+  },
+  "navigation/simple-pagination-demo": {
+    component: React.lazy(() => import("@/components/docs/navigation/simple-pagination-demo")),
+  },
+  "navigation/pagination-dynamic-demo": {
+    component: React.lazy(() => import("@/components/docs/navigation/pagination-dynamic-demo")),
+  },
+  "navigation/tabs-orientation-demo": {
+    component: React.lazy(() => import("@/components/docs/navigation/tabs-orientation-demo")),
+  },
+  "navigation/breadcrumbs-demo": {
+    component: React.lazy(() => import("@/components/docs/navigation/breadcrumbs-demo")),
+  },
+  "navigation/tabs-demo": {
+    component: React.lazy(() => import("@/components/docs/navigation/tabs-demo")),
+  },
+  "date-and-time/date-field-disabled-demo": {
+    component: React.lazy(() => import("@/components/docs/date-and-time/date-field-disabled-demo")),
+  },
+  "date-and-time/time-field-validation-demo": {
+    component: React.lazy(() => import("@/components/docs/date-and-time/time-field-validation-demo")),
+  },
+  "date-and-time/date-range-picker-disabled-demo": {
+    component: React.lazy(() => import("@/components/docs/date-and-time/date-range-picker-disabled-demo")),
+  },
+  "date-and-time/date-range-picker-demo": {
+    component: React.lazy(() => import("@/components/docs/date-and-time/date-range-picker-demo")),
+  },
+  "date-and-time/date-range-picker-custom-validation-demo": {
+    component: React.lazy(() => import("@/components/docs/date-and-time/date-range-picker-custom-validation-demo")),
+  },
+  "date-and-time/date-field-validation-demo": {
+    component: React.lazy(() => import("@/components/docs/date-and-time/date-field-validation-demo")),
+  },
+  "date-and-time/date-field-demo": {
+    component: React.lazy(() => import("@/components/docs/date-and-time/date-field-demo")),
+  },
+  "date-and-time/time-field-disabled-demo": {
+    component: React.lazy(() => import("@/components/docs/date-and-time/time-field-disabled-demo")),
+  },
+  "date-and-time/time-field-demo": {
+    component: React.lazy(() => import("@/components/docs/date-and-time/time-field-demo")),
+  },
+  "date-and-time/date-picker-required-demo": {
+    component: React.lazy(() => import("@/components/docs/date-and-time/date-picker-required-demo")),
+  },
+  "date-and-time/date-picker-controlled-demo": {
+    component: React.lazy(() => import("@/components/docs/date-and-time/date-picker-controlled-demo")),
+  },
+  "date-and-time/date-picker-custom-validation-demo": {
+    component: React.lazy(() => import("@/components/docs/date-and-time/date-picker-custom-validation-demo")),
+  },
+  "date-and-time/date-range-picker-controlled-demo": {
+    component: React.lazy(() => import("@/components/docs/date-and-time/date-range-picker-controlled-demo")),
+  },
+  "date-and-time/time-field-controlled-demo": {
+    component: React.lazy(() => import("@/components/docs/date-and-time/time-field-controlled-demo")),
+  },
+  "date-and-time/date-picker-demo": {
+    component: React.lazy(() => import("@/components/docs/date-and-time/date-picker-demo")),
+  },
+  "date-and-time/date-field-controlled-demo": {
+    component: React.lazy(() => import("@/components/docs/date-and-time/date-field-controlled-demo")),
+  },
+  "date-and-time/calendar-demo": {
+    component: React.lazy(() => import("@/components/docs/date-and-time/calendar-demo")),
+  },
+  "date-and-time/date-range-picker-validation-demo": {
+    component: React.lazy(() => import("@/components/docs/date-and-time/date-range-picker-validation-demo")),
+  },
+  "date-and-time/time-field-hc-demo": {
+    component: React.lazy(() => import("@/components/docs/date-and-time/time-field-hc-demo")),
+  },
+  "date-and-time/date-picker-disabled-demo": {
+    component: React.lazy(() => import("@/components/docs/date-and-time/date-picker-disabled-demo")),
+  },
+  "date-and-time/range-calendar-demo": {
+    component: React.lazy(() => import("@/components/docs/date-and-time/range-calendar-demo")),
   },
 };
