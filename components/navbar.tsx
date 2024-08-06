@@ -10,7 +10,6 @@ import {
     GithubLogo,
     Logo,
     LucideLogo,
-    ShadcnLogo,
     TailwindLogo
 } from '@/components/logo'
 import { ThemeToggle } from '@/components/theme-toggle'
@@ -23,7 +22,6 @@ import {
     MoonIcon,
     PaletteIcon,
     SearchIcon,
-    SmileIcon,
     SunIcon
 } from 'lucide-react'
 import { useTheme } from 'next-themes'
@@ -249,23 +247,15 @@ export function NavbarDropdown() {
                         <AdobeLogo />
                         RAC
                     </Menu.Item>
-                    <Menu.Item href='https://d.irsyad.co' target='_blank'>
+                    <Menu.Item href='https://justd.co' target='_blank'>
                         <DLogo />
-                        D.
-                    </Menu.Item>
-                    <Menu.Item href='https://ui.shadcn.com' target='_blank'>
-                        <ShadcnLogo />
-                        Shadcn UI
-                    </Menu.Item>
-                    <Menu.Item href='https://www.jollyui.dev' target='_blank'>
-                        <SmileIcon />
-                        Jolly UI
+                        Just D .
                     </Menu.Item>
                     <Menu.Item href='https://tailwindcss.com/' target='_blank'>
                         <TailwindLogo />
                         Tailwind CSS
                     </Menu.Item>
-                    <Menu.Item href='https://irsyad.co/colors' target='_blank'>
+                    <Menu.Item href='https://justd.co/colors' target='_blank'>
                         <PaletteIcon />
                         Colors
                     </Menu.Item>

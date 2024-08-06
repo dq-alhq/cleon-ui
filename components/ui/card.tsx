@@ -76,7 +76,7 @@ const CardContent = React.forwardRef<
     <div
         ref={ref}
         className={cn(
-            'px-6 pb-6 has-[table]:p-0 [&:has(table)]:border-t [&_.t-cel]:px-6 [&_.t-col]:px-6',
+            'px-6 pb-6 has-[table]:p-0 [&:has(table)]:border-t [&_.td]:px-6 [&_.th]:px-6',
             className
         )}
         {...props}

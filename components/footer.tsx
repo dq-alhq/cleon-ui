@@ -5,17 +5,9 @@ export const Footer = () => (
             Diqi Al-Haqqi
         </a>
         <br />
-        inspired by{' '}
-        <a target='_blank' href='https://github.com/shadcn/ui'>
-            Shadcn UI
-        </a>
-        ,{' '}
-        <a target='_blank' href='https://github.com/jolbol1/jolly-ui'>
-            Jolly UI
-        </a>
-        , and this project forked from{' '}
-        <a target='_blank' href='https://d.irsyad.co'>
-            D.
+        inspired by forked from{' '}
+        <a target='_blank' href='https://justd.co'>
+            Just D.
         </a>{' '}
         by{' '}
         <a target='_blank' href='https://github.com/irsyadadl'>

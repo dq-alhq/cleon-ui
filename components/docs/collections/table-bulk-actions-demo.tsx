@@ -36,7 +36,7 @@ export default function TableBulkActionsDemo() {
                     </Table.Body>
                 </Table>
             </Card>
-            <Description className='block mt-2 [&>strong]:text-fg text-muted-fg'>
+            <Description className='block mt-2 [&>strong]:text-foreground text-muted-foreground'>
                 {Array.from(selectedKeys).length > 0 ? (
                     <>
                         You have selected:{' '}

@@ -266,11 +266,17 @@ export const previews: Record<string, any> = {
   "surfaces/grid-debug-demo": {
     component: React.lazy(() => import("@/components/docs/surfaces/grid-debug-demo")),
   },
+  "overlays/tooltip-placement-demo": {
+    component: React.lazy(() => import("@/components/docs/overlays/tooltip-placement-demo")),
+  },
   "overlays/popover-demo": {
     component: React.lazy(() => import("@/components/docs/overlays/popover-demo")),
   },
   "overlays/sheet-menu-demo": {
     component: React.lazy(() => import("@/components/docs/overlays/sheet-menu-demo")),
+  },
+  "overlays/popover-controlled-demo": {
+    component: React.lazy(() => import("@/components/docs/overlays/popover-controlled-demo")),
   },
   "overlays/modal-size-demo": {
     component: React.lazy(() => import("@/components/docs/overlays/modal-size-demo")),
@@ -281,8 +287,14 @@ export const previews: Record<string, any> = {
   "overlays/drawer-controlled-demo": {
     component: React.lazy(() => import("@/components/docs/overlays/drawer-controlled-demo")),
   },
+  "overlays/tooltip-delay-demo": {
+    component: React.lazy(() => import("@/components/docs/overlays/tooltip-delay-demo")),
+  },
   "overlays/modal-sticky-demo": {
     component: React.lazy(() => import("@/components/docs/overlays/modal-sticky-demo")),
+  },
+  "overlays/popover-arrow-demo": {
+    component: React.lazy(() => import("@/components/docs/overlays/popover-arrow-demo")),
   },
   "overlays/sheet-demo": {
     component: React.lazy(() => import("@/components/docs/overlays/sheet-demo")),
@@ -293,8 +305,14 @@ export const previews: Record<string, any> = {
   "overlays/modal-nested-demo": {
     component: React.lazy(() => import("@/components/docs/overlays/modal-nested-demo")),
   },
+  "overlays/popover-custom-close-demo": {
+    component: React.lazy(() => import("@/components/docs/overlays/popover-custom-close-demo")),
+  },
   "overlays/modal-controlled-demo": {
     component: React.lazy(() => import("@/components/docs/overlays/modal-controlled-demo")),
+  },
+  "overlays/popover-trigger-demo": {
+    component: React.lazy(() => import("@/components/docs/overlays/popover-trigger-demo")),
   },
   "overlays/modal-demo": {
     component: React.lazy(() => import("@/components/docs/overlays/modal-demo")),
@@ -307,6 +325,9 @@ export const previews: Record<string, any> = {
   },
   "overlays/drawer-basic-demo": {
     component: React.lazy(() => import("@/components/docs/overlays/drawer-basic-demo")),
+  },
+  "overlays/popover-placement-demo": {
+    component: React.lazy(() => import("@/components/docs/overlays/popover-placement-demo")),
   },
   "overlays/alert-dialog-demo": {
     component: React.lazy(() => import("@/components/docs/overlays/alert-dialog-demo")),

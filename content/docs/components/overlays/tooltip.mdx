@@ -1,4 +1,4 @@
----
+    ---
 title: 'Tooltip'
 description: Hover to reveal details, like a secret whispering info, perfect for extra hints or help where needed.
 order: 5
@@ -18,3 +18,23 @@ Tooltips are small overlays that display information about an element when the u
 <Install items={['react-aria-components', 'tailwindcss-animate']} />
 
 <SourceCode toShow='tooltip' />
+
+## Placement
+By default, the tooltip appears at the top, but you can change its position by using the `placement` prop.
+
+<How toUse="overlays/tooltip-placement-demo" />
+
+The list above shows the primary directions, but you can also use more specific placements like `bottom left` or `top right`. Here are all the available placement options:
+
+| Primary Direction | Placement       |
+|-------------------|-----------------|
+| `bottom`          | `bottom`, `bottom left`, `bottom right`, `bottom start`, `bottom end` |
+| `top`             | `top`, `top left`, `top right`, `top start`, `top end` |
+| `left`            | `left`, `left top`, `left bottom` |
+| `start`           | `start`, `start top`, `start bottom` |
+| `right`           | `right`, `right top`, `right bottom` |
+| `end`             | `end`, `end top`, `end bottom` |
+
+## Delay
+Tooltip rolls out the welcome mat after you hover for 1.5 secs. Wanna speed it up or slow it down? Just slide in a `delay` prop. Peep these [guidelines](https://spectrum.adobe.com/page/tooltip/#Immediate-or-delayed-appearance) for the scoop.
+<How toUse="overlays/tooltip-delay-demo" />

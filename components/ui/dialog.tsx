@@ -19,7 +19,7 @@ const dialogStyles = tv({
         title: 'flex flex-1 items-center',
         description: 'text-sm text-muted-foreground mt-1',
         body: [
-            'flex flex-1 flex-col gap-2 overflow-auto px-6 py-1',
+            'flex flex-1 flex-col gap-2 overflow-auto px-6 py-1 overflow-visible',
             'max-h-[calc(var(--visual-viewport-height)-var(--visual-viewport-vertical-padding)-var(--dialog-header-height,0px)-var(--dialog-footer-height,0px))]'
         ],
         footer: 'mt-auto flex flex-col-reverse justify-between gap-3 pb-6 pt-4 sm:flex-row',
