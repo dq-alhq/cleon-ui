@@ -30,7 +30,7 @@ const avatarStyles = tv({
             md: 'size-8',
             lg: 'size-10',
             xl: 'size-12',
-            '2xl': 'size-14'
+            '2xl': 'size-16'
         },
         shape: {
             square: 'rounded-[--avatar-radius] *:rounded-[--avatar-radius] [&_[data-slot=badge]]:rounded-full',
@@ -120,7 +120,9 @@ const avatarBadgeStyles = tv({
         size: {
             sm: 'size-1.5 translate-x-[0%] translate-y-[0%]',
             md: 'size-2 translate-x-[5%] translate-y-[5%]',
-            lg: 'size-2.5 translate-x-[5%] translate-y-[5%]'
+            lg: 'size-2.5 translate-x-[5%] translate-y-[5%]',
+            xl: 'size-3 translate-x-[5%] translate-y-[5%]',
+            '2xl': 'size-4 translate-x-[5%] translate-y-[5%]'
         },
         status: {
             danger: 'bg-danger',
