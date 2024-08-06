@@ -2,8 +2,8 @@
 
 import * as React from 'react'
 
-import { Card } from '@/components/ui'
 import {
+    Card,
     type ChartConfig,
     ChartContainer,
     ChartTooltip,

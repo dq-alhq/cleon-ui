@@ -5,7 +5,7 @@ import * as Primitive from 'react-aria-components'
 import { tv } from 'tailwind-variants'
 
 const headingStyles = tv({
-    base: 'font-sans tracking-tight text-fg',
+    base: 'font-sans tracking-tight text-foreground',
     variants: {
         level: {
             1: 'font-bold text-lg',

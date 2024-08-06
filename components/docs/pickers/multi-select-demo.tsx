@@ -20,8 +20,8 @@ export default function MultiSelectDemo() {
         <MultiSelect
             className='max-w-72'
             label='Tags'
-            selected={selectedItems}
-            setSelected={setSelectedItems}
+            value={selectedItems}
+            onChange={setSelectedItems}
             placeholder='Select frameworks'
             items={frameworks}
         ></MultiSelect>

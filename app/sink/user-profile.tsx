@@ -35,7 +35,7 @@ export default function UserProfileSink() {
                     />
                     <div className='flex flex-col items-center text-center mt-2'>
                         <Heading level={3}>Diqi Al-Haqqi</Heading>
-                        <Heading level={5} className='text-muted-foreground'>
+                        <Heading level={4} className='text-muted-foreground'>
                             Developer
                         </Heading>
                     </div>

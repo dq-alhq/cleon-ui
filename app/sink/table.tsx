@@ -16,7 +16,7 @@ export default function TableSink() {
                 <Table aria-label='President of Indonesia' selectionMode='multiple'>
                     <Table.Header>
                         <Table.Column>#</Table.Column>
-                        <Table.Column>Name</Table.Column>
+                        <Table.Column isRowHeader>Name</Table.Column>
                         <Table.Column>Year</Table.Column>
                         <Table.Column>Terms</Table.Column>
                     </Table.Header>

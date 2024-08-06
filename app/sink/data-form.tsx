@@ -76,8 +76,8 @@ export default function DataFormSink() {
                         label='Components'
                         placeholder='Select Components'
                         items={items}
-                        selected={selectedItems}
-                        setSelected={setSelectedItems}
+                        value={selectedItems}
+                        onChange={setSelectedItems}
                     />
                     <Switch>Notifications</Switch>
                 </Card.Content>
