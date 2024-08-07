@@ -1,14 +1,14 @@
 'use client'
 import * as React from 'react'
 
-import * as Primitive from 'react-aria-components'
+import { Keyboard as KeyboardPrimitive } from 'react-aria-components'
 import { tv } from 'tailwind-variants'
 
 const keyboardStyles = tv({
     slots: {
         base: '-mr-1 ml-auto hidden items-center gap-[0.25rem] px-1 lg:inline-flex',
         kbd: [
-            'text-center font-sans capitalize text-muted-foreground group-focus:text-foreground',
+            'text-center font-sans capitalize text-muted-foreground group-focus:text-foreground forced-colors:group-focus:text-[HighlightText]',
             'inline-grid min-h-5 min-w-5 place-content-center rounded bg-background font-sans text-[.75rem] uppercase text-foreground ring-1 ring-foreground/10 group-focus:opacity-60'
         ]
     }
@@ -26,7 +26,7 @@ interface KeyboardProps extends React.HTMLAttributes<HTMLElement> {
 
 const Keyboard = ({ keys, classNames, className, ...props }: KeyboardProps) => {
     return (
-        <Primitive.Keyboard
+        <KeyboardPrimitive
             className={base({ className: classNames?.base ?? className })}
             {...props}
         >
@@ -40,7 +40,7 @@ const Keyboard = ({ keys, classNames, className, ...props }: KeyboardProps) => {
                     {char}
                 </kbd>
             ))}
-        </Primitive.Keyboard>
+        </KeyboardPrimitive>
     )
 }
 

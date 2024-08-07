@@ -8,7 +8,7 @@ import {
     type ChartConfig
 } from '@/components/ui'
 import { TrendingUp } from 'lucide-react'
-import { PolarAngleAxis, PolarGrid, PolarRadiusAxis, Radar, RadarChart } from 'recharts'
+import { PolarGrid, PolarRadiusAxis, Radar, RadarChart } from 'recharts'
 
 const chartData = [
     { month: 'January', desktop: 186, mobile: 80 },

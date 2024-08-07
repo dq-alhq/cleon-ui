@@ -1,28 +1,31 @@
 'use client'
 
-import { cn } from '@/lib/utils'
-import { ChevronRight } from 'lucide-react'
-import * as Primitive from 'react-aria-components'
+import { ChevronRightIcon } from 'lucide-react'
+import type { BreadcrumbProps, BreadcrumbsProps } from 'react-aria-components'
+import {
+    Breadcrumb as BreadcrumbPrimitive,
+    Breadcrumbs as BreadcrumbsPrimitive,
+    type LinkProps
+} from 'react-aria-components'
 
+import { cn } from '@/lib/utils'
 import { Link } from './link'
 
-function Breadcrumbs<T extends object>(props: Primitive.BreadcrumbsProps<T>) {
-    return (
-        <Primitive.Breadcrumbs {...props} className={cn('flex gap-1', props.className)} />
-    )
+const Breadcrumbs = <T extends object>({ className, ...props }: BreadcrumbsProps<T>) => {
+    return <BreadcrumbsPrimitive {...props} className={cn('flex gap-1', className)} />
 }
 
-function Breadcrumb(props: Primitive.BreadcrumbProps & Primitive.LinkProps) {
+const Breadcrumb = ({ className, ...props }: BreadcrumbProps & LinkProps) => {
     return (
-        <Primitive.Breadcrumb
+        <BreadcrumbPrimitive
             {...props}
-            className={cn('flex items-center gap-1', props.className)}
+            className={cn('flex items-center gap-1', className)}
         >
             <Link href={props.href} {...props} />
-            {props.href && (
-                <ChevronRight className='size-4 shrink-0 text-muted-foreground' />
+            {'href' in props && (
+                <ChevronRightIcon className='size-4 shrink-0 text-muted-foreground' />
             )}
-        </Primitive.Breadcrumb>
+        </BreadcrumbPrimitive>
     )
 }
 

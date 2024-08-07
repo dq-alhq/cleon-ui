@@ -1,37 +1,54 @@
 'use client'
 
-import React from 'react'
+import { CameraIcon, FolderIcon, PaperclipIcon } from 'lucide-react'
+import {
+    FileTrigger as FileTriggerPrimitive,
+    type FileTriggerProps as FileTriggerPrimitiveProps
+} from 'react-aria-components'
 
-import { Camera, Folder, Paperclip } from 'lucide-react'
-import * as Primitive from 'react-aria-components'
-import { type VariantProps } from 'tailwind-variants'
+import { Button } from './button'
 
-import { Button, type buttonVariants } from './button'
-
-interface FileTriggerProps
-    extends Primitive.FileTriggerProps,
-        VariantProps<typeof buttonVariants> {
+interface FileTriggerProps extends FileTriggerPrimitiveProps {
     withIcon?: boolean
     isDisabled?: boolean
+    variant?:
+        | 'primary'
+        | 'secondary'
+        | 'danger'
+        | 'warning'
+        | 'info'
+        | 'success'
+        | 'outline'
+        | 'ghost'
+        | 'dark'
+    size?: 'xs' | 'sm' | 'md' | 'lg' | 'icon'
+    shape?: 'square' | 'circle'
 }
 
-const FileTrigger: React.FC<FileTriggerProps> = ({
+const FileTrigger = ({
     variant = 'primary',
+    size = 'md',
+    shape = 'square',
     withIcon = true,
     ...props
-}) => {
+}: FileTriggerProps) => {
     return (
         <>
-            <Primitive.FileTrigger {...props}>
-                <Button isDisabled={props.isDisabled} variant={variant}>
+            <FileTriggerPrimitive {...props}>
+                <Button
+                    isDisabled={props.isDisabled}
+                    size={size}
+                    shape={shape}
+                    variant={variant}
+                >
                     {withIcon && (
                         <>
                             {props.defaultCamera ? (
-                                <Camera />
+                                <CameraIcon />
                             ) : props.acceptDirectory ? (
-                                <Folder />
+                                <FolderIcon />
                             ) : (
-                                <Paperclip className='rotate-45' />
+                                <PaperclipIcon />
                             )}
                         </>
                     )}
@@ -48,7 +65,7 @@ const FileTrigger: React.FC<FileTriggerProps> = ({
                         </>
                     )}
                 </Button>
-            </Primitive.FileTrigger>
+            </FileTriggerPrimitive>
         </>
     )
 }

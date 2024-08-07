@@ -5,31 +5,17 @@ import { Pagination } from '@/components/ui'
 export default function PaginationDemo() {
     return (
         <Pagination>
-            <Pagination.Content>
-                <Pagination.Item>
-                    <Pagination.First href='#' />
+            <Pagination.List>
+                <Pagination.Item role='first' href='#' />
+                <Pagination.Item role='previous' href='#' />
+                <Pagination.Item href='#'>1</Pagination.Item>
+                <Pagination.Item href='#' isCurrent>
+                    2
                 </Pagination.Item>
-                <Pagination.Item>
-                    <Pagination.Previous href='#' />
-                </Pagination.Item>
-                <Pagination.Item>
-                    <Pagination.Link href='#'>1</Pagination.Link>
-                </Pagination.Item>
-                <Pagination.Item>
-                    <Pagination.Link href='#' isActive>
-                        2
-                    </Pagination.Link>
-                </Pagination.Item>
-                <Pagination.Item>
-                    <Pagination.Ellipsis />
-                </Pagination.Item>
-                <Pagination.Item>
-                    <Pagination.Next href='#' />
-                </Pagination.Item>
-                <Pagination.Item>
-                    <Pagination.Last href='#' />
-                </Pagination.Item>
-            </Pagination.Content>
+                <Pagination.Item role='ellipsis' />
+                <Pagination.Item role='next' href='#' />
+                <Pagination.Item role='last' href='#' />
+            </Pagination.List>
         </Pagination>
     )
 }

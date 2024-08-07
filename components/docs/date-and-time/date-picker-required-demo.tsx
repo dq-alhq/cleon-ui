@@ -1,7 +1,5 @@
 'use client'
 
-import React from 'react'
-
 import { Button, DatePicker, Form } from '@/components/ui'
 
 export default function DatePickerRequiredDemo() {

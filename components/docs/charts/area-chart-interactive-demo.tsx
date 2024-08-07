@@ -4,12 +4,12 @@ import * as React from 'react'
 
 import {
     Card,
-    Select,
     ChartContainer,
     ChartLegend,
     ChartLegendContent,
     ChartTooltip,
     ChartTooltipContent,
+    Select,
     type ChartConfig
 } from '@/components/ui'
 import { Area, AreaChart, CartesianGrid, XAxis } from 'recharts'

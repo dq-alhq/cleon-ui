@@ -3,9 +3,9 @@
 import React from 'react'
 
 import { type Docs, docs } from '#site/content'
-import { sortDocs, titleCase, cn } from '@/lib/utils'
+import { cn, sortDocs, titleCase } from '@/lib/utils'
 import { LayoutGroup, motion } from 'framer-motion'
-import { BoxIcon, EclipseIcon, EditIcon, KeyRoundIcon, LayersIcon } from 'lucide-react'
+import { BoxIcon, EclipseIcon, KeyRoundIcon } from 'lucide-react'
 import type { LinkProps as NextLinkProps } from 'next/link'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'

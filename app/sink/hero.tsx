@@ -15,11 +15,11 @@ export function Hero() {
                     >
                         CLEON UI
                     </Heading>
-                    <Text className='text-base lg:text-xl max-w-2xl block leading-relaxed text-muted-fg'>
+                    <Text className='text-base lg:text-xl max-w-2xl block leading-relaxed text-muted-foreground'>
                         This UI Design is basically built on top of{' '}
-                        <strong className='text-fg'>React Aria Components</strong>, all
-                        about keeping the web accessible. Easy to customize and just copy
-                        & paste into your React projects.
+                        <strong className='text-foreground'>React Aria Components</strong>
+                        , all about keeping the web accessible. Easy to customize and just
+                        copy & paste into your React projects.
                     </Text>
                 </Header>
                 <div className='mt-6'>

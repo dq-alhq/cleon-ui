@@ -9,29 +9,26 @@ published: true
 
 To get started with the design system, you need to install the following packages:
 
-<Snippet text={`bun i react-aria-components tailwindcss-react-aria-components tailwind-variants tailwind-merge clsx`} />
+<Install items={['react-aria-components','tailwindcss-react-aria-components','tailwind-variants','tailwind-merge','clsx']} />
 
 After install these package for handling animations and icons:
 
-<Snippet text={`bun i framer-motion lucide-react tailwindcss-animate embla-carousel-react cmdk framer-motion input-otp sonner`} />
+<Install items={['framer-motion','lucide-react','tailwindcss-animate','embla-carousel-react','cmdk','sonner']} />
 
 ## CSS
 
 First of all, you need to modify your root css file, like for example you are using laravel it's `resources/css/app.css` and you need to add the following code:
 
+Below that you need to add the following code:
+
 <PlainCode lang='css' code={`@import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
-`}/>
 
-### Variables
-
-Below that you need to add the following code:
-
-<PlainCode lang='css' code={`@layer base {
+@layer base {
     :root {
-        --font-sans: 'Inter';
-        --font-mono: 'Fira Code';
+        --font-sans: 'Figtree', sans-serif;
+        --font-mono: 'Fira Code', monospace;
 
         --background: 0 0% 98%;
         --foreground: 240 10% 4%;
@@ -130,19 +127,43 @@ Below that you need to add the following code:
         font-feature-settings:
             'rlig' 1,
             'calt' 1;
-    }
-    *,
-    .overflow-auto,
-    .overflow-y-auto,
-    .overflow-x-auto {
-        @apply ease-in-out scrollbar-none scrollbar-track-background scrollbar-thumb-background scrollbar-thumb-rounded-full;
+        text-rendering: optimizeLegibility;
     }
 
-    *,
-    .overflow-auto:hover,
-    .overflow-y-auto:hover,
-    .overflow-x-auto:hover {
-        @apply scrollbar-thin scrollbar-thumb-border;
+    /* Firefox */
+    * {
+        scrollbar-width: thin;
+        scrollbar-color: #d4d4d8 transparent;
+    }
+
+    /* dark mode */
+    .dark {
+        scrollbar-width: thin;
+        scrollbar-color: #3f3f46 transparent;
+
+        @media (prefers-color-scheme: dark) {
+            * {
+                scrollbar-width: thin;
+                scrollbar-color: #3f3f46 transparent;
+            }
+        }
+    }
+
+    /* Chrome, Edge, and Safari */
+    *::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+
+    *::-webkit-scrollbar-track {
+        background: transparent;
+        border-radius: 5px;
+    }
+
+    *::-webkit-scrollbar-thumb {
+        @apply bg-muted;
+        border-radius: 14px;
+        border: 3px solid transparent;
     }
 }
 
@@ -154,48 +175,32 @@ Below that you need to add the following code:
 .react-aria-DropIndicator[data-drop-target] {
     outline: 1px solid hsl(var(--primary));
 }
-`} />
 
-### Scrollbars
-
-If you wan't to customize the scrollbars
-
-Install this package first
-
-<Snippet text={`bun i -D tailwind-scrollbar`} />
-
-Then you can add this one for scrollbars:
-
-<PlainCode lang='css' code={`*,
-.overflow-auto,
-.overflow-scroll,
-.overflow-x-scroll,
-.overflow-y-scroll,
-.overflow-y-auto,
-.overflow-x-auto {
-    @apply ease-in-out scrollbar-none scrollbar-track-background scrollbar-thumb-background scrollbar-thumb-rounded-full;
+.recharts-rectangle.recharts-tooltip-cursor {
+    @apply fill-zinc-300/10;
 }
 
-*,
-.overflow-auto:hover,
-.overflow-scroll:hover,
-.overflow-x-scroll:hover,
-.overflow-y-scroll:hover,
-.overflow-y-auto:hover,
-.overflow-x-auto:hover {
-    @apply scrollbar-thin scrollbar-thumb-border;
+@layer components {
+    .no-scrollbar {
+        -ms-overflow-style: none; /* Internet Explorer and Edge */
+        scrollbar-width: none; /* Firefox */
+    }
+
+    .no-scrollbar::-webkit-scrollbar {
+        display: none; /* Safari and Chrome */
+    }
 }
 `} />
 
 ## Tailwind Configuration
 
-You need to change your `tailwind.config.ts`.
+You need to change your `tailwind.config.ts`. If your config js file like `tailwind.config.js`, just change it to `tailwind.config.ts`
 
-<PlainCode lang='js' code={`import type { Config } from 'tailwindcss'
+<PlainCode lang='js' code={`import { withTV } from 'tailwind-variants/transformer'
+import type { Config } from 'tailwindcss'
 import { fontFamily } from 'tailwindcss/defaultTheme'
 
-/** @type {import('tailwindcss').Config} */
-const config: Config = {
+const config = withTV({
     content: [
         // Laravel
         './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
@@ -268,16 +273,8 @@ const config: Config = {
                     DEFAULT: 'hsl(var(--muted))',
                     foreground: 'hsl(var(--muted-foreground))'
                 },
-                popover: {
-                    DEFAULT: 'hsl(var(--popover))',
-                    foreground: 'hsl(var(--popover-foreground))'
-                },
-                card: {
-                    DEFAULT: 'hsl(var(--card))',
-                    foreground: 'hsl(var(--card-foreground))'
-                },
                 input: 'hsl(var(--border))',
-                toggle: 'hsl(var(--border))',
+                toggle: 'hsl(var(--toggle))',
                 ring: 'hsl(var(--ring))'
             },
             borderRadius: {
@@ -289,13 +286,9 @@ const config: Config = {
     },
     plugins: [
         require('tailwindcss-animate'),
-        require('tailwind-scrollbar')({
-            nocompatible: true,
-            preferredStrategy: 'pseudoelements'
-        }),
         require('tailwindcss-react-aria-components')
     ]
-} satisfies Config
+}) satisfies Config
 
 export default config
 `} />

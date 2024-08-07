@@ -1,10 +1,13 @@
 'use client'
 
-import { cn } from '@/lib/utils'
-import * as Primitive from 'react-aria-components'
+import * as React from 'react'
+
+import { Collection } from 'react-aria-components'
 import { tv, type VariantProps } from 'tailwind-variants'
 
-const gridStyle = tv(
+import { cn } from '@/lib/utils'
+
+const gridStyles = tv(
     {
         base: 'grid',
         variants: {
@@ -129,14 +132,15 @@ const gridStyle = tv(
     }
 )
 
-interface GridProps<T> extends VariantProps<typeof gridStyle>, Primitive.ListBoxProps<T> {
+interface GridProps
+    extends React.HTMLAttributes<HTMLDivElement>,
+        VariantProps<typeof gridStyles> {
     className?: string
     debug?: boolean
 }
 
-const Grid = <T extends object>({
+const Grid = ({
     className,
-    children,
     gap,
     gapX,
     gapY,
@@ -144,20 +148,17 @@ const Grid = <T extends object>({
     columns,
     rows,
     ...props
-}: GridProps<T>) => {
+}: GridProps) => {
     return (
-        <Primitive.ListBox
+        <div
             aria-label={props['aria-label'] || 'grid'}
-            orientation='horizontal'
-            layout='grid'
-            className={gridStyle({
+            className={gridStyles({
                 gap: gap ?? gapX ?? gapY,
                 gapX: gapX ?? gap,
                 gapY: gapY ?? gap,
                 flow: flow ?? 'row',
                 columns: columns ?? 1,
                 rows: rows ?? 1,
-
                 className:
                     'debug' in props
                         ? cn(
@@ -168,14 +169,14 @@ const Grid = <T extends object>({
             })}
             {...props}
         >
-            {children}
-        </Primitive.ListBox>
+            {props.children}
+        </div>
     )
 }
 
 const gridItemStyles = tv(
     {
-        base: 'grid-cell outline-none focus:outline-none',
+        base: 'grid-cell focus:outline-none',
         variants: {
             colSpan: {
                 auto: 'col-auto',
@@ -281,7 +282,7 @@ const gridItemStyles = tv(
 )
 
 interface GridItemProps
-    extends Primitive.ListBoxItemProps,
+    extends React.HTMLAttributes<HTMLDivElement>,
         VariantProps<typeof gridItemStyles> {
     className?: string
 }
@@ -297,10 +298,8 @@ const GridItem = ({
     rowEnd,
     ...props
 }: GridItemProps) => {
-    const textValue = typeof children === 'string' ? children : ' '
     return (
-        <Primitive.ListBoxItem
-            textValue={textValue}
+        <div
             className={gridItemStyles({
                 colSpan,
                 rowSpan,
@@ -312,12 +311,14 @@ const GridItem = ({
             })}
             {...props}
         >
-            {(values) => (
-                <>{typeof children === 'function' ? children(values) : children}</>
-            )}
-        </Primitive.ListBoxItem>
+            {children}
+        </div>
     )
 }
 
+const GridCollection = Collection
+
+Grid.Collection = GridCollection
 Grid.Item = GridItem
-export { Grid }
+
+export { Grid, gridItemStyles, gridStyles }

@@ -4,8 +4,8 @@
 
 @layer base {
     :root {
-        --font-sans: 'GT Walsheim Pro';
-        --font-mono: 'Jetbrains Mono';
+        --font-sans: 'GT Walsheim Pro', sans-serif;
+        --font-mono: 'Jetbrains Mono', monospace;
 
         --background: 0 0% 98%;
         --foreground: 240 10% 4%;
@@ -104,6 +104,43 @@
         font-feature-settings:
             'rlig' 1,
             'calt' 1;
+        text-rendering: optimizeLegibility;
+    }
+
+    /* Firefox */
+    * {
+        scrollbar-width: thin;
+        scrollbar-color: #d4d4d8 transparent;
+    }
+
+    /* dark mode */
+    .dark {
+        scrollbar-width: thin;
+        scrollbar-color: #3f3f46 transparent;
+
+        @media (prefers-color-scheme: dark) {
+            * {
+                scrollbar-width: thin;
+                scrollbar-color: #3f3f46 transparent;
+            }
+        }
+    }
+
+    /* Chrome, Edge, and Safari */
+    *::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+
+    *::-webkit-scrollbar-track {
+        background: transparent;
+        border-radius: 5px;
+    }
+
+    *::-webkit-scrollbar-thumb {
+        @apply bg-muted;
+        border-radius: 14px;
+        border: 3px solid transparent;
     }
 
     :root {
@@ -121,20 +158,6 @@
         --chart-4: 280 65% 60%;
         --chart-5: 340 75% 55%;
     }
-
-    *,
-    .overflow-auto,
-    .overflow-y-auto,
-    .overflow-x-auto {
-        @apply ease-in-out scrollbar-none scrollbar-track-background scrollbar-thumb-background scrollbar-thumb-rounded-full;
-    }
-
-    *,
-    .overflow-auto:hover,
-    .overflow-y-auto:hover,
-    .overflow-x-auto:hover {
-        @apply scrollbar-thin scrollbar-thumb-border;
-    }
 }
 
 .react-aria-Button,
@@ -144,4 +167,23 @@
 
 .react-aria-DropIndicator[data-drop-target] {
     outline: 1px solid hsl(var(--primary));
+}
+
+.recharts-rectangle.recharts-tooltip-cursor {
+    @apply fill-zinc-300/10;
+}
+
+@layer components {
+    .no-scrollbar {
+        -ms-overflow-style: none; /* Internet Explorer and Edge */
+        scrollbar-width: none; /* Firefox */
+    }
+
+    .no-scrollbar::-webkit-scrollbar {
+        display: none; /* Safari and Chrome */
+    }
+
+    pre::-webkit-scrollbar {
+        display: none;
+    }
 }

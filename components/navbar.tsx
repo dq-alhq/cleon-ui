@@ -24,10 +24,10 @@ import {
     SearchIcon,
     SunIcon
 } from 'lucide-react'
-import { useTheme } from 'next-themes'
 import { usePathname } from 'next/navigation'
 import { Collection, type LinkProps } from 'react-aria-components'
 import { Button, Keyboard, Link, Menu, Separator, Sheet } from 'ui'
+import { useTheme } from './providers'
 
 import { Aside } from './aside'
 
@@ -134,7 +134,7 @@ export function ResponsiveAside({ open, setOpen }: OpenCloseProps) {
 
     const isDesktop = useMediaQuery('(min-width: 1024px)')
     return (
-        <nav className='z-10 sm:hidden h-14 bg-background/60 backdrop-blur-xl rounded-b-lg sticky top-0'>
+        <nav className='z-30 sm:hidden h-14 bg-background/60 backdrop-blur-xl rounded-b-lg sticky top-0'>
             {!isDesktop && <CommandPalette setOpen={setOpen} open={open} />}
             <div className={cn('-mb-2 flex items-center justify-between pl-4 pr-2 pt-2')}>
                 <Button
@@ -163,24 +163,28 @@ export function ResponsiveAside({ open, setOpen }: OpenCloseProps) {
                         className='flex-shrink-0'
                     >
                         <SearchIcon />
-                        <Menu.Keyboard className='-mr-2 [&_kbd]:min-w-[3ch]' keys='⌘K' />
+                        <Keyboard className='-mr-2 [&_kbd]:min-w-[3ch]' keys='⌘K' />
                     </Button>
                     <ThemeToggle />
                 </div>
             </div>
             {!isDesktop && (
                 <Sheet isOpen={openAside} onOpenChange={setOpenAside}>
-                    <Sheet.Trigger className='hidden'>Open</Sheet.Trigger>
-                    <Sheet.Overlay>
-                        <Sheet.Content side='left' closeButton={true}>
-                            <Sheet.Header className='mb-4 flex flex-row justify-between py-2'>
-                                <NavbarDropdown />
-                            </Sheet.Header>
+                    <Sheet.Trigger className='sr-only'>Open</Sheet.Trigger>
+                    <Sheet.Content
+                        classNames={{ content: 'w-[19rem]' }}
+                        side='left'
+                        closeButton={true}
+                    >
+                        <Sheet.Header className='mb-4 flex flex-row justify-between py-2'>
+                            <NavbarDropdown />
+                        </Sheet.Header>
+                        <Sheet.Body className='px-4'>
                             <LayoutGroup id={id}>
                                 <Aside />
                             </LayoutGroup>
-                        </Sheet.Content>
-                    </Sheet.Overlay>
+                        </Sheet.Body>
+                    </Sheet.Content>
                 </Sheet>
             )}
         </nav>
@@ -219,14 +223,14 @@ export function NavbarDropdown() {
             <Button
                 aria-label='Menu'
                 variant='ghost'
-                className='group -ml-1 [&_svg]:size-5'
+                className='group -  ml-1 [&_svg]:size-4'
             >
                 <span className='flex items-center gap-x-2'>
                     <Logo className='-ml-1 size-6' />
                     <span className='font-mono text-base tracking-tight sm:text-sm'>
                         Cleon UI
                     </span>
-                    <ChevronDownIcon className='-mr-2 ml-1 size-4 text-muted-foreground transition duration-300 group-hover:text-foreground group-pressed:rotate-180 group-pressed:text-foreground' />
+                    <ChevronDownIcon className='-mr-2 ml-1 text-muted-foreground transition duration-300 group-hover:text-foreground group-pressed:rotate-180 group-pressed:text-foreground' />
                     <span className='sr-only'>Open menu</span>
                 </span>
             </Button>

@@ -11,14 +11,32 @@ export const previews: Record<string, any> = {
   "media/avatar-demo": {
     component: React.lazy(() => import("@/components/docs/media/avatar-demo")),
   },
+  "media/carousel-orientation-demo": {
+    component: React.lazy(() => import("@/components/docs/media/carousel-orientation-demo")),
+  },
+  "media/carousel-options-demo": {
+    component: React.lazy(() => import("@/components/docs/media/carousel-options-demo")),
+  },
+  "media/carousel-with-collection-demo": {
+    component: React.lazy(() => import("@/components/docs/media/carousel-with-collection-demo")),
+  },
   "media/avatar-group-demo": {
     component: React.lazy(() => import("@/components/docs/media/avatar-group-demo")),
+  },
+  "media/carousel-demo": {
+    component: React.lazy(() => import("@/components/docs/media/carousel-demo")),
   },
   "media/avatar-status-demo": {
     component: React.lazy(() => import("@/components/docs/media/avatar-status-demo")),
   },
+  "media/carousel-api-demo": {
+    component: React.lazy(() => import("@/components/docs/media/carousel-api-demo")),
+  },
   "media/avatar-fallback-demo": {
     component: React.lazy(() => import("@/components/docs/media/avatar-fallback-demo")),
+  },
+  "media/carousel-autoplay-demo": {
+    component: React.lazy(() => import("@/components/docs/media/carousel-autoplay-demo")),
   },
   "media/avatar-size-demo": {
     component: React.lazy(() => import("@/components/docs/media/avatar-size-demo")),
@@ -103,6 +121,9 @@ export const previews: Record<string, any> = {
   },
   "collections/grid-list-multiple-demo": {
     component: React.lazy(() => import("@/components/docs/collections/grid-list-multiple-demo")),
+  },
+  "collections/tag-group-variant-demo": {
+    component: React.lazy(() => import("@/components/docs/collections/tag-group-variant-demo")),
   },
   "collections/grid-list-render-empty-state-demo": {
     component: React.lazy(() => import("@/components/docs/collections/grid-list-render-empty-state-demo")),
@@ -287,11 +308,23 @@ export const previews: Record<string, any> = {
   "overlays/drawer-controlled-demo": {
     component: React.lazy(() => import("@/components/docs/overlays/drawer-controlled-demo")),
   },
+  "overlays/sheet-sticky-demo": {
+    component: React.lazy(() => import("@/components/docs/overlays/sheet-sticky-demo")),
+  },
+  "overlays/sheet-stack-demo": {
+    component: React.lazy(() => import("@/components/docs/overlays/sheet-stack-demo")),
+  },
   "overlays/tooltip-delay-demo": {
     component: React.lazy(() => import("@/components/docs/overlays/tooltip-delay-demo")),
   },
   "overlays/modal-sticky-demo": {
     component: React.lazy(() => import("@/components/docs/overlays/modal-sticky-demo")),
+  },
+  "overlays/sheet-controlled-demo": {
+    component: React.lazy(() => import("@/components/docs/overlays/sheet-controlled-demo")),
+  },
+  "overlays/sheet-custom-close-demo": {
+    component: React.lazy(() => import("@/components/docs/overlays/sheet-custom-close-demo")),
   },
   "overlays/popover-arrow-demo": {
     component: React.lazy(() => import("@/components/docs/overlays/popover-arrow-demo")),
@@ -713,14 +746,14 @@ export const previews: Record<string, any> = {
   "navigation/pagination-demo": {
     component: React.lazy(() => import("@/components/docs/navigation/pagination-demo")),
   },
-  "navigation/simple-pagination-demo": {
-    component: React.lazy(() => import("@/components/docs/navigation/simple-pagination-demo")),
-  },
   "navigation/pagination-dynamic-demo": {
     component: React.lazy(() => import("@/components/docs/navigation/pagination-dynamic-demo")),
   },
   "navigation/tabs-orientation-demo": {
     component: React.lazy(() => import("@/components/docs/navigation/tabs-orientation-demo")),
+  },
+  "navigation/pagination-simple-demo": {
+    component: React.lazy(() => import("@/components/docs/navigation/pagination-simple-demo")),
   },
   "navigation/breadcrumbs-demo": {
     component: React.lazy(() => import("@/components/docs/navigation/breadcrumbs-demo")),

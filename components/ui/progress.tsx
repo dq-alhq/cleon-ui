@@ -1,21 +1,18 @@
 'use client'
 
-import { cn } from '@/lib/utils'
 import { motion } from 'framer-motion'
-import * as Primitive from 'react-aria-components'
+import { ProgressBar, type ProgressBarProps } from 'react-aria-components'
 
+import { cn } from '@/lib/utils'
 import { Label } from './field'
 
-export interface ProgressProps extends Primitive.ProgressBarProps {
+interface ProgressProps extends ProgressBarProps {
     label?: string
 }
 
-function Progress({ label, ...props }: ProgressProps) {
+const Progress = ({ label, ...props }: ProgressProps) => {
     return (
-        <Primitive.ProgressBar
-            {...props}
-            className={cn(props.className, 'flex flex-col gap-1')}
-        >
+        <ProgressBar {...props} className={cn('flex flex-col gap-1', props.className)}>
             {({ percentage, valueText, isIndeterminate }) => (
                 <>
                     <div className='flex justify-between gap-2'>
@@ -25,14 +22,14 @@ function Progress({ label, ...props }: ProgressProps) {
                     <div className='relative h-2 min-w-64 overflow-hidden rounded-full bg-secondary outline outline-1 -outline-offset-1 outline-transparent'>
                         {!isIndeterminate ? (
                             <motion.div
-                                className='absolute left-0 top-0 h-full rounded-full bg-primary'
+                                className='absolute left-0 top-0 h-full rounded-full bg-primary forced-colors:bg-[Highlight]'
                                 initial={{ width: '0%' }}
                                 animate={{ width: `${percentage}%` }}
                                 transition={{ duration: 0.5, ease: 'easeInOut' }}
                             />
                         ) : (
                             <motion.div
-                                className='absolute top-0 h-full rounded-full bg-primary'
+                                className='absolute top-0 h-full rounded-full bg-primary forced-colors:bg-[Highlight]'
                                 initial={{ left: '0%', width: '40%' }}
                                 animate={{ left: ['0%', '100%', '0%'] }}
                                 transition={{
@@ -45,8 +42,8 @@ function Progress({ label, ...props }: ProgressProps) {
                     </div>
                 </>
             )}
-        </Primitive.ProgressBar>
+        </ProgressBar>
     )
 }
 
-export { Progress }
+export { Progress, type ProgressProps }

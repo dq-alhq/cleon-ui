@@ -11,7 +11,16 @@ import {
     useMotionValue,
     useTransform
 } from 'framer-motion'
-import * as Primitive from 'react-aria-components'
+import {
+    Button,
+    type ButtonProps,
+    Dialog as DialogPrimitive,
+    type DialogProps,
+    Heading,
+    type HeadingProps,
+    Modal,
+    ModalOverlay
+} from 'react-aria-components'
 
 import { cn } from '@/lib/utils'
 import { Dialog } from './dialog'
@@ -49,8 +58,8 @@ const useDrawerContext = () => {
 /**
  * Primitives stick to the drawer, ain't getting exported to other components.
  */
-const ModalPrimitive = motion(Primitive.Modal)
-const ModalOverlayPrimitive = motion(Primitive.ModalOverlay)
+const ModalPrimitive = motion(Modal)
+const ModalOverlayPrimitive = motion(ModalOverlay)
 const DrawerOverlayPrimitive = (
     props: React.ComponentProps<typeof ModalOverlayPrimitive>
 ) => {
@@ -107,8 +116,8 @@ const DrawerOverlayPrimitive = (
 }
 
 interface DrawerContentPrimitiveProps
-    extends Omit<React.ComponentProps<typeof Primitive.Modal>, 'children'> {
-    children?: Primitive.DialogProps['children']
+    extends Omit<React.ComponentProps<typeof Modal>, 'children'> {
+    children?: DialogProps['children']
 }
 
 const DrawerContentPrimitive = (props: DrawerContentPrimitiveProps) => {
@@ -141,10 +150,10 @@ const DrawerContentPrimitive = (props: DrawerContentPrimitiveProps) => {
 /**
  * Here are the components that get passed around to other components.
  */
-const DrawerTrigger = (props: Primitive.ButtonProps) => {
+const DrawerTrigger = (props: ButtonProps) => {
     const { openDrawer } = useDrawerContext()
 
-    return <Primitive.Button onPress={openDrawer} {...props} />
+    return <Button onPress={openDrawer} {...props} />
 }
 
 interface DrawerProps {
@@ -206,13 +215,13 @@ const DrawerContent = ({
     return (
         <DrawerContentPrimitive>
             <DrawerOverlayPrimitive {...props}>
-                <Dialog className='mx-auto flex h-[calc(var(--visual-viewport-height)-4.5rem)] max-w-3xl flex-col justify-between overflow-y-auto px-4 pt-4 outline-none'>
+                <DialogPrimitive className='mx-auto flex h-[calc(var(--visual-viewport-height)-4.5rem)] max-w-3xl flex-col justify-between overflow-y-auto px-4 pt-4 outline-none'>
                     {(values) => (
                         <>
                             {typeof children === 'function' ? children(values) : children}
                         </>
                     )}
-                </Dialog>
+                </DialogPrimitive>
             </DrawerOverlayPrimitive>
         </DrawerContentPrimitive>
     )
@@ -225,8 +234,8 @@ const DrawerHeader = ({ className, ...props }: React.HTMLAttributes<HTMLDivEleme
     />
 )
 
-const DrawerTitle = ({ className, ...props }: Primitive.HeadingProps) => (
-    <Primitive.Heading
+const DrawerTitle = ({ className, ...props }: HeadingProps) => (
+    <Heading
         slot='title'
         className={cn('text-lg font-semibold leading-none tracking-tight', className)}
         {...props}

@@ -2,24 +2,30 @@
 
 import * as React from 'react'
 
-import { useMediaQuery } from '@/lib/utils'
 import { XIcon } from 'lucide-react'
-import * as Primitive from 'react-aria-components'
+import {
+    Dialog as DialogPrimitive,
+    type DialogProps,
+    OverlayTriggerStateContext
+} from 'react-aria-components'
 import { tv } from 'tailwind-variants'
+
+import { useMediaQuery } from '@/lib/utils'
 import { Button, type ButtonProps } from './button'
-import { Heading, type HeadingProps } from './heading'
+import type { HeadingProps } from './heading'
+import { Heading } from './heading'
 
 const dialogStyles = tv({
     slots: {
         root: [
-            'peer relative flex flex-col max-h-[inherit] [&::-webkit-scrollbar]:size-0.5 [scrollbar-width:thin] overflow-hidden outline-none',
+            'dlc peer relative flex max-h-[inherit] [&::-webkit-scrollbar]:size-0.5 [scrollbar-width:thin] flex-col overflow-hidden outline-none peer',
             '[&:not(:has([data-slot=dialog-body]))]:px-6 [&:has([data-slot=dialog-body])_[data-slot=dialog-header]]:px-6 [&:has([data-slot=dialog-body])_[data-slot=dialog-footer]]:px-6'
         ],
         header: 'relative flex flex-col pb-2 pt-6',
         title: 'flex flex-1 items-center',
         description: 'text-sm text-muted-foreground mt-1',
         body: [
-            'flex flex-1 flex-col gap-2 overflow-auto px-6 py-1 overflow-visible',
+            'flex flex-1 flex-col gap-2 overflow-auto px-6 py-1',
             'max-h-[calc(var(--visual-viewport-height)-var(--visual-viewport-vertical-padding)-var(--dialog-header-height,0px)-var(--dialog-footer-height,0px))]'
         ],
         footer: 'mt-auto flex flex-col-reverse justify-between gap-3 pb-6 pt-4 sm:flex-row',
@@ -29,9 +35,9 @@ const dialogStyles = tv({
 
 const { root, header, title, description, body, footer, closeIndicator } = dialogStyles()
 
-const Dialog = ({ role, className, ...props }: Primitive.DialogProps) => {
+const Dialog = ({ role, className, ...props }: DialogProps) => {
     return (
-        <Primitive.Dialog
+        <DialogPrimitive
             {...props}
             role={role ?? 'dialog'}
             className={root({ className })}
@@ -136,7 +142,7 @@ const DialogFooter = ({ className, ...props }: React.HTMLAttributes<HTMLDivEleme
 }
 
 const DialogClose = ({ className, ...props }: ButtonProps) => {
-    const state = React.useContext(Primitive.OverlayTriggerStateContext)!
+    const state = React.useContext(OverlayTriggerStateContext)!
     return (
         <Button
             className={className}
@@ -185,4 +191,4 @@ Dialog.Footer = DialogFooter
 Dialog.Header = DialogHeader
 Dialog.Title = DialogTitle
 
-export { Dialog, type DialogTitleProps as TitleProps }
+export { Dialog, type DialogTitleProps }

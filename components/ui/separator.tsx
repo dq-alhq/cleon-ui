@@ -1,17 +1,32 @@
 'use client'
 
-import { cn } from '@/lib/utils'
-import * as Primitive from 'react-aria-components'
+import {
+    Separator as SeparatorPrimitive,
+    type SeparatorProps
+} from 'react-aria-components'
+import { tv } from 'tailwind-variants'
 
-const Separator = (props: Primitive.SeparatorProps) => (
-    <Primitive.Separator
+const separatorStyles = tv({
+    base: 'bg-muted shrink-0 forced-colors:bg-[ButtonBorder]',
+    variants: {
+        orientation: {
+            horizontal: 'h-px w-full',
+            vertical: 'w-px'
+        }
+    },
+    defaultVariants: {
+        orientation: 'horizontal'
+    }
+})
+
+const Separator = ({ className, ...props }: SeparatorProps) => (
+    <SeparatorPrimitive
         {...props}
-        className={cn(
-            'bg-border shrink-0',
-            props.orientation === 'vertical' ? 'h-full w-px' : 'w-full h-px',
-            props.className
-        )}
+        className={separatorStyles({
+            orientation: props.orientation,
+            className: className
+        })}
     />
 )
 
-export { Separator }
+export { Separator, type SeparatorProps }

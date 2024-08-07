@@ -54,20 +54,20 @@ export default function SheetDemo() {
                     </Button>
                 ))}
             </div>
-            <Sheet.Overlay isOpen={isOpen} onOpenChange={setIsOpen}>
-                <Sheet.Content
-                    closeButton={settings.closeButton}
-                    isStack={settings.isStack}
-                    side={sheetSide}
-                >
-                    <Sheet.Header>
-                        <Sheet.Title>{titleCase(sheetSide)}</Sheet.Title>
-                        <Sheet.Description>
-                            The sheet will go from {sheetSide} side.
-                        </Sheet.Description>
-                    </Sheet.Header>
-                </Sheet.Content>
-            </Sheet.Overlay>
+            <Sheet.Content
+                isOpen={isOpen}
+                onOpenChange={setIsOpen}
+                closeButton={settings.closeButton}
+                isStack={settings.isStack}
+                side={sheetSide}
+            >
+                <Sheet.Header>
+                    <Sheet.Title>{titleCase(sheetSide)}</Sheet.Title>
+                    <Sheet.Description>
+                        The sheet will go from {sheetSide} side.
+                    </Sheet.Description>
+                </Sheet.Header>
+            </Sheet.Content>
         </>
     )
 }

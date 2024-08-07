@@ -3,58 +3,58 @@
 import * as React from 'react'
 
 import { useSlotId } from '@react-aria/utils'
-import * as Primitive from 'react-aria-components'
+import {
+    composeRenderProps,
+    type LabelProps,
+    SliderOutput as SliderOutputPrimitive,
+    type SliderOutputProps as SliderOutputPrimitiveProps,
+    Slider as SliderPrimitive,
+    type SliderProps as SliderPrimitiveProps,
+    SliderStateContext as SliderStateContextPrimitive,
+    SliderThumb as SliderThumbPrimitive,
+    type SliderThumbProps as SliderThumbPrimitiveProps,
+    SliderTrack as SliderTrackPrimitive,
+    type SliderTrackProps as SliderTrackPrimitiveProps,
+    TextContext as TextContextPrimitive,
+    type TextProps
+} from 'react-aria-components'
 import { tv, type VariantProps } from 'tailwind-variants'
 
 import { Description, Label } from './field'
 
 const sliderStyles = tv({
     slots: {
-        root: 'flex flex-col gap-2 orientation-horizontal:w-full orientation-vertical:h-64 orientation-vertical:items-center disabled:opacity-70',
+        root: 'flex disabled:opacity-50 flex-col gap-2 orientation-horizontal:w-full orientation-vertical:h-56 orientation-vertical:items-center',
         track: [
-            'group/track relative cursor-pointer rounded-full bg-secondary disabled:cursor-default disabled:bg-muted',
-            'grow orientation-horizontal:h-2 orientation-horizontal:w-full orientation-vertical:w-2 orientation-vertical:flex-1'
+            'relative group/track rounded-full bg-zinc-200 dark:bg-zinc-800 cursor-pointer disabled:cursor-default disabled:bg-bg-disabled',
+            'grow orientation-vertical:flex-1 orientation-vertical:w-1.5 orientation-horizontal:w-full orientation-horizontal:h-1.5'
         ],
         filler: [
-            'rounded-full bg-primary group-disabled/track:bg-foreground',
-            'group-orientation-horizontal/top-0 pointer-events-none absolute group-orientation-horizontal/track:h-full group-orientation-vertical/track:bottom-0 group-orientation-vertical/track:w-full'
+            'rounded-full bg-primary group-disabled/track:bg-bg-disabled',
+            'pointer-events-none absolute group-orientation-horizontal/top-0 group-orientation-vertical/track:w-full group-orientation-vertical/track:bottom-0 group-orientation-horizontal/track:h-full'
         ],
         thumb: [
-            'outline-none focus:outline-none focus:ring-4 focus:ring-primary/20',
-            'rounded-full bg-white shadow-md transition-[width,height]',
+            'outline-none dragging:cursor-grabbing focus:ring-4 border border-zinc-200 focus:ring-primary/20 focus:border-primary focus:outline-none forced-colors:outline-[Highlight]',
+            'rounded-full bg-white transition-[width,height]',
             'absolute left-[50%] top-[50%] block !-translate-x-1/2 !-translate-y-1/2',
-            'disabled:border disabled:border-secondary disabled:bg-secondary',
-            'orientation-horizontal:h-2 orientation-vertical:w-2',
-            'size-4 dragging:size-5'
+            'disabled:bg-bg-disabled disabled:border disabled:border-bg',
+            'orientation-vertical:w-2 orientation-horizontal:h-2',
+            'size-[1.15rem] dragging:size-[1.30rem] dragging:border-primary'
         ],
-        valueLabel: 'text-sm text-muted-foreground'
+        valueLabel: 'text-muted-foreground text-sm'
     }
 })
 
-const { filler, thumb, root } = sliderStyles()
-
-interface SliderSubComponents {
-    Controls: typeof SliderControls
-    Filler: typeof SliderFiller
-    Thumb: typeof SliderThumb
-    Root: typeof SliderRoot
-    Track: typeof SliderTrack
-    ValueLabel: typeof SliderValueLabel
-}
+const { track, filler, thumb, root, valueLabel } = sliderStyles()
 
 interface SliderProps extends SliderRootProps, VariantProps<typeof sliderStyles> {
-    label?: Primitive.LabelProps['children']
-    description?: Primitive.TextProps['children']
+    label?: LabelProps['children']
+    description?: TextProps['children']
     showValue?: boolean | ((value: number[]) => string)
 }
 
-type SliderComponent = React.ForwardRefExoticComponent<SliderProps> & SliderSubComponents
-
-const Slider: SliderComponent = React.forwardRef<
-    React.ElementRef<typeof Primitive.Slider>,
-    SliderProps
->(({ label, description, showValue = true, ...props }, ref) => (
-    <SliderRoot ref={ref} {...props}>
+const Slider = ({ label, description, showValue = true, ...props }: SliderProps) => (
+    <SliderRoot {...props}>
         <div className='flex items-center justify-between gap-2'>
             {label && <Label>{label}</Label>}
             {(showValue || typeof showValue === 'function') && (
@@ -70,35 +70,34 @@ const Slider: SliderComponent = React.forwardRef<
         <SliderControls />
         {description && <Description>{description}</Description>}
     </SliderRoot>
-)) as SliderComponent
-Slider.displayName = 'Slider'
-
-type SliderRootProps = Primitive.SliderProps
-const SliderRoot = React.forwardRef(
-    (props: SliderRootProps, ref: React.Ref<HTMLDivElement>) => {
-        const descriptionId = useSlotId()
-        return (
-            <Primitive.TextContext.Provider
-                value={{ slots: { description: { id: descriptionId } } }}
-            >
-                <Primitive.Slider
-                    ref={ref}
-                    aria-describedby={descriptionId}
-                    {...props}
-                    className={Primitive.composeRenderProps(
-                        props.className,
-                        (className) => root({ className })
-                    )}
-                />
-            </Primitive.TextContext.Provider>
-        )
-    }
 )
-SliderRoot.displayName = 'SliderRoot'
 
-type SliderControlsProps = SliderTrackProps & VariantProps<typeof sliderStyles>
+interface SliderRootProps extends SliderPrimitiveProps {}
+
+const SliderRoot = (props: SliderRootProps) => {
+    const descriptionId = useSlotId()
+    return (
+        <TextContextPrimitive.Provider
+            value={{ slots: { description: { id: descriptionId } } }}
+        >
+            <SliderPrimitive
+                data-slot='root'
+                aria-describedby={descriptionId}
+                {...props}
+                className={composeRenderProps(props.className, (className) =>
+                    root({ className })
+                )}
+            />
+        </TextContextPrimitive.Provider>
+    )
+}
+
+interface SliderControlsProps
+    extends SliderTrackProps,
+        VariantProps<typeof sliderStyles> {}
+
 const SliderControls = (props: SliderControlsProps) => {
-    const { values } = React.useContext(Primitive.SliderStateContext)
+    const { values } = React.useContext(SliderStateContextPrimitive)
     return (
         <SliderTrack {...props}>
             <SliderFiller />
@@ -109,23 +108,26 @@ const SliderControls = (props: SliderControlsProps) => {
     )
 }
 
-type SliderTrackProps = Primitive.SliderTrackProps & VariantProps<typeof sliderStyles>
+interface SliderTrackProps
+    extends SliderTrackPrimitiveProps,
+        VariantProps<typeof sliderStyles> {}
+
 const SliderTrack = (props: SliderTrackProps) => {
-    const { track } = sliderStyles()
     return (
-        <Primitive.SliderTrack
+        <SliderTrackPrimitive
             {...props}
-            className={Primitive.composeRenderProps(props.className, (className) =>
+            className={composeRenderProps(props.className, (className) =>
                 track({ className })
             )}
         />
     )
 }
 
-type SliderFillerProps = React.HTMLAttributes<HTMLDivElement>
+interface SliderFillerProps extends React.HTMLAttributes<HTMLDivElement> {}
+
 const SliderFiller = (props: SliderFillerProps) => {
     const { orientation, getThumbPercent, values } = React.useContext(
-        Primitive.SliderStateContext
+        SliderStateContextPrimitive
     )
     return (
         <div
@@ -133,9 +135,7 @@ const SliderFiller = (props: SliderFillerProps) => {
             style={
                 values.length === 1
                     ? orientation === 'horizontal'
-                        ? {
-                              width: `${getThumbPercent(0) * 100}%`
-                          }
+                        ? { width: `${getThumbPercent(0) * 100}%` }
                         : { height: `${getThumbPercent(0) * 100}%` }
                     : orientation === 'horizontal'
                       ? {
@@ -152,35 +152,36 @@ const SliderFiller = (props: SliderFillerProps) => {
     )
 }
 
-type SliderThumbProps = Primitive.SliderThumbProps & VariantProps<typeof sliderStyles>
-const SliderThumb = (props: SliderThumbProps) => {
+interface SliderThumbProps
+    extends SliderThumbPrimitiveProps,
+        VariantProps<typeof sliderStyles> {}
+
+const SliderThumb = ({ className, ...props }: SliderThumbProps) => {
     return (
-        <Primitive.SliderThumb
+        <SliderThumbPrimitive
             {...props}
-            className={Primitive.composeRenderProps(props.className, (className) =>
-                thumb({ className })
-            )}
+            className={composeRenderProps(className, (className) => thumb({ className }))}
         />
     )
 }
 
-type LabelProps = Primitive.SliderOutputProps
-const SliderValueLabel = (props: LabelProps) => {
-    const { valueLabel } = sliderStyles()
+interface SliderValueLabelProps extends SliderOutputPrimitiveProps {}
+
+const SliderValueLabel = ({ className, ...props }: SliderValueLabelProps) => {
     return (
-        <Primitive.SliderOutput
+        <SliderOutputPrimitive
             {...props}
-            className={Primitive.composeRenderProps(props.className, (className) =>
+            className={composeRenderProps(className, (className) =>
                 valueLabel({ className })
             )}
         >
-            {Primitive.composeRenderProps(
+            {composeRenderProps(
                 props.children,
                 (children, { state }) =>
                     children ??
                     state.values.map((_, i) => state.getThumbValueLabel(i)).join(' - ')
             )}
-        </Primitive.SliderOutput>
+        </SliderOutputPrimitive>
     )
 }
 

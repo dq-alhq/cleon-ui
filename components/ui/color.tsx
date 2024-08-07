@@ -2,65 +2,43 @@
 
 import * as React from 'react'
 
-import { cn } from '@/lib/utils'
 import { parseColor } from '@react-stately/color'
-import * as Primitive from 'react-aria-components'
+import type {
+    ColorSliderProps as ColorSliderPrimitiveProps,
+    ColorSwatchPickerItemProps as ColorSwatchPickerItemPrimitiveProps,
+    ColorSwatchProps as ColorSwatchPrimitiveProps,
+    ColorThumbProps as ColorThumbPrimitiveProps
+} from 'react-aria-components'
+import {
+    ColorArea as ColorAreaPrimitive,
+    ColorSlider as ColorSliderPrimitive,
+    ColorSwatchPickerItem as ColorSwatchPickerItemPrimitive,
+    ColorSwatchPicker as ColorSwatchPickerPrimitive,
+    ColorSwatch as ColorSwatchPrimitive,
+    ColorThumb as ColorThumbPrimitive,
+    ColorWheel as ColorWheelPrimitive,
+    ColorWheelTrack as ColorWheelTrackPrimitive,
+    composeRenderProps,
+    SliderOutput
+} from 'react-aria-components'
 import { tv } from 'tailwind-variants'
 
-import { Description, FieldError, FieldGroup, Input, Label } from './field'
+import { cn } from '@/lib/utils'
+import { Description, Label } from './field'
 import { Slider } from './slider'
 
-interface ColorFieldProps extends Primitive.ColorFieldProps {
-    label?: string
-    description?: string
-    errorMessage?: string | ((validation: Primitive.ValidationResult) => string)
-    placeholder?: string
-    prefix?: React.ReactNode
-    suffix?: React.ReactNode
-    isLoading?: boolean
-}
-
-const ColorField = ({
-    label,
-    description,
-    errorMessage,
-    placeholder,
-    prefix,
-    suffix,
-    isLoading,
-    ...props
-}: ColorFieldProps) => {
-    return (
-        <Primitive.ColorField
-            {...props}
-            className={cn('group w-full flex flex-col gap-1', props.className)}
-        >
-            {label && <Label>{label}</Label>}
-            <FieldGroup
-                data-loading={isLoading ? 'true' : undefined}
-                className='flex group-invalid:border-danger group-disabled:bg-secondary group-disabled:opacity-70 items-center group-invalid:focus-within:ring-danger/20'
-            >
-                {prefix ? <span className='atrs isPfx'>{prefix}</span> : null}
-                <Input className='px-2.5' placeholder={placeholder} />
-                {suffix ? <span className='atrs isSfx'>{suffix}</span> : null}
-            </FieldGroup>
-            {description && <Description>{description}</Description>}
-            <FieldError>{errorMessage}</FieldError>
-        </Primitive.ColorField>
-    )
-}
-
 const colorAreaStyles = tv({
-    base: 'size-48 rounded-lg border border-background shrink-0 disabled:opacity-50'
+    base: 'size-48 rounded-md border border-background shrink-0 disabled:opacity-50'
 })
 
-interface ColorAreaProps extends React.ComponentProps<typeof Primitive.ColorArea> {}
+interface ColorAreaProps extends React.ComponentProps<typeof ColorAreaPrimitive> {}
 
 const ColorArea = ({ className, ...props }: ColorAreaProps) => {
     return (
-        <Primitive.ColorArea
+        <ColorAreaPrimitive
+            aria-label={props['aria-label'] ?? 'Color area'}
             {...props}
-            className={Primitive.composeRenderProps(className, (className, renderProps) =>
+            className={composeRenderProps(className, (className, renderProps) =>
                 colorAreaStyles({
                     ...renderProps,
                     className
@@ -70,7 +48,7 @@ const ColorArea = ({ className, ...props }: ColorAreaProps) => {
     )
 }
 
-interface ColorThumbProps extends Primitive.ColorThumbProps {}
+interface ColorThumbProps extends ColorThumbPrimitiveProps {}
 
 const colorThumbStyles = tv({
     base: 'size-5 shadow rounded-full ring-1 ring-inset ring-offset-2 ring-black/50 border border-black/50',
@@ -83,8 +61,8 @@ const colorThumbStyles = tv({
 
 const ColorThumb = ({ className, ...props }: ColorThumbProps) => {
     return (
-        <Primitive.ColorThumb
-            className={Primitive.composeRenderProps(className, (className, renderProps) =>
+        <ColorThumbPrimitive
+            className={composeRenderProps(className, (className, renderProps) =>
                 colorThumbStyles({
                     ...renderProps,
                     className
@@ -96,16 +74,16 @@ const ColorThumb = ({ className, ...props }: ColorThumbProps) => {
 }
 
 const colorSwatchPickerItemStyles = tv({
-    base: 'size-8 rounded-md cspis disabled:opacity-50'
+    base: 'size-8 rounded-md disabled:opacity-50'
 })
 
 const ColorSwatchPickerItem = ({
     className,
     ...props
-}: Primitive.ColorSwatchPickerItemProps) => {
+}: ColorSwatchPickerItemPrimitiveProps) => {
     return (
-        <Primitive.ColorSwatchPickerItem
-            className={Primitive.composeRenderProps(className, (className, renderProps) =>
+        <ColorSwatchPickerItemPrimitive
+            className={composeRenderProps(className, (className, renderProps) =>
                 colorSwatchPickerItemStyles({
                     ...renderProps,
                     className
@@ -113,24 +91,20 @@ const ColorSwatchPickerItem = ({
             )}
             {...props}
         >
-            <ColorSwatch
-                isBright={isBrightColor(props.color ?? '')}
-                className='size-[inherit] cocspip'
-            />
-        </Primitive.ColorSwatchPickerItem>
+            <ColorSwatch className='size-[inherit] cocspip' />
+        </ColorSwatchPickerItemPrimitive>
     )
 }
 
-interface ColorSwatchProps extends Primitive.ColorSwatchProps {
-    isBright?: boolean
-}
+interface ColorSwatchProps extends ColorSwatchPrimitiveProps {}
 
-const ColorSwatch = ({ isBright, className, ...props }: ColorSwatchProps) => {
-    const needRing = props.color ? isBrightColor(props.color) : isBright
+const ColorSwatch = ({ className, ...props }: ColorSwatchProps) => {
+    const needRing = props.color ? isBrightColor(props.color) : false
     return (
-        <Primitive.ColorSwatch
+        <ColorSwatchPrimitive
+            aria-label={props['aria-label'] ?? 'Color swatch'}
             className={cn(
-                'size-8 cs rounded-md',
+                'size-8 cs rounded-md shrink-0',
                 needRing
                     ? 'ring-1 ring-inset ring-black/10'
                     : 'dark:ring-1 dark:ring-inset dark:ring-white/10',
@@ -239,8 +213,7 @@ const isBrightColor = (color: any): boolean => {
 }
 
 const defaultColor = parseColor('hsl(216, 98%, 52%)')
-
-interface ColorSliderProps extends Primitive.ColorSliderProps {
+interface ColorSliderProps extends ColorSliderPrimitiveProps {
     label?: string
     description?: string
     showOutput?: boolean
@@ -254,31 +227,30 @@ const ColorSlider = ({
     ...props
 }: ColorSliderProps) => {
     return (
-        <Primitive.ColorSlider
+        <ColorSliderPrimitive
             className={cn('flex disabled:opacity-50 w-full flex-col gap-1', className)}
             {...props}
         >
             <div className='flex items-center gap-2'>
                 {label && <Label className='text-sm [grid-area:label]'>{label}</Label>}
                 {showOutput && (
-                    <Primitive.SliderOutput className='text-sm ml-auto [grid-area:output]' />
+                    <SliderOutput className='text-sm ml-auto [grid-area:output]' />
                 )}
             </div>
-            <Slider.Track className='cstrk rounded-md orientation-horizontal:h-8'>
-                <ColorThumb className='csth top-1/2' />
+            <Slider.Track className='rounded-md orientation-horizontal:h-8'>
+                <ColorThumb className='top-1/2' />
             </Slider.Track>
             {description && <Description>{description}</Description>}
-        </Primitive.ColorSlider>
+        </ColorSliderPrimitive>
     )
 }
 
-const ColorWheel = Primitive.ColorWheel
-const ColorWheelTrack = Primitive.ColorWheelTrack
-const ColorSwatchPicker = Primitive.ColorSwatchPicker
+const ColorWheel = ColorWheelPrimitive
+const ColorWheelTrack = ColorWheelTrackPrimitive
+const ColorSwatchPicker = ColorSwatchPickerPrimitive
 
 export {
     ColorArea,
-    ColorField,
     ColorSlider,
     ColorSwatch,
     ColorSwatchPicker,

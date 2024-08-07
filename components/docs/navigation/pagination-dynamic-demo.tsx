@@ -1,48 +1,42 @@
 'use client'
 
 import { Pagination } from '@/components/ui'
-import { Collection } from 'react-aria-components'
 
 const pages = Array.from({ length: 6 }, (_, i) => ({ value: i + 1 }))
 export default function PaginationDynamicDemo() {
     return (
         <Pagination>
-            <Pagination.Content>
-                <Pagination.Item>
-                    <Pagination.First href='#' />
-                </Pagination.Item>
-                <Pagination.Item>
-                    <Pagination.Previous href='#' />
-                </Pagination.Item>
-                <Pagination.Item className='lg:hidden'>
-                    <Pagination.Content className='rounded-lg border'>
-                        <Pagination.Label className='font-semibold'>1</Pagination.Label>
-                        <Pagination.Separator />
-                        <Pagination.Label className='text-muted-foreground'>
-                            6
-                        </Pagination.Label>
-                    </Pagination.Content>
-                </Pagination.Item>
-                <Pagination.Item className='hidden lg:inline'>
-                    <Pagination.Content>
-                        <Collection items={pages}>
-                            {(item) => (
-                                <Pagination.Item id={item.value.toString()}>
-                                    <Pagination.Link isActive={item.value === 4} href='#'>
-                                        {item.value}
-                                    </Pagination.Link>
-                                </Pagination.Item>
-                            )}
-                        </Collection>
-                    </Pagination.Content>
-                </Pagination.Item>
-                <Pagination.Item>
-                    <Pagination.Next href='#' />
-                </Pagination.Item>
-                <Pagination.Item>
-                    <Pagination.Last href='#' />
-                </Pagination.Item>
-            </Pagination.Content>
+            <Pagination.List>
+                <Pagination.Item role='first' href='#' />
+                <Pagination.Item role='previous' href='#' />
+                <Pagination.Section
+                    aria-label='Pagination. Segment'
+                    className='rounded-lg lg:hidden border'
+                >
+                    <Pagination.Item role='label'>1</Pagination.Item>
+                    <Pagination.Item role='separator' />
+                    <Pagination.Item className='text-muted-fg' role='label'>
+                        10
+                    </Pagination.Item>
+                </Pagination.Section>
+                <Pagination.Section
+                    aria-label='Pagination. Segment'
+                    className='hidden lg:flex'
+                    items={pages}
+                >
+                    {(item) => (
+                        <Pagination.Item
+                            id={item.value.toString()}
+                            isCurrent={item.value === 4}
+                            href='#'
+                        >
+                            {item.value}
+                        </Pagination.Item>
+                    )}
+                </Pagination.Section>
+                <Pagination.Item role='next' href='#' />
+                <Pagination.Item role='last' href='#' />
+            </Pagination.List>
         </Pagination>
     )
 }

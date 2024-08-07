@@ -1,9 +1,16 @@
 'use client'
 
-import { cn, useMediaQuery } from '@/lib/utils'
-import { ChevronDown, ChevronUp, Minus, Plus } from 'lucide-react'
-import * as Primitive from 'react-aria-components'
+import { ChevronDownIcon, ChevronUpIcon, MinusIcon, PlusIcon } from 'lucide-react'
+import {
+    Button,
+    type ButtonProps,
+    NumberField as NumberFieldPrimitive,
+    type NumberFieldProps as NumberFieldPrimitiveProps,
+    type ValidationResult
+} from 'react-aria-components'
+import { tv } from 'tailwind-variants'
 
+import { cn, useMediaQuery } from '@/lib/utils'
 import {
     Description,
     fieldBorderStyles,
@@ -13,26 +20,34 @@ import {
     Label
 } from './field'
 
-export interface NumberFieldProps extends Primitive.NumberFieldProps {
+const numberFieldStyles = tv({
+    slots: {
+        base: 'group flex flex-col gap-1',
+        stepperButton:
+            'h-10 cursor-default px-2 text-muted-foreground pressed:bg-primary pressed:text-primary-foreground group-disabled:bg-secondary forced-colors:group-disabled:text-[GrayText]'
+    }
+})
+
+const { base, stepperButton } = numberFieldStyles()
+
+interface NumberFieldProps extends NumberFieldPrimitiveProps {
     label?: string
     description?: string
     placeholder?: string
-    errorMessage?: string | ((validation: Primitive.ValidationResult) => string)
+    errorMessage?: string | ((validation: ValidationResult) => string)
 }
 
-export function NumberField({
+const NumberField = ({
     label,
     placeholder,
     description,
+    className,
     errorMessage,
     ...props
-}: NumberFieldProps) {
+}: NumberFieldProps) => {
     const isMobile = useMediaQuery('(max-width: 768px)')
     return (
-        <Primitive.NumberField
-            {...props}
-            className={cn('group flex flex-col gap-1', props.className)}
-        >
+        <NumberFieldPrimitive {...props} className={cn(base(), className)}>
             <Label>{label}</Label>
             <FieldGroup className='group-disabled:bg-secondary'>
                 {(renderProps) => (
@@ -75,11 +90,11 @@ export function NumberField({
             </FieldGroup>
             {description && <Description>{description}</Description>}
             <FieldError>{errorMessage}</FieldError>
-        </Primitive.NumberField>
+        </NumberFieldPrimitive>
     )
 }
 
-interface StepperButtonProps extends Primitive.ButtonProps {
+interface StepperButtonProps extends ButtonProps {
     slot: 'increment' | 'decrement'
     emblemType?: 'chevron' | 'default'
     className?: string
@@ -94,25 +109,20 @@ const StepperButton = ({
     const icon =
         emblemType === 'chevron' ? (
             slot === 'increment' ? (
-                <ChevronUp className='size-5' />
+                <ChevronUpIcon className='size-5' />
             ) : (
-                <ChevronDown className='size-5' />
+                <ChevronDownIcon className='size-5' />
             )
         ) : slot === 'increment' ? (
-            <Plus />
+            <PlusIcon />
         ) : (
-            <Minus />
+            <MinusIcon />
         )
     return (
-        <Primitive.Button
-            className={cn(
-                'h-10 cursor-default px-2 text-muted-foreground pressed:bg-primary pressed:text-primary-foreground group-disabled:bg-secondary',
-                className
-            )}
-            slot={slot}
-            {...props}
-        >
+        <Button className={stepperButton({ className })} slot={slot} {...props}>
             {icon}
-        </Primitive.Button>
+        </Button>
     )
 }
+
+export { NumberField, type NumberFieldProps }

@@ -2,10 +2,23 @@
 
 import * as React from 'react'
 
-import { cn, useMediaQuery } from '@/lib/utils'
-import * as Primitive from 'react-aria-components'
+import {
+    Button,
+    composeRenderProps,
+    type DialogProps,
+    DialogTrigger,
+    type DialogTriggerProps,
+    Modal,
+    OverlayArrow,
+    PopoverContext,
+    Popover as PopoverPrimitive,
+    type PopoverProps as PopoverPrimitiveProps,
+    useSlottedContext
+} from 'react-aria-components'
 import { tv, type VariantProps } from 'tailwind-variants'
-import { Dialog, type TitleProps } from './dialog'
+
+import { cn, useMediaQuery } from '@/lib/utils'
+import { Dialog, type DialogTitleProps } from './dialog'
 
 interface PopoverSubComponents {
     Content: typeof PopoverContent
@@ -19,16 +32,17 @@ interface PopoverSubComponents {
     Picker: typeof PopoverPicker
 }
 
-type PopoverComponent = React.FC<Primitive.DialogTriggerProps> & PopoverSubComponents
+type PopoverComponent = React.FC<DialogTriggerProps> & PopoverSubComponents
 
 const Popover: PopoverComponent = (props) => {
-    return <Primitive.DialogTrigger {...props} />
+    return <DialogTrigger {...props} />
 }
-const PopoverTrigger = Primitive.Button
+
+const PopoverTrigger = Button
 const PopoverClose = Dialog.Close
 const PopoverDescription = Dialog.Description
 
-const PopoverTitle = ({ className, ...props }: TitleProps) => (
+const PopoverTitle = ({ className, ...props }: DialogTitleProps) => (
     <Dialog.Title className={cn('leading-none', className)} {...props} />
 )
 
@@ -46,7 +60,7 @@ const PopoverBody = ({ className, ...props }: React.HTMLAttributes<HTMLDivElemen
 
 const popoverContentStyles = tv({
     base: [
-        'max-w-xs min-w-80 p-4 rounded-lg border bg-background bg-clip-padding text-foreground shadow-lg dark:backdrop-blur-2xl dark:backdrop-saturate-200 lg:text-sm sm:max-w-3xl'
+        'max-w-xs min-w-80 p-4 rounded-lg border bg-background bg-clip-padding text-foreground shadow-lg dark:backdrop-blur-2xl dark:backdrop-saturate-200 lg:text-sm sm:max-w-3xl forced-colors:bg-[Canvas]'
     ],
     variants: {
         isEntering: {
@@ -62,20 +76,17 @@ const popoverContentStyles = tv({
 
 const drawerStyles = tv({
     base: [
-        'fixed bottom-0 p-4 top-auto z-50 w-full bg-background max-w-2xl rounded-t-xl border border-b-transparent outline-none',
+        'fixed bottom-0 p-4 top-auto z-50 w-full bg-overlay max-w-2xl rounded-t-xl border border-b-transparent outline-none',
         'entering:animate-in entering:fade-in-0 entering:slide-in-from-bottom-1/2 entering:[transition-timing-function:ease-out',
         'exiting:animate-out exiting:fade-out-0 exiting:slide-out-to-bottom-1/2 exiting:[transition-timing-function:ease]'
     ]
 })
 
 interface PopoverProps
-    extends Omit<Primitive.DialogProps, 'children' | 'className' | 'style'>,
-        Omit<Primitive.PopoverProps, 'children' | 'className'>,
+    extends Omit<DialogProps, 'children' | 'className' | 'style'>,
+        Omit<PopoverPrimitiveProps, 'children' | 'className'>,
         Omit<VariantProps<typeof drawerStyles>, 'className'> {
-    className?:
-        | string
-        | Primitive.DialogProps['className']
-        | Primitive.PopoverProps['className']
+    className?: string | DialogProps['className'] | PopoverPrimitiveProps['className']
     children: React.ReactNode
     showArrow?: boolean
     style?: React.CSSProperties
@@ -87,24 +98,20 @@ const PopoverContent = ({
     className,
     ...props
 }: PopoverProps) => {
-    const popoverContext = Primitive.useSlottedContext(Primitive.PopoverContext)!
+    const popoverContext = useSlottedContext(PopoverContext)!
     const isSubmenu = popoverContext?.trigger === 'SubmenuTrigger'
     let offset = showArrow ? 12 : 8
     offset = isSubmenu ? offset - 6 : offset
     const isMobile = useMediaQuery('(max-width: 600px)')
     return isMobile ? (
-        <Primitive.Modal
-            {...props}
-            isDismissable
-            className={cn(drawerStyles(), className)}
-        >
+        <Modal {...props} isDismissable className={cn(drawerStyles(), className)}>
             <Dialog className='focus:outline-none'>{children}</Dialog>
-        </Primitive.Modal>
+        </Modal>
     ) : (
-        <Primitive.Popover
+        <PopoverPrimitive
             offset={offset}
             {...props}
-            className={Primitive.composeRenderProps(className, (className, renderProps) =>
+            className={composeRenderProps(className, (className, renderProps) =>
                 popoverContentStyles({
                     ...renderProps,
                     className
@@ -112,27 +119,27 @@ const PopoverContent = ({
             )}
         >
             {showArrow && (
-                <Primitive.OverlayArrow className='group'>
+                <OverlayArrow className='group'>
                     <svg
                         width={12}
                         height={12}
                         viewBox='0 0 12 12'
-                        className='block fill-background stroke-border group-placement-left:-rotate-90 group-placement-right:rotate-90 group-placement-bottom:rotate-180'
+                        className='block fill-background stroke-border group-placement-left:-rotate-90 group-placement-right:rotate-90 group-placement-bottom:rotate-180 forced-colors:fill-[Canvas] forced-colors:stroke-[ButtonBorder]'
                     >
                         <path d='M0 0 L6 6 L12 0' />
                     </svg>
-                </Primitive.OverlayArrow>
+                </OverlayArrow>
             )}
             {children}
-        </Primitive.Popover>
+        </PopoverPrimitive>
     )
 }
 
 const PopoverPicker = ({ children, className, ...props }: PopoverProps) => {
     return (
-        <Primitive.Popover
+        <PopoverPrimitive
             {...props}
-            className={Primitive.composeRenderProps(className, (className, renderProps) =>
+            className={composeRenderProps(className, (className, renderProps) =>
                 popoverContentStyles({
                     ...renderProps,
                     className: cn(
@@ -143,7 +150,7 @@ const PopoverPicker = ({ children, className, ...props }: PopoverProps) => {
             )}
         >
             {children}
-        </Primitive.Popover>
+        </PopoverPrimitive>
     )
 }
 

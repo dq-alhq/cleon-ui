@@ -1,9 +1,24 @@
 'use client'
 
-import { ChevronLeft, ChevronRight } from 'lucide-react'
-import * as Primitive from 'react-aria-components'
+import { ChevronLeftIcon, ChevronRightIcon } from 'lucide-react'
+import {
+    CalendarCell,
+    CalendarGrid,
+    CalendarGridBody,
+    CalendarGridHeader as CalendarGridHeaderPrimitive,
+    CalendarHeaderCell,
+    Calendar as CalendarPrimitive,
+    type CalendarProps as CalendarPrimitiveProps,
+    composeRenderProps,
+    type DateValue,
+    Heading,
+    RangeCalendar as RangeCalendarPrimitive,
+    type RangeCalendarProps as RangeCalendarPrimitiveProps,
+    Text,
+    useLocale
+} from 'react-aria-components'
+import { twJoin } from 'tailwind-merge'
 import { tv } from 'tailwind-variants'
-
 import { Button } from './button'
 
 const cellStyles = tv({
@@ -19,40 +34,52 @@ const cellStyles = tv({
     }
 })
 
-interface CalendarProps<T extends Primitive.DateValue>
-    extends Omit<Primitive.CalendarProps<T>, 'visibleDuration'> {
+interface CalendarProps<T extends DateValue>
+    extends Omit<CalendarPrimitiveProps<T>, 'visibleDuration'> {
     errorMessage?: string
+    className?: string
 }
 
-function Calendar<T extends Primitive.DateValue>({
+const Calendar = <T extends DateValue>({
     errorMessage,
+    className,
     ...props
-}: CalendarProps<T>) {
+}: CalendarProps<T>) => {
     return (
-        <Primitive.Calendar {...props}>
+        <CalendarPrimitive {...props}>
             <CalendarHeader />
-            <Primitive.CalendarGrid>
+            <CalendarGrid className='[&_td]:px-0'>
                 <CalendarGridHeader />
-                <Primitive.CalendarGridBody>
+                <CalendarGridBody>
                     {(date) => (
-                        <Primitive.CalendarCell date={date} className={cellStyles} />
+                        <CalendarCell
+                            date={date}
+                            className={composeRenderProps(
+                                className,
+                                (className, renderProps) =>
+                                    cellStyles({
+                                        ...renderProps,
+                                        className
+                                    })
+                            )}
+                        />
                     )}
-                </Primitive.CalendarGridBody>
-            </Primitive.CalendarGrid>
+                </CalendarGridBody>
+            </CalendarGrid>
             {errorMessage && (
-                <Primitive.Text slot='errorMessage' className='text-sm text-danger'>
+                <Text slot='errorMessage' className='text-sm text-danger'>
                     {errorMessage}
-                </Primitive.Text>
+                </Text>
             )}
-        </Primitive.Calendar>
+        </CalendarPrimitive>
     )
 }
 
-function CalendarHeader() {
-    const { direction } = Primitive.useLocale()
+const CalendarHeader = () => {
+    const { direction } = useLocale()
 
     return (
-        <header className='flex w-full items-center gap-1 px-1 pb-4'>
+        <header className='flex w-full justify-center items-center gap-1 px-1 pb-4'>
             <Button
                 size='icon'
                 className='[&_[data-slot=icon]]:text-foreground'
@@ -60,46 +87,42 @@ function CalendarHeader() {
                 slot='previous'
             >
                 {direction === 'rtl' ? (
-                    <ChevronRight aria-hidden />
+                    <ChevronRightIcon />
                 ) : (
-                    <ChevronLeft aria-hidden />
+                    <ChevronLeftIcon aria-hidden />
                 )}
             </Button>
-            <Primitive.Heading className='mx-2 flex-1 text-center text-base font-medium text-foreground' />
+            <Heading className='mx-2 flex-1 text-center text-base font-medium text-foreground' />
             <Button
                 size='icon'
                 className='[&_[data-slot=icon]]:text-foreground'
                 variant='outline'
                 slot='next'
             >
-                {direction === 'rtl' ? (
-                    <ChevronLeft aria-hidden />
-                ) : (
-                    <ChevronRight aria-hidden />
-                )}
+                {direction === 'rtl' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
             </Button>
         </header>
     )
 }
 
-function CalendarGridHeader() {
+const CalendarGridHeader = () => {
     return (
-        <Primitive.CalendarGridHeader>
+        <CalendarGridHeaderPrimitive>
             {(day) => (
-                <Primitive.CalendarHeaderCell className='text-xs font-semibold text-muted-foreground'>
+                <CalendarHeaderCell className='text-sm lg:text-xs font-semibold text-secondary'>
                     {day}
-                </Primitive.CalendarHeaderCell>
+                </CalendarHeaderCell>
             )}
-        </Primitive.CalendarGridHeader>
+        </CalendarGridHeaderPrimitive>
     )
 }
 
-interface RangeCalendarProps<T extends Primitive.DateValue>
-    extends Omit<Primitive.RangeCalendarProps<T>, 'visibleDuration'> {
+interface RangeCalendarProps<T extends DateValue>
+    extends Omit<RangeCalendarPrimitiveProps<T>, 'visibleDuration'> {
     errorMessage?: string
 }
 
-const cell = tv({
+const cellRangeStyles = tv({
     base: 'flex h-full w-full items-center justify-center rounded-md',
     variants: {
         selectionState: {
@@ -118,53 +141,58 @@ const cell = tv({
     }
 })
 
-function RangeCalendar<T extends Primitive.DateValue>({
+const RangeCalendar = <T extends DateValue>({
     errorMessage,
     ...props
-}: RangeCalendarProps<T>) {
+}: RangeCalendarProps<T>) => {
     return (
-        <Primitive.RangeCalendar {...props}>
+        <RangeCalendarPrimitive {...props}>
             <CalendarHeader />
-            <Primitive.CalendarGrid className='[&_td]:px-0'>
+            <CalendarGrid className='[&_td]:px-0'>
                 <CalendarGridHeader />
-                <Primitive.CalendarGridBody>
+                <CalendarGridBody>
                     {(date) => (
-                        <Primitive.CalendarCell
+                        <CalendarCell
                             date={date}
-                            className='group size-9 cursor-default text-sm outline outline-0 outside-month:text-secondary selected:bg-primary/20 invalid:selected:bg-danger/20 selection-start:rounded-s-md selection-end:rounded-e-md [td:first-child_&]:rounded-s-md [td:last-child_&]:rounded-e-md'
+                            className={twJoin([
+                                'group size-10 lg:size-9 cursor-default lg:text-sm outline outline-0 outside-month:text-zinc-300 selection-start:rounded-s-full selection-end:rounded-e-full forced-colors:selected:bg-[Highlight] forced-colors:invalid:selected:bg-[Mark]',
+                                'selected:bg-primary/10 selected:text-primary forced-colors:selected:text-[HighlightText]',
+                                '[td:first-child_&]:rounded-s-full [td:last-child_&]:rounded-e-full',
+                                'invalid:selected:bg-danger/30'
+                            ])}
                         >
                             {({
                                 formattedDate,
                                 isSelected,
                                 isSelectionStart,
                                 isSelectionEnd,
-                                isDisabled
+                                ...renderProps
                             }) => (
                                 <span
-                                    className={cell({
+                                    className={cellRangeStyles({
+                                        ...renderProps,
                                         selectionState:
                                             isSelected &&
                                             (isSelectionStart || isSelectionEnd)
                                                 ? 'cap'
                                                 : isSelected
                                                   ? 'middle'
-                                                  : 'none',
-                                        isDisabled
+                                                  : 'none'
                                     })}
                                 >
                                     {formattedDate}
                                 </span>
                             )}
-                        </Primitive.CalendarCell>
+                        </CalendarCell>
                     )}
-                </Primitive.CalendarGridBody>
-            </Primitive.CalendarGrid>
+                </CalendarGridBody>
+            </CalendarGrid>
             {errorMessage && (
-                <Primitive.Text slot='errorMessage' className='text-sm text-danger'>
+                <Text slot='errorMessage' className='text-sm text-danger'>
                     {errorMessage}
-                </Primitive.Text>
+                </Text>
             )}
-        </Primitive.RangeCalendar>
+        </RangeCalendarPrimitive>
     )
 }
 
@@ -172,4 +200,4 @@ Calendar.GridHeader = CalendarGridHeader
 Calendar.Header = CalendarHeader
 Calendar.RangeCalendar = RangeCalendar
 
-export { Calendar }
+export { Calendar, type RangeCalendarProps }

@@ -1,7 +1,7 @@
 import React from 'react'
 
+import { Description, Tag, TagGroup, TagList } from '@/components/ui'
 import type { Selection } from 'react-aria-components'
-import { Description, Tag, TagGroup } from 'ui'
 
 const fruitList = [
     { id: '1', name: 'Apple', available: false },
@@ -16,11 +16,10 @@ export default function TagGroupControlledDemo() {
         <div>
             <TagGroup
                 selectionMode='multiple'
-                items={fruitList}
                 selectedKeys={selected}
                 onSelectionChange={setSelected}
             >
-                {(item) => <Tag>{item.name}</Tag>}
+                <TagList items={fruitList}>{(item) => <Tag>{item.name}</Tag>}</TagList>
             </TagGroup>
 
             <Description className='mt-2 block [&>strong]:text-foreground text-muted-foreground'>

@@ -1,8 +1,12 @@
 'use client'
 
-import { cn } from '@/lib/utils'
-import * as Primitive from 'react-aria-components'
+import {
+    Switch as SwitchPrimitive,
+    type SwitchProps as SwitchPrimitiveProps
+} from 'react-aria-components'
 import { tv, type VariantProps } from 'tailwind-variants'
+
+import { cn } from '@/lib/utils'
 
 const trackStyles = tv({
     base: 'mr-2 h-5 w-8 cursor-pointer rounded-full border-2 border-transparent bg-muted transition duration-200',
@@ -21,15 +25,15 @@ const trackStyles = tv({
     }
 })
 
-interface SwitchProps extends Primitive.SwitchProps, VariantProps<typeof trackStyles> {}
+interface SwitchProps extends SwitchPrimitiveProps, VariantProps<typeof trackStyles> {}
 
 const Switch = ({ children, variant, className, ...props }: SwitchProps) => {
     return (
-        <Primitive.Switch
+        <SwitchPrimitive
             {...props}
             className={(values) =>
                 cn(
-                    'group inline-flex touch-none items-center disabled:opacity-70 lg:text-sm',
+                    'group inline-flex touch-none lg:text-sm items-center disabled:opacity-60 forced-colors:disabled:text-[GrayText]',
                     typeof className === 'function' ? className(values) : className
                 )
             }
@@ -37,13 +41,13 @@ const Switch = ({ children, variant, className, ...props }: SwitchProps) => {
         >
             {(values) => (
                 <>
-                    <span className={trackStyles({ variant: variant })}>
-                        <span className='block size-4 origin-right rounded-full bg-white shadow transition-all duration-200 group-pressed:w-5 group-selected:ml-3 group-selected:group-data-[pressed]:ml-2' />
+                    <span className={trackStyles({ variant })}>
+                        <span className='forced-colors:disabled:outline-[GrayText] group-selected:ml-3 group-selected:group-data-[pressed]:ml-2 group-pressed:w-5 block size-4 origin-right rounded-full bg-white shadow transition-all duration-200' />
                     </span>
                     {typeof children === 'function' ? children(values) : children}
                 </>
             )}
-        </Primitive.Switch>
+        </SwitchPrimitive>
     )
 }
 

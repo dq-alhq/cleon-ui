@@ -19,8 +19,7 @@ Note that external links to different origins will not trigger client side routi
 
 The `RouterProvider` component takes two props: navigate and `useHref`. Set navigate to a function from your router that handles client-side moves. `useHref` is optional and tweaks a router-specific href to a regular HTML href, like adding a base path. Here’s the basic setup. Peep the examples below for different frameworks.
 
-```tsx
-import { RouterProvider } from 'react-aria-components'
+<PlainCode lang='js' code={`import { RouterProvider } from 'react-aria-components'
 import { useNavigate, useHref } from 'your-router'
 
 export default function Layout() {
@@ -32,14 +31,13 @@ export default function Layout() {
         </RouterProvider>
     )
 }
-```
+`} />
 
 ### Inertia.js
 
 When using Inertia.js, you need to declare it your .d.ts file for example `global.d.ts`.
 
-```tsx
-import { FormDataConvertible, Method, PreserveStateOption, Progress } from '@inertiajs/core'
+<PlainCode lang='js' code={`import { FormDataConvertible, Method, PreserveStateOption, Progress } from '@inertiajs/core'
 
 declare module 'react-aria-components' {
     interface RouterConfig {
@@ -61,12 +59,11 @@ declare module 'react-aria-components' {
         }
     }
 }
-```
+`} />
 
 create a provider in your components folder `components/providers.tsx` and paste this code:
 
-```tsx
-import {
+<PlainCode lang='js' code={`import {
     createContext,
     ReactNode,
     useContext,
@@ -160,7 +157,7 @@ function ThemeProvider({
     );
 }
 
-const Provider = ({ children }: { children: ReactNode }) => (
+const Providers = ({ children }: { children: ReactNode }) => (
     <RouterProvider
         navigate={(to, options) => router.visit(to, options as any)}
     >
@@ -180,37 +177,36 @@ const useTheme = () => {
 };
 
 export {
-    Provider,
+    Providers,
     useTheme,
     type Theme,
 };
-```
+`} />
 
 Then in your `resources/js/app.tsx` you can wrap `<App/>` within `Provider` like this:
 
-```tsx
-import "./bootstrap";
+<PlainCode lang='js' code={`import "./bootstrap";
 import "../css/app.css";
 
 import { createRoot, hydrateRoot } from "react-dom/client";
 import { createInertiaApp } from "@inertiajs/react";
 import { resolvePageComponent } from "laravel-vite-plugin/inertia-helpers";
-import { Provider } from "@/components/providers";
+import { Providers } from "@/components/providers";
 
 const appName = import.meta.env.VITE_APP_NAME || "Laravel";
 
 createInertiaApp({
-    title: (title) => (title ? `${title} | ${appName}` : appName),
+    title: (title) => title ? title + " | " + appName : appName,
     resolve: (name) =>
         resolvePageComponent(
-            `./pages/${name}.tsx`,
+            "./pages/"+name+".tsx",
             import.meta.glob("./pages/**/*.tsx"),
         ),
     setup({ el, App, props }) {
         const appElement = (
-            <Provider>
+            <Providers>
                 <App {...props} />
-            </Provider>
+            </Providers>
         );
         if (import.meta.env.DEV) {
             createRoot(el).render(appElement);
@@ -223,18 +219,18 @@ createInertiaApp({
         color: "#4B5563",
     },
 });
-```
+`} />
 
 ### Next.js
 
 The useRouter hook from next/navigation returns a router object for navigation. RouterProvider should be rendered in a client component at the root of each page or layout with React Aria links. Create a new client component for this or combine it with other top-level providers as described in the Next.js docs.
-Create new file `provider.tsx` in `app` folder.
+Create new file `providers.tsx` in `app` folder.
 
-```tsx
-'use client'
+<PlainCode code={`'use client'
 
+import { ThemeProvider, useTheme } from 'next-themes'
 import { useRouter } from 'next/navigation'
-import { RouterProvider as RouterProviderPrimitive } from 'react-aria-components'
+import { RouterProvider } from 'react-aria-components'
 
 declare module 'react-aria-components' {
     interface RouterConfig {
@@ -242,20 +238,28 @@ declare module 'react-aria-components' {
     }
 }
 
-export function RouteProvider({ children }) {
-    let router = useRouter()
+function Providers({ children }: { children: React.ReactNode }) {
+    const router = useRouter()
 
-    return <RouterProviderPrimitive navigate={router.push}>{children}</RouterProviderPrimitive>
+    return (
+        <RouterProvider navigate={router.push}>
+            <ThemeProvider attribute='class'>
+                {children}
+            </ThemeProvider>
+        </RouterProvider>
+    )
 }
-```
+
+export { Providers, useTheme }
+`}/>
 
 Then in `app/layout.tsx` or your root layout, wrap the children with the ClientProviders component.
 
-```tsx
+```tsx {1} {6}
 import { RouteProvider } from './provider'
-export default function RootLayout({ children }) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
     return (
-        <html>
+        <html lang='en'>
             <body>
                 <RouteProvider>{children}</RouteProvider>
             </body>

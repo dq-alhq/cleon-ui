@@ -2,22 +2,43 @@
 
 import React from 'react'
 
-import { cn } from '@/lib/utils'
-import { ChevronDown } from 'lucide-react'
-import * as Primitive from 'react-aria-components'
+import {
+    Button as ButtonPrimitive,
+    ComboBox as ComboboxPrimitive,
+    type ComboBoxProps as ComboboxPrimitiveProps,
+    ComboBoxStateContext,
+    type ValidationResult
+} from 'react-aria-components'
+import { tv } from 'tailwind-variants'
 
+import { cn } from '@/lib/utils'
+import { ChevronDownIcon, XIcon } from 'lucide-react'
 import { Button } from './button'
 import { DropdownItem, DropdownSection } from './dropdown'
 import { Description, FieldError, FieldGroup, Input, Label } from './field'
 import { ListBox } from './list-box'
 import { Popover } from './popover'
 
+const comboboxStyles = tv({
+    slots: {
+        base: 'group w-full flex flex-col gap-1',
+        chevronButton:
+            'h-7 w-8 rounded outline-offset-0 active:bg-transparent hover:bg-transparent pressed:bg-transparent',
+        chevronIcon:
+            'text-muted-foreground transition duration-200 group-open:rotate-180 group-open:text-foreground',
+        clearButton:
+            'focus:outline-none absolute inset-y-0 right-0 flex items-center pr-2 text-muted-foreground hover:text-foreground'
+    }
+})
+
+const { base, chevronButton, chevronIcon, clearButton } = comboboxStyles()
+
 interface ComboBoxProps<T extends object>
-    extends Omit<Primitive.ComboBoxProps<T>, 'children'> {
+    extends Omit<ComboboxPrimitiveProps<T>, 'children'> {
     label?: string
     placeholder?: string
     description?: string | null
-    errorMessage?: string | ((validation: Primitive.ValidationResult) => string)
+    errorMessage?: string | ((validation: ValidationResult) => string)
     children: React.ReactNode | ((item: T) => React.ReactNode)
 }
 
@@ -27,35 +48,50 @@ const ComboBox = <T extends object>({
     errorMessage,
     children,
     placeholder,
+    className,
     items,
     ...props
 }: ComboBoxProps<T>) => {
     return (
-        <Primitive.ComboBox
+        <ComboboxPrimitive
             menuTrigger='focus'
             {...props}
-            className={cn('group flex w-full flex-col gap-1', props.className)}
+            className={cn(base(), className)}
         >
             <Label>{label}</Label>
-            <FieldGroup className='pl-0'>
+            <FieldGroup className='pl-0 relative'>
                 <Input className='pl-2.5' placeholder={placeholder} />
-                <Button
-                    size='icon'
-                    variant='ghost'
-                    className='h-7 w-8 rounded outline-offset-0 active:bg-transparent hover:bg-transparent pressed:bg-transparent'
-                >
-                    <ChevronDown
-                        aria-hidden
-                        className='text-muted-foreground transition duration-200 group-open:rotate-180 group-open:text-foreground'
-                    />
+                <Button size='icon' variant='ghost' className={chevronButton()}>
+                    {!props?.inputValue && (
+                        <ChevronDownIcon aria-hidden className={chevronIcon()} />
+                    )}
                 </Button>
+                {props?.inputValue && <ComboBoxClearButton />}
             </FieldGroup>
             {description && <Description>{description}</Description>}
             <FieldError>{errorMessage}</FieldError>
             <Popover.Picker>
                 <ListBox.Picker items={items}>{children}</ListBox.Picker>
             </Popover.Picker>
-        </Primitive.ComboBox>
+        </ComboboxPrimitive>
+    )
+}
+
+const ComboBoxClearButton = () => {
+    const state = React.useContext(ComboBoxStateContext)
+
+    return (
+        <ButtonPrimitive
+            className={clearButton()}
+            slot={null}
+            aria-label='Clear'
+            onPress={() => {
+                state?.setSelectedKey(null)
+                state?.open()
+            }}
+        >
+            <XIcon className='size-4' />
+        </ButtonPrimitive>
     )
 }
 
@@ -65,4 +101,4 @@ const ComboBoxSection = DropdownSection
 ComboBox.Item = ComboBoxItem
 ComboBox.Section = ComboBoxSection
 
-export { ComboBox }
+export { ComboBox, type ComboBoxProps }

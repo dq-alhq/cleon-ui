@@ -1,50 +1,63 @@
 'use client'
 
-import { type ReactNode } from 'react'
+import * as React from 'react'
 
-import { cn } from '@/lib/utils'
-import * as Primitive from 'react-aria-components'
+import {
+    RadioGroup as RadioGroupPrimitive,
+    Radio as RadioPrimitive,
+    type RadioGroupProps as RACRadioGroupProps,
+    type RadioProps as RadioPrimitiveProps,
+    type ValidationResult
+} from 'react-aria-components'
 import { tv } from 'tailwind-variants'
 
+import { cn } from '@/lib/utils'
 import { Description, FieldError, Label } from './field'
 
-interface RadioGroupProps extends Omit<Primitive.RadioGroupProps, 'children'> {
+interface RadioGroupProps extends Omit<RACRadioGroupProps, 'children'> {
     label?: string
-    children?: ReactNode
+    children?: React.ReactNode
     description?: string
-    errorMessage?: string | ((validation: Primitive.ValidationResult) => string)
+    errorMessage?: string | ((validation: ValidationResult) => string)
 }
 
-const RadioGroup = (props: RadioGroupProps) => {
+const RadioGroup = ({
+    label,
+    description,
+    errorMessage,
+    children,
+    ...props
+}: RadioGroupProps) => {
     return (
-        <Primitive.RadioGroup
+        <RadioGroupPrimitive
             {...props}
             className={cn('group flex flex-col gap-2', props.className)}
         >
-            <Label>{props.label}</Label>
-            <div className='flex gap-2 group-orientation-horizontal:gap-4 group-orientation-vertical:flex-col'>
-                {props.children}
+            {label && <Label>{label}</Label>}
+            <div className='flex select-none gap-2 group-orientation-horizontal:flex-wrap group-orientation-horizontal:gap-2 sm:group-orientation-horizontal:gap-4 group-orientation-vertical:flex-col'>
+                {children}
             </div>
-            {props.description && <Description>{props.description}</Description>}
-            <FieldError>{props.errorMessage}</FieldError>
-        </Primitive.RadioGroup>
+            {description && <Description>{description}</Description>}
+            <FieldError>{errorMessage}</FieldError>
+        </RadioGroupPrimitive>
     )
 }
 
 const radioStyles = tv({
-    base: 'size-4 rounded-full border border-input bg-background transition',
+    base: 'size-4 shrink-0 rounded-full border bg-secondary transition',
     variants: {
         isSelected: {
+            false: 'border-toggle',
             true: 'border-[4.5px] border-primary'
         },
         isFocused: {
             true: [
                 'border-primary bg-primary/20 ring-4 ring-primary/20',
-                'group-invalid:border-danger group-invalid:bg-danger/20 group-invalid:ring-danger/20'
+                'group-invalid:border-danger/70 group-invalid:bg-danger/20 group-invalid:ring-danger/20'
             ]
         },
         isInvalid: {
-            true: 'border-danger bg-danger/20'
+            true: 'border-danger/70 bg-danger/20'
         },
         isDisabled: {
             true: 'opacity-50'
@@ -52,22 +65,39 @@ const radioStyles = tv({
     }
 })
 
-const Radio = (props: Primitive.RadioProps) => {
+interface RadioProps extends RadioPrimitiveProps {
+    description?: string
+}
+
+const Radio = ({ description, ...props }: RadioProps) => {
     return (
-        <Primitive.Radio
-            {...props}
-            className={cn(
-                'group flex items-center gap-2 text-sm text-foreground transition disabled:text-foreground/70',
-                props.className
-            )}
-        >
-            {(renderProps) => (
-                <>
-                    <div className={radioStyles(renderProps)} />
-                    {props.children}
-                </>
-            )}
-        </Primitive.Radio>
+        <>
+            <RadioPrimitive
+                {...props}
+                className={cn(
+                    'group flex items-center gap-2 text-sm text-foreground transition disabled:text-foreground/50 forced-colors:disabled:text-[GrayText]',
+                    props.className
+                )}
+            >
+                {(renderProps) => (
+                    <div className='flex gap-2'>
+                        <div
+                            className={radioStyles({
+                                ...renderProps,
+                                className: 'description' in props ? 'mt-1' : 'mt-0.5'
+                            })}
+                        />
+                        <div className='flex flex-col gap-1'>
+                            <>{props.children}</>
+                            {description && (
+                                <Description className='block'>{description}</Description>
+                            )}
+                        </div>
+                    </div>
+                )}
+            </RadioPrimitive>
+        </>
     )
 }
-export { Radio, RadioGroup }
+
+export { Radio, RadioGroup, radioStyles }

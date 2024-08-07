@@ -79,67 +79,65 @@ export default function SheetMenuDemo() {
                 <Sheet.Trigger aria-labelledby='open' aria-label='Open menu'>
                     <Avatar initials='DQ' alt='DQ' src='https://github.com/dq-alhq.png' />
                 </Sheet.Trigger>
-                <Sheet.Overlay>
-                    <Sheet.Content closeButton={false}>
-                        <Sheet.Header className='mb-2 flex flex-row items-center gap-x-3'>
-                            <Avatar
-                                initials='DQ'
-                                alt='DQ'
-                                src='https://github.com/dq-alhq.png'
-                            />
-                            <div>
-                                <Sheet.Title>Diqi Al-Haqqi</Sheet.Title>
-                                <Sheet.Description>@dq-alhq</Sheet.Description>
-                            </div>
-                        </Sheet.Header>
-                        <PrimitiveMenu aria-labelledby='Sheet'>
-                            <Menu.Item onAction={openModal}>
-                                <GithubLogo className='size-4' />
-                                Edit Status
+                <Sheet.Content closeButton={false}>
+                    <Sheet.Header className='mb-2 flex flex-row items-center gap-x-3'>
+                        <Avatar
+                            initials='DQ'
+                            alt='DQ'
+                            src='https://github.com/dq-alhq.png'
+                        />
+                        <div>
+                            <Sheet.Title>Diqi Al-Haqqi</Sheet.Title>
+                            <Sheet.Description>@dq-alhq</Sheet.Description>
+                        </div>
+                    </Sheet.Header>
+                    <PrimitiveMenu aria-labelledby='Sheet'>
+                        <Menu.Item onAction={openModal}>
+                            <GithubLogo className='size-4' />
+                            Edit Status
+                        </Menu.Item>
+                        <Menu.Separator />
+                        <Menu.Section>
+                            <Menu.Item>
+                                <User />
+                                Your profile
                             </Menu.Item>
-                            <Menu.Separator />
-                            <Menu.Section>
-                                <Menu.Item>
-                                    <User />
-                                    Your profile
-                                </Menu.Item>
-                                <Menu.Item>
-                                    <BookKey /> Your repositories
-                                </Menu.Item>
-                                <Menu.Item>
-                                    <Heart />
-                                    Your sponsors
-                                </Menu.Item>
-                            </Menu.Section>
-                            <Menu.Separator />
-                            <Menu.Section>
-                                <Menu.Item>
-                                    <Filter /> Feature preview
-                                </Menu.Item>
-                                <Menu.Item>
-                                    <Settings />
-                                    Settings
-                                </Menu.Item>
-                            </Menu.Section>
-                            <Menu.Separator />
-                            <Menu.Section>
-                                <Menu.Item>
-                                    <BookKey /> GitHub Docs
-                                </Menu.Item>
-                                <Menu.Item>
-                                    <User /> GitHub Support
-                                </Menu.Item>
-                                <Menu.Item>
-                                    <MessageCircle /> GitHub Community
-                                </Menu.Item>
-                            </Menu.Section>
-                            <Menu.Separator />
-                            <Menu.Item isDanger>
-                                <LogOut /> Sign out
+                            <Menu.Item>
+                                <BookKey /> Your repositories
                             </Menu.Item>
-                        </PrimitiveMenu>
-                    </Sheet.Content>
-                </Sheet.Overlay>
+                            <Menu.Item>
+                                <Heart />
+                                Your sponsors
+                            </Menu.Item>
+                        </Menu.Section>
+                        <Menu.Separator />
+                        <Menu.Section>
+                            <Menu.Item>
+                                <Filter /> Feature preview
+                            </Menu.Item>
+                            <Menu.Item>
+                                <Settings />
+                                Settings
+                            </Menu.Item>
+                        </Menu.Section>
+                        <Menu.Separator />
+                        <Menu.Section>
+                            <Menu.Item>
+                                <BookKey /> GitHub Docs
+                            </Menu.Item>
+                            <Menu.Item>
+                                <User /> GitHub Support
+                            </Menu.Item>
+                            <Menu.Item>
+                                <MessageCircle /> GitHub Community
+                            </Menu.Item>
+                        </Menu.Section>
+                        <Menu.Separator />
+                        <Menu.Item isDanger>
+                            <LogOut /> Sign out
+                        </Menu.Item>
+                    </PrimitiveMenu>
+                </Sheet.Content>
             </Sheet>
         </>
     )

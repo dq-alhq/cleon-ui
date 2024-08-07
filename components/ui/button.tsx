@@ -3,12 +3,15 @@
 import * as React from 'react'
 
 import { cn } from '@/lib/utils'
-import * as ButtonPrimitive from 'react-aria-components'
+import {
+    Button as ButtonPrimitive,
+    type ButtonProps as ButtonPrimitiveProps
+} from 'react-aria-components'
 import { tv, type VariantProps } from 'tailwind-variants'
 
 const buttonVariants = tv({
     base: [
-        'relative outline-none transition no-underline isolate inline-flex items-center justify-center gap-x-2 font-medium hover:brightness-110 pressed:brightness-90',
+        'btn relative outline-none transition no-underline isolate inline-flex items-center justify-center gap-x-2 font-medium hover:brightness-110 pressed:brightness-90',
         '[&_svg]:size-4 [&_svg]:shrink-0',
         'disabled:cursor-default disabled:opacity-50'
     ],
@@ -26,7 +29,7 @@ const buttonVariants = tv({
                 'bg-warning text-warning-foreground pressed:ring pressed:ring-warning/40 shadow-sm',
             dark: 'bg-dark text-dark-foreground pressed:ring pressed:ring-dark/40 shadow-sm',
             outline:
-                'border bg-transparent text-foreground shadow-sm hover:bg-muted-foreground pressed:bg-muted',
+                'border bg-background text-foreground shadow-sm hover:bg-muted-foreground pressed:bg-muted',
             ghost: 'text-foreground bg-transparent hover:bg-muted pressed:bg-muted-foreground'
         },
         size: {
@@ -49,13 +52,13 @@ const buttonVariants = tv({
 })
 
 export interface ButtonProps
-    extends ButtonPrimitive.ButtonProps,
+    extends ButtonPrimitiveProps,
         VariantProps<typeof buttonVariants> {}
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     ({ className, variant, size, shape, ...props }, ref) => {
         return (
-            <ButtonPrimitive.Button
+            <ButtonPrimitive
                 className={(values) =>
                     cn(
                         buttonVariants({

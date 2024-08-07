@@ -1,7 +1,10 @@
 'use client'
 
 import { isIOS } from '@react-aria/utils'
-import * as Primitive from 'react-aria-components'
+import {
+    Heading as HeadingPrimitive,
+    type HeadingProps as HeadingPrimitiveProps
+} from 'react-aria-components'
 import { tv } from 'tailwind-variants'
 
 const headingStyles = tv({
@@ -24,7 +27,7 @@ const headingStyles = tv({
     }
 })
 
-interface HeadingProps extends Primitive.HeadingProps {
+interface HeadingProps extends HeadingPrimitiveProps {
     level?: 1 | 2 | 3 | 4
     tracking?: 'tighter' | 'tight' | 'normal' | 'wide' | 'wider' | 'widest'
     className?: string
@@ -37,7 +40,7 @@ const Heading = ({
     ...props
 }: HeadingProps) => {
     return (
-        <Primitive.Heading
+        <HeadingPrimitive
             level={level}
             className={headingStyles({
                 level,

@@ -1,137 +1,200 @@
 'use client'
 
-import { createContext, useContext } from 'react'
+import React from 'react'
 
-import { cn } from '@/lib/utils'
-import { X } from 'lucide-react'
-import * as Primitive from 'react-aria-components'
+import {
+    Button,
+    composeRenderProps,
+    TagGroup as TagGroupPrimitive,
+    TagList as TagListPrimitive,
+    Tag as TagPrimitive,
+    type TagGroupProps as TagGroupPrimitiveProps,
+    type TagListProps,
+    type TagProps as TagPrimitiveProps
+} from 'react-aria-components'
 import { tv } from 'tailwind-variants'
 
-import { badgeVariants } from './badge'
+import { cn } from '@/lib/utils'
+import { badgeShapes, badgeStyles, badgeVariants } from './badge'
 import { Description, Label } from './field'
 
-type Variant = keyof typeof badgeVariants.variants.variant
-const VariantContext = createContext<Variant>('primary')
+const variants = {
+    primary: {
+        base: [
+            badgeVariants.primary,
+            '[&_[slot=remove]:hover]:bg-primary [&_[slot=remove]:hover]:text-primary-foreground'
+        ],
+        selected: [
+            'bg-primaryhover:bg-primary ring-primary ring-inset text-primary-foreground hover:text-primary-foreground',
+            '[&_[slot=remove]:hover]:bg-primary-foreground/80 [&_[slot=remove]:hover]:text-primary'
+        ]
+    },
+    secondary: {
+        base: [
+            badgeVariants.secondary,
+            '[&_[slot=remove]:hover]:bg-foreground [&_[slot=remove]:hover]:text-background'
+        ],
+        selected: [
+            'bg-foreground ring-foreground/50 text-background  ring-inset',
+            '[&_[slot=remove]:hover]:bg-background [&_[slot=remove]:hover]:text-secondary-foreground'
+        ]
+    },
+    success: {
+        base: [
+            badgeVariants.success,
+            '[&_[slot=remove]:hover]:bg-success [&_[slot=remove]:hover]:text-success-foreground'
+        ],
+        selected: [
+            'bg-success ring-success ring-inset hover:bg-success text-success-foreground hover:text-success-foreground',
+            '[&_[slot=remove]:hover]:bg-success-foreground/80 [&_[slot=remove]:hover]:text-success'
+        ]
+    },
+    info: {
+        base: [
+            badgeVariants.info,
+            '[&_[slot=remove]:hover]:bg-info [&_[slot=remove]:hover]:text-background'
+        ],
+        selected: [
+            'bg-info hover:bg-info',
+            '[&_[slot=remove]:hover]:bg-background/80 [&_[slot=remove]:hover]:text-info'
+        ]
+    },
+    warning: {
+        base: badgeVariants.warning,
+        selected:
+            'bg-warning hover:bg-warning text-warning-foreground hover:text-warning-foreground'
+    },
+    danger: {
+        base: badgeVariants.danger,
+        selected:
+            'bg-danger hover:bg-danger text-danger-foreground hover:text-danger-foreground'
+    },
+    dark: {
+        base: [
+            badgeVariants.dark,
+            '[&_[slot=remove]:hover]:bg-foreground [&_[slot=remove]:hover]:text-background'
+        ],
+        selected: [
+            'bg-dark hover:bg-dark text-dark-foreground hover:text-dark-foreground',
+            '[&_[slot=remove]:hover]:bg-foreground [&_[slot=remove]:hover]:text-background'
+        ]
+    }
+}
 
-const emptyColors = Object.keys(badgeVariants).reduce(
-    (acc, key) => {
-        acc[key] = ''
-        return acc
-    },
-    {} as Record<string, string>
-)
-const tagStyles = tv({
-    base: [
-        badgeVariants.base,
-        'cursor-pointer select-none focus:outline-none disabled:cursor-default'
-    ],
-    variants: {
-        variant: {
-            ...emptyColors
-        },
-        shape: {
-            ...badgeVariants.variants.shape
-        },
-        allowsRemoving: {
-            true: 'pr-1'
-        },
-        isSelected: {
-            true: 'border-transparent bg-primary text-white'
-        },
-        isDisabled: {
-            true: 'opacity-50'
-        }
-    },
-    defaultVariants: {
-        shape: 'square'
-    },
-    compoundVariants: (Object.keys(badgeVariants) as Variant[]).map((variant) => ({
-        isSelected: false,
-        variant,
-        className: badgeVariants.variants.variant[variant]
-    }))
+type Variant = keyof typeof badgeVariants
+
+type Shape = keyof typeof badgeShapes
+
+type TagGroupContextValue = {
+    variant: Variant
+    shape: Shape
+}
+
+const TagGroupContext = React.createContext<TagGroupContextValue>({
+    variant: 'primary',
+    shape: 'square'
 })
 
-export interface TagGroupProps<T>
-    extends Omit<Primitive.TagGroupProps, 'children'>,
-        Pick<Primitive.TagListProps<T>, 'items' | 'children' | 'renderEmptyState'> {
+export interface TagGroupProps extends TagGroupPrimitiveProps {
     variant?: Variant
+    shape?: 'square' | 'circle'
+    errorMessage?: string
     label?: string
     description?: string
-    errorMessage?: string
 }
 
-export interface TagProps extends Primitive.TagProps {
-    variant?: Variant
-}
-
-export function TagGroup<T extends object>({
-    label,
-    description,
-    errorMessage,
-    items,
-    children,
-    renderEmptyState,
-    ...props
-}: TagGroupProps<T>) {
+const TagGroup = ({ children, ...props }: TagGroupProps) => {
     return (
-        <Primitive.TagGroup
+        <TagGroupPrimitive
             {...props}
-            className={cn('flex flex-col gap-1', props.className)}
+            className={cn('flex flex-wrap flex-col gap-1', props.className)}
         >
-            <Label>{label}</Label>
-            <VariantContext.Provider value={props.variant || 'primary'}>
-                <Primitive.TagList
-                    items={items}
-                    renderEmptyState={renderEmptyState}
-                    className='flex flex-wrap gap-1'
-                >
-                    {children}
-                </Primitive.TagList>
-            </VariantContext.Provider>
-            {description && <Description>{description}</Description>}
-            {errorMessage && (
-                <Primitive.Text slot='errorMessage' className='text-sm text-danger'>
-                    {errorMessage}
-                </Primitive.Text>
-            )}
-        </Primitive.TagGroup>
+            <TagGroupContext.Provider
+                value={{
+                    variant: props.variant || 'primary',
+                    shape: props.shape || 'square'
+                }}
+            >
+                {props.label && <Label>{props.label}</Label>}
+                {children}
+                {props.description && <Description>{props.description}</Description>}
+            </TagGroupContext.Provider>
+        </TagGroupPrimitive>
     )
 }
 
-export function Tag({ children, variant, ...props }: TagProps) {
-    const textValue = typeof children === 'string' ? children : undefined
-    const groupVariant = useContext(VariantContext)
+const TagList = <T extends object>(props: TagListProps<T>) => {
     return (
-        <Primitive.Tag
+        <TagListPrimitive
+            {...props}
+            className={cn('flex flex-wrap gap-2', props.className)}
+        />
+    )
+}
+
+const tagStyles = tv({
+    base: [badgeStyles.base, 'cursor-pointer'],
+    variants: {
+        isFocused: { true: 'ring-2' },
+        isDisabled: { true: 'opacity-50 cursor-default' },
+        allowsRemoving: { true: 'pr-1' }
+    }
+})
+
+interface TagProps extends TagPrimitiveProps {
+    variant?: Variant
+    shape?: Shape
+}
+
+const Tag = ({ children, variant, shape, ...props }: TagProps) => {
+    const textValue = typeof children === 'string' ? children : undefined
+    const groupContext = React.useContext(TagGroupContext)
+
+    return (
+        <TagPrimitive
             textValue={textValue}
             {...props}
-            className={Primitive.composeRenderProps(
-                props.className,
-                (className, renderProps) =>
-                    tagStyles({
-                        ...renderProps,
-                        className: cn(
-                            'href' in props ? '' : 'focus:ring-1 focus:ring-primary/20',
-                            className
-                        ),
-                        variant: variant || groupVariant
-                    })
-            )}
+            className={composeRenderProps(props.className, (className, renderProps) => {
+                const finalVariant = variant || groupContext.variant
+                const finalShape = shape || groupContext.shape
+
+                return tagStyles({
+                    ...renderProps,
+                    className: cn([
+                        variants[finalVariant].base,
+                        renderProps.isSelected
+                            ? variants[finalVariant].selected
+                            : undefined,
+                        badgeShapes[finalShape]
+                    ])
+                })
+            })}
         >
-            {({ allowsRemoving }) => (
-                <>
-                    {children}
-                    {allowsRemoving && (
-                        <Primitive.Button
-                            slot='remove'
-                            className='flex cursor-default items-center justify-center rounded-full p-0.5 transition-[background-color] hover:bg-foreground/10 pressed:bg-foreground/20'
-                        >
-                            <X aria-hidden className='h-3 w-3 outline-none' />
-                        </Primitive.Button>
-                    )}
-                </>
-            )}
-        </Primitive.Tag>
+            {({ allowsRemoving }) => {
+                return (
+                    <>
+                        {children}
+                        {allowsRemoving && (
+                            <Button
+                                slot='remove'
+                                className={composeRenderProps(
+                                    '',
+                                    (className, renderProps) => {
+                                        return cn(
+                                            'rounded focus:outline-none size-3.5 grid place-content-center -mr-0.5 focus-visible:ring-1 focus-visible:ring-primary',
+                                            className
+                                        )
+                                    }
+                                )}
+                            >
+                                <span className='rotate-45 text-base/4 -mr-px'>+</span>
+                            </Button>
+                        )}
+                    </>
+                )
+            }}
+        </TagPrimitive>
     )
 }
+
+export { Tag, TagGroup, TagList }

@@ -1,7 +1,5 @@
 'use client'
 
-import React from 'react'
-
 import GridListDragDemo from '@/components/docs/collections/grid-list-drag-demo'
 import { Grid, GridList } from '@/components/ui'
 import { useDragAndDrop } from 'react-aria-components'

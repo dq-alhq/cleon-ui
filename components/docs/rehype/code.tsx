@@ -39,7 +39,7 @@ function Code({ lang = 'tsx', code }: { lang?: string; code: string }) {
                     onPress={copyImportsToClipboard}
                 />
             </div>
-            <div className='[&_pre]:my-0 [&_pre]:!border-0 [&_pre]:max-h-[32rem] [&_pre]:pb-[100px] [&_pre]:overflow-auto [&_pre]:scrollbar-track-transparent [&_pre]:scrollbar-thumb-zinc-900'>
+            <div className='[&_pre]:my-0 [&_pre]:!border-0 [&_pre]:max-h-[32rem] [&_pre]:pb-[100px] no-scrollbar [&_pre]:overflow-auto [&_pre]:no-scrollbar'>
                 <CodeHighlighter lang={lang} code={code} />
             </div>
         </div>

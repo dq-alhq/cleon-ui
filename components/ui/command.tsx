@@ -1,23 +1,34 @@
 'use client'
 
-import { useMediaQuery } from '@/lib/utils'
-import { Command as CommandPrimitive } from 'cmdk'
-import { SearchIcon, XIcon } from 'lucide-react'
 import * as React from 'react'
-import * as Primitive from 'react-aria-components'
+
+import { Command as CommandPrimitive } from 'cmdk'
+import {
+    Button,
+    Dialog,
+    Modal,
+    ModalOverlay,
+    Text,
+    type ModalOverlayProps,
+    type SeparatorProps,
+    type TextProps
+} from 'react-aria-components'
 import { tv } from 'tailwind-variants'
+
+import { useMediaQuery } from '@/lib/utils'
+import { SearchIcon, XIcon } from 'lucide-react'
 import { Keyboard, type KeyboardProps } from './keyboard'
 import { Separator } from './separator'
 
 const commandStyles = tv({
     slots: {
         command: [
-            'flex h-svh w-full flex-col overflow-hidden rounded-md bg-overlay text-overlay-foreground sm:h-full',
+            'flex h-svh w-full flex-col overflow-hidden rounded-md bg-background text-foreground sm:h-full',
             '[&_[cmdk-group-heading]]:ml-1 [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group-heading]]:-mb-1.5 [&_[cmdk-group-heading]]:text-muted-foreground [&_[cmdk-group]:not([hidden])_~[cmdk-group]]:pt-0 [&_[cmdk-input-wrapper]_[data-slot=icon]]:size-5 [&_[cmdk-input]]:h-12',
             // for specific properties, it has to be controlled by the command
             '[&_[cmdk-item]]:py-2.5 [&_[cmdk-item]]:pl-2.5 [&_[cmdk-item]]:pr-4'
         ],
-        list: 'overflow-y-auto lg:pb-0 max-h-[calc(100vh-35%)] pb-16 [&:not(:has(.command-section))]:p-2 [&:not(:has(.command-section))_.s3xsprt]:my-2 overflow-x-hidden md:max-h-[456px]',
+        list: 'overflow-y-auto lg:pb-0 max-h-[calc(100vh-35%)] pb-16 [&:not(:has(.command-section))]:p-2 [&:not(:has(.command-section))_.command-separator]:my-2 overflow-x-hidden md:max-h-[456px]',
         input: [
             'flex w-full rounded-md bg-transparent text-base placeholder:text-muted-foreground',
             'focus:outline-none',
@@ -28,7 +39,7 @@ const commandStyles = tv({
             '[&_[cmdk-group-heading]]:select-none [&_[cmdk-group-heading]]:ml-[1px] [&_[cmdk-group-heading]]:py-2 [&_[cmdk-group-heading]]:text-[0.8rem] [&_[cmdk-group-heading]]:text-muted-foreground'
         ],
         modalOverlay: [
-            'fixed inset-0 max-h-[--visual-viewport-height] z-50 bg-black/60 backdrop-blur-sm entering:animate-in entering:fade-in-0 exiting:animate-in exiting:fade-out-0'
+            'fixed inset-0 max-h-[--visual-viewport-height] z-50 bg-black/60 entering:animate-in entering:fade-in-0 exiting:animate-in exiting:fade-out-0'
         ],
         modal: [
             'fixed bottom-0 left-[50%] top-auto z-50 grid h-[calc(100vh-35%)] w-full max-w-full translate-x-[-50%] gap-4 overflow-hidden rounded-t-xl bg-background shadow-lg ring-1 ring-border sm:bottom-auto sm:top-[6rem] sm:h-auto sm:w-full sm:max-w-2xl sm:rounded-xl',
@@ -36,11 +47,11 @@ const commandStyles = tv({
             'exiting:duration-300 exiting:animate-out exiting:fade-out-0 exiting:slide-out-to-bottom-1/2 exiting:slide-out-to-left-1/2 exiting:[transition-timing-function:ease] sm:exiting:slide-out-to-top-[4rem]'
         ],
         closeButton: [
-            'absolute right-3 flex-shrink-0 top-1.5 [&_svg]:text-muted-foreground pressed:text-foreground [&_svg]:size-4 lg:top-3.5 rounded border lg:border-border border-transparent lg:bg-background py-2.5 px-2.5 lg:py-0.5 text-xs transition-opacity data-[state=open]:bg-background data-[state=open]:text-foreground lg:focus:border-foreground/70 lg:focus:outline-none lg:focus:ring-2 lg:focus:ring-ring disabled:pointer-events-none',
-            'focus:outline-none lg:focus:ring-2 lg:focus:ring-primary/20 lg:focus:border-primary/70',
+            'absolute right-3 top-1.5 [&>span>[data-slot=icon]]:text-muted-foreground pressed:[&_[data-slot=icon]]:text-foreground lg:top-3.5 rounded-full border lg:border-border border-transparent lg:bg-secondary/50 py-2.5 px-2.5 lg:py-0.5 text-xs transition-opacity data-[state=open]:bg-secondary data-[state=open]:text-muted-foreground lg:focus:border-foreground/70 focus:outline-none lg:focus:ring-2 lg:focus:ring-ring disabled:pointer-events-none',
+            'focus:outline-none lg:focus:bg-primary/10 lg:focus:ring-2 lg:focus:ring-primary/20 lg:focus:border-primary/70',
             'disabled:pointer-events-none'
         ],
-        empty: 'py-6 text-center text-sm text-muted-foreground',
+        empty: 'py-6 text-center text-sm text-muted-foreground x3tmpy',
         kbdKeyboard: 'lg:block hidden group-data-[selected=true]:opacity-60',
         description:
             'sm:inline hidden text-sm group-data-[selected=true]:text-primary-foreground/70 text-muted-foreground ml-auto',
@@ -87,7 +98,7 @@ interface CommandContextProps {
 
 const CommandContext = React.createContext<CommandContextProps>({})
 
-interface CommandProps extends Primitive.ModalOverlayProps, CommandContextProps {
+interface CommandProps extends ModalOverlayProps, CommandContextProps {
     children: React.ReactNode
     value?: string
     messageOnEmpty?: boolean | string
@@ -108,12 +119,9 @@ const Command = ({
         <CommandContext.Provider
             value={{ hideSearchIndicator, hideCloseButton, messageOnEmpty }}
         >
-            <Primitive.ModalOverlay isDismissable className={modalOverlay()} {...props}>
-                <Primitive.Modal className={modal()}>
-                    <Primitive.Dialog
-                        className='outline-none'
-                        aria-label='Command Palette'
-                    >
+            <ModalOverlay isDismissable className={modalOverlay()} {...props}>
+                <Modal className={modal()}>
+                    <Dialog className='outline-none' aria-label='Command Palette'>
                         {({ close }) => (
                             <>
                                 <CommandPrimitive
@@ -124,7 +132,7 @@ const Command = ({
                                     {children}
                                 </CommandPrimitive>
                                 {!hideCloseButton && (
-                                    <Primitive.Button
+                                    <Button
                                         autoFocus={!isDesktop}
                                         onPress={close}
                                         className={closeButton()}
@@ -136,13 +144,13 @@ const Command = ({
                                                 Close command palette
                                             </span>
                                         </span>
-                                    </Primitive.Button>
+                                    </Button>
                                 )}
                             </>
                         )}
-                    </Primitive.Dialog>
-                </Primitive.Modal>
-            </Primitive.ModalOverlay>
+                    </Dialog>
+                </Modal>
+            </ModalOverlay>
         </CommandContext.Provider>
     )
 }
@@ -212,9 +220,9 @@ const CommandSection = ({ className, separator, ...props }: CommandSectionProps)
     )
 }
 
-const CommandSeparator = ({ className, ...props }: Primitive.SeparatorProps) => {
+const CommandSeparator = ({ className, ...props }: SeparatorProps) => {
     return (
-        <div className='-mx-4 s3xsprt'>
+        <div className='-mx-4 command-separator'>
             <Separator className={className} {...props} orientation='horizontal' />
         </div>
     )
@@ -234,14 +242,8 @@ const CommandItem = ({ isDanger, className, ...props }: CommandItemProps) => {
     )
 }
 
-const CommandDescription = ({ className, ...props }: Primitive.TextProps) => {
-    return (
-        <Primitive.Text
-            {...props}
-            slot='description'
-            className={description({ className })}
-        />
-    )
+const CommandDescription = ({ className, ...props }: TextProps) => {
+    return <Text {...props} slot='description' className={description({ className })} />
 }
 
 const CommandKeyboard = (props: KeyboardProps) => (

@@ -3,7 +3,7 @@
 import * as React from 'react'
 
 import { cn } from '@/lib/utils'
-import { AnimatePresence, motion } from 'framer-motion'
+import { AnimatePresence, m } from 'framer-motion'
 import { Check, ClipboardIcon } from 'lucide-react'
 import { toast } from 'sonner'
 
@@ -53,7 +53,7 @@ const Snippet: React.FC<SnippetProps> = ({ className, text, ...props }) => {
             >
                 <AnimatePresence mode='wait' initial={false}>
                     {copied ? (
-                        <motion.span
+                        <m.span
                             key='checkmark'
                             variants={snippetVariants}
                             initial='hidden'
@@ -61,9 +61,9 @@ const Snippet: React.FC<SnippetProps> = ({ className, text, ...props }) => {
                             exit='hidden'
                         >
                             <Check />
-                        </motion.span>
+                        </m.span>
                     ) : (
-                        <motion.span
+                        <m.span
                             key='copy'
                             variants={snippetVariants}
                             initial='hidden'
@@ -71,7 +71,7 @@ const Snippet: React.FC<SnippetProps> = ({ className, text, ...props }) => {
                             exit='hidden'
                         >
                             <ClipboardIcon />
-                        </motion.span>
+                        </m.span>
                     )}
                 </AnimatePresence>
             </Button>
@@ -103,7 +103,7 @@ const CopyButton = ({
         >
             <AnimatePresence mode='wait' initial={false}>
                 {isCopied ? (
-                    <motion.span
+                    <m.span
                         key='checkmark-import'
                         variants={snippetVariants}
                         initial='hidden'
@@ -111,9 +111,9 @@ const CopyButton = ({
                         exit='hidden'
                     >
                         {copiedIcon ?? <Check />}
-                    </motion.span>
+                    </m.span>
                 ) : (
-                    <motion.span
+                    <m.span
                         key='copy-import'
                         variants={snippetVariants}
                         initial='hidden'
@@ -121,7 +121,7 @@ const CopyButton = ({
                         exit='hidden'
                     >
                         {initialIcon ?? <ClipboardIcon />}
-                    </motion.span>
+                    </m.span>
                 )}
             </AnimatePresence>
         </Button>

@@ -1,7 +1,5 @@
 'use client'
 
-import * as React from 'react'
-
 import {
     Card,
     ChartContainer,
@@ -10,7 +8,7 @@ import {
     type ChartConfig
 } from '@/components/ui'
 import { TrendingUp } from 'lucide-react'
-import { Label, Pie, PieChart } from 'recharts'
+import { Pie, PieChart } from 'recharts'
 
 const desktopData = [
     { month: 'january', desktop: 186, fill: 'var(--color-january)' },

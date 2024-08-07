@@ -4,11 +4,11 @@ import * as React from 'react'
 
 import {
     Card,
-    Select,
     ChartContainer,
     ChartStyle,
     ChartTooltip,
     ChartTooltipContent,
+    Select,
     type ChartConfig
 } from '@/components/ui'
 import { Label, Pie, PieChart, Sector } from 'recharts'

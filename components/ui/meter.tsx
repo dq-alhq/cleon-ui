@@ -1,22 +1,20 @@
 'use client'
 
-import { cn } from '@/lib/utils'
 import { motion } from 'framer-motion'
-import { TriangleAlert } from 'lucide-react'
-import * as Primitive from 'react-aria-components'
+import type { MeterProps as AriaMeterProps } from 'react-aria-components'
+import { Meter as MeterPrimitive } from 'react-aria-components'
 
+import { cn } from '@/lib/utils'
+import { AlertTriangleIcon } from 'lucide-react'
 import { Label } from './field'
 
-export interface MeterProps extends Primitive.MeterProps {
+export interface MeterProps extends AriaMeterProps {
     label?: string
 }
 
-export function Meter({ label, ...props }: MeterProps) {
+const Meter = ({ label, ...props }: MeterProps) => {
     return (
-        <Primitive.Meter
-            {...props}
-            className={cn('flex flex-col gap-1', props.className)}
-        >
+        <MeterPrimitive {...props} className={cn('flex flex-col gap-1', props.className)}>
             {({ percentage, valueText }) => (
                 <>
                     <div className='flex w-full justify-between gap-2'>
@@ -25,7 +23,7 @@ export function Meter({ label, ...props }: MeterProps) {
                             className={`text-sm ${percentage >= 80 ? 'text-danger' : 'text-muted-foreground'}`}
                         >
                             {percentage >= 80 && (
-                                <TriangleAlert
+                                <AlertTriangleIcon
                                     aria-label='Alert'
                                     className='inline-block size-4 align-text-bottom'
                                 />
@@ -35,7 +33,7 @@ export function Meter({ label, ...props }: MeterProps) {
                     </div>
                     <div className='relative h-2 min-w-64 rounded-full bg-muted outline outline-1 -outline-offset-1 outline-transparent'>
                         <motion.div
-                            className='absolute left-0 top-0 h-full rounded-full'
+                            className='absolute left-0 top-0 h-full rounded-full forced-colors:bg-[Highlight]'
                             initial={{ width: '0%', backgroundColor: getColor(0) }}
                             animate={{
                                 width: `${percentage}%`,
@@ -46,11 +44,11 @@ export function Meter({ label, ...props }: MeterProps) {
                     </div>
                 </>
             )}
-        </Primitive.Meter>
+        </MeterPrimitive>
     )
 }
 
-function getColor(percentage: number) {
+const getColor = (percentage: number) => {
     if (percentage < 30) {
         return '#0d6efd' // Blue
     }
@@ -69,3 +67,5 @@ function getColor(percentage: number) {
 
     return '#e11d48' // Red
 }
+
+export { getColor, Meter }

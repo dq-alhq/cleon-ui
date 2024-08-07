@@ -1,26 +1,34 @@
 'use client'
 
-import { cn } from '@/lib/utils'
-import * as Primitive from 'react-aria-components'
+import {
+    composeRenderProps,
+    DateField as DateFieldPrimitive,
+    type DateFieldProps as DateFieldPrimitiveProps,
+    DateInput as DateInputPrimitive,
+    type DateInputProps,
+    DateSegment,
+    type DateValue,
+    type ValidationResult
+} from 'react-aria-components'
 import { tv } from 'tailwind-variants'
 
+import { cn } from '@/lib/utils'
 import { Description, FieldError, fieldGroupStyles, Label } from './field'
 
-interface DateFieldProps<T extends Primitive.DateValue>
-    extends Primitive.DateFieldProps<T> {
+interface DateFieldProps<T extends DateValue> extends DateFieldPrimitiveProps<T> {
     label?: string
     description?: string
-    errorMessage?: string | ((validation: Primitive.ValidationResult) => string)
+    errorMessage?: string | ((validation: ValidationResult) => string)
 }
 
-const DateField = <T extends Primitive.DateValue>({
+const DateField = <T extends DateValue>({
     label,
     description,
     errorMessage,
     ...props
 }: DateFieldProps<T>) => {
     return (
-        <Primitive.DateField
+        <DateFieldPrimitive
             {...props}
             className={cn('flex flex-col gap-1', props.className)}
         >
@@ -28,40 +36,45 @@ const DateField = <T extends Primitive.DateValue>({
             <DateInput />
             {description && <Description>{description}</Description>}
             <FieldError>{errorMessage}</FieldError>
-        </Primitive.DateField>
+        </DateFieldPrimitive>
     )
 }
 
 const segmentStyles = tv({
-    base: 'inline rounded p-0.5 tracking-wider text-foreground caret-transparent outline outline-0 type-literal:px-0 lg:text-sm',
+    base: 'inline shrink-0 rounded p-0.5 tracking-wider text-foreground caret-transparent outline outline-0 forced-color-adjust-none type-literal:px-0 lg:text-sm forced-colors:text-[ButtonText]',
     variants: {
         isPlaceholder: {
             true: 'text-muted-foreground'
         },
         isDisabled: {
-            true: 'text-muted-foreground'
+            true: 'text-foreground/50 forced-colors:text-[GrayText]'
         },
         isFocused: {
-            true: 'bg-primary text-primary-foreground'
+            true: [
+                'bg-primary text-primary-foreground forced-colors:bg-[Highlight] forced-colors:text-[HighlightText]',
+                'invalid:bg-danger invalid:text-danger-foreground'
+            ]
         }
     }
 })
 
-const DateInput = (props: Omit<Primitive.DateInputProps, 'children'>) => {
+const DateInput = (props: Omit<DateInputProps, 'children'>) => {
     return (
-        <Primitive.DateInput
-            className={cn(
-                'min-w-sm block w-full px-2 py-2 font-mono uppercase disabled:bg-muted lg:text-sm',
-                fieldGroupStyles.base,
-                props.className
+        <DateInputPrimitive
+            className={composeRenderProps(props.className, (className, renderProps) =>
+                fieldGroupStyles({
+                    ...renderProps,
+                    className: cn(
+                        'min-w-sm block font-mono disabled:bg-secondary uppercase w-full py-2 px-2.5 text-base lg:text-sm/[1.4rem]',
+                        className
+                    )
+                })
             )}
             {...props}
         >
-            {(segment) => (
-                <Primitive.DateSegment segment={segment} className={segmentStyles} />
-            )}
-        </Primitive.DateInput>
+            {(segment) => <DateSegment segment={segment} className={segmentStyles} />}
+        </DateInputPrimitive>
     )
 }
 
-export { DateField, DateInput }
+export { DateField, DateInput, segmentStyles, type DateFieldProps }

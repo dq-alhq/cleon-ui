@@ -2,10 +2,14 @@
 
 import * as React from 'react'
 
-import { cn } from '@/lib/utils'
-import { AnimatePresence, motion, type MotionProps } from 'framer-motion'
+import type { MotionProps } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 import { ChevronDownIcon } from 'lucide-react'
-import * as Primitive from 'react-aria-components'
+import type { ButtonProps } from 'react-aria-components'
+import { Button, composeRenderProps } from 'react-aria-components'
+import { tv } from 'tailwind-variants'
+
+import { cn } from '@/lib/utils'
 
 interface AccordionContextType extends React.HtmlHTMLAttributes<HTMLDivElement> {
     hideBorder?: boolean
@@ -38,6 +42,10 @@ const Accordion = ({
     )
 }
 
+const accordionItemStyles = tv({
+    base: 'accordion-item flex group pb-3 relative w-full flex-col border-b'
+})
+
 interface AccordionItemContextProps {
     setExpanded?: (index: null | number | string) => void
     isOpen?: boolean
@@ -50,7 +58,7 @@ const AccordionItemContext = React.createContext<AccordionItemContextProps | und
 const useAccordionItem = () => {
     const context = React.useContext(AccordionItemContext)
     if (!context) {
-        throw new Error('AccordionItem must be used within an Accordion')
+        throw new Error('Accordion.Item must be used within an Accordion')
     }
     return context
 }
@@ -73,10 +81,7 @@ const AccordionItem = ({ className, children, currentId }: AccordionItemProps) =
                 data-slot='item'
                 data-locked={isLocked ?? undefined}
                 data-open={isOpen ?? undefined}
-                className={cn(
-                    'flex group pb-3 relative w-full flex-col border-b accordion-item',
-                    className
-                )}
+                className={accordionItemStyles({ className })}
             >
                 {children}
             </div>
@@ -113,11 +118,28 @@ const AccordionContent = ({ className, children }: AccordionContentProps) => {
 
 interface AccordionTriggerProps
     extends Omit<
-        Primitive.ButtonProps & React.RefAttributes<HTMLButtonElement> & MotionProps,
+        ButtonProps & React.RefAttributes<HTMLButtonElement> & MotionProps,
         'ref'
     > {
     children: React.ReactNode
 }
+
+const accordionTriggerStyles = tv({
+    base: [
+        'flex flex-1 rounded-lg text-foreground hover:text-primary [&_svg]:size-4 [&>[data-slot=icon]]:size-6 items-center gap-x-2 pt-3 font-medium'
+    ],
+    variants: {
+        isFocused: {
+            true: 'outline-none text-primary'
+        },
+        isOpen: {
+            true: 'text-primary'
+        },
+        isDisabled: {
+            true: 'opacity-50 cursor-default'
+        }
+    }
+})
 
 const AccordionTrigger = ({ className, children, ...props }: AccordionTriggerProps) => {
     const { setExpanded, isOpen, currentId } = useAccordionItem()
@@ -133,7 +155,9 @@ const AccordionTrigger = ({ className, children, ...props }: AccordionTriggerPro
     const onKeyDownHandler = (e: React.KeyboardEvent<HTMLButtonElement>) => {
         if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
             e.preventDefault()
-            const buttons = document.querySelectorAll('div[data-slot="item"] > button')
+            const buttons = document.querySelectorAll(
+                'div[data-slot="ai-31kxlae0321lsd"] > button'
+            )
             const currentButton = e.currentTarget
             const currentIndex = Array.from(buttons).indexOf(currentButton)
             const totalItems = buttons.length
@@ -150,17 +174,17 @@ const AccordionTrigger = ({ className, children, ...props }: AccordionTriggerPro
     }
 
     return (
-        <Primitive.Button
+        <Button
             {...props}
             isDisabled={isLocked}
             onKeyDown={onKeyDownHandler}
             onPress={handlePress}
-            className={cn(
-                'flex flex-1 rounded-lg text-foreground hover:text-primary [&_svg]:size-4 items-center gap-x-2 pt-3 font-medium',
-                'focus:outline-none focus:text-primary',
-                'disabled:opacity-70 disabled:pointer-events-none',
-                isOpen && 'text-primary',
-                className
+            className={composeRenderProps(className, (className, renderProps) =>
+                accordionTriggerStyles({
+                    ...renderProps,
+                    isOpen,
+                    className
+                })
             )}
         >
             {children}
@@ -172,12 +196,12 @@ const AccordionTrigger = ({ className, children, ...props }: AccordionTriggerPro
                     )}
                 />
             )}
-        </Primitive.Button>
+        </Button>
     )
 }
 
-Accordion.Trigger = AccordionTrigger
 Accordion.Item = AccordionItem
 Accordion.Content = AccordionContent
+Accordion.Trigger = AccordionTrigger
 
 export { Accordion, type AccordionTriggerProps }

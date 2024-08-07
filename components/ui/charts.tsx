@@ -3,7 +3,7 @@
 import * as React from 'react'
 
 import { cn } from '@/lib/utils'
-import * as Primitive from 'recharts'
+import * as ChartPrimitive from 'recharts'
 
 // Format: { THEME_NAME: CSS_SELECTOR }
 const THEMES = { light: '', dark: '.dark' } as const
@@ -38,7 +38,9 @@ const ChartContainer = React.forwardRef<
     HTMLDivElement,
     React.ComponentProps<'div'> & {
         config: ChartConfig
-        children: React.ComponentProps<typeof Primitive.ResponsiveContainer>['children']
+        children: React.ComponentProps<
+            typeof ChartPrimitive.ResponsiveContainer
+        >['children']
     }
 >(({ id, className, children, config, ...props }, ref) => {
     const uniqueId = React.useId()
@@ -56,7 +58,9 @@ const ChartContainer = React.forwardRef<
                 {...props}
             >
                 <ChartStyle id={chartId} config={config} />
-                <Primitive.ResponsiveContainer>{children}</Primitive.ResponsiveContainer>
+                <ChartPrimitive.ResponsiveContainer>
+                    {children}
+                </ChartPrimitive.ResponsiveContainer>
             </div>
         </ChartContext.Provider>
     )
@@ -95,11 +99,11 @@ ${colorConfig
     )
 }
 
-const ChartTooltip = Primitive.Tooltip
+const ChartTooltip = ChartPrimitive.Tooltip
 
 const ChartTooltipContent = React.forwardRef<
     HTMLDivElement,
-    React.ComponentProps<typeof Primitive.Tooltip> &
+    React.ComponentProps<typeof ChartPrimitive.Tooltip> &
         React.ComponentProps<'div'> & {
             hideLabel?: boolean
             hideIndicator?: boolean
@@ -253,12 +257,12 @@ const ChartTooltipContent = React.forwardRef<
 )
 ChartTooltipContent.displayName = 'ChartTooltip'
 
-const ChartLegend = Primitive.Legend
+const ChartLegend = ChartPrimitive.Legend
 
 const ChartLegendContent = React.forwardRef<
     HTMLDivElement,
     React.ComponentProps<'div'> &
-        Pick<Primitive.LegendProps, 'payload' | 'verticalAlign'> & {
+        Pick<ChartPrimitive.LegendProps, 'payload' | 'verticalAlign'> & {
             hideIcon?: boolean
             nameKey?: string
         }
@@ -340,9 +344,9 @@ function getPayloadConfigFromPayload(config: ChartConfig, payload: unknown, key:
 
 export {
     ChartContainer,
-    ChartTooltip,
-    ChartTooltipContent,
     ChartLegend,
     ChartLegendContent,
-    ChartStyle
+    ChartStyle,
+    ChartTooltip,
+    ChartTooltipContent
 }

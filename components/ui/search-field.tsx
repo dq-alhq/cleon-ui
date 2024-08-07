@@ -1,53 +1,59 @@
 'use client'
 
-import { cn } from '@/lib/utils'
-import { Search, X } from 'lucide-react'
-import * as Primitive from 'react-aria-components'
+import { SearchIcon, XIcon } from 'lucide-react'
+import {
+    SearchField as SearchFieldPrimitive,
+    type SearchFieldProps as SearchFieldPrimitiveProps,
+    type ValidationResult
+} from 'react-aria-components'
+import { tv } from 'tailwind-variants'
 
+import { cn } from '@/lib/utils'
 import { Button } from './button'
 import { Description, FieldError, FieldGroup, Input, Label } from './field'
 
-export interface SearchFieldProps extends Primitive.SearchFieldProps {
+const searchFieldStyles = tv({
+    slots: {
+        base: 'group flex min-w-10 flex-col gap-1',
+        searchIcon:
+            'ml-2 size-4 shrink-0 text-muted-foreground group-disabled:text-muted-foreground/50 forced-colors:text-[ButtonText] forced-colors:group-disabled:text-[GrayText]',
+        closeButton:
+            'mr-1 size-8 text-muted-foreground group-empty:invisible hover:bg-transparent pressed:text-foreground',
+        input: '[&::-webkit-search-cancel-button]:hidden'
+    }
+})
+
+const { base, searchIcon, closeButton, input } = searchFieldStyles()
+
+interface SearchFieldProps extends SearchFieldPrimitiveProps {
     label?: string
     placeholder?: string
     description?: string
-    errorMessage?: string | ((validation: Primitive.ValidationResult) => string)
+    errorMessage?: string | ((validation: ValidationResult) => string)
 }
 
-function SearchField({
+const SearchField = ({
+    className,
     placeholder = 'Search',
     label,
     description,
     errorMessage,
     ...props
-}: SearchFieldProps) {
+}: SearchFieldProps) => {
     return (
-        <Primitive.SearchField
-            {...props}
-            className={cn('group flex min-w-[40px] flex-col gap-1', props.className)}
-        >
+        <SearchFieldPrimitive {...props} className={cn(base(), className)}>
             {label && <Label>{label}</Label>}
             <FieldGroup>
-                <Search
-                    aria-hidden
-                    className='ml-2 size-4 shrink-0 text-muted-foreground group-disabled:text-muted-foreground/70'
-                />
-                <Input
-                    placeholder={placeholder}
-                    className='[&::-webkit-search-cancel-button]:hidden'
-                />
-                <Button
-                    size='icon'
-                    variant='ghost'
-                    className='mr-1 size-8 text-muted-foreground group-empty:invisible hover:bg-transparent pressed:text-foreground'
-                >
-                    <X aria-hidden className='size-4' />
+                <SearchIcon aria-hidden className={searchIcon()} />
+                <Input placeholder={placeholder} className={input()} />
+                <Button size='icon' variant='ghost' className={closeButton()}>
+                    <XIcon aria-hidden className='size-4' />
                 </Button>
             </FieldGroup>
             {description && <Description>{description}</Description>}
             <FieldError>{errorMessage}</FieldError>
-        </Primitive.SearchField>
+        </SearchFieldPrimitive>
     )
 }
 
-export { SearchField }
+export { SearchField, type SearchFieldProps }

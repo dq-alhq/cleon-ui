@@ -1,8 +1,8 @@
+import { withTV } from 'tailwind-variants/transformer'
 import type { Config } from 'tailwindcss'
 import { fontFamily } from 'tailwindcss/defaultTheme'
 
-/** @type {import('tailwindcss').Config} */
-const config: Config = {
+const config = withTV({
     content: ['./components/**/*.{js,ts,jsx,tsx,mdx}', './app/**/*.{js,ts,jsx,tsx,mdx}'],
     darkMode: 'class',
     theme: {
@@ -74,13 +74,9 @@ const config: Config = {
     },
     plugins: [
         require('tailwindcss-animate'),
-        require('tailwind-scrollbar')({
-            nocompatible: true,
-            preferredStrategy: 'pseudoelements'
-        }),
         require('@tailwindcss/typography'),
         require('tailwindcss-react-aria-components')
     ]
-} satisfies Config
+}) satisfies Config
 
 export default config

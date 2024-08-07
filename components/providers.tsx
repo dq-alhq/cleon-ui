@@ -3,7 +3,7 @@
 import { ThemeProvider, useTheme } from 'next-themes'
 import { useRouter } from 'next/navigation'
 import { RouterProvider } from 'react-aria-components'
-import { Toaster } from 'ui'
+import { Toaster } from './ui'
 
 declare module 'react-aria-components' {
     interface RouterConfig {
@@ -11,7 +11,7 @@ declare module 'react-aria-components' {
     }
 }
 
-const Providers = ({ children }: { children: React.ReactNode }) => {
+function Providers({ children }: { children: React.ReactNode }) {
     const router = useRouter()
 
     return (

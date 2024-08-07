@@ -77,7 +77,7 @@ export function SourceCode({ message, toShow, ...props }: SourceCodeProps) {
                             variant='outline'
                             onPress={() => handleOpenChange(0, !isOpened[0])}
                         >
-                            {isOpened[0] ? 'Collapse' : 'Expand'}
+                            {isOpened[0] ? 'Hide' : 'Reveal'}
                         </Button>
                     </div>
                 </div>
@@ -125,7 +125,7 @@ export function SourceCode({ message, toShow, ...props }: SourceCodeProps) {
                                 variant='outline'
                                 onPress={() => handleOpenChange(index, !isOpened[index])}
                             >
-                                {isOpened[index] ? 'Collapse' : 'Expand'}
+                                {isOpened[index] ? 'Hide' : 'Reveal'}
                             </Button>
                         </div>
                     </Tabs.Content>

@@ -1,7 +1,5 @@
 'use client'
 
-import React from 'react'
-
 import { Accordion } from '@/components/ui'
 
 export default function AccordionDemo() {
