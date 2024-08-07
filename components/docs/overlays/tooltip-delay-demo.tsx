@@ -1,7 +1,7 @@
 'use client'
 
 import { GithubLogo } from '@/components/logo'
-import { buttonVariants, Tooltip } from 'ui'
+import { buttonVariants, Tooltip } from '@/components/ui'
 
 export default function TooltipDelayDemo() {
     return (

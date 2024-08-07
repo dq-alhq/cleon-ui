@@ -33,40 +33,38 @@ const FileTrigger = ({
     ...props
 }: FileTriggerProps) => {
     return (
-        <>
-            <FileTriggerPrimitive {...props}>
-                <Button
-                    isDisabled={props.isDisabled}
-                    size={size}
-                    shape={shape}
-                    variant={variant}
-                >
-                    {withIcon && (
-                        <>
-                            {props.defaultCamera ? (
-                                <CameraIcon />
-                            ) : props.acceptDirectory ? (
-                                <FolderIcon />
-                            ) : (
-                                <PaperclipIcon />
-                            )}
-                        </>
-                    )}
-                    {props.children ? (
-                        props.children
-                    ) : (
-                        <>
-                            {props.allowsMultiple
-                                ? 'Browse a files'
-                                : props.acceptDirectory
-                                  ? 'Browse'
-                                  : 'Browse a file'}
-                            ...
-                        </>
-                    )}
-                </Button>
-            </FileTriggerPrimitive>
-        </>
+        <FileTriggerPrimitive {...props}>
+            <Button
+                isDisabled={props.isDisabled}
+                size={size}
+                shape={shape}
+                variant={variant}
+            >
+                {withIcon && (
+                    <>
+                        {props.defaultCamera ? (
+                            <CameraIcon />
+                        ) : props.acceptDirectory ? (
+                            <FolderIcon />
+                        ) : (
+                            <PaperclipIcon />
+                        )}
+                    </>
+                )}
+                {props.children ? (
+                    props.children
+                ) : (
+                    <>
+                        {props.allowsMultiple
+                            ? 'Browse a files'
+                            : props.acceptDirectory
+                              ? 'Browse'
+                              : 'Browse a file'}
+                        ...
+                    </>
+                )}
+            </Button>
+        </FileTriggerPrimitive>
     )
 }
 

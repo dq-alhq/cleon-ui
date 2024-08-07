@@ -791,6 +791,9 @@ export const previews: Record<string, any> = {
   "buttons/file-trigger-multiple-demo": {
     component: React.lazy(() => import("@/components/docs/buttons/file-trigger-multiple-demo")),
   },
+  "buttons/file-trigger-avatar-demo": {
+    component: React.lazy(() => import("@/components/docs/buttons/file-trigger-avatar-demo")),
+  },
   "buttons/button-disabled-demo": {
     component: React.lazy(() => import("@/components/docs/buttons/button-disabled-demo")),
   },
@@ -799,6 +802,9 @@ export const previews: Record<string, any> = {
   },
   "buttons/file-trigger-camera-demo": {
     component: React.lazy(() => import("@/components/docs/buttons/file-trigger-camera-demo")),
+  },
+  "buttons/file-trigger-controlled-demo": {
+    component: React.lazy(() => import("@/components/docs/buttons/file-trigger-controlled-demo")),
   },
   "navigation/link-demo": {
     component: React.lazy(() => import("@/components/docs/navigation/link-demo")),

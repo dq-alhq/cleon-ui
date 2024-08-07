@@ -77,7 +77,7 @@ export function ModalAction(props: ModalActionProps) {
         <ModalFooter>
           <ModalClose>Cancel</ModalClose>
           <Button className="min-w-24" isDisabled={props.loading} onPress={props.action}>
-            {props.loading ? <LoadingDots className={'bg-fg'} /> : props.confirmText}
+            {props.loading ? <LoadingDots className={'bg-foreground'} /> : props.confirmText}
           </Button>
         </ModalFooter>
       </ModalContent>
