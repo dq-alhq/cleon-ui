@@ -6,7 +6,7 @@ export default function PopoverDemo() {
     return (
         <Popover>
             <Button variant='outline'>Forgot Password</Button>
-            <Popover.Content className='w-[28rem]'>
+            <Popover.Content>
                 <Popover.Header>
                     <Popover.Title>Email</Popover.Title>
                     <Popover.Description>

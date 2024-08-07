@@ -6,6 +6,7 @@ import { Text, ToggleButton } from 'react-aria-components'
 import { tv } from 'tailwind-variants'
 
 import { cn } from '@/lib/utils'
+import { ChevronDownIcon } from 'lucide-react'
 import { buttonVariants } from './button'
 
 const showMoreStyles = tv({
@@ -66,8 +67,8 @@ const ShowMore = ({
 interface ContentRevealProps {
     initialHeight?: number
     initialOpacity?: number
-    openText?: string
-    closeText?: string
+    showMoreText?: string
+    showLessText?: string
     gradientTransparency?: boolean
     children: React.ReactNode
     className?: string
@@ -77,8 +78,8 @@ function ContentReveal({
     children,
     initialHeight = 128,
     initialOpacity = 1,
-    openText = 'Reveal',
-    closeText = 'Hide',
+    showMoreText = 'Show More',
+    showLessText = 'Show Less',
     gradientTransparency = true,
     className
 }: ContentRevealProps) {
@@ -115,7 +116,13 @@ function ContentReveal({
                 isSelected={isExpanded}
                 onChange={setIsExpanded}
             >
-                {isExpanded ? closeText : openText}
+                {isExpanded ? showLessText : showMoreText}
+                <ChevronDownIcon
+                    className={cn(
+                        isExpanded ? 'rotate-180' : '',
+                        'size-4 transition duration-400'
+                    )}
+                />
             </ShowMore>
         </div>
     )

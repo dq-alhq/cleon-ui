@@ -11,7 +11,7 @@ import { tv, type VariantProps } from 'tailwind-variants'
 
 const buttonVariants = tv({
     base: [
-        'btn relative outline-none transition no-underline isolate inline-flex items-center justify-center gap-x-2 font-medium hover:brightness-110 pressed:brightness-90',
+        'btn relative whitespace-nowrap outline-none transition no-underline isolate inline-flex items-center justify-center gap-x-2 font-medium hover:brightness-110 pressed:brightness-90',
         '[&_svg]:size-4 [&_svg]:shrink-0',
         'disabled:cursor-default disabled:opacity-50'
     ],

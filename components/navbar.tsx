@@ -273,7 +273,7 @@ export function NavbarDropdown() {
                     </Menu.Item>
                 </Menu.Section>
                 <Menu.Separator />
-                <Menu.SubTrigger>
+                <Menu.Sub>
                     <Menu.Item aria-label='Switch Theme'>
                         {theme === 'system' ? (
                             <ComputerIcon />
@@ -298,7 +298,7 @@ export function NavbarDropdown() {
                             <span>Light</span>
                         </Menu.Item>
                     </Menu.Content>
-                </Menu.SubTrigger>
+                </Menu.Sub>
             </Menu.Content>
         </Menu>
     )

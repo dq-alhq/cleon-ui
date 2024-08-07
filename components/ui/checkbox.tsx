@@ -52,7 +52,7 @@ const boxStyles = tv({
     base: 'flex size-4 flex-shrink-0 items-center justify-center rounded border text-background transition',
     variants: {
         isSelected: {
-            false: 'border-toggle bg-secondary',
+            false: 'border-muted bg-background',
             true: [
                 'border-primary/70 bg-primary text-primary-foreground',
                 'group-invalid:border-danger/70 group-invalid:bg-danger group-invalid:text-danger-foreground'

@@ -44,10 +44,10 @@ const RadioGroup = ({
 }
 
 const radioStyles = tv({
-    base: 'size-4 shrink-0 rounded-full border bg-secondary transition',
+    base: 'size-4 shrink-0 rounded-full border bg-background transition',
     variants: {
         isSelected: {
-            false: 'border-toggle',
+            false: 'border-muted',
             true: 'border-[4.5px] border-primary'
         },
         isFocused: {

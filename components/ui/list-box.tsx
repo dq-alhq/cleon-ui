@@ -102,7 +102,10 @@ const ListBoxPicker = <T extends object>({
 }: ListBoxPickerProps<T>) => {
     return (
         <ListBoxPrimitive
-            className={cn('max-h-72 overflow-auto p-1 outline-none', className)}
+            className={cn(
+                'max-h-72 no-scrollbar overflow-auto p-1 outline-none',
+                className
+            )}
             {...props}
         />
     )

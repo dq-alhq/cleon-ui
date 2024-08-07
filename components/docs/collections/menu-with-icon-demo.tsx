@@ -1,130 +1,95 @@
 'use client'
 
-import React, { useState } from 'react'
-
-import { OptionPreview } from '@/components/docs/outside/option-preview'
-import { FacebookLogo, XLogo } from '@/components/logo'
-import { Avatar, Menu, Select, Switch } from '@/components/ui'
-import type { Placement } from '@react-types/overlays'
+import { useTheme } from '@/components/providers'
+import { Avatar, Menu } from '@/components/ui'
 import {
-    ChevronsUpDown,
-    Hash,
-    Headphones,
-    LogOut,
-    Mail,
-    MessageCircle,
-    Plus,
-    Settings,
-    Share2,
-    UserPlus
+    CommandIcon,
+    GaugeIcon,
+    HeadphonesIcon,
+    HeartIcon,
+    LogOutIcon,
+    MonitorCogIcon,
+    MoonIcon,
+    SettingsIcon,
+    ShoppingBagIcon,
+    SunIcon
 } from 'lucide-react'
 
-import { placements } from './single-menu-demo'
-
 export default function MenuWithIconDemo() {
-    const [showArrow, setShowArrow] = useState(false)
-    const [selected, setSelected] = React.useState<Placement>('bottom')
+    const { resolvedTheme, setTheme } = useTheme()
     return (
-        <>
-            <OptionPreview className='space-y-2'>
-                <Switch isSelected={showArrow} onChange={() => setShowArrow(!showArrow)}>
-                    Show arrow
-                </Switch>
-                <Select
-                    aria-label='placement'
-                    className='[&>.btr]:h-8'
-                    selectedKey={selected}
-                    onSelectionChange={(v) => setSelected(v as Placement)}
-                    items={placements}
-                >
-                    {(item) => <Select.Item id={item.name}>{item.name}</Select.Item>}
-                </Select>
-            </OptionPreview>
-            <Menu>
-                <Menu.Trigger aria-labelledby='basic-menu-trigger'>
-                    <Avatar className='size-10' initials='DQ' />
-                </Menu.Trigger>
-                <Menu.Content
-                    showArrow={showArrow}
-                    placement={selected}
-                    className='min-w-64'
-                >
-                    <Menu.Section>
-                        <Menu.Header separator>
-                            <span className='block'>DQ Al-Haqqi</span>
-                            <span className='font-normal text-muted-foreground'>
-                                @dq-alhq
-                            </span>
-                        </Menu.Header>
-                    </Menu.Section>
-                    <Menu.Item onAction={() => setShowArrow(!showArrow)}>
-                        <ChevronsUpDown />
-                        {showArrow ? 'Hide' : 'Show'} Arrow
+        <Menu>
+            <Menu.Trigger>
+                <Avatar className='size-10' src='https://github.com/dq-alhq.png' />
+            </Menu.Trigger>
+            <Menu.Content placement='bottom' showArrow className='min-w-64'>
+                <Menu.Section>
+                    <Menu.Header separator>
+                        <span className='block'>DQ Al-Haqqi</span>
+                        <span className='font-normal text-muted-foreground'>
+                            @dq-alhq
+                        </span>
+                    </Menu.Header>
+                    <Menu.Item href='#dashboard'>
+                        <GaugeIcon />
+                        Dashboard
                     </Menu.Item>
-                    <Menu.Item>
-                        <Settings />
+                    <Menu.Item href='#settings'>
+                        <SettingsIcon />
                         Settings
                     </Menu.Item>
-                    <Menu.Item href='#'>
-                        <Plus />
-                        Create Team
+                </Menu.Section>
+                <Menu.Separator />
+                <Menu.Section>
+                    <Menu.Item href='#wishlist'>
+                        <HeartIcon />
+                        My Wishlist
                     </Menu.Item>
-                    <Menu.Item href='#'>
-                        <Hash />
-                        Command Menu
-                        <Menu.Keyboard keys='⌘K' />
+                    <Menu.Item href='#orders'>
+                        <ShoppingBagIcon />
+                        Orders
                     </Menu.Item>
-                    <Menu.SubTrigger>
-                        <Menu.Item>
-                            <UserPlus />
-                            <span>Invite users</span>
+                </Menu.Section>
+
+                <Menu.Separator />
+                <Menu.Item>
+                    <CommandIcon />
+                    Command Menu.
+                </Menu.Item>
+                <Menu.Sub>
+                    <Menu.Item aria-label='Switch theme'>
+                        {resolvedTheme === 'light' ? (
+                            <SunIcon />
+                        ) : resolvedTheme === 'dark' ? (
+                            <MoonIcon />
+                        ) : (
+                            <MonitorCogIcon />
+                        )}
+                        Switch theme
+                    </Menu.Item>
+                    <Menu.Content>
+                        <Menu.Item onAction={() => setTheme('system')}>
+                            <MonitorCogIcon /> System
                         </Menu.Item>
-                        <Menu.Content
-                            aria-labelledby='basic-menu-trigger-submenu'
-                            offset={8}
-                        >
-                            <Menu.Item>
-                                <Mail />
-                                <span>Email</span>
-                            </Menu.Item>
-                            <Menu.Item>
-                                <MessageCircle />
-                                <span>Message</span>
-                            </Menu.Item>
-                            <Menu.Separator />
-                            <Menu.SubTrigger>
-                                <Menu.Item>
-                                    <Share2 />
-                                    <span>Share</span>
-                                </Menu.Item>
-                                <Menu.Content
-                                    aria-labelledby='basic-menu-trigger-submenu'
-                                    offset={8}
-                                >
-                                    <Menu.Item>
-                                        <XLogo className='size-4' />
-                                        <span>Twitter</span>
-                                    </Menu.Item>
-                                    <Menu.Item>
-                                        <FacebookLogo className='size-4' />
-                                        <span>Facebook</span>
-                                    </Menu.Item>
-                                </Menu.Content>
-                            </Menu.SubTrigger>
-                        </Menu.Content>
-                    </Menu.SubTrigger>
-                    <Menu.Separator />
-                    <Menu.Item href='#'>
-                        <Headphones />
-                        Contact Support
-                    </Menu.Item>
-                    <Menu.Separator />
-                    <Menu.Item>
-                        <LogOut />
-                        Log out
-                    </Menu.Item>
-                </Menu.Content>
-            </Menu>
-        </>
+                        <Menu.Item onAction={() => setTheme('dark')}>
+                            <MoonIcon /> Dark
+                        </Menu.Item>
+                        <Menu.Item onAction={() => setTheme('light')}>
+                            <SunIcon /> Light
+                        </Menu.Item>
+                    </Menu.Content>
+                </Menu.Sub>
+                {/* <Menu.Separator /> */}
+                <Menu.Item href='#contact-s'>
+                    <HeadphonesIcon />
+                    Contact Support
+                </Menu.Item>
+                <Menu.Separator />
+                <Menu.Item href='#logout'>
+                    <LogOutIcon />
+                    Log out
+                </Menu.Item>
+            </Menu.Content>
+        </Menu>
     )
 }

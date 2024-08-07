@@ -50,17 +50,29 @@ export const previews: Record<string, any> = {
   "drag-and-drop/drop-zone-demo": {
     component: React.lazy(() => import("@/components/docs/drag-and-drop/drop-zone-demo")),
   },
+  "collections/menu-respect-screen-demo": {
+    component: React.lazy(() => import("@/components/docs/collections/menu-respect-screen-demo")),
+  },
   "collections/table-bulk-actions-demo": {
     component: React.lazy(() => import("@/components/docs/collections/table-bulk-actions-demo")),
   },
   "collections/table-drag-drop-demo": {
     component: React.lazy(() => import("@/components/docs/collections/table-drag-drop-demo")),
   },
+  "collections/menu-disabled-demo": {
+    component: React.lazy(() => import("@/components/docs/collections/menu-disabled-demo")),
+  },
+  "collections/menu-item-details-demo": {
+    component: React.lazy(() => import("@/components/docs/collections/menu-item-details-demo")),
+  },
   "collections/multiple-menu-demo": {
     component: React.lazy(() => import("@/components/docs/collections/multiple-menu-demo")),
   },
   "collections/tag-group-disabled-demo": {
     component: React.lazy(() => import("@/components/docs/collections/tag-group-disabled-demo")),
+  },
+  "collections/menu-collection-demo": {
+    component: React.lazy(() => import("@/components/docs/collections/menu-collection-demo")),
   },
   "collections/single-menu-demo": {
     component: React.lazy(() => import("@/components/docs/collections/single-menu-demo")),
@@ -98,6 +110,12 @@ export const previews: Record<string, any> = {
   "collections/accordion-demo": {
     component: React.lazy(() => import("@/components/docs/collections/accordion-demo")),
   },
+  "collections/menu-with-arrow-demo": {
+    component: React.lazy(() => import("@/components/docs/collections/menu-with-arrow-demo")),
+  },
+  "collections/menu-sub-demo": {
+    component: React.lazy(() => import("@/components/docs/collections/menu-sub-demo")),
+  },
   "collections/grid-list-disabled-demo": {
     component: React.lazy(() => import("@/components/docs/collections/grid-list-disabled-demo")),
   },
@@ -107,8 +125,14 @@ export const previews: Record<string, any> = {
   "collections/accordion-hide-indicator-demo": {
     component: React.lazy(() => import("@/components/docs/collections/accordion-hide-indicator-demo")),
   },
+  "collections/menu-danger-demo": {
+    component: React.lazy(() => import("@/components/docs/collections/menu-danger-demo")),
+  },
   "collections/accordion-disabled-demo": {
     component: React.lazy(() => import("@/components/docs/collections/accordion-disabled-demo")),
+  },
+  "collections/menu-section-demo": {
+    component: React.lazy(() => import("@/components/docs/collections/menu-section-demo")),
   },
   "collections/table-demo": {
     component: React.lazy(() => import("@/components/docs/collections/table-demo")),
@@ -260,8 +284,20 @@ export const previews: Record<string, any> = {
   "surfaces/card-table-demo": {
     component: React.lazy(() => import("@/components/docs/surfaces/card-table-demo")),
   },
+  "surfaces/show-more-as-text-demo": {
+    component: React.lazy(() => import("@/components/docs/surfaces/show-more-as-text-demo")),
+  },
+  "surfaces/show-more-demo": {
+    component: React.lazy(() => import("@/components/docs/surfaces/show-more-demo")),
+  },
   "surfaces/card-login-form-demo": {
     component: React.lazy(() => import("@/components/docs/surfaces/card-login-form-demo")),
+  },
+  "surfaces/show-more-orientation-demo": {
+    component: React.lazy(() => import("@/components/docs/surfaces/show-more-orientation-demo")),
+  },
+  "surfaces/show-more-content-reveal-initial-demo": {
+    component: React.lazy(() => import("@/components/docs/surfaces/show-more-content-reveal-initial-demo")),
   },
   "surfaces/grid-responsive-demo": {
     component: React.lazy(() => import("@/components/docs/surfaces/grid-responsive-demo")),
@@ -275,8 +311,14 @@ export const previews: Record<string, any> = {
   "surfaces/card-demo": {
     component: React.lazy(() => import("@/components/docs/surfaces/card-demo")),
   },
+  "surfaces/show-more-controlled-demo": {
+    component: React.lazy(() => import("@/components/docs/surfaces/show-more-controlled-demo")),
+  },
   "surfaces/grid-gap-demo": {
     component: React.lazy(() => import("@/components/docs/surfaces/grid-gap-demo")),
+  },
+  "surfaces/show-more-content-reveal-demo": {
+    component: React.lazy(() => import("@/components/docs/surfaces/show-more-content-reveal-demo")),
   },
   "surfaces/grid-basic-demo": {
     component: React.lazy(() => import("@/components/docs/surfaces/grid-basic-demo")),
@@ -506,14 +548,32 @@ export const previews: Record<string, any> = {
   "pickers/select-disabled-demo": {
     component: React.lazy(() => import("@/components/docs/pickers/select-disabled-demo")),
   },
+  "pickers/combo-box-controlled-demo": {
+    component: React.lazy(() => import("@/components/docs/pickers/combo-box-controlled-demo")),
+  },
+  "pickers/combo-box-readonly-demo": {
+    component: React.lazy(() => import("@/components/docs/pickers/combo-box-readonly-demo")),
+  },
+  "pickers/combo-box-section-demo": {
+    component: React.lazy(() => import("@/components/docs/pickers/combo-box-section-demo")),
+  },
+  "pickers/select-controlled-demo": {
+    component: React.lazy(() => import("@/components/docs/pickers/select-controlled-demo")),
+  },
   "pickers/multi-select-demo": {
     component: React.lazy(() => import("@/components/docs/pickers/multi-select-demo")),
   },
   "pickers/combo-box-invalid-demo": {
     component: React.lazy(() => import("@/components/docs/pickers/combo-box-invalid-demo")),
   },
+  "pickers/select-item-details-demo": {
+    component: React.lazy(() => import("@/components/docs/pickers/select-item-details-demo")),
+  },
   "pickers/combo-box-avatar-demo": {
     component: React.lazy(() => import("@/components/docs/pickers/combo-box-avatar-demo")),
+  },
+  "pickers/select-section-demo": {
+    component: React.lazy(() => import("@/components/docs/pickers/select-section-demo")),
   },
   "charts/radar-chart-dots-demo": {
     component: React.lazy(() => import("@/components/docs/charts/radar-chart-dots-demo")),
