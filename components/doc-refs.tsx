@@ -6,6 +6,7 @@ import {
     AdobeLogo,
     AstroLogo,
     CmdkLogo,
+    EmblaCrouselLogo,
     FramerLogo,
     GithubLogo,
     InertiaLogo,
@@ -91,6 +92,10 @@ export function DocRefs({ references }: any) {
             case url.includes('sonner'):
                 title = 'Sonner'
                 icon = BellIcon
+                break
+            case url.includes('embla'):
+                title = 'Embla Carousel'
+                icon = EmblaCrouselLogo
                 break
             default:
                 icon = () => null
