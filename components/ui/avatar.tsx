@@ -2,8 +2,8 @@
 
 import React from 'react'
 
-import { useVisuallyHidden } from 'react-aria'
 import { tv, type VariantProps } from 'tailwind-variants'
+import { VisuallyHidden } from './visually-hidden'
 
 const avatarGroupStyles = tv({
     base: 'flex items-center justify-center -space-x-2 [&_[data-slot=avatar]]:ring-2 [&_[data-slot=avatar]]:ring-background'
@@ -137,16 +137,6 @@ const avatarBadgeStyles = tv({
         status: 'primary'
     }
 })
-
-type VisuallyHiddenSpanProps = {
-    children: React.ReactNode
-}
-
-const VisuallyHidden = ({ children }: VisuallyHiddenSpanProps) => {
-    const { visuallyHiddenProps } = useVisuallyHidden()
-
-    return <span {...visuallyHiddenProps}>{children}</span>
-}
 
 const AvatarBadge = ({ size, className, status, ...props }: AvatarBadgeProps) => {
     return (

@@ -13,7 +13,10 @@ import { cn } from '@/lib/utils'
 import { Description, FieldError, Label } from './field'
 
 const textareaStyles = tv({
-    base: 'w-full min-w-0 rounded-md border border-input bg-background px-2.5 py-2 text-base shadow-sm outline-none transition duration-200 disabled:bg-secondary disabled:opacity-50 sm:text-sm'
+    base: [
+        'w-full min-w-0 rounded-md border border-input bg-background px-2.5 py-2 text-base shadow-sm outline-none transition duration-200 disabled:bg-secondary disabled:opacity-50 sm:text-sm',
+        'focus:ring-4 focus:ring-primary/20 focus:border-primary invalid:border-danger invalid:ring-4 invalid:ring-danger/20'
+    ]
 })
 
 interface TextareaProps extends TextFieldPrimitiveProps {
@@ -44,6 +47,7 @@ const Textarea = ({
                 className={composeRenderProps(className, (className, renderProps) =>
                     textareaStyles({
                         ...renderProps,
+
                         className
                     })
                 )}

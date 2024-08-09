@@ -20,7 +20,9 @@ export default function MenuWithArrowDemo() {
                     <Menu.Section>
                         <Menu.Header separator>
                             <span className='block'>DQ Al-Haqqi</span>
-                            <span className='font-normal text-muted-foreground'>@dq-alhq</span>
+                            <span className='font-normal text-muted-foreground'>
+                                @dq-alhq
+                            </span>
                         </Menu.Header>
                     </Menu.Section>
                     <Menu.Item>

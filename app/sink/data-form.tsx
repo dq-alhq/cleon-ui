@@ -1,7 +1,5 @@
 'use client'
 
-import React from 'react'
-
 import {
     Button,
     Card,
@@ -12,28 +10,31 @@ import {
     Radio,
     RadioGroup,
     Select,
-    Switch
+    type SelectedKey,
+    Switch,
+    Tag
 } from '@/components/ui'
+import { useListData } from 'react-stately'
 import { toast } from 'sonner'
 
 const items = [
-    { value: '1', label: 'Buttons' },
-    { value: '2', label: 'Collections' },
-    { value: '3', label: 'Colors' },
-    { value: '4', label: 'Date' },
-    { value: '5', label: 'Dropzone' },
-    { value: '6', label: 'Forms' },
-    { value: '7', label: 'Media' },
-    { value: '8', label: 'Navigation' },
-    { value: '9', label: 'Overlays' },
-    { value: '10', label: 'Pickers' },
-    { value: '11', label: 'Statuses' }
+    { id: 1, textValue: 'Buttons' },
+    { id: 2, textValue: 'Collections' },
+    { id: 3, textValue: 'Colors' },
+    { id: 4, textValue: 'Date' },
+    { id: 5, textValue: 'Dropzone' },
+    { id: 6, textValue: 'Forms' },
+    { id: 7, textValue: 'Media' },
+    { id: 8, textValue: 'Navigation' },
+    { id: 9, textValue: 'Overlays' },
+    { id: 10, textValue: 'Pickers' },
+    { id: 11, textValue: 'Statuses' }
 ]
 
 export default function DataFormSink() {
-    const [selectedItems, setSelectedItems] = React.useState<
-        { value: string; label: string }[]
-    >([])
+    const selectedList = useListData<SelectedKey>({
+        initialItems: [items[0]]
+    })
     return (
         <Card>
             <Card.Header>
@@ -72,13 +73,22 @@ export default function DataFormSink() {
                         <Checkbox value='dark_mode'>Enable Dark Mode</Checkbox>
                     </CheckboxGroup>
                     <MultiSelect
-                        max={10}
-                        label='Components'
-                        placeholder='Select Components'
+                        className='w-full'
+                        label='Fruits'
+                        selectedList={selectedList}
                         items={items}
-                        value={selectedItems}
-                        onChange={setSelectedItems}
-                    />
+                        tag={(item) => (
+                            <Tag textValue={item.textValue}>{item.textValue}</Tag>
+                        )}
+                    >
+                        {(item) => {
+                            return (
+                                <MultiSelect.Item textValue={item.textValue}>
+                                    {item.textValue}
+                                </MultiSelect.Item>
+                            )
+                        }}
+                    </MultiSelect>
                     <Switch>Notifications</Switch>
                 </Card.Content>
                 <Card.Footer className='justify-end'>

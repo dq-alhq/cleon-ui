@@ -61,3 +61,4 @@ export * from './time-field';
 export * from './toaster';
 export * from './toggle';
 export * from './tooltip';
+export * from './visually-hidden';

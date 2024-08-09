@@ -2,7 +2,7 @@
 title: 'Multi Select'
 description: A mulit select that lets you select multiple items from a list.
 order: 3
-references: ['https://github.com/pacocoursey/cmdk']
+references: ['https://react-spectrum.adobe.com/react-aria/useFilter.html#usefilter']
 published: true
 ---
 
@@ -14,6 +14,14 @@ A multi-select shows a dropdown list of options and lets users pick multiple ite
 
 ## Installation
 
-<Install items={['react-aria-components','cmdk']} />
+<Install items={['react-aria-components','react-aria','lucide-react']} />
 
-<SourceCode toShow={['multi-select','field']} />
+<SourceCode toShow={['multi-select', 'button', 'field', 'list-box', 'popover', 'tag-group', 'visually-hidden']} />
+
+## Controlled
+This component lets you select tags dynamically, updating the list with callbacks on add and remove. It displays selected tags with Tag components and logs each action.
+<How toUse="pickers/multi-select-controlled-demo" />
+
+## Min/Max
+This component lets you set a minimum and maximum number of tags that can be selected. It displays selected tags with Tag components and logs each action.
+<How toUse="pickers/multi-select-min-max-demo" />

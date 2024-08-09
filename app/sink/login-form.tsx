@@ -1,7 +1,8 @@
 'use client'
 
 import { GithubLogo, GoogleLogo } from '@/components/logo'
-import { Button, Card, Checkbox, Form, Link, Separator, TextField } from '@/components/ui'
+import { Button, Card, Checkbox, Form, Separator, TextField } from '@/components/ui'
+import Link from 'next/link'
 import { toast } from 'sonner'
 
 export default function LoginFormSink() {
@@ -42,9 +43,7 @@ export default function LoginFormSink() {
                         type='password'
                         placeholder='Enter your password'
                     />
-                    <Checkbox>
-                        I agree to the<Link href='#'>terms and conditions</Link>
-                    </Checkbox>
+                    <Checkbox>I agree to the terms and conditions</Checkbox>
                 </Card.Content>
                 <Card.Footer className='justify-end gap-4'>
                     <Link href='#'>Register</Link>
