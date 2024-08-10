@@ -2,11 +2,9 @@
 
 import * as React from 'react'
 
-import type { MotionProps } from 'framer-motion'
-import { AnimatePresence, motion } from 'framer-motion'
+import { AnimatePresence, motion, type MotionProps } from 'framer-motion'
 import { ChevronDownIcon } from 'lucide-react'
-import type { ButtonProps } from 'react-aria-components'
-import { Button, composeRenderProps } from 'react-aria-components'
+import { Button, composeRenderProps, type ButtonProps } from 'react-aria-components'
 import { tv } from 'tailwind-variants'
 
 import { cn } from '@/lib/utils'

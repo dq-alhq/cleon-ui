@@ -1,6 +1,6 @@
 'use client'
 
-import React from 'react'
+import React, { useContext, useEffect, useLayoutEffect, useRef, useState } from 'react'
 
 import {
     animate,
@@ -9,6 +9,7 @@ import {
     motion,
     useMotionTemplate,
     useMotionValue,
+    useMotionValueEvent,
     useTransform
 } from 'framer-motion'
 import {
@@ -35,7 +36,8 @@ const staticTransition = {
     duration: 0.5,
     ease: [0.32, 0.72, 0, 1]
 }
-const drawerMargin = 40
+
+const drawerMargin = 34
 const drawerRadius = 32
 
 interface DrawerContextType {
@@ -48,27 +50,53 @@ interface DrawerContextType {
 const DrawerContext = React.createContext<DrawerContextType | undefined>(undefined)
 
 const useDrawerContext = () => {
-    const context = React.useContext(DrawerContext)
+    const context = useContext(DrawerContext)
     if (context === undefined) {
         throw new Error('useDrawerContext must be used within a Drawer')
     }
     return context
 }
 
-/**
- * Primitives stick to the drawer, ain't getting exported to other components.
- */
 const ModalPrimitive = motion(Modal)
 const ModalOverlayPrimitive = motion(ModalOverlay)
+
 const DrawerOverlayPrimitive = (
     props: React.ComponentProps<typeof ModalOverlayPrimitive>
 ) => {
     const { closeDrawer, withNotch } = useDrawerContext()
+    const [contentHeight, setContentHeight] = useState(0)
+    const dialogRef = useRef<HTMLDivElement>(null)
 
-    const h = window.innerHeight - drawerMargin
+    useLayoutEffect(() => {
+        if (dialogRef.current) {
+            setContentHeight(dialogRef.current.offsetHeight)
+        }
+    }, [])
+
+    const h = Math.min(contentHeight + drawerMargin, window.innerHeight - drawerMargin)
     const y = useMotionValue(h)
-    const bgOpacity = useTransform(y, [0, h], [0.5, 0])
+    const bgOpacity = useTransform(y, [0, h], [0.4, 0])
     const bg = useMotionTemplate`rgba(0, 0, 0, ${bgOpacity})`
+    const root = document.getElementsByTagName('main')[0] as HTMLElement
+    const bodyScale = useTransform(
+        y,
+        [0, h],
+        [(window.innerWidth - drawerMargin) / window.innerWidth, 1]
+    )
+    const bodyTranslate = useTransform(y, [0, h], [drawerMargin - drawerRadius, 0])
+    const bodyBorderRadius = useTransform(y, [0, h], [drawerRadius, 0])
+
+    useMotionValueEvent(bodyScale, 'change', (v: any) => (root.style.scale = `${v}`))
+    useMotionValueEvent(
+        bodyTranslate,
+        'change',
+        (v: any) => (root.style.translate = `0 ${v}px`)
+    )
+    useMotionValueEvent(
+        bodyBorderRadius,
+        'change',
+        (v) => (root.style.borderRadius = `${v}px`)
+    )
 
     return (
         <>
@@ -78,6 +106,19 @@ const DrawerOverlayPrimitive = (
                 className='fixed inset-0 z-50'
                 style={{ backgroundColor: bg as any }}
             >
+                <motion.section
+                    aria-hidden
+                    onTap={closeDrawer}
+                    className='fixed inset-0 backdrop-blur-sm'
+                    initial='collapsed'
+                    animate='open'
+                    exit='collapsed'
+                    variants={{
+                        open: { opacity: 1 },
+                        collapsed: { opacity: 0 }
+                    }}
+                    transition={{ duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }}
+                ></motion.section>
                 <ModalPrimitive
                     className={cn(
                         'absolute bottom-0 w-full rounded-t-2xl bg-background shadow-lg ring-1 ring-foreground/10',
@@ -89,13 +130,14 @@ const DrawerOverlayPrimitive = (
                     transition={staticTransition}
                     style={{
                         y,
-                        top: drawerMargin,
-                        paddingBottom: window.screen.height
+                        top: 'auto',
+                        height: contentHeight + drawerMargin,
+                        maxHeight: `calc(100% - ${drawerMargin}px)`
                     }}
                     drag='y'
-                    dragConstraints={{ top: 0 }}
+                    dragConstraints={{ top: 0, bottom: h }}
                     onDragEnd={(_e, { offset, velocity }) => {
-                        if (offset.y > window.innerHeight * 0.75 || velocity.y > 10) {
+                        if (offset.y > h * 0.5 || velocity.y > 10) {
                             closeDrawer()
                         } else {
                             animate(y, 0, { ...inertiaTransition, min: 0, max: 0 })
@@ -103,12 +145,12 @@ const DrawerOverlayPrimitive = (
                     }}
                     {...props}
                 >
-                    <>
+                    <div ref={dialogRef}>
                         {withNotch && (
                             <div className='notch mx-auto mt-2 h-1.5 w-10 rounded-full bg-foreground/20' />
                         )}
-                        {props.children}
-                    </>
+                        {props.children as React.ReactNode}
+                    </div>
                 </ModalPrimitive>
             </ModalOverlayPrimitive>
         </>
@@ -147,9 +189,6 @@ const DrawerContentPrimitive = (props: DrawerContentPrimitiveProps) => {
     )
 }
 
-/**
- * Here are the components that get passed around to other components.
- */
 const DrawerTrigger = (props: ButtonProps) => {
     const { openDrawer } = useDrawerContext()
 
@@ -169,12 +208,12 @@ const Drawer = ({
     isOpen: controlledIsOpen,
     onOpenChange
 }: DrawerProps) => {
-    const [internalIsOpen, setInternalIsOpen] = React.useState(false)
+    const [internalIsOpen, setInternalIsOpen] = useState(false)
 
     const isControlled = controlledIsOpen !== undefined
     const isOpen = isControlled ? controlledIsOpen : internalIsOpen
 
-    React.useEffect(() => {
+    useEffect(() => {
         if (isControlled && onOpenChange) {
             onOpenChange(isOpen)
         }
@@ -207,20 +246,50 @@ const Drawer = ({
     )
 }
 
-const DrawerContent = ({
-    children,
-    className,
-    ...props
-}: React.ComponentProps<typeof DrawerContentPrimitive>) => {
+interface DrawerContentProps extends React.ComponentProps<typeof DrawerContentPrimitive> {
+    children: React.ReactNode | ((values: any) => React.ReactNode)
+}
+
+const DrawerContent = ({ children, className, ...props }: DrawerContentProps) => {
+    const contentRef = useRef<HTMLDivElement>(null)
+    const [contentHeight, setContentHeight] = useState(0)
+
+    useEffect(() => {
+        if (!contentRef.current) return
+
+        const resizeObserver = new ResizeObserver((entries) => {
+            for (const entry of entries) {
+                const cr = entry.contentRect
+                setContentHeight(cr.height)
+            }
+        })
+
+        resizeObserver.observe(contentRef.current)
+
+        return () => {
+            resizeObserver.disconnect()
+        }
+    }, [])
+
+    const childrenToRender =
+        typeof children === 'function'
+            ? (children as (values: any) => React.ReactNode)(DialogPrimitive)
+            : children
+
     return (
         <DrawerContentPrimitive>
             <DrawerOverlayPrimitive {...props}>
-                <DialogPrimitive className='mx-auto flex h-[calc(var(--visual-viewport-height)-4.5rem)] max-w-3xl flex-col justify-between overflow-y-auto px-4 pt-4 outline-none'>
-                    {(values) => (
-                        <>
-                            {typeof children === 'function' ? children(values) : children}
-                        </>
+                <DialogPrimitive
+                    className={cn(
+                        'mx-auto flex max-w-3xl flex-col justify-between overflow-y-auto px-4 pt-4 outline-none',
+                        className
                     )}
+                    style={{
+                        height: contentHeight > 0 ? `${contentHeight}px` : 'auto',
+                        maxHeight: `calc(var(--visual-viewport-height) - 4.5rem)`
+                    }}
+                >
+                    <div ref={contentRef}>{childrenToRender}</div>
                 </DialogPrimitive>
             </DrawerOverlayPrimitive>
         </DrawerContentPrimitive>
@@ -273,4 +342,5 @@ Drawer.Footer = DrawerFooter
 Drawer.Header = DrawerHeader
 Drawer.Title = DrawerTitle
 Drawer.Trigger = DrawerTrigger
+
 export { Drawer }

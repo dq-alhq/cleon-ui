@@ -15,7 +15,7 @@ const badgeVariants = {
     warning:
         'dark:ring-warning/40 ring-warning/50 bg-warning/10 dark:bg-warning/15 text-warning hover:bg-warning/15 dark:hover:bg-warning/10',
     danger: 'dark:ring-danger/30 ring-danger/40 bg-danger/10 dark:bg-danger/15 text-danger hover:bg-danger/15 dark:hover:bg-danger/10',
-    dark: 'bg-dark hover:bg-dark/90 ring-inset ring-dark/50 text-white'
+    dark: 'bg-dark hover:bg-dark/90 ring-inset ring-dark/50 text-dark-foreground'
 }
 const badgeShapes = {
     square: 'rounded-md px-1.5',

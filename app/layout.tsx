@@ -47,11 +47,11 @@ export default function RootLayout({
                 )}
             >
                 <Providers>
-                    <div className='relative flex min-h-dvh flex-col bg-background'>
+                    <main className='relative flex min-h-dvh flex-col bg-background'>
                         <Navbar />
-                        <main className='flex-1'>{children}</main>
+                        <div className='flex-1'>{children}</div>
                         <Footer />
-                    </div>
+                    </main>
                     <Analytics />
                 </Providers>
             </body>
