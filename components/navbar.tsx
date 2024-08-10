@@ -251,7 +251,7 @@ export function NavbarDropdown() {
                         <AdobeLogo />
                         RAC
                     </Menu.Item>
-                    <Menu.Item href='https://justd.co' target='_blank'>
+                    <Menu.Item href='https://getjustd.com/' target='_blank'>
                         <DLogo />
                         Just D .
                     </Menu.Item>
@@ -259,7 +259,7 @@ export function NavbarDropdown() {
                         <TailwindLogo />
                         Tailwind CSS
                     </Menu.Item>
-                    <Menu.Item href='https://justd.co/colors' target='_blank'>
+                    <Menu.Item href='https://getjustd.co/colors' target='_blank'>
                         <PaletteIcon />
                         Colors
                     </Menu.Item>

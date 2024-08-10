@@ -16,7 +16,6 @@ export default function DocsLayout({ children }: { children: ReactNode }) {
                     </div>
                 </div>
                 {children}
-
                 <SpeedInsights />
             </div>
         </div>
