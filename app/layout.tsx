@@ -1,12 +1,11 @@
 import React from 'react'
 
-import { Footer } from '@/components/footer'
-import { Navbar } from '@/components/navbar'
 import { Providers } from '@/components/providers'
 import { siteConfig } from '@/config/site'
 import { cn } from '@/lib/utils'
 import '@/styles/app.css'
 import { Analytics } from '@vercel/analytics/react'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import type { Metadata, Viewport } from 'next'
 import localFont from 'next/font/local'
 
@@ -48,10 +47,9 @@ export default function RootLayout({
             >
                 <Providers>
                     <main className='relative flex min-h-dvh flex-col bg-background'>
-                        <Navbar />
-                        <div className='flex-1'>{children}</div>
-                        <Footer />
+                        {children}
                     </main>
+                    <SpeedInsights />
                     <Analytics />
                 </Providers>
             </body>

@@ -47,7 +47,6 @@ const Textarea = ({
                 className={composeRenderProps(className, (className, renderProps) =>
                     textareaStyles({
                         ...renderProps,
-
                         className
                     })
                 )}

@@ -51,16 +51,20 @@ const FileTrigger = ({
                         )}
                     </>
                 )}
-                {props.children ? (
-                    props.children
-                ) : (
+                {size !== 'icon' && (
                     <>
-                        {props.allowsMultiple
-                            ? 'Browse a files'
-                            : props.acceptDirectory
-                              ? 'Browse'
-                              : 'Browse a file'}
-                        ...
+                        {props.children ? (
+                            props.children
+                        ) : (
+                            <>
+                                {props.allowsMultiple
+                                    ? 'Browse a files'
+                                    : props.acceptDirectory
+                                      ? 'Browse'
+                                      : 'Browse a file'}
+                                ...
+                            </>
+                        )}
                     </>
                 )}
             </Button>

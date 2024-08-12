@@ -6,6 +6,7 @@ import Image from 'next/image'
 import type { LinkProps } from 'react-aria-components'
 import { Link, Snippet, type SnippetProps } from 'ui'
 
+import { BlockContent } from './block-content'
 import { DocHow } from './doc-how'
 import { DocsNote } from './doc-note'
 
@@ -30,6 +31,7 @@ export function MDXContent({ code }: MdxProps) {
                 ),
                 Note: DocsNote,
                 SourceCode: SourceCode,
+                Block: BlockContent,
                 PlainCode: PlainCode,
                 Snippet: (props: SnippetProps) => (
                     <Snippet {...props} className='bg-[#0e0e10] text-white' />

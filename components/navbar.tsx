@@ -33,7 +33,8 @@ import { Aside } from './aside'
 
 const menuItems = [
     { id: 1, label: 'Home', url: '/' },
-    { id: 2, label: 'Components', url: '/docs/getting-started/introduction' }
+    { id: 2, label: 'Components', url: '/docs/getting-started/introduction' },
+    { id: 3, label: 'Blocks', url: '/blocks' }
 ]
 
 export function Navbar() {
@@ -62,6 +63,12 @@ export function Navbar() {
                                             href='/docs/getting-started/introduction'
                                         >
                                             Components
+                                        </NavLink>
+                                        <NavLink
+                                            isActive={pathname?.startsWith('/blocks')}
+                                            href='/blocks'
+                                        >
+                                            Blocks
                                         </NavLink>
                                     </Collection>
                                 </div>

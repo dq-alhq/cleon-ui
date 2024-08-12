@@ -81,3 +81,22 @@ export function titleCase(input: string): string {
 export function wait(number: number = 1000) {
     return new Promise((resolve) => setTimeout(resolve, number))
 }
+
+export const convertToHtml = (text: string) => {
+    let html = text
+    html = html.replace(
+        /(https?:\/\/[^\s]+)/g,
+        '<a href="$1" target="_blank" rel="noopener noreferrer">$1</a>'
+    )
+    html = html.replace(/`([^`]+)`/g, '<code class="font-mono">$1</code>')
+    html = html.replace(/\*(.*?)\*/g, '<strong>$1</strong>')
+    html = html.replace(/_(.*?)_/g, '<em>$1</em>')
+
+    return html
+}
+
+export function formatTime(date: Date): string {
+    const hours = date.getHours().toString().padStart(2, '0')
+    const minutes = date.getMinutes().toString().padStart(2, '0')
+    return `${hours}:${minutes}`
+}
