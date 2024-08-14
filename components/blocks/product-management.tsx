@@ -191,8 +191,12 @@ const ProductTable = () => {
     const [page, setPage] = React.useState(1)
 
     const [totalPage, setTotalPage] = React.useState(
-        Math.ceil(list.length / Number(limit))
+        Math.ceil(list.length / Number(limit)) || 1
     )
+
+    React.useEffect(() => {
+        setTotalPage(Math.ceil(list.length / Number(limit)))
+    }, [list, limit])
 
     React.useEffect(() => {
         const getList = async () => {
@@ -248,12 +252,9 @@ const ProductTable = () => {
         setLoading('success')
         setIsDeleting(false)
         setLoading('idle')
-
         setSelectedKeys(new Set())
         setTotalPage(Math.ceil(list.length / Number(limit)))
     }
-
-    console.log(page, limit)
 
     return (
         <Card>
@@ -445,7 +446,6 @@ const ProductTable = () => {
                         placeholder='10'
                         className='max-w-[4rem]'
                     >
-                        <Select.Item id={1}>1</Select.Item>
                         <Select.Item id={5}>5</Select.Item>
                         <Select.Item id={10}>10</Select.Item>
                         <Select.Item id={20}>20</Select.Item>
@@ -503,7 +503,7 @@ const ProductTable = () => {
                         </Pagination.Section>
                         <Pagination.Item
                             role='next'
-                            onAction={() => setPage(totalPage)}
+                            onAction={() => setPage(page + 1)}
                             isDisabled={page >= totalPage}
                         />
                         <Pagination.Item
