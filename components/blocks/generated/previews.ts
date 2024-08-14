@@ -8,4 +8,10 @@ export const previews: Record<string, any> = {
   "chat-app": {
     component: React.lazy(() => import("@/components/blocks/chat-app")),
   },
+  "dashboard": {
+    component: React.lazy(() => import("@/components/blocks/dashboard")),
+  },
+  "product-management": {
+    component: React.lazy(() => import("@/components/blocks/product-management")),
+  },
 };

@@ -1,6 +1,5 @@
 'use client'
 import {
-    BotMessageSquareIcon,
     CheckCheckIcon,
     CheckIcon,
     ClockIcon,
@@ -13,6 +12,7 @@ import {
     MessageSquarePlusIcon,
     Mic,
     MoreVerticalIcon,
+    RadioTowerIcon,
     SettingsIcon,
     TrashIcon,
     User2Icon,
@@ -189,7 +189,7 @@ export default function ChatApp() {
                                     buttonVariants({ variant: 'ghost', size: 'icon' })
                                 )}
                             >
-                                <BotMessageSquareIcon className='!size-6' />
+                                <RadioTowerIcon className='!size-6' />
                             </Tooltip.Trigger>
                             <Tooltip.Content placement='right'>Broadcast</Tooltip.Content>
                         </Tooltip>
@@ -336,7 +336,7 @@ export default function ChatApp() {
                                 <EmojiPicker
                                     placement='left'
                                     open={emoji}
-                                    setOpen={setEmoji}
+                                    setOpen={openEmoji}
                                     onPickEmoji={(e) => pickEmoji(e)}
                                 />
                                 <FileTrigger

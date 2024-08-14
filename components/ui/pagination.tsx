@@ -34,7 +34,9 @@ const Pagination = ({ className, ...props }: React.ComponentProps<'nav'>) => (
 const PaginationSection = <T extends object>({
     className,
     ...props
-}: SectionProps<T>) => <Section {...props} className={cn('flex h-9 gap-1', className)} />
+}: SectionProps<T>) => (
+    <Section {...props} className={cn('flex h-9 sm:h-10 gap-1', className)} />
+)
 
 const PaginationList = <T extends object>({ className, ...props }: ListBoxProps<T>) => {
     const ariaLabel = props['aria-label'] || 'Pagination'
@@ -90,7 +92,7 @@ const PaginationItem = ({
     role = 'default',
     size = 'icon',
     shape = 'square',
-    variant,
+    variant = 'outline',
     className,
     isCurrent,
     children,
@@ -114,7 +116,7 @@ const PaginationItem = ({
                         variant: 'outline',
                         size: 'icon',
                         className:
-                            'focus-visible:border-primary focus-visible:bg-primary/10 dark:focus-visible:text-primary-100 dark:[&>[data-slot=icon]]:text-primary-100 focus-visible:text-primary-900 [&>[data-slot=icon]]:text-primary-960 focus-visible:ring-4 focus-visible:ring-primary/20'
+                            'focus-visible:border-primary focus-visible:bg-primary/10 focus-visible:text-foreground [&>[data-slot=icon]]:text-primary focus-visible:ring-4 focus-visible:ring-primary/20'
                     }),
                     className
                 ),
@@ -128,7 +130,10 @@ const PaginationItem = ({
             return renderListItem(
                 {
                     textValue: textValue,
-                    className: cn('h-9 px-3.5 grid place-content-center', className),
+                    className: cn(
+                        'h-9 sm:h-10 px-3.5 grid place-content-center',
+                        className
+                    ),
                     ...props
                 },
                 children
@@ -137,7 +142,7 @@ const PaginationItem = ({
             return renderListItem(
                 {
                     textValue: 'Separator',
-                    className: 'h-9 grid place-content-center',
+                    className: 'h-9 sm:h-10 grid place-content-center',
                     ...props
                 },
                 <Separator
@@ -150,16 +155,19 @@ const PaginationItem = ({
                 {
                     textValue: 'More pages',
                     className: cn(
-                        'flex items-center justify-center focus-visible:border-primary rounded-lg border border-transparent focus:outline-none size-9 focus-visible:bg-primary/10 dark:focus-visible:text-primary-100 dark:[&>[data-slot=icon]]:text-primary-100 focus-visible:text-primary-900 [&>[data-slot=icon]]:text-primary-960 focus-visible:ring-4 focus-visible:ring-primary/20',
+                        'flex items-center justify-center focus-visible:border-primary rounded-lg border border-transparent focus:outline-none size-9 sm:size-10 focus-visible:bg-primary/10 focus-visible:text-foreground [&>[data-slot=icon]]:text-primary focus-visible:ring-4 focus-visible:ring-primary/20',
                         className
                     ),
                     ...props
                 },
                 <span
                     aria-hidden
-                    className={cn('flex size-9 items-center justify-center', className)}
+                    className={cn(
+                        'flex size-9 sm:size-10 items-center justify-center',
+                        className
+                    )}
                 >
-                    <MoreHorizontalIcon />
+                    <MoreHorizontalIcon className='size-5 text-muted-foreground' />
                 </span>
             )
         case 'previous':
@@ -181,7 +189,7 @@ const PaginationItem = ({
                             variant: isCurrent ? 'primary' : variant,
                             size,
                             className:
-                                'focus-visible:border-primary focus-visible:bg-primary/10 dark:focus-visible:text-primary-100 dark:[&>[data-slot=icon]]:text-primary-100 focus-visible:text-primary-900 [&>[data-slot=icon]]:text-primary-960 focus-visible:ring-4 focus-visible:ring-primary/20 disabled:opacity-100'
+                                'focus-visible:border-primary cursor-pointer focus-visible:bg-primary/10 focus-visible:text-foreground [&>[data-slot=icon]]:text-primary focus-visible:ring-4 focus-visible:ring-primary/20 disabled:opacity-80'
                         }),
                         className
                     ),

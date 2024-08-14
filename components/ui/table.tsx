@@ -75,9 +75,9 @@ const TableColumn = ({ children, className, ...props }: TableColumnProps) => (
                         (sortDirection === undefined ? (
                             <div className='w-6' />
                         ) : sortDirection === 'ascending' ? (
-                            <ChevronUpIcon />
+                            <ChevronUpIcon className='size-4' />
                         ) : (
-                            <ChevronDownIcon />
+                            <ChevronDownIcon className='size-4' />
                         ))}
                 </>
             </div>

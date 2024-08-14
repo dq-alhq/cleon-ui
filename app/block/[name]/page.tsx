@@ -1,8 +1,7 @@
-'use client'
 import { previews } from '@/components/blocks/generated/previews'
 import { Loader2Icon } from 'lucide-react'
 import React from 'react'
-export default function BlockPage({ params }: { params: { name: string } }) {
+export default async function BlockPage({ params }: { params: { name: string } }) {
     const { name } = params
     const Preview = previews[name] ? previews[name].component : null
     return (
