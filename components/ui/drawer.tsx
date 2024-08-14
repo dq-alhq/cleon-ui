@@ -107,7 +107,7 @@ const DrawerOverlayPrimitive = (
                 style={{ backgroundColor: bg as any }}
             >
                 <motion.section
-                    aria-hidden
+                    aria-labelledby='overlay'
                     onTap={closeDrawer}
                     className='fixed inset-0 backdrop-blur-sm'
                     initial='collapsed'
@@ -281,7 +281,7 @@ const DrawerContent = ({ children, className, ...props }: DrawerContentProps) =>
             <DrawerOverlayPrimitive {...props}>
                 <DialogPrimitive
                     className={cn(
-                        'mx-auto flex max-w-3xl flex-col justify-between overflow-y-auto px-4 pt-4 outline-none',
+                        'mx-auto flex max-w-3xl flex-col justify-between overflow-y-auto px-4 mt-4 outline-none',
                         className
                     )}
                     style={{
@@ -296,9 +296,18 @@ const DrawerContent = ({ children, className, ...props }: DrawerContentProps) =>
     )
 }
 
-const DrawerHeader = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => (
+interface DrawerHeaderProps extends React.HTMLAttributes<HTMLDivElement> {
+    className?: string
+    isSticky?: boolean
+}
+
+const DrawerHeader = ({ className, isSticky = false, ...props }: DrawerHeaderProps) => (
     <div
-        className={cn('flex flex-col gap-y-1 text-center sm:text-left', className)}
+        className={cn(
+            'flex flex-col gap-y-1 text-center sm:text-left bg-background z-50',
+            isSticky && 'sticky top-0',
+            className
+        )}
         {...props}
     />
 )

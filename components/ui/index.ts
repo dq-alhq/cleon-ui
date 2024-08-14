@@ -21,6 +21,7 @@ export * from './drawer';
 export * from './dropdown';
 export * from './drop-zone';
 export * from './dynamic-overlay';
+export * from './emoji-picker';
 export * from './field';
 export * from './file-trigger';
 export * from './form';

@@ -63,7 +63,7 @@ const PopoverBody = ({ className, ...props }: React.HTMLAttributes<HTMLDivElemen
 
 const popoverContentStyles = tv({
     base: [
-        'max-w-xs min-w-80 p-4 rounded-lg border bg-background bg-clip-padding text-foreground shadow-lg backdrop-blur-sm dark:backdrop-blur-2xl dark:backdrop-saturate-200 lg:text-sm sm:max-w-3xl forced-colors:bg-[Canvas]'
+        'max-w-xs min-w-80 p-4 rounded-lg border bg-background bg-clip-padding dark:backdrop-blur-2xl dark:backdrop-saturate-200 text-foreground shadow-lg lg:text-sm sm:max-w-3xl forced-colors:bg-[Canvas]'
     ],
     variants: {
         isMenu: {
@@ -130,8 +130,8 @@ const PopoverContent = ({
     return isMobile && respectScreen ? (
         <ModalOverlay
             className={cn(
-                'fixed left-0 top-0 bg-foreground/30 backdrop-blur-sm isolate z-50 h-[--visual-viewport-height] w-full [--visual-viewport-vertical-padding:16px]',
-                isSubmenuTrigger ? 'bg-foreground/30 backdrop-blur-sm' : ''
+                'fixed left-0 top-0 bg-background/10 isolate z-50 h-[--visual-viewport-height] w-full [--visual-viewport-vertical-padding:16px]',
+                isSubmenuTrigger ? 'bg-background/10' : ''
             )}
             {...props}
             isDismissable

@@ -1,7 +1,5 @@
 import React from 'react'
 
-import { Footer } from '@/components/footer'
-import { Navbar } from '@/components/navbar'
 import { Providers } from '@/components/providers'
 import { siteConfig } from '@/config/site'
 import { cn } from '@/lib/utils'
@@ -48,9 +46,7 @@ export default function RootLayout({
             >
                 <Providers>
                     <main className='relative flex min-h-dvh flex-col bg-background'>
-                        <Navbar />
-                        <div className='flex-1'>{children}</div>
-                        <Footer />
+                        {children}
                     </main>
                     <Analytics />
                 </Providers>

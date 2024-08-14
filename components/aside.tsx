@@ -135,7 +135,9 @@ const renderHierarchy = (node: HierarchyNode, defaultValues: string[]) => {
 export const Aside = () => {
     const pathname = usePathname()
     const id = React.useId()
-    const hierarchicalDocs = createHierarchy(docs)
+    const docsPage = docs.filter((doc) => doc.slug.indexOf('blocks') === -1)
+
+    const hierarchicalDocs = createHierarchy(docsPage)
 
     const computeDefaultValuesFromURL = (): string[] => {
         const pathParts = pathname.split('/').filter(Boolean)
