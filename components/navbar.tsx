@@ -26,7 +26,7 @@ import {
 } from 'lucide-react'
 import { usePathname } from 'next/navigation'
 import { Collection, type LinkProps } from 'react-aria-components'
-import { Button, Keyboard, Link, Menu, Separator, Sheet } from 'ui'
+import { Button, buttonVariants, Keyboard, Link, Menu, Separator, Sheet } from 'ui'
 import { useTheme } from './providers'
 
 import { Aside } from './aside'
@@ -75,6 +75,16 @@ export function Navbar() {
 
                                 <div className='flex items-center gap-x-2'>
                                     <>
+                                        <Link
+                                            target='_blank'
+                                            href='https://github.com/dq-alhq/cleon-ui'
+                                            className={buttonVariants({
+                                                variant: 'outline',
+                                                size: 'icon'
+                                            })}
+                                        >
+                                            <GithubLogo />
+                                        </Link>
                                         <Button
                                             className='flex-shrink-0'
                                             onPress={() =>
@@ -161,6 +171,16 @@ export function ResponsiveAside({ open, setOpen }: OpenCloseProps) {
                     <Logo className='size-7' />
                 </Link>
                 <div className='flex items-center gap-x-1'>
+                    <Link
+                        target='_blank'
+                        href='https://github.com/dq-alhq/cleon-ui'
+                        className={buttonVariants({
+                            variant: 'outline',
+                            size: 'icon'
+                        })}
+                    >
+                        <GithubLogo />
+                    </Link>
                     <Button
                         // @ts-expect-error
                         onPress={() => setOpen((open: boolean) => !open)}
