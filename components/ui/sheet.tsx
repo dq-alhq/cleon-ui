@@ -2,15 +2,16 @@
 
 import * as React from 'react'
 
-import type { DialogTriggerProps, Modal } from 'react-aria-components'
 import {
     Button,
     composeRenderProps,
-    type DialogProps,
     DialogTrigger,
     ModalOverlay,
-    type ModalOverlayProps as ModalOverlayPrimitiveProps,
-    Modal as ModalPrimitive
+    Modal as ModalPrimitive,
+    type DialogProps,
+    type DialogTriggerProps,
+    type Modal,
+    type ModalOverlayProps as ModalOverlayPrimitiveProps
 } from 'react-aria-components'
 import { tv, type VariantProps } from 'tailwind-variants'
 

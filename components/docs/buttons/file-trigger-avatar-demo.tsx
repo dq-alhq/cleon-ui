@@ -3,11 +3,11 @@
 import React from 'react'
 
 import type { DropEvent } from '@react-types/shared'
+import { IconPerson } from 'justd-icons'
 import { isFileDropItem } from 'react-aria-components'
-import { twJoin } from 'tailwind-merge'
 
 import { Avatar, DropZone, FileTrigger } from '@/components/ui'
-import { UserCircleIcon } from 'lucide-react'
+import { cn } from '@/lib/utils'
 
 export default function FileTriggerAvatarDemo() {
     const [droppedImage, setDroppedImage] = React.useState<string | undefined>('')
@@ -38,7 +38,7 @@ export default function FileTriggerAvatarDemo() {
             <DropZone
                 getDropOperation={() => 'copy'}
                 onDrop={onDropHandler}
-                className={twJoin(
+                className={cn(
                     'rounded-full bg-tertiary p-0 size-10 grid place-content-center overflow-hidden',
                     droppedImage && 'border-solid border-foreground/20'
                 )}
@@ -46,7 +46,7 @@ export default function FileTriggerAvatarDemo() {
                 {droppedImage ? (
                     <Avatar src={droppedImage} size='lg' />
                 ) : (
-                    <UserCircleIcon className='size-6 text-muted-foreground' />
+                    <IconPerson className='size-6 text-muted-foreground' />
                 )}
                 <input type='hidden' name='image' value={droppedImage} />
             </DropZone>

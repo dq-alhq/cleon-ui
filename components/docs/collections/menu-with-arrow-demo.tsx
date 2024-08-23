@@ -1,13 +1,14 @@
 'use client'
 
-import { Avatar, Menu } from '@/components/ui'
 import {
-    CommandIcon,
-    HeadphonesIcon,
-    LogOutIcon,
-    SettingsIcon,
-    SquarePlusIcon
-} from 'lucide-react'
+    IconCommandRegular,
+    IconHeadphones,
+    IconLogout,
+    IconSettings,
+    IconSquarePlus
+} from 'justd-icons'
+
+import { Avatar, Menu } from '@/components/ui'
 
 export default function MenuWithArrowDemo() {
     return (
@@ -26,26 +27,26 @@ export default function MenuWithArrowDemo() {
                         </Menu.Header>
                     </Menu.Section>
                     <Menu.Item>
-                        <SettingsIcon />
+                        <IconSettings />
                         Settings
                     </Menu.Item>
                     <Menu.Item href='#'>
-                        <SquarePlusIcon />
+                        <IconSquarePlus />
                         Create Team
                     </Menu.Item>
                     <Menu.Item href='#'>
-                        <CommandIcon />
+                        <IconCommandRegular />
                         Command Menu.
                         <Menu.Keyboard keys='⌘K' />
                     </Menu.Item>
                     <Menu.Separator />
                     <Menu.Item href='#'>
-                        <HeadphonesIcon />
+                        <IconHeadphones />
                         Contact Support
                     </Menu.Item>
                     <Menu.Separator />
                     <Menu.Item>
-                        <LogOutIcon />
+                        <IconLogout />
                         Log out
                     </Menu.Item>
                 </Menu.Content>

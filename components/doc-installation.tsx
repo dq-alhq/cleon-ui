@@ -2,7 +2,7 @@
 
 import React from 'react'
 
-import { Snippet, Tabs } from 'ui'
+import { Snippet, Tabs } from '@/components/ui'
 
 interface InstallProps {
     items?: string[]

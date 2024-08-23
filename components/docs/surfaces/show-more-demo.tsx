@@ -1,8 +1,9 @@
 'use client'
 
+import { IconChevronDown } from 'justd-icons'
+
 import { ShowMore } from '@/components/ui'
 import { cn } from '@/lib/utils'
-import { ChevronDown } from 'lucide-react'
 
 export default function ShowMoreDemo() {
     return (
@@ -11,7 +12,7 @@ export default function ShowMoreDemo() {
                 {({ isSelected }) => (
                     <>
                         Show {isSelected ? 'less' : 'more'}
-                        <ChevronDown
+                        <IconChevronDown
                             className={cn(
                                 isSelected ? 'rotate-180' : '',
                                 'size-4 transition-transform duration-200'

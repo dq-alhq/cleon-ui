@@ -2,7 +2,7 @@
 
 import React from 'react'
 
-import { GripHorizontalIcon } from 'lucide-react'
+import { IconDotGrid2X3 } from 'justd-icons'
 import {
     Button,
     GridListItem as GridListItemPrimitive,
@@ -52,7 +52,7 @@ const GridListItem = ({ children, ...props }: GridListItemProps) => {
                 <>
                     {allowsDragging && (
                         <Button slot='drag'>
-                            <GripHorizontalIcon />
+                            <IconDotGrid2X3 />
                         </Button>
                     )}
                     {selectionMode === 'multiple' && selectionBehavior === 'toggle' && (

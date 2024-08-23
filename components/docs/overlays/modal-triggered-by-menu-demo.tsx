@@ -2,9 +2,10 @@
 
 import React from 'react'
 
+import { IconDotsVertical, IconLoader } from 'justd-icons'
+
 import { Button, buttonVariants, Menu, Modal } from '@/components/ui'
 import { wait } from '@/lib/utils'
-import { Loader2, MoreVertical } from 'lucide-react'
 
 export default function ModalTriggeredByMenuDemo() {
     const [state, setState] = React.useState<string | null>(null)
@@ -54,7 +55,7 @@ export default function ModalTriggeredByMenuDemo() {
                 <Menu.Trigger
                     className={buttonVariants({ variant: 'outline', size: 'icon' })}
                 >
-                    <MoreVertical />
+                    <IconDotsVertical />
                 </Menu.Trigger>
                 <Menu.Content placement='bottom'>
                     <Menu.Item isDanger onAction={() => setState('delete')}>
@@ -85,7 +86,7 @@ export default function ModalTriggeredByMenuDemo() {
                         }
                     >
                         {loading ? (
-                            <Loader2 className={'animate-spin'} />
+                            <IconLoader className={'animate-spin'} />
                         ) : (
                             actionType(state)?.confirmText
                         )}

@@ -3,10 +3,10 @@
 import {
     composeRenderProps,
     DateField as DateFieldPrimitive,
-    type DateFieldProps as DateFieldPrimitiveProps,
     DateInput as DateInputPrimitive,
-    type DateInputProps,
     DateSegment,
+    type DateFieldProps as DateFieldPrimitiveProps,
+    type DateInputProps,
     type DateValue,
     type ValidationResult
 } from 'react-aria-components'

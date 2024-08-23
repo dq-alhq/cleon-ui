@@ -1,6 +1,6 @@
 'use client'
 
-import { ChevronDownIcon } from 'lucide-react'
+import { IconChevronDown } from 'justd-icons'
 import React from 'react'
 import { useFilter } from 'react-aria'
 import {
@@ -254,7 +254,7 @@ const MultiSelect = <T extends SelectedKey>({
                                 size='icon'
                                 ref={triggerButtonRef}
                             >
-                                <ChevronDownIcon />
+                                <IconChevronDown />
                             </Button>
                         </VisuallyHidden>
                     </div>
@@ -296,7 +296,7 @@ const MultiSelect = <T extends SelectedKey>({
                         onClick={() => triggerButtonRef.current?.click()}
                         tabIndex={-1}
                     >
-                        <ChevronDownIcon className='size-4' />
+                        <IconChevronDown className='size-4' />
                     </button>
                 </div>
             </div>

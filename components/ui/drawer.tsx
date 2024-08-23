@@ -5,22 +5,22 @@ import React, { useContext, useEffect, useLayoutEffect, useRef, useState } from 
 import {
     animate,
     AnimatePresence,
-    type Inertia,
     motion,
     useMotionTemplate,
     useMotionValue,
     useMotionValueEvent,
-    useTransform
+    useTransform,
+    type Inertia
 } from 'framer-motion'
 import {
     Button,
-    type ButtonProps,
     Dialog as DialogPrimitive,
-    type DialogProps,
     Heading,
-    type HeadingProps,
     Modal,
-    ModalOverlay
+    ModalOverlay,
+    type ButtonProps,
+    type DialogProps,
+    type HeadingProps
 } from 'react-aria-components'
 
 import { cn } from '@/lib/utils'

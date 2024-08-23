@@ -4,7 +4,7 @@ import * as React from 'react'
 
 import { cn } from '@/lib/utils'
 import { OTPInput, OTPInputContext } from 'input-otp'
-import { Circle } from 'lucide-react'
+import { IconBulletFill } from 'justd-icons'
 
 interface InputOTPSubComponents {
     Group: typeof InputOTPGroup
@@ -74,7 +74,7 @@ const InputOTPSeparator = React.forwardRef<
     React.ComponentPropsWithoutRef<'div'>
 >(({ ...props }, ref) => (
     <div ref={ref} role='separator' {...props}>
-        <Circle className='size-2 fill-inherit' />
+        <IconBulletFill className='size-2 fill-inherit' />
     </div>
 ))
 InputOTPSeparator.displayName = 'InputOTPSeparator'

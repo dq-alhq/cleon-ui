@@ -9,7 +9,7 @@ import {
     ChartTooltipContent,
     type ChartConfig
 } from '@/components/ui'
-import { ArrowDownFromLine, ArrowUpFromLine, TrendingUp } from 'lucide-react'
+import { IconArrowWall2Down, IconArrowWall2Up, IconTrendingChart3 } from 'justd-icons'
 import { PolarAngleAxis, PolarGrid, Radar, RadarChart } from 'recharts'
 
 const chartData = [
@@ -25,12 +25,12 @@ const chartConfig = {
     desktop: {
         label: 'Desktop',
         color: 'hsl(var(--chart-1))',
-        icon: ArrowDownFromLine
+        icon: IconArrowWall2Up
     },
     mobile: {
         label: 'Mobile',
         color: 'hsl(var(--chart-2))',
-        icon: ArrowUpFromLine
+        icon: IconArrowWall2Down
     }
 } satisfies ChartConfig
 
@@ -73,7 +73,8 @@ export default function RadarChartIconsDemo() {
             </Card.Content>
             <Card.Footer className='flex-col gap-2 pt-4 text-sm'>
                 <div className='flex items-center gap-2 font-medium leading-none'>
-                    Trending up by 5.2% this month <TrendingUp className='h-4 w-4' />
+                    Trending up by 5.2% this month{' '}
+                    <IconTrendingChart3 className='h-4 w-4' />
                 </div>
                 <div className='flex items-center gap-2 leading-none text-muted-foreground'>
                     January - June 2024

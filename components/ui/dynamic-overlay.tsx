@@ -2,8 +2,7 @@
 
 import { cn, useMediaQuery } from '@/lib/utils'
 import * as Primitive from 'react-aria-components'
-import type { VariantProps } from 'tailwind-variants'
-import { tv } from 'tailwind-variants'
+import { tv, type VariantProps } from 'tailwind-variants'
 
 import { Modal } from './modal'
 import { Popover } from './popover'

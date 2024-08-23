@@ -3,7 +3,7 @@
 import * as React from 'react'
 
 import { cn } from '@/lib/utils'
-import { AlertCircleIcon, AlertTriangleIcon, CheckCircleIcon } from 'lucide-react'
+import { IconCircleCheck, IconCircleInfo, IconTriangleInfo } from 'justd-icons'
 import { Text } from 'react-aria-components'
 import { tv, type VariantProps } from 'tailwind-variants'
 
@@ -49,11 +49,11 @@ const Note = ({ variant = 'secondary', className, ...props }: NoteProps) => {
             <div className='flex items-start gap-x-3'>
                 <div className='mt-0.5 w-5'>
                     {['info', 'primary', 'secondary'].includes(variant) ? (
-                        <AlertCircleIcon />
+                        <IconCircleInfo />
                     ) : variant === 'success' ? (
-                        <CheckCircleIcon />
+                        <IconCircleCheck />
                     ) : (
-                        <AlertTriangleIcon />
+                        <IconTriangleInfo />
                     )}
                 </div>
                 <Text

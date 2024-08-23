@@ -2,7 +2,7 @@
 
 import * as React from 'react'
 
-import { CalendarDaysIcon } from 'lucide-react'
+import { IconCalendarDays } from 'justd-icons'
 import {
     DatePicker as DatePickerPrimitive,
     type DatePickerProps as DatePickerPrimitiveProps,
@@ -71,7 +71,7 @@ const DatePickerOverlay = ({
 
 const DatePickerIcon = () => (
     <Button size='icon' variant='ghost' className={datePickerIcon()}>
-        <CalendarDaysIcon aria-hidden className={calendarIcon()} />
+        <IconCalendarDays aria-hidden className={calendarIcon()} />
     </Button>
 )
 

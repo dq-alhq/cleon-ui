@@ -1,4 +1,22 @@
 'use client'
+import * as React from 'react'
+
+import { motion } from 'framer-motion'
+import {
+    IconDateTime,
+    IconHome,
+    IconMessages,
+    IconPeople,
+    IconPerson,
+    IconRocket,
+    IconSearch,
+    IconSend,
+    IconTrendingChart
+} from 'justd-icons'
+import { TextArea } from 'react-aria-components'
+
+import { Logo } from '@/components/logo'
+import { ThemeToggle } from '@/components/theme-toggle'
 import {
     Avatar,
     Button,
@@ -9,22 +27,6 @@ import {
     SearchField
 } from '@/components/ui'
 import { cn } from '@/lib/utils'
-import { motion } from 'framer-motion'
-import {
-    HomeIcon,
-    LayoutDashboardIcon,
-    MessageCircleMoreIcon,
-    NewspaperIcon,
-    SearchIcon,
-    SendIcon,
-    TrendingUpIcon,
-    UserIcon,
-    Users2
-} from 'lucide-react'
-import React from 'react'
-import { TextArea } from 'react-aria-components'
-import { Logo } from '../logo'
-import { ThemeToggle } from '../theme-toggle'
 
 export default function SocialMediaTimeline() {
     const [post, setPost] = React.useState('')
@@ -81,19 +83,19 @@ export default function SocialMediaTimeline() {
                                     <span className='sr-only'>Cleon UI</span>
                                 </Link>
                                 <NavLink isActive href='/'>
-                                    <HomeIcon className='size-5' />
+                                    <IconHome className='size-5' />
                                     <span className='hidden md:flex'>Home</span>
                                 </NavLink>
                                 <NavLink href='#'>
-                                    <Users2 className='size-5' />
+                                    <IconPeople className='size-5' />
                                     <span className='hidden md:flex'>Friends</span>
                                 </NavLink>
                                 <NavLink href='#'>
-                                    <MessageCircleMoreIcon className='size-5' />
+                                    <IconMessages className='size-5' />
                                     <span className='hidden md:flex'>Messages</span>
                                 </NavLink>
                                 <NavLink href='#'>
-                                    <UserIcon className='size-5' />
+                                    <IconPerson className='size-5' />
                                     <span className='hidden md:flex'>Profile</span>
                                 </NavLink>
                             </div>
@@ -110,19 +112,19 @@ export default function SocialMediaTimeline() {
                     <div className='col-span-1 hidden lg:flex p-6'>
                         <div className='flex flex-col gap-2 w-full'>
                             <SideNav href='#' isActive>
-                                <LayoutDashboardIcon className='size-5' />
+                                <IconDateTime className='size-5' />
                                 <span className='hidden sm:flex'>Timeline</span>
                             </SideNav>
                             <SideNav href='#'>
-                                <SearchIcon className='size-5' />
+                                <IconSearch className='size-5' />
                                 <span className='hidden sm:flex'>Explore</span>
                             </SideNav>
                             <SideNav href='#'>
-                                <TrendingUpIcon className='size-5' />
+                                <IconTrendingChart className='size-5' />
                                 <span className='hidden sm:flex'>Trending</span>
                             </SideNav>
                             <SideNav href='#'>
-                                <NewspaperIcon className='size-5' />
+                                <IconRocket className='size-5' />
                                 <span className='hidden sm:flex'>News</span>
                             </SideNav>
                         </div>
@@ -178,7 +180,7 @@ export default function SocialMediaTimeline() {
                                     className='ml-auto gap-1.5'
                                 >
                                     Post
-                                    <SendIcon />
+                                    <IconSend />
                                 </Button>
                             </div>
                         </Form>

@@ -2,7 +2,7 @@
 
 import * as React from 'react'
 
-import { XIcon } from 'lucide-react'
+import { IconX } from 'justd-icons'
 import {
     Dialog as DialogPrimitive,
     type DialogProps,
@@ -12,8 +12,7 @@ import { tv } from 'tailwind-variants'
 
 import { useMediaQuery } from '@/lib/utils'
 import { Button, type ButtonProps } from './button'
-import type { HeadingProps } from './heading'
-import { Heading } from './heading'
+import { Heading, type HeadingProps } from './heading'
 
 const dialogStyles = tv({
     slots: {
@@ -178,7 +177,7 @@ const DialogCloseIndicator = ({ className, ...props }: CloseButtonIndicatorProps
             onPress={props.close}
             className={closeIndicator({ className })}
         >
-            <XIcon className='size-4' />
+            <IconX className='size-4' />
         </Button>
     ) : null
 }

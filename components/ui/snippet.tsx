@@ -4,7 +4,7 @@ import * as React from 'react'
 
 import { cn } from '@/lib/utils'
 import { AnimatePresence, m } from 'framer-motion'
-import { Check, ClipboardIcon } from 'lucide-react'
+import { IconCheck, IconClipboard } from 'justd-icons'
 import { toast } from 'sonner'
 
 import { Button, type ButtonProps } from './button'
@@ -60,7 +60,7 @@ const Snippet: React.FC<SnippetProps> = ({ className, text, ...props }) => {
                             animate='visible'
                             exit='hidden'
                         >
-                            <Check />
+                            <IconCheck />
                         </m.span>
                     ) : (
                         <m.span
@@ -70,7 +70,7 @@ const Snippet: React.FC<SnippetProps> = ({ className, text, ...props }) => {
                             animate='visible'
                             exit='hidden'
                         >
-                            <ClipboardIcon />
+                            <IconClipboard />
                         </m.span>
                     )}
                 </AnimatePresence>
@@ -110,7 +110,7 @@ const CopyButton = ({
                         animate='visible'
                         exit='hidden'
                     >
-                        {copiedIcon ?? <Check />}
+                        {copiedIcon ?? <IconCheck />}
                     </m.span>
                 ) : (
                     <m.span
@@ -120,7 +120,7 @@ const CopyButton = ({
                         animate='visible'
                         exit='hidden'
                     >
-                        {initialIcon ?? <ClipboardIcon />}
+                        {initialIcon ?? <IconClipboard />}
                     </m.span>
                 )}
             </AnimatePresence>

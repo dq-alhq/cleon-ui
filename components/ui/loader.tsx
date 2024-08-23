@@ -1,9 +1,8 @@
 import type { SVGProps } from 'react'
 import React from 'react'
 
-import { Loader2Icon, LoaderIcon } from 'lucide-react'
-import type { VariantProps } from 'tailwind-variants'
-import { tv } from 'tailwind-variants'
+import { IconLoader, IconLoader2 } from 'justd-icons'
+import { tv, type VariantProps } from 'tailwind-variants'
 
 const loaderStyles = tv({
     base: 'relative',
@@ -207,8 +206,8 @@ const Dots = (props: SVGProps<SVGSVGElement>) => (
         </circle>
     </svg>
 )
-const Ring = (props: SVGProps<SVGSVGElement>) => <Loader2Icon {...props} />
-const Spin = (props: SVGProps<SVGSVGElement>) => <LoaderIcon {...props} />
+const Ring = (props: SVGProps<SVGSVGElement>) => <IconLoader {...props} />
+const Spin = (props: SVGProps<SVGSVGElement>) => <IconLoader2 {...props} />
 
 const LOADERS = {
     bars: Bars,

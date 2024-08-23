@@ -3,12 +3,13 @@
 import { useTheme } from '@/components/providers'
 import { cn } from '@/lib/utils'
 import {
-    AlertCircleIcon,
-    AlertTriangleIcon,
-    CheckCircle2Icon,
-    Loader2Icon
-} from 'lucide-react'
+    IconCircleCheck,
+    IconCircleInfo,
+    IconLoader,
+    IconTriangleInfo
+} from 'justd-icons'
 import { Toaster as ToasterPrimitive, type ToasterProps } from 'sonner'
+
 import { buttonVariants } from './button'
 
 const Toaster = ({ ...props }: ToasterProps) => {
@@ -18,11 +19,11 @@ const Toaster = ({ ...props }: ToasterProps) => {
             theme={theme as ToasterProps['theme']}
             className='toaster group'
             icons={{
-                info: <AlertCircleIcon className='size-4' />,
-                success: <CheckCircle2Icon className='size-4' />,
-                warning: <AlertTriangleIcon className='size-4' />,
-                error: <AlertTriangleIcon className='size-4' />,
-                loading: <Loader2Icon className='animate-spin size-4' />
+                info: <IconCircleInfo className='size-4' />,
+                success: <IconCircleCheck className='size-4' />,
+                warning: <IconTriangleInfo className='size-4' />,
+                error: <IconTriangleInfo className='size-4' />,
+                loading: <IconLoader className='animate-spin size-4' />
             }}
             toastOptions={{
                 unstyled: true,

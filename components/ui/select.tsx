@@ -3,19 +3,19 @@
 import * as React from 'react'
 
 import type { Placement } from '@react-types/overlays'
+import { IconChevronDown } from 'justd-icons'
 import {
     Button,
     composeRenderProps,
     Group,
     Select as SelectPrimitive,
-    type SelectProps as SelectPrimitiveProps,
     SelectValue,
+    type SelectProps as SelectPrimitiveProps,
     type ValidationResult
 } from 'react-aria-components'
 import { tv } from 'tailwind-variants'
 
 import { cn } from '@/lib/utils'
-import { ChevronDownIcon } from 'lucide-react'
 import { DropdownItem, DropdownItemDetails, DropdownSection } from './dropdown'
 import { Description, FieldError, Label } from './field'
 import { ListBox } from './list-box'
@@ -73,7 +73,7 @@ const Select = <T extends object>({
                     {props.prefix && <span className='-mr-1'>{props.prefix}</span>}
                     <SelectValue className='flex-1 [&_[slot=description]]:hidden text-base placeholder-shown:text-muted-foreground lg:text-sm' />
 
-                    <ChevronDownIcon
+                    <IconChevronDown
                         aria-hidden
                         className='size-4 text-muted-foreground duration-300 group-open:rotate-180 group-open:text-foreground group-disabled:opacity-50 forced-colors:text-[ButtonText] forced-colors:group-disabled:text-[GrayText]'
                     />

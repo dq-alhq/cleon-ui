@@ -1,7 +1,7 @@
 'use client'
 
-import { FacebookLogo, GithubLogo } from '@/components/logo'
 import { buttonVariants, Tooltip } from '@/components/ui'
+import { IconBrandFacebook, IconBrandGithub } from 'justd-icons'
 
 export default function TooltipDemo() {
     return (
@@ -14,7 +14,7 @@ export default function TooltipDemo() {
                         size: 'icon'
                     })}
                 >
-                    <FacebookLogo className='h-4 w-4' />
+                    <IconBrandFacebook className='h-4 w-4' />
                 </Tooltip.Trigger>
                 <Tooltip.Content>Add me on Facebook @DiqiNahdliyan</Tooltip.Content>
             </Tooltip>
@@ -26,7 +26,7 @@ export default function TooltipDemo() {
                         size: 'icon'
                     })}
                 >
-                    <GithubLogo className='h-4 w-4' />
+                    <IconBrandGithub className='h-4 w-4' />
                 </Tooltip.Trigger>
                 <Tooltip.Content>Follow me on Github @dq-alhq</Tooltip.Content>
             </Tooltip>

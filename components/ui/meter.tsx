@@ -1,11 +1,13 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import type { MeterProps as AriaMeterProps } from 'react-aria-components'
-import { Meter as MeterPrimitive } from 'react-aria-components'
+import { IconTriangleInfo } from 'justd-icons'
+import {
+    Meter as MeterPrimitive,
+    type MeterProps as AriaMeterProps
+} from 'react-aria-components'
 
 import { cn } from '@/lib/utils'
-import { AlertTriangleIcon } from 'lucide-react'
 import { Label } from './field'
 
 export interface MeterProps extends AriaMeterProps {
@@ -23,7 +25,7 @@ const Meter = ({ label, ...props }: MeterProps) => {
                             className={`text-sm ${percentage >= 80 ? 'text-danger' : 'text-muted-foreground'}`}
                         >
                             {percentage >= 80 && (
-                                <AlertTriangleIcon
+                                <IconTriangleInfo
                                     aria-label='Alert'
                                     className='inline-block size-4 align-text-bottom'
                                 />

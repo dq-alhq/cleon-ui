@@ -1,5 +1,8 @@
 'use client'
 
+import { useListData } from 'react-stately'
+import { toast } from 'sonner'
+
 import {
     Button,
     Card,
@@ -14,8 +17,6 @@ import {
     Switch,
     Tag
 } from '@/components/ui'
-import { useListData } from 'react-stately'
-import { toast } from 'sonner'
 
 const items = [
     { id: 1, textValue: 'Buttons' },

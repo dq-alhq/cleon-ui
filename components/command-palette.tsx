@@ -1,11 +1,12 @@
 'use client'
 
-import React from 'react'
+import * as React from 'react'
+
+import { usePathname, useRouter } from 'next/navigation'
 
 import { docs } from '#site/content'
+import { Command } from '@/components/ui'
 import { useMediaQuery } from '@/lib/utils'
-import { usePathname, useRouter } from 'next/navigation'
-import { Command } from 'ui'
 
 export interface OpenCloseProps {
     open: boolean

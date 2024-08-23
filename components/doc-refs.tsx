@@ -2,24 +2,23 @@
 
 import type { FC, SVGProps } from 'react'
 
-import {
-    AdobeLogo,
-    AstroLogo,
-    CmdkLogo,
-    EmblaCrouselLogo,
-    FramerLogo,
-    GithubLogo,
-    InertiaLogo,
-    LaravelLogo,
-    Logo,
-    LucideLogo,
-    NextLogo,
-    RemixLogo,
-    TailwindLogo,
-    ViteLogo
-} from '@/components/logo'
+import { EmblaCrouselLogo, Logo, ViteLogo } from '@/components/logo'
 import { cn } from '@/lib/utils'
-import { BarChart3Icon, BellIcon } from 'lucide-react'
+import {
+    IconBell,
+    IconBrandAdobe,
+    IconBrandAstro,
+    IconBrandFramer,
+    IconBrandGithub,
+    IconBrandInertiajs,
+    IconBrandLaravel,
+    IconBrandNextjs,
+    IconBrandParanoid,
+    IconBrandRemix,
+    IconBrandTailwindcss,
+    IconChart3,
+    IconCommandRegular
+} from 'justd-icons'
 import { Menu, MenuItem } from 'react-aria-components'
 import { buttonVariants } from 'ui'
 
@@ -31,11 +30,11 @@ export function DocRefs({ references }: any) {
         switch (true) {
             case url.includes('react-spectrum'):
                 title = 'Props Reference'
-                icon = AdobeLogo
+                icon = IconBrandAdobe
                 break
             case url.includes('laravel'):
                 title = 'Laravel'
-                icon = LaravelLogo
+                icon = IconBrandLaravel
                 break
             case url.includes('vite'):
                 title = 'Vite'
@@ -43,31 +42,35 @@ export function DocRefs({ references }: any) {
                 break
             case url.includes('inertia'):
                 title = 'Inertia.Js'
-                icon = InertiaLogo
+                icon = IconBrandInertiajs
                 break
             case url.includes('recharts'):
                 title = 'Recharts'
-                icon = BarChart3Icon
+                icon = IconChart3
                 break
             case url.includes('remix.run'):
                 title = 'Remix'
-                icon = RemixLogo
+                icon = IconBrandRemix
                 break
             case url.includes('nextjs'):
                 title = 'Next.Js'
-                icon = NextLogo
+                icon = IconBrandNextjs
                 break
             case url.includes('astro'):
                 title = 'Astro'
-                icon = AstroLogo
+                icon = IconBrandAstro
                 break
             case url.includes('paranoid'):
                 title = 'Paranoid'
-                icon = FramerLogo
+                icon = IconBrandParanoid
+                break
+            case url.includes('getjustd.com/icons'):
+                title = 'Just D. Icons'
+                icon = IconBrandParanoid
                 break
             case url.includes('framer'):
                 title = 'Framer Motion'
-                icon = FramerLogo
+                icon = IconBrandFramer
                 break
             case url.includes('docs/components'):
                 title = 'Internal'
@@ -75,23 +78,19 @@ export function DocRefs({ references }: any) {
                 break
             case url.includes('tailwind'):
                 title = 'Tailwind CSS'
-                icon = TailwindLogo
+                icon = IconBrandTailwindcss
                 break
             case url.includes('github'):
                 title = 'Github'
-                icon = GithubLogo
-                break
-            case url.includes('lucide'):
-                title = 'Lucide Icon'
-                icon = LucideLogo
+                icon = IconBrandGithub
                 break
             case url.includes('cmdk'):
                 title = 'CMDK'
-                icon = CmdkLogo
+                icon = IconCommandRegular
                 break
             case url.includes('sonner'):
                 title = 'Sonner'
-                icon = BellIcon
+                icon = IconBell
                 break
             case url.includes('embla'):
                 title = 'Embla Carousel'

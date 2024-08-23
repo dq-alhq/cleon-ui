@@ -1,8 +1,9 @@
 'use client'
 
-import { Card, Table } from '@/components/ui'
 import { useAsyncList } from '@react-stately/data'
-import { Loader2Icon } from 'lucide-react'
+import { IconLoader } from 'justd-icons'
+
+import { Card, Table } from '@/components/ui'
 
 interface Character {
     title: string
@@ -65,7 +66,7 @@ export default function TableSortingDemo() {
                     items={list.items}
                     renderEmptyState={() => (
                         <div className='grid place-content-center p-10'>
-                            <Loader2Icon className='animate-spin' />
+                            <IconLoader className='animate-spin' />
                         </div>
                     )}
                 >

@@ -1,6 +1,6 @@
 'use client'
 
-import { CameraIcon, FolderIcon, PaperclipIcon } from 'lucide-react'
+import { IconCamera, IconFolder, IconPaperclip } from 'justd-icons'
 import {
     FileTrigger as FileTriggerPrimitive,
     type FileTriggerProps as FileTriggerPrimitiveProps
@@ -43,11 +43,11 @@ const FileTrigger = ({
                 {withIcon && (
                     <>
                         {props.defaultCamera ? (
-                            <CameraIcon />
+                            <IconCamera />
                         ) : props.acceptDirectory ? (
-                            <FolderIcon />
+                            <IconFolder />
                         ) : (
-                            <PaperclipIcon />
+                            <IconPaperclip />
                         )}
                     </>
                 )}

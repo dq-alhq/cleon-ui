@@ -1,9 +1,9 @@
 'use client'
 
 import React from 'react'
+import type { Selection } from 'react-aria-components'
 
 import { Card, Description, Table } from '@/components/ui'
-import type { Selection } from 'react-aria-components'
 
 export default function TableBulkActionsDemo() {
     const [selectedKeys, setSelectedKeys] = React.useState<Selection>(new Set())

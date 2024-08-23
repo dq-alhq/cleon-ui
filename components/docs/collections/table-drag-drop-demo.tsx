@@ -1,9 +1,10 @@
 'use client'
 
-import { Card, Table } from '@/components/ui'
-import { StarIcon } from 'lucide-react'
+import { IconStar } from 'justd-icons'
 import { useDragAndDrop } from 'react-aria-components'
 import { useListData } from 'react-stately'
+
+import { Card, Table } from '@/components/ui'
 
 export default function TableDragDropDemo() {
     const list = useListData({
@@ -46,7 +47,7 @@ export default function TableDragDropDemo() {
                             <Table.Cell>{item.releaseYear}</Table.Cell>
                             <Table.Cell>
                                 <div className='flex items-center gap-x-2'>
-                                    <StarIcon className='text-warning size-3.5' />{' '}
+                                    <IconStar className='text-warning size-3.5' />{' '}
                                     <span>{item.rating}</span>
                                 </div>
                             </Table.Cell>

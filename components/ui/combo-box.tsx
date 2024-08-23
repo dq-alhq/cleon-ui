@@ -2,17 +2,17 @@
 
 import React from 'react'
 
+import { IconChevronDown, IconX } from 'justd-icons'
 import {
     Button as ButtonPrimitive,
     ComboBox as ComboboxPrimitive,
-    type ComboBoxProps as ComboboxPrimitiveProps,
     ComboBoxStateContext,
+    type ComboBoxProps as ComboboxPrimitiveProps,
     type ValidationResult
 } from 'react-aria-components'
 import { tv } from 'tailwind-variants'
 
 import { cn } from '@/lib/utils'
-import { ChevronDownIcon, XIcon } from 'lucide-react'
 import { Button } from './button'
 import { DropdownItem, DropdownSection } from './dropdown'
 import { Description, FieldError, FieldGroup, Input, Label } from './field'
@@ -63,7 +63,7 @@ const ComboBox = <T extends object>({
                 <Input className='pl-2.5' placeholder={placeholder} />
                 <Button size='icon' variant='ghost' className={chevronButton()}>
                     {!props?.inputValue && (
-                        <ChevronDownIcon aria-hidden className={chevronIcon()} />
+                        <IconChevronDown aria-hidden className={chevronIcon()} />
                     )}
                 </Button>
                 {props?.inputValue && <ComboBoxClearButton />}
@@ -90,7 +90,7 @@ const ComboBoxClearButton = () => {
                 state?.open()
             }}
         >
-            <XIcon className='size-4' />
+            <IconX className='size-4' />
         </ButtonPrimitive>
     )
 }

@@ -2,15 +2,16 @@
 
 import React from 'react'
 
-import { CopyButton } from '@/components/ui'
-import { cn } from '@/lib/utils'
-import { Info } from 'lucide-react'
+import { IconCircleInfo } from 'justd-icons'
 import rehypePrettyCode from 'rehype-pretty-code'
 import rehypeStringify from 'rehype-stringify'
 import remarkParse from 'remark-parse'
 import remarkRehype from 'remark-rehype'
 import { unified } from 'unified'
 import { copyToClipboard } from 'usemods'
+
+import { CopyButton } from '@/components/ui'
+import { cn } from '@/lib/utils'
 
 function Code({ lang = 'tsx', code }: { lang?: string; code: string }) {
     const [copied, setCopied] = React.useState<string>('')
@@ -34,7 +35,7 @@ function Code({ lang = 'tsx', code }: { lang?: string; code: string }) {
             <div className={cn('absolute bottom-auto right-4 top-3 z-20 flex gap-1.5')}>
                 <CopyRawButton code={code} />
                 <CopyButton
-                    initialIcon={<Info />}
+                    initialIcon={<IconCircleInfo />}
                     isCopied={copied === 'imports'}
                     onPress={copyImportsToClipboard}
                 />

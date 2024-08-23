@@ -1,10 +1,10 @@
 'use client'
 
-import React, { Suspense } from 'react'
-
-import { cn } from '@/lib/utils'
+import * as React from 'react'
 import { Heading } from 'react-aria-components'
-import { Link, Skeleton } from 'ui'
+
+import { Link, Skeleton } from '@/components/ui'
+import { cn } from '@/lib/utils'
 
 interface TableOfContentsProps {
     title: string
@@ -28,7 +28,7 @@ export function TableOfContents({
         <div className={cn('not-prose', className)}>
             <aside className='xl:sticky xl:top-[1.75rem] xl:-mr-6 xl:h-[calc(100vh-4.75rem)] xl:flex-none xl:overflow-y-auto xl:py-16 xl:pr-6'>
                 <nav aria-labelledby='on-this-page-title' className='w-56'>
-                    <Suspense
+                    <React.Suspense
                         fallback={
                             <div className='space-y-2'>
                                 <Skeleton className='h-3 w-20 animate-pulse' />
@@ -68,7 +68,7 @@ export function TableOfContents({
                                 </ul>
                             )}
                         </>
-                    </Suspense>
+                    </React.Suspense>
                 </nav>
             </aside>
         </div>

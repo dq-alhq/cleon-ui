@@ -3,7 +3,7 @@
 import * as React from 'react'
 
 import { AnimatePresence, motion, type MotionProps } from 'framer-motion'
-import { ChevronDownIcon } from 'lucide-react'
+import { IconChevronDown } from 'justd-icons'
 import { Button, composeRenderProps, type ButtonProps } from 'react-aria-components'
 import { tv } from 'tailwind-variants'
 
@@ -187,7 +187,7 @@ const AccordionTrigger = ({ className, children, ...props }: AccordionTriggerPro
         >
             {children}
             {!hideIndicator && (
-                <ChevronDownIcon
+                <IconChevronDown
                     className={cn(
                         'ml-auto transition duration-300 group-disabled:rotate-0',
                         isOpen ? 'rotate-180' : 'rotate-0'

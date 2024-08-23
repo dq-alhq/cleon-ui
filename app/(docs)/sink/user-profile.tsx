@@ -1,5 +1,8 @@
 'use client'
 
+import { IconDevicePhone } from 'justd-icons'
+import Image from 'next/image'
+
 import DropZoneAndFileTriggerDemo from '@/components/docs/drag-and-drop/drop-zone-and-file-trigger-demo'
 import TextareaDemo from '@/components/docs/forms/textarea-demo'
 import {
@@ -12,8 +15,6 @@ import {
     TextField,
     TimeField
 } from '@/components/ui'
-import { Phone } from 'lucide-react'
-import Image from 'next/image'
 
 export default function UserProfileSink() {
     return (
@@ -56,7 +57,7 @@ export default function UserProfileSink() {
                                 <TextField
                                     label='Phone'
                                     prefix='+62 '
-                                    suffix={<Phone />}
+                                    suffix={<IconDevicePhone />}
                                 />
                             </div>
                         </Tabs.Content>

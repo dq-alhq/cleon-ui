@@ -1,9 +1,10 @@
 'use client'
 
-import { GithubLogo, GoogleLogo } from '@/components/logo'
-import { Button, Card, Checkbox, Form, Separator, TextField } from '@/components/ui'
+import { IconBrandGithub, IconBrandGoogle } from 'justd-icons'
 import Link from 'next/link'
 import { toast } from 'sonner'
+
+import { Button, Card, Checkbox, Form, Separator, TextField } from '@/components/ui'
 
 export default function LoginFormSink() {
     return (
@@ -21,11 +22,11 @@ export default function LoginFormSink() {
                 <Card.Content className='grid gap-4'>
                     <div className='flex gap-4'>
                         <Button variant='outline' className='w-full'>
-                            <GithubLogo className='h-4 w-4' />
+                            <IconBrandGithub className='size-4' />
                             Github
                         </Button>
                         <Button variant='outline' className='w-full'>
-                            <GoogleLogo className='h-4 w-4' />
+                            <IconBrandGoogle className='size-4' />
                             Google
                         </Button>
                     </div>

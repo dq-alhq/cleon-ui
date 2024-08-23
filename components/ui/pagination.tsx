@@ -3,12 +3,12 @@
 import * as React from 'react'
 
 import {
-    ChevronLeftIcon,
-    ChevronRightIcon,
-    ChevronsLeftIcon,
-    ChevronsRightIcon,
-    MoreHorizontalIcon
-} from 'lucide-react'
+    IconChevronDoubleLeft,
+    IconChevronDoubleRight,
+    IconChevronLeft,
+    IconChevronRight,
+    IconDotsHorizontal
+} from 'justd-icons'
 import {
     ListBox,
     ListBoxItem,
@@ -167,17 +167,17 @@ const PaginationItem = ({
                         className
                     )}
                 >
-                    <MoreHorizontalIcon className='size-5 text-muted-foreground' />
+                    <IconDotsHorizontal className='size-5 text-muted-foreground' />
                 </span>
             )
         case 'previous':
-            return renderPaginationIndicator(<ChevronLeftIcon />)
+            return renderPaginationIndicator(<IconChevronLeft />)
         case 'next':
-            return renderPaginationIndicator(<ChevronRightIcon />)
+            return renderPaginationIndicator(<IconChevronRight />)
         case 'first':
-            return renderPaginationIndicator(<ChevronsLeftIcon />)
+            return renderPaginationIndicator(<IconChevronDoubleLeft />)
         case 'last':
-            return renderPaginationIndicator(<ChevronsRightIcon />)
+            return renderPaginationIndicator(<IconChevronDoubleRight />)
         default:
             return renderListItem(
                 {

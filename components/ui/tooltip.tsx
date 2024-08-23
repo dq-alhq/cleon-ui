@@ -7,9 +7,9 @@ import {
     composeRenderProps,
     OverlayArrow,
     Tooltip as TooltipPrimitive,
+    TooltipTrigger as TooltipTriggerPrimitive,
     type TooltipProps as TooltipPrimitiveProps,
-    type TooltipTriggerComponentProps,
-    TooltipTrigger as TooltipTriggerPrimitive
+    type TooltipTriggerComponentProps
 } from 'react-aria-components'
 import { tv } from 'tailwind-variants'
 

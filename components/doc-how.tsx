@@ -2,12 +2,13 @@
 
 import * as React from 'react'
 
+import { IconLoader } from 'justd-icons'
+
 import { previews } from '@/components/docs/generated/previews'
 import jsonPreviews from '@/components/docs/generated/previews.json'
 import { Code } from '@/components/docs/rehype/code'
+import { Tabs } from '@/components/ui'
 import { cn } from '@/lib/utils'
-import { Loader2 } from 'lucide-react'
-import { Tabs } from 'ui'
 
 interface HowProps extends React.HTMLAttributes<HTMLDivElement> {
     toUse: string
@@ -53,7 +54,7 @@ export function DocHow({
                         <React.Suspense
                             fallback={
                                 <div className='flex items-center text-sm text-muted-foreground'>
-                                    <Loader2 className='mr-2 size-4 animate-spin' />
+                                    <IconLoader className='mr-2 size-4 animate-spin' />
                                     Loading...
                                 </div>
                             }

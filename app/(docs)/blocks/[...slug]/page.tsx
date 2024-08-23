@@ -1,11 +1,13 @@
+import React from 'react'
+
+import { IconLoader } from 'justd-icons'
+import type { Metadata } from 'next'
+import { notFound } from 'next/navigation'
+
 import { docs } from '#site/content'
 import { MDXContent } from '@/components/mdx-components'
 import { siteConfig } from '@/config/site'
 import '@/styles/code.css'
-import { Loader2Icon } from 'lucide-react'
-import type { Metadata } from 'next'
-import { notFound } from 'next/navigation'
-import React from 'react'
 
 export interface DocPageProps {
     params: {
@@ -74,7 +76,7 @@ export default async function PostPage({ params }: DocPageProps) {
                 <p className='mt-0 text-xl text-foreground/70'>{doc.description}</p>
             ) : null}
             <React.Suspense
-                fallback={<Loader2Icon className='mr-2 size-4 animate-spin' />}
+                fallback={<IconLoader className='mr-2 size-4 animate-spin' />}
             >
                 <MDXContent code={doc.body} />
             </React.Suspense>

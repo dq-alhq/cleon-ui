@@ -6,17 +6,17 @@ import {
     Button,
     composeRenderProps,
     Dialog as DialogPrimitive,
-    type DialogProps,
     DialogTrigger,
-    type DialogTriggerProps,
     Modal,
     ModalOverlay,
-    type ModalOverlayProps,
     OverlayArrow,
     PopoverContext,
     Popover as PopoverPrimitive,
-    type PopoverProps as PopoverPrimitiveProps,
-    useSlottedContext
+    useSlottedContext,
+    type DialogProps,
+    type DialogTriggerProps,
+    type ModalOverlayProps,
+    type PopoverProps as PopoverPrimitiveProps
 } from 'react-aria-components'
 import { tv } from 'tailwind-variants'
 

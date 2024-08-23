@@ -1,6 +1,8 @@
 import { ColorField } from '@/components/ui'
-import { PaletteIcon } from 'lucide-react'
+import { IconColorPalette } from 'justd-icons'
 
 export default function ColorFieldWithPrefixDemo() {
-    return <ColorField label='Color' prefix={<PaletteIcon />} placeholder='#FAFAFA' />
+    return (
+        <ColorField label='Color' prefix={<IconColorPalette />} placeholder='#FAFAFA' />
+    )
 }

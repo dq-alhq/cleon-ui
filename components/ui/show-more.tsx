@@ -1,12 +1,12 @@
 'use client'
 
 import { domAnimation, LazyMotion, m } from 'framer-motion'
+import { IconChevronDown } from 'justd-icons'
 import { useState } from 'react'
 import { Text, ToggleButton } from 'react-aria-components'
 import { tv } from 'tailwind-variants'
 
 import { cn } from '@/lib/utils'
-import { ChevronDownIcon } from 'lucide-react'
 import { buttonVariants } from './button'
 
 const showMoreStyles = tv({
@@ -117,7 +117,7 @@ function ContentReveal({
                 onChange={setIsExpanded}
             >
                 {isExpanded ? showLessText : showMoreText}
-                <ChevronDownIcon
+                <IconChevronDown
                     className={cn(
                         isExpanded ? 'rotate-180' : '',
                         'size-4 transition duration-400'

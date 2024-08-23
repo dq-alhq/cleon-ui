@@ -5,14 +5,14 @@
 import React from 'react';
 
 export const previews: Record<string, any> = {
-  "social-media-timeline": {
-    component: React.lazy(() => import("@/components/blocks/social-media-timeline")),
-  },
   "chat-app": {
     component: React.lazy(() => import("@/components/blocks/chat-app")),
   },
   "dashboard": {
     component: React.lazy(() => import("@/components/blocks/dashboard")),
+  },
+  "social-media-timeline": {
+    component: React.lazy(() => import("@/components/blocks/social-media-timeline")),
   },
   "product-management": {
     component: React.lazy(() => import("@/components/blocks/product-management")),

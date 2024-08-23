@@ -3,13 +3,17 @@
 import * as React from 'react'
 
 import useEmblaCarousel, { type UseEmblaCarouselType } from 'embla-carousel-react'
-import { ChevronLeftIcon, ChevronRightIcon } from 'lucide-react'
-import type { ListBoxItemProps, SectionProps } from 'react-aria-components'
-import { ListBox, ListBoxItem, Section } from 'react-aria-components'
+import { IconChevronLeft, IconChevronRight } from 'justd-icons'
+import {
+    ListBox,
+    ListBoxItem,
+    Section,
+    type ListBoxItemProps,
+    type SectionProps
+} from 'react-aria-components'
 
 import { cn } from '@/lib/utils'
-import type { ButtonProps } from './button'
-import { Button } from './button'
+import { Button, type ButtonProps } from './button'
 
 type CarouselApi = UseEmblaCarouselType[1]
 type UseCarouselParameters = Parameters<typeof useEmblaCarousel>
@@ -214,7 +218,7 @@ const CarouselButton = ({
     const isNext = slot === 'next'
     const canScroll = isNext ? canScrollNext : canScrollPrev
     const scroll = isNext ? scrollNext : scrollPrev
-    const Icon = isNext ? ChevronRightIcon : ChevronLeftIcon
+    const Icon = isNext ? IconChevronRight : IconChevronLeft
 
     return (
         <Button

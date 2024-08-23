@@ -1,6 +1,6 @@
 'use client'
 
-import { SearchIcon, XIcon } from 'lucide-react'
+import { IconSearch, IconX } from 'justd-icons'
 import {
     SearchField as SearchFieldPrimitive,
     type SearchFieldProps as SearchFieldPrimitiveProps,
@@ -44,10 +44,10 @@ const SearchField = ({
         <SearchFieldPrimitive {...props} className={cn(base(), className)}>
             {label && <Label>{label}</Label>}
             <FieldGroup>
-                <SearchIcon aria-hidden className={searchIcon()} />
+                <IconSearch aria-hidden className={searchIcon()} />
                 <Input placeholder={placeholder} className={input()} />
                 <Button size='icon' variant='ghost' className={closeButton()}>
-                    <XIcon aria-hidden className='size-4' />
+                    <IconX aria-hidden className='size-4' />
                 </Button>
             </FieldGroup>
             {description && <Description>{description}</Description>}

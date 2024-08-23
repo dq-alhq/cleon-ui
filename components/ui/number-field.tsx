@@ -1,6 +1,6 @@
 'use client'
 
-import { ChevronDownIcon, ChevronUpIcon, MinusIcon, PlusIcon } from 'lucide-react'
+import { IconChevronDown, IconChevronUp, IconMinus, IconPlus } from 'justd-icons'
 import {
     Button,
     type ButtonProps,
@@ -109,14 +109,14 @@ const StepperButton = ({
     const icon =
         emblemType === 'chevron' ? (
             slot === 'increment' ? (
-                <ChevronUpIcon className='size-5' />
+                <IconChevronUp className='size-5' />
             ) : (
-                <ChevronDownIcon className='size-5' />
+                <IconChevronDown className='size-5' />
             )
         ) : slot === 'increment' ? (
-            <PlusIcon />
+            <IconPlus />
         ) : (
-            <MinusIcon />
+            <IconMinus />
         )
     return (
         <Button className={stepperButton({ className })} slot={slot} {...props}>

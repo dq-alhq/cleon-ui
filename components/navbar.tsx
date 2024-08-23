@@ -2,34 +2,41 @@
 
 import React, { useEffect, useId, useState } from 'react'
 
-import { CommandPalette, type OpenCloseProps } from '@/components/command-palette'
-import {
-    AdobeLogo,
-    DLogo,
-    FramerLogo,
-    GithubLogo,
-    Logo,
-    LucideLogo,
-    TailwindLogo
-} from '@/components/logo'
-import { ThemeToggle } from '@/components/theme-toggle'
-import { cn, useMediaQuery } from '@/lib/utils'
 import { LayoutGroup, motion } from 'framer-motion'
 import {
-    ChevronDownIcon,
-    ComputerIcon,
-    MenuIcon,
-    MoonIcon,
-    PaletteIcon,
-    SearchIcon,
-    SunIcon
-} from 'lucide-react'
+    IconBrandAdobe,
+    IconBrandFramer,
+    IconBrandGithub,
+    IconBrandJustd,
+    IconBrandParanoid,
+    IconBrandTailwindcss,
+    IconChevronDown,
+    IconColorPalette,
+    IconDeviceDesktop,
+    IconHamburger,
+    IconMoon,
+    IconSearch,
+    IconSun
+} from 'justd-icons'
 import { usePathname } from 'next/navigation'
-import { Collection, type LinkProps } from 'react-aria-components'
-import { Button, buttonVariants, Keyboard, Link, Menu, Separator, Sheet } from 'ui'
-import { useTheme } from './providers'
+import { Collection, Link as LinkPrimitive, type LinkProps } from 'react-aria-components'
 
+import { CommandPalette, type OpenCloseProps } from '@/components/command-palette'
+import { Logo } from '@/components/logo'
+import { ThemeToggle } from '@/components/theme-toggle'
+import { cn, useMediaQuery } from '@/lib/utils'
+
+import {
+    Button,
+    buttonVariants,
+    Keyboard,
+    Link,
+    Menu,
+    Separator,
+    Sheet
+} from '@/components/ui'
 import { Aside } from './aside'
+import { useTheme } from './providers'
 
 const menuItems = [
     { id: 1, label: 'Home', url: '/' },
@@ -75,7 +82,7 @@ export function Navbar() {
 
                                 <div className='flex items-center gap-x-2'>
                                     <>
-                                        <Link
+                                        <LinkPrimitive
                                             target='_blank'
                                             href='https://github.com/dq-alhq/cleon-ui'
                                             className={buttonVariants({
@@ -83,8 +90,8 @@ export function Navbar() {
                                                 size: 'icon'
                                             })}
                                         >
-                                            <GithubLogo />
-                                        </Link>
+                                            <IconBrandGithub />
+                                        </LinkPrimitive>
                                         <Button
                                             className='flex-shrink-0'
                                             onPress={() =>
@@ -93,7 +100,7 @@ export function Navbar() {
                                             variant='outline'
                                             aria-label='Open command palette'
                                         >
-                                            <SearchIcon />
+                                            <IconSearch />
                                             <Keyboard
                                                 className='-mr-2 [&_kbd]:min-w-[3ch]'
                                                 keys='⌘K'
@@ -161,7 +168,7 @@ export function ResponsiveAside({ open, setOpen }: OpenCloseProps) {
                     size='icon'
                     onPress={() => setOpenAside((openAside) => !openAside)}
                 >
-                    <MenuIcon />
+                    <IconHamburger />
                 </Button>
                 <Link
                     className='rounded focus:outline-none focus:ring-1 focus:ring-primary/20'
@@ -171,7 +178,7 @@ export function ResponsiveAside({ open, setOpen }: OpenCloseProps) {
                     <Logo className='size-7' />
                 </Link>
                 <div className='flex items-center gap-x-1'>
-                    <Link
+                    <LinkPrimitive
                         target='_blank'
                         href='https://github.com/dq-alhq/cleon-ui'
                         className={buttonVariants({
@@ -179,8 +186,8 @@ export function ResponsiveAside({ open, setOpen }: OpenCloseProps) {
                             size: 'icon'
                         })}
                     >
-                        <GithubLogo />
-                    </Link>
+                        <IconBrandGithub />
+                    </LinkPrimitive>
                     <Button
                         // @ts-expect-error
                         onPress={() => setOpen((open: boolean) => !open)}
@@ -189,7 +196,7 @@ export function ResponsiveAside({ open, setOpen }: OpenCloseProps) {
                         aria-label='Open command palette'
                         className='flex-shrink-0'
                     >
-                        <SearchIcon />
+                        <IconSearch />
                         <Keyboard className='-mr-2 [&_kbd]:min-w-[3ch]' keys='⌘K' />
                     </Button>
                     <ThemeToggle />
@@ -218,31 +225,6 @@ export function ResponsiveAside({ open, setOpen }: OpenCloseProps) {
     )
 }
 
-export function AsideLink(props: LinkProps) {
-    const pathname = usePathname()
-    const current = pathname === props.href
-    return (
-        <Link
-            className={cn(
-                'relative flex items-center gap-x-3 py-2 text-muted-foreground transition-colors hover:text-foreground focus:outline-none sm:text-sm',
-                current && 'text-foreground',
-                props.className
-            )}
-            {...props}
-        >
-            <>
-                {props.children}
-                {current && (
-                    <motion.span
-                        layoutId='sidebar-current-indicator'
-                        className='absolute inset-y-2 -left-4 w-0.5 rounded-full bg-foreground'
-                    />
-                )}
-            </>
-        </Link>
-    )
-}
-
 export function NavbarDropdown() {
     const { theme, setTheme } = useTheme()
     return (
@@ -250,78 +232,73 @@ export function NavbarDropdown() {
             <Button
                 aria-label='Menu'
                 variant='ghost'
-                className='group -  ml-1 [&_svg]:size-4'
+                className='group -ml-1 [&_svg]:size-4'
             >
                 <span className='flex items-center gap-x-2'>
                     <Logo className='-ml-1 size-6' />
                     <span className='font-mono text-base tracking-tight sm:text-sm'>
                         Cleon UI
                     </span>
-                    <ChevronDownIcon className='-mr-2 ml-1 text-muted-foreground transition duration-300 group-hover:text-foreground group-pressed:rotate-180 group-pressed:text-foreground' />
+                    <IconChevronDown className='-mr-2 ml-1 text-muted-foreground transition duration-300 group-hover:text-foreground group-pressed:rotate-180 group-pressed:text-foreground' />
                     <span className='sr-only'>Open menu</span>
                 </span>
             </Button>
             <Menu.Content placement='bottom' className='w-64'>
-                <Menu.Section>
-                    <Menu.Item href='https://github.com/dq-alhq' target='_blank'>
-                        <GithubLogo />
-                        Github
-                    </Menu.Item>
-                </Menu.Section>
+                <Menu.Item href='https://github.com/dq-alhq' target='_blank'>
+                    <IconBrandGithub />
+                    Github
+                </Menu.Item>
                 <Menu.Separator />
-                <Menu.Section>
-                    <Menu.Header separator>Refs</Menu.Header>
-                    <Menu.Item
-                        href='https://react-spectrum.adobe.com/react-aria/components.html'
-                        target='_blank'
-                    >
-                        <AdobeLogo />
-                        RAC
-                    </Menu.Item>
-                    <Menu.Item href='https://getjustd.com/' target='_blank'>
-                        <DLogo />
-                        Just D .
-                    </Menu.Item>
-                    <Menu.Item href='https://tailwindcss.com/' target='_blank'>
-                        <TailwindLogo />
-                        Tailwind CSS
-                    </Menu.Item>
-                    <Menu.Item href='https://getjustd.co/colors' target='_blank'>
-                        <PaletteIcon />
-                        Colors
-                    </Menu.Item>
-                    <Menu.Item href='https://lucide.dev/icons' target='_blank'>
-                        <LucideLogo />
-                        Lucide Icons
-                    </Menu.Item>
-                    <Menu.Item href='https://www.framer.com/motion/' target='_blank'>
-                        <FramerLogo />
-                        Framer Motion
-                    </Menu.Item>
-                </Menu.Section>
+                <Menu.Item
+                    href='https://react-spectrum.adobe.com/react-aria/components.html'
+                    target='_blank'
+                >
+                    <IconBrandAdobe />
+                    RAC
+                </Menu.Item>
+                <Menu.Item href='https://getjustd.com/' target='_blank'>
+                    <IconBrandJustd />
+                    Just D.
+                </Menu.Item>
+                <Menu.Item href='https://tailwindcss.com/' target='_blank'>
+                    <IconBrandTailwindcss />
+                    Tailwind CSS
+                </Menu.Item>
+                <Menu.Item href='https://getjustd.com/colors' target='_blank'>
+                    <IconColorPalette />
+                    Colors
+                </Menu.Item>
+                <Menu.Item href='https://getjustd.com/icons' target='_blank'>
+                    <IconBrandParanoid />
+                    Just D. Icons
+                </Menu.Item>
+                <Menu.Item href='https://www.framer.com/motion/' target='_blank'>
+                    <IconBrandFramer />
+                    Framer Motion
+                </Menu.Item>
                 <Menu.Separator />
                 <Menu.Sub>
                     <Menu.Item aria-label='Switch Theme'>
                         {theme === 'system' ? (
-                            <ComputerIcon />
+                            <IconDeviceDesktop />
                         ) : theme === 'dark' ? (
-                            <MoonIcon />
+                            <IconMoon />
                         ) : (
-                            <SunIcon />
+                            <IconSun />
                         )}
                         <span>Switch Theme</span>
                     </Menu.Item>
                     <Menu.Content aria-labelledby='switch-theme'>
                         <Menu.Item onAction={() => setTheme('system')}>
-                            <ComputerIcon />
+                            <IconDeviceDesktop />
                             <span>System</span>
                         </Menu.Item>
                         <Menu.Item onAction={() => setTheme('dark')}>
-                            <MoonIcon />
+                            <IconMoon />
                             <span>Dark</span>
                         </Menu.Item>
                         <Menu.Item onAction={() => setTheme('light')}>
-                            <SunIcon />
+                            <IconSun />
                             <span>Light</span>
                         </Menu.Item>
                     </Menu.Content>

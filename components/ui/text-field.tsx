@@ -2,7 +2,7 @@
 
 import * as React from 'react'
 
-import { Loader2Icon } from 'lucide-react'
+import { IconLoader } from 'justd-icons'
 import {
     TextField as TextFieldPrimitive,
     type TextFieldProps as TextFieldPrimitiveProps,
@@ -52,13 +52,13 @@ const TextField = ({
                 className={fieldGroupPrefixStyles()}
             >
                 {isLoading && indicatorPlace === 'prefix' ? (
-                    <Loader2Icon className='animate-spin isPfx' />
+                    <IconLoader className='animate-spin isPfx' />
                 ) : prefix ? (
                     <span className='atrs isPfx x2e2'>{prefix}</span>
                 ) : null}
                 <Input className='px-2.5' placeholder={placeholder} />
                 {isLoading && indicatorPlace === 'suffix' ? (
-                    <Loader2Icon className='animate-spin isSfx' />
+                    <IconLoader className='animate-spin isSfx' />
                 ) : suffix ? (
                     <span className='atrs isSfx x2e2'>{suffix}</span>
                 ) : null}

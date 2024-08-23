@@ -1,6 +1,5 @@
 'use client'
-
-import { SunDimIcon, SunIcon } from 'lucide-react'
+import { IconSun, IconSunFill } from 'justd-icons'
 
 import { buttonVariants, Toggle } from '@/components/ui'
 
@@ -13,7 +12,7 @@ export default function ToggleButtonDemo() {
                 <div key={variant}>
                     <Toggle size='icon' variant={variant as Variant}>
                         {({ isSelected }) => (
-                            <>{isSelected ? <SunIcon /> : <SunDimIcon />}</>
+                            <>{isSelected ? <IconSun /> : <IconSunFill />}</>
                         )}
                     </Toggle>
                 </div>

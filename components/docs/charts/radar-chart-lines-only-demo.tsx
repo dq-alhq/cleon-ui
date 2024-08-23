@@ -7,7 +7,7 @@ import {
     ChartTooltipContent,
     type ChartConfig
 } from '@/components/ui'
-import { TrendingUp } from 'lucide-react'
+import { IconTrendingChart3 } from 'justd-icons'
 import { PolarAngleAxis, PolarGrid, Radar, RadarChart } from 'recharts'
 
 const chartData = [
@@ -70,7 +70,8 @@ export default function RadarChartLinesOnlyDemo() {
             </Card.Content>
             <Card.Footer className='flex-col gap-2 text-sm'>
                 <div className='flex items-center gap-2 font-medium leading-none'>
-                    Trending up by 5.2% this month <TrendingUp className='h-4 w-4' />
+                    Trending up by 5.2% this month{' '}
+                    <IconTrendingChart3 className='h-4 w-4' />
                 </div>
                 <div className='flex items-center gap-2 leading-none text-muted-foreground'>
                     January - June 2024

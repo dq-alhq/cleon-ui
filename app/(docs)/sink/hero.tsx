@@ -1,8 +1,9 @@
 'use client'
 
-import { buttonVariants, Heading } from '@/components/ui'
-import { Rocket } from 'lucide-react'
+import { IconRocket } from 'justd-icons'
 import { Header, Link, Text } from 'react-aria-components'
+
+import { buttonVariants, Heading } from '@/components/ui'
 
 export function Hero() {
     return (
@@ -27,7 +28,7 @@ export function Hero() {
                         className={buttonVariants({ size: 'lg' })}
                         href='/docs/getting-started/installation'
                     >
-                        <Rocket />
+                        <IconRocket />
                         Get started
                     </Link>
                 </div>

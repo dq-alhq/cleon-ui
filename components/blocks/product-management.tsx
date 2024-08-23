@@ -1,17 +1,22 @@
 'use client'
-import {
-    CheckCircle2Icon,
-    LifeBuoyIcon,
-    Loader2Icon,
-    LogOutIcon,
-    MenuIcon,
-    PackagePlus,
-    SearchIcon,
-    SettingsIcon,
-    Trash2Icon
-} from 'lucide-react'
+import { motion } from 'framer-motion'
 import Link from 'next/link'
+import * as React from 'react'
 
+import {
+    IconCircleCheck,
+    IconHamburger,
+    IconLoader,
+    IconLogout,
+    IconSettings,
+    IconSquarePlus,
+    IconSupport,
+    IconTrash
+} from 'justd-icons'
+
+import { type Key, type Selection, type SortDescriptor } from 'react-aria-components'
+
+import { Logo } from '@/components/logo'
 import { ThemeToggle } from '@/components/theme-toggle'
 import {
     Avatar,
@@ -28,11 +33,10 @@ import {
     SearchField,
     Select,
     Sheet,
+    Table,
     TextField
 } from '@/components/ui'
 import { cn } from '@/lib/utils'
-import { motion } from 'framer-motion'
-import { Logo } from '../logo'
 
 export default function ProductManagement() {
     return (
@@ -55,7 +59,7 @@ export default function ProductManagement() {
                             'md:hidden'
                         )}
                     >
-                        <MenuIcon className='h-5 w-5' />
+                        <IconHamburger className='h-5 w-5' />
                     </Sheet.Trigger>
                     <Sheet.Content side='left' aria-labelledby='Menu'>
                         <Sheet.Header>
@@ -75,7 +79,7 @@ export default function ProductManagement() {
                                 variant: 'outline'
                             })}
                         >
-                            <SearchIcon className='h-5 w-5' />
+                            <IconSettings className='h-5 w-5' />
                         </Popover.Trigger>
                         <Popover.Content>
                             <SearchField aria-label='Search' />
@@ -99,15 +103,15 @@ export default function ProductManagement() {
                                     </span>
                                 </Menu.Header>
                                 <Menu.Item>
-                                    <SettingsIcon />
+                                    <IconSettings />
                                     Settings
                                 </Menu.Item>
                                 <Menu.Item>
-                                    <LifeBuoyIcon />
+                                    <IconSupport />
                                     Support
                                 </Menu.Item>
                                 <Menu.Item isDanger>
-                                    <LogOutIcon />
+                                    <IconLogout />
                                     Logout
                                 </Menu.Item>
                             </Menu.Section>
@@ -167,10 +171,6 @@ const Nav = () => {
         </>
     )
 }
-
-import { Table } from '@/components/ui'
-import React from 'react'
-import { type Key, type Selection, type SortDescriptor } from 'react-aria-components'
 
 interface Product {
     id: number
@@ -308,17 +308,17 @@ const ProductTable = () => {
                                         >
                                             {loading === 'loading' ? (
                                                 <>
-                                                    <Loader2Icon className='animate-spin' />
+                                                    <IconLoader className='animate-spin' />
                                                     Deleting...
                                                 </>
                                             ) : loading === 'success' ? (
                                                 <>
-                                                    <CheckCircle2Icon />
+                                                    <IconCircleCheck />
                                                     Deleted
                                                 </>
                                             ) : (
                                                 <>
-                                                    <Trash2Icon />
+                                                    <IconTrash />
                                                     Delete
                                                 </>
                                             )}
@@ -338,7 +338,7 @@ const ProductTable = () => {
                         />
                         <Modal>
                             <Button>
-                                <PackagePlus />
+                                <IconSquarePlus />
                                 New Product
                             </Button>
                             <Modal.Content>

@@ -1,13 +1,14 @@
 'use client'
 
+import { IconBell } from 'justd-icons'
+
 import { Button, Popover } from '@/components/ui'
-import { BellIcon } from 'lucide-react'
 
 export default function PopoverArrowDemo() {
     return (
         <Popover>
             <Button variant='outline' size='icon'>
-                <BellIcon />
+                <IconBell />
             </Button>
             <Popover.Content showArrow={false} className='min-w-72'>
                 You have 3 new notifications.

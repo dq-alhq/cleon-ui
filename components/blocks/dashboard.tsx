@@ -1,7 +1,35 @@
 'use client'
-import { Logo } from '@/components/logo'
-import { useAsyncList } from '@react-stately/data'
+import * as React from 'react'
 
+import { useAsyncList } from '@react-stately/data'
+import {
+    IconAnalyticsChart,
+    IconBell,
+    IconCart,
+    IconCreditCard,
+    IconCurrencyDollar,
+    IconHamburger,
+    IconHome,
+    IconLoader,
+    IconLogout,
+    IconPackage,
+    IconPeople,
+    IconSettings,
+    IconSupport
+} from 'justd-icons'
+import Link from 'next/link'
+import {
+    Bar,
+    BarChart,
+    CartesianGrid,
+    Line,
+    LineChart,
+    Rectangle,
+    XAxis,
+    YAxis
+} from 'recharts'
+
+import { Logo } from '@/components/logo'
 import { ThemeToggle } from '@/components/theme-toggle'
 import {
     Avatar,
@@ -17,33 +45,6 @@ import {
     Table
 } from '@/components/ui'
 import { cn, formatDate } from '@/lib/utils'
-import {
-    ActivityIcon,
-    BellIcon,
-    CreditCardIcon,
-    DollarSignIcon,
-    Home,
-    LifeBuoyIcon,
-    Loader2Icon,
-    LogOutIcon,
-    MenuIcon,
-    Package,
-    SettingsIcon,
-    ShoppingCart,
-    Users
-} from 'lucide-react'
-import Link from 'next/link'
-import React from 'react'
-import {
-    Bar,
-    BarChart,
-    CartesianGrid,
-    Line,
-    LineChart,
-    Rectangle,
-    XAxis,
-    YAxis
-} from 'recharts'
 
 const roles = [
     {
@@ -110,7 +111,7 @@ export default function Dashboard() {
                         </Link>
                         <Menu>
                             <Button variant='outline' size='icon' className='ml-auto'>
-                                <BellIcon />
+                                <IconBell />
                             </Button>
                             <Menu.Content items={roles}>
                                 {(item) => (
@@ -151,7 +152,7 @@ export default function Dashboard() {
                         <Sheet.Trigger
                             className={cn(buttonVariants({ size: 'icon' }), 'md:hidden')}
                         >
-                            <MenuIcon className='h-5 w-5' />
+                            <IconHamburger className='h-5 w-5' />
                         </Sheet.Trigger>
                         <Sheet.Content side='left' aria-labelledby='Menu'>
                             <Sheet.Header>
@@ -183,15 +184,15 @@ export default function Dashboard() {
                                         </span>
                                     </Menu.Header>
                                     <Menu.Item>
-                                        <SettingsIcon />
+                                        <IconSettings />
                                         Settings
                                     </Menu.Item>
                                     <Menu.Item>
-                                        <LifeBuoyIcon />
+                                        <IconSupport />
                                         Support
                                     </Menu.Item>
                                     <Menu.Item isDanger>
-                                        <LogOutIcon />
+                                        <IconLogout />
                                         Logout
                                     </Menu.Item>
                                 </Menu.Section>
@@ -206,7 +207,7 @@ export default function Dashboard() {
                                 <Card.Title className='text-sm font-medium'>
                                     Total Revenue
                                 </Card.Title>
-                                <DollarSignIcon className='h-4 w-4 text-muted-foreground' />
+                                <IconCurrencyDollar className='size-4 text-muted-foreground' />
                             </Card.Header>
                             <Card.Content>
                                 <div className='text-2xl font-bold'>$45,231.89</div>
@@ -220,7 +221,7 @@ export default function Dashboard() {
                                 <Card.Title className='text-sm font-medium'>
                                     Subscriptions
                                 </Card.Title>
-                                <Users className='h-4 w-4 text-muted-foreground' />
+                                <IconPeople className='size-4 text-muted-foreground' />
                             </Card.Header>
                             <Card.Content>
                                 <div className='text-2xl font-bold'>+2350</div>
@@ -234,7 +235,7 @@ export default function Dashboard() {
                                 <Card.Title className='text-sm font-medium'>
                                     Sales
                                 </Card.Title>
-                                <CreditCardIcon className='h-4 w-4 text-muted-foreground' />
+                                <IconCreditCard className='size-4 text-muted-foreground' />
                             </Card.Header>
                             <Card.Content>
                                 <div className='text-2xl font-bold'>+1,234</div>
@@ -248,7 +249,7 @@ export default function Dashboard() {
                                 <Card.Title className='text-sm font-medium'>
                                     Active Now
                                 </Card.Title>
-                                <ActivityIcon className='h-4 w-4 text-muted-foreground' />
+                                <IconAnalyticsChart className='size-4 text-muted-foreground' />
                             </Card.Header>
                             <Card.Content>
                                 <div className='text-2xl font-bold'>+573</div>
@@ -466,7 +467,7 @@ export default function Dashboard() {
                                 items={list.items}
                                 renderEmptyState={() => (
                                     <div className='grid place-content-center p-10'>
-                                        <Loader2Icon className='animate-spin' />
+                                        <IconLoader className='animate-spin' />
                                     </div>
                                 )}
                             >
@@ -517,26 +518,26 @@ const Sidebar = () => {
     return (
         <nav className='grid items-start px-2 gap-1 text-sm font-medium lg:px-4'>
             <NavLink active href='#'>
-                <Home className='h-4 w-4' />
+                <IconHome className='size-4' />
                 Dashboard
             </NavLink>
             <NavLink href='#'>
-                <ShoppingCart className='h-4 w-4' />
+                <IconCart className='size-4' />
                 Orders
                 <Badge variant='info' shape='circle' className='ml-auto size-6 shrink-0'>
                     6
                 </Badge>
             </NavLink>
             <NavLink href='#'>
-                <Package className='h-4 w-4' />
+                <IconPackage className='size-4' />
                 Products
             </NavLink>
             <NavLink href='#'>
-                <Users className='h-4 w-4' />
+                <IconPeople className='size-4' />
                 Customers
             </NavLink>
             <NavLink href='#'>
-                <LineChart className='h-4 w-4' />
+                <IconAnalyticsChart className='size-4' />
                 Analytics
             </NavLink>
         </nav>

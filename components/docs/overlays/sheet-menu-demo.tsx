@@ -2,7 +2,25 @@
 
 import React from 'react'
 
-import { GithubLogo } from '@/components/logo'
+import {
+    IconBook,
+    IconBookOpen,
+    IconBrandCopilot,
+    IconBrandGithub,
+    IconBuilding,
+    IconChart,
+    IconCodeBrackets,
+    IconFilter,
+    IconGear,
+    IconGlobe,
+    IconHeart,
+    IconLogout,
+    IconMessages,
+    IconPeople,
+    IconPerson,
+    IconStar
+} from 'justd-icons'
+
 import {
     Avatar,
     Button,
@@ -14,15 +32,6 @@ import {
     Sheet,
     TextField
 } from '@/components/ui'
-import {
-    BookKey,
-    Filter,
-    Heart,
-    LogOut,
-    MessageCircle,
-    Settings,
-    User
-} from 'lucide-react'
 import { Group, Menu as PrimitiveMenu } from 'react-aria-components'
 
 export default function SheetMenuDemo() {
@@ -41,7 +50,7 @@ export default function SheetMenuDemo() {
                     <Modal.Body>
                         <div className='space-y-4'>
                             <TextField
-                                prefix={<GithubLogo className='size-4' />}
+                                prefix={<IconBrandGithub className='size-4' />}
                                 label='Status'
                                 placeholder="What's your status?"
                             />
@@ -93,49 +102,66 @@ export default function SheetMenuDemo() {
                     </Sheet.Header>
                     <PrimitiveMenu aria-labelledby='Sheet'>
                         <Menu.Item onAction={openModal}>
-                            <GithubLogo className='size-4' />
+                            <IconBrandGithub className='size-4' />
                             Edit Status
                         </Menu.Item>
                         <Menu.Separator />
                         <Menu.Section>
                             <Menu.Item>
-                                <User />
+                                <IconPerson />
                                 Your profile
                             </Menu.Item>
                             <Menu.Item>
-                                <BookKey /> Your repositories
+                                <IconBook /> Your repositories
                             </Menu.Item>
                             <Menu.Item>
-                                <Heart />
+                                <IconBrandCopilot /> Your Copilot
+                            </Menu.Item>
+                            <Menu.Item>
+                                <IconChart /> Your projects
+                            </Menu.Item>
+                            <Menu.Item>
+                                <IconStar /> Your stars
+                            </Menu.Item>
+                            <Menu.Item>
+                                <IconCodeBrackets /> Your gists
+                            </Menu.Item>
+                            <Menu.Item>
+                                <IconBuilding /> Your organizations
+                            </Menu.Item>
+                            <Menu.Item>
+                                <IconGlobe /> Your enterprises
+                            </Menu.Item>
+                            <Menu.Item>
+                                <IconHeart />
                                 Your sponsors
                             </Menu.Item>
                         </Menu.Section>
-                        <Menu.Separator />
                         <Menu.Section>
                             <Menu.Item>
-                                <Filter /> Feature preview
+                                <IconFilter /> Feature preview
                             </Menu.Item>
                             <Menu.Item>
-                                <Settings />
+                                <IconGear />
                                 Settings
                             </Menu.Item>
                         </Menu.Section>
-                        <Menu.Separator />
                         <Menu.Section>
                             <Menu.Item>
-                                <BookKey /> GitHub Docs
+                                <IconBookOpen /> GitHub Docs
                             </Menu.Item>
                             <Menu.Item>
-                                <User /> GitHub Support
+                                <IconPeople /> GitHub Support
                             </Menu.Item>
                             <Menu.Item>
-                                <MessageCircle /> GitHub Community
+                                <IconMessages /> GitHub Community
                             </Menu.Item>
                         </Menu.Section>
-                        <Menu.Separator />
-                        <Menu.Item isDanger>
-                            <LogOut /> Sign out
-                        </Menu.Item>
+                        <Menu.Section>
+                            <Menu.Item>
+                                <IconLogout /> Sign out
+                            </Menu.Item>
+                        </Menu.Section>
                     </PrimitiveMenu>
                 </Sheet.Content>
             </Sheet>

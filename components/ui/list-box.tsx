@@ -1,6 +1,6 @@
 'use client'
 
-import { GripHorizontalIcon } from 'lucide-react'
+import { IconDotGrid2X3 } from 'justd-icons'
 import {
     composeRenderProps,
     ListBoxItem as ListBoxItemPrimitive,
@@ -72,7 +72,7 @@ const ListBoxItem = <T extends object>({
                 <div className='flex items-center gap-2'>
                     <>
                         {values.allowsDragging && (
-                            <GripHorizontalIcon
+                            <IconDotGrid2X3
                                 className={cn(
                                     'size-4 shrink-0 text-muted-foreground transition',
                                     values.isFocused && 'text-foreground',

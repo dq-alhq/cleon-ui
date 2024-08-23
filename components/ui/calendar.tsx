@@ -1,6 +1,6 @@
 'use client'
 
-import { ChevronLeftIcon, ChevronRightIcon } from 'lucide-react'
+import { IconChevronLeft, IconChevronRight } from 'justd-icons'
 import {
     CalendarCell,
     CalendarGrid,
@@ -87,9 +87,9 @@ const CalendarHeader = () => {
                 slot='previous'
             >
                 {direction === 'rtl' ? (
-                    <ChevronRightIcon />
+                    <IconChevronRight />
                 ) : (
-                    <ChevronLeftIcon aria-hidden />
+                    <IconChevronLeft aria-hidden />
                 )}
             </Button>
             <Heading className='mx-2 flex-1 text-center text-base font-medium text-foreground' />
@@ -99,7 +99,7 @@ const CalendarHeader = () => {
                 variant='outline'
                 slot='next'
             >
-                {direction === 'rtl' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
+                {direction === 'rtl' ? <IconChevronLeft /> : <IconChevronRight />}
             </Button>
         </header>
     )

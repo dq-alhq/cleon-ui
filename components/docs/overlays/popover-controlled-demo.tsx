@@ -2,9 +2,10 @@
 
 import React from 'react'
 
+import { IconCircleCheck, IconLoader, IconTrash } from 'justd-icons'
+
 import { Button, Popover } from '@/components/ui'
 import { wait } from '@/lib/utils'
-import { CheckCircleIcon, Loader2Icon, TrashIcon } from 'lucide-react'
 
 export default function PopoverControlledDemo() {
     const [isOpen, setIsOpen] = React.useState(false)
@@ -55,17 +56,17 @@ export default function PopoverControlledDemo() {
                     >
                         {loading === 'loading' ? (
                             <>
-                                <Loader2Icon className='animate-spin' />
+                                <IconLoader className='animate-spin' />
                                 Deleting...
                             </>
                         ) : loading === 'success' ? (
                             <>
-                                <CheckCircleIcon />
+                                <IconCircleCheck />
                                 Deleted
                             </>
                         ) : (
                             <>
-                                <TrashIcon />
+                                <IconTrash />
                                 Delete
                             </>
                         )}

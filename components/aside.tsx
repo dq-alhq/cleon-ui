@@ -5,11 +5,12 @@ import React from 'react'
 import { type Docs, docs } from '#site/content'
 import { cn, sortDocs, titleCase } from '@/lib/utils'
 import { LayoutGroup, motion } from 'framer-motion'
-import { BoxIcon, EclipseIcon, KeyRoundIcon } from 'lucide-react'
+import { IconCircleHalf, IconKey, IconPackage } from 'justd-icons'
 import type { LinkProps as NextLinkProps } from 'next/link'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Accordion } from 'ui'
+
+import { Accordion } from '@/components/ui'
 
 export interface Doc {
     slug: string
@@ -57,11 +58,11 @@ const renderHierarchy = (node: HierarchyNode, defaultValues: string[]) => {
                 <Accordion.Item key={key} currentId={key}>
                     <Trigger className='text-foreground group-data-[open=true]:text-primary'>
                         {key === 'getting-started' ? (
-                            <KeyRoundIcon className='aside-icon' />
+                            <IconKey className='aside-icon rotate-45' />
                         ) : key === 'dark-mode' ? (
-                            <EclipseIcon className='aside-icon' />
+                            <IconCircleHalf className='aside-icon' />
                         ) : (
-                            <BoxIcon className='aside-icon' />
+                            <IconPackage className='aside-icon' />
                         )}
                         {titleCase(key)}
                     </Trigger>

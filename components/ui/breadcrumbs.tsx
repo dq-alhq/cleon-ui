@@ -1,6 +1,6 @@
 'use client'
 
-import { ChevronRightIcon } from 'lucide-react'
+import { IconChevronRight } from 'justd-icons'
 import type { BreadcrumbProps, BreadcrumbsProps } from 'react-aria-components'
 import {
     Breadcrumb as BreadcrumbPrimitive,
@@ -23,7 +23,7 @@ const Breadcrumb = ({ className, ...props }: BreadcrumbProps & LinkProps) => {
         >
             <Link href={props.href} {...props} />
             {'href' in props && (
-                <ChevronRightIcon className='size-4 shrink-0 text-muted-foreground' />
+                <IconChevronRight className='size-4 shrink-0 text-muted-foreground' />
             )}
         </BreadcrumbPrimitive>
     )

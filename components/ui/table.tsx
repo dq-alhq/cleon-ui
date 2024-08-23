@@ -1,26 +1,26 @@
 'use client'
 
+import { IconChevronDown, IconChevronUp, IconDotGrid2X3 } from 'justd-icons'
 import {
     Button,
     Cell,
-    type CellProps,
     Collection,
     Column,
-    type ColumnProps,
     Row,
-    type RowProps,
     TableBody as TableBodyPrimitive,
-    type TableBodyProps,
     TableHeader as TableHeaderPrimitive,
-    type TableHeaderProps,
     Table as TablePrimitive,
-    type TableProps as TablePrimitiveProps,
-    useTableOptions
+    useTableOptions,
+    type CellProps,
+    type ColumnProps,
+    type RowProps,
+    type TableBodyProps,
+    type TableHeaderProps,
+    type TableProps as TablePrimitiveProps
 } from 'react-aria-components'
 import { tv } from 'tailwind-variants'
 
 import { cn } from '@/lib/utils'
-import { ChevronDownIcon, ChevronUpIcon, GripHorizontalIcon } from 'lucide-react'
 import { Checkbox } from './checkbox'
 
 const table = tv({
@@ -75,9 +75,9 @@ const TableColumn = ({ children, className, ...props }: TableColumnProps) => (
                         (sortDirection === undefined ? (
                             <div className='w-6' />
                         ) : sortDirection === 'ascending' ? (
-                            <ChevronUpIcon className='size-4' />
+                            <IconChevronUp className='size-4' />
                         ) : (
-                            <ChevronDownIcon className='size-4' />
+                            <IconChevronDown className='size-4' />
                         ))}
                 </>
             </div>
@@ -130,7 +130,7 @@ const TableRow = <T extends object>({
                         className='bg-transparent pl-1.5 py-1.5 text-muted-foreground pressed:text-foreground'
                         slot='drag'
                     >
-                        <GripHorizontalIcon />
+                        <IconDotGrid2X3 />
                     </Button>
                 </Cell>
             )}

@@ -1,7 +1,8 @@
 'use client'
 
+import { IconDotsVertical, IconEye, IconPencilBox, IconTrash } from 'justd-icons'
+
 import { Card, Menu, Pagination, Table } from '@/components/ui'
-import { Edit, Eye, MoreVertical, Trash } from 'lucide-react'
 
 const users = [
     {
@@ -104,18 +105,18 @@ export default function CardTableDemo() {
                                 <Table.Cell className='flex justify-end'>
                                     <Menu>
                                         <Menu.Trigger>
-                                            <MoreVertical className='size-4' />
+                                            <IconDotsVertical className='size-4' />
                                         </Menu.Trigger>
                                         <Menu.Content showArrow placement='left'>
                                             <Menu.Item>
-                                                <Eye /> View
+                                                <IconEye /> View
                                             </Menu.Item>
                                             <Menu.Item>
-                                                <Edit /> Edit
+                                                <IconPencilBox /> Edit
                                             </Menu.Item>
                                             <Menu.Separator />
                                             <Menu.Item isDanger>
-                                                <Trash /> Delete
+                                                <IconTrash /> Delete
                                             </Menu.Item>
                                         </Menu.Content>
                                     </Menu>

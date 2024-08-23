@@ -3,6 +3,7 @@
 import * as React from 'react'
 
 import { Command as CommandPrimitive } from 'cmdk'
+import { IconSearch, IconX } from 'justd-icons'
 import {
     Button,
     Dialog,
@@ -16,7 +17,6 @@ import {
 import { tv } from 'tailwind-variants'
 
 import { useMediaQuery } from '@/lib/utils'
-import { SearchIcon, XIcon } from 'lucide-react'
 import { Keyboard, type KeyboardProps } from './keyboard'
 import { Separator } from './separator'
 
@@ -139,7 +139,7 @@ const Command = ({
                                     >
                                         <span className='lg:block hidden'>Esc</span>
                                         <span className='lg:hidden -mr-2 block'>
-                                            <XIcon />
+                                            <IconX />
                                             <span className='sr-only'>
                                                 Close command palette
                                             </span>
@@ -166,7 +166,7 @@ const CommandInput = React.forwardRef<
     return (
         <div className='flex border-b items-center px-3'>
             {!hideSearchIndicator && (
-                <SearchIcon className='mr-2 size-5 shrink-0 opacity-50' />
+                <IconSearch className='mr-2 size-5 shrink-0 opacity-50' />
             )}
             <CommandPrimitive.Input
                 autoFocus

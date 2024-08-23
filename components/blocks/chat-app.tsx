@@ -1,24 +1,22 @@
 'use client'
 import {
-    CheckCheckIcon,
-    CheckIcon,
-    ClockIcon,
-    CornerDownLeft,
-    DeleteIcon,
-    FilmIcon,
-    GroupIcon,
-    LogOutIcon,
-    MessageCircleMoreIcon,
-    MessageSquarePlusIcon,
-    Mic,
-    MoreVerticalIcon,
-    RadioTowerIcon,
-    SettingsIcon,
-    TrashIcon,
-    User2Icon,
-    Users2Icon,
-    XCircleIcon
-} from 'lucide-react'
+    IconBroadcast,
+    IconCircleX,
+    IconDotsVertical,
+    IconEnter,
+    IconFilm,
+    IconLogout,
+    IconMessage,
+    IconMessageDots,
+    IconMessages,
+    IconMic,
+    IconPeople,
+    IconPerson,
+    IconSettings,
+    IconTrash
+} from 'justd-icons'
+import React from 'react'
+import { TextArea } from 'react-aria-components'
 
 import { Logo } from '@/components/logo'
 import {
@@ -33,8 +31,6 @@ import {
     Tooltip
 } from '@/components/ui'
 import { cn, convertToHtml, formatTime } from '@/lib/utils'
-import React from 'react'
-import { TextArea } from 'react-aria-components'
 
 export default function ChatApp() {
     const [chats, setChats] = React.useState<BubbleChatProps[]>([
@@ -169,7 +165,7 @@ export default function ChatApp() {
                                     buttonVariants({ variant: 'outline', size: 'icon' })
                                 )}
                             >
-                                <MessageCircleMoreIcon className='!size-6' />
+                                <IconMessageDots className='!size-6' />
                             </Tooltip.Trigger>
                             <Tooltip.Content placement='right'>Chats</Tooltip.Content>
                         </Tooltip>
@@ -179,7 +175,7 @@ export default function ChatApp() {
                                     buttonVariants({ variant: 'ghost', size: 'icon' })
                                 )}
                             >
-                                <FilmIcon className='!size-6' />
+                                <IconFilm className='!size-6' />
                             </Tooltip.Trigger>
                             <Tooltip.Content placement='right'>Reels</Tooltip.Content>
                         </Tooltip>
@@ -189,7 +185,7 @@ export default function ChatApp() {
                                     buttonVariants({ variant: 'ghost', size: 'icon' })
                                 )}
                             >
-                                <RadioTowerIcon className='!size-6' />
+                                <IconBroadcast className='!size-6' />
                             </Tooltip.Trigger>
                             <Tooltip.Content placement='right'>Broadcast</Tooltip.Content>
                         </Tooltip>
@@ -199,7 +195,7 @@ export default function ChatApp() {
                                     buttonVariants({ variant: 'ghost', size: 'icon' })
                                 )}
                             >
-                                <Users2Icon className='!size-6' />
+                                <IconPeople className='!size-6' />
                             </Tooltip.Trigger>
                             <Tooltip.Content placement='right'>Groups</Tooltip.Content>
                         </Tooltip>
@@ -211,7 +207,7 @@ export default function ChatApp() {
                                     buttonVariants({ variant: 'ghost', size: 'icon' })
                                 )}
                             >
-                                <SettingsIcon className='!size-6' />
+                                <IconSettings className='!size-6' />
                             </Tooltip.Trigger>
                             <Tooltip.Content placement='right'>Settings</Tooltip.Content>
                         </Tooltip>
@@ -224,7 +220,7 @@ export default function ChatApp() {
                             <h1 className='text-2xl font-bold'>Chats</h1>
                             <div className='flex justify-between items-center gap-2'>
                                 <Button variant='ghost' size='icon'>
-                                    <MessageSquarePlusIcon className='!size-6' />
+                                    <IconMessage className='!size-6' />
                                 </Button>
                                 <Menu>
                                     <Menu.Trigger
@@ -233,15 +229,15 @@ export default function ChatApp() {
                                             size: 'icon'
                                         })}
                                     >
-                                        <MoreVerticalIcon />
+                                        <IconDotsVertical />
                                     </Menu.Trigger>
                                     <Menu.Content placement='bottom end'>
                                         <Menu.Item>
-                                            <GroupIcon />
+                                            <IconMessages />
                                             New Group
                                         </Menu.Item>
                                         <Menu.Item isDanger>
-                                            <LogOutIcon />
+                                            <IconLogout />
                                             Logout
                                         </Menu.Item>
                                     </Menu.Content>
@@ -277,19 +273,19 @@ export default function ChatApp() {
                                         'ml-auto'
                                     )}
                                 >
-                                    <MoreVerticalIcon />
+                                    <IconDotsVertical />
                                 </Menu.Trigger>
                                 <Menu.Content placement='bottom end'>
                                     <Menu.Item>
-                                        <User2Icon />
+                                        <IconPerson />
                                         Contact Info
                                     </Menu.Item>
                                     <Menu.Item>
-                                        <DeleteIcon />
+                                        <IconTrash />
                                         Clear Chat
                                     </Menu.Item>
                                     <Menu.Item isDanger>
-                                        <XCircleIcon />
+                                        <IconCircleX />
                                         Block
                                     </Menu.Item>
                                 </Menu.Content>
@@ -306,7 +302,7 @@ export default function ChatApp() {
                                 ))
                             ) : (
                                 <div className='flex flex-col items-center justify-center h-full'>
-                                    <MessageCircleMoreIcon className='!size-6' />
+                                    <IconMessageDots className='!size-6' />
                                     <p className='text-center font-bold text-xl'>
                                         Start a conversation
                                     </p>
@@ -355,7 +351,7 @@ export default function ChatApp() {
                                             size: 'icon'
                                         })}
                                     >
-                                        <Mic className='size-4' />
+                                        <IconMic className='size-4' />
                                         <span className='sr-only'>Use Microphone</span>
                                     </Tooltip.Trigger>
                                     <Tooltip.Content placement='top'>
@@ -369,7 +365,7 @@ export default function ChatApp() {
                                     className='ml-auto gap-1.5'
                                 >
                                     Send Message
-                                    <CornerDownLeft />
+                                    <IconEnter />
                                 </Button>
                             </div>
                         </Form>
@@ -389,11 +385,73 @@ interface BubbleChatProps {
 }
 
 const BubbleChat = ({ message, time, role, status, onDelete }: BubbleChatProps) => {
-    const statusIcon: Record<string, JSX.Element> = {
-        pending: <ClockIcon className='size-5 text-foreground' />,
-        sent: <CheckIcon className='size-5 text-foreground' />,
-        delivered: <CheckCheckIcon className='size-5 text-foreground' />,
-        read: <CheckCheckIcon className='size-5 text-success' />
+    const statusIcon: Record<string, React.ReactNode> = {
+        pending: (
+            <svg
+                xmlns='http://www.w3.org/2000/svg'
+                className='size-5 text-foreground'
+                viewBox='0 0 24 24'
+            >
+                <g
+                    fill='none'
+                    stroke='currentColor'
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
+                    strokeWidth={2}
+                >
+                    <path d='M3 12a9 9 0 1 0 18 0a9 9 0 0 0-18 0'></path>
+                    <path d='M12 7v5l3 3'></path>
+                </g>
+            </svg>
+        ),
+        sent: (
+            <svg
+                xmlns='http://www.w3.org/2000/svg'
+                className='size-5 text-foreground'
+                viewBox='0 0 24 24'
+            >
+                <path
+                    fill='none'
+                    stroke='currentColor'
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
+                    strokeWidth={2}
+                    d='m5 12l5 5L20 7'
+                ></path>
+            </svg>
+        ),
+        delivered: (
+            <svg
+                xmlns='http://www.w3.org/2000/svg'
+                className='size-5 text-foreground'
+                viewBox='0 0 24 24'
+            >
+                <path
+                    fill='none'
+                    stroke='currentColor'
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
+                    strokeWidth={2}
+                    d='m7 12l5 5L22 7M2 12l5 5m5-5l5-5'
+                ></path>
+            </svg>
+        ),
+        read: (
+            <svg
+                xmlns='http://www.w3.org/2000/svg'
+                className='size-5 text-success'
+                viewBox='0 0 24 24'
+            >
+                <path
+                    fill='none'
+                    stroke='currentColor'
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
+                    strokeWidth={2}
+                    d='m7 12l5 5L22 7M2 12l5 5m5-5l5-5'
+                ></path>
+            </svg>
+        )
     }
     return (
         <div
@@ -432,7 +490,7 @@ const BubbleChat = ({ message, time, role, status, onDelete }: BubbleChatProps) 
                     size='icon'
                     className='size-8 mx-2 opacity-0 pressed:opacity-100 group-hover:opacity-100 transition p-1 sm:size-8'
                 >
-                    <TrashIcon className='size-3' />
+                    <IconTrash className='size-3' />
                 </Button>
                 <Popover.Content>
                     <Popover.Header>

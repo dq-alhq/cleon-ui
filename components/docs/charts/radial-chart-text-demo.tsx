@@ -1,7 +1,7 @@
 'use client'
 
 import { Card, ChartContainer, type ChartConfig } from '@/components/ui'
-import { TrendingUp } from 'lucide-react'
+import { IconTrendingChart3 } from 'justd-icons'
 import { Label, PolarGrid, PolarRadiusAxis, RadialBar, RadialBarChart } from 'recharts'
 
 const chartData = [{ browser: 'safari', visitors: 200, fill: 'var(--color-safari)' }]
@@ -79,7 +79,8 @@ export default function RadialChartTextDemo() {
             </Card.Content>
             <Card.Footer className='flex-col gap-2 text-sm'>
                 <div className='flex items-center gap-2 font-medium leading-none'>
-                    Trending up by 5.2% this month <TrendingUp className='h-4 w-4' />
+                    Trending up by 5.2% this month{' '}
+                    <IconTrendingChart3 className='h-4 w-4' />
                 </div>
                 <div className='leading-none text-muted-foreground'>
                     Showing total visitors for the last 6 months

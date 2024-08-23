@@ -1,19 +1,20 @@
 'use client'
 
+import {
+    IconBag,
+    IconCommandRegular,
+    IconDashboard,
+    IconDeviceDesktop,
+    IconHeadphones,
+    IconHeart,
+    IconLogout,
+    IconMoon,
+    IconSettings,
+    IconSun
+} from 'justd-icons'
+
 import { useTheme } from '@/components/providers'
 import { Avatar, Menu } from '@/components/ui'
-import {
-    CommandIcon,
-    GaugeIcon,
-    HeadphonesIcon,
-    HeartIcon,
-    LogOutIcon,
-    MonitorCogIcon,
-    MoonIcon,
-    SettingsIcon,
-    ShoppingBagIcon,
-    SunIcon
-} from 'lucide-react'
 
 export default function MenuWithIconDemo() {
     const { resolvedTheme, setTheme } = useTheme()
@@ -30,63 +31,60 @@ export default function MenuWithIconDemo() {
                             @dq-alhq
                         </span>
                     </Menu.Header>
-                    <Menu.Item href='#dashboard'>
-                        <GaugeIcon />
-                        Dashboard
-                    </Menu.Item>
-                    <Menu.Item href='#settings'>
-                        <SettingsIcon />
-                        Settings
-                    </Menu.Item>
                 </Menu.Section>
+                <Menu.Item href='#dashboard'>
+                    <IconDashboard />
+                    Dashboard
+                </Menu.Item>
+                <Menu.Item href='#settings'>
+                    <IconSettings />
+                    Settings
+                </Menu.Item>
                 <Menu.Separator />
-                <Menu.Section>
-                    <Menu.Item href='#wishlist'>
-                        <HeartIcon />
-                        My Wishlist
-                    </Menu.Item>
-                    <Menu.Item href='#orders'>
-                        <ShoppingBagIcon />
-                        Orders
-                    </Menu.Item>
-                </Menu.Section>
-
+                <Menu.Item href='#wishlist'>
+                    <IconHeart />
+                    My Wishlist
+                </Menu.Item>
+                <Menu.Item href='#orders'>
+                    <IconBag />
+                    Orders
+                </Menu.Item>
                 <Menu.Separator />
                 <Menu.Item>
-                    <CommandIcon />
+                    <IconCommandRegular />
                     Command Menu.
                 </Menu.Item>
                 <Menu.Sub>
                     <Menu.Item aria-label='Switch theme'>
                         {resolvedTheme === 'light' ? (
-                            <SunIcon />
+                            <IconSun />
                         ) : resolvedTheme === 'dark' ? (
-                            <MoonIcon />
+                            <IconMoon />
                         ) : (
-                            <MonitorCogIcon />
+                            <IconDeviceDesktop />
                         )}
                         Switch theme
                     </Menu.Item>
                     <Menu.Content>
                         <Menu.Item onAction={() => setTheme('system')}>
-                            <MonitorCogIcon /> System
+                            <IconDeviceDesktop /> System
                         </Menu.Item>
                         <Menu.Item onAction={() => setTheme('dark')}>
-                            <MoonIcon /> Dark
+                            <IconMoon /> Dark
                         </Menu.Item>
                         <Menu.Item onAction={() => setTheme('light')}>
-                            <SunIcon /> Light
+                            <IconSun /> Light
                         </Menu.Item>
                     </Menu.Content>
                 </Menu.Sub>
-                {/* <Menu.Separator /> */}
+                <Menu.Separator />
                 <Menu.Item href='#contact-s'>
-                    <HeadphonesIcon />
+                    <IconHeadphones />
                     Contact Support
                 </Menu.Item>
                 <Menu.Separator />
                 <Menu.Item href='#logout'>
-                    <LogOutIcon />
+                    <IconLogout />
                     Log out
                 </Menu.Item>
             </Menu.Content>
