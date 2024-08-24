@@ -10,7 +10,7 @@ references: ['https://laravel.com/docs/11.x', 'https://inertiajs.com/']
 
 If you using Inertia.ts with React Aria Components, you need to wrap your project in provider called `providers.tsx` and drop it in the `resources/js/components` folder.
 
-<Snippet lang="js" code={`import {
+<PlainCode lang="tsx" code={`import {
     createContext,
     ReactNode,
     useContext,
@@ -131,7 +131,7 @@ export {
     type ThemeProviderProps,
     type ThemeProviderState,
 };
-`}/>
+`} />
 
 Then you need to declare it your .d.ts file for example `global.d.ts`.
 
