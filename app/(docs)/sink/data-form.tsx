@@ -75,7 +75,7 @@ export default function DataFormSink() {
                     </CheckboxGroup>
                     <MultiSelect
                         className='w-full'
-                        label='Fruits'
+                        label='Components'
                         selectedList={selectedList}
                         items={items}
                         tag={(item) => (
