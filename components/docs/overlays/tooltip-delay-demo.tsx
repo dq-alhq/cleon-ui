@@ -1,6 +1,7 @@
 'use client'
 
-import { GithubLogo } from '@/components/logo'
+import { IconBrandGithub } from 'justd-icons'
+
 import { buttonVariants, Tooltip } from '@/components/ui'
 
 export default function TooltipDelayDemo() {
@@ -14,7 +15,7 @@ export default function TooltipDelayDemo() {
                         size: 'icon'
                     })}
                 >
-                    <GithubLogo />
+                    <IconBrandGithub />
                 </Tooltip.Trigger>
                 <Tooltip.Content>Follow me on Github @dq-alhq</Tooltip.Content>
             </Tooltip>

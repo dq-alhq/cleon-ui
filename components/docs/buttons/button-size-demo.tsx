@@ -1,6 +1,7 @@
 'use client'
 
-import { NextLogo } from '@/components/logo'
+import { IconBrandNextjs } from 'justd-icons'
+
 import { Button } from '@/components/ui'
 
 export default function ButtonSizeDemo() {
@@ -11,7 +12,7 @@ export default function ButtonSizeDemo() {
             <Button>Medium (Default)</Button>
             <Button size='lg'>Large</Button>
             <Button size='icon'>
-                <NextLogo />
+                <IconBrandNextjs />
             </Button>
         </div>
     )

@@ -1,6 +1,7 @@
 'use client'
 
-import { NextLogo } from '@/components/logo'
+import { IconBrandNextjs } from 'justd-icons'
+
 import { Button, Card, Table } from '@/components/ui'
 
 export function TableOfButtons() {
@@ -33,7 +34,7 @@ export function TableOfButtons() {
                             <Button>Default (Medium)</Button>
                             <Button size='lg'>Large</Button>
                             <Button size='icon'>
-                                <NextLogo />
+                                <IconBrandNextjs />
                             </Button>
                         </Table.Cell>
                     </Table.Row>
