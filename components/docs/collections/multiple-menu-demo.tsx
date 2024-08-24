@@ -18,9 +18,9 @@ export default function MultipleMenuDemo() {
             >
                 <Menu.Section items={menuItems} title='Content Preferences'>
                     {(item) => (
-                        <Menu.CheckboxItem id={item.slug} textValue={item.name}>
+                        <Menu.Checkbox id={item.slug} textValue={item.name}>
                             {item.name}
-                        </Menu.CheckboxItem>
+                        </Menu.Checkbox>
                     )}
                 </Menu.Section>
             </Menu.Content>
