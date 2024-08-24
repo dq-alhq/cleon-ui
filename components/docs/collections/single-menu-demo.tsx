@@ -44,7 +44,7 @@ export default function SingleMenuDemo() {
                 items={placements}
                 className='max-h-72 min-w-52'
             >
-                {(item) => <Menu.RadioItem id={item.name}>{item.name}</Menu.RadioItem>}
+                {(item) => <Menu.Radio id={item.name}>{item.name}</Menu.Radio>}
             </Menu.Content>
         </Menu>
     )
