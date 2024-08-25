@@ -12,7 +12,7 @@ export default function ToggleButtonDemo() {
                 <div key={variant}>
                     <Toggle size='icon' variant={variant as Variant}>
                         {({ isSelected }) => (
-                            <>{isSelected ? <IconSun /> : <IconSunFill />}</>
+                            <>{isSelected ? <IconSunFill /> : <IconSun />}</>
                         )}
                     </Toggle>
                 </div>
