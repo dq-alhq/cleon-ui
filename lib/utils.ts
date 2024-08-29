@@ -54,6 +54,13 @@ export function sortReferencesByCount(references: Record<string, number>) {
     return Object.keys(references).sort((a, b) => references[b] - references[a])
 }
 
+export const getInitials = (name: string): string =>
+    name
+        .split(' ')
+        .slice(0, 2)
+        .map((part) => part.charAt(0))
+        .join('')
+
 export function slugify(string: string) {
     return string
         .normalize('NFKD')

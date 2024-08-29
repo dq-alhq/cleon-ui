@@ -5,12 +5,17 @@ import { motion } from 'framer-motion'
 import {
     IconDateTime,
     IconHome,
+    IconMessage,
     IconMessages,
     IconPeople,
     IconPerson,
+    IconPersonAdd,
+    IconRefresh,
     IconRocket,
     IconSearch,
     IconSend,
+    IconShuffle,
+    IconThumbsDown,
     IconTrendingChart
 } from 'justd-icons'
 import { TextArea } from 'react-aria-components'
@@ -20,23 +25,114 @@ import { ThemeToggle } from '@/components/theme-toggle'
 import {
     Avatar,
     Button,
+    Card,
     EmojiPicker,
     FileTrigger,
     Form,
     Link,
     SearchField
 } from '@/components/ui'
-import { cn } from '@/lib/utils'
+import { cn, convertToHtml, formatTime, getInitials } from '@/lib/utils'
 
+type FeedProps = {
+    author: {
+        name: string
+        avatar: string
+    }
+    body: string
+    time: string
+    likes: number
+    comments: number
+    share: number
+}
+
+const FriendList = [
+    {
+        status: 'online',
+        name: 'DQ Al-Haqqi',
+        avatar: 'https://github.com/dq-alhq.png'
+    },
+    {
+        status: 'online',
+        name: 'Barbara Kirlin Sr.',
+        avatar: 'https://i.pravatar.cc/150?img=1'
+    },
+    {
+        status: 'offline',
+        last_seen: '10 mins ago',
+        name: 'Rosemarie Koch',
+        avatar: 'https://i.pravatar.cc/150?img=2'
+    },
+    {
+        status: 'offline',
+        last_seen: '13 mins ago',
+        name: 'Mrs. Reva Heaney Jr.',
+        avatar: 'https://i.pravatar.cc/150?img=3'
+    },
+    {
+        status: 'online',
+        name: 'Ms. Ettie Abshire DVM',
+        avatar: 'https://i.pravatar.cc/150?img=4'
+    },
+    {
+        status: 'online',
+        name: 'Bria Ziemann',
+        avatar: 'https://i.pravatar.cc/150?img=5'
+    },
+    {
+        status: 'online',
+        name: 'Heloise Borer Sr.',
+        avatar: 'https://i.pravatar.cc/150?img=6'
+    },
+    {
+        status: 'offline',
+        last_seen: '3 days ago',
+        name: 'Miss Jacinthe Gerlach DVM',
+        avatar: 'https://i.pravatar.cc/150?img=7'
+    },
+    {
+        status: 'offline',
+        last_seen: 'a week ago',
+        name: 'Miss Stephania Schaefer Sr.',
+        avatar: 'https://i.pravatar.cc/150?img=8'
+    }
+]
 export default function SocialMediaTimeline() {
     const [post, setPost] = React.useState('')
     const postRef = React.useRef<HTMLTextAreaElement>(null)
     const [emoji, setEmoji] = React.useState(false)
     const [cursorPosition, setCursorPosition] = React.useState<number>(0)
+
+    const [feeds, setFeeds] = React.useState<FeedProps[]>([
+        {
+            author: {
+                name: 'DQ Al-Haqqi',
+                avatar: 'https://github.com/dqnahdliyan.png'
+            },
+            body: 'I Create a New Component today, check it out. https://cleon-ui.vercel.app',
+            time: '10:00',
+            likes: 10,
+            comments: 0,
+            share: 8
+        },
+        {
+            author: {
+                name: 'Yuni Ambar',
+                avatar: 'https://github.com/dq-alhq.png'
+            },
+            body: "This UI Component library is awesome. Don't forget to give it a *star*. https://github.com/dq-alhq/cleon-ui",
+            time: '12:00',
+            likes: 2,
+            comments: 0,
+            share: 4
+        }
+    ])
+
     function openEmoji() {
         postRef.current?.focus()
         setEmoji(!emoji)
     }
+
     function pickEmoji(emoji: string) {
         postRef.current?.focus()
         setEmoji(true)
@@ -57,16 +153,21 @@ export default function SocialMediaTimeline() {
 
     function sendPost(e: any) {
         e.preventDefault()
-        console.log(e)
-        // setChats([
-        //     ...chats,
-        //     {
-        //         message,
-        //         time: formatTime(new Date()),
-        //         role: 'send'
-        //     }
-        // ])
-        // setMessage('')
+        setFeeds([
+            ...feeds,
+            {
+                author: {
+                    name: 'DQ Al-Haqqi',
+                    avatar: 'https://github.com/dq-alhq.png'
+                },
+                body: post,
+                time: formatTime(new Date()),
+                likes: 0,
+                comments: 0,
+                share: 0
+            }
+        ])
+        setPost('')
     }
     return (
         <>
@@ -184,16 +285,72 @@ export default function SocialMediaTimeline() {
                                 </Button>
                             </div>
                         </Form>
-                        <div>
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi
-                            similique fuga consequuntur ipsa temporibus blanditiis
-                            architecto perspiciatis repellendus animi ea?
+                        <div className='w-full justify-between flex items-center'>
+                            <h4 className='text-muted-foreground text-lg my-2'>Feeds</h4>
+                            <Button variant='secondary' size='sm' className='group'>
+                                <IconRefresh className='transition group-pressed:-rotate-180' />
+                                Refresh
+                            </Button>
+                        </div>
+                        <div className='grid space-y-4'>
+                            {feeds.map((feed, i) => (
+                                <Feed feed={feed} key={i} />
+                            ))}
                         </div>
                     </div>
-                    <div className='col-span-1 bg-warning hidden sm:flex'>Right</div>
+                    <div className='col-span-1 hidden sm:flex'>
+                        <div className='flex flex-col gap-2 p-2 mt-2'>
+                            <h5 className='text-foreground text-lg'>Friends</h5>
+                            <p className='text-muted-foreground text-sm'>
+                                Add friends to see their posts here.
+                            </p>
+                            <div className='grid gap-2 mt-4'>
+                                {FriendList.map((friend: any, i: number) => (
+                                    <Friends key={i} {...friend} />
+                                ))}
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </>
+    )
+}
+
+interface FriendsProps {
+    name: string
+    avatar: string
+    status?: 'online' | 'offline'
+    last_seen?: string
+    active?: boolean
+}
+
+const Friends = ({ name, avatar, status, last_seen, active }: FriendsProps) => {
+    return (
+        <div
+            className={cn(
+                'rounded-lg p-2 flex w-full flex-row gap-3 items-center border-b cursor-pointer md:border'
+            )}
+        >
+            {status === 'online' ? (
+                <Avatar src={avatar} status='success' />
+            ) : (
+                <Avatar src={avatar} />
+            )}
+            <div className='grid'>
+                <span className='text-sm line-clamp-1'>{name}</span>
+                {status === 'online' ? (
+                    <small className='text-success text-xs'>Online</small>
+                ) : (
+                    <small className='text-muted-foreground text-xs'>
+                        Last seen {last_seen}
+                    </small>
+                )}
+            </div>
+            <Button size='icon' variant='ghost' className='ml-auto'>
+                <IconPersonAdd />
+            </Button>
+        </div>
     )
 }
 
@@ -252,5 +409,49 @@ const NavLink = ({
                 )}
             </>
         </Link>
+    )
+}
+
+const Feed = ({ feed }: { feed: FeedProps }) => {
+    return (
+        <Card>
+            <Card.Header className='flex-row gap-3'>
+                <Avatar
+                    initials={getInitials(feed.author.name)}
+                    src={feed.author.avatar}
+                />
+                <div className='flex items-center flex-row gap-2'>
+                    <Link href='#' className='font-semibold text-foreground'>
+                        {feed.author.name}
+                    </Link>
+                    <Link
+                        href='#'
+                        className='text-sm text-muted-foreground hover:underline'
+                    >
+                        {feed.time}
+                    </Link>
+                </div>
+            </Card.Header>
+            <Card.Content
+                className='text-left prose prose-blue dark:prose-invert text-sm'
+                dangerouslySetInnerHTML={{ __html: convertToHtml(feed.body) }}
+            />
+            <Card.Footer className='-m-6 mt-0'>
+                <div className='w-full flex flex-row items-center border-t rounded-t-lg'>
+                    <Button className='w-full' variant='ghost'>
+                        <IconThumbsDown className='size-5 rotate-180' />
+                        <span className='ml-1'>{feed.likes}</span>
+                    </Button>
+                    <Button className='w-full' variant='ghost'>
+                        <IconMessage className='size-5' />
+                        <span className='ml-1'>{feed.comments}</span>
+                    </Button>
+                    <Button className='w-full' variant='ghost'>
+                        <IconShuffle className='size-5' />
+                        <span className='ml-1'>{feed.share}</span>
+                    </Button>
+                </div>
+            </Card.Footer>
+        </Card>
     )
 }

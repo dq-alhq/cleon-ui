@@ -52,22 +52,18 @@ const Meter = ({ label, ...props }: MeterProps) => {
 
 const getColor = (percentage: number) => {
     if (percentage < 30) {
-        return '#0d6efd' // Blue
+        return 'hsl(var(--primary))'
     }
-
     if (percentage < 50) {
-        return '#198754' // Green
+        return 'hsl(var(--info))'
     }
-
     if (percentage < 70) {
-        return '#ffc107' // Yellow
+        return 'hsl(var(--success))'
     }
-
     if (percentage < 80) {
-        return '#f97316' // Orange
+        return 'hsl(var(--warning))'
     }
-
-    return '#e11d48' // Red
+    return 'hsl(var(--danger))'
 }
 
 export { getColor, Meter }
