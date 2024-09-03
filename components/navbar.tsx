@@ -77,7 +77,6 @@ export function Navbar() {
                                             Blocks
                                         </NavLink>
                                         <NavLink
-                                            target='_blank'
                                             isActive={pathname?.startsWith('/icons')}
                                             href='/icons'
                                         >
