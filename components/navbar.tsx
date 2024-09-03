@@ -40,7 +40,7 @@ const menuItems = [
     { id: 1, label: 'Home', url: '/' },
     { id: 2, label: 'Components', url: '/docs/getting-started/introduction' },
     { id: 3, label: 'Blocks', url: '/blocks' },
-    { id: 4, label: 'Icons', url: 'https://cleon-icons.vercel.app' }
+    { id: 4, label: 'Icons', url: '/icons' }
 ]
 
 export function Navbar() {
@@ -79,7 +79,7 @@ export function Navbar() {
                                         <NavLink
                                             target='_blank'
                                             isActive={pathname?.startsWith('/icons')}
-                                            href='https://cleon-icons.vercel.app'
+                                            href='/icons'
                                         >
                                             Icons
                                         </NavLink>
