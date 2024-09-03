@@ -1,6 +1,6 @@
 'use client'
 
-import { IconChevronRight } from 'justd-icons'
+import { IconChevronRight } from 'cleon-icons'
 import type { BreadcrumbProps, BreadcrumbsProps } from 'react-aria-components'
 import {
     Breadcrumb as BreadcrumbPrimitive,
@@ -9,6 +9,7 @@ import {
 } from 'react-aria-components'
 
 import { cn } from '@/lib/utils'
+
 import { Link } from './link'
 
 const Breadcrumbs = <T extends object>({ className, ...props }: BreadcrumbsProps<T>) => {

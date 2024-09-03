@@ -1,0 +1,4952 @@
+[
+    {
+        "name": "icon-adjustments.svg",
+        "category": "system",
+        "tags": ["settings", "adjust", "controls", "configuration"]
+    },
+    {
+        "name": "icon-alarm.svg",
+        "category": "notifications",
+        "tags": ["alert", "notification", "reminder", "warning"]
+    },
+    {
+        "name": "icon-alert-circle.svg",
+        "category": "notifications",
+        "tags": ["alert", "warning", "notification", "circular"]
+    },
+    {
+        "name": "icon-alert-square.svg",
+        "category": "notifications",
+        "tags": ["alert", "warning", "notification", "square"]
+    },
+    {
+        "name": "icon-alert-triangle.svg",
+        "category": "notifications",
+        "tags": ["alert", "warning", "notification", "triangle"]
+    },
+    {
+        "name": "icon-bell.svg",
+        "category": "notifications",
+        "tags": ["notification", "alert", "sound", "bell"]
+    },
+    {
+        "name": "icon-book-user.svg",
+        "category": "education",
+        "tags": ["user", "book", "profile", "education"]
+    },
+    {
+        "name": "icon-calendar-days.svg",
+        "category": "time",
+        "tags": ["calendar", "days", "schedule", "date"]
+    },
+    {
+        "name": "icon-calendar-search.svg",
+        "category": "time",
+        "tags": ["calendar", "search", "date", "schedule"]
+    },
+    {
+        "name": "icon-calendar.svg",
+        "category": "time",
+        "tags": ["calendar", "date", "schedule", "month"]
+    },
+    {
+        "name": "icon-calendar-time.svg",
+        "category": "time",
+        "tags": ["calendar", "time", "date", "schedule"]
+    },
+    {
+        "name": "icon-category.svg",
+        "category": "general",
+        "tags": ["category", "classification", "tags", "group"]
+    },
+    {
+        "name": "icon-checkbox.svg",
+        "category": "form",
+        "tags": ["checkbox", "selection", "form", "tick"]
+    },
+    {
+        "name": "icon-checks.svg",
+        "category": "form",
+        "tags": ["check", "tick", "selection", "form"]
+    },
+    {
+        "name": "icon-check.svg",
+        "category": "form",
+        "tags": ["check", "tick", "form", "selection"]
+    },
+    {
+        "name": "icon-circle-check.svg",
+        "category": "form",
+        "tags": ["check", "circle", "tick", "form"]
+    },
+    {
+        "name": "icon-circle-half.svg",
+        "category": "shapes",
+        "tags": ["circle", "half", "shape", "geometry"]
+    },
+    {
+        "name": "icon-circles.svg",
+        "category": "shapes",
+        "tags": ["circles", "shapes", "geometry"]
+    },
+    {
+        "name": "icon-circle.svg",
+        "category": "shapes",
+        "tags": ["circle", "shape", "geometry"]
+    },
+    {
+        "name": "icon-circle-x.svg",
+        "category": "form",
+        "tags": ["circle", "x", "error", "form"]
+    },
+    {
+        "name": "icon-cirlce-x-tri.svg",
+        "category": "form",
+        "tags": ["circle", "x", "triangle", "error"]
+    },
+    {
+        "name": "icon-clock-square.svg",
+        "category": "time",
+        "tags": ["clock", "square", "time", "schedule"]
+    },
+    {
+        "name": "icon-clock.svg",
+        "category": "time",
+        "tags": ["clock", "time", "schedule"]
+    },
+    {
+        "name": "icon-cloud-download.svg",
+        "category": "cloud",
+        "tags": ["cloud", "download", "file", "storage"]
+    },
+    {
+        "name": "icon-cloud-upload.svg",
+        "category": "cloud",
+        "tags": ["cloud", "upload", "file", "storage"]
+    },
+    {
+        "name": "icon-clubs.svg",
+        "category": "general",
+        "tags": ["clubs", "symbols", "suit"]
+    },
+    {
+        "name": "icon-cone.svg",
+        "category": "shapes",
+        "tags": ["cone", "shape", "geometry"]
+    },
+    {
+        "name": "icon-cylinder.svg",
+        "category": "shapes",
+        "tags": ["cylinder", "shape", "geometry"]
+    },
+    {
+        "name": "icon-dashboard.svg",
+        "category": "system",
+        "tags": ["dashboard", "control", "interface", "system"]
+    },
+    {
+        "name": "icon-diamonds.svg",
+        "category": "general",
+        "tags": ["diamonds", "symbols", "suit"]
+    },
+    {
+        "name": "icon-dots-horizontal.svg",
+        "category": "general",
+        "tags": ["dots", "horizontal", "separation", "design"]
+    },
+    {
+        "name": "icon-dots-vertical.svg",
+        "category": "general",
+        "tags": ["dots", "vertical", "separation", "design"]
+    },
+    {
+        "name": "icon-external-link.svg",
+        "category": "links",
+        "tags": ["external", "link", "open", "website"]
+    },
+    {
+        "name": "icon-eye.svg",
+        "category": "general",
+        "tags": ["eye", "view", "visibility", "watch"]
+    },
+    {
+        "name": "icon-filter.svg",
+        "category": "tools",
+        "tags": ["filter", "tools", "search", "refine"]
+    },
+    {
+        "name": "icon-gauge.svg",
+        "category": "system",
+        "tags": ["gauge", "measurement", "performance", "system"]
+    },
+    {
+        "name": "icon-gender-female.svg",
+        "category": "gender",
+        "tags": ["female", "gender", "woman", "icon"]
+    },
+    {
+        "name": "icon-gender-male.svg",
+        "category": "gender",
+        "tags": ["male", "gender", "man", "icon"]
+    },
+    {
+        "name": "icon-grid-dots.svg",
+        "category": "design",
+        "tags": ["grid", "dots", "layout", "design"]
+    },
+    {
+        "name": "icon-grip-horizontal.svg",
+        "category": "tools",
+        "tags": ["grip", "horizontal", "drag", "interface"]
+    },
+    {
+        "name": "icon-grip-vertical.svg",
+        "category": "tools",
+        "tags": ["grip", "vertical", "drag", "interface"]
+    },
+    {
+        "name": "icon-hand-metal.svg",
+        "category": "general",
+        "tags": ["hand", "metal", "gesture", "icon"]
+    },
+    {
+        "name": "icon-hand-point.svg",
+        "category": "general",
+        "tags": ["hand", "point", "gesture", "icon"]
+    },
+    {
+        "name": "icon-handshake.svg",
+        "category": "general",
+        "tags": ["handshake", "agreement", "gesture", "icon"]
+    },
+    {
+        "name": "icon-hand-stop.svg",
+        "category": "general",
+        "tags": ["hand", "stop", "gesture", "icon"]
+    },
+    {
+        "name": "icon-heart.svg",
+        "category": "general",
+        "tags": ["heart", "love", "affection", "icon"]
+    },
+    {
+        "name": "icon-help-circle.svg",
+        "category": "help",
+        "tags": ["help", "circle", "assistance", "support"]
+    },
+    {
+        "name": "icon-help-square.svg",
+        "category": "help",
+        "tags": ["help", "square", "assistance", "support"]
+    },
+    {
+        "name": "icon-help-triangle.svg",
+        "category": "help",
+        "tags": ["help", "triangle", "assistance", "support"]
+    },
+    {
+        "name": "icon-hexagons.svg",
+        "category": "shapes",
+        "tags": ["hexagons", "shape", "geometry"]
+    },
+    {
+        "name": "icon-hexagon.svg",
+        "category": "shapes",
+        "tags": ["hexagon", "shape", "geometry"]
+    },
+    {
+        "name": "icon-hourglass.svg",
+        "category": "time",
+        "tags": ["hourglass", "time", "waiting", "sand"]
+    },
+    {
+        "name": "icon-id-badge.svg",
+        "category": "identity",
+        "tags": ["id", "badge", "identity", "profile"]
+    },
+    {
+        "name": "icon-id-card.svg",
+        "category": "identity",
+        "tags": ["id", "card", "identity", "profile"]
+    },
+    {
+        "name": "icon-jewish-star.svg",
+        "category": "symbols",
+        "tags": ["star", "jewish", "symbol", "icon"]
+    },
+    {
+        "name": "icon-loader-2.svg",
+        "category": "loading",
+        "tags": ["loader", "loading", "spinner", "animation"]
+    },
+    {
+        "name": "icon-loader.svg",
+        "category": "loading",
+        "tags": ["loader", "loading", "spinner", "animation"]
+    },
+    {
+        "name": "icon-lock-open.svg",
+        "category": "security",
+        "tags": ["lock", "open", "security", "privacy"]
+    },
+    {
+        "name": "icon-lock.svg",
+        "category": "security",
+        "tags": ["lock", "secure", "privacy", "protection"]
+    },
+    {
+        "name": "icon-menu-2.svg",
+        "category": "navigation",
+        "tags": ["menu", "navigation", "hamburger", "interface"]
+    },
+    {
+        "name": "icon-octagon.svg",
+        "category": "shapes",
+        "tags": ["octagon", "shape", "geometry"]
+    },
+    {
+        "name": "icon-pentagon.svg",
+        "category": "shapes",
+        "tags": ["pentagon", "shape", "geometry"]
+    },
+    {
+        "name": "icon-pointer.svg",
+        "category": "navigation",
+        "tags": ["pointer", "cursor", "navigation", "click"]
+    },
+    {
+        "name": "icon-progress.svg",
+        "category": "general",
+        "tags": ["progress", "status", "loading", "update"]
+    },
+    {
+        "name": "icon-pyramid.svg",
+        "category": "shapes",
+        "tags": ["pyramid", "shape", "geometry"]
+    },
+    {
+        "name": "icon-rectangle.svg",
+        "category": "shapes",
+        "tags": ["rectangle", "shape", "geometry"]
+    },
+    {
+        "name": "icon-rosette.svg",
+        "category": "decorative",
+        "tags": ["rosette", "decorative", "design", "award"]
+    },
+    {
+        "name": "icon-settings-2.svg",
+        "category": "system",
+        "tags": ["settings", "configuration", "controls", "system"]
+    },
+    {
+        "name": "icon-settings.svg",
+        "category": "system",
+        "tags": ["settings", "configuration", "controls", "system"]
+    },
+    {
+        "name": "icon-shield-check.svg",
+        "category": "security",
+        "tags": ["shield", "check", "protection", "security"]
+    },
+    {
+        "name": "icon-shield-lock.svg",
+        "category": "security",
+        "tags": ["shield", "lock", "protection", "security"]
+    },
+    {
+        "name": "icon-shield.svg",
+        "category": "security",
+        "tags": ["shield", "protection", "security", "defense"]
+    },
+    {
+        "name": "icon-spade.svg",
+        "category": "symbols",
+        "tags": ["spade", "suit", "symbol", "icon"]
+    },
+    {
+        "name": "icon-square-check.svg",
+        "category": "form",
+        "tags": ["square", "check", "tick", "form"]
+    },
+    {
+        "name": "icon-square-rounded-check.svg",
+        "category": "form",
+        "tags": ["square", "rounded", "check", "tick", "form"]
+    },
+    {
+        "name": "icon-square-rounded.svg",
+        "category": "shapes",
+        "tags": ["square", "rounded", "shape", "geometry"]
+    },
+    {
+        "name": "icon-square-rounded-x.svg",
+        "category": "form",
+        "tags": ["square", "rounded", "x", "error", "form"]
+    },
+    {
+        "name": "icon-square.svg",
+        "category": "shapes",
+        "tags": ["square", "shape", "geometry"]
+    },
+    {
+        "name": "icon-square-x.svg",
+        "category": "form",
+        "tags": ["square", "x", "error", "form"]
+    },
+    {
+        "name": "icon-stars.svg",
+        "category": "general",
+        "tags": ["stars", "rating", "decorative", "icon"]
+    },
+    {
+        "name": "icon-star.svg",
+        "category": "general",
+        "tags": ["star", "rating", "decorative", "icon"]
+    },
+    {
+        "name": "icon-thumb-down.svg",
+        "category": "feedback",
+        "tags": ["thumb", "down", "feedback", "dislike"]
+    },
+    {
+        "name": "icon-thumb-up.svg",
+        "category": "feedback",
+        "tags": ["thumb", "up", "feedback", "like"]
+    },
+    {
+        "name": "icon-tool.svg",
+        "category": "tools",
+        "tags": ["tool", "utility", "equipment", "icon"]
+    },
+    {
+        "name": "icon-tooltip.svg",
+        "category": "help",
+        "tags": ["tooltip", "info", "assistance", "help"]
+    },
+    {
+        "name": "icon-trash.svg",
+        "category": "actions",
+        "tags": ["trash", "delete", "bin", "remove"]
+    },
+    {
+        "name": "icon-trash-x.svg",
+        "category": "actions",
+        "tags": ["trash", "x", "delete", "error"]
+    },
+    {
+        "name": "icon-triangle-square-circle.svg",
+        "category": "shapes",
+        "tags": ["triangle", "square", "circle", "geometry"]
+    },
+    {
+        "name": "icon-triangle.svg",
+        "category": "shapes",
+        "tags": ["triangle", "shape", "geometry"]
+    },
+    {
+        "name": "icon-user-circle.svg",
+        "category": "identity",
+        "tags": ["user", "circle", "profile", "identity"]
+    },
+    {
+        "name": "icon-user-edit.svg",
+        "category": "identity",
+        "tags": ["user", "edit", "profile", "identity"]
+    },
+    {
+        "name": "icon-user-plus.svg",
+        "category": "identity",
+        "tags": ["user", "add", "profile", "identity"]
+    },
+    {
+        "name": "icon-users-group.svg",
+        "category": "identity",
+        "tags": ["users", "group", "profile", "identity"]
+    },
+    {
+        "name": "icon-users.svg",
+        "category": "identity",
+        "tags": ["users", "profile", "identity", "group"]
+    },
+    {
+        "name": "icon-user.svg",
+        "category": "identity",
+        "tags": ["user", "profile", "identity"]
+    },
+    {
+        "name": "icon-x.svg",
+        "category": "actions",
+        "tags": ["x", "close", "error", "delete"]
+    },
+    {
+        "name": "icon-aperture.svg",
+        "category": "design",
+        "tags": ["aperture", "camera", "photography", "design"]
+    },
+    {
+        "name": "icon-apple.svg",
+        "category": "food",
+        "tags": ["apple", "fruit", "food", "healthy"]
+    },
+    {
+        "name": "icon-baguette.svg",
+        "category": "food",
+        "tags": ["baguette", "bread", "food", "bakery"]
+    },
+    {
+        "name": "icon-banana.svg",
+        "category": "food",
+        "tags": ["banana", "fruit", "food", "healthy"]
+    },
+    {
+        "name": "icon-beer.svg",
+        "category": "beverages",
+        "tags": ["beer", "drink", "beverage", "alcohol"]
+    },
+    {
+        "name": "icon-bottle.svg",
+        "category": "containers",
+        "tags": ["bottle", "container", "drink", "liquid"]
+    },
+    {
+        "name": "icon-bowl.svg",
+        "category": "kitchen",
+        "tags": ["bowl", "dish", "kitchen", "food"]
+    },
+    {
+        "name": "icon-brightness.svg",
+        "category": "settings",
+        "tags": ["brightness", "settings", "adjustment", "screen"]
+    },
+    {
+        "name": "icon-butterfly.svg",
+        "category": "nature",
+        "tags": ["butterfly", "insect", "nature", "wildlife"]
+    },
+    {
+        "name": "icon-cactus.svg",
+        "category": "plants",
+        "tags": ["cactus", "plant", "desert", "nature"]
+    },
+    {
+        "name": "icon-cake.svg",
+        "category": "food",
+        "tags": ["cake", "dessert", "food", "celebration"]
+    },
+    {
+        "name": "icon-candy.svg",
+        "category": "food",
+        "tags": ["candy", "sweet", "food", "treat"]
+    },
+    {
+        "name": "icon-cannabis.svg",
+        "category": "nature",
+        "tags": ["cannabis", "plant", "nature", "herb"]
+    },
+    {
+        "name": "icon-carrot.svg",
+        "category": "food",
+        "tags": ["carrot", "vegetable", "food", "healthy"]
+    },
+    {
+        "name": "icon-cheese.svg",
+        "category": "food",
+        "tags": ["cheese", "dairy", "food", "ingredient"]
+    },
+    {
+        "name": "icon-chef-hat.svg",
+        "category": "kitchen",
+        "tags": ["chef hat", "cooking", "kitchen", "chef"]
+    },
+    {
+        "name": "icon-cherry.svg",
+        "category": "food",
+        "tags": ["cherry", "fruit", "food", "sweet"]
+    },
+    {
+        "name": "icon-christmas-tree.svg",
+        "category": "holidays",
+        "tags": ["christmas tree", "holiday", "christmas", "celebration"]
+    },
+    {
+        "name": "icon-cloud-rain.svg",
+        "category": "weather",
+        "tags": ["cloud", "rain", "weather", "precipitation"]
+    },
+    {
+        "name": "icon-cloud-snow.svg",
+        "category": "weather",
+        "tags": ["cloud", "snow", "weather", "precipitation"]
+    },
+    {
+        "name": "icon-cloud.svg",
+        "category": "weather",
+        "tags": ["cloud", "weather", "sky", "atmosphere"]
+    },
+    {
+        "name": "icon-cloud-thunder.svg",
+        "category": "weather",
+        "tags": ["cloud", "thunder", "weather", "storm"]
+    },
+    {
+        "name": "icon-clover-2.svg",
+        "category": "nature",
+        "tags": ["clover", "nature", "plant", "luck"]
+    },
+    {
+        "name": "icon-clover.svg",
+        "category": "nature",
+        "tags": ["clover", "nature", "plant", "luck"]
+    },
+    {
+        "name": "icon-coffee.svg",
+        "category": "beverages",
+        "tags": ["coffee", "drink", "beverage", "caffeine"]
+    },
+    {
+        "name": "icon-comet.svg",
+        "category": "space",
+        "tags": ["comet", "space", "celestial", "astronomy"]
+    },
+    {
+        "name": "icon-contrast.svg",
+        "category": "settings",
+        "tags": ["contrast", "settings", "adjustment", "screen"]
+    },
+    {
+        "name": "icon-cooker.svg",
+        "category": "kitchen",
+        "tags": ["cooker", "appliance", "kitchen", "cooking"]
+    },
+    {
+        "name": "icon-cookie.svg",
+        "category": "food",
+        "tags": ["cookie", "baked", "dessert", "treat"]
+    },
+    {
+        "name": "icon-cup.svg",
+        "category": "kitchen",
+        "tags": ["cup", "container", "beverage", "kitchen"]
+    },
+    {
+        "name": "icon-donut.svg",
+        "category": "food",
+        "tags": ["donut", "dessert", "food", "sweet"]
+    },
+    {
+        "name": "icon-egg.svg",
+        "category": "food",
+        "tags": ["egg", "food", "ingredient", "protein"]
+    },
+    {
+        "name": "icon-feather.svg",
+        "category": "nature",
+        "tags": ["feather", "nature", "bird", "wildlife"]
+    },
+    {
+        "name": "icon-fish.svg",
+        "category": "food",
+        "tags": ["fish", "seafood", "food", "marine"]
+    },
+    {
+        "name": "icon-flower.svg",
+        "category": "nature",
+        "tags": ["flower", "nature", "plant", "beauty"]
+    },
+    {
+        "name": "icon-glass.svg",
+        "category": "kitchen",
+        "tags": ["glass", "container", "beverage", "kitchen"]
+    },
+    {
+        "name": "icon-grape.svg",
+        "category": "food",
+        "tags": ["grape", "fruit", "food", "healthy"]
+    },
+    {
+        "name": "icon-grill-fork.svg",
+        "category": "kitchen",
+        "tags": ["grill fork", "cooking", "kitchen", "bbq"]
+    },
+    {
+        "name": "icon-grill-spatula.svg",
+        "category": "kitchen",
+        "tags": ["grill spatula", "cooking", "kitchen", "bbq"]
+    },
+    {
+        "name": "icon-grill.svg",
+        "category": "kitchen",
+        "tags": ["grill", "cooking", "kitchen", "bbq"]
+    },
+    {
+        "name": "icon-growth.svg",
+        "category": "nature",
+        "tags": ["growth", "nature", "plant", "development"]
+    },
+    {
+        "name": "icon-ice-cream-2.svg",
+        "category": "food",
+        "tags": ["ice cream", "dessert", "food", "sweet"]
+    },
+    {
+        "name": "icon-ice-cream.svg",
+        "category": "food",
+        "tags": ["ice cream", "dessert", "food", "sweet"]
+    },
+    {
+        "name": "icon-leaf.svg",
+        "category": "nature",
+        "tags": ["leaf", "nature", "plant", "environment"]
+    },
+    {
+        "name": "icon-lemon-2.svg",
+        "category": "food",
+        "tags": ["lemon", "fruit", "food", "citrus"]
+    },
+    {
+        "name": "icon-lemon.svg",
+        "category": "food",
+        "tags": ["lemon", "fruit", "food", "citrus"]
+    },
+    {
+        "name": "icon-lollipop.svg",
+        "category": "food",
+        "tags": ["lollipop", "candy", "dessert", "sweet"]
+    },
+    {
+        "name": "icon-macro.svg",
+        "category": "photography",
+        "tags": ["macro", "photography", "camera", "detail"]
+    },
+    {
+        "name": "icon-meat.svg",
+        "category": "food",
+        "tags": ["meat", "food", "protein", "ingredient"]
+    },
+    {
+        "name": "icon-meteor.svg",
+        "category": "space",
+        "tags": ["meteor", "space", "celestial", "astronomy"]
+    },
+    {
+        "name": "icon-microwave.svg",
+        "category": "kitchen",
+        "tags": ["microwave", "appliance", "kitchen", "cooking"]
+    },
+    {
+        "name": "icon-milkshake.svg",
+        "category": "food",
+        "tags": ["milkshake", "beverage", "dessert", "sweet"]
+    },
+    {
+        "name": "icon-milk.svg",
+        "category": "food",
+        "tags": ["milk", "dairy", "beverage", "ingredient"]
+    },
+    {
+        "name": "icon-mist.svg",
+        "category": "weather",
+        "tags": ["mist", "weather", "atmosphere", "fog"]
+    },
+    {
+        "name": "icon-moon-stars.svg",
+        "category": "space",
+        "tags": ["moon", "stars", "space", "celestial"]
+    },
+    {
+        "name": "icon-moon.svg",
+        "category": "space",
+        "tags": ["moon", "space", "celestial", "night"]
+    },
+    {
+        "name": "icon-mountain.svg",
+        "category": "nature",
+        "tags": ["mountain", "nature", "landscape", "outdoors"]
+    },
+    {
+        "name": "icon-mug.svg",
+        "category": "kitchen",
+        "tags": ["mug", "beverage", "kitchen", "drink"]
+    },
+    {
+        "name": "icon-nut.svg",
+        "category": "food",
+        "tags": ["nut", "food", "snack", "ingredient"]
+    },
+    {
+        "name": "icon-paper-bag.svg",
+        "category": "containers",
+        "tags": ["paper bag", "container", "shopping", "packaging"]
+    },
+    {
+        "name": "icon-pepper.svg",
+        "category": "food",
+        "tags": ["pepper", "spice", "food", "ingredient"]
+    },
+    {
+        "name": "icon-pizza-1.svg",
+        "category": "food",
+        "tags": ["pizza", "food", "dish", "meal"]
+    },
+    {
+        "name": "icon-pizza.svg",
+        "category": "food",
+        "tags": ["pizza", "food", "dish", "meal"]
+    },
+    {
+        "name": "icon-plant-2.svg",
+        "category": "nature",
+        "tags": ["plant", "nature", "growth", "environment"]
+    },
+    {
+        "name": "icon-plant.svg",
+        "category": "nature",
+        "tags": ["plant", "nature", "growth", "environment"]
+    },
+    {
+        "name": "icon-polaroid.svg",
+        "category": "photography",
+        "tags": ["polaroid", "camera", "photography", "photo"]
+    },
+    {
+        "name": "icon-rainbow.svg",
+        "category": "nature",
+        "tags": ["rainbow", "nature", "weather", "colors"]
+    },
+    {
+        "name": "icon-refrigator.svg",
+        "category": "kitchen",
+        "tags": ["refrigerator", "appliance", "kitchen", "cooling"]
+    },
+    {
+        "name": "icon-ripple.svg",
+        "category": "nature",
+        "tags": ["ripple", "water", "nature", "waves"]
+    },
+    {
+        "name": "icon-salad.svg",
+        "category": "food",
+        "tags": ["salad", "food", "healthy", "dish"]
+    },
+    {
+        "name": "icon-salt.svg",
+        "category": "food",
+        "tags": ["salt", "spice", "food", "ingredient"]
+    },
+    {
+        "name": "icon-sausage.svg",
+        "category": "food",
+        "tags": ["sausage", "food", "meat", "dish"]
+    },
+    {
+        "name": "icon-seeding.svg",
+        "category": "nature",
+        "tags": ["seeding", "plant", "nature", "growth"]
+    },
+    {
+        "name": "icon-shadow.svg",
+        "category": "design",
+        "tags": ["shadow", "design", "effect", "graphic"]
+    },
+    {
+        "name": "icon-snail.svg",
+        "category": "nature",
+        "tags": ["snail", "insect", "nature", "wildlife"]
+    },
+    {
+        "name": "icon-snowflake.svg",
+        "category": "weather",
+        "tags": ["snowflake", "weather", "cold", "winter"]
+    },
+    {
+        "name": "icon-soup.svg",
+        "category": "food",
+        "tags": ["soup", "food", "dish", "meal"]
+    },
+    {
+        "name": "icon-storm.svg",
+        "category": "weather",
+        "tags": ["storm", "weather", "stormy", "rain"]
+    },
+    {
+        "name": "icon-sunset.svg",
+        "category": "nature",
+        "tags": ["sunset", "nature", "sky", "evening"]
+    },
+    {
+        "name": "icon-sun.svg",
+        "category": "weather",
+        "tags": ["sun", "weather", "daytime", "brightness"]
+    },
+    {
+        "name": "icon-temperature-celsius.svg",
+        "category": "settings",
+        "tags": ["temperature", "celsius", "weather", "settings"]
+    },
+    {
+        "name": "icon-temperature-fahrenheit.svg",
+        "category": "settings",
+        "tags": ["temperature", "fahrenheit", "weather", "settings"]
+    },
+    {
+        "name": "icon-temperature.svg",
+        "category": "settings",
+        "tags": ["temperature", "weather", "settings", "heat"]
+    },
+    {
+        "name": "icon-wheat.svg",
+        "category": "food",
+        "tags": ["wheat", "grain", "food", "ingredient"]
+    },
+    {
+        "name": "icon-whirl.svg",
+        "category": "nature",
+        "tags": ["whirl", "motion", "nature", "vortex"]
+    },
+    {
+        "name": "icon-wind.svg",
+        "category": "weather",
+        "tags": ["wind", "weather", "air", "nature"]
+    },
+    {
+        "name": "icon-zodiac-aquarius.svg",
+        "category": "astrology",
+        "tags": ["zodiac", "aquarius", "astrology", "sign"]
+    },
+    {
+        "name": "icon-zodiac-aries.svg",
+        "category": "astrology",
+        "tags": ["zodiac", "aries", "astrology", "sign"]
+    },
+    {
+        "name": "icon-zodiac-cancer.svg",
+        "category": "astrology",
+        "tags": ["zodiac", "cancer", "astrology", "sign"]
+    },
+    {
+        "name": "icon-zodiac-capricorn.svg",
+        "category": "astrology",
+        "tags": ["zodiac", "capricorn", "astrology", "sign"]
+    },
+    {
+        "name": "icon-zodiac-gemini.svg",
+        "category": "astrology",
+        "tags": ["zodiac", "gemini", "astrology", "sign"]
+    },
+    {
+        "name": "icon-zodiac-leo.svg",
+        "category": "astrology",
+        "tags": ["zodiac", "leo", "astrology", "sign"]
+    },
+    {
+        "name": "icon-zodiac-libra.svg",
+        "category": "astrology",
+        "tags": ["zodiac", "libra", "astrology", "sign"]
+    },
+    {
+        "name": "icon-zodiac-pisces.svg",
+        "category": "astrology",
+        "tags": ["zodiac", "pisces", "astrology", "sign"]
+    },
+    {
+        "name": "icon-zodiac-sagittarius.svg",
+        "category": "astrology",
+        "tags": ["zodiac", "sagittarius", "astrology", "sign"]
+    },
+    {
+        "name": "icon-zodiac-scorpio.svg",
+        "category": "astrology",
+        "tags": ["zodiac", "scorpio", "astrology", "sign"]
+    },
+    {
+        "name": "icon-zodiac-taurus.svg",
+        "category": "astrology",
+        "tags": ["zodiac", "taurus", "astrology", "sign"]
+    },
+    {
+        "name": "icon-zodiac-virgo.svg",
+        "category": "astrology",
+        "tags": ["zodiac", "virgo", "astrology", "sign"]
+    },
+    {
+        "name": "icon-2fa.svg",
+        "category": "security",
+        "tags": ["2fa", "security", "authentication", "login"]
+    },
+    {
+        "name": "icon-360.svg",
+        "category": "technology",
+        "tags": ["360", "view", "technology", "perspective"]
+    },
+    {
+        "name": "icon-360-view.svg",
+        "category": "technology",
+        "tags": ["360", "view", "technology", "perspective"]
+    },
+    {
+        "name": "icon-3d-cube-sphere.svg",
+        "category": "design",
+        "tags": ["3d", "cube", "sphere", "design"]
+    },
+    {
+        "name": "icon-3d-rotate.svg",
+        "category": "design",
+        "tags": ["3d", "rotate", "design", "animation"]
+    },
+    {
+        "name": "icon-accessible.svg",
+        "category": "accessibility",
+        "tags": ["accessible", "accessibility", "inclusive", "design"]
+    },
+    {
+        "name": "icon-activity-heartbeat.svg",
+        "category": "health",
+        "tags": ["activity", "heartbeat", "health", "fitness"]
+    },
+    {
+        "name": "icon-activity.svg",
+        "category": "health",
+        "tags": ["activity", "health", "fitness", "exercise"]
+    },
+    {
+        "name": "icon-address-book.svg",
+        "category": "communication",
+        "tags": ["address book", "contact", "communication", "directory"]
+    },
+    {
+        "name": "icon-air-conditioning-disabled.svg",
+        "category": "appliances",
+        "tags": ["air conditioning", "disabled", "appliance", "cooling"]
+    },
+    {
+        "name": "icon-album.svg",
+        "category": "media",
+        "tags": ["album", "music", "media", "collection"]
+    },
+    {
+        "name": "icon-anchor.svg",
+        "category": "navigation",
+        "tags": ["anchor", "navigation", "maritime", "sea"]
+    },
+    {
+        "name": "icon-app-window.svg",
+        "category": "technology",
+        "tags": ["app window", "technology", "software", "interface"]
+    },
+    {
+        "name": "icon-armchair.svg",
+        "category": "furniture",
+        "tags": ["armchair", "furniture", "home", "seating"]
+    },
+    {
+        "name": "icon-article.svg",
+        "category": "content",
+        "tags": ["article", "content", "writing", "text"]
+    },
+    {
+        "name": "icon-atom.svg",
+        "category": "science",
+        "tags": ["atom", "science", "chemistry", "particles"]
+    },
+    {
+        "name": "icon-award.svg",
+        "category": "achievement",
+        "tags": ["award", "achievement", "recognition", "trophy"]
+    },
+    {
+        "name": "icon-axe.svg",
+        "category": "tools",
+        "tags": ["axe", "tools", "cutting", "hardware"]
+    },
+    {
+        "name": "icon-backpack.svg",
+        "category": "travel",
+        "tags": ["backpack", "travel", "bag", "gear"]
+    },
+    {
+        "name": "icon-balloon.svg",
+        "category": "celebration",
+        "tags": ["balloon", "celebration", "party", "festivity"]
+    },
+    {
+        "name": "icon-ban.svg",
+        "category": "symbols",
+        "tags": ["ban", "prohibition", "symbol", "restriction"]
+    },
+    {
+        "name": "icon-barrel.svg",
+        "category": "containers",
+        "tags": ["barrel", "container", "storage", "liquid"]
+    },
+    {
+        "name": "icon-barrier-block.svg",
+        "category": "security",
+        "tags": ["barrier", "block", "security", "protection"]
+    },
+    {
+        "name": "icon-bath.svg",
+        "category": "home",
+        "tags": ["bath", "home", "relaxation", "bathroom"]
+    },
+    {
+        "name": "icon-beach.svg",
+        "category": "travel",
+        "tags": ["beach", "travel", "vacation", "sea"]
+    },
+    {
+        "name": "icon-bed.svg",
+        "category": "furniture",
+        "tags": ["bed", "furniture", "home", "sleep"]
+    },
+    {
+        "name": "icon-bell-school.svg",
+        "category": "education",
+        "tags": ["school bell", "education", "classroom", "notification"]
+    },
+    {
+        "name": "icon-bible.svg",
+        "category": "religion",
+        "tags": ["bible", "religion", "book", "scripture"]
+    },
+    {
+        "name": "icon-bolt.svg",
+        "category": "symbols",
+        "tags": ["bolt", "symbol", "energy", "lightning"]
+    },
+    {
+        "name": "icon-bomb.svg",
+        "category": "danger",
+        "tags": ["bomb", "danger", "explosive", "hazard"]
+    },
+    {
+        "name": "icon-bong.svg",
+        "category": "beverages",
+        "tags": ["bong", "beverage", "smoke", "pot"]
+    },
+    {
+        "name": "icon-box-model.svg",
+        "category": "design",
+        "tags": ["box model", "design", "layout", "graphic"]
+    },
+    {
+        "name": "icon-box-padding.svg",
+        "category": "design",
+        "tags": ["box padding", "design", "layout", "graphic"]
+    },
+    {
+        "name": "icon-box.svg",
+        "category": "containers",
+        "tags": ["box", "container", "storage", "package"]
+    },
+    {
+        "name": "icon-briefcase.svg",
+        "category": "business",
+        "tags": ["briefcase", "business", "work", "office"]
+    },
+    {
+        "name": "icon-brush.svg",
+        "category": "tools",
+        "tags": ["brush", "tools", "painting", "art"]
+    },
+    {
+        "name": "icon-bucket-droplet.svg",
+        "category": "tools",
+        "tags": ["bucket", "droplet", "tools", "cleaning"]
+    },
+    {
+        "name": "icon-bucket.svg",
+        "category": "tools",
+        "tags": ["bucket", "tools", "container", "cleaning"]
+    },
+    {
+        "name": "icon-bulb.svg",
+        "category": "design",
+        "tags": ["bulb", "light", "design", "innovation"]
+    },
+    {
+        "name": "icon-businessplan.svg",
+        "category": "business",
+        "tags": ["business plan", "business", "strategy", "document"]
+    },
+    {
+        "name": "icon-candle.svg",
+        "category": "home",
+        "tags": ["candle", "home", "light", "ambiance"]
+    },
+    {
+        "name": "icon-cards.svg",
+        "category": "communication",
+        "tags": ["cards", "communication", "message", "game"]
+    },
+    {
+        "name": "icon-carousel-horizontal.svg",
+        "category": "media",
+        "tags": ["carousel", "horizontal", "media", "display"]
+    },
+    {
+        "name": "icon-chair-director.svg",
+        "category": "furniture",
+        "tags": ["director chair", "furniture", "seating", "office"]
+    },
+    {
+        "name": "icon-checklist.svg",
+        "category": "tools",
+        "tags": ["checklist", "tools", "task", "organization"]
+    },
+    {
+        "name": "icon-click.svg",
+        "category": "technology",
+        "tags": ["click", "technology", "interaction", "interface"]
+    },
+    {
+        "name": "icon-coffin.svg",
+        "category": "symbols",
+        "tags": ["coffin", "symbol", "funeral", "death"]
+    },
+    {
+        "name": "icon-color-filter.svg",
+        "category": "design",
+        "tags": ["color filter", "design", "adjustment", "graphic"]
+    },
+    {
+        "name": "icon-color-picker.svg",
+        "category": "design",
+        "tags": ["color picker", "design", "graphic", "selection"]
+    },
+    {
+        "name": "icon-color-swatch.svg",
+        "category": "design",
+        "tags": ["color swatch", "design", "graphic", "palette"]
+    },
+    {
+        "name": "icon-command.svg",
+        "category": "technology",
+        "tags": ["command", "technology", "interface", "control"]
+    },
+    {
+        "name": "icon-compass.svg",
+        "category": "navigation",
+        "tags": ["compass", "navigation", "direction", "travel"]
+    },
+    {
+        "name": "icon-crop.svg",
+        "category": "design",
+        "tags": ["crop", "design", "photo", "image"]
+    },
+    {
+        "name": "icon-crown.svg",
+        "category": "symbols",
+        "tags": ["crown", "symbol", "royalty", "award"]
+    },
+    {
+        "name": "icon-cut.svg",
+        "category": "tools",
+        "tags": ["cut", "tools", "scissors", "editing"]
+    },
+    {
+        "name": "icon-diamond.svg",
+        "category": "jewelry",
+        "tags": ["diamond", "jewelry", "gem", "precious"]
+    },
+    {
+        "name": "icon-directions.svg",
+        "category": "navigation",
+        "tags": ["directions", "navigation", "maps", "guidance"]
+    },
+    {
+        "name": "icon-door.svg",
+        "category": "home",
+        "tags": ["door", "home", "entry", "access"]
+    },
+    {
+        "name": "icon-droplet-filled.svg",
+        "category": "design",
+        "tags": ["droplet", "filled", "design", "graphic"]
+    },
+    {
+        "name": "icon-droplet.svg",
+        "category": "design",
+        "tags": ["droplet", "design", "liquid", "graphic"]
+    },
+    {
+        "name": "icon-edit-circle.svg",
+        "category": "design",
+        "tags": ["edit circle", "design", "editing", "graphic"]
+    },
+    {
+        "name": "icon-edit.svg",
+        "category": "design",
+        "tags": ["edit", "design", "editing", "tools"]
+    },
+    {
+        "name": "icon-fish-hook.svg",
+        "category": "fishing",
+        "tags": ["fish hook", "fishing", "tools", "outdoors"]
+    },
+    {
+        "name": "icon-flag.svg",
+        "category": "symbols",
+        "tags": ["flag", "symbol", "country", "sign"]
+    },
+    {
+        "name": "icon-flame.svg",
+        "category": "elements",
+        "tags": ["flame", "fire", "elements", "heat"]
+    },
+    {
+        "name": "icon-flip-flops.svg",
+        "category": "fashion",
+        "tags": ["flip flops", "fashion", "footwear", "summer"]
+    },
+    {
+        "name": "icon-folder-symlink.svg",
+        "category": "technology",
+        "tags": ["folder symlink", "technology", "files", "computer"]
+    },
+    {
+        "name": "icon-friends.svg",
+        "category": "social",
+        "tags": ["friends", "social", "people", "relationships"]
+    },
+    {
+        "name": "icon-gavel.svg",
+        "category": "law",
+        "tags": ["gavel", "law", "court", "justice"]
+    },
+    {
+        "name": "icon-ghost.svg",
+        "category": "halloween",
+        "tags": ["ghost", "halloween", "spooky", "supernatural"]
+    },
+    {
+        "name": "icon-gift.svg",
+        "category": "celebration",
+        "tags": ["gift", "celebration", "present", "occasion"]
+    },
+    {
+        "name": "icon-gps.svg",
+        "category": "navigation",
+        "tags": ["gps", "navigation", "location", "technology"]
+    },
+    {
+        "name": "icon-graph.svg",
+        "category": "data",
+        "tags": ["graph", "data", "analysis", "chart"]
+    },
+    {
+        "name": "icon-grave-2.svg",
+        "category": "symbols",
+        "tags": ["grave", "symbol", "cemetery", "funeral"]
+    },
+    {
+        "name": "icon-grave.svg",
+        "category": "symbols",
+        "tags": ["grave", "symbol", "cemetery", "funeral"]
+    },
+    {
+        "name": "icon-guitar-pick.svg",
+        "category": "music",
+        "tags": ["guitar pick", "music", "instrument", "performance"]
+    },
+    {
+        "name": "icon-hammer.svg",
+        "category": "tools",
+        "tags": ["hammer", "tools", "construction", "hardware"]
+    },
+    {
+        "name": "icon-hanger.svg",
+        "category": "fashion",
+        "tags": ["hanger", "fashion", "clothing", "organizer"]
+    },
+    {
+        "name": "icon-hash.svg",
+        "category": "symbols",
+        "tags": ["hash", "symbol", "number", "hashtag"]
+    },
+    {
+        "name": "icon-history-toggle.svg",
+        "category": "technology",
+        "tags": ["history toggle", "technology", "navigation", "data"]
+    },
+    {
+        "name": "icon-horse-toy.svg",
+        "category": "toys",
+        "tags": ["horse toy", "toys", "children", "play"]
+    },
+    {
+        "name": "icon-iron.svg",
+        "category": "appliances",
+        "tags": ["iron", "appliance", "clothing", "household"]
+    },
+    {
+        "name": "icon-jacket.svg",
+        "category": "fashion",
+        "tags": ["jacket", "fashion", "clothing", "outerwear"]
+    },
+    {
+        "name": "icon-key.svg",
+        "category": "security",
+        "tags": ["key", "security", "access", "lock"]
+    },
+    {
+        "name": "icon-ladder.svg",
+        "category": "tools",
+        "tags": ["ladder", "tools", "construction", "climbing"]
+    },
+    {
+        "name": "icon-lamp.svg",
+        "category": "home",
+        "tags": ["lamp", "home", "lighting", "furniture"]
+    },
+    {
+        "name": "icon-layout-dashboard.svg",
+        "category": "design",
+        "tags": ["layout dashboard", "design", "interface", "display"]
+    },
+    {
+        "name": "icon-layout-grid-add.svg",
+        "category": "design",
+        "tags": ["layout grid add", "design", "interface", "graphic"]
+    },
+    {
+        "name": "icon-layout-grid.svg",
+        "category": "design",
+        "tags": ["layout grid", "design", "interface", "graphic"]
+    },
+    {
+        "name": "icon-license.svg",
+        "category": "legal",
+        "tags": ["license", "legal", "document", "authorization"]
+    },
+    {
+        "name": "icon-lifebuoy.svg",
+        "category": "safety",
+        "tags": ["lifebuoy", "safety", "rescue", "float"]
+    },
+    {
+        "name": "icon-lighter.svg",
+        "category": "tools",
+        "tags": ["lighter", "tools", "flame", "fire"]
+    },
+    {
+        "name": "icon-luggage.svg",
+        "category": "travel",
+        "tags": ["luggage", "travel", "bag", "suitcase"]
+    },
+    {
+        "name": "icon-magnet.svg",
+        "category": "science",
+        "tags": ["magnet", "science", "attraction", "physics"]
+    },
+    {
+        "name": "icon-man.svg",
+        "category": "people",
+        "tags": ["man", "people", "gender", "person"]
+    },
+    {
+        "name": "icon-map-2.svg",
+        "category": "navigation",
+        "tags": ["map", "navigation", "location", "directions"]
+    },
+    {
+        "name": "icon-map-pin.svg",
+        "category": "navigation",
+        "tags": ["map pin", "navigation", "location", "marker"]
+    },
+    {
+        "name": "icon-map.svg",
+        "category": "navigation",
+        "tags": ["map", "navigation", "location", "directions"]
+    },
+    {
+        "name": "icon-marquee.svg",
+        "category": "design",
+        "tags": ["marquee", "design", "display", "text"]
+    },
+    {
+        "name": "icon-matchstick.svg",
+        "category": "tools",
+        "tags": ["matchstick", "tools", "fire", "light"]
+    },
+    {
+        "name": "icon-medal.svg",
+        "category": "achievement",
+        "tags": ["medal", "achievement", "award", "recognition"]
+    },
+    {
+        "name": "icon-moneybag.svg",
+        "category": "finance",
+        "tags": ["moneybag", "finance", "currency", "money"]
+    },
+    {
+        "name": "icon-moustache.svg",
+        "category": "fashion",
+        "tags": ["moustache", "fashion", "grooming", "hair"]
+    },
+    {
+        "name": "icon-needle.svg",
+        "category": "tools",
+        "tags": ["needle", "tools", "sewing", "medical"]
+    },
+    {
+        "name": "icon-needle-thread.svg",
+        "category": "tools",
+        "tags": ["needle thread", "tools", "sewing", "textiles"]
+    },
+    {
+        "name": "icon-packages.svg",
+        "category": "shipping",
+        "tags": ["packages", "shipping", "delivery", "parcel"]
+    },
+    {
+        "name": "icon-pacman.svg",
+        "category": "gaming",
+        "tags": ["pacman", "gaming", "retro", "arcade"]
+    },
+    {
+        "name": "icon-paint.svg",
+        "category": "design",
+        "tags": ["paint", "design", "art", "color"]
+    },
+    {
+        "name": "icon-palette.svg",
+        "category": "design",
+        "tags": ["palette", "design", "art", "color"]
+    },
+    {
+        "name": "icon-pencil.svg",
+        "category": "tools",
+        "tags": ["pencil", "tools", "writing", "drawing"]
+    },
+    {
+        "name": "icon-perfume.svg",
+        "category": "beauty",
+        "tags": ["perfume", "beauty", "fragrance", "cosmetics"]
+    },
+    {
+        "name": "icon-pinned.svg",
+        "category": "technology",
+        "tags": ["pinned", "technology", "bookmark", "interface"]
+    },
+    {
+        "name": "icon-pin.svg",
+        "category": "symbols",
+        "tags": ["pin", "symbol", "location", "marker"]
+    },
+    {
+        "name": "icon-podium.svg",
+        "category": "achievement",
+        "tags": ["podium", "achievement", "award", "competition"]
+    },
+    {
+        "name": "icon-point.svg",
+        "category": "design",
+        "tags": ["point", "design", "location", "graphic"]
+    },
+    {
+        "name": "icon-poo.svg",
+        "category": "symbols",
+        "tags": ["poo", "symbol", "emoji", "fun"]
+    },
+    {
+        "name": "icon-pray.svg",
+        "category": "religion",
+        "tags": ["pray", "religion", "spirituality", "faith"]
+    },
+    {
+        "name": "icon-prompt.svg",
+        "category": "technology",
+        "tags": ["prompt", "technology", "interface", "command"]
+    },
+    {
+        "name": "icon-pumpkin-scary.svg",
+        "category": "halloween",
+        "tags": ["pumpkin scary", "halloween", "spooky", "holiday"]
+    },
+    {
+        "name": "icon-recycle.svg",
+        "category": "environment",
+        "tags": ["recycle", "environment", "sustainability", "waste"]
+    },
+    {
+        "name": "icon-replace.svg",
+        "category": "tools",
+        "tags": ["replace", "tools", "substitute", "change"]
+    },
+    {
+        "name": "icon-robot.svg",
+        "category": "technology",
+        "tags": ["robot", "technology", "automation", "mechanical"]
+    },
+    {
+        "name": "icon-rocket.svg",
+        "category": "space",
+        "tags": ["rocket", "space", "launch", "exploration"]
+    },
+    {
+        "name": "icon-rss.svg",
+        "category": "media",
+        "tags": ["rss", "media", "feed", "news"]
+    },
+    {
+        "name": "icon-ruler.svg",
+        "category": "tools",
+        "tags": ["ruler", "tools", "measurement", "design"]
+    },
+    {
+        "name": "icon-scale-outline.svg",
+        "category": "tools",
+        "tags": ["scale outline", "tools", "measurement", "balance"]
+    },
+    {
+        "name": "icon-scale.svg",
+        "category": "tools",
+        "tags": ["scale", "tools", "measurement", "balance"]
+    },
+    {
+        "name": "icon-school-bell.svg",
+        "category": "education",
+        "tags": ["school bell", "education", "notification", "classroom"]
+    },
+    {
+        "name": "icon-search.svg",
+        "category": "technology",
+        "tags": ["search", "technology", "find", "tool"]
+    },
+    {
+        "name": "icon-share.svg",
+        "category": "technology",
+        "tags": ["share", "technology", "communication", "social"]
+    },
+    {
+        "name": "icon-shirt.svg",
+        "category": "fashion",
+        "tags": ["shirt", "fashion", "clothing", "apparel"]
+    },
+    {
+        "name": "icon-shoe.svg",
+        "category": "fashion",
+        "tags": ["shoe", "fashion", "footwear", "apparel"]
+    },
+    {
+        "name": "icon-shovel.svg",
+        "category": "tools",
+        "tags": ["shovel", "tools", "digging", "gardening"]
+    },
+    {
+        "name": "icon-slice.svg",
+        "category": "food",
+        "tags": ["slice", "food", "cut", "pizza"]
+    },
+    {
+        "name": "icon-snowman.svg",
+        "category": "seasonal",
+        "tags": ["snowman", "seasonal", "winter", "holiday"]
+    },
+    {
+        "name": "icon-social.svg",
+        "category": "social",
+        "tags": ["social", "network", "media", "connections"]
+    },
+    {
+        "name": "icon-sock.svg",
+        "category": "fashion",
+        "tags": ["sock", "fashion", "clothing", "apparel"]
+    },
+    {
+        "name": "icon-sofa.svg",
+        "category": "furniture",
+        "tags": ["sofa", "furniture", "home", "seating"]
+    },
+    {
+        "name": "icon-solar-panel.svg",
+        "category": "environment",
+        "tags": ["solar panel", "environment", "energy", "sustainability"]
+    },
+    {
+        "name": "icon-source-code.svg",
+        "category": "technology",
+        "tags": ["source code", "technology", "programming", "development"]
+    },
+    {
+        "name": "icon-sparkles.svg",
+        "category": "design",
+        "tags": ["sparkles", "design", "effects", "glow"]
+    },
+    {
+        "name": "icon-spiral.svg",
+        "category": "design",
+        "tags": ["spiral", "design", "graphic", "pattern"]
+    },
+    {
+        "name": "icon-spray.svg",
+        "category": "tools",
+        "tags": ["spray", "tools", "paint", "application"]
+    },
+    {
+        "name": "icon-spy.svg",
+        "category": "security",
+        "tags": ["spy", "security", "surveillance", "agent"]
+    },
+    {
+        "name": "icon-square-half.svg",
+        "category": "design",
+        "tags": ["square half", "design", "layout", "graphic"]
+    },
+    {
+        "name": "icon-stack-2.svg",
+        "category": "design",
+        "tags": ["stack", "design", "layout", "graphic"]
+    },
+    {
+        "name": "icon-stack.svg",
+        "category": "design",
+        "tags": ["stack", "design", "layout", "graphic"]
+    },
+    {
+        "name": "icon-stereo-glasses.svg",
+        "category": "technology",
+        "tags": ["stereo glasses", "technology", "3d", "media"]
+    },
+    {
+        "name": "icon-swipe.svg",
+        "category": "technology",
+        "tags": ["swipe", "technology", "gesture", "interaction"]
+    },
+    {
+        "name": "icon-swords.svg",
+        "category": "symbols",
+        "tags": ["swords", "symbol", "battle", "combat"]
+    },
+    {
+        "name": "icon-sword.svg",
+        "category": "symbols",
+        "tags": ["sword", "symbol", "battle", "combat"]
+    },
+    {
+        "name": "icon-teapot.svg",
+        "category": "home",
+        "tags": ["teapot", "home", "kitchen", "beverage"]
+    },
+    {
+        "name": "icon-telescope.svg",
+        "category": "science",
+        "tags": ["telescope", "science", "space", "observation"]
+    },
+    {
+        "name": "icon-template.svg",
+        "category": "design",
+        "tags": ["template", "design", "layout", "graphic"]
+    },
+    {
+        "name": "icon-terminal-2.svg",
+        "category": "technology",
+        "tags": ["terminal", "technology", "command", "interface"]
+    },
+    {
+        "name": "icon-terminal.svg",
+        "category": "technology",
+        "tags": ["terminal", "technology", "command", "interface"]
+    },
+    {
+        "name": "icon-test-pipe.svg",
+        "category": "science",
+        "tags": ["test pipe", "science", "experiment", "lab"]
+    },
+    {
+        "name": "icon-texture.svg",
+        "category": "design",
+        "tags": ["texture", "design", "pattern", "graphic"]
+    },
+    {
+        "name": "icon-ticket.svg",
+        "category": "entertainment",
+        "tags": ["ticket", "entertainment", "event", "admission"]
+    },
+    {
+        "name": "icon-tie.svg",
+        "category": "fashion",
+        "tags": ["tie", "fashion", "clothing", "formal"]
+    },
+    {
+        "name": "icon-timeline.svg",
+        "category": "design",
+        "tags": ["timeline", "design", "history", "schedule"]
+    },
+    {
+        "name": "icon-toilet-paper.svg",
+        "category": "home",
+        "tags": ["toilet paper", "home", "bathroom", "hygiene"]
+    },
+    {
+        "name": "icon-tools-kitchen.svg",
+        "category": "home",
+        "tags": ["tools kitchen", "home", "cooking", "appliances"]
+    },
+    {
+        "name": "icon-tools.svg",
+        "category": "tools",
+        "tags": ["tools", "construction", "hardware", "equipment"]
+    },
+    {
+        "name": "icon-traffic-lights.svg",
+        "category": "transportation",
+        "tags": ["traffic lights", "transportation", "road", "signals"]
+    },
+    {
+        "name": "icon-trees.svg",
+        "category": "nature",
+        "tags": ["trees", "nature", "environment", "forest"]
+    },
+    {
+        "name": "icon-tree.svg",
+        "category": "nature",
+        "tags": ["tree", "nature", "environment", "plant"]
+    },
+    {
+        "name": "icon-trident.svg",
+        "category": "symbols",
+        "tags": ["trident", "symbol", "mythology", "weapon"]
+    },
+    {
+        "name": "icon-trophy.svg",
+        "category": "achievement",
+        "tags": ["trophy", "achievement", "award", "competition"]
+    },
+    {
+        "name": "icon-trowel.svg",
+        "category": "tools",
+        "tags": ["trowel", "tools", "gardening", "construction"]
+    },
+    {
+        "name": "icon-ufo.svg",
+        "category": "space",
+        "tags": ["ufo", "space", "alien", "extraterrestrial"]
+    },
+    {
+        "name": "icon-umbrella.svg",
+        "category": "weather",
+        "tags": ["umbrella", "weather", "rain", "protection"]
+    },
+    {
+        "name": "icon-urgent.svg",
+        "category": "symbols",
+        "tags": ["urgent", "symbols", "priority", "emergency"]
+    },
+    {
+        "name": "icon-usb.svg",
+        "category": "technology",
+        "tags": ["usb", "technology", "connectivity", "data"]
+    },
+    {
+        "name": "icon-wallet.svg",
+        "category": "finance",
+        "tags": ["wallet", "finance", "money", "accessory"]
+    },
+    {
+        "name": "icon-wallpaper.svg",
+        "category": "design",
+        "tags": ["wallpaper", "design", "decor", "background"]
+    },
+    {
+        "name": "icon-wall.svg",
+        "category": "home",
+        "tags": ["wall", "home", "architecture", "structure"]
+    },
+    {
+        "name": "icon-wand.svg",
+        "category": "symbols",
+        "tags": ["wand", "symbols", "magic", "fantasy"]
+    },
+    {
+        "name": "icon-wave-saw-tool.svg",
+        "category": "tools",
+        "tags": ["wave saw tool", "tools", "cutting", "construction"]
+    },
+    {
+        "name": "icon-weight.svg",
+        "category": "tools",
+        "tags": ["weight", "tools", "measurement", "fitness"]
+    },
+    {
+        "name": "icon-windmill.svg",
+        "category": "energy",
+        "tags": ["windmill", "energy", "wind", "sustainability"]
+    },
+    {
+        "name": "icon-window.svg",
+        "category": "home",
+        "tags": ["window", "home", "architecture", "view"]
+    },
+    {
+        "name": "icon-woman.svg",
+        "category": "people",
+        "tags": ["woman", "people", "gender", "person"]
+    },
+    {
+        "name": "icon-wood.svg",
+        "category": "materials",
+        "tags": ["wood", "materials", "nature", "construction"]
+    },
+    {
+        "name": "icon-world.svg",
+        "category": "geography",
+        "tags": ["world", "geography", "global", "earth"]
+    },
+    {
+        "name": "icon-zzz.svg",
+        "category": "symbols",
+        "tags": ["zzz", "symbols", "sleep", "rest"]
+    },
+    {
+        "name": "icon-align-center.svg",
+        "category": "design",
+        "tags": ["align center", "design", "text", "layout"]
+    },
+    {
+        "name": "icon-align-justified.svg",
+        "category": "design",
+        "tags": ["align justified", "design", "text", "layout"]
+    },
+    {
+        "name": "icon-align-left.svg",
+        "category": "design",
+        "tags": ["align left", "design", "text", "layout"]
+    },
+    {
+        "name": "icon-align-right.svg",
+        "category": "design",
+        "tags": ["align right", "design", "text", "layout"]
+    },
+    {
+        "name": "icon-asterisk-simple.svg",
+        "category": "symbols",
+        "tags": ["asterisk simple", "symbols", "punctuation", "mark"]
+    },
+    {
+        "name": "icon-at.svg",
+        "category": "symbols",
+        "tags": ["at", "symbols", "email", "address"]
+    },
+    {
+        "name": "icon-backspace.svg",
+        "category": "technology",
+        "tags": ["backspace", "technology", "keyboard", "editing"]
+    },
+    {
+        "name": "icon-blockquote.svg",
+        "category": "design",
+        "tags": ["blockquote", "design", "text", "quote"]
+    },
+    {
+        "name": "icon-bold.svg",
+        "category": "design",
+        "tags": ["bold", "design", "text", "formatting"]
+    },
+    {
+        "name": "icon-code-circle-2.svg",
+        "category": "technology",
+        "tags": ["code circle", "technology", "programming", "development"]
+    },
+    {
+        "name": "icon-code.svg",
+        "category": "technology",
+        "tags": ["code", "technology", "programming", "development"]
+    },
+    {
+        "name": "icon-columns.svg",
+        "category": "design",
+        "tags": ["columns", "design", "layout", "structure"]
+    },
+    {
+        "name": "icon-copy.svg",
+        "category": "technology",
+        "tags": ["copy", "technology", "clipboard", "editing"]
+    },
+    {
+        "name": "icon-eraser.svg",
+        "category": "tools",
+        "tags": ["eraser", "tools", "editing", "cleaning"]
+    },
+    {
+        "name": "icon-forms.svg",
+        "category": "technology",
+        "tags": ["forms", "technology", "data", "input"]
+    },
+    {
+        "name": "icon-h-1.svg",
+        "category": "design",
+        "tags": ["h-1", "design", "text", "heading"]
+    },
+    {
+        "name": "icon-h-2.svg",
+        "category": "design",
+        "tags": ["h-2", "design", "text", "heading"]
+    },
+    {
+        "name": "icon-h-3.svg",
+        "category": "design",
+        "tags": ["h-3", "design", "text", "heading"]
+    },
+    {
+        "name": "icon-h-4.svg",
+        "category": "design",
+        "tags": ["h-4", "design", "text", "heading"]
+    },
+    {
+        "name": "icon-h-5.svg",
+        "category": "design",
+        "tags": ["h-5", "design", "text", "heading"]
+    },
+    {
+        "name": "icon-h-6.svg",
+        "category": "design",
+        "tags": ["h-6", "design", "text", "heading"]
+    },
+    {
+        "name": "icon-heading.svg",
+        "category": "design",
+        "tags": ["heading", "design", "text", "layout"]
+    },
+    {
+        "name": "icon-highlight.svg",
+        "category": "design",
+        "tags": ["highlight", "design", "text", "emphasis"]
+    },
+    {
+        "name": "icon-indent-decrease.svg",
+        "category": "design",
+        "tags": ["indent decrease", "design", "text", "layout"]
+    },
+    {
+        "name": "icon-indent-increase.svg",
+        "category": "design",
+        "tags": ["indent increase", "design", "text", "layout"]
+    },
+    {
+        "name": "icon-italic.svg",
+        "category": "design",
+        "tags": ["italic", "design", "text", "formatting"]
+    },
+    {
+        "name": "icon-letter-camelcase.svg",
+        "category": "design",
+        "tags": ["letter camelcase", "design", "text", "case"]
+    },
+    {
+        "name": "icon-letter-capitalize.svg",
+        "category": "design",
+        "tags": ["letter capitalize", "design", "text", "case"]
+    },
+    {
+        "name": "icon-letter-lowercase.svg",
+        "category": "design",
+        "tags": ["letter lowercase", "design", "text", "case"]
+    },
+    {
+        "name": "icon-letter-spacing.svg",
+        "category": "design",
+        "tags": ["letter spacing", "design", "text", "formatting"]
+    },
+    {
+        "name": "icon-letter-uppercase.svg",
+        "category": "design",
+        "tags": ["letter uppercase", "design", "text", "case"]
+    },
+    {
+        "name": "icon-line-height.svg",
+        "category": "design",
+        "tags": ["line height", "design", "text", "formatting"]
+    },
+    {
+        "name": "icon-link.svg",
+        "category": "design",
+        "tags": ["link", "design", "text", "hyperlink"]
+    },
+    {
+        "name": "icon-list-check.svg",
+        "category": "design",
+        "tags": ["list check", "design", "text", "list"]
+    },
+    {
+        "name": "icon-list-details.svg",
+        "category": "design",
+        "tags": ["list details", "design", "text", "list"]
+    },
+    {
+        "name": "icon-list-numbers.svg",
+        "category": "design",
+        "tags": ["list numbers", "design", "text", "list"]
+    },
+    {
+        "name": "icon-list-search.svg",
+        "category": "design",
+        "tags": ["list search", "design", "text", "list"]
+    },
+    {
+        "name": "icon-list.svg",
+        "category": "design",
+        "tags": ["list", "design", "text", "organization"]
+    },
+    {
+        "name": "icon-markdown.svg",
+        "category": "technology",
+        "tags": ["markdown", "technology", "text", "formatting"]
+    },
+    {
+        "name": "icon-signature.svg",
+        "category": "design",
+        "tags": ["signature", "design", "text", "personalization"]
+    },
+    {
+        "name": "icon-slideshow.svg",
+        "category": "media",
+        "tags": ["slideshow", "media", "presentation", "display"]
+    },
+    {
+        "name": "icon-sort-ascending-numbers.svg",
+        "category": "design",
+        "tags": ["sort ascending numbers", "design", "text", "order"]
+    },
+    {
+        "name": "icon-sort-ascending.svg",
+        "category": "design",
+        "tags": ["sort ascending", "design", "text", "order"]
+    },
+    {
+        "name": "icon-sort-a-z.svg",
+        "category": "design",
+        "tags": ["sort a-z", "design", "text", "order"]
+    },
+    {
+        "name": "icon-sort-descending-numbers.svg",
+        "category": "design",
+        "tags": ["sort descending numbers", "design", "text", "order"]
+    },
+    {
+        "name": "icon-sort-descending.svg",
+        "category": "design",
+        "tags": ["sort descending", "design", "text", "order"]
+    },
+    {
+        "name": "icon-sort-z-a.svg",
+        "category": "design",
+        "tags": ["sort z-a", "design", "text", "order"]
+    },
+    {
+        "name": "icon-strikethrough.svg",
+        "category": "design",
+        "tags": ["strikethrough", "design", "text", "formatting"]
+    },
+    {
+        "name": "icon-subscript.svg",
+        "category": "design",
+        "tags": ["subscript", "design", "text", "formatting"]
+    },
+    {
+        "name": "icon-superscript.svg",
+        "category": "design",
+        "tags": ["superscript", "design", "text", "formatting"]
+    },
+    {
+        "name": "icon-tex.svg",
+        "category": "technology",
+        "tags": ["tex", "technology", "formatting", "mathematics"]
+    },
+    {
+        "name": "icon-text-caption.svg",
+        "category": "design",
+        "tags": ["text caption", "design", "text", "formatting"]
+    },
+    {
+        "name": "icon-text-color.svg",
+        "category": "design",
+        "tags": ["text color", "design", "text", "formatting"]
+    },
+    {
+        "name": "icon-text-decrease.svg",
+        "category": "design",
+        "tags": ["text decrease", "design", "text", "formatting"]
+    },
+    {
+        "name": "icon-text-direction-ltr.svg",
+        "category": "design",
+        "tags": ["text direction ltr", "design", "text", "layout"]
+    },
+    {
+        "name": "icon-text-direction-rtl.svg",
+        "category": "design",
+        "tags": ["text direction rtl", "design", "text", "layout"]
+    },
+    {
+        "name": "icon-text-increase.svg",
+        "category": "design",
+        "tags": ["text increase", "design", "text", "formatting"]
+    },
+    {
+        "name": "icon-text-orientation.svg",
+        "category": "design",
+        "tags": ["text orientation", "design", "text", "formatting"]
+    },
+    {
+        "name": "icon-text-plus.svg",
+        "category": "design",
+        "tags": ["text plus", "design", "text", "formatting"]
+    },
+    {
+        "name": "icon-text-recognition.svg",
+        "category": "technology",
+        "tags": ["text recognition", "technology", "OCR", "text"]
+    },
+    {
+        "name": "icon-text-size.svg",
+        "category": "design",
+        "tags": ["text size", "design", "text", "formatting"]
+    },
+    {
+        "name": "icon-text-spellcheck.svg",
+        "category": "technology",
+        "tags": ["text spellcheck", "technology", "editing", "text"]
+    },
+    {
+        "name": "icon-text-wrap-disabled.svg",
+        "category": "design",
+        "tags": ["text wrap disabled", "design", "text", "formatting"]
+    },
+    {
+        "name": "icon-text-wrap.svg",
+        "category": "design",
+        "tags": ["text wrap", "design", "text", "formatting"]
+    },
+    {
+        "name": "icon-typography-off.svg",
+        "category": "design",
+        "tags": ["typography off", "design", "text", "formatting"]
+    },
+    {
+        "name": "icon-typography.svg",
+        "category": "design",
+        "tags": ["typography", "design", "text", "formatting"]
+    },
+    {
+        "name": "icon-underline.svg",
+        "category": "design",
+        "tags": ["underline", "design", "text", "formatting"]
+    },
+    {
+        "name": "icon-unlink.svg",
+        "category": "design",
+        "tags": ["unlink", "design", "text", "formatting"]
+    },
+    {
+        "name": "icon-arrow-badge-down.svg",
+        "category": "arrows",
+        "tags": ["arrow", "down", "badge", "direction"]
+    },
+    {
+        "name": "icon-arrow-badge-left.svg",
+        "category": "arrows",
+        "tags": ["arrow", "left", "badge", "direction"]
+    },
+    {
+        "name": "icon-arrow-badge-right.svg",
+        "category": "arrows",
+        "tags": ["arrow", "right", "badge", "direction"]
+    },
+    {
+        "name": "icon-arrow-badge-up.svg",
+        "category": "arrows",
+        "tags": ["arrow", "up", "badge", "direction"]
+    },
+    {
+        "name": "icon-arrow-bar-down.svg",
+        "category": "arrows",
+        "tags": ["arrow", "bar", "down", "direction"]
+    },
+    {
+        "name": "icon-arrow-bar-left.svg",
+        "category": "arrows",
+        "tags": ["arrow", "bar", "left", "direction"]
+    },
+    {
+        "name": "icon-arrow-bar-right.svg",
+        "category": "arrows",
+        "tags": ["arrow", "bar", "right", "direction"]
+    },
+    {
+        "name": "icon-arrow-bar-to-down.svg",
+        "category": "arrows",
+        "tags": ["arrow", "bar", "to", "down", "direction"]
+    },
+    {
+        "name": "icon-arrow-bar-to-left.svg",
+        "category": "arrows",
+        "tags": ["arrow", "bar", "to", "left", "direction"]
+    },
+    {
+        "name": "icon-arrow-bar-to-right.svg",
+        "category": "arrows",
+        "tags": ["arrow", "bar", "to", "right", "direction"]
+    },
+    {
+        "name": "icon-arrow-bar-to-up.svg",
+        "category": "arrows",
+        "tags": ["arrow", "bar", "to", "up", "direction"]
+    },
+    {
+        "name": "icon-arrow-bar-up.svg",
+        "category": "arrows",
+        "tags": ["arrow", "bar", "up", "direction"]
+    },
+    {
+        "name": "icon-arrow-bear-left.svg",
+        "category": "arrows",
+        "tags": ["arrow", "bear", "left", "direction"]
+    },
+    {
+        "name": "icon-arrow-bear-right.svg",
+        "category": "arrows",
+        "tags": ["arrow", "bear", "right", "direction"]
+    },
+    {
+        "name": "icon-arrow-big-down-line.svg",
+        "category": "arrows",
+        "tags": ["arrow", "big", "down", "line", "direction"]
+    },
+    {
+        "name": "icon-arrow-big-down.svg",
+        "category": "arrows",
+        "tags": ["arrow", "big", "down", "direction"]
+    },
+    {
+        "name": "icon-arrow-big-left-line.svg",
+        "category": "arrows",
+        "tags": ["arrow", "big", "left", "line", "direction"]
+    },
+    {
+        "name": "icon-arrow-big-left.svg",
+        "category": "arrows",
+        "tags": ["arrow", "big", "left", "direction"]
+    },
+    {
+        "name": "icon-arrow-big-right-line.svg",
+        "category": "arrows",
+        "tags": ["arrow", "big", "right", "line", "direction"]
+    },
+    {
+        "name": "icon-arrow-big-right.svg",
+        "category": "arrows",
+        "tags": ["arrow", "big", "right", "direction"]
+    },
+    {
+        "name": "icon-arrow-big-up-line.svg",
+        "category": "arrows",
+        "tags": ["arrow", "big", "up", "line", "direction"]
+    },
+    {
+        "name": "icon-arrow-big-up.svg",
+        "category": "arrows",
+        "tags": ["arrow", "big", "up", "direction"]
+    },
+    {
+        "name": "icon-arrow-curve-left.svg",
+        "category": "arrows",
+        "tags": ["arrow", "curve", "left", "direction"]
+    },
+    {
+        "name": "icon-arrow-curve-right.svg",
+        "category": "arrows",
+        "tags": ["arrow", "curve", "right", "direction"]
+    },
+    {
+        "name": "icon-arrow-down.svg",
+        "category": "arrows",
+        "tags": ["arrow", "down", "direction"]
+    },
+    {
+        "name": "icon-arrow-guide.svg",
+        "category": "arrows",
+        "tags": ["arrow", "guide", "direction", "navigation"]
+    },
+    {
+        "name": "icon-arrow-left-right.svg",
+        "category": "arrows",
+        "tags": ["arrow", "left", "right", "direction"]
+    },
+    {
+        "name": "icon-arrow-left.svg",
+        "category": "arrows",
+        "tags": ["arrow", "left", "direction"]
+    },
+    {
+        "name": "icon-arrow-right.svg",
+        "category": "arrows",
+        "tags": ["arrow", "right", "direction"]
+    },
+    {
+        "name": "icon-arrows-cross.svg",
+        "category": "arrows",
+        "tags": ["arrows", "cross", "direction", "intersection"]
+    },
+    {
+        "name": "icon-arrows-diff.svg",
+        "category": "arrows",
+        "tags": ["arrows", "diff", "difference", "direction"]
+    },
+    {
+        "name": "icon-arrows-down-up.svg",
+        "category": "arrows",
+        "tags": ["arrows", "down", "up", "direction"]
+    },
+    {
+        "name": "icon-arrows-exchange.svg",
+        "category": "arrows",
+        "tags": ["arrows", "exchange", "direction", "swap"]
+    },
+    {
+        "name": "icon-arrows-horizontal.svg",
+        "category": "arrows",
+        "tags": ["arrows", "horizontal", "direction"]
+    },
+    {
+        "name": "icon-arrows-maximize.svg",
+        "category": "arrows",
+        "tags": ["arrows", "maximize", "expand", "direction"]
+    },
+    {
+        "name": "icon-arrows-minimize.svg",
+        "category": "arrows",
+        "tags": ["arrows", "minimize", "collapse", "direction"]
+    },
+    {
+        "name": "icon-arrows-move-horizontal.svg",
+        "category": "arrows",
+        "tags": ["arrows", "move", "horizontal", "direction"]
+    },
+    {
+        "name": "icon-arrows-move-vertical.svg",
+        "category": "arrows",
+        "tags": ["arrows", "move", "vertical", "direction"]
+    },
+    {
+        "name": "icon-arrows-vertical.svg",
+        "category": "arrows",
+        "tags": ["arrows", "vertical", "direction"]
+    },
+    {
+        "name": "icon-arrow-up.svg",
+        "category": "arrows",
+        "tags": ["arrow", "up", "direction"]
+    },
+    {
+        "name": "icon-chevron-down.svg",
+        "category": "arrows",
+        "tags": ["chevron", "down", "direction"]
+    },
+    {
+        "name": "icon-chevron-left.svg",
+        "category": "arrows",
+        "tags": ["chevron", "left", "direction"]
+    },
+    {
+        "name": "icon-chevron-right.svg",
+        "category": "arrows",
+        "tags": ["chevron", "right", "direction"]
+    },
+    {
+        "name": "icon-chevrons-down.svg",
+        "category": "arrows",
+        "tags": ["chevrons", "down", "direction"]
+    },
+    {
+        "name": "icon-chevrons-left.svg",
+        "category": "arrows",
+        "tags": ["chevrons", "left", "direction"]
+    },
+    {
+        "name": "icon-chevrons-right.svg",
+        "category": "arrows",
+        "tags": ["chevrons", "right", "direction"]
+    },
+    {
+        "name": "icon-chevrons-up-down.svg",
+        "category": "arrows",
+        "tags": ["chevrons", "up", "down", "direction"]
+    },
+    {
+        "name": "icon-chevrons-up.svg",
+        "category": "arrows",
+        "tags": ["chevrons", "up", "direction"]
+    },
+    {
+        "name": "icon-chevron-up.svg",
+        "category": "arrows",
+        "tags": ["chevron", "up", "direction"]
+    },
+    {
+        "name": "icon-circle-arrow-down.svg",
+        "category": "arrows",
+        "tags": ["circle", "arrow", "down", "direction"]
+    },
+    {
+        "name": "icon-circle-arrow-left.svg",
+        "category": "arrows",
+        "tags": ["circle", "arrow", "left", "direction"]
+    },
+    {
+        "name": "icon-circle-arrow-right.svg",
+        "category": "arrows",
+        "tags": ["circle", "arrow", "right", "direction"]
+    },
+    {
+        "name": "icon-circle-arrow-up.svg",
+        "category": "arrows",
+        "tags": ["circle", "arrow", "up", "direction"]
+    },
+    {
+        "name": "icon-download.svg",
+        "category": "actions",
+        "tags": ["download", "action", "file", "transfer"]
+    },
+    {
+        "name": "icon-login.svg",
+        "category": "actions",
+        "tags": ["login", "enter", "authentication", "access"]
+    },
+    {
+        "name": "icon-logout.svg",
+        "category": "actions",
+        "tags": ["logout", "exit", "authentication", "access"]
+    },
+    {
+        "name": "icon-refresh.svg",
+        "category": "actions",
+        "tags": ["refresh", "reload", "update", "action"]
+    },
+    {
+        "name": "icon-rotate.svg",
+        "category": "actions",
+        "tags": ["rotate", "action", "movement", "transform"]
+    },
+    {
+        "name": "icon-share-2.svg",
+        "category": "actions",
+        "tags": ["share", "action", "social", "distribution"]
+    },
+    {
+        "name": "icon-share-3.svg",
+        "category": "actions",
+        "tags": ["share", "action", "social", "distribution"]
+    },
+    {
+        "name": "icon-trending-down.svg",
+        "category": "general",
+        "tags": ["trending", "down", "trend", "market"]
+    },
+    {
+        "name": "icon-trending-up.svg",
+        "category": "general",
+        "tags": ["trending", "up", "trend", "market"]
+    },
+    {
+        "name": "icon-upload.svg",
+        "category": "actions",
+        "tags": ["upload", "action", "file", "transfer"]
+    },
+    {
+        "name": "icon-aerial-lift.svg",
+        "category": "vehicles",
+        "tags": ["aerial", "lift", "vehicle", "elevating"]
+    },
+    {
+        "name": "icon-air-balloon.svg",
+        "category": "vehicles",
+        "tags": ["air", "balloon", "vehicle", "flight"]
+    },
+    {
+        "name": "icon-ambulance.svg",
+        "category": "vehicles",
+        "tags": ["ambulance", "emergency", "medical", "rescue"]
+    },
+    {
+        "name": "icon-backhoe.svg",
+        "category": "construction",
+        "tags": ["backhoe", "construction", "digging", "machine"]
+    },
+    {
+        "name": "icon-bike.svg",
+        "category": "vehicles",
+        "tags": ["bike", "bicycle", "vehicle", "transport"]
+    },
+    {
+        "name": "icon-building-arch.svg",
+        "category": "buildings",
+        "tags": ["building", "arch", "architecture", "structure"]
+    },
+    {
+        "name": "icon-building-bank.svg",
+        "category": "buildings",
+        "tags": ["building", "bank", "financial", "structure"]
+    },
+    {
+        "name": "icon-building-bridge-2.svg",
+        "category": "buildings",
+        "tags": ["building", "bridge", "structure", "architecture"]
+    },
+    {
+        "name": "icon-building-bridge.svg",
+        "category": "buildings",
+        "tags": ["building", "bridge", "structure", "architecture"]
+    },
+    {
+        "name": "icon-building-broadcast-tower.svg",
+        "category": "buildings",
+        "tags": ["building", "broadcast", "tower", "communication"]
+    },
+    {
+        "name": "icon-building-carousel.svg",
+        "category": "buildings",
+        "tags": ["building", "carousel", "amusement", "structure"]
+    },
+    {
+        "name": "icon-building-castle.svg",
+        "category": "buildings",
+        "tags": ["building", "castle", "historical", "structure"]
+    },
+    {
+        "name": "icon-building-church.svg",
+        "category": "buildings",
+        "tags": ["building", "church", "religious", "structure"]
+    },
+    {
+        "name": "icon-building-circus.svg",
+        "category": "buildings",
+        "tags": ["building", "circus", "entertainment", "structure"]
+    },
+    {
+        "name": "icon-building-community.svg",
+        "category": "buildings",
+        "tags": ["building", "community", "center", "structure"]
+    },
+    {
+        "name": "icon-building-cottage.svg",
+        "category": "buildings",
+        "tags": ["building", "cottage", "home", "structure"]
+    },
+    {
+        "name": "icon-building-estate.svg",
+        "category": "buildings",
+        "tags": ["building", "estate", "property", "structure"]
+    },
+    {
+        "name": "icon-building-factory.svg",
+        "category": "buildings",
+        "tags": ["building", "factory", "industrial", "structure"]
+    },
+    {
+        "name": "icon-building-hospital.svg",
+        "category": "buildings",
+        "tags": ["building", "hospital", "medical", "structure"]
+    },
+    {
+        "name": "icon-building-lighthouse.svg",
+        "category": "buildings",
+        "tags": ["building", "lighthouse", "navigation", "structure"]
+    },
+    {
+        "name": "icon-building-monument.svg",
+        "category": "buildings",
+        "tags": ["building", "monument", "historical", "structure"]
+    },
+    {
+        "name": "icon-building-pavilion.svg",
+        "category": "buildings",
+        "tags": ["building", "pavilion", "structure", "outdoor"]
+    },
+    {
+        "name": "icon-building-school.svg",
+        "category": "buildings",
+        "tags": ["building", "school", "education", "structure"]
+    },
+    {
+        "name": "icon-building-skyscraper.svg",
+        "category": "buildings",
+        "tags": ["building", "skyscraper", "tall", "structure"]
+    },
+    {
+        "name": "icon-building-stadium.svg",
+        "category": "buildings",
+        "tags": ["building", "stadium", "sports", "structure"]
+    },
+    {
+        "name": "icon-building-store.svg",
+        "category": "buildings",
+        "tags": ["building", "store", "retail", "structure"]
+    },
+    {
+        "name": "icon-building.svg",
+        "category": "buildings",
+        "tags": ["building", "structure", "architecture"]
+    },
+    {
+        "name": "icon-building-tunnel.svg",
+        "category": "buildings",
+        "tags": ["building", "tunnel", "underground", "structure"]
+    },
+    {
+        "name": "icon-building-university.svg",
+        "category": "buildings",
+        "tags": ["building", "university", "education", "structure"]
+    },
+    {
+        "name": "icon-building-warehouse.svg",
+        "category": "buildings",
+        "tags": ["building", "warehouse", "storage", "structure"]
+    },
+    {
+        "name": "icon-building-wind-turbine.svg",
+        "category": "buildings",
+        "tags": ["building", "wind turbine", "energy", "structure"]
+    },
+    {
+        "name": "icon-bulldozer.svg",
+        "category": "construction",
+        "tags": ["bulldozer", "construction", "machine", "digging"]
+    },
+    {
+        "name": "icon-bus-stop.svg",
+        "category": "transportation",
+        "tags": ["bus", "stop", "transportation", "public"]
+    },
+    {
+        "name": "icon-bus.svg",
+        "category": "transportation",
+        "tags": ["bus", "vehicle", "transportation", "public"]
+    },
+    {
+        "name": "icon-caravan.svg",
+        "category": "vehicles",
+        "tags": ["caravan", "vehicle", "travel", "recreational"]
+    },
+    {
+        "name": "icon-car-crane.svg",
+        "category": "vehicles",
+        "tags": ["car", "crane", "vehicle", "lifting"]
+    },
+    {
+        "name": "icon-car.svg",
+        "category": "vehicles",
+        "tags": ["car", "vehicle", "transport"]
+    },
+    {
+        "name": "icon-charging-pile.svg",
+        "category": "electric",
+        "tags": ["charging", "pile", "electric", "vehicle"]
+    },
+    {
+        "name": "icon-engine.svg",
+        "category": "vehicles",
+        "tags": ["engine", "machine", "vehicle", "power"]
+    },
+    {
+        "name": "icon-fence.svg",
+        "category": "construction",
+        "tags": ["fence", "barrier", "construction", "boundary"]
+    },
+    {
+        "name": "icon-firetruck.svg",
+        "category": "vehicles",
+        "tags": ["firetruck", "emergency", "vehicle", "fire"]
+    },
+    {
+        "name": "icon-forklift.svg",
+        "category": "construction",
+        "tags": ["forklift", "machine", "lifting", "warehouse"]
+    },
+    {
+        "name": "icon-garden-cart.svg",
+        "category": "gardening",
+        "tags": ["garden", "cart", "tool", "outdoor"]
+    },
+    {
+        "name": "icon-helicopter.svg",
+        "category": "vehicles",
+        "tags": ["helicopter", "air", "vehicle", "flight"]
+    },
+    {
+        "name": "icon-home-2.svg",
+        "category": "buildings",
+        "tags": ["home", "building", "house", "residential"]
+    },
+    {
+        "name": "icon-home.svg",
+        "category": "buildings",
+        "tags": ["home", "building", "house", "residential"]
+    },
+    {
+        "name": "icon-moped.svg",
+        "category": "vehicles",
+        "tags": ["moped", "vehicle", "transport", "scooter"]
+    },
+    {
+        "name": "icon-motorbike.svg",
+        "category": "vehicles",
+        "tags": ["motorbike", "vehicle", "transport", "bike"]
+    },
+    {
+        "name": "icon-parachute.svg",
+        "category": "equipment",
+        "tags": ["parachute", "gear", "safety", "flight"]
+    },
+    {
+        "name": "icon-plane.svg",
+        "category": "vehicles",
+        "tags": ["plane", "air", "vehicle", "flight"]
+    },
+    {
+        "name": "icon-sailboat.svg",
+        "category": "vehicles",
+        "tags": ["sailboat", "water", "vehicle", "boating"]
+    },
+    {
+        "name": "icon-scooter.svg",
+        "category": "vehicles",
+        "tags": ["scooter", "vehicle", "transport", "personal"]
+    },
+    {
+        "name": "icon-ship.svg",
+        "category": "vehicles",
+        "tags": ["ship", "water", "vehicle", "transport"]
+    },
+    {
+        "name": "icon-smart-home.svg",
+        "category": "technology",
+        "tags": ["smart", "home", "technology", "automation"]
+    },
+    {
+        "name": "icon-speedboat.svg",
+        "category": "vehicles",
+        "tags": ["speedboat", "water", "vehicle", "boating"]
+    },
+    {
+        "name": "icon-submarine.svg",
+        "category": "vehicles",
+        "tags": ["submarine", "water", "vehicle", "underwater"]
+    },
+    {
+        "name": "icon-tank.svg",
+        "category": "vehicles",
+        "tags": ["tank", "vehicle", "military", "heavy"]
+    },
+    {
+        "name": "icon-tir.svg",
+        "category": "vehicles",
+        "tags": ["tir", "truck", "vehicle", "transport"]
+    },
+    {
+        "name": "icon-tower.svg",
+        "category": "structures",
+        "tags": ["tower", "structure", "building", "high"]
+    },
+    {
+        "name": "icon-tractor.svg",
+        "category": "vehicles",
+        "tags": ["tractor", "vehicle", "agriculture", "machine"]
+    },
+    {
+        "name": "icon-train.svg",
+        "category": "vehicles",
+        "tags": ["train", "vehicle", "transport", "rail"]
+    },
+    {
+        "name": "icon-truck.svg",
+        "category": "vehicles",
+        "tags": ["truck", "vehicle", "transport", "heavy"]
+    },
+    {
+        "name": "icon-wrecking-ball.svg",
+        "category": "construction",
+        "tags": ["wrecking ball", "demolition", "machine", "construction"]
+    },
+    {
+        "name": "icon-zeppelin.svg",
+        "category": "vehicles",
+        "tags": ["zeppelin", "airship", "vehicle", "flight"]
+    },
+    {
+        "name": "icon-chart-arcs.svg",
+        "category": "charts",
+        "tags": ["chart", "arcs", "data", "visualization"]
+    },
+    {
+        "name": "icon-chart-area-line.svg",
+        "category": "charts",
+        "tags": ["chart", "area", "line", "data", "visualization"]
+    },
+    {
+        "name": "icon-chart-area.svg",
+        "category": "charts",
+        "tags": ["chart", "area", "data", "visualization"]
+    },
+    {
+        "name": "icon-chart-arrows.svg",
+        "category": "charts",
+        "tags": ["chart", "arrows", "data", "trends"]
+    },
+    {
+        "name": "icon-chart-arrows-vertical.svg",
+        "category": "charts",
+        "tags": ["chart", "arrows", "vertical", "data", "trends"]
+    },
+    {
+        "name": "icon-chart-bar.svg",
+        "category": "charts",
+        "tags": ["chart", "bar", "data", "visualization"]
+    },
+    {
+        "name": "icon-chart-bubble.svg",
+        "category": "charts",
+        "tags": ["chart", "bubble", "data", "visualization"]
+    },
+    {
+        "name": "icon-chart-candle.svg",
+        "category": "charts",
+        "tags": ["chart", "candle", "data", "candlestick"]
+    },
+    {
+        "name": "icon-chart-circles.svg",
+        "category": "charts",
+        "tags": ["chart", "circles", "data", "visualization"]
+    },
+    {
+        "name": "icon-chart-donut.svg",
+        "category": "charts",
+        "tags": ["chart", "donut", "data", "visualization"]
+    },
+    {
+        "name": "icon-chart-dots.svg",
+        "category": "charts",
+        "tags": ["chart", "dots", "data", "visualization"]
+    },
+    {
+        "name": "icon-chart-grid-dots.svg",
+        "category": "charts",
+        "tags": ["chart", "grid", "dots", "data", "visualization"]
+    },
+    {
+        "name": "icon-chart-histogram.svg",
+        "category": "charts",
+        "tags": ["chart", "histogram", "data", "visualization"]
+    },
+    {
+        "name": "icon-chart-infographic.svg",
+        "category": "charts",
+        "tags": ["chart", "infographic", "data", "visualization"]
+    },
+    {
+        "name": "icon-chart-line.svg",
+        "category": "charts",
+        "tags": ["chart", "line", "data", "visualization"]
+    },
+    {
+        "name": "icon-chart-pie.svg",
+        "category": "charts",
+        "tags": ["chart", "pie", "data", "visualization"]
+    },
+    {
+        "name": "icon-chart-radar.svg",
+        "category": "charts",
+        "tags": ["chart", "radar", "data", "visualization"]
+    },
+    {
+        "name": "icon-chart-sankey.svg",
+        "category": "charts",
+        "tags": ["chart", "sankey", "data", "flow"]
+    },
+    {
+        "name": "icon-chart-treemap.svg",
+        "category": "charts",
+        "tags": ["chart", "treemap", "data", "visualization"]
+    },
+    {
+        "name": "icon-column-insert-left.svg",
+        "category": "data",
+        "tags": ["column", "insert", "left", "data", "table"]
+    },
+    {
+        "name": "icon-column-insert-right.svg",
+        "category": "data",
+        "tags": ["column", "insert", "right", "data", "table"]
+    },
+    {
+        "name": "icon-database.svg",
+        "category": "data",
+        "tags": ["database", "storage", "data", "management"]
+    },
+    {
+        "name": "icon-git-branch-deleted.svg",
+        "category": "version-control",
+        "tags": ["git", "branch", "deleted", "version", "control"]
+    },
+    {
+        "name": "icon-git-branch.svg",
+        "category": "version-control",
+        "tags": ["git", "branch", "version", "control"]
+    },
+    {
+        "name": "icon-git-cherry-pick.svg",
+        "category": "version-control",
+        "tags": ["git", "cherry pick", "version", "control"]
+    },
+    {
+        "name": "icon-git-commit.svg",
+        "category": "version-control",
+        "tags": ["git", "commit", "version", "control"]
+    },
+    {
+        "name": "icon-git-compare.svg",
+        "category": "version-control",
+        "tags": ["git", "compare", "version", "control"]
+    },
+    {
+        "name": "icon-git-fork.svg",
+        "category": "version-control",
+        "tags": ["git", "fork", "version", "control"]
+    },
+    {
+        "name": "icon-git-merge.svg",
+        "category": "version-control",
+        "tags": ["git", "merge", "version", "control"]
+    },
+    {
+        "name": "icon-git-pull-request-closed.svg",
+        "category": "version-control",
+        "tags": ["git", "pull request", "closed", "version", "control"]
+    },
+    {
+        "name": "icon-git-pull-request-draft.svg",
+        "category": "version-control",
+        "tags": ["git", "pull request", "draft", "version", "control"]
+    },
+    {
+        "name": "icon-git-pull-request.svg",
+        "category": "version-control",
+        "tags": ["git", "pull request", "version", "control"]
+    },
+    {
+        "name": "icon-relation-many-to-many.svg",
+        "category": "data",
+        "tags": ["relation", "many-to-many", "data", "schema"]
+    },
+    {
+        "name": "icon-relation-one-to-many.svg",
+        "category": "data",
+        "tags": ["relation", "one-to-many", "data", "schema"]
+    },
+    {
+        "name": "icon-relation-one-to-one.svg",
+        "category": "data",
+        "tags": ["relation", "one-to-one", "data", "schema"]
+    },
+    {
+        "name": "icon-row-insert-bottom.svg",
+        "category": "data",
+        "tags": ["row", "insert", "bottom", "data", "table"]
+    },
+    {
+        "name": "icon-row-insert-top.svg",
+        "category": "data",
+        "tags": ["row", "insert", "top", "data", "table"]
+    },
+    {
+        "name": "icon-schema-off.svg",
+        "category": "data",
+        "tags": ["schema", "off", "data", "structure"]
+    },
+    {
+        "name": "icon-schema.svg",
+        "category": "data",
+        "tags": ["schema", "data", "structure"]
+    },
+    {
+        "name": "icon-table-plus.svg",
+        "category": "data",
+        "tags": ["table", "plus", "data", "addition"]
+    },
+    {
+        "name": "icon-table.svg",
+        "category": "data",
+        "tags": ["table", "data", "grid", "structure"]
+    },
+    {
+        "name": "icon-microphone.svg",
+        "category": "hardware",
+        "tags": ["microphone", "audio", "device", "hardware"]
+    },
+    {
+        "name": "icon-mouse-2.svg",
+        "category": "hardware",
+        "tags": ["mouse", "input", "device", "hardware"]
+    },
+    {
+        "name": "icon-movie.svg",
+        "category": "media",
+        "tags": ["movie", "film", "media", "entertainment"]
+    },
+    {
+        "name": "icon-music.svg",
+        "category": "media",
+        "tags": ["music", "audio", "media", "entertainment"]
+    },
+    {
+        "name": "icon-nfc.svg",
+        "category": "hardware",
+        "tags": ["NFC", "near field communication", "technology", "hardware"]
+    },
+    {
+        "name": "icon-phone.svg",
+        "category": "hardware",
+        "tags": ["phone", "device", "communication", "hardware"]
+    },
+    {
+        "name": "icon-photo.svg",
+        "category": "media",
+        "tags": ["photo", "image", "media", "photography"]
+    },
+    {
+        "name": "icon-picture-in-picture-on.svg",
+        "category": "media",
+        "tags": ["picture-in-picture", "media", "video", "view"]
+    },
+    {
+        "name": "icon-player-eject.svg",
+        "category": "media",
+        "tags": ["player", "eject", "media", "control"]
+    },
+    {
+        "name": "icon-player-pause.svg",
+        "category": "media",
+        "tags": ["player", "pause", "media", "control"]
+    },
+    {
+        "name": "icon-player-play.svg",
+        "category": "media",
+        "tags": ["player", "play", "media", "control"]
+    },
+    {
+        "name": "icon-player-record.svg",
+        "category": "media",
+        "tags": ["player", "record", "media", "control"]
+    },
+    {
+        "name": "icon-player-skip-back.svg",
+        "category": "media",
+        "tags": ["player", "skip back", "media", "control"]
+    },
+    {
+        "name": "icon-player-skip-forward.svg",
+        "category": "media",
+        "tags": ["player", "skip forward", "media", "control"]
+    },
+    {
+        "name": "icon-player-stop.svg",
+        "category": "media",
+        "tags": ["player", "stop", "media", "control"]
+    },
+    {
+        "name": "icon-player-track-next.svg",
+        "category": "media",
+        "tags": ["player", "track next", "media", "control"]
+    },
+    {
+        "name": "icon-player-track-prev.svg",
+        "category": "media",
+        "tags": ["player", "track previous", "media", "control"]
+    },
+    {
+        "name": "icon-playlist.svg",
+        "category": "media",
+        "tags": ["playlist", "media", "music", "entertainment"]
+    },
+    {
+        "name": "icon-plug-connected.svg",
+        "category": "hardware",
+        "tags": ["plug", "connected", "hardware", "connection"]
+    },
+    {
+        "name": "icon-plug.svg",
+        "category": "hardware",
+        "tags": ["plug", "hardware", "connection"]
+    },
+    {
+        "name": "icon-power.svg",
+        "category": "hardware",
+        "tags": ["power", "hardware", "energy"]
+    },
+    {
+        "name": "icon-printer.svg",
+        "category": "hardware",
+        "tags": ["printer", "device", "hardware", "printing"]
+    },
+    {
+        "name": "icon-qrcode.svg",
+        "category": "technology",
+        "tags": ["QR code", "technology", "scan", "data"]
+    },
+    {
+        "name": "icon-radio.svg",
+        "category": "media",
+        "tags": ["radio", "media", "broadcast", "audio"]
+    },
+    {
+        "name": "icon-router.svg",
+        "category": "network",
+        "tags": ["router", "network", "wifi", "hardware"]
+    },
+    {
+        "name": "icon-server.svg",
+        "category": "hardware",
+        "tags": ["server", "hardware", "network", "data"]
+    },
+    {
+        "name": "icon-signal-2g.svg",
+        "category": "network",
+        "tags": ["signal", "2G", "network"]
+    },
+    {
+        "name": "icon-signal-3g.svg",
+        "category": "network",
+        "tags": ["signal", "3G", "network"]
+    },
+    {
+        "name": "icon-signal-4g-plus.svg",
+        "category": "network",
+        "tags": ["signal", "4G+", "network"]
+    },
+    {
+        "name": "icon-signal-4g.svg",
+        "category": "network",
+        "tags": ["signal", "4G", "network"]
+    },
+    {
+        "name": "icon-signal-5g.svg",
+        "category": "network",
+        "tags": ["signal", "5G", "network"]
+    },
+    {
+        "name": "icon-signal-6g.svg",
+        "category": "network",
+        "tags": ["signal", "6G", "network"]
+    },
+    {
+        "name": "icon-signal-e.svg",
+        "category": "network",
+        "tags": ["signal", "E", "network"]
+    },
+    {
+        "name": "icon-signal-g.svg",
+        "category": "network",
+        "tags": ["signal", "G", "network"]
+    },
+    {
+        "name": "icon-signal-h-plus.svg",
+        "category": "network",
+        "tags": ["signal", "H+", "network"]
+    },
+    {
+        "name": "icon-signal-h.svg",
+        "category": "network",
+        "tags": ["signal", "H", "network"]
+    },
+    {
+        "name": "icon-signal-lte.svg",
+        "category": "network",
+        "tags": ["signal", "LTE", "network"]
+    },
+    {
+        "name": "icon-speakerphone.svg",
+        "category": "hardware",
+        "tags": ["speakerphone", "audio", "device", "hardware"]
+    },
+    {
+        "name": "icon-video.svg",
+        "category": "media",
+        "tags": ["video", "media", "entertainment", "visual"]
+    },
+    {
+        "name": "icon-viewport-narrow.svg",
+        "category": "software",
+        "tags": ["viewport", "narrow", "software", "screen"]
+    },
+    {
+        "name": "icon-access-point.svg",
+        "category": "network",
+        "tags": ["access point", "network", "wifi", "signal"]
+    },
+    {
+        "name": "icon-antenna-bars-5.svg",
+        "category": "network",
+        "tags": ["antenna", "bars", "signal", "5 bars"]
+    },
+    {
+        "name": "icon-antenna.svg",
+        "category": "network",
+        "tags": ["antenna", "signal", "network"]
+    },
+    {
+        "name": "icon-aspect-ratio.svg",
+        "category": "media",
+        "tags": ["aspect ratio", "media", "screen", "resolution"]
+    },
+    {
+        "name": "icon-badge-3d.svg",
+        "category": "media",
+        "tags": ["badge", "3D", "media", "quality"]
+    },
+    {
+        "name": "icon-badge-4k.svg",
+        "category": "media",
+        "tags": ["badge", "4K", "media", "quality"]
+    },
+    {
+        "name": "icon-badge-8k.svg",
+        "category": "media",
+        "tags": ["badge", "8K", "media", "quality"]
+    },
+    {
+        "name": "icon-badge-ad.svg",
+        "category": "media",
+        "tags": ["badge", "AD", "advertisement", "media"]
+    },
+    {
+        "name": "icon-badge-ar.svg",
+        "category": "media",
+        "tags": ["badge", "AR", "augmented reality", "media"]
+    },
+    {
+        "name": "icon-badge-cc.svg",
+        "category": "media",
+        "tags": ["badge", "CC", "closed caption", "media"]
+    },
+    {
+        "name": "icon-badge-hd.svg",
+        "category": "media",
+        "tags": ["badge", "HD", "high definition", "media"]
+    },
+    {
+        "name": "icon-badge-sd.svg",
+        "category": "media",
+        "tags": ["badge", "SD", "standard definition", "media"]
+    },
+    {
+        "name": "icon-badge-tm.svg",
+        "category": "media",
+        "tags": ["badge", "TM", "trademark", "media"]
+    },
+    {
+        "name": "icon-badge-vo.svg",
+        "category": "media",
+        "tags": ["badge", "VO", "voiceover", "media"]
+    },
+    {
+        "name": "icon-badge-vr.svg",
+        "category": "media",
+        "tags": ["badge", "VR", "virtual reality", "media"]
+    },
+    {
+        "name": "icon-badge-wc.svg",
+        "category": "media",
+        "tags": ["badge", "WC", "watermark", "media"]
+    },
+    {
+        "name": "icon-battery-4.svg",
+        "category": "hardware",
+        "tags": ["battery", "4 bars", "power", "hardware"]
+    },
+    {
+        "name": "icon-battery.svg",
+        "category": "hardware",
+        "tags": ["battery", "power", "hardware"]
+    },
+    {
+        "name": "icon-bluetooth.svg",
+        "category": "hardware",
+        "tags": ["bluetooth", "wireless", "technology"]
+    },
+    {
+        "name": "icon-broadcast.svg",
+        "category": "media",
+        "tags": ["broadcast", "transmission", "media"]
+    },
+    {
+        "name": "icon-browser.svg",
+        "category": "software",
+        "tags": ["browser", "web", "software"]
+    },
+    {
+        "name": "icon-calculator.svg",
+        "category": "tools",
+        "tags": ["calculator", "math", "tools"]
+    },
+    {
+        "name": "icon-camera.svg",
+        "category": "hardware",
+        "tags": ["camera", "photography", "hardware"]
+    },
+    {
+        "name": "icon-capture.svg",
+        "category": "media",
+        "tags": ["capture", "media", "photo"]
+    },
+    {
+        "name": "icon-cardboards.svg",
+        "category": "media",
+        "tags": ["cardboards", "media", "packaging"]
+    },
+    {
+        "name": "icon-cast.svg",
+        "category": "media",
+        "tags": ["cast", "media", "streaming"]
+    },
+    {
+        "name": "icon-cpu.svg",
+        "category": "hardware",
+        "tags": ["CPU", "processor", "hardware"]
+    },
+    {
+        "name": "icon-device-airpods-case.svg",
+        "category": "hardware",
+        "tags": ["airpods", "case", "device", "hardware"]
+    },
+    {
+        "name": "icon-device-airpods.svg",
+        "category": "hardware",
+        "tags": ["airpods", "device", "hardware"]
+    },
+    {
+        "name": "icon-device-analytics.svg",
+        "category": "software",
+        "tags": ["analytics", "device", "software"]
+    },
+    {
+        "name": "icon-device-audio-tape.svg",
+        "category": "hardware",
+        "tags": ["audio tape", "device", "hardware"]
+    },
+    {
+        "name": "icon-device-cctv.svg",
+        "category": "hardware",
+        "tags": ["CCTV", "camera", "device", "security"]
+    },
+    {
+        "name": "icon-device-computer-camera.svg",
+        "category": "hardware",
+        "tags": ["computer", "camera", "device", "hardware"]
+    },
+    {
+        "name": "icon-device-desktop.svg",
+        "category": "hardware",
+        "tags": ["desktop", "computer", "device", "hardware"]
+    },
+    {
+        "name": "icon-device-floppy.svg",
+        "category": "hardware",
+        "tags": ["floppy", "disk", "device", "hardware"]
+    },
+    {
+        "name": "icon-device-gamepad-2.svg",
+        "category": "hardware",
+        "tags": ["gamepad", "device", "gaming", "hardware"]
+    },
+    {
+        "name": "icon-device-imac.svg",
+        "category": "hardware",
+        "tags": ["iMac", "computer", "device", "hardware"]
+    },
+    {
+        "name": "icon-device-ipad.svg",
+        "category": "hardware",
+        "tags": ["iPad", "tablet", "device", "hardware"]
+    },
+    {
+        "name": "icon-device-landline-phone.svg",
+        "category": "hardware",
+        "tags": ["landline", "phone", "device", "hardware"]
+    },
+    {
+        "name": "icon-device-laptop.svg",
+        "category": "hardware",
+        "tags": ["laptop", "computer", "device", "hardware"]
+    },
+    {
+        "name": "icon-device-mobile.svg",
+        "category": "hardware",
+        "tags": ["mobile", "phone", "device", "hardware"]
+    },
+    {
+        "name": "icon-device-remote.svg",
+        "category": "hardware",
+        "tags": ["remote", "device", "control", "hardware"]
+    },
+    {
+        "name": "icon-device-sd-card.svg",
+        "category": "hardware",
+        "tags": ["SD card", "storage", "device", "hardware"]
+    },
+    {
+        "name": "icon-devices-pc.svg",
+        "category": "hardware",
+        "tags": ["PC", "devices", "hardware", "computer"]
+    },
+    {
+        "name": "icon-device-tablet.svg",
+        "category": "hardware",
+        "tags": ["tablet", "device", "hardware"]
+    },
+    {
+        "name": "icon-device-tv.svg",
+        "category": "hardware",
+        "tags": ["TV", "device", "hardware"]
+    },
+    {
+        "name": "icon-device-watch.svg",
+        "category": "hardware",
+        "tags": ["watch", "device", "wearable", "hardware"]
+    },
+    {
+        "name": "icon-disc.svg",
+        "category": "media",
+        "tags": ["disc", "media", "storage"]
+    },
+    {
+        "name": "icon-fridge.svg",
+        "category": "appliances",
+        "tags": ["fridge", "appliance", "kitchen"]
+    },
+    {
+        "name": "icon-headphones.svg",
+        "category": "hardware",
+        "tags": ["headphones", "audio", "device", "hardware"]
+    },
+    {
+        "name": "icon-keyboard.svg",
+        "category": "hardware",
+        "tags": ["keyboard", "input", "device", "hardware"]
+    },
+    {
+        "name": "icon-keyframes.svg",
+        "category": "software",
+        "tags": ["keyframes", "animation", "software"]
+    },
+    {
+        "name": "icon-microphone-2.svg",
+        "category": "hardware",
+        "tags": ["microphone", "audio", "device", "hardware"]
+    },
+    {
+        "name": "icon-viewport-wide.svg",
+        "category": "software",
+        "tags": ["viewport", "wide", "software", "screen"]
+    },
+    {
+        "name": "icon-volume.svg",
+        "category": "hardware",
+        "tags": ["volume", "audio", "control", "hardware"]
+    },
+    {
+        "name": "icon-wifi.svg",
+        "category": "network",
+        "tags": ["wifi", "network", "wireless"]
+    },
+    {
+        "name": "icon-archive.svg",
+        "category": "files",
+        "tags": ["archive", "storage", "files", "document"]
+    },
+    {
+        "name": "icon-book-2.svg",
+        "category": "education",
+        "tags": ["book", "education", "reading", "study"]
+    },
+    {
+        "name": "icon-bookmark.svg",
+        "category": "files",
+        "tags": ["bookmark", "save", "reference", "document"]
+    },
+    {
+        "name": "icon-books.svg",
+        "category": "education",
+        "tags": ["books", "education", "library", "reading"]
+    },
+    {
+        "name": "icon-book.svg",
+        "category": "education",
+        "tags": ["book", "education", "reading", "study"]
+    },
+    {
+        "name": "icon-certificate-2.svg",
+        "category": "documents",
+        "tags": ["certificate", "award", "document", "achievement"]
+    },
+    {
+        "name": "icon-certificate.svg",
+        "category": "documents",
+        "tags": ["certificate", "award", "document", "achievement"]
+    },
+    {
+        "name": "icon-chalkboard.svg",
+        "category": "education",
+        "tags": ["chalkboard", "education", "teaching", "school"]
+    },
+    {
+        "name": "icon-clipboard-check.svg",
+        "category": "documents",
+        "tags": ["clipboard", "check", "task", "document"]
+    },
+    {
+        "name": "icon-clipboard.svg",
+        "category": "documents",
+        "tags": ["clipboard", "task", "notes", "document"]
+    },
+    {
+        "name": "icon-clipboard-text.svg",
+        "category": "documents",
+        "tags": ["clipboard", "text", "notes", "document"]
+    },
+    {
+        "name": "icon-file-alert.svg",
+        "category": "files",
+        "tags": ["file", "alert", "warning", "document"]
+    },
+    {
+        "name": "icon-file-analytics.svg",
+        "category": "files",
+        "tags": ["file", "analytics", "data", "document"]
+    },
+    {
+        "name": "icon-file-description.svg",
+        "category": "files",
+        "tags": ["file", "description", "document", "details"]
+    },
+    {
+        "name": "icon-file-music.svg",
+        "category": "files",
+        "tags": ["file", "music", "audio", "document"]
+    },
+    {
+        "name": "icon-file-phone.svg",
+        "category": "files",
+        "tags": ["file", "phone", "contact", "document"]
+    },
+    {
+        "name": "icon-file.svg",
+        "category": "files",
+        "tags": ["file", "document", "data", "storage"]
+    },
+    {
+        "name": "icon-folders.svg",
+        "category": "files",
+        "tags": ["folders", "organization", "files", "document"]
+    },
+    {
+        "name": "icon-folder.svg",
+        "category": "files",
+        "tags": ["folder", "organization", "files", "document"]
+    },
+    {
+        "name": "icon-mailbox.svg",
+        "category": "communication",
+        "tags": ["mailbox", "post", "mail", "communication"]
+    },
+    {
+        "name": "icon-mail-cancel.svg",
+        "category": "communication",
+        "tags": ["mail", "cancel", "communication", "message"]
+    },
+    {
+        "name": "icon-mail-check.svg",
+        "category": "communication",
+        "tags": ["mail", "check", "communication", "message"]
+    },
+    {
+        "name": "icon-mail-fast.svg",
+        "category": "communication",
+        "tags": ["mail", "fast", "speed", "communication"]
+    },
+    {
+        "name": "icon-mail-opened.svg",
+        "category": "communication",
+        "tags": ["mail", "opened", "communication", "message"]
+    },
+    {
+        "name": "icon-mail-plus.svg",
+        "category": "communication",
+        "tags": ["mail", "plus", "add", "communication"]
+    },
+    {
+        "name": "icon-mail-search.svg",
+        "category": "communication",
+        "tags": ["mail", "search", "communication", "message"]
+    },
+    {
+        "name": "icon-mail-star.svg",
+        "category": "communication",
+        "tags": ["mail", "star", "favorite", "communication"]
+    },
+    {
+        "name": "icon-mail.svg",
+        "category": "communication",
+        "tags": ["mail", "communication", "message", "post"]
+    },
+    {
+        "name": "icon-message-2.svg",
+        "category": "communication",
+        "tags": ["message", "communication", "chat", "text"]
+    },
+    {
+        "name": "icon-message-circle.svg",
+        "category": "communication",
+        "tags": ["message", "circle", "communication", "chat"]
+    },
+    {
+        "name": "icon-message-dots.svg",
+        "category": "communication",
+        "tags": ["message", "dots", "communication", "chat"]
+    },
+    {
+        "name": "icon-messages.svg",
+        "category": "communication",
+        "tags": ["messages", "communication", "chat", "text"]
+    },
+    {
+        "name": "icon-message.svg",
+        "category": "communication",
+        "tags": ["message", "communication", "chat", "text"]
+    },
+    {
+        "name": "icon-notebook.svg",
+        "category": "education",
+        "tags": ["notebook", "education", "writing", "study"]
+    },
+    {
+        "name": "icon-notes.svg",
+        "category": "documents",
+        "tags": ["notes", "document", "writing", "task"]
+    },
+    {
+        "name": "icon-note.svg",
+        "category": "documents",
+        "tags": ["note", "document", "writing", "task"]
+    },
+    {
+        "name": "icon-paperclip.svg",
+        "category": "documents",
+        "tags": ["paperclip", "attachment", "document", "files"]
+    },
+    {
+        "name": "icon-presentation-analytics.svg",
+        "category": "documents",
+        "tags": ["presentation", "analytics", "data", "document"]
+    },
+    {
+        "name": "icon-presentation.svg",
+        "category": "documents",
+        "tags": ["presentation", "document", "slide", "meeting"]
+    },
+    {
+        "name": "icon-rubber-stamp.svg",
+        "category": "documents",
+        "tags": ["rubber stamp", "document", "approval", "seal"]
+    },
+    {
+        "name": "icon-script.svg",
+        "category": "documents",
+        "tags": ["script", "writing", "document", "text"]
+    },
+    {
+        "name": "icon-send.svg",
+        "category": "communication",
+        "tags": ["send", "message", "communication", "email"]
+    },
+    {
+        "name": "icon-baby-bottle.svg",
+        "category": "health",
+        "tags": ["baby bottle", "feeding", "baby", "health"]
+    },
+    {
+        "name": "icon-baby-carriage.svg",
+        "category": "health",
+        "tags": ["baby carriage", "stroller", "baby", "health"]
+    },
+    {
+        "name": "icon-bone.svg",
+        "category": "health",
+        "tags": ["bone", "health", "anatomy", "medical"]
+    },
+    {
+        "name": "icon-brain.svg",
+        "category": "health",
+        "tags": ["brain", "health", "anatomy", "medical"]
+    },
+    {
+        "name": "icon-checkup-list.svg",
+        "category": "health",
+        "tags": ["checkup", "list", "health", "medical"]
+    },
+    {
+        "name": "icon-disability.svg",
+        "category": "health",
+        "tags": ["disability", "health", "medical", "accessibility"]
+    },
+    {
+        "name": "icon-dna.svg",
+        "category": "health",
+        "tags": ["DNA", "genetics", "health", "medical"]
+    },
+    {
+        "name": "icon-ear.svg",
+        "category": "health",
+        "tags": ["ear", "health", "anatomy", "medical"]
+    },
+    {
+        "name": "icon-eyeglass-2.svg",
+        "category": "health",
+        "tags": ["eyeglass", "vision", "health", "medical"]
+    },
+    {
+        "name": "icon-eyeglass.svg",
+        "category": "health",
+        "tags": ["eyeglass", "vision", "health", "medical"]
+    },
+    {
+        "name": "icon-face-mask.svg",
+        "category": "health",
+        "tags": ["face mask", "health", "protection", "medical"]
+    },
+    {
+        "name": "icon-fall.svg",
+        "category": "health",
+        "tags": ["fall", "accident", "health", "safety"]
+    },
+    {
+        "name": "icon-fingerprint.svg",
+        "category": "security",
+        "tags": ["fingerprint", "security", "authentication", "biometrics"]
+    },
+    {
+        "name": "icon-first-aid-kit.svg",
+        "category": "health",
+        "tags": ["first aid", "health", "medical", "emergency"]
+    },
+    {
+        "name": "icon-flask-2.svg",
+        "category": "science",
+        "tags": ["flask", "science", "chemistry", "laboratory"]
+    },
+    {
+        "name": "icon-flask.svg",
+        "category": "science",
+        "tags": ["flask", "science", "chemistry", "laboratory"]
+    },
+    {
+        "name": "icon-hand-sanitizer.svg",
+        "category": "health",
+        "tags": ["hand sanitizer", "health", "cleaning", "hygiene"]
+    },
+    {
+        "name": "icon-heartbeat.svg",
+        "category": "health",
+        "tags": ["heartbeat", "health", "cardiology", "medical"]
+    },
+    {
+        "name": "icon-heart-broken.svg",
+        "category": "health",
+        "tags": ["heart broken", "health", "emotion", "medical"]
+    },
+    {
+        "name": "icon-heart-rate-monitor.svg",
+        "category": "health",
+        "tags": ["heart rate monitor", "health", "cardiology", "medical"]
+    },
+    {
+        "name": "icon-lungs.svg",
+        "category": "health",
+        "tags": ["lungs", "health", "anatomy", "medical"]
+    },
+    {
+        "name": "icon-massage.svg",
+        "category": "health",
+        "tags": ["massage", "health", "therapy", "wellness"]
+    },
+    {
+        "name": "icon-medicine-syrup.svg",
+        "category": "health",
+        "tags": ["medicine syrup", "health", "medication", "medical"]
+    },
+    {
+        "name": "icon-microscope.svg",
+        "category": "science",
+        "tags": ["microscope", "science", "research", "laboratory"]
+    },
+    {
+        "name": "icon-no-smoking.svg",
+        "category": "health",
+        "tags": ["no smoking", "health", "caution", "medical"]
+    },
+    {
+        "name": "icon-old.svg",
+        "category": "health",
+        "tags": ["old", "elderly", "health", "age"]
+    },
+    {
+        "name": "icon-physotherapist.svg",
+        "category": "health",
+        "tags": ["physotherapist", "health", "therapy", "medical"]
+    },
+    {
+        "name": "icon-pill.svg",
+        "category": "health",
+        "tags": ["pill", "medicine", "health", "medication"]
+    },
+    {
+        "name": "icon-razor.svg",
+        "category": "health",
+        "tags": ["razor", "grooming", "health", "personal care"]
+    },
+    {
+        "name": "icon-skull.svg",
+        "category": "health",
+        "tags": ["skull", "health", "anatomy", "medical"]
+    },
+    {
+        "name": "icon-smoking.svg",
+        "category": "health",
+        "tags": ["smoking", "health", "caution", "medical"]
+    },
+    {
+        "name": "icon-stethoscope.svg",
+        "category": "health",
+        "tags": ["stethoscope", "health", "medical", "doctor"]
+    },
+    {
+        "name": "icon-thermometer.svg",
+        "category": "health",
+        "tags": ["thermometer", "health", "temperature", "medical"]
+    },
+    {
+        "name": "icon-vaccine-bottle.svg",
+        "category": "health",
+        "tags": ["vaccine bottle", "health", "medical", "immunization"]
+    },
+    {
+        "name": "icon-vaccine.svg",
+        "category": "health",
+        "tags": ["vaccine", "health", "medical", "immunization"]
+    },
+    {
+        "name": "icon-virus.svg",
+        "category": "health",
+        "tags": ["virus", "health", "medical", "disease"]
+    },
+    {
+        "name": "icon-basket.svg",
+        "category": "shopping",
+        "tags": ["basket", "shopping", "cart", "store"]
+    },
+    {
+        "name": "icon-cash-banknote.svg",
+        "category": "finance",
+        "tags": ["cash", "banknote", "money", "finance"]
+    },
+    {
+        "name": "icon-cash.svg",
+        "category": "finance",
+        "tags": ["cash", "money", "finance", "currency"]
+    },
+    {
+        "name": "icon-coin-bitcoin.svg",
+        "category": "finance",
+        "tags": ["coin", "bitcoin", "cryptocurrency", "finance"]
+    },
+    {
+        "name": "icon-coin-euro.svg",
+        "category": "finance",
+        "tags": ["coin", "euro", "currency", "finance"]
+    },
+    {
+        "name": "icon-coin-monero.svg",
+        "category": "finance",
+        "tags": ["coin", "monero", "cryptocurrency", "finance"]
+    },
+    {
+        "name": "icon-coin-pound.svg",
+        "category": "finance",
+        "tags": ["coin", "pound", "currency", "finance"]
+    },
+    {
+        "name": "icon-coin-rupee.svg",
+        "category": "finance",
+        "tags": ["coin", "rupee", "currency", "finance"]
+    },
+    {
+        "name": "icon-coins.svg",
+        "category": "finance",
+        "tags": ["coins", "money", "currency", "finance"]
+    },
+    {
+        "name": "icon-coin.svg",
+        "category": "finance",
+        "tags": ["coin", "currency", "finance", "money"]
+    },
+    {
+        "name": "icon-coin-yen.svg",
+        "category": "finance",
+        "tags": ["coin", "yen", "currency", "finance"]
+    },
+    {
+        "name": "icon-coin-yuan.svg",
+        "category": "finance",
+        "tags": ["coin", "yuan", "currency", "finance"]
+    },
+    {
+        "name": "icon-credit-card.svg",
+        "category": "finance",
+        "tags": ["credit card", "finance", "payment", "money"]
+    },
+    {
+        "name": "icon-currency-afghani.svg",
+        "category": "finance",
+        "tags": ["currency", "afghani", "money", "finance"]
+    },
+    {
+        "name": "icon-currency-bahraini.svg",
+        "category": "finance",
+        "tags": ["currency", "bahraini", "money", "finance"]
+    },
+    {
+        "name": "icon-currency-baht.svg",
+        "category": "finance",
+        "tags": ["currency", "baht", "money", "finance"]
+    },
+    {
+        "name": "icon-currency-bitcoin.svg",
+        "category": "finance",
+        "tags": ["currency", "bitcoin", "cryptocurrency", "finance"]
+    },
+    {
+        "name": "icon-currency-cent.svg",
+        "category": "finance",
+        "tags": ["currency", "cent", "money", "finance"]
+    },
+    {
+        "name": "icon-currency-dinar.svg",
+        "category": "finance",
+        "tags": ["currency", "dinar", "money", "finance"]
+    },
+    {
+        "name": "icon-currency-dirham.svg",
+        "category": "finance",
+        "tags": ["currency", "dirham", "money", "finance"]
+    },
+    {
+        "name": "icon-currency-dogecoin.svg",
+        "category": "finance",
+        "tags": ["currency", "dogecoin", "cryptocurrency", "finance"]
+    },
+    {
+        "name": "icon-currency-dollar.svg",
+        "category": "finance",
+        "tags": ["currency", "dollar", "money", "finance"]
+    },
+    {
+        "name": "icon-currency-dong.svg",
+        "category": "finance",
+        "tags": ["currency", "dong", "money", "finance"]
+    },
+    {
+        "name": "icon-currency-dram.svg",
+        "category": "finance",
+        "tags": ["currency", "dram", "money", "finance"]
+    },
+    {
+        "name": "icon-currency-ethereum.svg",
+        "category": "finance",
+        "tags": ["currency", "ethereum", "cryptocurrency", "finance"]
+    },
+    {
+        "name": "icon-currency-euro.svg",
+        "category": "finance",
+        "tags": ["currency", "euro", "money", "finance"]
+    },
+    {
+        "name": "icon-currency-forint.svg",
+        "category": "finance",
+        "tags": ["currency", "forint", "money", "finance"]
+    },
+    {
+        "name": "icon-currency-frank.svg",
+        "category": "finance",
+        "tags": ["currency", "frank", "money", "finance"]
+    },
+    {
+        "name": "icon-currency-guarani.svg",
+        "category": "finance",
+        "tags": ["currency", "guarani", "money", "finance"]
+    },
+    {
+        "name": "icon-currency-hryvnia.svg",
+        "category": "finance",
+        "tags": ["currency", "hryvnia", "money", "finance"]
+    },
+    {
+        "name": "icon-currency-kip.svg",
+        "category": "finance",
+        "tags": ["currency", "kip", "money", "finance"]
+    },
+    {
+        "name": "icon-currency-krone-czech.svg",
+        "category": "finance",
+        "tags": ["currency", "krone", "czech", "money", "finance"]
+    },
+    {
+        "name": "icon-currency-krone-swedish.svg",
+        "category": "finance",
+        "tags": ["currency", "krone", "swedish", "money", "finance"]
+    },
+    {
+        "name": "icon-currency-lari.svg",
+        "category": "finance",
+        "tags": ["currency", "lari", "money", "finance"]
+    },
+    {
+        "name": "icon-currency-leu.svg",
+        "category": "finance",
+        "tags": ["currency", "leu", "money", "finance"]
+    },
+    {
+        "name": "icon-currency-lira.svg",
+        "category": "finance",
+        "tags": ["currency", "lira", "money", "finance"]
+    },
+    {
+        "name": "icon-currency-litecoin.svg",
+        "category": "finance",
+        "tags": ["currency", "litecoin", "cryptocurrency", "finance"]
+    },
+    {
+        "name": "icon-currency-lyd.svg",
+        "category": "finance",
+        "tags": ["currency", "lyd", "money", "finance"]
+    },
+    {
+        "name": "icon-currency-manat.svg",
+        "category": "finance",
+        "tags": ["currency", "manat", "money", "finance"]
+    },
+    {
+        "name": "icon-currency-monero.svg",
+        "category": "finance",
+        "tags": ["currency", "monero", "cryptocurrency", "finance"]
+    },
+    {
+        "name": "icon-currency-naira.svg",
+        "category": "finance",
+        "tags": ["currency", "naira", "money", "finance"]
+    },
+    {
+        "name": "icon-currency-nano.svg",
+        "category": "finance",
+        "tags": ["currency", "nano", "cryptocurrency", "finance"]
+    },
+    {
+        "name": "icon-currency-paanga.svg",
+        "category": "finance",
+        "tags": ["currency", "paanga", "money", "finance"]
+    },
+    {
+        "name": "icon-currency-peso.svg",
+        "category": "finance",
+        "tags": ["currency", "peso", "money", "finance"]
+    },
+    {
+        "name": "icon-currency-pound.svg",
+        "category": "finance",
+        "tags": ["currency", "pound", "money", "finance"]
+    },
+    {
+        "name": "icon-currency-quetzal.svg",
+        "category": "finance",
+        "tags": ["currency", "quetzal", "money", "finance"]
+    },
+    {
+        "name": "icon-currency-real.svg",
+        "category": "finance",
+        "tags": ["currency", "real", "money", "finance"]
+    },
+    {
+        "name": "icon-currency-renminbi.svg",
+        "category": "finance",
+        "tags": ["currency", "renminbi", "money", "finance"]
+    },
+    {
+        "name": "icon-currency-ripple.svg",
+        "category": "finance",
+        "tags": ["currency", "ripple", "cryptocurrency", "finance"]
+    },
+    {
+        "name": "icon-currency-riyal.svg",
+        "category": "finance",
+        "tags": ["currency", "riyal", "money", "finance"]
+    },
+    {
+        "name": "icon-currency-rubel.svg",
+        "category": "finance",
+        "tags": ["currency", "rubel", "money", "finance"]
+    },
+    {
+        "name": "icon-currency-rufiyaa.svg",
+        "category": "finance",
+        "tags": ["currency", "rufiyaa", "money", "finance"]
+    },
+    {
+        "name": "icon-currency-rupee-nepalese.svg",
+        "category": "finance",
+        "tags": ["currency", "rupee", "nepalese", "money", "finance"]
+    },
+    {
+        "name": "icon-currency-rupee.svg",
+        "category": "finance",
+        "tags": ["currency", "rupee", "money", "finance"]
+    },
+    {
+        "name": "icon-currency-rupiah.svg",
+        "category": "finance",
+        "tags": ["currency", "rupiah", "money", "finance"]
+    },
+    {
+        "name": "icon-currency-shekel.svg",
+        "category": "finance",
+        "tags": ["currency", "shekel", "money", "finance"]
+    },
+    {
+        "name": "icon-currency-solana.svg",
+        "category": "finance",
+        "tags": ["currency", "solana", "cryptocurrency", "finance"]
+    },
+    {
+        "name": "icon-currency-som.svg",
+        "category": "finance",
+        "tags": ["currency", "som", "money", "finance"]
+    },
+    {
+        "name": "icon-currency-taka.svg",
+        "category": "finance",
+        "tags": ["currency", "taka", "money", "finance"]
+    },
+    {
+        "name": "icon-currency-tenge.svg",
+        "category": "finance",
+        "tags": ["currency", "tenge", "money", "finance"]
+    },
+    {
+        "name": "icon-currency-tugrik.svg",
+        "category": "finance",
+        "tags": ["currency", "tugrik", "money", "finance"]
+    },
+    {
+        "name": "icon-currency-won.svg",
+        "category": "finance",
+        "tags": ["currency", "won", "money", "finance"]
+    },
+    {
+        "name": "icon-currency-yen.svg",
+        "category": "finance",
+        "tags": ["currency", "yen", "money", "finance"]
+    },
+    {
+        "name": "icon-currency-yuan.svg",
+        "category": "finance",
+        "tags": ["currency", "yuan", "money", "finance"]
+    },
+    {
+        "name": "icon-currency-zloty.svg",
+        "category": "finance",
+        "tags": ["currency", "zloty", "money", "finance"]
+    },
+    {
+        "name": "icon-discount.svg",
+        "category": "shopping",
+        "tags": ["discount", "shopping", "sale", "promotion"]
+    },
+    {
+        "name": "icon-e-passport.svg",
+        "category": "documents",
+        "tags": ["e-passport", "passport", "travel", "document"]
+    },
+    {
+        "name": "icon-package.svg",
+        "category": "shopping",
+        "tags": ["package", "shipping", "shopping", "delivery"]
+    },
+    {
+        "name": "icon-shopping-bag.svg",
+        "category": "shopping",
+        "tags": ["shopping bag", "shopping", "store", "purchase"]
+    },
+    {
+        "name": "icon-shopping-cart.svg",
+        "category": "shopping",
+        "tags": ["shopping cart", "cart", "store", "purchase"]
+    },
+    {
+        "name": "icon-tags.svg",
+        "category": "shopping",
+        "tags": ["tags", "shopping", "price", "store"]
+    },
+    {
+        "name": "icon-tag.svg",
+        "category": "shopping",
+        "tags": ["tag", "shopping", "price", "store"]
+    },
+    {
+        "name": "icon-truck-loading.svg",
+        "category": "logistics",
+        "tags": ["truck", "loading", "shipping", "logistics"]
+    },
+    {
+        "name": "icon-brand-threads.svg",
+        "category": "brand",
+        "tags": ["threads", "brand", "social media", "networking"]
+    },
+    {
+        "name": "icon-brand-tiktok.svg",
+        "category": "brand",
+        "tags": ["tiktok", "brand", "social media", "video"]
+    },
+    {
+        "name": "icon-brand-tokopedia.svg",
+        "category": "brand",
+        "tags": ["tokopedia", "brand", "e-commerce", "marketplace"]
+    },
+    {
+        "name": "icon-brand-tumblr.svg",
+        "category": "brand",
+        "tags": ["tumblr", "brand", "social media", "blogging"]
+    },
+    {
+        "name": "icon-brand-twitter.svg",
+        "category": "brand",
+        "tags": ["twitter", "brand", "social media", "networking"]
+    },
+    {
+        "name": "icon-brand-typescript.svg",
+        "category": "brand",
+        "tags": ["typescript", "brand", "programming", "language"]
+    },
+    {
+        "name": "icon-brand-ubuntu.svg",
+        "category": "brand",
+        "tags": ["ubuntu", "brand", "linux", "operating system"]
+    },
+    {
+        "name": "icon-brand-unity.svg",
+        "category": "brand",
+        "tags": ["unity", "brand", "game development", "engine"]
+    },
+    {
+        "name": "icon-brand-unsplash.svg",
+        "category": "brand",
+        "tags": ["unsplash", "brand", "photography", "stock photos"]
+    },
+    {
+        "name": "icon-brand-vercel.svg",
+        "category": "brand",
+        "tags": ["vercel", "brand", "hosting", "technology"]
+    },
+    {
+        "name": "icon-brand-vimeo.svg",
+        "category": "brand",
+        "tags": ["vimeo", "brand", "video", "streaming"]
+    },
+    {
+        "name": "icon-brand-vim.svg",
+        "category": "brand",
+        "tags": ["vim", "brand", "editor", "technology"]
+    },
+    {
+        "name": "icon-brand-vite.svg",
+        "category": "brand",
+        "tags": ["vite", "brand", "javascript", "build tool"]
+    },
+    {
+        "name": "icon-brand-vk.svg",
+        "category": "brand",
+        "tags": ["vk", "brand", "social media", "networking"]
+    },
+    {
+        "name": "icon-brand-vscode.svg",
+        "category": "brand",
+        "tags": ["vscode", "brand", "editor", "development"]
+    },
+    {
+        "name": "icon-brand-vue.svg",
+        "category": "brand",
+        "tags": ["vue", "brand", "javascript", "framework"]
+    },
+    {
+        "name": "icon-brand-whatsapp.svg",
+        "category": "brand",
+        "tags": ["whatsapp", "brand", "communication", "chat"]
+    },
+    {
+        "name": "icon-brand-windows.svg",
+        "category": "brand",
+        "tags": ["windows", "brand", "operating system", "technology"]
+    },
+    {
+        "name": "icon-brand-wordpress.svg",
+        "category": "brand",
+        "tags": ["wordpress", "brand", "content management", "platform"]
+    },
+    {
+        "name": "icon-brand-xbox.svg",
+        "category": "brand",
+        "tags": ["xbox", "brand", "gaming", "console"]
+    },
+    {
+        "name": "icon-brand-x.svg",
+        "category": "brand",
+        "tags": ["x", "brand", "technology", "company"]
+    },
+    {
+        "name": "icon-brand-yahoo.svg",
+        "category": "brand",
+        "tags": ["yahoo", "brand", "technology", "internet"]
+    },
+    {
+        "name": "icon-brand-yarn.svg",
+        "category": "brand",
+        "tags": ["yarn", "brand", "package manager", "javascript"]
+    },
+    {
+        "name": "icon-brand-youtube.svg",
+        "category": "brand",
+        "tags": ["youtube", "brand", "video", "streaming"]
+    },
+    {
+        "name": "icon-brand-zoom.svg",
+        "category": "brand",
+        "tags": ["zoom", "brand", "communication", "video conferencing"]
+    },
+    {
+        "name": "icon-brand-instagram.svg",
+        "category": "brand",
+        "tags": ["instagram", "brand", "social media", "networking"]
+    },
+    {
+        "name": "icon-brand-intel.svg",
+        "category": "brand",
+        "tags": ["intel", "brand", "technology", "hardware"]
+    },
+    {
+        "name": "icon-brand-javascript.svg",
+        "category": "brand",
+        "tags": ["javascript", "brand", "programming", "language"]
+    },
+    {
+        "name": "icon-brand-java.svg",
+        "category": "brand",
+        "tags": ["java", "brand", "programming", "language"]
+    },
+    {
+        "name": "icon-brand-jetbrains.svg",
+        "category": "brand",
+        "tags": ["jetbrains", "brand", "software", "development"]
+    },
+    {
+        "name": "icon-brand-kotlin.svg",
+        "category": "brand",
+        "tags": ["kotlin", "brand", "programming", "language"]
+    },
+    {
+        "name": "icon-brand-laravel.svg",
+        "category": "brand",
+        "tags": ["laravel", "brand", "php", "framework"]
+    },
+    {
+        "name": "icon-brand-linkedin.svg",
+        "category": "brand",
+        "tags": ["linkedin", "brand", "social media", "networking"]
+    },
+    {
+        "name": "icon-brand-linktree.svg",
+        "category": "brand",
+        "tags": ["linktree", "brand", "social media", "links"]
+    },
+    {
+        "name": "icon-brand-linux.svg",
+        "category": "brand",
+        "tags": ["linux", "brand", "operating system", "technology"]
+    },
+    {
+        "name": "icon-brand-meta.svg",
+        "category": "brand",
+        "tags": ["meta", "brand", "technology", "company"]
+    },
+    {
+        "name": "icon-brand-mint.svg",
+        "category": "brand",
+        "tags": ["mint", "brand", "finance", "technology"]
+    },
+    {
+        "name": "icon-brand-mysql.svg",
+        "category": "brand",
+        "tags": ["mysql", "brand", "database", "technology"]
+    },
+    {
+        "name": "icon-brand-neovim.svg",
+        "category": "brand",
+        "tags": ["neovim", "brand", "editor", "technology"]
+    },
+    {
+        "name": "icon-brand-netflix.svg",
+        "category": "brand",
+        "tags": ["netflix", "brand", "streaming", "entertainment"]
+    },
+    {
+        "name": "icon-brand-netlify.svg",
+        "category": "brand",
+        "tags": ["netlify", "brand", "hosting", "technology"]
+    },
+    {
+        "name": "icon-brand-nextjs.svg",
+        "category": "brand",
+        "tags": ["nextjs", "brand", "javascript", "framework"]
+    },
+    {
+        "name": "icon-brand-nginx.svg",
+        "category": "brand",
+        "tags": ["nginx", "brand", "server", "technology"]
+    },
+    {
+        "name": "icon-brand-nix.svg",
+        "category": "brand",
+        "tags": ["nix", "brand", "package manager", "technology"]
+    },
+    {
+        "name": "icon-brand-npm.svg",
+        "category": "brand",
+        "tags": ["npm", "brand", "package manager", "javascript"]
+    },
+    {
+        "name": "icon-brand-nuxt.svg",
+        "category": "brand",
+        "tags": ["nuxt", "brand", "javascript", "framework"]
+    },
+    {
+        "name": "icon-brand-nvidia.svg",
+        "category": "brand",
+        "tags": ["nvidia", "brand", "technology", "hardware"]
+    },
+    {
+        "name": "icon-brand-openai.svg",
+        "category": "brand",
+        "tags": ["openai", "brand", "ai", "technology"]
+    },
+    {
+        "name": "icon-brand-paypal.svg",
+        "category": "brand",
+        "tags": ["paypal", "brand", "payment", "finance"]
+    },
+    {
+        "name": "icon-brand-php.svg",
+        "category": "brand",
+        "tags": ["php", "brand", "programming", "language"]
+    },
+    {
+        "name": "icon-brand-picsart.svg",
+        "category": "brand",
+        "tags": ["picsart", "brand", "photo editing", "app"]
+    },
+    {
+        "name": "icon-brand-pinterest.svg",
+        "category": "brand",
+        "tags": ["pinterest", "brand", "social media", "networking"]
+    },
+    {
+        "name": "icon-brand-pnpm.svg",
+        "category": "brand",
+        "tags": ["pnpm", "brand", "package manager", "javascript"]
+    },
+    {
+        "name": "icon-brand-powershell.svg",
+        "category": "brand",
+        "tags": ["powershell", "brand", "scripting", "technology"]
+    },
+    {
+        "name": "icon-brand-prisma.svg",
+        "category": "brand",
+        "tags": ["prisma", "brand", "database", "technology"]
+    },
+    {
+        "name": "icon-brand-python.svg",
+        "category": "brand",
+        "tags": ["python", "brand", "programming", "language"]
+    },
+    {
+        "name": "icon-brand-react-native.svg",
+        "category": "brand",
+        "tags": ["react native", "brand", "mobile", "framework"]
+    },
+    {
+        "name": "icon-brand-reddit.svg",
+        "category": "brand",
+        "tags": ["reddit", "brand", "social media", "networking"]
+    },
+    {
+        "name": "icon-brand-redhat.svg",
+        "category": "brand",
+        "tags": ["redhat", "brand", "linux", "operating system"]
+    },
+    {
+        "name": "icon-brand-redux.svg",
+        "category": "brand",
+        "tags": ["redux", "brand", "javascript", "state management"]
+    },
+    {
+        "name": "icon-brand-remix.svg",
+        "category": "brand",
+        "tags": ["remix", "brand", "javascript", "framework"]
+    },
+    {
+        "name": "icon-brand-safari.svg",
+        "category": "brand",
+        "tags": ["safari", "brand", "browser", "technology"]
+    },
+    {
+        "name": "icon-brand-sass.svg",
+        "category": "brand",
+        "tags": ["sass", "brand", "css", "preprocessor"]
+    },
+    {
+        "name": "icon-brand-shopee.svg",
+        "category": "brand",
+        "tags": ["shopee", "brand", "e-commerce", "marketplace"]
+    },
+    {
+        "name": "icon-brand-skype.svg",
+        "category": "brand",
+        "tags": ["skype", "brand", "communication", "chat"]
+    },
+    {
+        "name": "icon-brand-slack.svg",
+        "category": "brand",
+        "tags": ["slack", "brand", "communication", "productivity"]
+    },
+    {
+        "name": "icon-brand-solidjs.svg",
+        "category": "brand",
+        "tags": ["solidjs", "brand", "javascript", "framework"]
+    },
+    {
+        "name": "icon-brand-spotify.svg",
+        "category": "brand",
+        "tags": ["spotify", "brand", "music", "streaming"]
+    },
+    {
+        "name": "icon-brand-steam.svg",
+        "category": "brand",
+        "tags": ["steam", "brand", "gaming", "platform"]
+    },
+    {
+        "name": "icon-brand-sublime-text.svg",
+        "category": "brand",
+        "tags": ["sublime text", "brand", "editor", "software"]
+    },
+    {
+        "name": "icon-brand-supabase.svg",
+        "category": "brand",
+        "tags": ["supabase", "brand", "database", "technology"]
+    },
+    {
+        "name": "icon-brand-svelte.svg",
+        "category": "brand",
+        "tags": ["svelte", "brand", "javascript", "framework"]
+    },
+    {
+        "name": "icon-brand-symfony.svg",
+        "category": "brand",
+        "tags": ["symfony", "brand", "php", "framework"]
+    },
+    {
+        "name": "icon-brand-tabler.svg",
+        "category": "brand",
+        "tags": ["tabler", "brand", "icons", "design"]
+    },
+    {
+        "name": "icon-brand-tailwind.svg",
+        "category": "brand",
+        "tags": ["tailwind", "brand", "css", "framework"]
+    },
+    {
+        "name": "icon-brand-telegram.svg",
+        "category": "brand",
+        "tags": ["telegram", "brand", "communication", "chat"]
+    },
+    {
+        "name": "icon-brand-adobe.svg",
+        "category": "brand",
+        "tags": ["adobe", "brand", "software", "design"]
+    },
+    {
+        "name": "icon-brand-algolia.svg",
+        "category": "brand",
+        "tags": ["algolia", "brand", "search", "technology"]
+    },
+    {
+        "name": "icon-brand-alpine-js.svg",
+        "category": "brand",
+        "tags": ["alpine js", "brand", "javascript", "framework"]
+    },
+    {
+        "name": "icon-brand-amd.svg",
+        "category": "brand",
+        "tags": ["amd", "brand", "technology", "hardware"]
+    },
+    {
+        "name": "icon-brand-android.svg",
+        "category": "brand",
+        "tags": ["android", "brand", "mobile", "operating system"]
+    },
+    {
+        "name": "icon-brand-angular.svg",
+        "category": "brand",
+        "tags": ["angular", "brand", "javascript", "framework"]
+    },
+    {
+        "name": "icon-brand-apache.svg",
+        "category": "brand",
+        "tags": ["apache", "brand", "software", "server"]
+    },
+    {
+        "name": "icon-brand-apple.svg",
+        "category": "brand",
+        "tags": ["apple", "brand", "technology", "company"]
+    },
+    {
+        "name": "icon-brand-appstore.svg",
+        "category": "brand",
+        "tags": ["appstore", "brand", "mobile", "apps"]
+    },
+    {
+        "name": "icon-brand-arch.svg",
+        "category": "brand",
+        "tags": ["arch", "brand", "linux", "operating system"]
+    },
+    {
+        "name": "icon-brand-astro.svg",
+        "category": "brand",
+        "tags": ["astro", "brand", "javascript", "framework"]
+    },
+    {
+        "name": "icon-brand-aws.svg",
+        "category": "brand",
+        "tags": ["aws", "brand", "cloud", "technology"]
+    },
+    {
+        "name": "icon-brand-behance.svg",
+        "category": "brand",
+        "tags": ["behance", "brand", "design", "portfolio"]
+    },
+    {
+        "name": "icon-brand-bing.svg",
+        "category": "brand",
+        "tags": ["bing", "brand", "search", "technology"]
+    },
+    {
+        "name": "icon-brand-bootstrap.svg",
+        "category": "brand",
+        "tags": ["bootstrap", "brand", "framework", "design"]
+    },
+    {
+        "name": "icon-brand-brave.svg",
+        "category": "brand",
+        "tags": ["brave", "brand", "browser", "technology"]
+    },
+    {
+        "name": "icon-brand-bun.svg",
+        "category": "brand",
+        "tags": ["bun", "brand", "javascript", "runtime"]
+    },
+    {
+        "name": "icon-brand-chrome.svg",
+        "category": "brand",
+        "tags": ["chrome", "brand", "browser", "technology"]
+    },
+    {
+        "name": "icon-brand-cleon.svg",
+        "category": "brand",
+        "tags": ["cleon", "brand", "technology", "software"]
+    },
+    {
+        "name": "icon-brand-codeigniter.svg",
+        "category": "brand",
+        "tags": ["codeigniter", "brand", "php", "framework"]
+    },
+    {
+        "name": "icon-brand-cpp.svg",
+        "category": "brand",
+        "tags": ["cpp", "brand", "programming", "language"]
+    },
+    {
+        "name": "icon-brand-c-sharp.svg",
+        "category": "brand",
+        "tags": ["c sharp", "brand", "programming", "language"]
+    },
+    {
+        "name": "icon-brand-css.svg",
+        "category": "brand",
+        "tags": ["css", "brand", "web", "design"]
+    },
+    {
+        "name": "icon-brand-debian.svg",
+        "category": "brand",
+        "tags": ["debian", "brand", "linux", "operating system"]
+    },
+    {
+        "name": "icon-brand-deno.svg",
+        "category": "brand",
+        "tags": ["deno", "brand", "javascript", "runtime"]
+    },
+    {
+        "name": "icon-brand-deviantart.svg",
+        "category": "brand",
+        "tags": ["deviantart", "brand", "art", "community"]
+    },
+    {
+        "name": "icon-brand-discord.svg",
+        "category": "brand",
+        "tags": ["discord", "brand", "communication", "chat"]
+    },
+    {
+        "name": "icon-brand-docker.svg",
+        "category": "brand",
+        "tags": ["docker", "brand", "container", "technology"]
+    },
+    {
+        "name": "icon-brand-dribbble.svg",
+        "category": "brand",
+        "tags": ["dribbble", "brand", "design", "portfolio"]
+    },
+    {
+        "name": "icon-brand-edge.svg",
+        "category": "brand",
+        "tags": ["edge", "brand", "browser", "technology"]
+    },
+    {
+        "name": "icon-brand-envato.svg",
+        "category": "brand",
+        "tags": ["envato", "brand", "marketplace", "design"]
+    },
+    {
+        "name": "icon-brand-facebook.svg",
+        "category": "brand",
+        "tags": ["facebook", "brand", "social media", "networking"]
+    },
+    {
+        "name": "icon-brand-fedora.svg",
+        "category": "brand",
+        "tags": ["fedora", "brand", "linux", "operating system"]
+    },
+    {
+        "name": "icon-brand-figma.svg",
+        "category": "brand",
+        "tags": ["figma", "brand", "design", "tool"]
+    },
+    {
+        "name": "icon-brand-firebase.svg",
+        "category": "brand",
+        "tags": ["firebase", "brand", "cloud", "technology"]
+    },
+    {
+        "name": "icon-brand-firefox.svg",
+        "category": "brand",
+        "tags": ["firefox", "brand", "browser", "technology"]
+    },
+    {
+        "name": "icon-brand-fiverr.svg",
+        "category": "brand",
+        "tags": ["fiverr", "brand", "marketplace", "services"]
+    },
+    {
+        "name": "icon-brand-flutter.svg",
+        "category": "brand",
+        "tags": ["flutter", "brand", "mobile", "framework"]
+    },
+    {
+        "name": "icon-brand-framer.svg",
+        "category": "brand",
+        "tags": ["framer", "brand", "design", "tool"]
+    },
+    {
+        "name": "icon-brand-gatsby.svg",
+        "category": "brand",
+        "tags": ["gatsby", "brand", "framework", "javascript"]
+    },
+    {
+        "name": "icon-brand-github-copilot.svg",
+        "category": "brand",
+        "tags": ["github copilot", "brand", "ai", "coding"]
+    },
+    {
+        "name": "icon-brand-github.svg",
+        "category": "brand",
+        "tags": ["github", "brand", "version control", "development"]
+    },
+    {
+        "name": "icon-brand-gitlab.svg",
+        "category": "brand",
+        "tags": ["gitlab", "brand", "version control", "development"]
+    },
+    {
+        "name": "icon-brand-git.svg",
+        "category": "brand",
+        "tags": ["git", "brand", "version control", "development"]
+    },
+    {
+        "name": "icon-brand-gmail.svg",
+        "category": "brand",
+        "tags": ["gmail", "brand", "email", "service"]
+    },
+    {
+        "name": "icon-brand-gojek.svg",
+        "category": "brand",
+        "tags": ["gojek", "brand", "technology", "services"]
+    },
+    {
+        "name": "icon-brand-golang.svg",
+        "category": "brand",
+        "tags": ["golang", "brand", "programming", "language"]
+    },
+    {
+        "name": "icon-brand-google-drive.svg",
+        "category": "brand",
+        "tags": ["google drive", "brand", "cloud", "storage"]
+    },
+    {
+        "name": "icon-brand-google-play.svg",
+        "category": "brand",
+        "tags": ["google play", "brand", "mobile", "apps"]
+    },
+    {
+        "name": "icon-brand-google.svg",
+        "category": "brand",
+        "tags": ["google", "brand", "technology", "search"]
+    },
+    {
+        "name": "icon-brand-html.svg",
+        "category": "brand",
+        "tags": ["html", "brand", "web", "markup"]
+    }
+]

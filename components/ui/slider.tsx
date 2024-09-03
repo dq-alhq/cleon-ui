@@ -2,7 +2,6 @@
 
 import * as React from 'react'
 
-import { useSlotId } from '@react-aria/utils'
 import {
     composeRenderProps,
     type LabelProps,
@@ -19,6 +18,8 @@ import {
     type TextProps
 } from 'react-aria-components'
 import { tv, type VariantProps } from 'tailwind-variants'
+
+import { useSlotId } from '@react-aria/utils'
 
 import { Description, Label } from './field'
 

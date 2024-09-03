@@ -1,6 +1,6 @@
 'use client'
 
-import { IconChevronDown } from 'justd-icons'
+import { IconChevronDown } from 'cleon-icons'
 
 import { ShowMore } from '@/components/ui'
 import { cn } from '@/lib/utils'

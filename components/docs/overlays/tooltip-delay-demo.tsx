@@ -1,6 +1,6 @@
 'use client'
 
-import { IconBrandGithub } from 'justd-icons'
+import { IconBrandGithub } from 'cleon-icons'
 
 import { buttonVariants, Tooltip } from '@/components/ui'
 

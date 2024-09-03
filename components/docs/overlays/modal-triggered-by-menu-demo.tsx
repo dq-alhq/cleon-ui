@@ -2,7 +2,7 @@
 
 import React from 'react'
 
-import { IconDotsVertical, IconLoader } from 'justd-icons'
+import { IconDotsVertical, IconLoader } from 'cleon-icons'
 
 import { Button, buttonVariants, Menu, Modal } from '@/components/ui'
 import { wait } from '@/lib/utils'

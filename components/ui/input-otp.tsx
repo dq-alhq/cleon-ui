@@ -2,9 +2,10 @@
 
 import * as React from 'react'
 
-import { cn } from '@/lib/utils'
+import { IconPoint } from 'cleon-icons'
 import { OTPInput, OTPInputContext } from 'input-otp'
-import { IconBulletFill } from 'justd-icons'
+
+import { cn } from '@/lib/utils'
 
 interface InputOTPSubComponents {
     Group: typeof InputOTPGroup
@@ -74,7 +75,7 @@ const InputOTPSeparator = React.forwardRef<
     React.ComponentPropsWithoutRef<'div'>
 >(({ ...props }, ref) => (
     <div ref={ref} role='separator' {...props}>
-        <IconBulletFill className='size-2 fill-inherit' />
+        <IconPoint className='size-2 fill-inherit' />
     </div>
 ))
 InputOTPSeparator.displayName = 'InputOTPSeparator'

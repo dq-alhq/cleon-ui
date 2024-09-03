@@ -1,11 +1,12 @@
 'use client'
 
-import { isIOS } from '@react-aria/utils'
 import {
     Heading as HeadingPrimitive,
     type HeadingProps as HeadingPrimitiveProps
 } from 'react-aria-components'
 import { tv } from 'tailwind-variants'
+
+import { isIOS } from '@react-aria/utils'
 
 const headingStyles = tv({
     base: 'font-sans tracking-tight text-foreground',

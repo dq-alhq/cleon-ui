@@ -1,6 +1,6 @@
 'use client'
 
-import { IconRocket } from 'justd-icons'
+import { IconRocket } from 'cleon-icons'
 import { Header, Link, Text } from 'react-aria-components'
 
 import { buttonVariants, Heading } from '@/components/ui'

@@ -1,5 +1,6 @@
-import { Note, type NoteProps } from '@/components/ui'
 import type { TextProps } from 'react-aria-components'
+
+import { Note, type NoteProps } from '@/components/ui'
 
 interface DocsNoteProps extends NoteProps {
     children: TextProps['children']

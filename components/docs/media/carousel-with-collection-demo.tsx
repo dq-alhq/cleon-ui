@@ -1,7 +1,8 @@
 'use client'
 
-import { Card, Carousel } from '@/components/ui'
 import Image from 'next/image'
+
+import { Card, Carousel } from '@/components/ui'
 
 export default function CarouselWithCollectionDemo() {
     return (

@@ -1,6 +1,6 @@
 'use client'
 
-import { IconStar } from 'justd-icons'
+import { IconStar } from 'cleon-icons'
 import { useDragAndDrop } from 'react-aria-components'
 import { useListData } from 'react-stately'
 

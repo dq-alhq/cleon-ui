@@ -2,6 +2,8 @@
 
 import * as React from 'react'
 
+import { CartesianGrid, Line, LineChart, XAxis } from 'recharts'
+
 import {
     Card,
     ChartContainer,
@@ -9,7 +11,6 @@ import {
     ChartTooltipContent,
     type ChartConfig
 } from '@/components/ui'
-import { CartesianGrid, Line, LineChart, XAxis } from 'recharts'
 
 const chartData = [
     { date: '2024-04-01', desktop: 222, mobile: 150 },

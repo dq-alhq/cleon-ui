@@ -2,7 +2,7 @@
 
 import * as React from 'react'
 
-import { IconLoader } from 'justd-icons'
+import { IconLoader2 } from 'cleon-icons'
 
 import { previews } from '@/components/docs/generated/previews'
 import jsonPreviews from '@/components/docs/generated/previews.json'
@@ -54,7 +54,7 @@ export function DocHow({
                         <React.Suspense
                             fallback={
                                 <div className='flex items-center text-sm text-muted-foreground'>
-                                    <IconLoader className='mr-2 size-4 animate-spin' />
+                                    <IconLoader2 className='mr-2 size-4 animate-spin' />
                                     Loading...
                                 </div>
                             }

@@ -1,5 +1,9 @@
 'use client'
 
+import { IconTrendingUp } from 'cleon-icons'
+import { IconArrowDown, IconArrowUp } from 'cleon-icons'
+import { PolarAngleAxis, PolarGrid, Radar, RadarChart } from 'recharts'
+
 import {
     Card,
     ChartContainer,
@@ -9,8 +13,6 @@ import {
     ChartTooltipContent,
     type ChartConfig
 } from '@/components/ui'
-import { IconArrowWall2Down, IconArrowWall2Up, IconTrendingChart3 } from 'justd-icons'
-import { PolarAngleAxis, PolarGrid, Radar, RadarChart } from 'recharts'
 
 const chartData = [
     { month: 'January', desktop: 186, mobile: 80 },
@@ -25,12 +27,12 @@ const chartConfig = {
     desktop: {
         label: 'Desktop',
         color: 'hsl(var(--chart-1))',
-        icon: IconArrowWall2Up
+        icon: IconArrowUp
     },
     mobile: {
         label: 'Mobile',
         color: 'hsl(var(--chart-2))',
-        icon: IconArrowWall2Down
+        icon: IconArrowDown
     }
 } satisfies ChartConfig
 
@@ -73,8 +75,7 @@ export default function RadarChartIconsDemo() {
             </Card.Content>
             <Card.Footer className='flex-col gap-2 pt-4 text-sm'>
                 <div className='flex items-center gap-2 font-medium leading-none'>
-                    Trending up by 5.2% this month{' '}
-                    <IconTrendingChart3 className='h-4 w-4' />
+                    Trending up by 5.2% this month <IconTrendingUp className='h-4 w-4' />
                 </div>
                 <div className='flex items-center gap-2 leading-none text-muted-foreground'>
                     January - June 2024

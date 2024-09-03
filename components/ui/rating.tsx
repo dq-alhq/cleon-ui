@@ -1,6 +1,7 @@
 'use client'
 
-import { useSlotId } from '@react-aria/utils'
+import React from 'react'
+
 import { motion } from 'framer-motion'
 import {
     composeRenderProps,
@@ -18,7 +19,8 @@ import {
 import { tv, type VariantProps } from 'tailwind-variants'
 
 import { cn } from '@/lib/utils'
-import React from 'react'
+import { useSlotId } from '@react-aria/utils'
+
 import { Description, Label } from './field'
 
 const ratingVariants = tv({

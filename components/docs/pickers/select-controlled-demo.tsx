@@ -2,8 +2,9 @@
 
 import React from 'react'
 
-import { Description, Select } from '@/components/ui'
 import type { Key } from 'react-aria-components'
+
+import { Description, Select } from '@/components/ui'
 
 export const movies = [
     { id: 1, title: 'Inception' },

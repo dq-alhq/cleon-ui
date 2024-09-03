@@ -1,7 +1,8 @@
 import React from 'react'
 
-import { Description, Tag, TagGroup, TagList } from '@/components/ui'
 import type { Selection } from 'react-aria-components'
+
+import { Description, Tag, TagGroup, TagList } from '@/components/ui'
 
 const fruitList = [
     { id: '1', name: 'Apple', available: false },

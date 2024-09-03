@@ -2,6 +2,9 @@
 
 import * as React from 'react'
 
+import { Label, Pie, PieChart, Sector } from 'recharts'
+import type { PieSectorDataItem } from 'recharts/types/polar/Pie'
+
 import {
     Card,
     ChartContainer,
@@ -11,8 +14,6 @@ import {
     Select,
     type ChartConfig
 } from '@/components/ui'
-import { Label, Pie, PieChart, Sector } from 'recharts'
-import type { PieSectorDataItem } from 'recharts/types/polar/Pie'
 
 const desktopData = [
     { month: 'january', desktop: 186, fill: 'var(--color-january)' },

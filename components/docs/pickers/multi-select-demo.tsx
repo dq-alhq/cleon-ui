@@ -1,7 +1,8 @@
 'use client'
 
-import { MultiSelect, Tag, type SelectedKey } from '@/components/ui'
 import { useListData } from 'react-stately'
+
+import { MultiSelect, Tag, type SelectedKey } from '@/components/ui'
 
 export default function MultiSelectDemo() {
     const selectedList = useListData<SelectedKey>({

@@ -1,8 +1,9 @@
-import { transformerNotationDiff } from '@shikijs/transformers'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypePrettyCode from 'rehype-pretty-code'
 import rehypeSlug from 'rehype-slug'
 import { defineCollection, defineConfig, s } from 'velite'
+
+import { transformerNotationDiff } from '@shikijs/transformers'
 
 const computedFields = <T extends { slug: string }>(data: T) => ({
     ...data,

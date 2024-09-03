@@ -1,5 +1,6 @@
-import { Button } from '@/components/ui'
 import { toast, type ToastT } from 'sonner'
+
+import { Button } from '@/components/ui'
 
 const positions: ToastT['position'][] = [
     'top-left',

@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import { ProgressBar, type ProgressBarProps } from 'react-aria-components'
 
 import { cn } from '@/lib/utils'
+
 import { Label } from './field'
 
 interface ProgressProps extends ProgressBarProps {

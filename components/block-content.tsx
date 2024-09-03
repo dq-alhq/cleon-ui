@@ -6,6 +6,7 @@ import jsonPreviews from '@/components/blocks/generated/previews.json'
 import { Code } from '@/components/docs/rehype/code'
 import { Tabs, Toggle } from '@/components/ui'
 import { cn } from '@/lib/utils'
+
 import PreviewContent from './preview-content'
 
 type screenWidthType = 'max-w-none' | 'max-w-3xl' | 'max-w-sm'

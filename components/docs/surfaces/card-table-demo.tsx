@@ -1,6 +1,6 @@
 'use client'
 
-import { IconDotsVertical, IconEye, IconPencilBox, IconTrash } from 'justd-icons'
+import { IconDotsVertical, IconEye, IconPencil, IconTrash } from 'cleon-icons'
 
 import { Card, Menu, Pagination, Table } from '@/components/ui'
 
@@ -112,7 +112,7 @@ export default function CardTableDemo() {
                                                 <IconEye /> View
                                             </Menu.Item>
                                             <Menu.Item>
-                                                <IconPencilBox /> Edit
+                                                <IconPencil /> Edit
                                             </Menu.Item>
                                             <Menu.Separator />
                                             <Menu.Item isDanger>

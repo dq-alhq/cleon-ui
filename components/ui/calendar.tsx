@@ -1,6 +1,6 @@
 'use client'
 
-import { IconChevronLeft, IconChevronRight } from 'justd-icons'
+import { IconChevronLeft, IconChevronRight } from 'cleon-icons'
 import {
     CalendarCell,
     CalendarGrid,
@@ -19,6 +19,7 @@ import {
 } from 'react-aria-components'
 import { twJoin } from 'tailwind-merge'
 import { tv } from 'tailwind-variants'
+
 import { Button } from './button'
 
 const cellStyles = tv({

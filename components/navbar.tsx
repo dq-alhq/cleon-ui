@@ -2,30 +2,26 @@
 
 import React, { useEffect, useId, useState } from 'react'
 
-import { LayoutGroup, motion } from 'framer-motion'
 import {
     IconBrandAdobe,
+    IconBrandCleon,
     IconBrandFramer,
     IconBrandGithub,
-    IconBrandJustd,
-    IconBrandParanoid,
-    IconBrandTailwindcss,
+    IconBrandTailwind,
     IconChevronDown,
-    IconColorPalette,
+    IconColorPicker,
     IconDeviceDesktop,
-    IconHamburger,
+    IconMenu,
     IconMoon,
     IconSearch,
     IconSun
-} from 'justd-icons'
+} from 'cleon-icons'
+import { LayoutGroup, motion } from 'framer-motion'
 import { usePathname } from 'next/navigation'
 import { Collection, Link as LinkPrimitive, type LinkProps } from 'react-aria-components'
 
 import { CommandPalette, type OpenCloseProps } from '@/components/command-palette'
-import { Logo } from '@/components/logo'
 import { ThemeToggle } from '@/components/theme-toggle'
-import { cn, useMediaQuery } from '@/lib/utils'
-
 import {
     Button,
     buttonVariants,
@@ -35,13 +31,16 @@ import {
     Separator,
     Sheet
 } from '@/components/ui'
+import { cn, useMediaQuery } from '@/lib/utils'
+
 import { Aside } from './aside'
 import { useTheme } from './providers'
 
 const menuItems = [
     { id: 1, label: 'Home', url: '/' },
     { id: 2, label: 'Components', url: '/docs/getting-started/introduction' },
-    { id: 3, label: 'Blocks', url: '/blocks' }
+    { id: 3, label: 'Blocks', url: '/blocks' },
+    { id: 4, label: 'Icons', url: 'https://cleon-icons.vercel.app' }
 ]
 
 export function Navbar() {
@@ -76,6 +75,13 @@ export function Navbar() {
                                             href='/blocks'
                                         >
                                             Blocks
+                                        </NavLink>
+                                        <NavLink
+                                            target='_blank'
+                                            isActive={pathname?.startsWith('/icons')}
+                                            href='https://cleon-icons.vercel.app'
+                                        >
+                                            Icons
                                         </NavLink>
                                     </Collection>
                                 </div>
@@ -168,14 +174,14 @@ export function ResponsiveAside({ open, setOpen }: OpenCloseProps) {
                     size='icon'
                     onPress={() => setOpenAside((openAside) => !openAside)}
                 >
-                    <IconHamburger />
+                    <IconMenu />
                 </Button>
                 <Link
                     className='rounded focus:outline-none focus:ring-1 focus:ring-primary/20'
                     href='/'
                     aria-label='Logo'
                 >
-                    <Logo className='size-7' />
+                    <IconBrandCleon className='size-7' />
                 </Link>
                 <div className='flex items-center gap-x-1'>
                     <LinkPrimitive
@@ -235,7 +241,7 @@ export function NavbarDropdown() {
                 className='group -ml-1 [&_svg]:size-4'
             >
                 <span className='flex items-center gap-x-2'>
-                    <Logo className='-ml-1 size-6' />
+                    <IconBrandCleon className='-ml-1 size-6' />
                     <span className='font-mono text-base tracking-tight sm:text-sm'>
                         Cleon UI
                     </span>
@@ -257,20 +263,36 @@ export function NavbarDropdown() {
                     RAC
                 </Menu.Item>
                 <Menu.Item href='https://getjustd.com/' target='_blank'>
-                    <IconBrandJustd />
+                    <svg
+                        xmlns='http://www.w3.org/2000/svg'
+                        width='24'
+                        height='24'
+                        fill='none'
+                        aria-hidden='true'
+                        className='size-4'
+                        data-slot='icon'
+                        viewBox='0 0 24 24'
+                    >
+                        <path
+                            fill='currentColor'
+                            fillRule='evenodd'
+                            d='M11.087 2h6.826c.602 0 1.087 0 1.48.032.406.033.761.103 1.09.27.523.267.948.692 1.214 1.215.168.329.238.684.27 1.09C22 5 22 5.484 22 6.086v7.381c0 .602 0 1.088-.032 1.481-.033.405-.103.76-.27 1.09a2.78 2.78 0 01-1.215 1.214c-.329.168-.684.237-1.09.27-.393.033-.878.033-1.48.033h-.357v.357c0 .602 0 1.087-.033 1.48-.033.406-.102.761-.27 1.09a2.78 2.78 0 01-1.214 1.214c-.33.168-.685.238-1.09.27-.393.033-.879.033-1.48.033H6.086c-.602 0-1.087 0-1.48-.032-.406-.033-.761-.103-1.09-.27a2.78 2.78 0 01-1.214-1.215c-.168-.329-.238-.684-.27-1.09C2 19 2 18.516 2 17.914v-7.381c0-.602 0-1.088.032-1.481.033-.405.103-.76.27-1.09a2.78 2.78 0 011.215-1.214c.329-.167.684-.237 1.09-.27.393-.033.878-.033 1.48-.033H7v-.357c0-.602 0-1.087.032-1.48.033-.406.103-.761.27-1.09a2.78 2.78 0 011.215-1.214c.329-.168.684-.238 1.09-.27C10 2 10.484 2 11.086 2zm6.802 14.444h-.333v-5.912c0-.602 0-1.088-.033-1.481-.033-.405-.102-.76-.27-1.09a2.78 2.78 0 00-1.214-1.214c-.33-.167-.685-.237-1.09-.27-.393-.033-.879-.033-1.48-.033H8.11v-.333c0-.631 0-1.072.029-1.414.027-.336.078-.53.153-.676.16-.313.415-.568.728-.728.146-.075.34-.126.676-.153.343-.028.783-.029 1.414-.029h6.778c.631 0 1.072 0 1.414.029.336.027.53.078.676.153.314.16.568.415.728.728.075.146.126.34.153.676.029.342.029.783.029 1.414v7.333c0 .632 0 1.072-.029 1.415-.027.336-.078.53-.153.675a1.67 1.67 0 01-.728.729c-.146.074-.34.125-.676.153-.343.028-.783.028-1.414.028zM5.442 18.558A1.44 1.44 0 006.5 19q.417 0 .75-.2a1.56 1.56 0 00.542-.55Q8 17.908 8 17.5a1.44 1.44 0 00-.442-1.058A1.44 1.44 0 006.5 16a1.44 1.44 0 00-1.058.442A1.44 1.44 0 005 17.5q0 .617.442 1.058'
+                            clipRule='evenodd'
+                        ></path>
+                    </svg>
                     Just D.
                 </Menu.Item>
                 <Menu.Item href='https://tailwindcss.com/' target='_blank'>
-                    <IconBrandTailwindcss />
+                    <IconBrandTailwind />
                     Tailwind CSS
                 </Menu.Item>
                 <Menu.Item href='https://getjustd.com/colors' target='_blank'>
-                    <IconColorPalette />
+                    <IconColorPicker />
                     Colors
                 </Menu.Item>
-                <Menu.Item href='https://getjustd.com/icons' target='_blank'>
-                    <IconBrandParanoid />
-                    Just D. Icons
+                <Menu.Item href='https://cleon-icons.vercel.app' target='_blank'>
+                    <IconBrandCleon />
+                    Cleon Icons
                 </Menu.Item>
                 <Menu.Item href='https://www.framer.com/motion/' target='_blank'>
                     <IconBrandFramer />

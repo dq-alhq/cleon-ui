@@ -1,12 +1,13 @@
 import React from 'react'
 
+import type { Metadata, Viewport } from 'next'
+import localFont from 'next/font/local'
+
 import { Providers } from '@/components/providers'
 import { siteConfig } from '@/config/site'
 import { cn } from '@/lib/utils'
 import '@/styles/app.css'
 import { Analytics } from '@vercel/analytics/react'
-import type { Metadata, Viewport } from 'next'
-import localFont from 'next/font/local'
 
 const fontSans = localFont({
     src: './fonts/Walsheim.woff2',

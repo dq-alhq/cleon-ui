@@ -1,9 +1,10 @@
 'use client'
 
-import GridListDragDemo from '@/components/docs/collections/grid-list-drag-demo'
-import { Grid, GridList } from '@/components/ui'
 import { useDragAndDrop } from 'react-aria-components'
 import { useListData } from 'react-stately'
+
+import GridListDragDemo from '@/components/docs/collections/grid-list-drag-demo'
+import { Grid, GridList } from '@/components/ui'
 
 export default function GridListDragBetweenItemDemo() {
     const list = useListData({

@@ -2,9 +2,9 @@
 
 import * as React from 'react'
 
+import { docs } from '#site/content'
 import { usePathname, useRouter } from 'next/navigation'
 
-import { docs } from '#site/content'
 import { Command } from '@/components/ui'
 import { useMediaQuery } from '@/lib/utils'
 

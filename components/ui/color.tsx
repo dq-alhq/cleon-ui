@@ -2,7 +2,6 @@
 
 import * as React from 'react'
 
-import { parseColor } from '@react-stately/color'
 import {
     ColorArea as ColorAreaPrimitive,
     ColorSlider as ColorSliderPrimitive,
@@ -22,6 +21,8 @@ import {
 import { tv } from 'tailwind-variants'
 
 import { cn } from '@/lib/utils'
+import { parseColor } from '@react-stately/color'
+
 import { Description, Label } from './field'
 import { Slider } from './slider'
 

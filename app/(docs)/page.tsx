@@ -1,5 +1,6 @@
-import { siteConfig } from '@/config/site'
 import type { Metadata } from 'next'
+
+import { siteConfig } from '@/config/site'
 
 import DataFormSink from './sink/data-form'
 import { Hero } from './sink/hero'

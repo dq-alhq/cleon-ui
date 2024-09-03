@@ -1,6 +1,6 @@
 'use client'
 
-import { IconDotGrid2X3 } from 'justd-icons'
+import { IconGripVertical } from 'cleon-icons'
 import {
     composeRenderProps,
     ListBoxItem as ListBoxItemPrimitive,
@@ -11,6 +11,7 @@ import {
 import { tv } from 'tailwind-variants'
 
 import { cn } from '@/lib/utils'
+
 import { DropdownItemDetails, DropdownSection } from './dropdown'
 
 const listBoxStyles = tv({
@@ -72,7 +73,7 @@ const ListBoxItem = <T extends object>({
                 <div className='flex items-center gap-2'>
                     <>
                         {values.allowsDragging && (
-                            <IconDotGrid2X3
+                            <IconGripVertical
                                 className={cn(
                                     'size-4 shrink-0 text-muted-foreground transition',
                                     values.isFocused && 'text-foreground',

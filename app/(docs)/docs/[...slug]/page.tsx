@@ -1,12 +1,13 @@
 import { docs } from '#site/content'
+import type { Metadata } from 'next'
+import { notFound } from 'next/navigation'
+import { Separator } from 'ui'
+
 import { DocRefs } from '@/components/doc-refs'
 import { MDXContent } from '@/components/mdx-components'
 import { TableOfContents } from '@/components/table-of-contents'
 import { siteConfig } from '@/config/site'
 import '@/styles/code.css'
-import type { Metadata } from 'next'
-import { notFound } from 'next/navigation'
-import { Separator } from 'ui'
 
 export interface DocPageProps {
     params: {

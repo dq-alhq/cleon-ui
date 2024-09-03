@@ -1,6 +1,6 @@
 'use client'
 
-import { IconSearch, IconX } from 'justd-icons'
+import { IconSearch, IconX } from 'cleon-icons'
 import {
     SearchField as SearchFieldPrimitive,
     type SearchFieldProps as SearchFieldPrimitiveProps,
@@ -9,6 +9,7 @@ import {
 import { tv } from 'tailwind-variants'
 
 import { cn } from '@/lib/utils'
+
 import { Button } from './button'
 import { Description, FieldError, FieldGroup, Input, Label } from './field'
 

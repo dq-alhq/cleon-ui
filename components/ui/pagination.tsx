@@ -3,12 +3,12 @@
 import * as React from 'react'
 
 import {
-    IconChevronDoubleLeft,
-    IconChevronDoubleRight,
     IconChevronLeft,
     IconChevronRight,
+    IconChevronsLeft,
+    IconChevronsRight,
     IconDotsHorizontal
-} from 'justd-icons'
+} from 'cleon-icons'
 import {
     ListBox,
     ListBoxItem,
@@ -20,6 +20,7 @@ import {
 } from 'react-aria-components'
 
 import { cn } from '@/lib/utils'
+
 import { buttonVariants } from './button'
 
 const Pagination = ({ className, ...props }: React.ComponentProps<'nav'>) => (
@@ -175,9 +176,9 @@ const PaginationItem = ({
         case 'next':
             return renderPaginationIndicator(<IconChevronRight />)
         case 'first':
-            return renderPaginationIndicator(<IconChevronDoubleLeft />)
+            return renderPaginationIndicator(<IconChevronsLeft />)
         case 'last':
-            return renderPaginationIndicator(<IconChevronDoubleRight />)
+            return renderPaginationIndicator(<IconChevronsRight />)
         default:
             return renderListItem(
                 {

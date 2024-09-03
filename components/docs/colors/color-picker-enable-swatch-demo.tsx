@@ -1,7 +1,8 @@
 import React from 'react'
 
-import { ColorPicker, defaultColor } from '@/components/ui'
 import { type Color } from 'react-aria-components'
+
+import { ColorPicker, defaultColor } from '@/components/ui'
 
 export default function ColorPickerEnableSwatchDemo() {
     const [color, setColor] = React.useState(defaultColor)

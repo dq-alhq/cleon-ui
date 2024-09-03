@@ -1,5 +1,8 @@
 'use client'
 
+import { IconTrendingUp } from 'cleon-icons'
+import { CartesianGrid, Line, LineChart, XAxis } from 'recharts'
+
 import {
     Card,
     ChartContainer,
@@ -7,8 +10,6 @@ import {
     ChartTooltipContent,
     type ChartConfig
 } from '@/components/ui'
-import { IconTrendingChart3 } from 'justd-icons'
-import { CartesianGrid, Line, LineChart, XAxis } from 'recharts'
 
 const chartData = [
     { month: 'January', desktop: 186, mobile: 80 },
@@ -78,7 +79,7 @@ export default function LineChartMultipleDemo() {
                     <div className='grid gap-2'>
                         <div className='flex items-center gap-2 font-medium leading-none'>
                             Trending up by 5.2% this month{' '}
-                            <IconTrendingChart3 className='h-4 w-4' />
+                            <IconTrendingUp className='h-4 w-4' />
                         </div>
                         <div className='flex items-center gap-2 leading-none text-muted-foreground'>
                             Showing total visitors for the last 6 months

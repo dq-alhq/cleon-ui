@@ -2,12 +2,13 @@
 
 import * as React from 'react'
 
-import { cn } from '@/lib/utils'
 import {
     ColorField as ColorFieldPrimitive,
     type ColorFieldProps as ColorFieldPrimitiveProps,
     type ValidationResult
 } from 'react-aria-components'
+
+import { cn } from '@/lib/utils'
 
 import { ColorSwatch } from './color'
 import { ColorPicker } from './color-picker'

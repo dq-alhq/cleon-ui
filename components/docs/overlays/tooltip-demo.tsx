@@ -1,7 +1,8 @@
 'use client'
 
+import { IconBrandFacebook, IconBrandGithub } from 'cleon-icons'
+
 import { buttonVariants, Tooltip } from '@/components/ui'
-import { IconBrandFacebook, IconBrandGithub } from 'justd-icons'
 
 export default function TooltipDemo() {
     return (

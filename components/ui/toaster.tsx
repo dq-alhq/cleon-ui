@@ -1,14 +1,15 @@
 'use client'
 
+import {
+    IconAlertCircle,
+    IconAlertTriangle,
+    IconCircleCheck,
+    IconLoader
+} from 'cleon-icons'
+import { Toaster as ToasterPrimitive, type ToasterProps } from 'sonner'
+
 import { useTheme } from '@/components/providers'
 import { cn } from '@/lib/utils'
-import {
-    IconCircleCheck,
-    IconCircleInfo,
-    IconLoader,
-    IconTriangleInfo
-} from 'justd-icons'
-import { Toaster as ToasterPrimitive, type ToasterProps } from 'sonner'
 
 import { buttonVariants } from './button'
 
@@ -19,10 +20,10 @@ const Toaster = ({ ...props }: ToasterProps) => {
             theme={theme as ToasterProps['theme']}
             className='toaster group'
             icons={{
-                info: <IconCircleInfo className='size-4' />,
+                info: <IconAlertCircle className='size-4' />,
                 success: <IconCircleCheck className='size-4' />,
-                warning: <IconTriangleInfo className='size-4' />,
-                error: <IconTriangleInfo className='size-4' />,
+                warning: <IconAlertTriangle className='size-4' />,
+                error: <IconAlertTriangle className='size-4' />,
                 loading: <IconLoader className='animate-spin size-4' />
             }}
             toastOptions={{

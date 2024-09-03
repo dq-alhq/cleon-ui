@@ -2,8 +2,9 @@
 
 import React from 'react'
 
-import { Button, Form, Modal, Textarea } from '@/components/ui'
 import { toast } from 'sonner'
+
+import { Button, Form, Modal, Textarea } from '@/components/ui'
 
 export default function ModalNestedDemo() {
     const [firstModalOpen, setFirstModalOpen] = React.useState(false)

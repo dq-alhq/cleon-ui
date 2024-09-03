@@ -1,22 +1,23 @@
 'use client'
+
 import * as React from 'react'
 
-import { useAsyncList } from '@react-stately/data'
 import {
-    IconAnalyticsChart,
     IconBell,
-    IconCart,
+    IconBrandCleon,
     IconCreditCard,
     IconCurrencyDollar,
-    IconHamburger,
     IconHome,
+    IconLifebuoy,
     IconLoader,
     IconLogout,
+    IconMenu,
     IconPackage,
-    IconPeople,
     IconSettings,
-    IconSupport
-} from 'justd-icons'
+    IconShoppingCart,
+    IconTrendingUp,
+    IconUsers
+} from 'cleon-icons'
 import Link from 'next/link'
 import {
     Bar,
@@ -29,7 +30,6 @@ import {
     YAxis
 } from 'recharts'
 
-import { Logo } from '@/components/logo'
 import { ThemeToggle } from '@/components/theme-toggle'
 import {
     Avatar,
@@ -45,6 +45,7 @@ import {
     Table
 } from '@/components/ui'
 import { cn, formatDate } from '@/lib/utils'
+import { useAsyncList } from '@react-stately/data'
 
 const roles = [
     {
@@ -106,7 +107,7 @@ export default function Dashboard() {
                 <div className='flex h-full max-h-screen flex-col gap-2'>
                     <div className='flex h-14 items-center border-b px-4 lg:h-[60px] lg:px-6'>
                         <Link href='/' className='flex items-center gap-2 font-semibold'>
-                            <Logo className='h-6 w-6' />
+                            <IconBrandCleon className='h-6 w-6' />
                             <span className=''>Cleon UI</span>
                         </Link>
                         <Menu>
@@ -152,7 +153,7 @@ export default function Dashboard() {
                         <Sheet.Trigger
                             className={cn(buttonVariants({ size: 'icon' }), 'md:hidden')}
                         >
-                            <IconHamburger className='h-5 w-5' />
+                            <IconMenu className='h-5 w-5' />
                         </Sheet.Trigger>
                         <Sheet.Content side='left' aria-labelledby='Menu'>
                             <Sheet.Header>
@@ -188,7 +189,7 @@ export default function Dashboard() {
                                         Settings
                                     </Menu.Item>
                                     <Menu.Item>
-                                        <IconSupport />
+                                        <IconLifebuoy />
                                         Support
                                     </Menu.Item>
                                     <Menu.Item isDanger>
@@ -221,7 +222,7 @@ export default function Dashboard() {
                                 <Card.Title className='text-sm font-medium'>
                                     Subscriptions
                                 </Card.Title>
-                                <IconPeople className='size-4 text-muted-foreground' />
+                                <IconUsers className='size-4 text-muted-foreground' />
                             </Card.Header>
                             <Card.Content>
                                 <div className='text-2xl font-bold'>+2350</div>
@@ -249,7 +250,7 @@ export default function Dashboard() {
                                 <Card.Title className='text-sm font-medium'>
                                     Active Now
                                 </Card.Title>
-                                <IconAnalyticsChart className='size-4 text-muted-foreground' />
+                                <IconTrendingUp className='size-4 text-muted-foreground' />
                             </Card.Header>
                             <Card.Content>
                                 <div className='text-2xl font-bold'>+573</div>
@@ -522,7 +523,7 @@ const Sidebar = () => {
                 Dashboard
             </NavLink>
             <NavLink href='#'>
-                <IconCart className='size-4' />
+                <IconShoppingCart className='size-4' />
                 Orders
                 <Badge variant='info' shape='circle' className='ml-auto size-6 shrink-0'>
                     6
@@ -533,11 +534,11 @@ const Sidebar = () => {
                 Products
             </NavLink>
             <NavLink href='#'>
-                <IconPeople className='size-4' />
+                <IconUsers className='size-4' />
                 Customers
             </NavLink>
             <NavLink href='#'>
-                <IconAnalyticsChart className='size-4' />
+                <IconTrendingUp className='size-4' />
                 Analytics
             </NavLink>
         </nav>

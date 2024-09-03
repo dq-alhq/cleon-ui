@@ -1,6 +1,6 @@
 'use client'
 
-import { IconCheck } from 'justd-icons'
+import { IconCheck } from 'cleon-icons'
 import {
     Collection,
     composeRenderProps,

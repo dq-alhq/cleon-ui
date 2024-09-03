@@ -1,5 +1,7 @@
 'use client'
 
+import { Pie, PieChart } from 'recharts'
+
 import {
     Card,
     ChartContainer,
@@ -7,7 +9,6 @@ import {
     ChartLegendContent,
     type ChartConfig
 } from '@/components/ui'
-import { Pie, PieChart } from 'recharts'
 
 const chartData = [
     { browser: 'chrome', visitors: 275, fill: 'var(--color-chrome)' },

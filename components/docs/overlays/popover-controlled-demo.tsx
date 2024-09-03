@@ -2,7 +2,7 @@
 
 import React from 'react'
 
-import { IconCircleCheck, IconLoader, IconTrash } from 'justd-icons'
+import { IconCircleCheck, IconLoader2, IconTrash } from 'cleon-icons'
 
 import { Button, Popover } from '@/components/ui'
 import { wait } from '@/lib/utils'
@@ -56,7 +56,7 @@ export default function PopoverControlledDemo() {
                     >
                         {loading === 'loading' ? (
                             <>
-                                <IconLoader className='animate-spin' />
+                                <IconLoader2 className='animate-spin' />
                                 Deleting...
                             </>
                         ) : loading === 'success' ? (

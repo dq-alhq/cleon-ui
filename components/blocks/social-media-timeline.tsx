@@ -1,26 +1,27 @@
 'use client'
+
 import * as React from 'react'
 
-import { motion } from 'framer-motion'
 import {
-    IconDateTime,
+    IconBrandCleon,
+    IconCalendarTime,
     IconHome,
     IconMessage,
     IconMessages,
-    IconPeople,
-    IconPerson,
-    IconPersonAdd,
+    IconRecycle,
     IconRefresh,
     IconRocket,
     IconSearch,
     IconSend,
-    IconShuffle,
-    IconThumbsDown,
-    IconTrendingChart
-} from 'justd-icons'
+    IconThumbUp,
+    IconTrendingUp,
+    IconUser,
+    IconUserPlus,
+    IconUsers
+} from 'cleon-icons'
+import { motion } from 'framer-motion'
 import { TextArea } from 'react-aria-components'
 
-import { Logo } from '@/components/logo'
 import { ThemeToggle } from '@/components/theme-toggle'
 import {
     Avatar,
@@ -180,7 +181,7 @@ export default function SocialMediaTimeline() {
                                     href='#'
                                     className='flex items-center gap-2 mr-2 text-lg font-semibold md:text-base'
                                 >
-                                    <Logo className='size-6' />
+                                    <IconBrandCleon className='size-6' />
                                     <span className='sr-only'>Cleon UI</span>
                                 </Link>
                                 <NavLink isActive href='/'>
@@ -188,7 +189,7 @@ export default function SocialMediaTimeline() {
                                     <span className='hidden md:flex'>Home</span>
                                 </NavLink>
                                 <NavLink href='#'>
-                                    <IconPeople className='size-5' />
+                                    <IconUsers className='size-5' />
                                     <span className='hidden md:flex'>Friends</span>
                                 </NavLink>
                                 <NavLink href='#'>
@@ -196,7 +197,7 @@ export default function SocialMediaTimeline() {
                                     <span className='hidden md:flex'>Messages</span>
                                 </NavLink>
                                 <NavLink href='#'>
-                                    <IconPerson className='size-5' />
+                                    <IconUser className='size-5' />
                                     <span className='hidden md:flex'>Profile</span>
                                 </NavLink>
                             </div>
@@ -213,7 +214,7 @@ export default function SocialMediaTimeline() {
                     <div className='col-span-1 hidden lg:flex p-6'>
                         <div className='flex flex-col gap-2 w-full'>
                             <SideNav href='#' isActive>
-                                <IconDateTime className='size-5' />
+                                <IconCalendarTime className='size-5' />
                                 <span className='hidden sm:flex'>Timeline</span>
                             </SideNav>
                             <SideNav href='#'>
@@ -221,7 +222,7 @@ export default function SocialMediaTimeline() {
                                 <span className='hidden sm:flex'>Explore</span>
                             </SideNav>
                             <SideNav href='#'>
-                                <IconTrendingChart className='size-5' />
+                                <IconTrendingUp className='size-5' />
                                 <span className='hidden sm:flex'>Trending</span>
                             </SideNav>
                             <SideNav href='#'>
@@ -348,7 +349,7 @@ const Friends = ({ name, avatar, status, last_seen, active }: FriendsProps) => {
                 )}
             </div>
             <Button size='icon' variant='ghost' className='ml-auto'>
-                <IconPersonAdd />
+                <IconUserPlus />
             </Button>
         </div>
     )
@@ -439,7 +440,7 @@ const Feed = ({ feed }: { feed: FeedProps }) => {
             <Card.Footer className='-m-6 mt-0'>
                 <div className='w-full flex flex-row items-center border-t rounded-t-lg'>
                     <Button className='w-full' variant='ghost'>
-                        <IconThumbsDown className='size-5 rotate-180' />
+                        <IconThumbUp className='size-5' />
                         <span className='ml-1'>{feed.likes}</span>
                     </Button>
                     <Button className='w-full' variant='ghost'>
@@ -447,7 +448,7 @@ const Feed = ({ feed }: { feed: FeedProps }) => {
                         <span className='ml-1'>{feed.comments}</span>
                     </Button>
                     <Button className='w-full' variant='ghost'>
-                        <IconShuffle className='size-5' />
+                        <IconRecycle className='size-5' />
                         <span className='ml-1'>{feed.share}</span>
                     </Button>
                 </div>

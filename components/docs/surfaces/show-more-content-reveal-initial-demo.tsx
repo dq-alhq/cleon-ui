@@ -1,7 +1,8 @@
 'use client'
 
-import { ContentReveal } from '@/components/ui'
 import Image from 'next/image'
+
+import { ContentReveal } from '@/components/ui'
 
 export default function ShowMoreContentRevealDemo() {
     return (

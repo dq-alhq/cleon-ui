@@ -3,14 +3,14 @@
 import React from 'react'
 
 import { type Docs, docs } from '#site/content'
-import { cn, sortDocs, titleCase } from '@/lib/utils'
+import { IconCircleHalf, IconKey, IconPackage } from 'cleon-icons'
 import { LayoutGroup, motion } from 'framer-motion'
-import { IconCircleHalf, IconKey, IconPackage } from 'justd-icons'
 import type { LinkProps as NextLinkProps } from 'next/link'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
 import { Accordion } from '@/components/ui'
+import { cn, sortDocs, titleCase } from '@/lib/utils'
 
 export interface Doc {
     slug: string

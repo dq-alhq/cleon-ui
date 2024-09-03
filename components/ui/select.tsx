@@ -2,8 +2,7 @@
 
 import * as React from 'react'
 
-import type { Placement } from '@react-types/overlays'
-import { IconChevronDown } from 'justd-icons'
+import { IconChevronDown } from 'cleon-icons'
 import {
     Button,
     composeRenderProps,
@@ -16,6 +15,8 @@ import {
 import { tv } from 'tailwind-variants'
 
 import { cn } from '@/lib/utils'
+import type { Placement } from '@react-types/overlays'
+
 import { DropdownItem, DropdownItemDetails, DropdownSection } from './dropdown'
 import { Description, FieldError, Label } from './field'
 import { ListBox } from './list-box'

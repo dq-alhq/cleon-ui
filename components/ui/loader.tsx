@@ -1,7 +1,7 @@
 import type { SVGProps } from 'react'
 import React from 'react'
 
-import { IconLoader, IconLoader2 } from 'justd-icons'
+import { IconLoader, IconLoader2 } from 'cleon-icons'
 import { tv, type VariantProps } from 'tailwind-variants'
 
 const loaderStyles = tv({
@@ -206,8 +206,8 @@ const Dots = (props: SVGProps<SVGSVGElement>) => (
         </circle>
     </svg>
 )
-const Ring = (props: SVGProps<SVGSVGElement>) => <IconLoader {...props} />
-const Spin = (props: SVGProps<SVGSVGElement>) => <IconLoader2 {...props} />
+const Ring = (props: SVGProps<SVGSVGElement>) => <IconLoader2 {...props} />
+const Spin = (props: SVGProps<SVGSVGElement>) => <IconLoader {...props} />
 
 const LOADERS = {
     bars: Bars,

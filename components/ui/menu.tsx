@@ -2,7 +2,7 @@
 
 import * as React from 'react'
 
-import { IconBulletFill, IconCheck, IconChevronLgRight } from 'justd-icons'
+import { IconCheck, IconChevronRight, IconPoint } from 'cleon-icons'
 import {
     Button,
     composeRenderProps,
@@ -23,6 +23,7 @@ import type { VariantProps } from 'tailwind-variants'
 import { tv } from 'tailwind-variants'
 
 import { cn } from '@/lib/utils'
+
 import { DropdownItemDetails, dropdownItemStyles, DropdownSection } from './dropdown'
 import { Keyboard } from './keyboard'
 import { Popover } from './popover'
@@ -127,7 +128,7 @@ const Item = ({ className, isDanger = false, children, ...props }: MenuItemProps
                 <>
                     {typeof children === 'function' ? children(values) : children}
                     {values.hasSubmenu && (
-                        <IconChevronLgRight className='gpfw ml-auto size-3.5' />
+                        <IconChevronRight className='gpfw ml-auto size-3.5' />
                     )}
                 </>
             )}
@@ -181,7 +182,7 @@ const Radio = ({ className, children, ...props }: MenuItemProps) => (
             <>
                 {values.isSelected && (
                     <span className='absolute left-3 flex size-[0.650rem] items-center animate-in justify-center'>
-                        <IconBulletFill className='size-[0.650rem]' />
+                        <IconPoint className='size-[0.650rem]' />
                     </span>
                 )}
 

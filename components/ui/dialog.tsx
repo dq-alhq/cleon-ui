@@ -2,7 +2,7 @@
 
 import * as React from 'react'
 
-import { IconX } from 'justd-icons'
+import { IconX } from 'cleon-icons'
 import {
     Dialog as DialogPrimitive,
     type DialogProps,
@@ -11,6 +11,7 @@ import {
 import { tv } from 'tailwind-variants'
 
 import { useMediaQuery } from '@/lib/utils'
+
 import { Button, type ButtonProps } from './button'
 import { Heading, type HeadingProps } from './heading'
 

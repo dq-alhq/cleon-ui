@@ -1,6 +1,6 @@
 'use client'
 
-import { IconBrandNextjs } from 'justd-icons'
+import { IconBrandNextjs } from 'cleon-icons'
 
 import { Button } from '@/components/ui'
 

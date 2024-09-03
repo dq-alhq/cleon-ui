@@ -1,6 +1,6 @@
 'use client'
 
-import { IconBrandX } from 'justd-icons'
+import { IconBrandX } from 'cleon-icons'
 
 import { TextField } from '@/components/ui'
 

@@ -2,8 +2,8 @@
 
 import * as React from 'react'
 
+import { IconSearch, IconX } from 'cleon-icons'
 import { Command as CommandPrimitive } from 'cmdk'
-import { IconSearch, IconX } from 'justd-icons'
 import {
     Button,
     Dialog,
@@ -17,6 +17,7 @@ import {
 import { tv } from 'tailwind-variants'
 
 import { useMediaQuery } from '@/lib/utils'
+
 import { Keyboard, type KeyboardProps } from './keyboard'
 import { Separator } from './separator'
 

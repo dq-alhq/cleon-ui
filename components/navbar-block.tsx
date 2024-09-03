@@ -2,6 +2,7 @@
 
 import { docs } from '#site/content'
 import { usePathname } from 'next/navigation'
+
 import { NavLink } from './navbar'
 
 export interface Doc {

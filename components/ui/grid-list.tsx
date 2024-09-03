@@ -2,7 +2,7 @@
 
 import React from 'react'
 
-import { IconDotGrid2X3 } from 'justd-icons'
+import { IconGripVertical } from 'cleon-icons'
 import {
     Button,
     GridListItem as GridListItemPrimitive,
@@ -13,6 +13,7 @@ import {
 import { tv } from 'tailwind-variants'
 
 import { cn } from '@/lib/utils'
+
 import { Checkbox } from './checkbox'
 
 interface GridListProps<T extends object> extends GridListPrimitiveProps<T> {}
@@ -52,7 +53,7 @@ const GridListItem = ({ children, ...props }: GridListItemProps) => {
                 <>
                     {allowsDragging && (
                         <Button slot='drag'>
-                            <IconDotGrid2X3 />
+                            <IconGripVertical />
                         </Button>
                     )}
                     {selectionMode === 'multiple' && selectionBehavior === 'toggle' && (

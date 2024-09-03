@@ -2,8 +2,8 @@
 
 import * as React from 'react'
 
+import { IconChevronLeft, IconChevronRight } from 'cleon-icons'
 import useEmblaCarousel, { type UseEmblaCarouselType } from 'embla-carousel-react'
-import { IconChevronLeft, IconChevronRight } from 'justd-icons'
 import {
     ListBox,
     ListBoxItem,
@@ -13,6 +13,7 @@ import {
 } from 'react-aria-components'
 
 import { cn } from '@/lib/utils'
+
 import { Button, type ButtonProps } from './button'
 
 type CarouselApi = UseEmblaCarouselType[1]

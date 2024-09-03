@@ -2,8 +2,9 @@
 
 import React from 'react'
 
-import { Choicebox, Description } from '@/components/ui'
 import type { Selection } from 'react-aria-components'
+
+import { Choicebox, Description } from '@/components/ui'
 
 export default function ChoiceboxControlledDemo() {
     const [selectedKeys, setSelectedKeys] = React.useState<Selection>(

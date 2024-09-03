@@ -2,6 +2,8 @@
 
 import * as React from 'react'
 
+import { Area, AreaChart, CartesianGrid, XAxis } from 'recharts'
+
 import {
     Card,
     ChartContainer,
@@ -12,7 +14,6 @@ import {
     Select,
     type ChartConfig
 } from '@/components/ui'
-import { Area, AreaChart, CartesianGrid, XAxis } from 'recharts'
 
 const chartData = [
     { date: '2024-04-01', desktop: 222, mobile: 150 },

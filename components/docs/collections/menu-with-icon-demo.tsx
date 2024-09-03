@@ -1,8 +1,7 @@
 'use client'
 
 import {
-    IconBag,
-    IconCommandRegular,
+    IconCommand,
     IconDashboard,
     IconDeviceDesktop,
     IconHeadphones,
@@ -10,8 +9,9 @@ import {
     IconLogout,
     IconMoon,
     IconSettings,
+    IconShoppingBag,
     IconSun
-} from 'justd-icons'
+} from 'cleon-icons'
 
 import { useTheme } from '@/components/providers'
 import { Avatar, Menu } from '@/components/ui'
@@ -46,12 +46,12 @@ export default function MenuWithIconDemo() {
                     My Wishlist
                 </Menu.Item>
                 <Menu.Item href='#orders'>
-                    <IconBag />
+                    <IconShoppingBag />
                     Orders
                 </Menu.Item>
                 <Menu.Separator />
                 <Menu.Item>
-                    <IconCommandRegular />
+                    <IconCommand />
                     Command Menu.
                 </Menu.Item>
                 <Menu.Sub>

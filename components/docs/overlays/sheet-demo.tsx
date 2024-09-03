@@ -2,9 +2,10 @@
 
 import React, { useState } from 'react'
 
+import { titleCase } from 'usemods'
+
 import { OptionPreview } from '@/components/docs/outside/option-preview'
 import { Button, Sheet, Switch } from '@/components/ui'
-import { titleCase } from 'usemods'
 
 type Side = 'left' | 'right' | 'top' | 'bottom'
 export default function SheetDemo() {

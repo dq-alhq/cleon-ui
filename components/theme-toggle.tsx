@@ -1,6 +1,6 @@
 'use client'
 
-import { IconMoon, IconSun } from 'justd-icons'
+import { IconMoon, IconSun } from 'cleon-icons'
 import { useTheme } from 'next-themes'
 
 import { Button } from '@/components/ui'

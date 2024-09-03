@@ -1,5 +1,6 @@
 'use client'
-import { IconSun, IconSunFill } from 'justd-icons'
+
+import { IconSun } from 'cleon-icons'
 
 import { buttonVariants, Toggle } from '@/components/ui'
 
@@ -12,7 +13,13 @@ export default function ToggleButtonDemo() {
                 <div key={variant}>
                     <Toggle size='icon' variant={variant as Variant}>
                         {({ isSelected }) => (
-                            <>{isSelected ? <IconSunFill /> : <IconSun />}</>
+                            <>
+                                {isSelected ? (
+                                    <IconSun className='fill-foreground' />
+                                ) : (
+                                    <IconSun />
+                                )}
+                            </>
                         )}
                     </Toggle>
                 </div>

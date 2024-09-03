@@ -1,6 +1,6 @@
 'use client'
 
-import { IconBell } from 'justd-icons'
+import { IconBell } from 'cleon-icons'
 
 import { Button, Popover } from '@/components/ui'
 

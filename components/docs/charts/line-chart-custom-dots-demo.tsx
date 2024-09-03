@@ -1,5 +1,9 @@
 'use client'
 
+import { IconTrendingUp } from 'cleon-icons'
+import { IconPointer } from 'cleon-icons'
+import { CartesianGrid, Line, LineChart, XAxis } from 'recharts'
+
 import {
     Card,
     ChartContainer,
@@ -7,8 +11,6 @@ import {
     ChartTooltipContent,
     type ChartConfig
 } from '@/components/ui'
-import { IconCursorClick, IconTrendingChart3 } from 'justd-icons'
-import { CartesianGrid, Line, LineChart, XAxis } from 'recharts'
 
 const chartData = [
     { month: 'January', desktop: 186, mobile: 80 },
@@ -67,7 +69,7 @@ export default function LineChartCustomDotsDemo() {
                             dot={({ cx, cy, payload }) => {
                                 const r = 24
                                 return (
-                                    <IconCursorClick
+                                    <IconPointer
                                         key={payload.month}
                                         x={cx - r / 2}
                                         y={cy - r / 2}
@@ -84,8 +86,7 @@ export default function LineChartCustomDotsDemo() {
             </Card.Content>
             <Card.Footer className='flex-col items-start gap-2 text-sm'>
                 <div className='flex gap-2 font-medium leading-none'>
-                    Trending up by 5.2% this month{' '}
-                    <IconTrendingChart3 className='h-4 w-4' />
+                    Trending up by 5.2% this month <IconTrendingUp className='h-4 w-4' />
                 </div>
                 <div className='leading-none text-muted-foreground'>
                     Showing total visitors for the last 6 months

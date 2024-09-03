@@ -2,12 +2,12 @@
 
 import React from 'react'
 
-import type { DropEvent } from '@react-types/shared'
-import { IconPerson } from 'justd-icons'
+import { IconUser } from 'cleon-icons'
 import { isFileDropItem } from 'react-aria-components'
 
 import { Avatar, DropZone, FileTrigger } from '@/components/ui'
 import { cn } from '@/lib/utils'
+import type { DropEvent } from '@react-types/shared'
 
 export default function FileTriggerAvatarDemo() {
     const [droppedImage, setDroppedImage] = React.useState<string | undefined>('')
@@ -46,7 +46,7 @@ export default function FileTriggerAvatarDemo() {
                 {droppedImage ? (
                     <Avatar src={droppedImage} size='lg' />
                 ) : (
-                    <IconPerson className='size-6 text-muted-foreground' />
+                    <IconUser className='size-6 text-muted-foreground' />
                 )}
                 <input type='hidden' name='image' value={droppedImage} />
             </DropZone>

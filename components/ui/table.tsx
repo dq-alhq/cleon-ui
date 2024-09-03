@@ -1,6 +1,6 @@
 'use client'
 
-import { IconChevronDown, IconChevronUp, IconDotGrid2X3 } from 'justd-icons'
+import { IconChevronDown, IconChevronUp, IconGripVertical } from 'cleon-icons'
 import {
     Button,
     Cell,
@@ -21,6 +21,7 @@ import {
 import { tv } from 'tailwind-variants'
 
 import { cn } from '@/lib/utils'
+
 import { Checkbox } from './checkbox'
 
 const table = tv({
@@ -130,7 +131,7 @@ const TableRow = <T extends object>({
                         className='bg-transparent pl-1.5 py-1.5 text-muted-foreground pressed:text-foreground'
                         slot='drag'
                     >
-                        <IconDotGrid2X3 />
+                        <IconGripVertical />
                     </Button>
                 </Cell>
             )}

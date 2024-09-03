@@ -1,8 +1,9 @@
 'use client'
 
-import { cn, useMediaQuery } from '@/lib/utils'
 import * as Primitive from 'react-aria-components'
 import { tv, type VariantProps } from 'tailwind-variants'
+
+import { cn, useMediaQuery } from '@/lib/utils'
 
 import { Modal } from './modal'
 import { Popover } from './popover'

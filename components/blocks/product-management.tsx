@@ -1,22 +1,22 @@
 'use client'
-import { motion } from 'framer-motion'
-import Link from 'next/link'
+
 import * as React from 'react'
 
 import {
+    IconBrandCleon,
     IconCircleCheck,
-    IconHamburger,
+    IconLifebuoy,
     IconLoader,
     IconLogout,
+    IconMenu,
     IconSettings,
     IconSquarePlus,
-    IconSupport,
     IconTrash
-} from 'justd-icons'
-
+} from 'cleon-icons'
+import { motion } from 'framer-motion'
+import Link from 'next/link'
 import { type Key, type Selection, type SortDescriptor } from 'react-aria-components'
 
-import { Logo } from '@/components/logo'
 import { ThemeToggle } from '@/components/theme-toggle'
 import {
     Avatar,
@@ -47,7 +47,7 @@ export default function ProductManagement() {
                         href='#'
                         className='flex items-center gap-2 text-lg font-semibold md:text-base'
                     >
-                        <Logo className='size-6' />
+                        <IconBrandCleon className='size-6' />
                         <span className='sr-only'>Cleon UI</span>
                     </Link>
                     <Nav />
@@ -59,7 +59,7 @@ export default function ProductManagement() {
                             'md:hidden'
                         )}
                     >
-                        <IconHamburger className='h-5 w-5' />
+                        <IconMenu className='h-5 w-5' />
                     </Sheet.Trigger>
                     <Sheet.Content side='left' aria-labelledby='Menu'>
                         <Sheet.Header>
@@ -107,7 +107,7 @@ export default function ProductManagement() {
                                     Settings
                                 </Menu.Item>
                                 <Menu.Item>
-                                    <IconSupport />
+                                    <IconLifebuoy />
                                     Support
                                 </Menu.Item>
                                 <Menu.Item isDanger>

@@ -6,6 +6,7 @@ import { PlainCode } from '@/components/docs/rehype/plain-code'
 import { SourceCode } from '@/components/docs/rehype/source-code'
 import { Link, Snippet, type SnippetProps } from '@/components/ui'
 import { useMDXComponent } from '@/lib/hooks/use-mdx'
+
 import { BlockContent } from './block-content'
 import { DocHow } from './doc-how'
 import { DocsNote } from './doc-note'

@@ -2,8 +2,9 @@
 
 import * as React from 'react'
 
-import { cn } from '@/lib/utils'
 import * as ChartPrimitive from 'recharts'
+
+import { cn } from '@/lib/utils'
 
 // Format: { THEME_NAME: CSS_SELECTOR }
 const THEMES = { light: '', dark: '.dark' } as const

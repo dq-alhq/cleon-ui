@@ -4,22 +4,23 @@ import React from 'react'
 
 import {
     IconBook,
-    IconBookOpen,
-    IconBrandCopilot,
+    IconBook2,
     IconBrandGithub,
+    IconBrandGithubCopilot,
     IconBuilding,
-    IconChart,
-    IconCodeBrackets,
+    IconChartBar,
+    IconCircle,
+    IconCode,
     IconFilter,
-    IconGear,
-    IconGlobe,
     IconHeart,
     IconLogout,
     IconMessages,
-    IconPeople,
-    IconPerson,
-    IconStar
-} from 'justd-icons'
+    IconSettings2,
+    IconStar,
+    IconUser,
+    IconUsers
+} from 'cleon-icons'
+import { Group, Menu as PrimitiveMenu } from 'react-aria-components'
 
 import {
     Avatar,
@@ -32,7 +33,6 @@ import {
     Sheet,
     TextField
 } from '@/components/ui'
-import { Group, Menu as PrimitiveMenu } from 'react-aria-components'
 
 export default function SheetMenuDemo() {
     const [isOpen, setIsOpen] = React.useState(false)
@@ -108,29 +108,29 @@ export default function SheetMenuDemo() {
                         <Menu.Separator />
                         <Menu.Section>
                             <Menu.Item>
-                                <IconPerson />
+                                <IconUser />
                                 Your profile
                             </Menu.Item>
                             <Menu.Item>
                                 <IconBook /> Your repositories
                             </Menu.Item>
                             <Menu.Item>
-                                <IconBrandCopilot /> Your Copilot
+                                <IconBrandGithubCopilot /> Your Copilot
                             </Menu.Item>
                             <Menu.Item>
-                                <IconChart /> Your projects
+                                <IconChartBar /> Your projects
                             </Menu.Item>
                             <Menu.Item>
                                 <IconStar /> Your stars
                             </Menu.Item>
                             <Menu.Item>
-                                <IconCodeBrackets /> Your gists
+                                <IconCode /> Your gists
                             </Menu.Item>
                             <Menu.Item>
                                 <IconBuilding /> Your organizations
                             </Menu.Item>
                             <Menu.Item>
-                                <IconGlobe /> Your enterprises
+                                <IconCircle /> Your enterprises
                             </Menu.Item>
                             <Menu.Item>
                                 <IconHeart />
@@ -142,16 +142,16 @@ export default function SheetMenuDemo() {
                                 <IconFilter /> Feature preview
                             </Menu.Item>
                             <Menu.Item>
-                                <IconGear />
+                                <IconSettings2 />
                                 Settings
                             </Menu.Item>
                         </Menu.Section>
                         <Menu.Section>
                             <Menu.Item>
-                                <IconBookOpen /> GitHub Docs
+                                <IconBook2 /> GitHub Docs
                             </Menu.Item>
                             <Menu.Item>
-                                <IconPeople /> GitHub Support
+                                <IconUsers /> GitHub Support
                             </Menu.Item>
                             <Menu.Item>
                                 <IconMessages /> GitHub Community

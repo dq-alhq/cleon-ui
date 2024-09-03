@@ -2,25 +2,27 @@
 
 import type { FC, SVGProps } from 'react'
 
-import { EmblaCrouselLogo, Logo, ViteLogo } from '@/components/logo'
-import { cn } from '@/lib/utils'
 import {
     IconBell,
     IconBrandAdobe,
     IconBrandAstro,
+    IconBrandCleon,
     IconBrandFramer,
     IconBrandGithub,
-    IconBrandInertiajs,
+    IconBrandInertia,
     IconBrandLaravel,
     IconBrandNextjs,
-    IconBrandParanoid,
     IconBrandRemix,
-    IconBrandTailwindcss,
-    IconChart3,
-    IconCommandRegular
-} from 'justd-icons'
+    IconBrandTailwind,
+    IconBrandVite,
+    IconChartBar,
+    IconCommand
+} from 'cleon-icons'
 import { Menu, MenuItem } from 'react-aria-components'
 import { buttonVariants } from 'ui'
+
+import { EmblaCrouselLogo } from '@/components/logo'
+import { cn } from '@/lib/utils'
 
 export function DocRefs({ references }: any) {
     const urls = references.map((url: string) => {
@@ -38,15 +40,15 @@ export function DocRefs({ references }: any) {
                 break
             case url.includes('vite'):
                 title = 'Vite'
-                icon = ViteLogo
+                icon = IconBrandVite
                 break
             case url.includes('inertia'):
                 title = 'Inertia.Js'
-                icon = IconBrandInertiajs
+                icon = IconBrandInertia
                 break
             case url.includes('recharts'):
                 title = 'Recharts'
-                icon = IconChart3
+                icon = IconChartBar
                 break
             case url.includes('remix.run'):
                 title = 'Remix'
@@ -60,13 +62,9 @@ export function DocRefs({ references }: any) {
                 title = 'Astro'
                 icon = IconBrandAstro
                 break
-            case url.includes('paranoid'):
-                title = 'Paranoid'
-                icon = IconBrandParanoid
-                break
-            case url.includes('getjustd.com/icons'):
-                title = 'Just D. Icons'
-                icon = IconBrandParanoid
+            case url.includes('cleon'):
+                title = 'Cleon Icons'
+                icon = IconBrandCleon
                 break
             case url.includes('framer'):
                 title = 'Framer Motion'
@@ -74,11 +72,11 @@ export function DocRefs({ references }: any) {
                 break
             case url.includes('docs/components'):
                 title = 'Internal'
-                icon = Logo
+                icon = IconBrandCleon
                 break
             case url.includes('tailwind'):
                 title = 'Tailwind CSS'
-                icon = IconBrandTailwindcss
+                icon = IconBrandTailwind
                 break
             case url.includes('github'):
                 title = 'Github'
@@ -86,7 +84,7 @@ export function DocRefs({ references }: any) {
                 break
             case url.includes('cmdk'):
                 title = 'CMDK'
-                icon = IconCommandRegular
+                icon = IconCommand
                 break
             case url.includes('sonner'):
                 title = 'Sonner'

@@ -2,58 +2,6 @@ import type { SVGProps } from 'react'
 
 interface Props extends SVGProps<SVGSVGElement> {}
 
-export const Logo = (props: Props) => (
-    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 375 375' {...props}>
-        <path
-            fill='none'
-            stroke='currentColor'
-            strokeLinecap='round'
-            strokeLinejoin='round'
-            strokeWidth='75'
-            d='M-45.159 -1.481L104.841 -1.481'
-            transform='rotate(-60 215.663 -37.014)'
-        ></path>
-        <path
-            fill='none'
-            stroke='currentColor'
-            strokeLinecap='round'
-            strokeLinejoin='round'
-            strokeWidth='75'
-            d='M-45.159 -1.481L84.841 -1.481'
-            transform='rotate(-60 329.394 -53.885)'
-        ></path>
-        <ellipse
-            fill='currentColor'
-            strokeWidth='0'
-            rx='38.46'
-            ry='38.46'
-            transform='translate(63.862 296.071)'
-        ></ellipse>
-        <ellipse
-            fill='currentColor'
-            strokeWidth='0'
-            rx='38.46'
-            ry='38.46'
-            transform='translate(311.138 296.071)'
-        ></ellipse>
-    </svg>
-)
-
-export const ViteLogo = (props: Props) => (
-    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' {...props}>
-        <g
-            fill='none'
-            stroke='currentColor'
-            strokeLinecap='round'
-            strokeLinejoin='round'
-            strokeWidth={1}
-        >
-            <path d='M10 4.5L16 3l-2 6.5l2-.5l-4 7v-5l-3 1z'></path>
-            <path d='M15 6.5L22 5L12 22L2 5l7.741 1.5'></path>
-        </g>
-    </svg>
-)
-
 export const EmblaCrouselLogo = (props: Props) => (
     <svg
         xmlns='http://www.w3.org/2000/svg'

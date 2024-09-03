@@ -3,6 +3,7 @@
 import React from 'react'
 
 import { tv, type VariantProps } from 'tailwind-variants'
+
 import { VisuallyHidden } from './visually-hidden'
 
 const avatarGroupStyles = tv({

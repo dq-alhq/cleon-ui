@@ -1,12 +1,12 @@
 'use client'
 
 import {
-    IconCommandRegular,
+    IconCommand,
     IconHeadphones,
     IconLogout,
     IconSettings,
     IconSquarePlus
-} from 'justd-icons'
+} from 'cleon-icons'
 
 import { Avatar, Menu } from '@/components/ui'
 
@@ -35,7 +35,7 @@ export default function MenuWithArrowDemo() {
                         Create Team
                     </Menu.Item>
                     <Menu.Item href='#'>
-                        <IconCommandRegular />
+                        <IconCommand />
                         Command Menu.
                         <Menu.Keyboard keys='⌘K' />
                     </Menu.Item>

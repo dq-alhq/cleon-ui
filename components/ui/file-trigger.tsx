@@ -1,6 +1,6 @@
 'use client'
 
-import { IconCamera, IconFolder, IconPaperclip } from 'justd-icons'
+import { IconCamera, IconFolder, IconPaperclip } from 'cleon-icons'
 import {
     FileTrigger as FileTriggerPrimitive,
     type FileTriggerProps as FileTriggerPrimitiveProps

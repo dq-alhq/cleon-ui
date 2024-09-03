@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { IconLoader } from 'justd-icons'
+import { IconLoader2 } from 'cleon-icons'
 
 import { cn } from '@/lib/utils'
 
@@ -12,7 +12,7 @@ export default function PreviewContent({
     className?: string
 }) {
     return (
-        <React.Suspense fallback={<IconLoader className='size-20 bg-muted' />}>
+        <React.Suspense fallback={<IconLoader2 className='size-20 bg-muted' />}>
             <iframe
                 className={cn('w-full border rounded-lg relative z-20', className)}
                 height={600}

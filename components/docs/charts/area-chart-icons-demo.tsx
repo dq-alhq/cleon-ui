@@ -1,5 +1,9 @@
 'use client'
 
+import { IconTrendingUp } from 'cleon-icons'
+import { IconDeviceDesktop, IconDeviceMobile } from 'cleon-icons'
+import { Area, AreaChart, CartesianGrid, XAxis } from 'recharts'
+
 import {
     Card,
     ChartContainer,
@@ -9,8 +13,6 @@ import {
     ChartTooltipContent,
     type ChartConfig
 } from '@/components/ui'
-import { IconDeviceDesktop, IconDevicePhone, IconTrendingChart3 } from 'justd-icons'
-import { Area, AreaChart, CartesianGrid, XAxis } from 'recharts'
 
 const chartData = [
     { month: 'January', desktop: 186, mobile: 80 },
@@ -30,7 +32,7 @@ const chartConfig = {
     mobile: {
         label: 'Mobile',
         color: 'hsl(var(--chart-2))',
-        icon: IconDevicePhone
+        icon: IconDeviceMobile
     }
 } satisfies ChartConfig
 
@@ -90,7 +92,7 @@ export default function AreaChartIconsDemo() {
                     <div className='grid gap-2'>
                         <div className='flex items-center gap-2 font-medium leading-none'>
                             Trending up by 5.2% this month{' '}
-                            <IconTrendingChart3 className='size-4' />
+                            <IconTrendingUp className='size-4' />
                         </div>
                         <div className='flex items-center gap-2 leading-none text-muted-foreground'>
                             January - June 2024

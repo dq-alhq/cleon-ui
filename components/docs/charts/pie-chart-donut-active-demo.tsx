@@ -1,5 +1,9 @@
 'use client'
 
+import { IconTrendingUp } from 'cleon-icons'
+import { Pie, PieChart, Sector } from 'recharts'
+import type { PieSectorDataItem } from 'recharts/types/polar/Pie'
+
 import {
     Card,
     ChartContainer,
@@ -7,9 +11,6 @@ import {
     ChartTooltipContent,
     type ChartConfig
 } from '@/components/ui'
-import { IconTrendingChart3 } from 'justd-icons'
-import { Pie, PieChart, Sector } from 'recharts'
-import type { PieSectorDataItem } from 'recharts/types/polar/Pie'
 
 const chartData = [
     { browser: 'chrome', visitors: 275, fill: 'var(--color-chrome)' },
@@ -81,8 +82,7 @@ export default function PieChartDonutActiveDemo() {
             </Card.Content>
             <Card.Footer className='flex-col gap-2 text-sm'>
                 <div className='flex items-center gap-2 font-medium leading-none'>
-                    Trending up by 5.2% this month{' '}
-                    <IconTrendingChart3 className='h-4 w-4' />
+                    Trending up by 5.2% this month <IconTrendingUp className='h-4 w-4' />
                 </div>
                 <div className='leading-none text-muted-foreground'>
                     Showing total visitors for the last 6 months

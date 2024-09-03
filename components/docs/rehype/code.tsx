@@ -2,7 +2,7 @@
 
 import React from 'react'
 
-import { IconCircleInfo } from 'justd-icons'
+import { IconAlertCircle } from 'cleon-icons'
 import rehypePrettyCode from 'rehype-pretty-code'
 import rehypeStringify from 'rehype-stringify'
 import remarkParse from 'remark-parse'
@@ -35,7 +35,7 @@ function Code({ lang = 'tsx', code }: { lang?: string; code: string }) {
             <div className={cn('absolute bottom-auto right-4 top-3 z-20 flex gap-1.5')}>
                 <CopyRawButton code={code} />
                 <CopyButton
-                    initialIcon={<IconCircleInfo />}
+                    initialIcon={<IconAlertCircle />}
                     isCopied={copied === 'imports'}
                     onPress={copyImportsToClipboard}
                 />

@@ -1,24 +1,26 @@
 'use client'
+
+import React from 'react'
+
 import {
+    IconBrandCleon,
     IconBroadcast,
     IconCircleX,
     IconDotsVertical,
-    IconEnter,
-    IconFilm,
     IconLogout,
     IconMessage,
     IconMessageDots,
     IconMessages,
-    IconMic,
-    IconPeople,
-    IconPerson,
+    IconMicrophone,
+    IconMovie,
+    IconSend,
     IconSettings,
-    IconTrash
-} from 'justd-icons'
-import React from 'react'
+    IconTrash,
+    IconUser,
+    IconUsers
+} from 'cleon-icons'
 import { TextArea } from 'react-aria-components'
 
-import { Logo } from '@/components/logo'
 import {
     Avatar,
     Button,
@@ -155,7 +157,7 @@ export default function ChatApp() {
                 <aside className='inset-y hidden fixed left-0 z-20 md:flex h-full flex-col border-r'>
                     <div className='border-b p-2'>
                         <Button variant='outline' size='icon' aria-label='Home'>
-                            <Logo className='!size-6 fill-foreground' />
+                            <IconBrandCleon className='!size-6 fill-foreground' />
                         </Button>
                     </div>
                     <nav className='grid gap-1 p-2'>
@@ -175,7 +177,7 @@ export default function ChatApp() {
                                     buttonVariants({ variant: 'ghost', size: 'icon' })
                                 )}
                             >
-                                <IconFilm className='!size-6' />
+                                <IconMovie className='!size-6' />
                             </Tooltip.Trigger>
                             <Tooltip.Content placement='right'>Reels</Tooltip.Content>
                         </Tooltip>
@@ -195,7 +197,7 @@ export default function ChatApp() {
                                     buttonVariants({ variant: 'ghost', size: 'icon' })
                                 )}
                             >
-                                <IconPeople className='!size-6' />
+                                <IconUsers className='!size-6' />
                             </Tooltip.Trigger>
                             <Tooltip.Content placement='right'>Groups</Tooltip.Content>
                         </Tooltip>
@@ -277,7 +279,7 @@ export default function ChatApp() {
                                 </Menu.Trigger>
                                 <Menu.Content placement='bottom end'>
                                     <Menu.Item>
-                                        <IconPerson />
+                                        <IconUser />
                                         Contact Info
                                     </Menu.Item>
                                     <Menu.Item>
@@ -351,7 +353,7 @@ export default function ChatApp() {
                                             size: 'icon'
                                         })}
                                     >
-                                        <IconMic className='size-4' />
+                                        <IconMicrophone className='size-4' />
                                         <span className='sr-only'>Use Microphone</span>
                                     </Tooltip.Trigger>
                                     <Tooltip.Content placement='top'>
@@ -365,7 +367,7 @@ export default function ChatApp() {
                                     className='ml-auto gap-1.5'
                                 >
                                     Send Message
-                                    <IconEnter />
+                                    <IconSend />
                                 </Button>
                             </div>
                         </Form>

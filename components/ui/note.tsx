@@ -2,10 +2,11 @@
 
 import * as React from 'react'
 
-import { cn } from '@/lib/utils'
-import { IconCircleCheck, IconCircleInfo, IconTriangleInfo } from 'justd-icons'
+import { IconAlertCircle, IconAlertTriangle, IconCircleCheck } from 'cleon-icons'
 import { Text } from 'react-aria-components'
 import { tv, type VariantProps } from 'tailwind-variants'
+
+import { cn } from '@/lib/utils'
 
 const noteStyles = tv({
     base: [
@@ -49,11 +50,11 @@ const Note = ({ variant = 'secondary', className, ...props }: NoteProps) => {
             <div className='flex items-start gap-x-3'>
                 <div className='mt-0.5 w-5'>
                     {['info', 'primary', 'secondary'].includes(variant) ? (
-                        <IconCircleInfo />
+                        <IconAlertCircle />
                     ) : variant === 'success' ? (
                         <IconCircleCheck />
                     ) : (
-                        <IconTriangleInfo />
+                        <IconAlertTriangle />
                     )}
                 </div>
                 <Text

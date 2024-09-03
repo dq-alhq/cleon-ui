@@ -1,5 +1,8 @@
 'use client'
 
+import { IconTrendingUp } from 'cleon-icons'
+import { Bar, BarChart, CartesianGrid, XAxis } from 'recharts'
+
 import {
     Card,
     ChartContainer,
@@ -7,8 +10,6 @@ import {
     ChartTooltipContent,
     type ChartConfig
 } from '@/components/ui'
-import { IconTrendingChart3 } from 'justd-icons'
-import { Bar, BarChart, CartesianGrid, XAxis } from 'recharts'
 
 const chartData = [
     { month: 'January', desktop: 186, mobile: 80 },
@@ -59,8 +60,7 @@ export default function BarChartMultipleDemo() {
             </Card.Content>
             <Card.Footer className='flex-col items-start gap-2 text-sm'>
                 <div className='flex gap-2 font-medium leading-none'>
-                    Trending up by 5.2% this month{' '}
-                    <IconTrendingChart3 className='h-4 w-4' />
+                    Trending up by 5.2% this month <IconTrendingUp className='h-4 w-4' />
                 </div>
                 <div className='leading-none text-muted-foreground'>
                     Showing total visitors for the last 6 months
