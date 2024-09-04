@@ -1,7 +1,6 @@
 import { IconBrandGithub } from 'cleon-icons'
 import { Link } from 'ui'
 
-import { Footer } from '@/components/footer'
 import IconPageHeader from '@/components/icon-page-header'
 
 import Install from './controller/install'
@@ -25,7 +24,7 @@ export default async function IconsPage({
     const size = searchParams.s || '5'
     const stroke = searchParams.stroke || '2'
     const query = searchParams.q || ''
-    const color = searchParams.c || '#000'
+    const color = searchParams.c || '#52525b'
     const category = searchParams.category || 'all'
     return (
         <main className='min-h-screen flex flex-col'>
@@ -62,7 +61,6 @@ export default async function IconsPage({
                     query={query}
                 />
             </div>
-            <Footer />
         </main>
     )
 }

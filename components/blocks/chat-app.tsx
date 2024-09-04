@@ -5,7 +5,10 @@ import React from 'react'
 import {
     IconBrandCleon,
     IconBroadcast,
+    IconCheck,
+    IconChecks,
     IconCircleX,
+    IconClockSquare,
     IconDotsVertical,
     IconLogout,
     IconMessage,
@@ -388,72 +391,10 @@ interface BubbleChatProps {
 
 const BubbleChat = ({ message, time, role, status, onDelete }: BubbleChatProps) => {
     const statusIcon: Record<string, React.ReactNode> = {
-        pending: (
-            <svg
-                xmlns='http://www.w3.org/2000/svg'
-                className='size-5 text-foreground'
-                viewBox='0 0 24 24'
-            >
-                <g
-                    fill='none'
-                    stroke='currentColor'
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
-                    strokeWidth={2}
-                >
-                    <path d='M3 12a9 9 0 1 0 18 0a9 9 0 0 0-18 0'></path>
-                    <path d='M12 7v5l3 3'></path>
-                </g>
-            </svg>
-        ),
-        sent: (
-            <svg
-                xmlns='http://www.w3.org/2000/svg'
-                className='size-5 text-foreground'
-                viewBox='0 0 24 24'
-            >
-                <path
-                    fill='none'
-                    stroke='currentColor'
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
-                    strokeWidth={2}
-                    d='m5 12l5 5L20 7'
-                ></path>
-            </svg>
-        ),
-        delivered: (
-            <svg
-                xmlns='http://www.w3.org/2000/svg'
-                className='size-5 text-foreground'
-                viewBox='0 0 24 24'
-            >
-                <path
-                    fill='none'
-                    stroke='currentColor'
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
-                    strokeWidth={2}
-                    d='m7 12l5 5L22 7M2 12l5 5m5-5l5-5'
-                ></path>
-            </svg>
-        ),
-        read: (
-            <svg
-                xmlns='http://www.w3.org/2000/svg'
-                className='size-5 text-success'
-                viewBox='0 0 24 24'
-            >
-                <path
-                    fill='none'
-                    stroke='currentColor'
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
-                    strokeWidth={2}
-                    d='m7 12l5 5L22 7M2 12l5 5m5-5l5-5'
-                ></path>
-            </svg>
-        )
+        pending: <IconClockSquare className='size-5 text-foreground' />,
+        sent: <IconCheck className='size-5 text-foreground' />,
+        delivered: <IconChecks className='size-5 text-foreground' />,
+        read: <IconChecks className='size-5 text-success' />
     }
     return (
         <div
@@ -467,7 +408,7 @@ const BubbleChat = ({ message, time, role, status, onDelete }: BubbleChatProps) 
                     className={cn(
                         'rounded-lg border-0 outline-none text-right [&_strong]:font-medium px-2 py-1.5 text-sm',
                         role === 'send'
-                            ? 'bg-dark text-dark-foreground rounded-br-none'
+                            ? 'bg-success text-success-foreground rounded-br-none'
                             : 'bg-primary text-primary-foreground rounded-bl-none'
                     )}
                 >

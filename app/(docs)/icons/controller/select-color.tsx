@@ -11,7 +11,9 @@ export default function SelectColor() {
     const searchParams = useSearchParams()
     const router = useRouter()
     const pathname = usePathname()
-    const [color, setColor] = React.useState(searchParams.get('c') || parseColor('#000'))
+    const [color, setColor] = React.useState(
+        searchParams.get('c') || parseColor('#52525b')
+    )
 
     const createQuery = React.useCallback(
         (name: string, value: string) => {
