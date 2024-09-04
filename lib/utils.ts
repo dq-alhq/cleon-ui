@@ -89,6 +89,11 @@ export function wait(number: number = 1000) {
     return new Promise((resolve) => setTimeout(resolve, number))
 }
 
+export const pascalCaseToTitleCase = (input: string): string =>
+    input
+        .replace(/([a-z])([A-Z])/g, '$1 $2')
+        .replace(/\b\w/g, (char) => char.toUpperCase())
+
 export const convertToHtml = (text: string) => {
     let html = text
     html = html.replace(

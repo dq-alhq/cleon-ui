@@ -1,207 +1,68 @@
-'use client'
-
-import React from 'react'
-
-import {
-    IconBrandBun,
-    IconBrandGithub,
-    IconBrandNpm,
-    IconBrandPnpm,
-    IconBrandYarn,
-    IconCheck,
-    IconClipboard,
-    IconLoader2
-} from 'cleon-icons'
-import { AnimatePresence, motion } from 'framer-motion'
-import { Header, parseColor, Text } from 'react-aria-components'
-import { Button, buttonVariants, ColorPicker, Link, Menu, SearchField, Select } from 'ui'
+import { IconBrandGithub } from 'cleon-icons'
+import { Link } from 'ui'
 
 import { Footer } from '@/components/footer'
-import { ThemeToggle } from '@/components/theme-toggle'
-import { cn } from '@/lib/utils'
+import IconPageHeader from '@/components/icon-page-header'
 
-import { IconsList } from './icon-list'
+import Install from './controller/install'
+import ListIcons from './controller/list-icons'
+import SearchIcon from './controller/search-icon'
+import SelectColor from './controller/select-color'
+import SelectSize from './controller/select-size'
+import SelectStroke from './controller/select-stroke'
 
-export default function IconsPage() {
-    const [size, setSize] = React.useState<'size-4' | 'size-5' | 'size-6'>('size-5')
-    const [search, setSearch] = React.useState('')
-    const [stroke, setStroke] = React.useState<'1' | '2'>('2')
-    const [color, setColor] = React.useState(parseColor('#0d6efd'))
-
-    function handleSearch(value: string) {
-        setSearch(value)
+export default async function IconsPage({
+    searchParams
+}: {
+    searchParams: {
+        q?: string
+        s?: string
+        stroke?: string
+        c?: string
+        category?: string
     }
+}) {
+    const size = searchParams.s || '5'
+    const stroke = searchParams.stroke || '2'
+    const query = searchParams.q || ''
+    const color = searchParams.c || '#000'
+    const category = searchParams.category || 'all'
     return (
         <main className='min-h-screen flex flex-col'>
             <div className='pt-10 lg:pt-24 flex container justify-between'>
                 <div>
-                    <Header>
-                        <h1 className='max-w-xl text-2xl font-bold lg:text-5xl mb-2 lg:mb-6'>
-                            CLEON ICONS
-                        </h1>
-                        <Text className='text-base lg:text-xl max-w-2xl block leading-relaxed text-muted-foreground'>
-                            This UI Icon Library for Project, currently only for
-                            <strong className='text-foreground'> React</strong>, most of
-                            these icons are forked from{' '}
-                            <a
-                                target='_blank'
-                                className='text-foreground font-semibold hover:text-primary'
-                                href='https://tabler.io/icons'
-                            >
-                                Tabler Icons
-                            </a>{' '}
-                            and{' '}
-                            <a
-                                target='_blank'
-                                className='text-foreground font-semibold hover:text-primary'
-                                href='https://lucide.dev/icons/'
-                            >
-                                Lucide Icons
-                            </a>
-                        </Text>
-                        <Text className='text-base lg:text-xl max-w-2xl block leading-relaxed text-muted-foreground mt-4'>
-                            This Icon Libray used as default icon for{' '}
-                            <a
-                                target='_blank'
-                                className='text-foreground font-semibold hover:text-primary'
-                                href='/'
-                            >
-                                CLEON UI
-                            </a>
-                        </Text>
-                    </Header>
-                    <div className='mt-8 flex items-center gap-3 flex-col sm:flex-row'>
+                    <IconPageHeader />
+                    <div className='mt-8 flex sm:h-14 items-center gap-3 flex-col sm:flex-row'>
                         <Install />
                         <Link
                             target='_blank'
-                            className={cn(
-                                buttonVariants({ size: 'lg', variant: 'dark' }),
-                                'w-full sm:w-auto'
-                            )}
+                            className='text-dark-foreground bg-dark w-full sm:w-auto flex px-6 gap-3 justify-center items-center h-12 rounded-lg border border-border font-semibold transition hover:ring hover:ring-dark/40 shadow-sm outline-none'
                             href='https://github.com/dq-alhq/cleon-icons'
                         >
-                            <IconBrandGithub />
+                            <IconBrandGithub className='size-5' />
                             Source
                         </Link>
                     </div>
                 </div>
             </div>
-            <div className='container bg-background backdrop-blur-sm flex flex-col-reverse sm:flex-row gap-3 justify-between items-center lg:sticky lg:top-14 py-6 z-10'>
-                <SearchField
-                    aria-label='Search Icon'
-                    value={search}
-                    onChange={handleSearch}
-                    className='w-full max-w-xl'
-                />
+            <div className='container rounded-b-lg bg-background/60 backdrop-blur-xl flex flex-col-reverse sm:flex-row gap-3 justify-between items-center sticky top-12 lg:top-14 py-6 z-10'>
+                <SearchIcon />
                 <div className='flex gap-2 items-center w-full sm:w-auto'>
-                    <ColorPicker
-                        aria-label='Color Picker'
-                        value={color}
-                        onChange={setColor}
-                    />
-                    <Select
-                        aria-label='Stroke Width'
-                        className='w-28'
-                        selectedKey={stroke}
-                        onSelectionChange={(value) => setStroke(value as '1' | '2')}
-                    >
-                        <Select.Item id='1'>Stroke 1</Select.Item>
-                        <Select.Item id='2'>Stroke 2</Select.Item>
-                    </Select>
-                    <Select
-                        aria-label='Icon Size'
-                        className='w-full sm:w-36'
-                        selectedKey={size}
-                        onSelectionChange={(value) =>
-                            setSize(value as 'size-4' | 'size-5' | 'size-6')
-                        }
-                    >
-                        <Select.Item id='size-4'>Size 4 (20px)</Select.Item>
-                        <Select.Item id='size-5'>Size 5 (24px)</Select.Item>
-                        <Select.Item id='size-6'>Size 6 (28px)</Select.Item>
-                        <Select.Item id='size-7'>Size 7 (32px)</Select.Item>
-                    </Select>
-                    <ThemeToggle />
+                    <SelectColor />
+                    <SelectStroke />
+                    <SelectSize />
                 </div>
             </div>
-            <div className='container py-4 flex flex-col lg:flex-row gap-8 items-start'>
-                <React.Suspense
-                    fallback={<IconLoader2 className='size-4 animate-spin' />}
-                >
-                    <IconsList {...{ query: search, size, stroke }} />
-                </React.Suspense>
+            <div className='container py-4 flex w-full flex-col lg:flex-row gap-8 items-start'>
+                <ListIcons
+                    category={category}
+                    color={color}
+                    size={size}
+                    stroke={stroke}
+                    query={query}
+                />
             </div>
             <Footer />
         </main>
-    )
-}
-
-type Tool = 'Bun' | 'Yarn' | 'PNPM' | 'NPM'
-
-function Install() {
-    const [isCopied, setIsCopied] = React.useState(false)
-    const [command, setCommand] = React.useState('')
-    const commandArgs = 'cleon-icons'
-
-    const installMap: Record<Tool, string> = {
-        Bun: 'bun add',
-        Yarn: 'yarn add',
-        PNPM: 'pnpm add',
-        NPM: 'npm i'
-    }
-
-    const handleCopy = async (tool: Tool) => {
-        const newCommand = `${installMap[tool]} ${commandArgs}`
-        setCommand(newCommand)
-        await navigator.clipboard.writeText(newCommand)
-        setIsCopied(true)
-        setTimeout(() => setIsCopied(false), 2000)
-    }
-
-    return (
-        <div className='pl-3 bg-background font-mono text-sm border flex items-center justify-between p-1 rounded-lg w-full h-12 sm:w-72'>
-            {command || 'npm i cleon-icons'}
-            <Menu>
-                <Button size='icon' variant='outline' aria-label='Copy npm command'>
-                    <AnimatePresence mode='wait' initial={false}>
-                        {isCopied ? (
-                            <motion.span
-                                key='checkmark-import'
-                                initial={{ opacity: 0, scale: 0.5 }}
-                                animate={{ opacity: 1, scale: 1 }}
-                            >
-                                <IconCheck />
-                            </motion.span>
-                        ) : (
-                            <motion.span
-                                key='copy'
-                                initial={{ opacity: 0, scale: 0.5 }}
-                                animate={{ opacity: 1, scale: 1 }}
-                            >
-                                <IconClipboard />
-                            </motion.span>
-                        )}
-                    </AnimatePresence>
-                </Button>
-                <Menu.Content showArrow placement='bottom end'>
-                    <Menu.Item onAction={() => handleCopy('NPM')}>
-                        <IconBrandNpm />
-                        NPM
-                    </Menu.Item>
-                    <Menu.Item onAction={() => handleCopy('Bun')}>
-                        <IconBrandBun />
-                        Bun
-                    </Menu.Item>
-                    <Menu.Item onAction={() => handleCopy('Yarn')}>
-                        <IconBrandYarn />
-                        Yarn
-                    </Menu.Item>
-                    <Menu.Item onAction={() => handleCopy('PNPM')}>
-                        <IconBrandPnpm />
-                        PNPM
-                    </Menu.Item>
-                </Menu.Content>
-            </Menu>
-        </div>
     )
 }

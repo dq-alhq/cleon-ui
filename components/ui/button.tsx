@@ -38,7 +38,7 @@ const buttonVariants = tv({
             sm: 'h-9 px-3 text-sm',
             md: 'h-10 px-4 py-2 text-sm',
             lg: 'h-10 sm:h-11 px-6 sm:px-8 text-base',
-            icon: 'size-9 sm:size-10 shrink-0'
+            icon: 'size-10 shrink-0'
         },
         shape: {
             square: 'rounded-lg',
