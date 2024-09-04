@@ -2,6 +2,12 @@
 
 import * as React from 'react'
 
+import type {
+    ColorSliderProps as ColorSliderPrimitiveProps,
+    ColorSwatchPickerItemProps as ColorSwatchPickerItemPrimitiveProps,
+    ColorSwatchProps as ColorSwatchPrimitiveProps,
+    ColorThumbProps as ColorThumbPrimitiveProps
+} from 'react-aria-components'
 import {
     ColorArea as ColorAreaPrimitive,
     ColorSlider as ColorSliderPrimitive,
@@ -11,12 +17,8 @@ import {
     ColorThumb as ColorThumbPrimitive,
     ColorWheel as ColorWheelPrimitive,
     ColorWheelTrack as ColorWheelTrackPrimitive,
-    composeRenderProps,
     SliderOutput,
-    type ColorSliderProps as ColorSliderPrimitiveProps,
-    type ColorSwatchPickerItemProps as ColorSwatchPickerItemPrimitiveProps,
-    type ColorSwatchProps as ColorSwatchPrimitiveProps,
-    type ColorThumbProps as ColorThumbPrimitiveProps
+    composeRenderProps
 } from 'react-aria-components'
 import { tv } from 'tailwind-variants'
 
@@ -30,7 +32,7 @@ const colorAreaStyles = tv({
     base: 'size-48 rounded-md border border-background shrink-0 disabled:opacity-50'
 })
 
-interface ColorAreaProps extends React.ComponentProps<typeof ColorAreaPrimitive> {}
+type ColorAreaProps = React.ComponentProps<typeof ColorAreaPrimitive>
 
 const ColorArea = ({ className, ...props }: ColorAreaProps) => {
     return (
@@ -47,7 +49,7 @@ const ColorArea = ({ className, ...props }: ColorAreaProps) => {
     )
 }
 
-interface ColorThumbProps extends ColorThumbPrimitiveProps {}
+type ColorThumbProps = ColorThumbPrimitiveProps
 
 const colorThumbStyles = tv({
     base: 'size-5 shadow rounded-full ring-1 ring-inset ring-offset-2 ring-black/50 border border-black/50',
@@ -73,7 +75,7 @@ const ColorThumb = ({ className, ...props }: ColorThumbProps) => {
 }
 
 const colorSwatchPickerItemStyles = tv({
-    base: 'size-8 rounded-md disabled:opacity-50'
+    base: 'size-8 rounded-md cspis disabled:opacity-50 focus:ring focus:ring-2 focus:ring-accent/20'
 })
 
 const ColorSwatchPickerItem = ({
@@ -95,7 +97,7 @@ const ColorSwatchPickerItem = ({
     )
 }
 
-interface ColorSwatchProps extends ColorSwatchPrimitiveProps {}
+type ColorSwatchProps = ColorSwatchPrimitiveProps
 
 const ColorSwatch = ({ className, ...props }: ColorSwatchProps) => {
     const needRing = props.color ? isBrightColor(props.color) : false
@@ -236,8 +238,8 @@ const ColorSlider = ({
                     <SliderOutput className='text-sm ml-auto [grid-area:output]' />
                 )}
             </div>
-            <Slider.Track className='rounded-md orientation-horizontal:h-8'>
-                <ColorThumb className='top-1/2' />
+            <Slider.Track className='cstrk rounded-md orientation-horizontal:h-8'>
+                <ColorThumb className='csth top-1/2' />
             </Slider.Track>
             {description && <Description>{description}</Description>}
         </ColorSliderPrimitive>

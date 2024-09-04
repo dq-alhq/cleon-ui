@@ -38,7 +38,7 @@ export function DocHow({
     return (
         <div className={cn('not-prose group relative my-4', className)} {...props}>
             <Tabs aria-label='Packages'>
-                <Tabs.List>
+                <Tabs.List className='overflow-x-scroll'>
                     <Tabs.Label id='preview'>Preview</Tabs.Label>
                     <Tabs.Label id='code'>Code</Tabs.Label>
                 </Tabs.List>

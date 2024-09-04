@@ -17,7 +17,7 @@ export function CommandPalette({ open, setOpen }: OpenCloseProps) {
     const pathname = usePathname()
     React.useEffect(() => {
         const down = (e: KeyboardEvent) => {
-            if (e.key === 'k') {
+            if (e.key === 'k' && (e.metaKey || e.ctrlKey)) {
                 e.preventDefault()
                 // @ts-ignore
                 setOpen((open: boolean) => !open)
@@ -42,7 +42,7 @@ export function CommandPalette({ open, setOpen }: OpenCloseProps) {
             <Command.List>
                 <Command.Empty>No results found.</Command.Empty>
                 <Command.Section heading='Components'>
-                    {docs.map((item, i) => (
+                    {docs.map((item: any, i: number) => (
                         <Command.Item
                             key={i}
                             onSelect={() => router.push(`/${item.slug}`)}

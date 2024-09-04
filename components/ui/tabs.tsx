@@ -47,7 +47,7 @@ const tabListStyles = tv({
     base: 'flex',
     variants: {
         orientation: {
-            horizontal: 'flex-row gap-x-5 border-b',
+            horizontal: 'flex-row gap-x-5 border-b overflow-x-auto no-scrollbar',
             vertical: 'flex-col items-start gap-y-4 border-l'
         }
     }

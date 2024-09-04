@@ -12,8 +12,17 @@ import {
     IconClipboard
 } from 'cleon-icons'
 import { AnimatePresence, motion } from 'framer-motion'
-import { Header, Text } from 'react-aria-components'
-import { Button, buttonVariants, Link, Menu, SearchField, Select } from 'ui'
+import { Header, parseColor, Text } from 'react-aria-components'
+import {
+    Button,
+    buttonVariants,
+    ColorSwatchPicker,
+    ColorSwatchPickerItem,
+    Link,
+    Menu,
+    SearchField,
+    Select
+} from 'ui'
 
 import { Footer } from '@/components/footer'
 import { ThemeToggle } from '@/components/theme-toggle'
@@ -25,6 +34,7 @@ export default function IconsPage() {
     const [size, setSize] = React.useState<'size-4' | 'size-5' | 'size-6'>('size-5')
     const [search, setSearch] = React.useState('')
     const [strokeWidth, setStrokeWidth] = React.useState<'1' | '2'>('2')
+    const [color, setColor] = React.useState(parseColor('#0d6efd'))
 
     function handleSearch(value: string) {
         setSearch(value)
@@ -91,7 +101,19 @@ export default function IconsPage() {
                     onChange={handleSearch}
                     className='w-full max-w-xl'
                 />
-                <div className='flex gap-2 w-full sm:w-auto'>
+                <div className='flex gap-2 items-center w-full sm:w-auto'>
+                    <ColorSwatchPicker
+                        aria-label='Pick color'
+                        value={color}
+                        onChange={setColor}
+                        className='grid grid-cols-3 lg:grid-cols-6 gap-1'
+                    >
+                        <ColorSwatchPickerItem color='#f59e0b' />
+                        <ColorSwatchPickerItem color='#84cc16' />
+                        <ColorSwatchPickerItem color='#0d6efd' />
+                        <ColorSwatchPickerItem color='#ec4899' />
+                        <ColorSwatchPickerItem color='#f43f5e' />
+                    </ColorSwatchPicker>
                     <Select
                         aria-label='Stroke Width'
                         className='w-28'

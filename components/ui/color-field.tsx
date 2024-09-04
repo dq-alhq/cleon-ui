@@ -2,11 +2,11 @@
 
 import * as React from 'react'
 
-import {
-    ColorField as ColorFieldPrimitive,
-    type ColorFieldProps as ColorFieldPrimitiveProps,
-    type ValidationResult
+import type {
+    ColorFieldProps as ColorFieldPrimitiveProps,
+    ValidationResult
 } from 'react-aria-components'
+import { ColorField as ColorFieldPrimitive } from 'react-aria-components'
 
 import { cn } from '@/lib/utils'
 
@@ -41,6 +41,7 @@ const ColorField = ({
     suffix,
     isLoading,
     enableColorPicker = true,
+    className,
     ...props
 }: ColorFieldProps) => {
     const value = props.value ?? props.defaultValue
@@ -48,7 +49,7 @@ const ColorField = ({
         <ColorFieldPrimitive
             {...props}
             aria-label={props['aria-label'] ?? 'Color field'}
-            className={cn('group w-full flex flex-col gap-1', props.className)}
+            className={cn(className, 'group w-full flex flex-col gap-1')}
         >
             {label && <Label>{label}</Label>}
             <FieldGroup
@@ -64,7 +65,7 @@ const ColorField = ({
                                     enableColorField={false}
                                     onChange={props.onChange}
                                     defaultValue={value}
-                                    className='size-9'
+                                    className='size-9 [&_.tcf]:size-9'
                                     trigger='color-field'
                                 />
                             ) : (

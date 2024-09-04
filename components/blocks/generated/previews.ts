@@ -5,8 +5,8 @@
 import React from 'react';
 
 export const previews: Record<string, any> = {
-  "dashboard": {
-    component: React.lazy(() => import("@/components/blocks/dashboard")),
+  "chat-app": {
+    component: React.lazy(() => import("@/components/blocks/chat-app")),
   },
   "product-management": {
     component: React.lazy(() => import("@/components/blocks/product-management")),
@@ -14,7 +14,7 @@ export const previews: Record<string, any> = {
   "social-media-timeline": {
     component: React.lazy(() => import("@/components/blocks/social-media-timeline")),
   },
-  "chat-app": {
-    component: React.lazy(() => import("@/components/blocks/chat-app")),
+  "dashboard": {
+    component: React.lazy(() => import("@/components/blocks/dashboard")),
   },
 };
