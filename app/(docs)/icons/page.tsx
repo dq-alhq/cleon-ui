@@ -9,20 +9,12 @@ import {
     IconBrandPnpm,
     IconBrandYarn,
     IconCheck,
-    IconClipboard
+    IconClipboard,
+    IconLoader2
 } from 'cleon-icons'
 import { AnimatePresence, motion } from 'framer-motion'
 import { Header, parseColor, Text } from 'react-aria-components'
-import {
-    Button,
-    buttonVariants,
-    ColorSwatchPicker,
-    ColorSwatchPickerItem,
-    Link,
-    Menu,
-    SearchField,
-    Select
-} from 'ui'
+import { Button, buttonVariants, ColorPicker, Link, Menu, SearchField, Select } from 'ui'
 
 import { Footer } from '@/components/footer'
 import { ThemeToggle } from '@/components/theme-toggle'
@@ -33,7 +25,7 @@ import { IconsList } from './icon-list'
 export default function IconsPage() {
     const [size, setSize] = React.useState<'size-4' | 'size-5' | 'size-6'>('size-5')
     const [search, setSearch] = React.useState('')
-    const [strokeWidth, setStrokeWidth] = React.useState<'1' | '2'>('2')
+    const [stroke, setStroke] = React.useState<'1' | '2'>('2')
     const [color, setColor] = React.useState(parseColor('#0d6efd'))
 
     function handleSearch(value: string) {
@@ -102,23 +94,16 @@ export default function IconsPage() {
                     className='w-full max-w-xl'
                 />
                 <div className='flex gap-2 items-center w-full sm:w-auto'>
-                    <ColorSwatchPicker
-                        aria-label='Pick color'
+                    <ColorPicker
+                        aria-label='Color Picker'
                         value={color}
                         onChange={setColor}
-                        className='grid grid-cols-3 lg:grid-cols-6 gap-1'
-                    >
-                        <ColorSwatchPickerItem color='#f59e0b' />
-                        <ColorSwatchPickerItem color='#84cc16' />
-                        <ColorSwatchPickerItem color='#0d6efd' />
-                        <ColorSwatchPickerItem color='#ec4899' />
-                        <ColorSwatchPickerItem color='#f43f5e' />
-                    </ColorSwatchPicker>
+                    />
                     <Select
                         aria-label='Stroke Width'
                         className='w-28'
-                        selectedKey={strokeWidth}
-                        onSelectionChange={(value) => setStrokeWidth(value as '1' | '2')}
+                        selectedKey={stroke}
+                        onSelectionChange={(value) => setStroke(value as '1' | '2')}
                     >
                         <Select.Item id='1'>Stroke 1</Select.Item>
                         <Select.Item id='2'>Stroke 2</Select.Item>
@@ -139,8 +124,12 @@ export default function IconsPage() {
                     <ThemeToggle />
                 </div>
             </div>
-            <div className='container py-4 flex gap-8 items-start'>
-                <IconsList query={search} size={size} stroke={strokeWidth} />
+            <div className='container py-4 flex flex-col lg:flex-row gap-8 items-start'>
+                <React.Suspense
+                    fallback={<IconLoader2 className='size-4 animate-spin' />}
+                >
+                    <IconsList {...{ query: search, size, stroke }} />
+                </React.Suspense>
             </div>
             <Footer />
         </main>

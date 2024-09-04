@@ -54,8 +54,8 @@ export function IconsList({
                     </div>
                 }
             >
-                <div className='flex gap-2 rounded-lg border p-4 flex-col min-w-56 relative'>
-                    <div className='text-xl font-bold mb-2'>
+                <div className='flex gap-2 rounded-lg flex-row border p-4 lg:flex-col min-w-56 relative'>
+                    <div className='text-xl font-bold mb-2 lg:flex hidden'>
                         Categories{' '}
                         {selectedCategory !== '' && (
                             <Button

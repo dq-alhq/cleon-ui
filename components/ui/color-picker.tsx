@@ -136,7 +136,7 @@ const ColorPicker = ({
                             className='overflow-y-auto sm:min-w-56 w-full sm:max-w-[16rem] px-0 pt-2 pb-3 sm:p-2.5 [&::-webkit-scrollbar]:size-0.5 [scrollbar-width:thin]'
                             {...props}
                         >
-                            <div className='grid gap-2'>
+                            <div className='grid px-2 sm:px-0 gap-2'>
                                 <ColorArea
                                     aria-describedby={`${label ? `${label} color area` : 'Color slider'}`}
                                     className={colorArea()}
