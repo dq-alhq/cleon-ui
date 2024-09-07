@@ -5,17 +5,66 @@ order: 3
 published: true
 ---
 
-## Requirements
+## Installation via CLI
+Before executing the command, ensure that **tailwind-css** is installed. If not, follow the instructions [here](https://tailwindcss.com/docs/installation) for installation.
+
+<Note variant='primary'>
+  This CLI will overwrite your **tailwind.config** and **css** file. It is recommended to use this in a **new project** rather than an existing one to avoid manual file additions.
+</Note>
+
+### Initial Setup
+Begin by executing this command:
+
+<DocCli init />
+
+First, it will asks what your project type, if you’re using **Next.js**, **Laravel with Inertia.js** or **Vite.js with React** just select it.
+If none of them, select the **other** option and it will asks several question about your project structure.
+
+### Add Components
+Next, use `add [component-name]` to add components in your project. This allows for selective installation without the need for a full setup. Install only what you need, or refer to the documentation to manually include components. Here's how to add a `combo-box`:
+<DocCli add='combo-box' />
+
+This command will ensure all necessary components are installed:
+```bash
+✓ combo-box created
+✓ select created
+✓ dropdown created
+✓ field created
+✓ list-box created
+✓ popover created
+✓ button created
+```
+
+Sometimes, you may want to add components individually, such as `select` and `text-field`. You can easily do this by using the following command:
+<DocCli add='select text-field' />
+
+### Select and Add Components
+You might prefer to select the components you want to include by adding them without specifying any items. Just use the following command to add components:
+<DocCli add='' />
+This command will present a list of available components, which you can navigate and select using the arrow keys and spacebar.
+
+```bash
+? Select components to add: (Press <space> to select, <a> to toggle all, <i> to invert selection, and <enter> to proceed)
+ ◯ dropdown
+ ◯ dialog
+ ◯ field
+ ◯ forms
+ ◯ collections
+ ◯ date-and-time
+```
+
+## Manual Installation
+### Requirements
 
 To get started with the design system, you need to install the following packages:
 
-<Install items={['react-aria-components','tailwindcss-react-aria-components','tailwind-variants','tailwind-merge','clsx']} />
+<InstallDeps items={['react-aria-components','tailwindcss-react-aria-components','tailwind-variants','tailwind-merge','clsx']} />
 
 After install these package for handling animations and icons:
 
-<Install items={['framer-motion','cleon-icons','tailwindcss-animate','embla-carousel-react','cmdk','sonner']} />
+<InstallDeps items={['framer-motion','cleon-icons','tailwindcss-animate','embla-carousel-react','cmdk','sonner']} />
 
-## CSS
+### CSS
 
 First of all, you need to modify your root css file, like for example you are using laravel it's `resources/css/app.css` and you need to add the following code:
 
@@ -192,12 +241,11 @@ Below that you need to add the following code:
 }
 `} />
 
-## Tailwind Configuration
+### Tailwind Configuration
 
-You need to change your `tailwind.config.ts`. If your config js file like `tailwind.config.js`, just change it to `tailwind.config.ts`
+You need to change your `tailwind.config.js` or `tailwind.config.ts` file.
 
 <PlainCode lang='js' code={`import { withTV } from 'tailwind-variants/transformer'
-import type { Config } from 'tailwindcss'
 import { fontFamily } from 'tailwindcss/defaultTheme'
 
 const config = withTV({
@@ -288,14 +336,15 @@ const config = withTV({
         require('tailwindcss-animate'),
         require('tailwindcss-react-aria-components')
     ]
-}) satisfies Config
+})
 
 export default config
 `} />
 
-## Utils
+### Utils
 
-Use a cn helper to make it easier to conditionally add Tailwind CSS classes. Here's how to define it in lib/utils.ts:
+Use a cn helper to make it easier to conditionally add Tailwind CSS classes. All of the components need this utility, You can create this file inside your `lib` folder or anywhere you like.
+Here's how to define it in `lib/utils.ts`:
 
 <PlainCode lang='js' code={`import React from 'react'
 import { type ClassValue, clsx } from 'clsx'

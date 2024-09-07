@@ -2,7 +2,7 @@ import React from 'react'
 
 import { Description, Radio, RadioGroup } from '@/components/ui'
 
-export default function RadioGroupControlledDemo() {
+export default function RadioControlledDemo() {
     const [selected, setSelected] = React.useState('')
     return (
         <>

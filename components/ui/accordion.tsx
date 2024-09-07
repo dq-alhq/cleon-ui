@@ -2,7 +2,7 @@
 
 import * as React from 'react'
 
-import { IconChevronDown } from 'cleon-icons'
+import { IconMinus } from 'cleon-icons'
 import { AnimatePresence, motion, type MotionProps } from 'framer-motion'
 import { Button, composeRenderProps, type ButtonProps } from 'react-aria-components'
 import { tv } from 'tailwind-variants'
@@ -124,7 +124,7 @@ interface AccordionTriggerProps
 
 const accordionTriggerStyles = tv({
     base: [
-        'flex flex-1 rounded-lg text-foreground hover:text-primary [&_svg]:size-4 [&>[data-slot=icon]]:size-6 items-center gap-x-2 pt-3 font-medium'
+        'flex acrt flex-1 rounded-lg text-foreground hover:text-primary [&_svg]:size-4 [&>[data-slot=icon]]:size-4 items-center gap-x-2 pt-3 font-medium'
     ],
     variants: {
         isFocused: {
@@ -187,12 +187,22 @@ const AccordionTrigger = ({ className, children, ...props }: AccordionTriggerPro
         >
             {children}
             {!hideIndicator && (
-                <IconChevronDown
+                <div
                     className={cn(
-                        'ml-auto transition duration-300 group-disabled:rotate-0',
-                        isOpen ? 'rotate-180' : 'rotate-0'
+                        'ml-auto relative flex items-center transition duration-300 justify-center size-4',
+                        isOpen ? 'rotate-0' : '-rotate-90'
                     )}
-                />
+                >
+                    <IconMinus
+                        className={cn('transition absolute duration-300 size-4')}
+                    />
+                    <IconMinus
+                        className={cn(
+                            'transition absolute duration-300 size-4',
+                            isOpen ? 'rotate-0' : '-rotate-90'
+                        )}
+                    />
+                </div>
             )}
         </Button>
     )

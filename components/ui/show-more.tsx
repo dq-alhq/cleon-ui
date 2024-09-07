@@ -3,7 +3,7 @@
 import { useState } from 'react'
 
 import { IconChevronDown } from 'cleon-icons'
-import { domAnimation, LazyMotion, m } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 import { Text, ToggleButton } from 'react-aria-components'
 import { tv } from 'tailwind-variants'
 
@@ -93,18 +93,18 @@ function ContentReveal({
     }
     return (
         <div className={cn('relative overflow-visible', className)}>
-            <LazyMotion features={domAnimation} strict>
+            <AnimatePresence initial={false}>
                 <div aria-expanded={isExpanded}>
-                    <m.div
+                    <motion.div
                         style={{ overflow: 'hidden' }}
                         initial={{ height: initialHeight, opacity: initialOpacity }}
                         exit={{ height: initialHeight, opacity: initialOpacity }}
                         animate={animate}
                     >
                         {children}
-                    </m.div>
+                    </motion.div>
                 </div>
-            </LazyMotion>
+            </AnimatePresence>
             {gradientTransparency && (
                 <div
                     className={cn(

@@ -40,7 +40,7 @@ export default function RootLayout({
         <html lang='en' suppressHydrationWarning>
             <body
                 className={cn(
-                    'mx-auto min-h-svh scroll-smooth bg-background font-sans antialiased [max-width:1850px]',
+                    'mx-auto min-h-svh scroll-smooth bg-background font-sans antialiased',
                     fontSans.variable,
                     fontMono.variable
                 )}

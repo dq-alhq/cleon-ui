@@ -16,15 +16,12 @@ Radial charts are effective for displaying data that is cyclic or directional, s
 
 ## Installation
 
-<Install items={['recharts']} />
-
 <Note variant="danger">Note: If you are trying to use charts with React 19 or the Next.js 15, you will need the recharts@alpha release currently.</Note>
+<InstallDeps deps={['recharts@alpha']} />
 
-<Install items={['recharts@alpha']} />
+<Install cli='charts' deps={['react-aria-components','recharts']} components={['charts']} />
 
-<SourceCode toShow='charts' />
-
-Then add these lines to your `css` file
+Then add these lines to your `css` file, of course you can change the color as you like `in hsl`
 
 ```tsx {2-17}
 /* Rest of your styles */

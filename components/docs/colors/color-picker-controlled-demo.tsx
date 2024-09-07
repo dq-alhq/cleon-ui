@@ -8,7 +8,6 @@ export default function ColorPickerControlledDemo() {
     const [color, setColor] = React.useState(defaultColor)
     const colorChangeHandler = (v: Color) => {
         // ['hex','rgb','rgba','hsb','hsba','hsl','hsla']
-        // console.log(v.toString('hex'))
         setColor(v)
     }
     return (

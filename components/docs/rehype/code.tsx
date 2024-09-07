@@ -31,14 +31,14 @@ function Code({ lang = 'tsx', code }: { lang?: string; code: string }) {
     }
 
     return (
-        <div className='relative overflow-hidden rounded-lg'>
+        <div className='relative border overflow-hidden rounded-lg'>
             <div className={cn('absolute bottom-auto right-4 top-3 z-20 flex gap-1.5')}>
-                <CopyRawButton code={code} />
                 <CopyButton
                     initialIcon={<IconAlertCircle />}
                     isCopied={copied === 'imports'}
                     onPress={copyImportsToClipboard}
                 />
+                <CopyRawButton code={code} />
             </div>
             <div className='[&_pre]:my-0 [&_pre]:!border-0 [&_pre]:max-h-[32rem] [&_pre]:pb-[100px] no-scrollbar [&_pre]:overflow-auto [&_pre]:no-scrollbar'>
                 <CodeHighlighter lang={lang} code={code} />

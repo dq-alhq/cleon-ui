@@ -3,7 +3,7 @@
 import * as React from 'react'
 
 import { IconCheck, IconClipboard } from 'cleon-icons'
-import { AnimatePresence, m, motion } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 import { toast } from 'sonner'
 
 import { cn, wait } from '@/lib/utils'
@@ -91,21 +91,21 @@ const CopyButton = ({
         >
             <AnimatePresence mode='wait' initial={false}>
                 {isCopied ? (
-                    <m.span
+                    <motion.span
                         key='checkmark-import'
                         initial={{ opacity: 0, scale: 0.5 }}
                         animate={{ opacity: 1, scale: 1 }}
                     >
                         {copiedIcon ?? <IconCheck />}
-                    </m.span>
+                    </motion.span>
                 ) : (
-                    <m.span
+                    <motion.span
                         key='copy'
                         initial={{ opacity: 0, scale: 0.5 }}
                         animate={{ opacity: 1, scale: 1 }}
                     >
                         {initialIcon ?? <IconClipboard />}
-                    </m.span>
+                    </motion.span>
                 )}
             </AnimatePresence>
         </Button>

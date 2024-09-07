@@ -9,18 +9,22 @@ import {
     IconBrandGithub,
     IconBrandTailwind,
     IconChevronDown,
-    IconColorPicker,
+    IconCirlceXTri,
+    IconColorFilter,
     IconDeviceDesktop,
+    IconHome,
     IconMenu,
     IconMoon,
+    IconPackages,
     IconSearch,
-    IconSun
+    IconSun,
+    IconTemplate
 } from 'cleon-icons'
 import { LayoutGroup, motion } from 'framer-motion'
 import { usePathname } from 'next/navigation'
 import { Collection, Link as LinkPrimitive, type LinkProps } from 'react-aria-components'
 
-import { CommandPalette, type OpenCloseProps } from '@/components/command-palette'
+import { CommandPalette, type OpenCloseProps } from '@/components/command-menu'
 import { ThemeToggle } from '@/components/theme-toggle'
 import {
     Button,
@@ -36,7 +40,7 @@ import { cn, useMediaQuery } from '@/lib/utils'
 import { Aside } from './aside'
 import { useTheme } from './providers'
 
-const menuItems = [
+export const menuItems = [
     { id: 1, label: 'Home', url: '/' },
     { id: 2, label: 'Components', url: '/docs/getting-started/introduction' },
     { id: 3, label: 'Blocks', url: '/blocks' },
@@ -53,7 +57,7 @@ export function Navbar() {
         <>
             <CommandPalette setOpen={setOpen} open={open} />
             <LayoutGroup id={`navigation-${id}`}>
-                <div className='sticky top-0 z-30 hidden overflow-hidden pb-1 sm:block'>
+                <div className='sticky top-0 z-30 hidden overflow-hidden pb-1 lg:block'>
                     <nav className='border-b bg-background/60 py-2 backdrop-blur-xl'>
                         <div className='mx-auto max-w-screen-2xl px-4'>
                             <div className='flex items-center justify-between'>
@@ -163,7 +167,7 @@ export function ResponsiveAside({ open, setOpen }: OpenCloseProps) {
 
     const isDesktop = useMediaQuery('(min-width: 1024px)')
     return (
-        <nav className='z-30 sm:hidden h-14 bg-background/60 backdrop-blur-xl rounded-b-lg sticky top-0'>
+        <nav className='z-30 lg:hidden h-14 bg-background/60 backdrop-blur-xl rounded-b-lg sticky top-0'>
             {!isDesktop && <CommandPalette setOpen={setOpen} open={open} />}
             <div className={cn('-mb-2 flex items-center justify-between pl-4 pr-2 pt-2')}>
                 <Button
@@ -249,11 +253,28 @@ export function NavbarDropdown() {
                 </span>
             </Button>
             <Menu.Content placement='bottom' className='w-64'>
+                <Menu.Item href='/' target='_blank'>
+                    <IconHome />
+                    Home
+                </Menu.Item>
+                <Menu.Item href='/docs/getting-started/introduction'>
+                    <IconPackages />
+                    Components
+                </Menu.Item>
+                <Menu.Item href='/blocks'>
+                    <IconTemplate />
+                    Blocks
+                </Menu.Item>
+                <Menu.Item href='/blocks'>
+                    <IconCirlceXTri />
+                    Icons
+                </Menu.Item>
+                <Menu.Separator />
+                <Menu.Header separator>Refs</Menu.Header>
                 <Menu.Item href='https://github.com/dq-alhq' target='_blank'>
                     <IconBrandGithub />
                     Github
                 </Menu.Item>
-                <Menu.Separator />
                 <Menu.Item
                     href='https://react-spectrum.adobe.com/react-aria/components.html'
                     target='_blank'
@@ -286,12 +307,8 @@ export function NavbarDropdown() {
                     Tailwind CSS
                 </Menu.Item>
                 <Menu.Item href='https://getjustd.com/colors' target='_blank'>
-                    <IconColorPicker />
+                    <IconColorFilter />
                     Colors
-                </Menu.Item>
-                <Menu.Item href='https://cleon-icons.vercel.app' target='_blank'>
-                    <IconBrandCleon />
-                    Cleon Icons
                 </Menu.Item>
                 <Menu.Item href='https://www.framer.com/motion/' target='_blank'>
                     <IconBrandFramer />

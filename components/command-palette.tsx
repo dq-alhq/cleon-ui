@@ -8,6 +8,8 @@ import { usePathname, useRouter } from 'next/navigation'
 import { Command } from '@/components/ui'
 import { useMediaQuery } from '@/lib/utils'
 
+import { menuItems } from './navbar'
+
 export interface OpenCloseProps {
     open: boolean
     setOpen?: (isOpen: boolean) => void
@@ -48,6 +50,13 @@ export function CommandPalette({ open, setOpen }: OpenCloseProps) {
                             onSelect={() => router.push(`/${item.slug}`)}
                         >
                             {item.title}
+                        </Command.Item>
+                    ))}
+                </Command.Section>
+                <Command.Section heading='Pages'>
+                    {menuItems.map((item: any, i: number) => (
+                        <Command.Item key={i} onSelect={() => router.push(`${item.url}`)}>
+                            {item.label}
                         </Command.Item>
                     ))}
                 </Command.Section>
