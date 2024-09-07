@@ -1,14 +1,15 @@
 import Image from 'next/image'
 import type { LinkProps } from 'react-aria-components'
 
-import { DocInstallation } from '@/components/doc-installation'
 import { PlainCode } from '@/components/docs/rehype/plain-code'
-import { SourceCode } from '@/components/docs/rehype/source-code'
 import { Link, Snippet, type SnippetProps } from '@/components/ui'
 import { useMDXComponent } from '@/lib/hooks/use-mdx'
 
 import { BlockContent } from './block-content'
+import { DocCli } from './doc-cli'
 import { DocHow } from './doc-how'
+import { DocInstall } from './doc-install'
+import { DocInstallDeps } from './doc-install-deps'
 import { DocsNote } from './doc-note'
 
 interface MdxProps {
@@ -21,7 +22,6 @@ export function MDXContent({ code }: MdxProps) {
         <Component
             components={{
                 Image,
-                Install: DocInstallation,
                 How: DocHow,
                 a: (props: LinkProps) => (
                     <Link
@@ -31,7 +31,9 @@ export function MDXContent({ code }: MdxProps) {
                     />
                 ),
                 Note: DocsNote,
-                SourceCode: SourceCode,
+                Install: DocInstall,
+                InstallDeps: DocInstallDeps,
+                DocCli: DocCli,
                 Block: BlockContent,
                 PlainCode: PlainCode,
                 Snippet: (props: SnippetProps) => (

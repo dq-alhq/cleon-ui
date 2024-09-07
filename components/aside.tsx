@@ -56,7 +56,7 @@ const renderHierarchy = (node: HierarchyNode, defaultValues: string[]) => {
         >
             {filteredNodeEntries.map(([key, value]) => (
                 <Accordion.Item key={key} currentId={key}>
-                    <Trigger className='text-foreground group-data-[open=true]:text-primary'>
+                    <Trigger className='text-foreground [&_.aside-icon]:size-4 group-data-[open=true]:text-primary'>
                         {key === 'getting-started' ? (
                             <IconKey className='aside-icon rotate-45' />
                         ) : key === 'dark-mode' ? (

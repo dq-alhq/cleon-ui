@@ -48,8 +48,8 @@ export function SourceCode({ message, toShow, ...props }: SourceCodeProps) {
 
     if (codeStrings.length === 1) {
         return (
-            <section className='not-prose my-6'>
-                <p className='-mt-2 mb-4'>
+            <section className='my-6 not-prose'>
+                <p className='-mt-2 mb-4 prose text-base max-w-none'>
                     {message
                         ? message
                         : 'And next, you can copy the code below and paste it into your dopest component folder.'}
@@ -72,7 +72,7 @@ export function SourceCode({ message, toShow, ...props }: SourceCodeProps) {
                         ></div>
                         <Button
                             className={cn(
-                                'sticky bottom-14 left-1/2 right-1/2 -translate-x-1/2 bg-background hover:border-primary hover:bg-background hover:ring-4 hover:ring-primary/40 pressed:bg-background'
+                                'sticky bottom-4 left-1/2 right-1/2 -translate-x-1/2 bg-background hover:border-primary hover:bg-background hover:ring-4 hover:ring-primary/40 pressed:bg-background'
                             )}
                             variant='outline'
                             onPress={() => handleOpenChange(0, !isOpened[0])}
@@ -90,9 +90,8 @@ export function SourceCode({ message, toShow, ...props }: SourceCodeProps) {
             <p className='-mt-2 mb-4'>
                 {toShow.length > 1
                     ? "All these components are tight, so you gotta use 'em all together."
-                    : 'And next, you can copy the code below and paste it into your dopest component folder.'}
+                    : 'And next, you can copy the code below and paste it into your component folder.'}
             </p>
-
             <Tabs>
                 <Tabs.List>
                     {codeStrings.map((code, index) => (

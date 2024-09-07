@@ -581,9 +581,6 @@ export const previews: Record<string, any> = {
   "forms/slider-step-demo": {
     component: React.lazy(() => import("@/components/docs/forms/slider-step-demo")),
   },
-  "forms/radio-group-disabled-demo": {
-    component: React.lazy(() => import("@/components/docs/forms/radio-group-disabled-demo")),
-  },
   "forms/switch-demo": {
     component: React.lazy(() => import("@/components/docs/forms/switch-demo")),
   },
@@ -605,11 +602,11 @@ export const previews: Record<string, any> = {
   "forms/input-otp-demo": {
     component: React.lazy(() => import("@/components/docs/forms/input-otp-demo")),
   },
-  "forms/radio-group-invalid-demo": {
-    component: React.lazy(() => import("@/components/docs/forms/radio-group-invalid-demo")),
-  },
   "forms/number-field-demo": {
     component: React.lazy(() => import("@/components/docs/forms/number-field-demo")),
+  },
+  "forms/radio-controlled-demo": {
+    component: React.lazy(() => import("@/components/docs/forms/radio-controlled-demo")),
   },
   "forms/number-field-invalid-demo": {
     component: React.lazy(() => import("@/components/docs/forms/number-field-invalid-demo")),
@@ -626,8 +623,8 @@ export const previews: Record<string, any> = {
   "forms/text-field-validation-demo": {
     component: React.lazy(() => import("@/components/docs/forms/text-field-validation-demo")),
   },
-  "forms/radio-group-demo": {
-    component: React.lazy(() => import("@/components/docs/forms/radio-group-demo")),
+  "forms/radio-invalid-demo": {
+    component: React.lazy(() => import("@/components/docs/forms/radio-invalid-demo")),
   },
   "forms/text-field-controlled-demo": {
     component: React.lazy(() => import("@/components/docs/forms/text-field-controlled-demo")),
@@ -649,6 +646,12 @@ export const previews: Record<string, any> = {
   },
   "forms/textarea-validation-demo": {
     component: React.lazy(() => import("@/components/docs/forms/textarea-validation-demo")),
+  },
+  "forms/radio-disabled-demo": {
+    component: React.lazy(() => import("@/components/docs/forms/radio-disabled-demo")),
+  },
+  "forms/radio-demo": {
+    component: React.lazy(() => import("@/components/docs/forms/radio-demo")),
   },
   "forms/text-field-loading-demo": {
     component: React.lazy(() => import("@/components/docs/forms/text-field-loading-demo")),
@@ -691,9 +694,6 @@ export const previews: Record<string, any> = {
   },
   "forms/form-demo": {
     component: React.lazy(() => import("@/components/docs/forms/form-demo")),
-  },
-  "forms/radio-group-controlled-demo": {
-    component: React.lazy(() => import("@/components/docs/forms/radio-group-controlled-demo")),
   },
   "forms/textarea-controlled-demo": {
     component: React.lazy(() => import("@/components/docs/forms/textarea-controlled-demo")),

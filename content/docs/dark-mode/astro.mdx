@@ -32,7 +32,8 @@ Astro supports inline scripts, so we can get localStorage and set the theme.
 ```
 
 ## Theme Switcher
-<Install items={['cleon-icons']} />
+<InstallDeps items={['cleon-icons']} />
+
 ```tsx
 export function ThemeSwitcher() {
   const [theme, setThemeState] = React.useState< "theme-light" | "dark" | "system" >("theme-light")
