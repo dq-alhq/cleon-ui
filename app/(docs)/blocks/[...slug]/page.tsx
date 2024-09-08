@@ -76,7 +76,11 @@ export default async function PostPage({ params }: DocPageProps) {
                 <p className='mt-0 text-xl text-foreground/70'>{doc.description}</p>
             ) : null}
             <React.Suspense
-                fallback={<IconLoader2 className='mr-2 size-4 animate-spin' />}
+                fallback={
+                    <div className='w-full min-h-[600px] flex items-center justify-center'>
+                        <IconLoader2 className='size-8 animate-spin' />
+                    </div>
+                }
             >
                 <MDXContent code={doc.body} />
             </React.Suspense>
