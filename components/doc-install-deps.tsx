@@ -6,14 +6,21 @@ import { IconBrandBun, IconBrandNpm, IconBrandPnpm, IconBrandYarn } from 'cleon-
 import { toast } from 'sonner'
 
 import { CopyButton, Menu } from '@/components/ui'
-import { wait } from '@/lib/utils'
+import { cn, wait } from '@/lib/utils'
 
 interface InstallProps {
     items?: string[]
     message?: string
+    withMessage?: boolean
+    className?: string
 }
 
-const DocInstallDeps: React.FC<InstallProps> = ({ items, message }) => {
+const DocInstallDeps: React.FC<InstallProps> = ({
+    items,
+    message,
+    withMessage = true,
+    className
+}) => {
     const getInstallCommand = (packageManager: string) => {
         switch (packageManager) {
             case 'bun':
@@ -44,12 +51,14 @@ const DocInstallDeps: React.FC<InstallProps> = ({ items, message }) => {
     }
 
     return (
-        <section>
-            <p className='mt-2 mb-4 text-base prose max-w-none'>
-                {message
-                    ? message
-                    : 'Make sure you install the dependencies with the following command:'}
-            </p>
+        <section className={cn('w-full', className)}>
+            {withMessage && (
+                <p className='mt-2 mb-4 text-base prose max-w-none'>
+                    {message
+                        ? message
+                        : 'Make sure you install the dependencies with the following command:'}
+                </p>
+            )}
             <div className='text-zinc-200 bg-zinc-900 font-mono text-sm border flex items-center justify-between p-4 rounded-lg w-full h-12'>
                 {getInstallCommand(currentPackageManager)}
                 <Menu>

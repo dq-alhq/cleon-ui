@@ -1,9 +1,9 @@
-import { IconBrandGithub } from 'cleon-icons'
+import { IconBrandFigma, IconBrandGithub } from 'cleon-icons'
 import { Link } from 'ui'
 
+import { DocInstallDeps } from '@/components/doc-install-deps'
 import IconPageHeader from '@/components/icon-page-header'
 
-import Install from './controller/install'
 import ListIcons from './controller/list-icons'
 import SearchIcon from './controller/search-icon'
 import SelectColor from './controller/select-color'
@@ -31,15 +31,27 @@ export default async function IconsPage({
             <div className='pt-10 lg:pt-24 flex container justify-between'>
                 <div>
                     <IconPageHeader />
-                    <div className='mt-8 flex sm:h-14 items-center gap-3 flex-col sm:flex-row'>
-                        <Install />
+                    <div className='mt-8 flex sm:h-14 items-center gap-2 flex-col sm:flex-row'>
+                        <DocInstallDeps
+                            className='max-w-sm'
+                            withMessage={false}
+                            items={['cleon-icons']}
+                        />
                         <Link
                             target='_blank'
-                            className='text-dark-foreground bg-dark w-full sm:w-auto flex px-6 gap-3 justify-center items-center h-12 rounded-lg border border-border font-semibold transition hover:ring hover:ring-dark/40 shadow-sm outline-none'
+                            className='text-dark-foreground focus:outline-none bg-dark w-full sm:w-auto flex px-6 gap-3 justify-center items-center h-12 rounded-lg border border-border font-semibold transition hover:ring hover:ring-dark/40 shadow-sm outline-none'
                             href='https://github.com/dq-alhq/cleon-icons'
                         >
                             <IconBrandGithub className='size-5' />
                             Source
+                        </Link>
+                        <Link
+                            target='_blank'
+                            className='text-foreground focus:outline-none bg-background w-full sm:w-auto flex px-6 gap-3 justify-center items-center h-12 rounded-lg border border-border font-semibold transition hover:ring hover:ring-foreground/40 shadow-sm outline-none'
+                            href='https://www.figma.com/design/LyFwmlkNXFWIkCUMvxTLQm/Cleon-UI-Icons?m=auto&t=9IvlYFDBF75mOpKf-6'
+                        >
+                            <IconBrandFigma className='size-5 [&_*]:stroke-1' />
+                            Figma
                         </Link>
                     </div>
                 </div>

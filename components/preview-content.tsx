@@ -6,16 +6,25 @@ import { cn } from '@/lib/utils'
 
 export default function PreviewContent({
     name,
+    zoomOut,
     className
 }: {
     name: string
+    zoomOut: boolean
     className?: string
 }) {
     return (
-        <React.Suspense fallback={<IconLoader2 className='size-20 bg-muted' />}>
+        <React.Suspense
+            fallback={
+                <div className='w-full min-h-[600px] flex items-center justify-center'>
+                    <IconLoader2 className='size-20 bg-muted' />
+                </div>
+            }
+        >
             <iframe
                 className={cn('w-full border rounded-lg relative z-20', className)}
-                height={600}
+                height={720}
+                style={{ zoom: zoomOut ? 0.75 : 1 }}
                 allowFullScreen
                 src={`/block/${name}`}
             />

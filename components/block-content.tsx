@@ -16,9 +16,16 @@ type screenWidthType = 'max-w-none' | 'max-w-3xl' | 'max-w-sm'
 interface HowProps extends React.HTMLAttributes<HTMLDivElement> {
     name: string
     className?: string
+    zoomOut?: boolean
 }
 
-export function BlockContent({ children, name, className, ...props }: HowProps) {
+export function BlockContent({
+    children,
+    name,
+    zoomOut = false,
+    className,
+    ...props
+}: HowProps) {
     // @ts-ignore
     const [codeString, setCodeString] = React.useState<string>('')
     const [page, setPage] = React.useState('')
@@ -72,7 +79,11 @@ export function BlockContent({ children, name, className, ...props }: HowProps) 
                                 <IconDeviceDesktop />
                             </Toggle>
                         </div>
-                        <PreviewContent name={page} className={screenWidth} />
+                        <PreviewContent
+                            zoomOut={zoomOut}
+                            name={page}
+                            className={screenWidth}
+                        />
                     </div>
                 </Tabs.Content>
                 <Tabs.Content id='code'>

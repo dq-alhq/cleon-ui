@@ -124,7 +124,7 @@ interface AccordionTriggerProps
 
 const accordionTriggerStyles = tv({
     base: [
-        'flex acrt flex-1 rounded-lg text-foreground hover:text-primary [&_svg]:size-4 [&>[data-slot=icon]]:size-4 items-center gap-x-2 pt-3 font-medium'
+        'flex acrt flex-1 rounded-lg text-foreground hover:text-primary [&_svg]:size-3 [&>[data-slot=icon]]:size-3 items-center gap-x-2 pt-3 font-medium'
     ],
     variants: {
         isFocused: {
@@ -189,16 +189,16 @@ const AccordionTrigger = ({ className, children, ...props }: AccordionTriggerPro
             {!hideIndicator && (
                 <div
                     className={cn(
-                        'ml-auto relative flex items-center transition duration-300 justify-center size-4',
+                        'ml-auto relative flex items-center transition duration-300 justify-center size-3',
                         isOpen ? 'rotate-0' : '-rotate-90'
                     )}
                 >
                     <IconMinus
-                        className={cn('transition absolute duration-300 size-4')}
+                        className={cn('transition absolute duration-300 size-3')}
                     />
                     <IconMinus
                         className={cn(
-                            'transition absolute duration-300 size-4',
+                            'transition absolute duration-300 size-3',
                             isOpen ? 'rotate-0' : '-rotate-90'
                         )}
                     />
