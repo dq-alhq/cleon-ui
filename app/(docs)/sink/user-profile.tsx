@@ -1,6 +1,6 @@
 'use client'
 
-import { IconDeviceMobile } from 'cleon-icons'
+import { IconMobile } from 'cleon-icons'
 import Image from 'next/image'
 
 import DropZoneAndFileTriggerDemo from '@/components/docs/drag-and-drop/drop-zone-and-file-trigger-demo'
@@ -57,7 +57,7 @@ export default function UserProfileSink() {
                                 <TextField
                                     label='Phone'
                                     prefix='+62 '
-                                    suffix={<IconDeviceMobile />}
+                                    suffix={<IconMobile />}
                                 />
                             </div>
                         </Tabs.Content>

@@ -4,8 +4,11 @@ import * as React from 'react'
 
 import { IconX } from 'cleon-icons'
 import {
+    Button as ButtonPrimitive,
+    type ButtonProps as ButtonPrimitiveProps,
+    composeRenderProps,
     Dialog as DialogPrimitive,
-    type DialogProps,
+    type DialogProps as DialogPrimitiveProps,
     OverlayTriggerStateContext
 } from 'react-aria-components'
 import { tv } from 'tailwind-variants'
@@ -13,29 +16,31 @@ import { tv } from 'tailwind-variants'
 import { useMediaQuery } from '@/lib/utils'
 
 import { Button, type ButtonProps } from './button'
-import { Heading, type HeadingProps } from './heading'
+import type { HeadingProps } from './heading'
+import { Heading } from './heading'
 
 const dialogStyles = tv({
     slots: {
         root: [
-            'dlc peer relative flex max-h-[inherit] [&::-webkit-scrollbar]:size-0.5 [scrollbar-width:thin] flex-col overflow-hidden outline-none peer',
-            '[&:not(:has([data-slot=dialog-body]))]:px-6 [&:has([data-slot=dialog-body])_[data-slot=dialog-header]]:px-6 [&:has([data-slot=dialog-body])_[data-slot=dialog-footer]]:px-6'
+            'dlc relative flex max-h-[inherit] [&::-webkit-scrollbar]:size-0.5 [scrollbar-width:thin] flex-col overflow-hidden outline-none',
+            'sm:[&:not(:has([data-slot=dialog-body]))]:px-6 sm:[&:has([data-slot=dialog-body])_[data-slot=dialog-header]]:px-6 sm:[&:has([data-slot=dialog-body])_[data-slot=dialog-footer]]:px-6',
+            '[&:not(:has([data-slot=dialog-body]))]:px-4 [&:has([data-slot=dialog-body])_[data-slot=dialog-header]]:px-4 [&:has([data-slot=dialog-body])_[data-slot=dialog-footer]]:px-4'
         ],
-        header: 'relative flex flex-col pb-2 pt-6',
+        header: 'relative flex flex-col pb-3 pt-4 sm:pt-6',
         title: 'flex flex-1 items-center',
-        description: 'text-sm text-muted-foreground mt-1',
+        description: 'text-sm block text-muted-foreground mt-0.5 sm:mt-1',
         body: [
-            'flex flex-1 flex-col gap-2 overflow-auto px-6 py-1',
+            'flex flex-1 flex-col gap-2 overflow-auto px-4 sm:px-6 py-1',
             'max-h-[calc(var(--visual-viewport-height)-var(--visual-viewport-vertical-padding)-var(--dialog-header-height,0px)-var(--dialog-footer-height,0px))]'
         ],
-        footer: 'mt-auto flex flex-col-reverse justify-between gap-3 pb-6 pt-4 sm:flex-row',
+        footer: 'mt-auto flex flex-col-reverse justify-between gap-3 pb-4 sm:pb-6 pt-4 sm:flex-row',
         closeIndicator: 'close absolute right-2 top-2 size-6 z-50'
     }
 })
 
 const { root, header, title, description, body, footer, closeIndicator } = dialogStyles()
 
-const Dialog = ({ role, className, ...props }: DialogProps) => {
+const Dialog = ({ role, className, ...props }: DialogPrimitiveProps) => {
     return (
         <DialogPrimitive
             {...props}
@@ -45,7 +50,32 @@ const Dialog = ({ role, className, ...props }: DialogProps) => {
     )
 }
 
-const DialogHeader = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => {
+type DialogHeaderProps = React.HTMLAttributes<HTMLDivElement> & {
+    title?: string
+    description?: string
+}
+
+const TouchTarget = ({ children }: { children: React.ReactNode }) => {
+    return (
+        <>
+            <span
+                className='absolute left-1/2 top-1/2 size-[max(100%,2.75rem)] -translate-x-1/2 -translate-y-1/2 [@media(pointer:fine)]:hidden'
+                aria-hidden='true'
+            />
+            {children}
+        </>
+    )
+}
+
+const Trigger = (props: ButtonPrimitiveProps) => (
+    <ButtonPrimitive {...props}>
+        {composeRenderProps(props.children, (children) => (
+            <TouchTarget>{children}</TouchTarget>
+        ))}
+    </ButtonPrimitive>
+)
+
+const Header = ({ className, ...props }: DialogHeaderProps) => {
     const headerRef = React.useRef<HTMLHeadingElement>(null)
 
     React.useEffect(() => {
@@ -64,15 +94,15 @@ const DialogHeader = ({ className, ...props }: React.HTMLAttributes<HTMLDivEleme
         })
 
         observer.observe(header)
-        return () => {
-            observer.unobserve(header)
-        }
+        return () => observer.unobserve(header)
     }, [])
 
     return (
         <div data-slot='dialog-header' ref={headerRef} className={header({ className })}>
-            {typeof props.children === 'string' ? (
-                <DialogTitle {...props} />
+            {props.title && <Title>{props.title}</Title>}
+            {props.description && <Description>{props.description}</Description>}
+            {!props.title && typeof props.children === 'string' ? (
+                <Title {...props} />
             ) : (
                 props.children
             )}
@@ -80,16 +110,7 @@ const DialogHeader = ({ className, ...props }: React.HTMLAttributes<HTMLDivEleme
     )
 }
 
-interface DialogTitleProps extends HeadingProps {
-    className?: string
-}
-
-const DialogTitle = ({
-    tracking = 'tight',
-    level = 2,
-    className,
-    ...props
-}: DialogTitleProps) => (
+const Title = ({ tracking = 'tight', level = 2, className, ...props }: HeadingProps) => (
     <Heading
         slot='title'
         tracking={tracking}
@@ -99,15 +120,15 @@ const DialogTitle = ({
     />
 )
 
-const DialogDescription = ({ className, ...props }: HeadingProps) => (
-    <p className={description({ className })} {...props} />
+const Description = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => (
+    <div className={description({ className })} {...props} />
 )
 
-const DialogBody = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => (
+const Body = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => (
     <div data-slot='dialog-body' className={body({ className })} {...props} />
 )
 
-const DialogFooter = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => {
+const Footer = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => {
     const footerRef = React.useRef<HTMLDivElement>(null)
 
     React.useEffect(() => {
@@ -141,12 +162,12 @@ const DialogFooter = ({ className, ...props }: React.HTMLAttributes<HTMLDivEleme
     )
 }
 
-const DialogClose = ({ className, ...props }: ButtonProps) => {
+const Close = ({ className, variant = 'outline', ...props }: ButtonProps) => {
     const state = React.useContext(OverlayTriggerStateContext)!
     return (
         <Button
             className={className}
-            variant='outline'
+            variant={variant}
             onPress={() => state.close()}
             {...props}
         />
@@ -159,7 +180,7 @@ interface CloseButtonIndicatorProps {
     isDismissable?: boolean | undefined
 }
 
-const DialogCloseIndicator = ({ className, ...props }: CloseButtonIndicatorProps) => {
+const CloseIndicator = ({ className, ...props }: CloseButtonIndicatorProps) => {
     const isMobile = useMediaQuery('(max-width: 600px)')
     const buttonRef = React.useRef<HTMLButtonElement>(null)
 
@@ -183,12 +204,13 @@ const DialogCloseIndicator = ({ className, ...props }: CloseButtonIndicatorProps
     ) : null
 }
 
-Dialog.Body = DialogBody
-Dialog.Close = DialogClose
-Dialog.CloseIndicator = DialogCloseIndicator
-Dialog.Description = DialogDescription
-Dialog.Footer = DialogFooter
-Dialog.Header = DialogHeader
-Dialog.Title = DialogTitle
+Dialog.Trigger = Trigger
+Dialog.Header = Header
+Dialog.Title = Title
+Dialog.Description = Description
+Dialog.Body = Body
+Dialog.Footer = Footer
+Dialog.Close = Close
+Dialog.CloseIndicator = CloseIndicator
 
-export { Dialog, type DialogTitleProps }
+export { Dialog }

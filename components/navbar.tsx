@@ -9,14 +9,14 @@ import {
     IconBrandGithub,
     IconBrandTailwind,
     IconChevronDown,
-    IconCirlceXTri,
     IconColorFilter,
-    IconDeviceDesktop,
+    IconDesktop,
     IconHome,
     IconMenu,
     IconMoon,
     IconPackages,
     IconSearch,
+    IconShapes2,
     IconSun,
     IconTemplate
 } from 'cleon-icons'
@@ -266,7 +266,7 @@ export function NavbarDropdown() {
                     Blocks
                 </Menu.Item>
                 <Menu.Item href='/blocks'>
-                    <IconCirlceXTri />
+                    <IconShapes2 />
                     Icons
                 </Menu.Item>
                 <Menu.Separator />
@@ -318,7 +318,7 @@ export function NavbarDropdown() {
                 <Menu.Sub>
                     <Menu.Item aria-label='Switch Theme'>
                         {theme === 'system' ? (
-                            <IconDeviceDesktop />
+                            <IconDesktop />
                         ) : theme === 'dark' ? (
                             <IconMoon />
                         ) : (
@@ -328,7 +328,7 @@ export function NavbarDropdown() {
                     </Menu.Item>
                     <Menu.Content aria-labelledby='switch-theme'>
                         <Menu.Item onAction={() => setTheme('system')}>
-                            <IconDeviceDesktop />
+                            <IconDesktop />
                             <span>System</span>
                         </Menu.Item>
                         <Menu.Item onAction={() => setTheme('dark')}>

@@ -2,7 +2,7 @@
 
 import * as React from 'react'
 
-import { IconDeviceDesktop, IconDeviceIpad, IconDeviceMobile } from 'cleon-icons'
+import { IconDesktop, IconMobile, IconTablet } from 'cleon-icons'
 
 import jsonPreviews from '@/components/blocks/generated/previews.json'
 import { Code } from '@/components/docs/rehype/code'
@@ -60,7 +60,7 @@ export function BlockContent({
                                 isSelected={screenWidth === 'max-w-sm'}
                                 onChange={() => setScreenWidth('max-w-sm')}
                             >
-                                <IconDeviceMobile />
+                                <IconMobile />
                             </Toggle>
                             <Toggle
                                 variant='success'
@@ -68,7 +68,7 @@ export function BlockContent({
                                 isSelected={screenWidth === 'max-w-3xl'}
                                 onChange={() => setScreenWidth('max-w-3xl')}
                             >
-                                <IconDeviceIpad />
+                                <IconTablet />
                             </Toggle>
                             <Toggle
                                 variant='danger'
@@ -76,7 +76,7 @@ export function BlockContent({
                                 isSelected={screenWidth === 'max-w-none'}
                                 onChange={() => setScreenWidth('max-w-none')}
                             >
-                                <IconDeviceDesktop />
+                                <IconDesktop />
                             </Toggle>
                         </div>
                         <PreviewContent

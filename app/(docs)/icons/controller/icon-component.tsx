@@ -4,7 +4,7 @@ import * as icons from 'cleon-icons'
 import { renderToString } from 'react-dom/server'
 
 import { Menu, Tooltip } from '@/components/ui'
-import { pascalCaseToTitleCase } from '@/lib/utils'
+import { titleCase } from '@/lib/utils'
 
 import {
     copyJsxSvgToClipboard,
@@ -64,9 +64,7 @@ export const IconComponent = ({ name, color, size, stroke }: IconProps) => {
                     </Menu.Item>
                 </Menu.Content>
             </Menu>
-            <Tooltip.Content aria-label={name}>
-                {pascalCaseToTitleCase(name).replace('Icon ', '')}
-            </Tooltip.Content>
+            <Tooltip.Content aria-label={name}>{titleCase(name)}</Tooltip.Content>
         </Tooltip>
     )
 }
