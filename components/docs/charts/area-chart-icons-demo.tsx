@@ -1,7 +1,6 @@
 'use client'
 
-import { IconTrendingUp } from 'cleon-icons'
-import { IconDeviceDesktop, IconDeviceMobile } from 'cleon-icons'
+import { IconDesktop, IconMobile, IconTrendingUp } from 'cleon-icons'
 import { Area, AreaChart, CartesianGrid, XAxis } from 'recharts'
 
 import {
@@ -27,12 +26,12 @@ const chartConfig = {
     desktop: {
         label: 'Desktop',
         color: 'hsl(var(--chart-1))',
-        icon: IconDeviceDesktop
+        icon: IconDesktop
     },
     mobile: {
         label: 'Mobile',
         color: 'hsl(var(--chart-2))',
-        icon: IconDeviceMobile
+        icon: IconMobile
     }
 } satisfies ChartConfig
 

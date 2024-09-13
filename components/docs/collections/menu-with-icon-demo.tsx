@@ -3,7 +3,7 @@
 import {
     IconCommand,
     IconDashboard,
-    IconDeviceDesktop,
+    IconDesktop,
     IconHeadphones,
     IconHeart,
     IconLogout,
@@ -61,13 +61,13 @@ export default function MenuWithIconDemo() {
                         ) : resolvedTheme === 'dark' ? (
                             <IconMoon />
                         ) : (
-                            <IconDeviceDesktop />
+                            <IconDesktop />
                         )}
                         Switch theme
                     </Menu.Item>
                     <Menu.Content>
                         <Menu.Item onAction={() => setTheme('system')}>
-                            <IconDeviceDesktop /> System
+                            <IconDesktop /> System
                         </Menu.Item>
                         <Menu.Item onAction={() => setTheme('dark')}>
                             <IconMoon /> Dark

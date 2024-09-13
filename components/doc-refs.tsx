@@ -7,6 +7,7 @@ import {
     IconBrandAdobe,
     IconBrandAstro,
     IconBrandCleon,
+    IconBrandEmbla,
     IconBrandFramer,
     IconBrandGithub,
     IconBrandInertia,
@@ -21,7 +22,6 @@ import {
 import { Menu, MenuItem } from 'react-aria-components'
 import { buttonVariants } from 'ui'
 
-import { EmblaCrouselLogo } from '@/components/logo'
 import { cn } from '@/lib/utils'
 
 export function DocRefs({ references }: any) {
@@ -92,7 +92,7 @@ export function DocRefs({ references }: any) {
                 break
             case url.includes('embla'):
                 title = 'Embla Carousel'
-                icon = EmblaCrouselLogo
+                icon = IconBrandEmbla
                 break
             default:
                 icon = () => null

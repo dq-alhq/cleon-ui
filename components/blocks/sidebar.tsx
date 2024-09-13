@@ -7,12 +7,12 @@ import {
     IconBrandCleon,
     IconChevronDown,
     IconChevronRight,
-    IconCirlceXTri,
     IconDashboard,
     IconKey,
     IconLogout,
     IconMoon,
     IconSettings,
+    IconShapes2,
     IconShare3,
     IconShield,
     IconStars,
@@ -166,6 +166,6 @@ const sidebarItems = [
             { name: 'Mobile App Development', href: '#' }
         ]
     },
-    { icon: IconCirlceXTri, name: 'Components', href: '/' },
+    { icon: IconShapes2, name: 'Components', href: '/' },
     { icon: IconShare3, name: 'Posts', href: '#' }
 ]

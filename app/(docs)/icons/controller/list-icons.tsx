@@ -1,13 +1,16 @@
 import React from 'react'
 
-import type * as cleonicons from 'cleon-icons'
-
 import { Loader } from '@/components/ui'
-import icons from '@/lib/icons.json'
-import { kebabToPascal } from '@/lib/utils'
+import Icons from '@/lib/icons.json'
 
 import CategoriesList from './categories-list'
 import { IconComponent } from './icon-component'
+
+interface Icon {
+    name: string
+    category: string
+    tags: string[]
+}
 
 export default function ListIcons({
     size = '5',
@@ -22,11 +25,14 @@ export default function ListIcons({
     category: string
     query: string
 }) {
+    const icons = Icons as Icon[]
     const categories = new Set(icons?.map((icon) => icon.category))
     const filteredIcons = icons
         .filter(
             (icon) =>
-                icon.name.includes(query) || icon.tags.some((tag) => tag.includes(query))
+                icon.name.toLowerCase().includes(query) ||
+                icon.category.toLowerCase().includes(query) ||
+                icon.tags.some((tag: string) => tag.includes(query))
         )
         .filter((icon) => icon.category === category || category === 'all')
     return (
@@ -47,7 +53,7 @@ export default function ListIcons({
                             stroke={stroke as '1' | '2'}
                             key={i}
                             color={color}
-                            name={kebabToPascal(item.name) as keyof typeof cleonicons}
+                            name={item.name}
                         />
                     ))}
                 </div>

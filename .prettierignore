@@ -1,3 +1,5 @@
 content
 components/ui/index.ts
 components/docs/generated/**/*
+lib/icons.json
+lib/emoji.json

@@ -1,27 +1,20 @@
 'use client'
 
-import React, { useContext, useEffect, useLayoutEffect, useRef, useState } from 'react'
+import React from 'react'
 
+import type { PanInfo } from 'framer-motion'
 import {
     animate,
     AnimatePresence,
+    type Inertia,
     motion,
     useMotionTemplate,
     useMotionValue,
     useMotionValueEvent,
-    useTransform,
-    type Inertia
+    useTransform
 } from 'framer-motion'
-import {
-    Button,
-    Dialog as DialogPrimitive,
-    Heading,
-    Modal,
-    ModalOverlay,
-    type ButtonProps,
-    type DialogProps,
-    type HeadingProps
-} from 'react-aria-components'
+import type { DialogProps } from 'react-aria-components'
+import { type ButtonProps, Modal, ModalOverlay } from 'react-aria-components'
 
 import { cn } from '@/lib/utils'
 
@@ -30,15 +23,14 @@ import { Dialog } from './dialog'
 const inertiaTransition: Inertia = {
     type: 'inertia',
     bounceStiffness: 300,
-    bounceDamping: 40,
+    bounceDamping: 60,
     timeConstant: 300
 }
 const staticTransition = {
-    duration: 0.5,
+    duration: 0.4,
     ease: [0.32, 0.72, 0, 1]
 }
-
-const drawerMargin = 34
+const drawerMargin = 60
 const drawerRadius = 32
 
 interface DrawerContextType {
@@ -51,79 +43,82 @@ interface DrawerContextType {
 const DrawerContext = React.createContext<DrawerContextType | undefined>(undefined)
 
 const useDrawerContext = () => {
-    const context = useContext(DrawerContext)
+    const context = React.useContext(DrawerContext)
     if (context === undefined) {
         throw new Error('useDrawerContext must be used within a Drawer')
     }
     return context
 }
 
-const ModalPrimitive = motion(Modal)
-const ModalOverlayPrimitive = motion(ModalOverlay)
+const ModalWrapper = React.forwardRef<HTMLDivElement, React.ComponentProps<typeof Modal>>(
+    (props, ref) => <Modal ref={ref} {...props} />
+)
+ModalWrapper.displayName = 'ModalWrapper'
 
-const DrawerOverlayPrimitive = (
-    props: React.ComponentProps<typeof ModalOverlayPrimitive>
-) => {
+const ModalOverlayWrapper = React.forwardRef<
+    HTMLDivElement,
+    React.ComponentProps<typeof ModalOverlay>
+>((props, ref) => <ModalOverlay ref={ref} {...props} />)
+ModalOverlayWrapper.displayName = 'ModalOverlayWrapper'
+
+const ModalPrimitive = motion.create(ModalWrapper)
+const ModalOverlayPrimitive = motion.create(ModalOverlayWrapper)
+
+interface DrawerOverlayPrimitiveProps
+    extends Omit<
+        React.ComponentProps<typeof ModalOverlayPrimitive>,
+        'isOpen' | 'onOpenChange' | 'style'
+    > {
+    'aria-label'?: DialogProps['aria-label']
+    'aria-labelledby'?: DialogProps['aria-labelledby']
+    role?: DialogProps['role']
+}
+
+const DrawerContentPrimitive = ({ children, ...props }: DrawerOverlayPrimitiveProps) => {
     const { closeDrawer, withNotch } = useDrawerContext()
-    const [contentHeight, setContentHeight] = useState(0)
-    const dialogRef = useRef<HTMLDivElement>(null)
-
-    useLayoutEffect(() => {
-        if (dialogRef.current) {
-            setContentHeight(dialogRef.current.offsetHeight)
-        }
-    }, [])
+    const [contentHeight, setContentHeight] = React.useState(0)
 
     const h = Math.min(contentHeight + drawerMargin, window.innerHeight - drawerMargin)
     const y = useMotionValue(h)
-    const bgOpacity = useTransform(y, [0, h], [0.4, 0])
+    const bgOpacity = useTransform(y, [0, h], [0.15, 0])
     const bg = useMotionTemplate`rgba(0, 0, 0, ${bgOpacity})`
+
     const root = document.getElementsByTagName('main')[0] as HTMLElement
-    const bodyScale = useTransform(
-        y,
-        [0, h],
-        [(window.innerWidth - drawerMargin) / window.innerWidth, 1]
-    )
-    const bodyTranslate = useTransform(y, [0, h], [drawerMargin - drawerRadius, 0])
+
     const bodyBorderRadius = useTransform(y, [0, h], [drawerRadius, 0])
 
-    useMotionValueEvent(bodyScale, 'change', (v: any) => (root.style.scale = `${v}`))
-    useMotionValueEvent(
-        bodyTranslate,
-        'change',
-        (v: any) => (root.style.translate = `0 ${v}px`)
-    )
     useMotionValueEvent(
         bodyBorderRadius,
         'change',
         (v) => (root.style.borderRadius = `${v}px`)
     )
 
+    const onDragEnd = (_: any, { offset, velocity }: PanInfo) => {
+        if (offset.y > h * 0.4 || velocity.y > 10) {
+            closeDrawer()
+        } else {
+            animate(y, 0, { ...inertiaTransition, min: 0, max: 0 })
+        }
+    }
+
     return (
         <>
             <ModalOverlayPrimitive
+                isDismissable
                 isOpen
                 onOpenChange={closeDrawer}
-                className='fixed inset-0 z-50'
-                style={{ backgroundColor: bg as any }}
+                className={cn([
+                    'fixed touch-none will-change-transform left-0 top-0 isolate z-50 h-[--visual-viewport-height] w-full',
+                    'flex items-end [--visual-viewport-vertical-padding:100px]'
+                ])}
+                style={{
+                    backgroundColor: bg as any
+                }}
             >
-                <motion.section
-                    aria-labelledby='overlay'
-                    onTap={closeDrawer}
-                    className='fixed inset-0 backdrop-blur-sm'
-                    initial='collapsed'
-                    animate='open'
-                    exit='collapsed'
-                    variants={{
-                        open: { opacity: 1 },
-                        collapsed: { opacity: 0 }
-                    }}
-                    transition={{ duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }}
-                ></motion.section>
                 <ModalPrimitive
                     className={cn(
-                        'absolute bottom-0 w-full rounded-t-2xl bg-background shadow-lg ring-1 ring-foreground/10',
-                        props.className
+                        'max-h-full flex flex-col w-full rounded-t-3xl sm:rounded-lg overflow-hidden bg-background text-foreground text-left align-middle shadow-lg',
+                        'ring-1 ring-zinc-950/5 dark:ring-white/15'
                     )}
                     initial={{ y: h }}
                     animate={{ y: 0 }}
@@ -132,25 +127,39 @@ const DrawerOverlayPrimitive = (
                     style={{
                         y,
                         top: 'auto',
-                        height: contentHeight + drawerMargin,
+                        height:
+                            contentHeight > 0
+                                ? `${contentHeight + drawerMargin}px`
+                                : 'auto',
                         maxHeight: `calc(100% - ${drawerMargin}px)`
                     }}
                     drag='y'
                     dragConstraints={{ top: 0, bottom: h }}
-                    onDragEnd={(_e, { offset, velocity }) => {
-                        if (offset.y > h * 0.5 || velocity.y > 10) {
-                            closeDrawer()
-                        } else {
-                            animate(y, 0, { ...inertiaTransition, min: 0, max: 0 })
-                        }
-                    }}
+                    onDragEnd={onDragEnd}
                     {...props}
                 >
-                    <div ref={dialogRef}>
+                    <div className='overflow-hidden'>
                         {withNotch && (
-                            <div className='notch mx-auto mt-2 h-1.5 w-10 rounded-full bg-foreground/20' />
+                            <div className='notch touch-pan-y sticky top-0 mx-auto shrink-0 mt-2.5 h-1.5 w-10 rounded-full bg-fg/20' />
                         )}
-                        {props.children as React.ReactNode}
+                        <div
+                            className='overflow-y-auto mt-3'
+                            ref={(el) => {
+                                if (el) {
+                                    const resizeObserver = new ResizeObserver(
+                                        (entries) => {
+                                            for (const entry of entries) {
+                                                setContentHeight(entry.contentRect.height)
+                                            }
+                                        }
+                                    )
+                                    resizeObserver.observe(el)
+                                    return () => resizeObserver.disconnect()
+                                }
+                            }}
+                        >
+                            <>{children}</>
+                        </div>
                     </div>
                 </ModalPrimitive>
             </ModalOverlayPrimitive>
@@ -158,30 +167,24 @@ const DrawerOverlayPrimitive = (
     )
 }
 
-interface DrawerContentPrimitiveProps
+interface DrawerPrimitiveProps
     extends Omit<React.ComponentProps<typeof Modal>, 'children'> {
+    'aria-label'?: DialogProps['aria-label']
+    'aria-labelledby'?: DialogProps['aria-labelledby']
+    role?: DialogProps['role']
     children?: DialogProps['children']
 }
 
-const DrawerContentPrimitive = (props: DrawerContentPrimitiveProps) => {
+const DrawerPrimitive = (props: DrawerPrimitiveProps) => {
     const { isOpen } = useDrawerContext()
 
     const h = window.innerHeight - drawerMargin
     const y = useMotionValue(h)
-
-    const bodyScale = useTransform(
-        y,
-        [0, h],
-        [(window.innerWidth - drawerMargin) / window.innerWidth, 1]
-    )
-    const bodyTranslate = useTransform(y, [0, h], [drawerMargin - drawerRadius, 0])
     const bodyBorderRadius = useTransform(y, [0, h], [drawerRadius, 0])
     return (
         <motion.div
             style={{
-                scale: bodyScale,
                 borderRadius: bodyBorderRadius,
-                y: bodyTranslate,
                 transformOrigin: 'center 0'
             }}
         >
@@ -193,7 +196,7 @@ const DrawerContentPrimitive = (props: DrawerContentPrimitiveProps) => {
 const DrawerTrigger = (props: ButtonProps) => {
     const { openDrawer } = useDrawerContext()
 
-    return <Button onPress={openDrawer} {...props} />
+    return <Dialog.Trigger onPress={openDrawer} {...props} />
 }
 
 interface DrawerProps {
@@ -209,16 +212,10 @@ const Drawer = ({
     isOpen: controlledIsOpen,
     onOpenChange
 }: DrawerProps) => {
-    const [internalIsOpen, setInternalIsOpen] = useState(false)
+    const [internalIsOpen, setInternalIsOpen] = React.useState(false)
 
     const isControlled = controlledIsOpen !== undefined
     const isOpen = isControlled ? controlledIsOpen : internalIsOpen
-
-    useEffect(() => {
-        if (isControlled && onOpenChange) {
-            onOpenChange(isOpen)
-        }
-    }, [isOpen, isControlled, onOpenChange])
 
     const openDrawer = () => {
         if (isControlled && onOpenChange) {
@@ -247,110 +244,64 @@ const Drawer = ({
     )
 }
 
-interface DrawerContentProps extends React.ComponentProps<typeof DrawerContentPrimitive> {
-    children: React.ReactNode | ((values: any) => React.ReactNode)
-}
-
-const DrawerContent = ({ children, className, ...props }: DrawerContentProps) => {
-    const contentRef = useRef<HTMLDivElement>(null)
-    const [contentHeight, setContentHeight] = useState(0)
-
-    useEffect(() => {
-        if (!contentRef.current) return
-
-        const resizeObserver = new ResizeObserver((entries) => {
-            for (const entry of entries) {
-                const cr = entry.contentRect
-                setContentHeight(cr.height)
-            }
-        })
-
-        resizeObserver.observe(contentRef.current)
-
-        return () => {
-            resizeObserver.disconnect()
-        }
-    }, [])
-
-    const childrenToRender =
-        typeof children === 'function'
-            ? (children as (values: any) => React.ReactNode)(DialogPrimitive)
-            : children
-
+const Content = ({
+    children,
+    ...props
+}: React.ComponentProps<typeof DrawerPrimitive>) => {
     return (
-        <DrawerContentPrimitive>
-            <DrawerOverlayPrimitive {...props}>
-                <DialogPrimitive
-                    className={cn(
-                        'mx-auto flex max-w-3xl flex-col justify-between overflow-y-auto px-4 mt-4 outline-none',
-                        className
-                    )}
-                    style={{
-                        height: contentHeight > 0 ? `${contentHeight}px` : 'auto',
-                        maxHeight: `calc(var(--visual-viewport-height) - 4.5rem)`
-                    }}
+        <DrawerPrimitive>
+            <DrawerContentPrimitive {...props}>
+                <Dialog
+                    role={props.role ?? 'dialog'}
+                    aria-label={props['aria-label'] ?? undefined}
+                    aria-labelledby={props['aria-labelledby'] ?? undefined}
+                    className='sm:max-w-lg mx-auto'
                 >
-                    <div ref={contentRef}>{childrenToRender}</div>
-                </DialogPrimitive>
-            </DrawerOverlayPrimitive>
-        </DrawerContentPrimitive>
+                    {(values) => (
+                        <>
+                            {typeof children === 'function' ? children(values) : children}
+                        </>
+                    )}
+                </Dialog>
+            </DrawerContentPrimitive>
+        </DrawerPrimitive>
     )
 }
 
-interface DrawerHeaderProps extends React.HTMLAttributes<HTMLDivElement> {
-    className?: string
-    isSticky?: boolean
-}
-
-const DrawerHeader = ({ className, isSticky = false, ...props }: DrawerHeaderProps) => (
-    <div
-        className={cn(
-            'flex flex-col gap-y-1 text-center sm:text-left bg-background z-50',
-            isSticky && 'sticky top-0',
-            className
-        )}
-        {...props}
-    />
+const DrawerHeader = ({
+    className,
+    ...props
+}: React.ComponentProps<typeof Dialog.Header>) => (
+    <Dialog.Header className={cn('pt-2', className)} {...props} />
 )
 
-const DrawerTitle = ({ className, ...props }: HeadingProps) => (
-    <Heading
-        slot='title'
-        className={cn('text-lg font-semibold leading-none tracking-tight', className)}
-        {...props}
-    />
+const DrawerBody = ({
+    children,
+    className,
+    ...props
+}: React.ComponentProps<typeof Dialog.Body>) => (
+    <Dialog.Body {...props} className={cn('px-4', className)}>
+        {children}
+    </Dialog.Body>
 )
 
-const DrawerDescription = Dialog.Description
-
-const DrawerBody = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => (
-    <div
-        className={cn('flex-1 overflow-y-auto overflow-x-hidden py-4', className)}
-        {...props}
-    />
+const DrawerFooter = ({
+    children,
+    className,
+    ...props
+}: React.ComponentProps<typeof Dialog.Footer>) => (
+    <Dialog.Footer {...props} className={cn('pb-2', className)}>
+        {children}
+    </Dialog.Footer>
 )
-
-const DrawerFooter = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => (
-    <div
-        className={cn(
-            'flex shrink-0 pb-1 flex-col-reverse gap-2 sm:flex-row sm:justify-between [&_button:first-child:nth-last-child(1)]:w-full',
-            className
-        )}
-        {...props}
-    />
-)
-
-const DrawerClose = (props: React.ComponentProps<typeof Dialog.Close>) => {
-    return <Dialog.Close shape='circle' {...props} />
-}
 
 Drawer.Body = DrawerBody
-Drawer.Close = DrawerClose
-Drawer.Content = DrawerContent
-Drawer.Description = DrawerDescription
+Drawer.Close = Dialog.Close
+Drawer.Content = Content
+Drawer.Description = Dialog.Description
 Drawer.Footer = DrawerFooter
 Drawer.Header = DrawerHeader
-Drawer.Title = DrawerTitle
+Drawer.Title = Dialog.Title
 Drawer.Trigger = DrawerTrigger
 
 export { Drawer }
