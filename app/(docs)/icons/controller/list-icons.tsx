@@ -6,12 +6,6 @@ import Icons from '@/lib/icons.json'
 import CategoriesList from './categories-list'
 import { IconComponent } from './icon-component'
 
-interface Icon {
-    name: string
-    category: string
-    tags: string[]
-}
-
 export default function ListIcons({
     size = '5',
     stroke = '2',
@@ -25,16 +19,13 @@ export default function ListIcons({
     category: string
     query: string
 }) {
-    const icons = Icons as Icon[]
-    const categories = new Set(icons?.map((icon) => icon.category))
-    const filteredIcons = icons
-        .filter(
-            (icon) =>
-                icon.name.toLowerCase().includes(query) ||
-                icon.category.toLowerCase().includes(query) ||
-                icon.tags.some((tag: string) => tag.includes(query))
-        )
-        .filter((icon) => icon.category === category || category === 'all')
+    const categories = new Set(Icons?.map((icon) => icon.category))
+    const filteredIcons = Icons.filter(
+        (icon) =>
+            icon.name.toLowerCase().includes(query.toLowerCase()) ||
+            icon.category.toLowerCase().includes(query.toLowerCase()) ||
+            icon.tags.some((tag) => tag.toLowerCase().includes(query.toLowerCase()))
+    ).filter((icon) => icon.category === category || category === 'all')
     return (
         <>
             <React.Suspense
