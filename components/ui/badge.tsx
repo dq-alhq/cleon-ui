@@ -7,8 +7,7 @@ import { tv, type VariantProps } from 'tailwind-variants'
 const badgeVariants = {
     primary:
         'ring-primary/30 bg-primary/10 dark:bg-primary/15 text-primary hover:bg-primary/15 dark:hover:bg-primary/10',
-    secondary:
-        'bg-secondary/50 dark:bg-secondary/70 ring-secondary-foreground/20 text-secondary-foreground',
+    secondary: 'bg-secondary/50 ring-secondary-foreground/20 text-secondary-foreground',
     success:
         'dark:ring-success/30 ring-success/40 bg-success/10 dark:bg-success/15 text-success hover:bg-success/15 dark:hover:bg-success/10',
     info: 'dark:ring-info/30 ring-info/80 bg-info/20 dark:bg-info/15 text-info hover:bg-info/15 dark:hover:bg-info/10',

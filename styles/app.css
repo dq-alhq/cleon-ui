@@ -4,9 +4,6 @@
 
 @layer base {
     :root {
-        --font-sans: 'GT Walsheim Pro', sans-serif;
-        --font-mono: 'Jetbrains Mono', monospace;
-
         --background: 0 0% 98%;
         --foreground: 240 10% 4%;
 

@@ -37,15 +37,15 @@ const Title = ({
 )
 
 const Header = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => (
-    <Dialog.Header className={cn('p-0 sm:pt-0', className)} {...props} />
+    <Dialog.Header className={cn('p-1 sm:pt-0', className)} {...props} />
 )
 
 const Footer = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => (
-    <Dialog.Footer className={cn('pt-4 pb-0 sm:pb-0', className)} {...props} />
+    <Dialog.Footer className={cn('pt-4 pb-0 sm:pb-0 sm:px-1', className)} {...props} />
 )
 
 const Body = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => (
-    <Dialog.Body className={cn('p-0', className)} {...props} />
+    <Dialog.Body className={cn('px-4 sm:p-1', className)} {...props} />
 )
 
 const popoverContentStyles = tv({

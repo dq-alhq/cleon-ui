@@ -8,7 +8,8 @@ import {
     ComboBox,
     Group,
     type ComboBoxProps as ComboBoxPrimitiveProps,
-    type Key
+    type Key,
+    type ValidationResult
 } from 'react-aria-components'
 import { useListData, type ListData } from 'react-stately'
 import { tv } from 'tailwind-variants'
@@ -16,7 +17,7 @@ import { tv } from 'tailwind-variants'
 import { cn } from '@/lib/utils'
 
 import { Button } from './button'
-import { Description, Input, Label } from './field'
+import { Description, FieldError, Input, Label } from './field'
 import { ListBox } from './list-box'
 import { Popover } from './popover'
 import { TagGroup, TagList } from './tag-group'
@@ -77,6 +78,7 @@ interface MultipleSelectProps<T extends object>
     children: React.ReactNode | ((item: T) => React.ReactNode)
     max?: number
     min?: number
+    errorMessage?: string | ((validation: ValidationResult) => string)
 }
 
 const MultiSelect = <T extends SelectedKey>({
@@ -90,6 +92,7 @@ const MultiSelect = <T extends SelectedKey>({
     renderEmptyState,
     max,
     min,
+    errorMessage,
     ...props
 }: MultipleSelectProps<T>) => {
     const tagGroupId = React.useId()
@@ -236,6 +239,7 @@ const MultiSelect = <T extends SelectedKey>({
                     onInputChange={onInputChange}
                 >
                     <div className={comboBoxChild({ className })}>
+                        <FieldError>{errorMessage}</FieldError>
                         <Input
                             className={input()}
                             onBlur={() => {
@@ -291,7 +295,7 @@ const MultiSelect = <T extends SelectedKey>({
                         </ListBox.Picker>
                     </Popover.Picker>
                 </ComboBox>
-                <div className='relative px-1 ml-auto flex items-center justify-center peer-data-[open]:[&_button>svg]:rotate-180 [&_button>svg]:transition-transform'>
+                <div className='relative px-1 ml-auto flex items-center justify-center peer-data-[open]:[&_button>svg]:rotate-180 [&_button>svg]:transition [&_button>svg]:duration-300'>
                     <button
                         type='button'
                         className={chevronButton()}

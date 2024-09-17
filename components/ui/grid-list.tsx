@@ -33,7 +33,7 @@ const GridList = <T extends object>({
 )
 
 const itemStyles = tv({
-    base: 'relative -mb-px flex cursor-default select-none gap-3 border-y px-3 py-2 text-sm text-foreground -outline-offset-2 first:rounded-t-md first:border-t-0 last:mb-0 last:rounded-b-md last:border-b-0',
+    base: 'relative -mb-px flex focus:outline-none selected:outline-none cursor-default select-none gap-3 border-y px-3 py-2 text-sm text-foreground -outline-offset-2 first:rounded-t-md first:border-t-0 last:mb-0 last:rounded-b-md last:border-b-0',
     variants: {
         isSelected: {
             false: 'hover:bg-secondary',

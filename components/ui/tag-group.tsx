@@ -26,7 +26,7 @@ const variants = {
             '[&_[slot=remove]:hover]:bg-primary [&_[slot=remove]:hover]:text-primary-foreground'
         ],
         selected: [
-            'bg-primaryhover:bg-primary ring-primary ring-inset text-primary-foreground hover:text-primary-foreground',
+            'bg-primary hover:bg-primary ring-primary ring-inset text-primary-foreground hover:text-primary-foreground',
             '[&_[slot=remove]:hover]:bg-primary-foreground/80 [&_[slot=remove]:hover]:text-primary'
         ]
     },
@@ -36,8 +36,8 @@ const variants = {
             '[&_[slot=remove]:hover]:bg-foreground [&_[slot=remove]:hover]:text-background'
         ],
         selected: [
-            'bg-foreground ring-foreground/50 text-background  ring-inset',
-            '[&_[slot=remove]:hover]:bg-background [&_[slot=remove]:hover]:text-secondary-foreground'
+            'bg-dark hover:bg-foreground ring-foreground/50 text-background hover:text-background ring-inset',
+            '[&_[slot=remove]:hover]:bg-foreground [&_[slot=remove]:hover]:text-background'
         ]
     },
     success: {
@@ -56,7 +56,7 @@ const variants = {
             '[&_[slot=remove]:hover]:bg-info [&_[slot=remove]:hover]:text-background'
         ],
         selected: [
-            'bg-info hover:bg-info',
+            'bg-info hover:bg-info text-info-foreground hover:text-info-foreground',
             '[&_[slot=remove]:hover]:bg-background/80 [&_[slot=remove]:hover]:text-info'
         ]
     },
@@ -72,11 +72,11 @@ const variants = {
     },
     dark: {
         base: [
-            badgeVariants.dark,
+            'border bg-background text-foreground',
             '[&_[slot=remove]:hover]:bg-foreground [&_[slot=remove]:hover]:text-background'
         ],
         selected: [
-            'bg-dark hover:bg-dark text-dark-foreground hover:text-dark-foreground',
+            'bg-dark text-dark-foreground hover:text-dark-foreground hover:bg-dark ring-dark ring-inset',
             '[&_[slot=remove]:hover]:bg-foreground [&_[slot=remove]:hover]:text-background'
         ]
     }
@@ -134,7 +134,7 @@ const TagList = <T extends object>(props: TagListProps<T>) => {
 }
 
 const tagStyles = tv({
-    base: [badgeStyles.base, 'cursor-pointer'],
+    base: [badgeStyles.base, 'cursor-pointer focus:outline-none'],
     variants: {
         isFocused: { true: 'ring-2' },
         isDisabled: { true: 'opacity-50 cursor-default' },
