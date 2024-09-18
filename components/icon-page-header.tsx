@@ -2,7 +2,7 @@
 
 import { Header, Text } from 'react-aria-components'
 
-import { Link } from './ui'
+import { Link } from 'ui'
 
 export default function IconPageHeader() {
     return (
