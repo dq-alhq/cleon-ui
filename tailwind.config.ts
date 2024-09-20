@@ -24,7 +24,6 @@ const config = withTV({
             colors: {
                 background: 'hsl(var(--background))',
                 foreground: 'hsl(var(--foreground))',
-                border: 'hsl(var(--border))',
                 primary: {
                     DEFAULT: 'hsl(var(--primary))',
                     foreground: 'hsl(var(--primary-foreground))'
@@ -53,17 +52,10 @@ const config = withTV({
                     DEFAULT: 'hsl(var(--dark))',
                     foreground: 'hsl(var(--dark-foreground))'
                 },
-                accent: {
-                    DEFAULT: 'hsl(var(--accent))',
-                    foreground: 'hsl(var(--accent-foreground))'
-                },
                 muted: {
                     DEFAULT: 'hsl(var(--muted))',
                     foreground: 'hsl(var(--muted-foreground))'
-                },
-                input: 'hsl(var(--border))',
-                toggle: 'hsl(var(--toggle))',
-                ring: 'hsl(var(--ring))'
+                }
             },
             borderRadius: {
                 lg: 'var(--radius)',

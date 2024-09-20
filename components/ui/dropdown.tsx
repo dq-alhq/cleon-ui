@@ -20,9 +20,9 @@ const dropdownItemStyles = tv({
     base: [
         'group flex cursor-default select-none items-center gap-x-1.5 rounded-[calc(var(--radius)-1px)] py-2 pl-2.5 relative pr-1.5 text-base outline outline-0 forced-color-adjust-none lg:text-sm',
         'has-submenu:open:data-[danger=true]:bg-danger/20 has-submenu:open:data-[danger=true]:text-danger',
-        'has-submenu:open:bg-accent has-submenu:open:text-accent-foreground [&[data-has-submenu][data-open]>[data-slot=icon]]:text-accent-foreground',
+        'has-submenu:open:bg-primary has-submenu:open:text-primary-foreground [&[data-has-submenu][data-open]>[data-slot=icon]]:text-primary-foreground',
         '[&_[data-slot=avatar]]:-mr-0.5 [&_[data-slot=avatar]]:size-6 sm:[&_[data-slot=avatar]]:size-5',
-        '[&>[data-slot=icon]]:size-4 [&>[data-slot=icon]]:shrink-0 [&>[data-slot=icon]]:text-muted-foreground [&[data-hovered]>[data-slot=icon]]:text-accent-foreground [&[data-focused]>[data-slot=icon]]:text-accent-foreground [&[data-danger]>[data-slot=icon]]:text-danger/60',
+        '[&>[data-slot=icon]]:size-4 [&>[data-slot=icon]]:shrink-0 [&>[data-slot=icon]]:text-muted-foreground [&[data-hovered]>[data-slot=icon]]:text-primary-foreground [&[data-focused]>[data-slot=icon]]:text-primary-foreground [&[data-danger]>[data-slot=icon]]:text-danger/60',
         'forced-colors:[&>[data-slot=icon]]:text-[CanvasText] forced-colors:[&>[data-slot=icon]]:group-data-[focus]:text-[Canvas] '
     ],
     variants: {
@@ -33,9 +33,9 @@ const dropdownItemStyles = tv({
         isFocused: {
             false: 'data-[danger=true]:text-danger',
             true: [
-                'bg-accent text-accent-foreground forced-colors:bg-[Highlight] forced-colors:text-[HighlightText]',
+                'bg-primary text-primary-foreground forced-colors:bg-[Highlight] forced-colors:text-[HighlightText]',
                 'data-[danger=true]:bg-danger data-[danger=true]:text-danger-foreground',
-                '[&_.text-muted-foreground]:text-accent-foreground/80 [&[data-slot=label]]:text-accent-foreground [&[data-slot=description]]:text-accent-foreground'
+                '[&_.text-muted-foreground]:text-primary-foreground/80 [&[data-slot=label]]:text-primary-foreground [&[data-slot=description]]:text-primary-foreground'
             ]
         }
     },

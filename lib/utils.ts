@@ -161,3 +161,15 @@ export function convertSvgToJsx(svgString: string): string {
 
     return transformNode(svgElement)
 }
+
+export const formatColorForTailwind = (colorString: string): string => {
+    return colorString
+        .replace(/(rgb|rgba|hsl|hsla|hsb|hsba|oklch)[(a]?/g, '')
+        .replace(/[()]/g, '')
+        .replace(/,\s*/g, ' ')
+        .trim()
+}
+
+export const formatColorFromTailwind = (colorString: string, format = 'hsl'): string => {
+    return format + '(' + colorString.replace(/ /g, ', ') + ')'
+}

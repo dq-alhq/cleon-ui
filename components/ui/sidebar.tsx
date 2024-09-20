@@ -178,7 +178,7 @@ const Item = <T extends object>({
                     className={cn(
                         'subitem flex items-center gap-3 hover:bg-muted outline-none focus:outline-none cursor-pointer rounded-lg px-3 py-2 text-foreground transition-all disabled:opacity-70 disabled:pointer-events-none',
                         {
-                            'active bg-accent text-accent-foreground hover:bg-accent hover:text-accent-foreground':
+                            'active bg-primary text-primary-foreground hover:bg-primary hover:text-primary-foreground':
                                 active
                         },
                         {

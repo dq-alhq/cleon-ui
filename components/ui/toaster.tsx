@@ -31,7 +31,7 @@ const Toaster = ({ ...props }: ToasterProps) => {
                 closeButton: true,
                 classNames: {
                     toast: cn(
-                        'bg-background ring-1 ring-border dark:ring-inset sm:min-w-[22rem] rounded-xl text-foreground overflow-hidden text-[0.925rem] backdrop-blur-xl px-4 py-3 font-normal sm:px-5 sm:py-5',
+                        'bg-background ring-1 ring-muted-foreground dark:ring-inset sm:min-w-[22rem] rounded-xl text-foreground overflow-hidden text-[0.925rem] backdrop-blur-xl px-4 py-3 font-normal sm:px-5 sm:py-5',
                         '[&:has([data-icon])_[data-content]]:ml-6',
                         '[&:has([data-button])_[data-close-button="true"]]:hidden',
                         '[&:not([data-description])_[data-title]]:font-normal',

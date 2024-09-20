@@ -44,7 +44,8 @@ export const menuItems = [
     { id: 1, label: 'Home', url: '/' },
     { id: 2, label: 'Components', url: '/docs/getting-started/introduction' },
     { id: 3, label: 'Blocks', url: '/blocks' },
-    { id: 4, label: 'Icons', url: '/icons' }
+    { id: 4, label: 'Icons', url: '/icons' },
+    { id: 5, label: 'Themes', url: '/themes' }
 ]
 
 export function Navbar() {
@@ -85,6 +86,12 @@ export function Navbar() {
                                             href='/icons'
                                         >
                                             Icons
+                                        </NavLink>
+                                        <NavLink
+                                            isActive={pathname?.startsWith('/themes')}
+                                            href='/themes'
+                                        >
+                                            Themes
                                         </NavLink>
                                     </Collection>
                                 </div>

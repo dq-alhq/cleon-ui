@@ -75,7 +75,7 @@ const ColorThumb = ({ className, ...props }: ColorThumbProps) => {
 }
 
 const colorSwatchPickerItemStyles = tv({
-    base: 'size-8 rounded-md cspis disabled:opacity-50 focus:ring focus:ring-2 focus:ring-accent/20'
+    base: 'size-8 rounded-md cspis disabled:opacity-50 focus:ring focus:ring-2 focus:ring-primary/20'
 })
 
 const ColorSwatchPickerItem = ({
@@ -107,8 +107,8 @@ const ColorSwatch = ({ className, ...props }: ColorSwatchProps) => {
             className={cn(
                 'size-8 cs rounded-md shrink-0',
                 needRing
-                    ? 'ring-1 ring-inset ring-black/10'
-                    : 'dark:ring-1 dark:ring-inset dark:ring-white/10',
+                    ? 'ring-1 ring-inset ring-black/40'
+                    : 'dark:ring-1 dark:ring-inset dark:ring-white/40',
                 className
             )}
             {...props}

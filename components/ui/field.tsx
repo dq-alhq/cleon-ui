@@ -30,7 +30,7 @@ const fieldBorderStyles = tv({
 
 const fieldGroupPrefixStyles = tv({
     base: [
-        'flex group-invalid:border-danger group-disabled:bg-secondary group-disabled:opacity-50 items-center group-invalid:focus-within:ring-danger/20',
+        'flex group-invalid:border-danger group-disabled:bg-muted group-disabled:opacity-50 items-center group-invalid:focus-within:ring-danger/20',
         '[&>.atrs>.btn]:size-7 [&>.atrs>.btn]:rounded-sm [&>.atrs:has(.btn)]:size-9 [&>.atrs:has(.btn)]:grid [&>.atrs:has(.btn)]:place-items-center',
         '[&>.atrs>.btn]:before:rounded-[calc(theme(borderRadius.sm)-1px)] [&>.atrs>.btn]:after:rounded-[calc(theme(borderRadius.sm)-1px)] dark:[&>.atrs>.btn]:after:rounded-sm',
         '[&>.isSfx:has(.btn)]:-mr-2 [&>.isPfx:has(.btn)]:-ml-2 [&>.isSfx>.btn]:mr-0.5 [&>.isPfx>.btn]:ml-0.5'
@@ -40,7 +40,7 @@ const fieldGroupPrefixStyles = tv({
 const fieldStyles = tv({
     slots: {
         description: 'text-pretty text-base/6 text-muted-foreground sm:text-sm/6',
-        label: 'w-fit cursor-default font-medium text-secondary-foreground text-sm',
+        label: 'w-fit cursor-default font-medium text-muted-foreground text-sm',
         fieldError: 'text-sm text-danger forced-colors:text-[Mark]',
         input: [
             'w-full min-w-0 bg-transparent p-2 text-base text-foreground placeholder-muted-foreground focus:outline-none lg:text-sm'
@@ -64,7 +64,7 @@ const FieldError = ({ className, ...props }: FieldErrorProps) => {
 
 const fieldGroupStyles = tv({
     base: [
-        'group flex h-10 items-center overflow-hidden rounded-lg border border-input bg-background transition disabled:opacity-50 disabled:bg-secondary forced-colors:bg-[Field]',
+        'group flex h-10 items-center overflow-hidden rounded-lg border border-muted bg-background transition disabled:opacity-50 disabled:bg-muted forced-colors:bg-[Field]',
         'focus-within:border-primary focus-within:ring-4 focus-within:ring-primary/20',
         'focus-within:invalid:border-danger focus-within:invalid:ring-4 focus-within:invalid:ring-danger/20',
         'invalid:border-danger',

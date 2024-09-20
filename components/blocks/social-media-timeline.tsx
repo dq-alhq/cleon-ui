@@ -235,7 +235,7 @@ export default function SocialMediaTimeline() {
                         <h1 className='text-3xl font-bold'>Your Timeline</h1>
                         <Form
                             onSubmit={sendPost}
-                            className='relative overflow-hidden rounded-lg border-t md:border bg-background focus-within:ring-1 focus-within:ring-ring'
+                            className='relative overflow-hidden rounded-lg border-t md:border bg-background focus-within:ring-1 focus-within:ring-primary/20'
                         >
                             <Avatar
                                 initials='DQ'

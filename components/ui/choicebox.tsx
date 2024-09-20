@@ -64,17 +64,17 @@ const Choicebox = <T extends object>({
 }
 
 const choiceboxItemStyles = tv({
-    base: 'rounded-lg transition duration-200 cursor-pointer focus:ring focus:ring-4 focus:ring-accent/20 border outline-none p-4 [&_[slot=title]]:font-medium',
+    base: 'rounded-lg transition duration-200 cursor-pointer focus:ring focus:ring-4 focus:ring-primary/20 border outline-none p-4 [&_[slot=title]]:font-medium',
     variants: {
         isSelected: {
             true: [
-                'z-20 bg-accent/10 hover:bg-accent/10 border-accent',
-                '[&_[slot=title]]:text-accent',
-                '[&_[slot=description]]:text-accent/50'
+                'z-20 bg-primary/10 hover:bg-primary/10 border-primary',
+                '[&_[slot=title]]:text-primary',
+                '[&_[slot=description]]:text-primary/50'
             ]
         },
         isFocused: {
-            true: 'border-accent/70'
+            true: 'border-primary/70'
         },
         isHovered: {
             true: 'bg-muted/50'

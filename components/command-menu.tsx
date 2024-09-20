@@ -3,7 +3,7 @@
 import React from 'react'
 
 import { docs } from '#site/content'
-import { IconHome, IconPackage, IconShapes2, IconTemplate } from 'cleon-icons'
+import { IconHome, IconPackage, IconPaint, IconShapes2, IconTemplate } from 'cleon-icons'
 import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
 import { Command } from 'ui'
@@ -80,6 +80,11 @@ export function CommandPalette({ open, setOpen }: OpenCloseProps) {
                     <Command.Item value='icons' asChild>
                         <Link href='/icons'>
                             <IconShapes2 /> Icons
+                        </Link>
+                    </Command.Item>
+                    <Command.Item value='themes' asChild>
+                        <Link href='/themes'>
+                            <IconPaint /> Themes
                         </Link>
                     </Command.Item>
                 </Command.Section>

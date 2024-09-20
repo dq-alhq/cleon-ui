@@ -11,7 +11,7 @@ span[data-rehype-pretty-code-figure] > code {
 }
 
 span[data-rehype-pretty-code-figure] > code span {
-    @apply px-0.5 font-normal text-accent !important;
+    @apply px-0.5 font-normal text-primary !important;
 }
 
 [data-rehype-pretty-code-figure] code[data-line-numbers] {
@@ -43,10 +43,16 @@ span[data-rehype-pretty-code-figure] > code span {
 }
 
 .subheading-anchor {
-    @apply font-semibold text-accent no-underline hover:no-underline;
+    @apply font-semibold text-primary no-underline hover:no-underline;
 }
 
-.prose-headings\:scroll-mt-24 :is(:where(h1, h2, h3, h4, h5, h6, th):not(:where([class~="not-prose"], [class~="not-prose"] *))) > a {
+.prose-headings\:scroll-mt-24
+    :is(
+        :where(h1, h2, h3, h4, h5, h6, th):not(
+                :where([class~='not-prose'], [class~='not-prose'] *)
+            )
+    )
+    > a {
     text-decoration: none !important;
     @apply text-foreground !important;
 }

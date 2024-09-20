@@ -115,7 +115,7 @@ const NavLink = ({ href, active, ...props }: ListBoxItemProps & { active?: boole
             href={href}
             className={cn(
                 'relative whitespace-nowrap flex items-center gap-x-3 py-2 sm:pl-0 pl-4 text-sm transition-colors focus:outline-none sm:py-3',
-                active ? 'text-accent' : 'text-foreground hover:text-accent',
+                active ? 'text-primary' : 'text-foreground hover:text-primary',
                 props?.className
             )}
             textValue={textValue}
@@ -127,7 +127,7 @@ const NavLink = ({ href, active, ...props }: ListBoxItemProps & { active?: boole
                 {active && (
                     <motion.span
                         layoutId='current-indicator-navlink'
-                        className='absolute left-0 w-0.5 h-full lg:inset-x-0 lg:bottom-[-0.550rem] lg:h-0.5 lg:w-full rounded bg-accent'
+                        className='absolute left-0 w-0.5 h-full lg:inset-x-0 lg:bottom-[-0.550rem] lg:h-0.5 lg:w-full rounded bg-primary'
                     />
                 )}
             </>

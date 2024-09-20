@@ -316,7 +316,7 @@ export default function ChatApp() {
                         </div>
                         <Form
                             onSubmit={sendMessage}
-                            className='relative overflow-hidden rounded-lg border-t md:border bg-background focus-within:ring-1 focus-within:ring-ring'
+                            className='relative overflow-hidden rounded-lg border-t md:border bg-background focus-within:ring-1 focus-within:ring-primary/30'
                         >
                             <TextArea
                                 onKeyDown={(e) => {

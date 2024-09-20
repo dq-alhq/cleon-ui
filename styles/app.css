@@ -4,84 +4,46 @@
 
 @layer base {
     :root {
-        --background: 0 0% 98%;
-        --foreground: 240 10% 4%;
-
-        /* Blue */
-        --primary: 215.89 100% 43.92%;
-        --primary-foreground: 0 0% 98%;
-
-        /* Zinc */
-        --secondary: 240 5% 84%;
-        --secondary-foreground: 240 10% 4%;
-
-        /* Rose */
-        --danger: 347 77% 50%;
-        --danger-foreground: 0 0% 98%;
-
-        /* Green*/
-        --success: 120 100% 21%;
-        --success-foreground: 0 0% 98%;
-
-        /* Slate Blue */
-        --info: 248 39% 48%;
-        --info-foreground: 0 0% 98%;
-
-        /* Amber */
-        --warning: 32 95% 44%;
-        --warning-foreground: 0 0% 98%;
-
+        --background: 0 0% 98.04%;
+        --foreground: 240 10% 3.92%;
+        --primary: 240 100% 33.33%;
+        --primary-foreground: 0 0% 98.04%;
+        --secondary: 240 5.2% 33.92%;
+        --secondary-foreground: 240 5.88% 90%;
+        --danger: 346.84 77.17% 49.8%;
+        --danger-foreground: 0 0% 98.04%;
+        --success: 120 100% 19.61%;
+        --success-foreground: 0 0% 98.04%;
+        --info: 280.13 60.63% 49.8%;
+        --info-foreground: 0 0% 98.04%;
+        --warning: 32.94 100% 50%;
+        --warning-foreground: 0 0% 98.04%;
         --dark: 240 10% 4%;
-        --dark-foreground: 0 0% 98%;
-
-        --muted: 240 5% 84%;
-        --muted-foreground: 240 5% 65%;
-
-        --accent: 240 100% 42%;
-        --accent-foreground: 0 0% 98%;
-
-        --border: 240 5% 84%;
+        --dark-foreground: 0 0% 98.04%;
+        --muted: 240 4.88% 83.92%;
+        --muted-foreground: 240 3.83% 46.08%;
         --radius: 0.5rem;
     }
 
     .dark {
-        --background: 240 10% 4%;
-        --foreground: 0 0% 98%;
-
-        /* Dark Blue */
-        --primary: 240 58% 39%;
-        --primary-foreground: 0 0% 98%;
-
-        /* Zinc */
-        --secondary: 240 5% 26%;
-        --secondary-foreground: 0 0% 98%;
-
-        /* Crimson */
-        --danger: 348 83% 47%;
-        --danger-foreground: 0 0% 98%;
-
-        /* Dark Green */
-        --success: 120 100% 20%;
-        --success-foreground: 0 0% 98%;
-
-        /* Dark Slate Blue */
-        --info: 248 39% 39%;
-        --info-foreground: 0 0% 98%;
-
-        /* Dark Orange */
+        --background: 240 10% 3.92%;
+        --foreground: 0 0% 98.04%;
+        --primary: 240 67.06% 50%;
+        --primary-foreground: 0 0% 98.04%;
+        --secondary: 240 5.2% 33.92%;
+        --secondary-foreground: 0 0% 98.04%;
+        --danger: 348 83.33% 47.06%;
+        --danger-foreground: 0 0% 98.04%;
+        --success: 120 49.7% 32.75%;
+        --success-foreground: 0 0% 98.04%;
+        --info: 280.31 59.81% 58.04%;
+        --info-foreground: 0 0% 98.04%;
         --warning: 32 95% 44%;
-        --warning-foreground: 0 0% 98%;
-
-        --dark: 0 0% 98%;
-        --dark-foreground: 240 10% 4%;
-
-        --muted: 240 5% 26%;
-        --muted-foreground: 240 5% 34%;
-
-        --accent: 240 58% 39%;
-        --accent-foreground: 0 0% 98%;
-
-        --border: 240 5% 26%;
+        --warning-foreground: 0 0% 98.04%;
+        --dark: 0 0% 98.04%;
+        --dark-foreground: 240 10% 3.92%;
+        --muted: 240 5.2% 33.92%;
+        --muted-foreground: 240 3.83% 46.08%;
     }
 }
 
@@ -91,7 +53,7 @@
     }
 
     * {
-        @apply border-border;
+        @apply border-muted;
         font-feature-settings: 'cv11', 'ss01';
         font-variation-settings: 'opsz' 850;
     }

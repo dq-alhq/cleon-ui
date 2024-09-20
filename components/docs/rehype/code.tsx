@@ -69,7 +69,7 @@ interface CodeProps {
     className?: string
 }
 
-const CodeHighlighter: React.FC<CodeProps> = ({ lang = 'tsx', code }) => {
+export const CodeHighlighter: React.FC<CodeProps> = ({ lang = 'tsx', code }) => {
     const [formattedCode, setFormattedCode] = React.useState('')
     const [error, setError] = React.useState('')
 

@@ -148,7 +148,7 @@ const PaginationItem = ({
                 },
                 <Separator
                     orientation='vertical'
-                    className='h-5 w-[1.5px] bg-border rotate-[14deg] shrink-0'
+                    className='h-5 w-[1.5px] bg-muted-foreground rotate-[14deg] shrink-0'
                 />
             )
         case 'ellipsis':

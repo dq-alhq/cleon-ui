@@ -76,7 +76,7 @@ const renderHierarchy = (node: HierarchyNode, defaultValues: string[]) => {
                                 defaultExpandedKeys={defaultValues}
                                 className='w-full relative'
                             >
-                                <div className='h-full absolute left-0 bg-border w-px ml-2' />
+                                <div className='h-full absolute left-0 bg-muted w-px ml-2' />
                                 {Object.entries(value as HierarchyNode).map(
                                     ([subKey, subValue]) =>
                                         typeof subValue === 'object' &&
