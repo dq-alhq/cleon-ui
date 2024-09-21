@@ -42,7 +42,7 @@ const DateField = <T extends DateValue>({
 }
 
 const segmentStyles = tv({
-    base: 'inline shrink-0 rounded p-0.5 tracking-wider text-foreground caret-transparent outline outline-0 forced-color-adjust-none type-literal:px-0 lg:text-sm forced-colors:text-[ButtonText]',
+    base: 'inline shrink-0 rounded-lg p-0.5 tracking-wider text-foreground caret-transparent outline outline-0 forced-color-adjust-none type-literal:px-0 lg:text-sm forced-colors:text-[ButtonText]',
     variants: {
         isPlaceholder: {
             true: 'text-muted-foreground'

@@ -25,7 +25,7 @@ const datePickerStyles = tv({
     slots: {
         base: 'group flex flex-col gap-1',
         datePickerIcon:
-            'group mr-1 h-7 dark:[&>[data-slot=icon]]:text-zinc-400 [&>[data-slot=icon]]:text-zinc-800 w-8 rounded outline-offset-0 hover:bg-transparent pressed:bg-transparent',
+            'group mr-1 h-7 dark:[&>[data-slot=icon]]:text-zinc-400 [&>[data-slot=icon]]:text-zinc-800 w-8 rounded-lg outline-offset-0 hover:bg-transparent pressed:bg-transparent',
         calendarIcon: 'size-4 text-muted-foreground group-open:text-foreground',
         datePickerInput: 'w-full px-2 font-mono uppercase text-base lg:text-sm',
         dateRangePickerInputStart: 'px-2 lg:text-sm font-mono uppercase text-base',

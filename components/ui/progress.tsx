@@ -20,7 +20,7 @@ const Progress = ({ label, ...props }: ProgressProps) => {
                         <Label>{label}</Label>
                         <span className='text-sm text-muted-foreground'>{valueText}</span>
                     </div>
-                    <div className='relative h-2 min-w-64 overflow-hidden rounded-full bg-secondary outline outline-1 -outline-offset-1 outline-transparent'>
+                    <div className='relative h-2 min-w-64 overflow-hidden rounded-full bg-muted outline outline-1 -outline-offset-1 outline-transparent'>
                         {!isIndeterminate ? (
                             <motion.div
                                 className='absolute left-0 top-0 h-full rounded-full bg-primary forced-colors:bg-[Highlight]'

@@ -29,9 +29,8 @@ const buttonVariants = tv({
             warning:
                 'bg-warning text-warning-foreground pressed:ring pressed:ring-warning/40 shadow-sm',
             dark: 'bg-dark text-dark-foreground pressed:ring pressed:ring-dark/40 shadow-sm',
-            outline:
-                'border bg-background text-foreground shadow-sm hover:bg-muted-foreground pressed:bg-muted',
-            ghost: 'text-foreground bg-transparent hover:bg-muted pressed:bg-muted-foreground'
+            outline: 'border bg-background text-foreground shadow-sm hover:bg-muted',
+            ghost: 'text-foreground bg-transparent hover:bg-muted'
         },
         size: {
             xs: 'h-8 px-2 text-xs',

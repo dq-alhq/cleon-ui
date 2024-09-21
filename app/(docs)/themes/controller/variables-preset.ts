@@ -149,3 +149,59 @@ export const foreground = {
         manatee: '#EFEFF1'
     }
 }
+
+export interface VariablesPresetProps {
+    variable:
+        | '--background'
+        | '--foreground'
+        | '--primary'
+        | '--primary-foreground'
+        | '--secondary'
+        | '--secondary-foreground'
+        | '--muted'
+        | '--muted-foreground'
+        | '--danger'
+        | '--danger-foreground'
+        | '--warning'
+        | '--warning-foreground'
+        | '--info'
+        | '--info-foreground'
+        | '--success'
+        | '--success-foreground'
+        | '--dark'
+        | '--dark-foreground'
+    theme: 'light' | 'dark'
+}
+
+export const VariablesPreset = ({ variable, theme }: VariablesPresetProps) => {
+    let colorPreset
+    switch (variable) {
+        case '--danger':
+            colorPreset = Object.values(danger[theme])
+            break
+        case '--warning':
+            colorPreset = Object.values(warning[theme])
+            break
+        case '--info':
+            colorPreset = Object.values(info[theme])
+            break
+        case '--success':
+            colorPreset = Object.values(success[theme])
+            break
+        case '--primary':
+            colorPreset = Object.values(primary[theme])
+            break
+        case '--secondary':
+        case '--muted':
+            colorPreset = Object.values(secondary[theme])
+            break
+        case '--foreground':
+        case '--dark':
+            colorPreset = Object.values(foreground[theme])
+            break
+        default:
+        case '--background':
+            colorPreset = Object.values(background[theme])
+    }
+    return colorPreset
+}

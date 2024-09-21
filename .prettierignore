@@ -3,3 +3,4 @@ components/ui/index.ts
 components/docs/generated/**/*
 lib/emoji.json
 lib/icons.json
+lib/color-names.json

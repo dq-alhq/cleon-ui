@@ -14,22 +14,20 @@ import {
     Select,
     Tabs
 } from '@/components/ui'
-import { formatColorForTailwind, formatColorFromTailwind } from '@/lib/utils'
+import {
+    cn,
+    formatColorForTailwind,
+    formatColorFromTailwind,
+    getColorName,
+    titleCase
+} from '@/lib/utils'
 
 import DataFormSink from '../../sink/data-form'
-import UserProfileSink from '../../sink/user-profile'
-import { baseColors, type BaseColorsProps } from './base-colors'
-import {
-    background,
-    danger,
-    foreground,
-    info,
-    primary,
-    secondary,
-    success,
-    warning
-} from './color-presets'
+import OptionsSink from '../../sink/options'
+import { type BaseColorsProps } from './base-colors'
+import { FontNames, type FontNamesProps } from './fonts'
 import ThemeSnippet from './theme-snippet'
+import { VariablesPreset, type VariablesPresetProps } from './variables-preset'
 
 export default function ThemeCustomizer() {
     const [lightVars, setLightVars] = React.useState({
@@ -37,8 +35,8 @@ export default function ThemeCustomizer() {
         '--foreground': '240 10% 3.92%',
         '--primary': '240 100% 33.33%',
         '--primary-foreground': '0 0% 98.04%',
-        '--secondary': '240 5.2% 33.92%',
-        '--secondary-foreground': '240 5.88% 90%',
+        '--secondary': '240 5.03% 64.9%',
+        '--secondary-foreground': '240 5.88% 10%',
         '--danger': '346.84 77.17% 49.8%',
         '--danger-foreground': '0 0% 98.04%',
         '--success': '120 100% 19.61%',
@@ -69,29 +67,18 @@ export default function ThemeCustomizer() {
         '--warning-foreground': '0 0% 98.04%',
         '--dark': '0 0% 98.04%',
         '--dark-foreground': '240 10% 3.92%',
-        '--muted': '240 5.2% 33.92%',
-        '--muted-foreground': '240 3.83% 46.08%'
+        '--muted': '240 3.7% 15.88%',
+        '--muted-foreground': '240 5.03% 64.9%'
     })
     const [radius, setRadius] = React.useState(0.5)
 
     const [baseColor, setBaseColor] = React.useState<BaseColorsProps>('zinc')
-    function setBaseColors(v: BaseColorsProps) {
-        setBaseColor(v)
-        setLightVars({
-            ...lightVars,
-            '--background': baseColors[baseColor].root['--background'],
-            '--foreground': baseColors[baseColor].root['--foreground']
-        })
-        setDarkVars({
-            ...darkVars,
-            '--background': baseColors[baseColor].dark['--background'],
-            '--foreground': baseColors[baseColor].dark['--foreground']
-        })
-    }
 
     const { resolvedTheme } = useTheme()
     const [themeId, setThemeId] = React.useState<BaseColorsProps>('zinc')
     const themeContainerRef = React.useRef<HTMLDivElement>(null)
+
+    const [font, setFont] = React.useState<FontNamesProps>('geist')
 
     React.useEffect(() => {
         const applyTheme = (theme: BaseColorsProps) => {
@@ -127,7 +114,7 @@ export default function ThemeCustomizer() {
         ${Object.keys(lightVars)
             .map(
                 (key) =>
-                    `${key}: ${formatColorForTailwind(lightVars[key as keyof typeof lightVars])};`
+                    `${key}: ${lightVars[key as keyof typeof lightVars]}; /* ${getColorName({ color: lightVars[key as keyof typeof lightVars], type: 'hsl' })} */`
             )
             .join('\n\t\t')}
         --radius: ${radius}rem;
@@ -136,7 +123,7 @@ export default function ThemeCustomizer() {
         ${Object.keys(darkVars)
             .map(
                 (key) =>
-                    `${key}: ${formatColorForTailwind(darkVars[key as keyof typeof darkVars])};`
+                    `${key}: ${darkVars[key as keyof typeof darkVars]}; /* ${getColorName({ color: darkVars[key as keyof typeof darkVars], type: 'hsl' })} */`
             )
             .join('\n\t\t')}
     }
@@ -191,7 +178,7 @@ export default function ThemeCustomizer() {
 
     return (
         <>
-            <div className='container rounded-b-lg bg-background/60 backdrop-blur-xl flex flex-col-reverse sm:flex-row gap-3 justify-between items-center sticky top-12 lg:top-14 py-6 z-10'>
+            <div className='container rounded-b-lg bg-background/60 backdrop-blur-xl flex flex-row gap-3 justify-between items-center sticky top-12 lg:top-14 py-6 z-10'>
                 <Popover>
                     <Button variant='outline'>
                         <IconAdjustments />
@@ -206,19 +193,16 @@ export default function ThemeCustomizer() {
                         </Popover.Header>
                         <Popover.Body className='mt-2 space-y-2'>
                             <Select
-                                placement='right'
-                                label='Base Color'
-                                selectedKey={baseColor}
-                                onSelectionChange={(v) =>
-                                    setBaseColors(v as BaseColorsProps)
-                                }
-                                items={Object.keys(baseColors).map((key) => ({
+                                label='Font'
+                                selectedKey={font}
+                                onSelectionChange={(v) => setFont(v as any)}
+                                items={Object.keys(FontNames).map((key) => ({
                                     id: key,
-                                    textValue: key
+                                    textValue: titleCase(key)
                                 }))}
                             >
                                 {(item) => (
-                                    <Select.Item key={item.id}>
+                                    <Select.Item key={item.id} textValue={item.textValue}>
                                         {item.textValue}
                                     </Select.Item>
                                 )}
@@ -231,12 +215,16 @@ export default function ThemeCustomizer() {
                                 <Tabs.Content id='light' className='grid grid-cols-2'>
                                     {Object.keys(lightVars).map((key, i) => (
                                         <ColorPick
-                                            vars='light'
+                                            theme='light'
                                             label={key}
                                             key={i}
-                                            value={formatColorFromTailwind(
-                                                lightVars[key as keyof typeof lightVars]
-                                            )}
+                                            variable={
+                                                formatColorFromTailwind(
+                                                    lightVars[
+                                                        key as keyof typeof lightVars
+                                                    ]
+                                                ) as VariablesPresetProps['variable']
+                                            }
                                             onChange={(v) =>
                                                 setLightVars((prev) => ({
                                                     ...prev,
@@ -249,12 +237,14 @@ export default function ThemeCustomizer() {
                                 <Tabs.Content id='dark' className='grid grid-cols-2'>
                                     {Object.keys(darkVars).map((key, i) => (
                                         <ColorPick
-                                            vars='dark'
+                                            theme='dark'
                                             label={key}
                                             key={i}
-                                            value={formatColorFromTailwind(
-                                                darkVars[key as keyof typeof darkVars]
-                                            )}
+                                            variable={
+                                                formatColorFromTailwind(
+                                                    darkVars[key as keyof typeof darkVars]
+                                                ) as VariablesPresetProps['variable']
+                                            }
                                             onChange={(v) =>
                                                 setDarkVars((prev) => ({
                                                     ...prev,
@@ -276,10 +266,14 @@ export default function ThemeCustomizer() {
                         </Popover.Body>
                     </Popover.Content>
                 </Popover>
+
                 <ThemeSnippet code={getStyleCss()} />
             </div>
             <div
-                className='bg-background mb-6 border-secondary-foreground/10 text-foreground'
+                className={cn(
+                    'bg-background mb-6 border-secondary-foreground/10 text-foreground',
+                    FontNames[font]
+                )}
                 ref={themeContainerRef}
             >
                 <div className='container w-full flex flex-col gap-6 items-center py-6'>
@@ -295,7 +289,7 @@ export default function ThemeCustomizer() {
                             <DataFormSink />
                         </div>
                         <div className='w-full'>
-                            <UserProfileSink />
+                            <OptionsSink />
                         </div>
                     </div>
                 </div>
@@ -304,54 +298,25 @@ export default function ThemeCustomizer() {
     )
 }
 
-interface ColorPickProps {
-    value: string
-    onChange: (v: string) => void
+interface ColorPickProps extends VariablesPresetProps {
     label: string
-    vars: 'light' | 'dark'
+    onChange: (v: string) => void
 }
 
-const ColorPick = ({ value, onChange, label, vars, ...props }: ColorPickProps) => {
-    let colorPreset
-    switch (label) {
-        case '--danger':
-            colorPreset = Object.values(danger[vars])
-            break
-        case '--warning':
-            colorPreset = Object.values(warning[vars])
-            break
-        case '--info':
-            colorPreset = Object.values(info[vars])
-            break
-        case '--success':
-            colorPreset = Object.values(success[vars])
-            break
-        case '--primary':
-            colorPreset = Object.values(primary[vars])
-            break
-        case '--secondary':
-        case '--muted':
-            colorPreset = Object.values(secondary[vars])
-            break
-        case '--foreground':
-        case '--dark':
-            colorPreset = Object.values(foreground[vars])
-            break
-        default:
-        case '--background':
-            colorPreset = Object.values(background[vars])
-    }
+const ColorPick = ({ variable, onChange, label, theme, ...props }: ColorPickProps) => {
+    const variblePreset = VariablesPreset({ variable, theme })
 
     return (
         <div className='flex justify-start items-center mx-0'>
             <ColorPicker
                 enableColorSwatch
-                colors={[...colorPreset]}
+                enableColorFormatSelection
+                colors={[...variblePreset]}
                 {...props}
                 className='mx-0 -ml-2 w-14 [&_.cs]:border'
                 trigger='color-field'
                 onChange={(v) => onChange(formatColorForTailwind(v.toString('hsl')))}
-                value={value}
+                value={variable}
             />
             <span className='w-full text-xs'>{label}</span>
         </div>

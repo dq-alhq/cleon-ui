@@ -23,7 +23,7 @@ import { tv } from 'tailwind-variants'
 import { Button } from './button'
 
 const cellStyles = tv({
-    base: 'flex size-9 cursor-default items-center justify-center rounded-md text-sm outline-none focus:outline-none',
+    base: 'flex size-9 cursor-default items-center justify-center rounded-lg text-sm outline-none focus:outline-none',
     variants: {
         isSelected: {
             false: 'text-foreground hover:bg-primary/20',
@@ -124,7 +124,7 @@ interface RangeCalendarProps<T extends DateValue>
 }
 
 const cellRangeStyles = tv({
-    base: 'flex h-full w-full items-center justify-center rounded-md',
+    base: 'flex h-full w-full items-center justify-center rounded-lg',
     variants: {
         selectionState: {
             none: 'group-hover:bg-primary/20 group-pressed:bg-primary group-pressed:text-primary-foreground',
@@ -156,9 +156,9 @@ const RangeCalendar = <T extends DateValue>({
                         <CalendarCell
                             date={date}
                             className={twJoin([
-                                'group size-10 lg:size-9 cursor-default lg:text-sm outline outline-0 outside-month:text-zinc-300 selection-start:rounded-s-full selection-end:rounded-e-full forced-colors:selected:bg-[Highlight] forced-colors:invalid:selected:bg-[Mark]',
+                                'group size-10 lg:size-9 cursor-default lg:text-sm outline outline-0 outside-month:text-zinc-300 selection-start:rounded-s-lg selection-end:rounded-e-lg forced-colors:selected:bg-[Highlight] forced-colors:invalid:selected:bg-[Mark]',
                                 'selected:bg-primary/10 selected:text-primary forced-colors:selected:text-[HighlightText]',
-                                '[td:first-child_&]:rounded-s-full [td:last-child_&]:rounded-e-full',
+                                '[td:first-child_&]:rounded-s-lg [td:last-child_&]:rounded-e-lg',
                                 'invalid:selected:bg-danger/30'
                             ])}
                         >

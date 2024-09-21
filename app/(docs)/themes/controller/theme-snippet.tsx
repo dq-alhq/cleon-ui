@@ -29,7 +29,7 @@ export default function ThemeSnippet({ code = 'TEST' }: { code: string }) {
     return (
         <Modal>
             <Modal.Trigger className={buttonVariants({ variant: 'outline' })}>
-                <IconClipboard /> Copy Styles
+                <IconClipboard /> Copy
             </Modal.Trigger>
             <Modal.Content size='3xl' isBlurred aria-label='Theme Snippet'>
                 <Modal.Header>

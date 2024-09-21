@@ -9,7 +9,7 @@ import TooltipDemo from '@/components/docs/overlays/tooltip-demo'
 import ComboBoxDemo from '@/components/docs/pickers/combo-box-demo'
 import MeterDemo from '@/components/docs/statuses/meter-demo'
 import ProgressDemo from '@/components/docs/statuses/progress-bar-demo'
-import { Breadcrumb, Breadcrumbs, Card, Select } from '@/components/ui'
+import { Breadcrumb, Breadcrumbs, Card, DateRangePicker, Select } from '@/components/ui'
 
 export default function OptionsSink() {
     return (
@@ -19,7 +19,7 @@ export default function OptionsSink() {
                 <Breadcrumb href='/docs'>Docs</Breadcrumb>
                 <Breadcrumb>Components</Breadcrumb>
             </Breadcrumbs>
-            <div className='flex gap-1 items-center mt-6'>
+            <div className='flex gap-2 items-center mt-6'>
                 <Select
                     aria-labelledby='per-page'
                     id='per-page'
@@ -31,9 +31,8 @@ export default function OptionsSink() {
                     <Select.Item id='20'>20</Select.Item>
                     <Select.Item id='30'>30</Select.Item>
                 </Select>
-                <div className='ml-auto w-32'>
-                    <SearchFieldDemo />
-                </div>
+                <DateRangePicker aria-label='Event date' />
+                <SearchFieldDemo />
             </div>
             <div className='flex gap-1 items-end mt-4'>
                 <ComboBoxDemo />

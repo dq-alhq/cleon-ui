@@ -150,7 +150,7 @@ const MenuHeader = ({
     <Header
         className={cn(
             'p-2 text-base font-semibold sm:text-sm',
-            separator && '-mx-1 border-b border-b-muted-foreground px-3 pb-2 mb-1',
+            separator && '-mx-1 border-b border-b-muted px-3 pb-2 mb-1',
             className
         )}
         {...props}

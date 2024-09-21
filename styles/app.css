@@ -8,8 +8,8 @@
         --foreground: 240 10% 3.92%;
         --primary: 240 100% 33.33%;
         --primary-foreground: 0 0% 98.04%;
-        --secondary: 240 5.2% 33.92%;
-        --secondary-foreground: 240 5.88% 90%;
+        --secondary: 240 5.03% 64.9%;
+        --secondary-foreground: 240 5.88% 10%;
         --danger: 346.84 77.17% 49.8%;
         --danger-foreground: 0 0% 98.04%;
         --success: 120 100% 19.61%;
@@ -42,8 +42,8 @@
         --warning-foreground: 0 0% 98.04%;
         --dark: 0 0% 98.04%;
         --dark-foreground: 240 10% 3.92%;
-        --muted: 240 5.2% 33.92%;
-        --muted-foreground: 240 3.83% 46.08%;
+        --muted: 240 3.7% 15.88%;
+        --muted-foreground: 240 5.03% 64.9%;
     }
 }
 

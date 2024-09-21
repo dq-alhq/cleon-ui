@@ -145,7 +145,7 @@ export function NavLink({
             href={href}
             className={cn(
                 'relative whitespace-nowrap flex items-center gap-x-3 py-2 text-sm transition-colors focus:outline-none sm:py-3',
-                isActive ? 'text-accent' : 'text-foreground hover:text-accent',
+                isActive ? 'text-primary' : 'text-foreground hover:text-primary',
                 props.className
             )}
             {...props}
@@ -155,7 +155,7 @@ export function NavLink({
                 {isActive && (
                     <motion.span
                         layoutId='current-indicator-navlink'
-                        className='absolute inset-x-0 bottom-[-0.550rem] h-0.5 w-full rounded bg-accent'
+                        className='absolute inset-x-0 bottom-[-0.550rem] h-0.5 w-full rounded bg-primary'
                     />
                 )}
             </>
@@ -259,7 +259,7 @@ export function NavbarDropdown() {
                     <span className='sr-only'>Open menu</span>
                 </span>
             </Button>
-            <Menu.Content placement='bottom' className='w-64'>
+            <Menu.Content placement='bottom' className='md:w-64'>
                 <Menu.Item href='/' target='_blank'>
                     <IconHome />
                     Home
