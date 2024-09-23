@@ -55,7 +55,7 @@ export function BlockContent({
                     >
                         <div className='absolute hidden sm:-top-16 right-0 sm:flex gap-1 items-center'>
                             <Toggle
-                                variant='primary'
+                                variant='solid'
                                 size='icon'
                                 isSelected={screenWidth === 'max-w-sm'}
                                 onChange={() => setScreenWidth('max-w-sm')}
@@ -63,7 +63,7 @@ export function BlockContent({
                                 <IconMobile />
                             </Toggle>
                             <Toggle
-                                variant='success'
+                                variant='solid'
                                 size='icon'
                                 isSelected={screenWidth === 'max-w-3xl'}
                                 onChange={() => setScreenWidth('max-w-3xl')}
@@ -71,7 +71,7 @@ export function BlockContent({
                                 <IconTablet />
                             </Toggle>
                             <Toggle
-                                variant='danger'
+                                variant='solid'
                                 size='icon'
                                 isSelected={screenWidth === 'max-w-none'}
                                 onChange={() => setScreenWidth('max-w-none')}
