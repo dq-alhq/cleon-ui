@@ -12,16 +12,16 @@ import { cn } from '@/lib/utils'
 
 const buttonVariants = tv({
     base: [
-        'btn relative whitespace-nowrap outline-none transition no-underline isolate inline-flex items-center justify-center gap-x-2 font-medium hover:brightness-110 pressed:brightness-90',
+        'btn relative before:absolute after:absolute box-border whitespace-nowrap outline-none transition no-underline isolate inline-flex items-center justify-center gap-x-2 font-medium hover:brightness-105 pressed:brightness-95',
         '[&_svg]:size-4 [&_svg]:shrink-0',
         'disabled:cursor-default disabled:opacity-50'
     ],
     variants: {
         variant: {
             primary:
-                'bg-primary text-primary-foreground pressed:ring pressed:ring-primary/40 shadow-sm',
+                'border border-primary bg-primary text-primary-foreground pressed:ring pressed:ring-primary/40 shadow-sm',
             secondary:
-                'bg-secondary text-secondary-foreground pressed:ring pressed:ring-secondary/40 shadow-sm',
+                'border-secondary bg-secondary text-secondary-foreground pressed:ring pressed:ring-secondary/40 shadow-sm',
             danger: 'bg-danger text-danger-foreground pressed:ring pressed:ring-danger/40 shadow-sm',
             success:
                 'bg-success text-success-foreground pressed:ring pressed:ring-success/40 shadow-sm',
@@ -29,6 +29,7 @@ const buttonVariants = tv({
             warning:
                 'bg-warning text-warning-foreground pressed:ring pressed:ring-warning/40 shadow-sm',
             dark: 'bg-dark text-dark-foreground pressed:ring pressed:ring-dark/40 shadow-sm',
+            muted: 'bg-muted text-muted-foreground pressed:ring pressed:ring-muted/40 shadow-sm',
             outline: 'border bg-background text-foreground shadow-sm hover:bg-muted',
             ghost: 'text-foreground bg-transparent hover:bg-muted'
         },

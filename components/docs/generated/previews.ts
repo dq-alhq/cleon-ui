@@ -5,6 +5,9 @@
 import React from 'react';
 
 export const previews: Record<string, any> = {
+  "buttons/toggle-button-controlled-demo": {
+    component: React.lazy(() => import("@/components/docs/buttons/toggle-button-controlled-demo")),
+  },
   "buttons/file-trigger-controlled-demo": {
     component: React.lazy(() => import("@/components/docs/buttons/file-trigger-controlled-demo")),
   },
@@ -34,6 +37,9 @@ export const previews: Record<string, any> = {
   },
   "buttons/button-variant-demo": {
     component: React.lazy(() => import("@/components/docs/buttons/button-variant-demo")),
+  },
+  "buttons/toggle-button-variants-demo": {
+    component: React.lazy(() => import("@/components/docs/buttons/toggle-button-variants-demo")),
   },
   "buttons/file-trigger-avatar-demo": {
     component: React.lazy(() => import("@/components/docs/buttons/file-trigger-avatar-demo")),

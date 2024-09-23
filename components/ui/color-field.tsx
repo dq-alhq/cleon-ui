@@ -30,6 +30,9 @@ interface ColorFieldProps extends ColorFieldPrimitiveProps {
     suffix?: React.ReactNode
     isLoading?: boolean
     enableColorPicker?: boolean
+    enableColorSwatch?: boolean
+    enableColorFormatSelection?: boolean
+    enableColorField?: boolean
 }
 
 const ColorField = ({
@@ -41,6 +44,9 @@ const ColorField = ({
     suffix,
     isLoading,
     enableColorPicker = true,
+    enableColorSwatch = false,
+    enableColorFormatSelection = false,
+    enableColorField = false,
     className,
     ...props
 }: ColorFieldProps) => {
@@ -62,7 +68,11 @@ const ColorField = ({
                         <span>
                             {enableColorPicker ? (
                                 <ColorPicker
-                                    enableColorField={false}
+                                    enableColorSwatch={enableColorSwatch}
+                                    enableColorFormatSelection={
+                                        enableColorFormatSelection
+                                    }
+                                    enableColorField={enableColorField}
                                     onChange={props.onChange}
                                     defaultValue={value}
                                     className='size-9 [&_.tcf]:size-9'

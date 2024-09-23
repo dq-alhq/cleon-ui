@@ -50,12 +50,12 @@ export default function DataFormSink() {
                     toast.success('Dummy Login Successfully')
                 }}
             >
-                <Card.Content className='grid gap-4'>
+                <Card.Content className='space-y-4'>
                     <RadioGroup label='Package Manager' orientation='horizontal'>
-                        <Radio value='bun'>BUN</Radio>
+                        <Radio value='npm'>NPM</Radio>
                         <Radio value='yarn'>YARN</Radio>
                         <Radio value='pnpm'>PNPM</Radio>
-                        <Radio value='npm'>NPM</Radio>
+                        <Radio value='bun'>BUN</Radio>
                     </RadioGroup>
                     <Select label='Framework' placeholder='Select an option'>
                         <Select.Item id='1'>Next Js</Select.Item>
@@ -74,7 +74,7 @@ export default function DataFormSink() {
                         <Checkbox value='dark_mode'>Enable Dark Mode</Checkbox>
                     </CheckboxGroup>
                     <MultiSelect
-                        className='w-full'
+                        className='md:w-full'
                         label='Components'
                         selectedList={selectedList}
                         items={items}

@@ -1,7 +1,6 @@
 'use client'
 
 import InputOtpControlledDemo from '@/components/docs/forms/input-otp-controlled-demo'
-import SearchFieldDemo from '@/components/docs/forms/search-field-demo'
 import PaginationDemo from '@/components/docs/navigation/pagination-demo'
 import ModalTriggeredByMenuDemo from '@/components/docs/overlays/modal-triggered-by-menu-demo'
 import PopoverDemo from '@/components/docs/overlays/popover-demo'
@@ -9,7 +8,14 @@ import TooltipDemo from '@/components/docs/overlays/tooltip-demo'
 import ComboBoxDemo from '@/components/docs/pickers/combo-box-demo'
 import MeterDemo from '@/components/docs/statuses/meter-demo'
 import ProgressDemo from '@/components/docs/statuses/progress-bar-demo'
-import { Breadcrumb, Breadcrumbs, Card, DateRangePicker, Select } from '@/components/ui'
+import {
+    Breadcrumb,
+    Breadcrumbs,
+    Card,
+    DateRangePicker,
+    SearchField,
+    Select
+} from '@/components/ui'
 
 export default function OptionsSink() {
     return (
@@ -19,20 +25,20 @@ export default function OptionsSink() {
                 <Breadcrumb href='/docs'>Docs</Breadcrumb>
                 <Breadcrumb>Components</Breadcrumb>
             </Breadcrumbs>
-            <div className='flex gap-2 items-center mt-6'>
+            <div className='flex flex-col w-full lg:flex-row gap-2 items-center mt-6'>
                 <Select
                     aria-labelledby='per-page'
                     id='per-page'
                     placeholder='10'
-                    className='w-20'
+                    className='lg:w-20'
                     defaultSelectedKey={'10'}
                 >
                     <Select.Item id='10'>10</Select.Item>
                     <Select.Item id='20'>20</Select.Item>
                     <Select.Item id='30'>30</Select.Item>
                 </Select>
-                <DateRangePicker aria-label='Event date' />
-                <SearchFieldDemo />
+                <SearchField className='w-full' aria-label='Search' />
+                <DateRangePicker className='w-full' aria-label='Event date' />
             </div>
             <div className='flex gap-1 items-end mt-4'>
                 <ComboBoxDemo />

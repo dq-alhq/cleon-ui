@@ -30,20 +30,20 @@ const fontRaleway = localFont({
 })
 
 export type FontNamesProps =
-    | 'figtree'
-    | 'satoshi'
-    | 'nunito'
-    | 'raleway'
-    | 'roboto'
-    | 'inter'
-    | 'geist'
+    | 'Figtree'
+    | 'Satoshi'
+    | 'Nunito'
+    | 'Raleway'
+    | 'Roboto'
+    | 'Inter'
+    | 'Geist'
 
 export const FontNames: Record<FontNamesProps, string> = {
-    figtree: fontFigtree.className,
-    satoshi: fontSatoshi.className,
-    nunito: fontNunito.className,
-    raleway: fontRaleway.className,
-    roboto: fontRoboto.className,
-    inter: fontInter.className,
-    geist: fontGeist.className
+    Figtree: fontFigtree.className,
+    Satoshi: fontSatoshi.className,
+    Nunito: fontNunito.className,
+    Raleway: fontRaleway.className,
+    Roboto: fontRoboto.className,
+    Inter: fontInter.className,
+    Geist: fontGeist.className
 }

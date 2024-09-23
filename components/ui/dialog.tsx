@@ -162,10 +162,16 @@ const Footer = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) =
     )
 }
 
-const Close = ({ className, variant = 'outline', ...props }: ButtonProps) => {
+const Close = ({
+    className,
+    size = 'md',
+    variant = 'outline',
+    ...props
+}: ButtonProps) => {
     const state = React.useContext(OverlayTriggerStateContext)!
     return (
         <Button
+            size={size}
             className={className}
             variant={variant}
             onPress={() => state.close()}

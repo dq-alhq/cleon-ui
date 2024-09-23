@@ -9,12 +9,13 @@ import {
     IconBrandGithub,
     IconBrandTailwind,
     IconChevronDown,
-    IconColorFilter,
+    IconColorSwatch,
     IconDesktop,
     IconHome,
     IconMenu,
     IconMoon,
     IconPackages,
+    IconPaint,
     IconSearch,
     IconShapes2,
     IconSun,
@@ -45,7 +46,8 @@ export const menuItems = [
     { id: 2, label: 'Components', url: '/docs/getting-started/introduction' },
     { id: 3, label: 'Blocks', url: '/blocks' },
     { id: 4, label: 'Icons', url: '/icons' },
-    { id: 5, label: 'Themes', url: '/themes' }
+    { id: 5, label: 'Colors', url: '/colors' },
+    { id: 6, label: 'Themes', url: '/themes' }
 ]
 
 export function Navbar() {
@@ -86,6 +88,12 @@ export function Navbar() {
                                             href='/icons'
                                         >
                                             Icons
+                                        </NavLink>
+                                        <NavLink
+                                            isActive={pathname?.startsWith('/colors')}
+                                            href='/colors'
+                                        >
+                                            Colors
                                         </NavLink>
                                         <NavLink
                                             isActive={pathname?.startsWith('/themes')}
@@ -276,6 +284,14 @@ export function NavbarDropdown() {
                     <IconShapes2 />
                     Icons
                 </Menu.Item>
+                <Menu.Item href='/colors'>
+                    <IconColorSwatch />
+                    Colors
+                </Menu.Item>
+                <Menu.Item href='/themes'>
+                    <IconPaint />
+                    Themes
+                </Menu.Item>
                 <Menu.Separator />
                 <Menu.Header separator>Refs</Menu.Header>
                 <Menu.Item href='https://github.com/dq-alhq' target='_blank'>
@@ -312,10 +328,6 @@ export function NavbarDropdown() {
                 <Menu.Item href='https://tailwindcss.com/' target='_blank'>
                     <IconBrandTailwind />
                     Tailwind CSS
-                </Menu.Item>
-                <Menu.Item href='https://getjustd.com/colors' target='_blank'>
-                    <IconColorFilter />
-                    Colors
                 </Menu.Item>
                 <Menu.Item href='https://www.framer.com/motion/' target='_blank'>
                     <IconBrandFramer />

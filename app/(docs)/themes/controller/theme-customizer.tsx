@@ -2,49 +2,61 @@
 
 import React from 'react'
 
-import { IconAdjustments } from 'cleon-icons'
+import { IconAdjustments, IconCheck, IconPalette, IconX } from 'cleon-icons'
 import { useTheme } from 'next-themes'
+import { ListBox, ListBoxItem, type ListBoxItemProps } from 'react-aria-components'
 
+import ThemeSnippet from '@/components/theme-snippet'
 import {
     Button,
     buttonVariants,
     ColorPicker,
+    Label,
     NumberField,
     Popover,
     Select,
     Tabs
 } from '@/components/ui'
 import {
-    cn,
     formatColorForTailwind,
     formatColorFromTailwind,
-    getColorName,
-    titleCase
-} from '@/lib/utils'
+    getColorName
+} from '@/lib/colors'
+import { cn, titleCase } from '@/lib/utils'
 
 import DataFormSink from '../../sink/data-form'
 import OptionsSink from '../../sink/options'
-import { type BaseColorsProps } from './base-colors'
+import './color.css'
 import { FontNames, type FontNamesProps } from './fonts'
-import ThemeSnippet from './theme-snippet'
+import {
+    defaultColors,
+    radixBaseColors,
+    radixColors,
+    tailwindBaseColors,
+    tailwindColors,
+    type RadixBaseColors,
+    type RadixColors,
+    type TailwindBaseColors,
+    type TailwindColors
+} from './presets'
 import { VariablesPreset, type VariablesPresetProps } from './variables-preset'
 
 export default function ThemeCustomizer() {
     const [lightVars, setLightVars] = React.useState({
         '--background': '0 0% 98.04%',
         '--foreground': '240 10% 3.92%',
-        '--primary': '240 100% 33.33%',
+        '--primary': '224.3 76.3% 48%',
         '--primary-foreground': '0 0% 98.04%',
-        '--secondary': '240 5.03% 64.9%',
-        '--secondary-foreground': '240 5.88% 10%',
-        '--danger': '346.84 77.17% 49.8%',
+        '--secondary': '211.7 96.4% 78.4%',
+        '--secondary-foreground': '226.2 57% 21%',
+        '--danger': '0 72.22% 50.59%',
         '--danger-foreground': '0 0% 98.04%',
-        '--success': '120 100% 19.61%',
+        '--success': '142.1 76.2% 36.3%',
         '--success-foreground': '0 0% 98.04%',
-        '--info': '280.13 60.63% 49.8%',
-        '--info-foreground': '0 0% 98.04%',
-        '--warning': '32.94 100% 50%',
+        '--warning': '24.6 95% 53.1%',
         '--warning-foreground': '0 0% 98.04%',
+        '--info': '294.7 72.4% 39.8%',
+        '--info-foreground': '0 0% 98.04%',
         '--dark': '240 10% 4%',
         '--dark-foreground': '0 0% 98.04%',
         '--muted': '240 4.88% 83.92%',
@@ -53,18 +65,18 @@ export default function ThemeCustomizer() {
     const [darkVars, setDarkVars] = React.useState({
         '--background': '240 10% 3.92%',
         '--foreground': '0 0% 98.04%',
-        '--primary': '240 67.06% 50%',
+        '--primary': '221.2 83.2% 53.3%',
         '--primary-foreground': '0 0% 98.04%',
-        '--secondary': '240 5.2% 33.92%',
-        '--secondary-foreground': '0 0% 98.04%',
-        '--danger': '348 83.33% 47.06%',
+        '--secondary': '226.2 57% 21%',
+        '--secondary-foreground': '211.7 96.4% 78.4%',
+        '--danger': '0 72.2% 50.6%',
         '--danger-foreground': '0 0% 98.04%',
-        '--success': '120 49.7% 32.75%',
+        '--success': '142.1 76.2% 36.3%',
         '--success-foreground': '0 0% 98.04%',
-        '--info': '280.31 59.81% 58.04%',
-        '--info-foreground': '0 0% 98.04%',
-        '--warning': '32 95% 44%',
+        '--warning': '17.5 88.3% 40.4%',
         '--warning-foreground': '0 0% 98.04%',
+        '--info': '294.7 72.4% 39.8%',
+        '--info-foreground': '0 0% 98.04%',
         '--dark': '0 0% 98.04%',
         '--dark-foreground': '240 10% 3.92%',
         '--muted': '240 3.7% 15.88%',
@@ -72,16 +84,64 @@ export default function ThemeCustomizer() {
     })
     const [radius, setRadius] = React.useState(0.5)
 
-    const [baseColor, setBaseColor] = React.useState<BaseColorsProps>('zinc')
+    const [baseColor, setBaseColor] = React.useState<
+        TailwindBaseColors | RadixBaseColors
+    >('zinc')
+    const [accentColor, setAccentColor] = React.useState<TailwindColors | RadixColors>(
+        'tw-blue'
+    )
+    const [preset, setPreset] = React.useState<'tailwind' | 'radix'>('tailwind')
+
+    function handleBaseColor(
+        v: TailwindBaseColors | RadixBaseColors,
+        preset: 'tailwind' | 'radix'
+    ) {
+        setBaseColor(v)
+        setPreset(preset)
+        if (preset === 'tailwind') {
+            // @ts-ignore
+            setLightVars({ ...lightVars, ...tailwindBaseColors[v.currentKey].light })
+            // @ts-ignore
+            setDarkVars({ ...darkVars, ...tailwindBaseColors[v.currentKey].dark })
+        } else {
+            // @ts-ignore
+            setLightVars({ ...lightVars, ...radixBaseColors[v.currentKey].light })
+            // @ts-ignore
+            setDarkVars({ ...darkVars, ...radixBaseColors[v.currentKey].dark })
+        }
+    }
+    function handleAccentColor(
+        v: TailwindColors | RadixColors,
+        preset: 'tailwind' | 'radix'
+    ) {
+        setAccentColor(v)
+        setPreset(preset)
+        if (preset === 'tailwind') {
+            // @ts-ignore
+            setLightVars({ ...lightVars, ...tailwindColors[v.currentKey].light })
+            // @ts-ignore
+            setDarkVars({ ...darkVars, ...tailwindColors[v.currentKey].dark })
+        } else {
+            // @ts-ignore
+            setLightVars({ ...lightVars, ...radixColors[v.currentKey].light })
+            // @ts-ignore
+            setDarkVars({ ...darkVars, ...radixColors[v.currentKey].dark })
+        }
+    }
+
+    function setDefault() {
+        setLightVars(defaultColors.light)
+        setDarkVars(defaultColors.dark)
+    }
 
     const { resolvedTheme } = useTheme()
-    const [themeId, setThemeId] = React.useState<BaseColorsProps>('zinc')
+    const [themeId, setThemeId] = React.useState<'tailwind' | 'radix'>('tailwind')
     const themeContainerRef = React.useRef<HTMLDivElement>(null)
 
-    const [font, setFont] = React.useState<FontNamesProps>('geist')
+    const [font, setFont] = React.useState<FontNamesProps>('Geist')
 
     React.useEffect(() => {
-        const applyTheme = (theme: BaseColorsProps) => {
+        const applyTheme = (theme: 'tailwind' | 'radix') => {
             localStorage.setItem('theme-id', theme)
             setThemeId(theme)
 
@@ -99,8 +159,8 @@ export default function ThemeCustomizer() {
             }
         }
 
-        localStorage.setItem('theme-id', baseColor)
-        const savedTheme = localStorage.getItem('theme-id') as BaseColorsProps
+        localStorage.setItem('theme-id', themeId)
+        const savedTheme = localStorage.getItem('theme-id') as 'tailwind' | 'radix'
         applyTheme(savedTheme)
     }, [themeId, resolvedTheme, lightVars, darkVars, baseColor, radius])
 
@@ -111,6 +171,8 @@ export default function ThemeCustomizer() {
 
 @layer base {
     :root {
+        --font-sans: "${font}", sans-serif;
+        --font-mono: "Fira Code", monospace;
         ${Object.keys(lightVars)
             .map(
                 (key) =>
@@ -178,96 +240,289 @@ export default function ThemeCustomizer() {
 
     return (
         <>
-            <div className='container rounded-b-lg bg-background/60 backdrop-blur-xl flex flex-row gap-3 justify-between items-center sticky top-12 lg:top-14 py-6 z-10'>
-                <Popover>
-                    <Button variant='outline'>
-                        <IconAdjustments />
-                        Customize
-                    </Button>
-                    <Popover.Content placement='right'>
-                        <Popover.Header>
-                            <Popover.Title>Style</Popover.Title>
-                            <Popover.Description>
-                                Customize your theme
-                            </Popover.Description>
-                        </Popover.Header>
-                        <Popover.Body className='mt-2 space-y-2'>
-                            <Select
-                                label='Font'
-                                selectedKey={font}
-                                onSelectionChange={(v) => setFont(v as any)}
-                                items={Object.keys(FontNames).map((key) => ({
-                                    id: key,
-                                    textValue: titleCase(key)
-                                }))}
-                            >
-                                {(item) => (
-                                    <Select.Item key={item.id} textValue={item.textValue}>
-                                        {item.textValue}
-                                    </Select.Item>
-                                )}
-                            </Select>
-                            <Tabs>
-                                <Tabs.List>
-                                    <Tabs.Label id='light'>Light</Tabs.Label>
-                                    <Tabs.Label id='dark'>Dark</Tabs.Label>
-                                </Tabs.List>
-                                <Tabs.Content id='light' className='grid grid-cols-2'>
-                                    {Object.keys(lightVars).map((key, i) => (
-                                        <ColorPick
-                                            theme='light'
-                                            label={key}
-                                            key={i}
-                                            variable={
-                                                formatColorFromTailwind(
-                                                    lightVars[
-                                                        key as keyof typeof lightVars
-                                                    ]
-                                                ) as VariablesPresetProps['variable']
-                                            }
-                                            onChange={(v) =>
-                                                setLightVars((prev) => ({
-                                                    ...prev,
-                                                    [key]: v
-                                                }))
-                                            }
-                                        />
-                                    ))}
-                                </Tabs.Content>
-                                <Tabs.Content id='dark' className='grid grid-cols-2'>
-                                    {Object.keys(darkVars).map((key, i) => (
-                                        <ColorPick
-                                            theme='dark'
-                                            label={key}
-                                            key={i}
-                                            variable={
-                                                formatColorFromTailwind(
-                                                    darkVars[key as keyof typeof darkVars]
-                                                ) as VariablesPresetProps['variable']
-                                            }
-                                            onChange={(v) =>
-                                                setDarkVars((prev) => ({
-                                                    ...prev,
-                                                    [key]: v
-                                                }))
-                                            }
-                                        />
-                                    ))}
-                                </Tabs.Content>
-                            </Tabs>
-                            <NumberField
-                                step={0.05}
-                                minValue={0}
-                                maxValue={1}
-                                label='Border Radius'
-                                value={radius}
-                                onChange={setRadius}
-                            />
-                        </Popover.Body>
-                    </Popover.Content>
-                </Popover>
-
-                <ThemeSnippet code={getStyleCss()} />
+            <div className='w-full rounded-b-lg bg-background/60 backdrop-blur-xl sticky top-12 lg:top-14 py-6 z-10'>
+                <div className='container flex flex-row gap-3 justify-between items-center'>
+                    <div className='flex flex-row gap-3'>
+                        <Popover>
+                            <Button variant='outline'>
+                                <IconAdjustments />
+                                Customize
+                            </Button>
+                            <Popover.Content placement='right'>
+                                <Popover.Header>
+                                    <Popover.Title>Style</Popover.Title>
+                                    <Popover.Description>
+                                        Customize your theme
+                                    </Popover.Description>
+                                    <Popover.Close
+                                        variant='ghost'
+                                        size='icon'
+                                        className='absolute right-4 top-2 sm:hidden'
+                                    >
+                                        <IconX />
+                                    </Popover.Close>
+                                </Popover.Header>
+                                <Popover.Body className='mt-2 space-y-2'>
+                                    <Select
+                                        label='Font'
+                                        selectedKey={font}
+                                        onSelectionChange={(v) => setFont(v as any)}
+                                        items={Object.keys(FontNames).map((key) => ({
+                                            id: key,
+                                            textValue: titleCase(key)
+                                        }))}
+                                    >
+                                        {(item) => (
+                                            <Select.Item
+                                                key={item.id}
+                                                textValue={item.textValue}
+                                            >
+                                                {item.textValue}
+                                            </Select.Item>
+                                        )}
+                                    </Select>
+                                    <Tabs>
+                                        <Tabs.List>
+                                            <Tabs.Label id='light'>Light</Tabs.Label>
+                                            <Tabs.Label id='dark'>Dark</Tabs.Label>
+                                        </Tabs.List>
+                                        <Tabs.Content
+                                            id='light'
+                                            className='grid grid-cols-2'
+                                        >
+                                            {Object.keys(lightVars).map((key, i) => (
+                                                <ColorPick
+                                                    theme='light'
+                                                    label={key}
+                                                    key={i}
+                                                    variable={
+                                                        formatColorFromTailwind(
+                                                            lightVars[
+                                                                key as keyof typeof lightVars
+                                                            ]
+                                                        ) as VariablesPresetProps['variable']
+                                                    }
+                                                    onChange={(v) =>
+                                                        setLightVars((prev) => ({
+                                                            ...prev,
+                                                            [key]: v
+                                                        }))
+                                                    }
+                                                />
+                                            ))}
+                                        </Tabs.Content>
+                                        <Tabs.Content
+                                            id='dark'
+                                            className='grid grid-cols-2'
+                                        >
+                                            {Object.keys(darkVars).map((key, i) => (
+                                                <ColorPick
+                                                    theme='dark'
+                                                    label={key}
+                                                    key={i}
+                                                    variable={
+                                                        formatColorFromTailwind(
+                                                            darkVars[
+                                                                key as keyof typeof darkVars
+                                                            ]
+                                                        ) as VariablesPresetProps['variable']
+                                                    }
+                                                    onChange={(v) =>
+                                                        setDarkVars((prev) => ({
+                                                            ...prev,
+                                                            [key]: v
+                                                        }))
+                                                    }
+                                                />
+                                            ))}
+                                        </Tabs.Content>
+                                    </Tabs>
+                                    <NumberField
+                                        step={0.05}
+                                        minValue={0}
+                                        maxValue={1}
+                                        label='Border Radius'
+                                        value={radius}
+                                        onChange={setRadius}
+                                    />
+                                </Popover.Body>
+                            </Popover.Content>
+                        </Popover>
+                        <Popover>
+                            <Button variant='outline'>
+                                <IconPalette />
+                                Presets
+                            </Button>
+                            <Popover.Content placement='right'>
+                                <Popover.Header>
+                                    <Popover.Title>Presets</Popover.Title>
+                                    <Popover.Description>
+                                        Select a preset
+                                    </Popover.Description>
+                                    <Popover.Close
+                                        variant='ghost'
+                                        size='icon'
+                                        className='absolute right-4 top-2 sm:hidden'
+                                    >
+                                        <IconX />
+                                    </Popover.Close>
+                                </Popover.Header>
+                                <Popover.Body className='mt-2 space-y-2'>
+                                    <Tabs>
+                                        <Tabs.List>
+                                            <Tabs.Label id='tailwind'>
+                                                Tailwind
+                                            </Tabs.Label>
+                                            <Tabs.Label id='radix'>Radix</Tabs.Label>
+                                        </Tabs.List>
+                                        <Tabs.Content id='tailwind'>
+                                            <Label htmlFor='base_color'>Base Color</Label>
+                                            <ListBox
+                                                aria-labelledby='base_color'
+                                                className='grid grid-cols-2 gap-2 sm:grid-cols-3 my-2'
+                                                disallowEmptySelection
+                                                selectionMode='single'
+                                                selectedKeys={baseColor}
+                                                onSelectionChange={(v) =>
+                                                    handleBaseColor(
+                                                        v as TailwindBaseColors,
+                                                        'tailwind'
+                                                    )
+                                                }
+                                                items={Object.keys(
+                                                    tailwindBaseColors
+                                                ).map((item) => ({
+                                                    id: item,
+                                                    textValue: item as TailwindBaseColors
+                                                }))}
+                                            >
+                                                {(item) => (
+                                                    <ColorPresetPicker
+                                                        id={item.id}
+                                                        key={item.id}
+                                                        color={item.textValue}
+                                                        textValue={titleCase(
+                                                            item.textValue.replace(
+                                                                'tw-',
+                                                                ''
+                                                            )
+                                                        )}
+                                                    />
+                                                )}
+                                            </ListBox>
+                                            <Label htmlFor='accent_color'>
+                                                Accent Color
+                                            </Label>
+                                            <ListBox
+                                                aria-labelledby='accent_color'
+                                                className='grid grid-cols-2 gap-2 sm:grid-cols-3 mt-2'
+                                                disallowEmptySelection
+                                                selectionMode='single'
+                                                selectedKeys={accentColor}
+                                                onSelectionChange={(v) =>
+                                                    handleAccentColor(
+                                                        v as TailwindColors,
+                                                        'tailwind'
+                                                    )
+                                                }
+                                                items={Object.keys(tailwindColors).map(
+                                                    (item) => ({
+                                                        id: item,
+                                                        textValue: item as TailwindColors
+                                                    })
+                                                )}
+                                            >
+                                                {(item) => (
+                                                    <ColorPresetPicker
+                                                        id={item.id}
+                                                        key={item.id}
+                                                        color={item.textValue}
+                                                        textValue={titleCase(
+                                                            item.textValue.replace(
+                                                                'tw-',
+                                                                ''
+                                                            )
+                                                        )}
+                                                    />
+                                                )}
+                                            </ListBox>
+                                        </Tabs.Content>
+                                        <Tabs.Content id='radix'>
+                                            <Label htmlFor='base_color'>Base Color</Label>
+                                            <ListBox
+                                                aria-labelledby='base_color'
+                                                className='grid grid-cols-2 gap-2 sm:grid-cols-3 my-2'
+                                                disallowEmptySelection
+                                                selectionMode='single'
+                                                selectedKeys={baseColor}
+                                                onSelectionChange={(v) =>
+                                                    handleBaseColor(
+                                                        v as RadixBaseColors,
+                                                        'radix'
+                                                    )
+                                                }
+                                                items={Object.keys(radixBaseColors).map(
+                                                    (item) => ({
+                                                        id: item,
+                                                        textValue: item as RadixBaseColors
+                                                    })
+                                                )}
+                                            >
+                                                {(item) => (
+                                                    <ColorPresetPicker
+                                                        id={item.id}
+                                                        key={item.id}
+                                                        color={item.textValue}
+                                                        textValue={titleCase(
+                                                            item.textValue
+                                                        )}
+                                                    />
+                                                )}
+                                            </ListBox>
+                                            <Label htmlFor='accent_color'>
+                                                Accent Color
+                                            </Label>
+                                            <ListBox
+                                                aria-labelledby='accent_color'
+                                                className='grid grid-cols-2 gap-2 sm:grid-cols-3 mt-2'
+                                                disallowEmptySelection
+                                                selectionMode='single'
+                                                selectedKeys={accentColor}
+                                                onSelectionChange={(v) =>
+                                                    handleAccentColor(
+                                                        v as RadixColors,
+                                                        'radix'
+                                                    )
+                                                }
+                                                items={Object.keys(radixColors).map(
+                                                    (item) => ({
+                                                        id: item,
+                                                        textValue: item as RadixColors
+                                                    })
+                                                )}
+                                            >
+                                                {(item) => (
+                                                    <ColorPresetPicker
+                                                        id={item.id}
+                                                        key={item.id}
+                                                        color={item.textValue}
+                                                        textValue={titleCase(
+                                                            item.textValue
+                                                        )}
+                                                    />
+                                                )}
+                                            </ListBox>
+                                        </Tabs.Content>
+                                    </Tabs>
+                                    <Button onPress={setDefault} variant='outline'>
+                                        Default
+                                    </Button>
+                                </Popover.Body>
+                            </Popover.Content>
+                        </Popover>
+                    </div>
+                    <ThemeSnippet code={getStyleCss()} />
+                </div>
             </div>
             <div
                 className={cn(
@@ -318,7 +573,47 @@ const ColorPick = ({ variable, onChange, label, theme, ...props }: ColorPickProp
                 onChange={(v) => onChange(formatColorForTailwind(v.toString('hsl')))}
                 value={variable}
             />
-            <span className='w-full text-xs'>{label}</span>
+            <span className='w-full text-xs font-mono'>{label}</span>
         </div>
+    )
+}
+
+interface ColorPresetPickerProps extends ListBoxItemProps {
+    color: TailwindBaseColors | RadixBaseColors | TailwindColors | RadixColors
+}
+
+const ColorPresetPicker = ({ color, textValue, ...props }: ColorPresetPickerProps) => {
+    return (
+        <ListBoxItem
+            {...props}
+            className={cn(
+                buttonVariants({
+                    size: 'sm',
+                    variant: 'outline',
+                    className: 'justify-start text-xs cursor-pointer [&_svg]:size-3'
+                })
+            )}
+        >
+            {({ isSelected }) => (
+                <>
+                    <span
+                        className={cn(
+                            'mr-1 flex size-4 shrink-0 border -translate-x-1 items-center justify-center rounded',
+                            color
+                        )}
+                    >
+                        {isSelected && (
+                            <IconCheck
+                                className={cn(
+                                    'text-white',
+                                    color === 'zinc' && 'text-black'
+                                )}
+                            />
+                        )}
+                    </span>
+                    {textValue}
+                </>
+            )}
+        </ListBoxItem>
     )
 }

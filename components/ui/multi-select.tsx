@@ -25,7 +25,7 @@ import { VisuallyHidden } from './visually-hidden'
 
 const multiSelectStyles = tv({
     slots: {
-        multiSelectField: 'group flex w-full min-w-80 flex-col gap-1',
+        multiSelectField: 'group flex w-full min-w-fit flex-col gap-1',
         multiSelect: [
             'relative px-1 flex min-h-10 flex-row flex-wrap items-center rounded-lg shadow-sm border transition duration-200',
             'has-[input[data-focused=true]]:border-primary',

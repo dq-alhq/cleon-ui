@@ -2,7 +2,6 @@ import React from 'react'
 
 import type { Docs } from '#site/content'
 import { type ClassValue, clsx } from 'clsx'
-import ntc from 'ntcjs'
 import { twMerge } from 'tailwind-merge'
 
 export const cn = (...inputs: ClassValue[]) => twMerge(clsx(inputs))
@@ -68,6 +67,7 @@ export function slugify(string: string) {
         .replace(/[^a-z0-9 ]/gi, '')
         .trim()
         .replace(/\s+/g, '-')
+        .toLowerCase()
 }
 
 export function getDocsByTagReferences(docs: Array<Docs>, tag: string) {
@@ -161,50 +161,4 @@ export function convertSvgToJsx(svgString: string): string {
     }
 
     return transformNode(svgElement)
-}
-
-export const formatColorForTailwind = (colorString: string): string => {
-    return colorString
-        .replace(/(rgb|rgba|hsl|hsla|hsb|hsba|oklch)[(a]?/g, '')
-        .replace(/[()]/g, '')
-        .replace(/,\s*/g, ' ')
-        .trim()
-}
-
-export const formatColorFromTailwind = (colorString: string, format = 'hsl'): string => {
-    return format + '(' + colorString.replace(/ /g, ', ') + ')'
-}
-
-export const getColorName = ({
-    color,
-    slug = true,
-    type = 'hex'
-}: {
-    color: string
-    slug?: boolean
-    type?: 'hex' | 'hsl'
-}) => {
-    if (type === 'hex') {
-        const n_match = ntc.name(color)
-        return slug ? slugify(n_match[1]) : n_match[1]
-    } else if (type === 'hsl') {
-        const h = Number(color.split(' ')[0])
-        const s = Number(color.split(' ')[1].replace('%', ''))
-        const l = Number(color.split(' ')[2].replace('%', ''))
-
-        const hDecimal = l / 100
-        const a = (s * Math.min(hDecimal, 1 - hDecimal)) / 100
-        const f = (n: number) => {
-            const k = (n + h / 30) % 12
-            const color = hDecimal - a * Math.max(Math.min(k - 3, 9 - k, 1), -1)
-
-            // Convert to Hex and prefix with "0" if required
-            return Math.round(255 * color)
-                .toString(16)
-                .padStart(2, '0')
-        }
-        const parsedColor = `#${f(0)}${f(8)}${f(4)}`
-        const n_match = ntc.name(parsedColor)
-        return slug ? slugify(n_match[1]) : n_match[1]
-    }
 }

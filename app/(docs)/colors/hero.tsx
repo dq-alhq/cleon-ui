@@ -2,8 +2,6 @@
 
 import { Header, Text } from 'react-aria-components'
 
-import { Link } from '@/components/ui'
-
 export function Hero() {
     return (
         <div className='relative isolate overflow-hidden bg-background'>
@@ -46,20 +44,13 @@ export function Hero() {
                 <div className='container'>
                     <Header>
                         <h1 className='max-w-xl text-2xl font-bold lg:text-5xl mb-2 lg:mb-6'>
-                            THEMES
+                            COLORS
                         </h1>
                         <Text className='text-base lg:text-xl max-w-2xl block leading-relaxed text-muted-foreground'>
-                            You can always fully customize this UI design with your favor
-                            <br />
-                            head to{' '}
-                            <code className='font-semibold text-primary'>.css</code> file
-                            and add your own styles
+                            Let's generate color palette based on your favor.
                         </Text>
-                        <Text className='text-base mt-2 lg:text-xl max-w-2xl block leading-relaxed text-muted-foreground'>
-                            Feel free to find an inspiration from{' '}
-                            <Link variant='danger' href='/colors'>
-                                Colors Page
-                            </Link>
+                        <Text className='text-base mt-2 lg:text-xl max-w-2xl block leading-relaxed text-warning'>
+                            This project still in experimental state
                         </Text>
                     </Header>
                 </div>

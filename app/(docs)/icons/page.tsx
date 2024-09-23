@@ -25,12 +25,14 @@ export default async function IconsPage({
     return (
         <main className='min-h-screen flex flex-col'>
             <Hero />
-            <div className='container rounded-b-lg bg-background/60 backdrop-blur-xl flex flex-col-reverse sm:flex-row gap-3 justify-between items-center sticky top-12 lg:top-14 py-6 z-10'>
-                <SearchIcon />
-                <div className='flex gap-2 items-center w-full sm:w-auto'>
-                    <SelectColor />
-                    <SelectStroke />
-                    <SelectSize />
+            <div className='rounded-b-lg w-full bg-background/60 backdrop-blur-xl sticky top-12 lg:top-14 py-6 z-10'>
+                <div className='container flex flex-col-reverse sm:flex-row gap-3 justify-between items-center '>
+                    <SearchIcon />
+                    <div className='flex gap-2 items-center w-full sm:w-auto'>
+                        <SelectColor />
+                        <SelectStroke />
+                        <SelectSize />
+                    </div>
                 </div>
             </div>
             <div className='container py-4 flex w-full flex-col lg:flex-row gap-8 items-start'>

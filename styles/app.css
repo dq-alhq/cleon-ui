@@ -4,46 +4,46 @@
 
 @layer base {
     :root {
-        --background: 0 0% 98.04%;
-        --foreground: 240 10% 3.92%;
-        --primary: 240 100% 33.33%;
-        --primary-foreground: 0 0% 98.04%;
-        --secondary: 240 5.03% 64.9%;
-        --secondary-foreground: 240 5.88% 10%;
-        --danger: 346.84 77.17% 49.8%;
-        --danger-foreground: 0 0% 98.04%;
-        --success: 120 100% 19.61%;
-        --success-foreground: 0 0% 98.04%;
-        --info: 280.13 60.63% 49.8%;
+        --background: 0 0% 98.04%; /* zinc-50 */
+        --foreground: 240 10% 3.92%; /* zinc-950 */
+        --primary: 224.3 76.3% 48%; /* blue-700 */
+        --primary-foreground: 0 0% 98.04%; /* zinc-50 */
+        --secondary: 211.7 96.4% 78.4%; /* blue-300 */
+        --secondary-foreground: 226.2 57% 21%; /* blue-950 */
+        --danger: 0 72.22% 50.59%; /* red-600 */
+        --danger-foreground: 0 0% 98.04%; /* zinc-50 */
+        --success: 142.1 76.2% 36.3%; /* green-700 */
+        --success-foreground: 0 0% 98.04%; /* zinc-50 */
+        --warning: 24.6 95% 53.1%; /* orange-500 */
+        --warning-foreground: 0 0% 98.04%; /* zinc-50 */
+        --info: 294.7 72.4% 39.8%; /* fuchsia-500 */
         --info-foreground: 0 0% 98.04%;
-        --warning: 32.94 100% 50%;
-        --warning-foreground: 0 0% 98.04%;
-        --dark: 240 10% 4%;
-        --dark-foreground: 0 0% 98.04%;
-        --muted: 240 4.88% 83.92%;
-        --muted-foreground: 240 3.83% 46.08%;
+        --dark: 240 10% 4%; /* zinc-950 */
+        --dark-foreground: 0 0% 98.04%; /* zinc-50 */
+        --muted: 240 4.88% 83.92%; /* zinc-300 */
+        --muted-foreground: 240 3.83% 46.08%; /* zinc-500 */
         --radius: 0.5rem;
     }
 
     .dark {
-        --background: 240 10% 3.92%;
-        --foreground: 0 0% 98.04%;
-        --primary: 240 67.06% 50%;
-        --primary-foreground: 0 0% 98.04%;
-        --secondary: 240 5.2% 33.92%;
-        --secondary-foreground: 0 0% 98.04%;
-        --danger: 348 83.33% 47.06%;
+        --background: 240 10% 3.92%; /* zinc-950 */
+        --foreground: 0 0% 98.04%; /* zinc-50 */
+        --primary: 221.2 83.2% 53.3%; /* blue-600 */
+        --primary-foreground: 0 0% 98.04%; /* zinc-50 */
+        --secondary: 226.2 57% 21%; /* blue-950 */
+        --secondary-foreground: 211.7 96.4% 78.4%; /* blue-300 */
+        --danger: 0 72.2% 50.6%; /* red-600 */
         --danger-foreground: 0 0% 98.04%;
-        --success: 120 49.7% 32.75%;
+        --success: 142.1 76.2% 36.3%; /* green-700 */
         --success-foreground: 0 0% 98.04%;
-        --info: 280.31 59.81% 58.04%;
-        --info-foreground: 0 0% 98.04%;
-        --warning: 32 95% 44%;
+        --warning: 17.5 88.3% 40.4%; /* orange-700 */
         --warning-foreground: 0 0% 98.04%;
+        --info: 294.7 72.4% 39.8%; /* fuchsia-700 */
+        --info-foreground: 0 0% 98.04%;
         --dark: 0 0% 98.04%;
         --dark-foreground: 240 10% 3.92%;
-        --muted: 240 3.7% 15.88%;
-        --muted-foreground: 240 5.03% 64.9%;
+        --muted: 240 3.7% 15.88%; /* zinc-800 */
+        --muted-foreground: 240 5.03% 64.9%; /* zinc-400 */
     }
 }
 
