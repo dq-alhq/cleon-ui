@@ -50,7 +50,7 @@ const Body = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => 
 
 const popoverContentStyles = tv({
     base: [
-        'max-w-xs min-w-80 p-4 rounded-xl border bg-background bg-clip-padding text-foreground shadow-sm dark:backdrop-blur-2xl dark:backdrop-saturate-200 lg:text-sm sm:max-w-3xl forced-colors:bg-[Canvas]'
+        'max-w-xs min-w-80 p-4 rounded-lg border bg-background bg-clip-padding text-foreground shadow-sm dark:backdrop-blur-2xl dark:backdrop-saturate-200 lg:text-sm sm:max-w-3xl forced-colors:bg-[Canvas]'
     ],
     variants: {
         isMenu: {
@@ -75,8 +75,8 @@ const drawerStyles = tv({
     ],
     variants: {
         isMenu: {
-            true: 'p-0 [&_[role=dialog]]:px-0 rounded-t-xl',
-            false: 'py-4 rounded-t-3xl'
+            true: 'p-0 [&_[role=dialog]]:px-0 rounded-t-lg',
+            false: 'py-4 rounded-t-lg'
         },
         isEntering: {
             true: [

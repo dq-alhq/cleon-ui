@@ -24,20 +24,21 @@ import {
 } from '@/lib/colors'
 import { cn, titleCase } from '@/lib/utils'
 
-import DataFormSink from '../../sink/data-form'
-import OptionsSink from '../../sink/options'
+import ThemeContainer from '../theme-container'
 import './color.css'
-import { FontNames, type FontNamesProps } from './fonts'
+import { FontsMono, FontsSans, type FontsMonoName, type FontsSansName } from './fonts'
 import {
     defaultColors,
     radixBaseColors,
     radixColors,
     tailwindBaseColors,
     tailwindColors,
+    themedColors,
     type RadixBaseColors,
     type RadixColors,
     type TailwindBaseColors,
-    type TailwindColors
+    type TailwindColors,
+    type ThemedColors
 } from './presets'
 import { VariablesPreset, type VariablesPresetProps } from './variables-preset'
 
@@ -79,7 +80,7 @@ export default function ThemeCustomizer() {
         '--info-foreground': '0 0% 98.04%',
         '--dark': '0 0% 98.04%',
         '--dark-foreground': '240 10% 3.92%',
-        '--muted': '240 3.7% 15.88%',
+        '--muted': '240 5.2% 33.92%',
         '--muted-foreground': '240 5.03% 64.9%'
     })
     const [radius, setRadius] = React.useState(0.5)
@@ -87,10 +88,12 @@ export default function ThemeCustomizer() {
     const [baseColor, setBaseColor] = React.useState<
         TailwindBaseColors | RadixBaseColors
     >('zinc')
-    const [accentColor, setAccentColor] = React.useState<TailwindColors | RadixColors>(
-        'tw-blue'
+    const [accentColor, setAccentColor] = React.useState<
+        TailwindColors | RadixColors | ThemedColors
+    >('tw-blue')
+    const [preset, setPreset] = React.useState<'tailwind' | 'radix' | 'themed'>(
+        'tailwind'
     )
-    const [preset, setPreset] = React.useState<'tailwind' | 'radix'>('tailwind')
 
     function handleBaseColor(
         v: TailwindBaseColors | RadixBaseColors,
@@ -111,8 +114,8 @@ export default function ThemeCustomizer() {
         }
     }
     function handleAccentColor(
-        v: TailwindColors | RadixColors,
-        preset: 'tailwind' | 'radix'
+        v: TailwindColors | RadixColors | ThemedColors,
+        preset: 'tailwind' | 'radix' | 'themed'
     ) {
         setAccentColor(v)
         setPreset(preset)
@@ -121,31 +124,46 @@ export default function ThemeCustomizer() {
             setLightVars({ ...lightVars, ...tailwindColors[v.currentKey].light })
             // @ts-ignore
             setDarkVars({ ...darkVars, ...tailwindColors[v.currentKey].dark })
-        } else {
+        } else if (preset === 'radix') {
             // @ts-ignore
             setLightVars({ ...lightVars, ...radixColors[v.currentKey].light })
             // @ts-ignore
             setDarkVars({ ...darkVars, ...radixColors[v.currentKey].dark })
+        } else {
+            // @ts-ignore
+            setLightVars({ ...lightVars, ...themedColors[v.currentKey].light })
+            // @ts-ignore
+            setDarkVars({ ...darkVars, ...themedColors[v.currentKey].dark })
+            // @ts-ignore
+            setRadius(themedColors[v.currentKey].radius)
         }
     }
 
     function setDefault() {
         setLightVars(defaultColors.light)
         setDarkVars(defaultColors.dark)
+        setRadius(defaultColors.radius)
     }
 
     const { resolvedTheme } = useTheme()
-    const [themeId, setThemeId] = React.useState<'tailwind' | 'radix'>('tailwind')
+    const [themeId, setThemeId] = React.useState<'tailwind' | 'radix' | 'themed'>(
+        'tailwind'
+    )
     const themeContainerRef = React.useRef<HTMLDivElement>(null)
 
-    const [font, setFont] = React.useState<FontNamesProps>('Geist')
+    const [font, setFont] = React.useState<FontsSansName>('Geist')
+
+    const [fontMono, setFontMono] = React.useState<FontsMonoName>('Geist Mono')
+
+    console.log(FontsSans[font])
 
     React.useEffect(() => {
-        const applyTheme = (theme: 'tailwind' | 'radix') => {
+        const applyTheme = (theme: 'tailwind' | 'radix' | 'themed') => {
             localStorage.setItem('theme-id', theme)
             setThemeId(theme)
 
-            const themeContainer = themeContainerRef.current
+            const themeContainer = document.getElementsByTagName('html')[0]
+            // const themeContainer = themeContainerRef.current
 
             if (themeContainer) {
                 const themeVariables = resolvedTheme === 'dark' ? darkVars : lightVars
@@ -156,13 +174,24 @@ export default function ThemeCustomizer() {
                     )
                 })
                 themeContainer.style.setProperty('--radius', `${radius}rem`)
+                themeContainer.style.setProperty(
+                    '--font-sans',
+                    `"${FontsSans[font]}", sans-serif`
+                )
+                themeContainer.style.setProperty(
+                    '--font-mono',
+                    `"${FontsMono[fontMono]}", monospace`
+                )
             }
         }
 
         localStorage.setItem('theme-id', themeId)
-        const savedTheme = localStorage.getItem('theme-id') as 'tailwind' | 'radix'
+        const savedTheme = localStorage.getItem('theme-id') as
+            | 'tailwind'
+            | 'radix'
+            | 'themed'
         applyTheme(savedTheme)
-    }, [themeId, resolvedTheme, lightVars, darkVars, baseColor, radius])
+    }, [themeId, resolvedTheme, lightVars, darkVars, baseColor, radius, font, fontMono])
 
     function getStyleCss() {
         return `@tailwind base;
@@ -172,7 +201,7 @@ export default function ThemeCustomizer() {
 @layer base {
     :root {
         --font-sans: "${font}", sans-serif;
-        --font-mono: "Fira Code", monospace;
+        --font-mono: "${fontMono}", monospace;
         ${Object.keys(lightVars)
             .map(
                 (key) =>
@@ -263,24 +292,46 @@ export default function ThemeCustomizer() {
                                     </Popover.Close>
                                 </Popover.Header>
                                 <Popover.Body className='mt-2 space-y-2'>
-                                    <Select
-                                        label='Font'
-                                        selectedKey={font}
-                                        onSelectionChange={(v) => setFont(v as any)}
-                                        items={Object.keys(FontNames).map((key) => ({
-                                            id: key,
-                                            textValue: titleCase(key)
-                                        }))}
-                                    >
-                                        {(item) => (
-                                            <Select.Item
-                                                key={item.id}
-                                                textValue={item.textValue}
-                                            >
-                                                {item.textValue}
-                                            </Select.Item>
-                                        )}
-                                    </Select>
+                                    <div className='grid grid-cols-2 gap-2 w-full'>
+                                        <Select
+                                            label='Font Sans'
+                                            selectedKey={font}
+                                            onSelectionChange={(v) => setFont(v as any)}
+                                            items={Object.keys(FontsSans).map((key) => ({
+                                                id: key,
+                                                textValue: titleCase(key)
+                                            }))}
+                                        >
+                                            {(item) => (
+                                                <Select.Item
+                                                    key={item.id}
+                                                    textValue={item.textValue}
+                                                >
+                                                    {item.textValue}
+                                                </Select.Item>
+                                            )}
+                                        </Select>
+                                        <Select
+                                            label='Font Mono'
+                                            selectedKey={fontMono}
+                                            onSelectionChange={(v) =>
+                                                setFontMono(v as any)
+                                            }
+                                            items={Object.keys(FontsMono).map((key) => ({
+                                                id: key,
+                                                textValue: titleCase(key)
+                                            }))}
+                                        >
+                                            {(item) => (
+                                                <Select.Item
+                                                    key={item.id}
+                                                    textValue={item.textValue}
+                                                >
+                                                    {item.textValue}
+                                                </Select.Item>
+                                            )}
+                                        </Select>
+                                    </div>
                                     <Tabs>
                                         <Tabs.List>
                                             <Tabs.Label id='light'>Light</Tabs.Label>
@@ -374,6 +425,7 @@ export default function ThemeCustomizer() {
                                                 Tailwind
                                             </Tabs.Label>
                                             <Tabs.Label id='radix'>Radix</Tabs.Label>
+                                            <Tabs.Label id='themed'>Brands</Tabs.Label>
                                         </Tabs.List>
                                         <Tabs.Content id='tailwind'>
                                             <Label htmlFor='base_color'>Base Color</Label>
@@ -513,6 +565,39 @@ export default function ThemeCustomizer() {
                                                 )}
                                             </ListBox>
                                         </Tabs.Content>
+                                        <Tabs.Content id='themed'>
+                                            <ListBox
+                                                aria-label='themed_color'
+                                                className='grid grid-cols-2 gap-2 sm:grid-cols-3 mt-2'
+                                                disallowEmptySelection
+                                                selectionMode='single'
+                                                selectedKeys={accentColor}
+                                                onSelectionChange={(v) =>
+                                                    handleAccentColor(
+                                                        v as ThemedColors,
+                                                        'themed'
+                                                    )
+                                                }
+                                                items={Object.keys(themedColors).map(
+                                                    (item) => ({
+                                                        id: item,
+                                                        textValue: item as ThemedColors
+                                                    })
+                                                )}
+                                            >
+                                                {(item) => (
+                                                    <ColorPresetPicker
+                                                        id={item.id}
+                                                        key={item.id}
+                                                        color={item.textValue}
+                                                        textValue={item.textValue.replace(
+                                                            '-',
+                                                            ' '
+                                                        )}
+                                                    />
+                                                )}
+                                            </ListBox>
+                                        </Tabs.Content>
                                     </Tabs>
                                     <Button onPress={setDefault} variant='outline'>
                                         Default
@@ -526,28 +611,12 @@ export default function ThemeCustomizer() {
             </div>
             <div
                 className={cn(
-                    'bg-background mb-6 border-secondary-foreground/10 text-foreground',
-                    FontNames[font]
+                    'bg-background mb-6 border-secondary-foreground/10 font-sans text-foreground',
+                    FontsSans[font]
                 )}
                 ref={themeContainerRef}
             >
-                <div className='container w-full flex flex-col gap-6 items-center py-6'>
-                    <div className='w-full flex gap-2 items-center justify-around flex-wrap p-4 rounded-lg border'>
-                        {Object.keys(buttonVariants.variants.variant).map((variant) => (
-                            <Button key={variant} variant={variant as any}>
-                                {variant}
-                            </Button>
-                        ))}
-                    </div>
-                    <div className='flex flex-col lg:flex-row items-start gap-6 justify-between w-full'>
-                        <div className='w-full'>
-                            <DataFormSink />
-                        </div>
-                        <div className='w-full'>
-                            <OptionsSink />
-                        </div>
-                    </div>
-                </div>
+                <ThemeContainer />
             </div>
         </>
     )
@@ -579,7 +648,12 @@ const ColorPick = ({ variable, onChange, label, theme, ...props }: ColorPickProp
 }
 
 interface ColorPresetPickerProps extends ListBoxItemProps {
-    color: TailwindBaseColors | RadixBaseColors | TailwindColors | RadixColors
+    color:
+        | TailwindBaseColors
+        | RadixBaseColors
+        | TailwindColors
+        | RadixColors
+        | ThemedColors
 }
 
 const ColorPresetPicker = ({ color, textValue, ...props }: ColorPresetPickerProps) => {
@@ -598,18 +672,11 @@ const ColorPresetPicker = ({ color, textValue, ...props }: ColorPresetPickerProp
                 <>
                     <span
                         className={cn(
-                            'mr-1 flex size-4 shrink-0 border -translate-x-1 items-center justify-center rounded',
+                            'mr-1 flex size-4 text-white shrink-0 border -translate-x-1 items-center justify-center rounded',
                             color
                         )}
                     >
-                        {isSelected && (
-                            <IconCheck
-                                className={cn(
-                                    'text-white',
-                                    color === 'zinc' && 'text-black'
-                                )}
-                            />
-                        )}
+                        {isSelected && <IconCheck />}
                     </span>
                     {textValue}
                 </>

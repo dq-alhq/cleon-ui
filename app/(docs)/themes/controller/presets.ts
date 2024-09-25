@@ -8,36 +8,6 @@ type ThemeStyle = {
 }
 
 export const radixColors: Record<RadixColors, ThemeStyle> = {
-    shadcn: {
-        light: {
-            '--primary': '240 5.9% 10%',
-            '--primary-foreground': '0 0% 98%',
-            '--secondary': '240 5.03% 64.9%',
-            '--secondary-foreground': '240 5.9% 10%',
-            '--danger': '10 78% 54%',
-            '--danger-foreground': '0 0% 98%',
-            '--success': '131 43% 43%',
-            '--success-foreground': '0 0% 98%',
-            '--warning': '24 100% 47%',
-            '--warning-foreground': '0 0% 98%',
-            '--info': '272 45% 50%',
-            '--info-foreground': '0 0% 98%'
-        },
-        dark: {
-            '--primary': '0 0% 98%',
-            '--primary-foreground': '240 5.9% 10%',
-            '--secondary': '240 3.7% 15.88%',
-            '--secondary-foreground': '0 0% 98%',
-            '--danger': '10 73% 51%',
-            '--danger-foreground': '0 0% 98%',
-            '--success': '132 50% 33%',
-            '--success-foreground': '0 0% 98%',
-            '--warning': '23 93% 53%',
-            '--warning-foreground': '0 0% 98%',
-            '--info': '272 51% 54%',
-            '--info-foreground': '0 0% 98%'
-        }
-    },
     tomato: {
         light: {
             '--primary': '10 78% 54%',
@@ -1564,6 +1534,225 @@ export const defaultColors = {
         '--dark-foreground': '240 10% 3.92%',
         '--muted': '240 3.7% 15.88%',
         '--muted-foreground': '240 5.03% 64.9%'
+    },
+    radius: 0.5
+}
+
+export const themedColors = {
+    Shadcn: {
+        light: {
+            '--background': '0 0% 98.04%',
+            '--foreground': '240 10% 3.92%',
+            '--muted': '240 4.88% 83.92%',
+            '--muted-foreground': '240 3.83% 46.08%',
+            '--dark': '240 10% 3.92%',
+            '--dark-foreground': '0 0% 98.04%',
+            '--primary': '240 5.9% 10%',
+            '--primary-foreground': '0 0% 98%',
+            '--secondary': '240 5.03% 64.9%',
+            '--secondary-foreground': '240 5.9% 10%',
+            '--danger': '10 78% 54%',
+            '--danger-foreground': '0 0% 98%',
+            '--success': '131 43% 43%',
+            '--success-foreground': '0 0% 98%',
+            '--warning': '24 100% 47%',
+            '--warning-foreground': '0 0% 98%',
+            '--info': '272 45% 50%',
+            '--info-foreground': '0 0% 98%'
+        },
+        dark: {
+            '--background': '240 10% 3.92%',
+            '--foreground': '0 0% 98.04%',
+            '--muted': '240 3.7% 15.88%',
+            '--muted-foreground': '240 5.03% 64.9%',
+            '--dark': '0 0% 98.04%',
+            '--dark-foreground': '240 10% 3.92%',
+            '--primary': '0 0% 98%',
+            '--primary-foreground': '240 5.9% 10%',
+            '--secondary': '240 3.7% 15.88%',
+            '--secondary-foreground': '0 0% 98%',
+            '--danger': '10 73% 51%',
+            '--danger-foreground': '0 0% 98%',
+            '--success': '132 50% 33%',
+            '--success-foreground': '0 0% 98%',
+            '--warning': '23 93% 53%',
+            '--warning-foreground': '0 0% 98%',
+            '--info': '272 51% 54%',
+            '--info-foreground': '0 0% 98%'
+        },
+        radius: 0.55
+    },
+    Bootstrap: {
+        light: {
+            '--background': '0 0% 100%',
+            '--foreground': '210 10.81% 14.51%',
+            '--primary': '215.75 98.36% 52.16%',
+            '--primary-foreground': '0 0% 100%',
+            '--secondary': '208.24 7.3% 45.69%',
+            '--secondary-foreground': '0 0% 100%',
+            '--danger': '354.25 70.46% 53.53%',
+            '--danger-foreground': '0 0% 100%',
+            '--success': '152.18 68.75% 31.37%',
+            '--success-foreground': '0 0% 100%',
+            '--warning': '45 100% 51.37%',
+            '--warning-foreground': '210 10.81% 14.51%',
+            '--info': '190.04 89.72% 49.61%',
+            '--info-foreground': '210 10.81% 14.51%',
+            '--dark': '210 10.81% 14.51%',
+            '--dark-foreground': '0 0% 100%',
+            '--muted': '210 15.79% 92.55%',
+            '--muted-foreground': '208.24 7.3% 45.69%'
+        },
+        dark: {
+            '--background': '210 10.81% 14.51%',
+            '--foreground': '0 0% 100%',
+            '--primary': '220.33 100% 64.12%',
+            '--primary-foreground': '0 0% 100%',
+            '--secondary': '208.24 7.36% 54.71%',
+            '--secondary-foreground': '0 0% 100%',
+            '--danger': '356.79 93.33% 64.71%',
+            '--danger-foreground': '0 0% 100%',
+            '--success': '148.82 47.22% 42.35%',
+            '--success-foreground': '0 0% 100%',
+            '--warning': '49.12 100% 60%',
+            '--warning-foreground': '210 10.81% 14.51%',
+            '--info': '189.18 100% 64.12%',
+            '--info-foreground': '210 10.81% 14.51%',
+            '--dark': '0 0% 100%',
+            '--dark-foreground': '210 10.81% 14.51%',
+            '--muted': '210 10.81% 70.98%',
+            '--muted-foreground': '0 0% 50%'
+        },
+        radius: 0.5
+    },
+    MUI: {
+        light: {
+            '--background': '0 0% 100%',
+            '--foreground': '0 0% 0%',
+            '--primary': '209.84 78.72% 46.08%',
+            '--primary-foreground': '0 0% 100%',
+            '--secondary': '291.24 63.72% 42.16%',
+            '--secondary-foreground': '0 0% 100%',
+            '--danger': '0 65.08% 50.59%',
+            '--danger-foreground': '0 0% 100%',
+            '--success': '123.04 46.2% 33.53%',
+            '--success-foreground': '0 0% 100%',
+            '--warning': '27.06 98.33% 46.86%',
+            '--warning-foreground': '210 10.81% 14.51%',
+            '--info': '201.16 98.1% 41.37%',
+            '--info-foreground': '210 10.81% 14.51%',
+            '--dark': '0 0% 0%',
+            '--dark-foreground': '0 0% 100%',
+            '--muted': '0 0% 87.84%',
+            '--muted-foreground': '0 0% 40%'
+        },
+        dark: {
+            '--background': '0 0% 0%',
+            '--foreground': '0 0% 100%',
+            '--primary': '206.86 89.74% 77.06%',
+            '--primary-foreground': '0 0% 12.94%',
+            '--secondary': '291.3 46.94% 71.18%',
+            '--secondary-foreground': '0 0% 12.94%',
+            '--danger': '4.11 89.62% 58.43%',
+            '--danger-foreground': '0 0% 100%',
+            '--success': '122.82 38.46% 56.67%',
+            '--success-foreground': '0 0% 12.94%',
+            '--warning': '35.67 100% 57.45%',
+            '--warning-foreground': '0 0% 12.94%',
+            '--info': '198.73 91.93% 56.27%',
+            '--info-foreground': '0 0% 12.94%',
+            '--dark': '0 0% 100%',
+            '--dark-foreground': '0 0% 0%',
+            '--muted': '0 0% 40%',
+            '--muted-foreground': '0 0% 60%'
+        },
+        radius: 0.3
+    },
+    'Ant-Design': {
+        light: {
+            '--background': '0 0% 100%',
+            '--foreground': '0 0% 0%',
+            '--primary': '215.02 100% 54.31%',
+            '--primary-foreground': '0 0% 100%',
+            '--secondary': '180 82.16% 41.76%',
+            '--secondary-foreground': '0 0% 100%',
+            '--danger': '359.33 100% 65.1%',
+            '--danger-foreground': '0 0% 100%',
+            '--success': '100.24 76.58% 43.53%',
+            '--success-foreground': '0 0% 100%',
+            '--warning': '39.91 95.83% 52.94%',
+            '--warning-foreground': '0 0% 100%',
+            '--info': '265.03 63.92% 50%',
+            '--info-foreground': '0 0% 100%',
+            '--dark': '0 0% 0%',
+            '--dark-foreground': '0 0% 100%',
+            '--muted': '0 0% 87.84%',
+            '--muted-foreground': '0 0% 40%'
+        },
+        dark: {
+            '--background': '0 0% 0%',
+            '--foreground': '0 0% 100%',
+            '--primary': '215.02 100% 54.31%',
+            '--primary-foreground': '0 0% 100%',
+            '--secondary': '180 82.16% 41.76%',
+            '--secondary-foreground': '0 0% 100%',
+            '--danger': '359.33 100% 65.1%',
+            '--danger-foreground': '0 0% 100%',
+            '--success': '100.24 76.58% 43.53%',
+            '--success-foreground': '0 0% 100%',
+            '--warning': '39.91 95.83% 52.94%',
+            '--warning-foreground': '0 0% 100%',
+            '--info': '265.03 63.92% 50%',
+            '--info-foreground': '0 0% 100%',
+            '--dark': '0 0% 100%',
+            '--dark-foreground': '0 0% 0%',
+            '--muted': '0 0% 40%',
+            '--muted-foreground': '0 0% 60%'
+        },
+        radius: 0.3
+    },
+    'Next-UI': {
+        light: {
+            '--background': '0 0% 100%',
+            '--foreground': '201.819 24.44% 8.82%',
+            '--primary': '212.0198 100% 46.67%',
+            '--primary-foreground': '0 0% 100%',
+            '--secondary': '270 66.67% 47.06%',
+            '--secondary-foreground': '0 0% 100%',
+            '--danger': '339.201 90.36% 51.18%',
+            '--danger-foreground': '0 0% 100%',
+            '--success': '100.24 76.58% 43.53%',
+            '--success-foreground': '0 0% 0%',
+            '--warning': '37.0298 91.27% 55.1%',
+            '--warning-foreground': '0 0% 0%',
+            '--info': '190 95.45% 74.12%',
+            '--info-foreground': '0 0% 0%',
+            '--dark': '0 0% 0%',
+            '--dark-foreground': '0 0% 100%',
+            '--muted': '240 4.88% 83.92%',
+            '--muted-foreground': '0 0% 40%'
+        },
+        dark: {
+            '--background': '0 0% 0%',
+            '--foreground': '210 5.56% 92.94%',
+            '--primary': '240 5.26% 26.08%',
+            '--primary-foreground': '0 0% 100%',
+            '--secondary': '270 59.26% 57.65%',
+            '--secondary-foreground': '0 0% 100%',
+            '--danger': '339.201 90.36% 51.18%',
+            '--danger-foreground': '0 0% 100%',
+            '--success': '145.961 79.46% 43.92%',
+            '--success-foreground': '0 0% 0%',
+            '--warning': '37.029 91.27% 55.1%',
+            '--warning-foreground': '0 0% 0%',
+            '--info': '190 95.45% 74.12%',
+            '--info-foreground': '0 0% 0%',
+            '--dark': '0 0% 100%',
+            '--dark-foreground': '0 0% 0%',
+            '--muted': '240 5.26% 26.08%',
+            '--muted-foreground': '0 0% 60%'
+        },
+        radius: 0.875
     }
 }
 
@@ -1594,7 +1783,6 @@ export type TailwindBaseColors =
     | 'tw-stone'
 
 export type RadixColors =
-    | 'shadcn'
     | 'tomato'
     | 'red'
     | 'ruby'
@@ -1629,3 +1817,5 @@ export type RadixBaseColors =
     | 'sage'
     | 'sand'
     | 'slate'
+
+export type ThemedColors = 'Shadcn' | 'Bootstrap' | 'MUI' | 'Ant-Design' | 'Next-UI'

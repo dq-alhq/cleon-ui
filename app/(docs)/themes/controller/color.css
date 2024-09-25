@@ -74,7 +74,7 @@
     background-color: #7ce2fe;
 }
 .zinc {
-    background-color: #fafafa;
+    background-color: #71717a;
 }
 .gray {
     background-color: #8d8d8d;
@@ -161,4 +161,22 @@
 }
 .tw-rose {
     background-color: #f43f5e;
+}
+
+.Bootstrap {
+    background-color: #712cf9;
+}
+
+.MUI {
+    background-color: #2196f3;
+}
+
+.Ant-Design {
+    background-color: #1677ff;
+}
+.Shadcn {
+    background-color: #000000;
+}
+.Next-UI {
+    background-color: #7828c8;
 }

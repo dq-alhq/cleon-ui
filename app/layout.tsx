@@ -10,11 +10,11 @@ import '@/styles/app.css'
 import { Analytics } from '@vercel/analytics/react'
 
 const fontSans = localFont({
-    src: './fonts/GeistVF.woff',
+    src: './fonts/sans/GeistVF.woff',
     variable: '--font-sans'
 })
 const fontMono = localFont({
-    src: './fonts/GeistMonoVF.woff',
+    src: './fonts/mono/GeistMonoVF.woff',
     variable: '--font-mono'
 })
 

@@ -89,7 +89,7 @@ function TocLink({
                 className={cn(
                     'block font-medium no-underline outline-none lg:text-[0.885rem]',
                     item.url.split('#')[1] === activeId
-                        ? 'text-accent'
+                        ? 'text-primary'
                         : 'text-foreground'
                 )}
                 href={item.url}

@@ -15,7 +15,7 @@ import { cn } from '@/lib/utils'
 import { DropdownItemDetails, DropdownSection } from './dropdown'
 
 const listBoxStyles = tv({
-    base: 'flex max-h-96 w-full min-w-72 flex-col overflow-y-auto rounded-xl border p-1 shadow-xl outline-none'
+    base: 'flex max-h-96 w-full min-w-72 flex-col overflow-y-auto rounded-lg border p-1 shadow-xl outline-none'
 })
 
 interface ListBoxProps<T> extends ListBoxPrimitiveProps<T> {
@@ -33,7 +33,7 @@ const ListBox = <T extends object>({
 )
 
 const listBoxItemStyles = tv({
-    base: 'my-0.5 cursor-pointer rounded-md p-2 text-base outline-none transition lg:text-sm',
+    base: 'my-0.5 cursor-pointer rounded-lg p-2 text-base outline-none transition lg:text-sm',
     variants: {
         isHovered: { true: 'bg-secondary text-secondary-foreground' },
         isFocused: {
