@@ -102,6 +102,7 @@ export default function ThemeCustomizer() {
                 ? 'cleon'
                 : localStorage.getItem('theme-id')
         handlePresetChange(savedTheme ?? 'cleon')
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [resolvedTheme])
 
     function getStyleCss() {
