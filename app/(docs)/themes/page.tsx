@@ -1,4 +1,4 @@
-import ThemeCustomizer from './controller/theme-customizer'
+import ThemeCustomizer from './controller/themes'
 import { Hero } from './hero'
 
 export default function ThemesPage() {

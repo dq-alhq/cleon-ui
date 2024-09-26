@@ -38,12 +38,14 @@ export default function ThemeSnippet({ code = 'TEST' }: { code: string }) {
                         Copy this code to your .css file
                     </Modal.Description>
                 </Modal.Header>
-                <Modal.Body>
-                    <CodeHighlighter code={code} lang='css' withImportCopy={false} />
+                <Modal.Body className='relative'>
+                    <div className='absolute right-9 top-4 z-20'>
+                        <CopyButton isCopied={isCopied} onPress={() => handleCopy()} />
+                    </div>
+                    <div className='[&_pre]:my-0 font-mono [&_pre]:!border-0 [&_pre]:max-h-[32rem] [&_pre]:mb-4 no-scrollbar [&_pre]:overflow-auto [&_pre]:no-scrollbar'>
+                        <CodeHighlighter code={code} lang='css' withImportCopy={false} />
+                    </div>
                 </Modal.Body>
-                <Modal.Footer>
-                    <CopyButton isCopied={isCopied} onPress={() => handleCopy()} />
-                </Modal.Footer>
             </Modal.Content>
         </Modal>
     )

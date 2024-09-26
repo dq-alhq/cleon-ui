@@ -163,20 +163,21 @@
     background-color: #f43f5e;
 }
 
-.Bootstrap {
-    background-color: #712cf9;
+.cleon {
+    background-color: #0d6dfd;
 }
-
-.MUI {
-    background-color: #2196f3;
-}
-
-.Ant-Design {
-    background-color: #1677ff;
-}
-.Shadcn {
+.shadcn {
     background-color: #000000;
 }
-.Next-UI {
+.bootstrap {
+    background-color: #712cf9;
+}
+.mui {
+    background-color: #2196f3;
+}
+.antd {
+    background-color: #1677ff;
+}
+.nextui {
     background-color: #7828c8;
 }

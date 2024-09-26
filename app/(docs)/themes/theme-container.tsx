@@ -1,6 +1,5 @@
 import BarChartMixedDemo from '@/components/docs/charts/bar-chart-mixed-demo'
 import GridListDragDemo from '@/components/docs/collections/grid-list-drag-demo'
-import { CodeHighlighter } from '@/components/docs/rehype/code'
 import { Button, buttonVariants } from '@/components/ui'
 
 import DataFormSink from '../sink/data-form'
@@ -26,17 +25,7 @@ export default function ThemeContainer() {
                     <BarChartMixedDemo />
                     <GridListDragDemo />
                 </div>
-                <div className='lg:col-span-2 grid gap-6 items-start'>
-                    <CodeHighlighter
-                        lang='tsx'
-                        code={`export default function Greet(object = 'World'): string {
-    return (
-        <div>
-            Hello {object}, I'm ready to craft an amazing website!
-        </div>
-    )
-}`}
-                    />
+                <div className='lg:col-span-2'>
                     <TableSink />
                 </div>
             </div>

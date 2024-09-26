@@ -40,7 +40,7 @@ function Code({ lang = 'tsx', code }: { lang?: string; code: string }) {
                 />
                 <CopyRawButton code={code} />
             </div>
-            <div className='[&_pre]:my-0 [&_pre]:!border-0 [&_pre]:max-h-[32rem] [&_pre]:pb-[100px] no-scrollbar [&_pre]:overflow-auto [&_pre]:no-scrollbar'>
+            <div className='[&_pre]:my-0 font-mono [&_pre]:!border-0 [&_pre]:max-h-[32rem] [&_pre]:pb-[100px] no-scrollbar [&_pre]:overflow-auto [&_pre]:no-scrollbar'>
                 <CodeHighlighter lang={lang} code={code} />
             </div>
         </div>

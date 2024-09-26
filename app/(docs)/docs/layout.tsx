@@ -5,7 +5,7 @@ import { Aside } from '@/components/aside'
 export default function DocsLayout({ children }: { children: ReactNode }) {
     return (
         <div className='flex w-full flex-col'>
-            <div className='max-w-8xl relative mx-auto flex w-full flex-auto justify-center lg:px-6'>
+            <div className='max-w-8xl relative mx-auto flex w-full bg-background flex-auto justify-center lg:px-6'>
                 <div className='hidden lg:relative lg:block lg:flex-none'>
                     <div className='absolute inset-y-0 right-0 w-[50vw] bg-zinc-50 dark:hidden' />
                     <div className='absolute bottom-0 right-0 top-16 hidden h-12 w-px bg-gradient-to-t from-zinc-800 dark:block' />
