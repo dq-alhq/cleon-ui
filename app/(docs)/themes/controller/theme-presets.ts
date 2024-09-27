@@ -2089,3 +2089,5 @@ export const BrandColors = [
     { name: 'antd', color: '#1677ff', label: 'Ant Design' },
     { name: 'nextui', color: '#7828c8', label: 'Next-UI' }
 ]
+
+export type ThemePreset = keyof typeof Presets

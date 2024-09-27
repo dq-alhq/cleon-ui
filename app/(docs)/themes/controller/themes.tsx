@@ -101,7 +101,12 @@ export default function ThemeCustomizer() {
             localStorage.getItem('theme-id') === 'undefined'
                 ? 'cleon'
                 : localStorage.getItem('theme-id')
-        handlePresetChange(savedTheme ?? 'cleon')
+
+        if (Presets[savedTheme as keyof typeof Presets]) {
+            handlePresetChange(savedTheme ?? 'cleon')
+        } else {
+            handlePresetChange('cleon')
+        }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [resolvedTheme])
 

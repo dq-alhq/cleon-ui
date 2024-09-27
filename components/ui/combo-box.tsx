@@ -24,7 +24,7 @@ const comboboxStyles = tv({
     slots: {
         base: 'group w-full flex flex-col gap-1',
         chevronButton:
-            'h-7 w-8 rounded outline-offset-0 active:bg-transparent hover:bg-transparent pressed:bg-transparent',
+            'h-7 w-8 rounded outline-offset-0 text-muted-foreground active:bg-transparent hover:bg-transparent pressed:bg-transparent',
         chevronIcon:
             'text-muted-foreground transition duration-200 group-open:rotate-180 group-open:text-foreground',
         clearButton:
