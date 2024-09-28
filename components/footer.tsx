@@ -4,14 +4,5 @@ export const Footer = () => (
         <a target='_blank' href='https://github.com/dq-alhq'>
             Diqi Al-Haqqi
         </a>
-        <br />
-        inspired by forked from{' '}
-        <a target='_blank' href='https://justd.co'>
-            Just D.
-        </a>{' '}
-        by{' '}
-        <a target='_blank' href='https://github.com/irsyadadl'>
-            Iryad A. Panjaitan
-        </a>
     </footer>
 )

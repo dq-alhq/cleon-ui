@@ -2,11 +2,12 @@
 
 import React from 'react'
 
-import { ThemeProvider, useTheme } from 'next-themes'
 import { useRouter } from 'next/navigation'
 import { RouterProvider } from 'react-aria-components'
 
 import { Toaster } from '@/components/ui'
+
+import { ThemeProvider, useTheme } from './theme-provider'
 
 declare module 'react-aria-components' {
     interface RouterConfig {

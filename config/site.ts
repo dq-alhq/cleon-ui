@@ -5,9 +5,9 @@ export const siteConfig = {
         'Inspired By shadcn-ui, jolly-ui, and Forked from Just D. by irsyad.co, crafted with Tailwindcss and React-Aria-Component',
     author: 'dq-alhq',
     links: {
-        twitter: 'https://twitter.com/dqnahdliyan',
+        twitter: 'https://x.com/dqalhq',
         github: 'https://github.com/dq-alhq',
-        personalSite: 'https://spesest.vercel.app'
+        personalSite: 'https://cleon-ui.vercel.app'
     }
 }
 

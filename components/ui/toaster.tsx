@@ -8,7 +8,7 @@ import {
 } from 'cleon-icons'
 import { Toaster as ToasterPrimitive, type ToasterProps } from 'sonner'
 
-import { useTheme } from '@/components/providers'
+import { useTheme } from '@/components/theme-provider'
 import { cn } from '@/lib/utils'
 
 import { buttonVariants } from './button'

@@ -10,9 +10,8 @@ Visit [cleon-ui](https://cleon-ui.vercel.app/docs/getting-started/introduction) 
 
 ## Contributing
 
-This UI Component Library is Hugely inspired by [Just.D](https://getjustd.com/).
-But if you desire to contribute in this project, Make sure to check out the [contributing guide](/CONTRIBUTING.md).
+If you desire to contribute in this project, Make sure to check out the [contributing guide](/CONTRIBUTING.md).
 
 ## License
 
-Licensed under the [MIT license](https://github.com/irsyadadl/d./blob/main/LICENSE), so feel free to tweak, share, and remix as long as you give the proper shout-out!
+Licensed under the [MIT license](https://github.com/dq-alhq/cleon-ui/blob/main/LICENSE), so feel free to tweak, share, and remix as long as you give the proper shout-out!

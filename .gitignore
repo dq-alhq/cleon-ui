@@ -39,4 +39,9 @@ next-env.d.ts
 
 # velite files
 .velite
-.velite
+
+bun.lockb
+package-lock.json
+yarn.lock
+/.idea/
+/.vscode/
