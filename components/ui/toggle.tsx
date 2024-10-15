@@ -19,7 +19,7 @@ const toggleStyles = tv({
             solid: 'bg-white border-border selected:border-primary hover:text-black text-black selected:bg-primary selected:text-primary-foreground',
             outline:
                 'border-border selected:bg-muted selected:backdrop-blur-sm hover:bg-muted hover:brightness-110',
-            ghost: 'selected:bg-muted border-transparent selected:text-muted-foreground'
+            ghost: 'selected:bg-muted border-transparent selected:text-foreground'
         },
         size: {
             xs: 'h-8 px-2 text-xs',

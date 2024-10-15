@@ -1,9 +1,12 @@
-import { build } from 'velite'
+import { build } from 'velite';
+
 
 /** @type {import('next').NextConfig} */
+// eslint-disable-next-line import/no-anonymous-default-export
 export default {
     experimental: {
-        optimizePackageImports: ['shiki']
+        optimizePackageImports: ['shiki'],
+        serverComponentsExternalPackages: ['yjs']
     },
     images: {
         remotePatterns: [

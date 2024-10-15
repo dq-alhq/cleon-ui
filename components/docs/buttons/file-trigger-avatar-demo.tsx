@@ -39,7 +39,7 @@ export default function FileTriggerAvatarDemo() {
                 getDropOperation={() => 'copy'}
                 onDrop={onDropHandler}
                 className={cn(
-                    'rounded-full bg-tertiary p-0 size-10 grid place-content-center overflow-hidden',
+                    'rounded-full bg-background p-0 size-10 grid place-content-center overflow-hidden',
                     droppedImage && 'border-solid border-foreground/20'
                 )}
             >

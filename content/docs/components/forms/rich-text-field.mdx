@@ -1,0 +1,37 @@
+---
+title: 'Rich Text Field'
+description: Create exactly the rich text editor you want out of customizable building blocks.
+order: 12
+published: true
+references: ['https://tiptap.dev/docs/editor/getting-started/overview']
+---
+
+## Basic
+
+This rich text editor is using [Tiptap](https://tiptap.dev/docs/editor/getting-started/overview), of course you can register for Pro account then re-customize this component.
+
+<How minW72 toUse='forms/rich-text-field-demo' />
+
+## Installation
+
+<Install cli='rich-text-field' deps={['react-aria-components','@tiptap/react','@tiptap/pm','@tiptap/starter-kit','@tiptap/extension-image','@tiptap/extension-link','@tiptap/extension-subscript','@tiptap/extension-superscript','@tiptap/extension-task-item','@tiptap/extension-task-list','@tiptap/extension-text-align','@tiptap/extension-text-style','@tiptap/extension-typography','@tiptap/extension-underline']} components={['button','field','keyboard','popover','separator','toggle','tooltip']} />
+
+## Without Sticky Toolbar Menu
+You can hide the top toolbar and use only floating toolbar by set the `toolbar` to `false`
+
+<How minW72 toUse='forms/rich-text-field-without-toolbar-demo' />
+
+## Without Floating Toolbar Menu
+You may not like the floating toolbar, you can hide it by set the `floatingMenu` to `false`
+
+<How minW72 toUse='forms/rich-text-field-without-floating-demo' />
+
+## Controlled
+You can control the rich text field value with the `value` prop.
+<How minW72 toUse="forms/rich-text-field-controlled-demo" />
+
+## Disabled
+
+When the rich text field is disabled, it cannot be edited.
+
+<How minW72 toUse='forms/rich-text-field-disabled-demo' />

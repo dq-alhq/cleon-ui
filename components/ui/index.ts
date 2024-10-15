@@ -47,6 +47,7 @@ export * from './popover';
 export * from './progress';
 export * from './radio';
 export * from './rating';
+export * from './rich-text-field';
 export * from './search-field';
 export * from './select';
 export * from './separator';

@@ -59,7 +59,7 @@ const DocInstallDeps: React.FC<InstallProps> = ({
                         : 'Make sure you install the dependencies with the following command:'}
                 </p>
             )}
-            <div className='text-zinc-200 bg-zinc-900 font-mono text-sm border flex items-center justify-between p-4 rounded-lg w-full h-12'>
+            <div className='text-zinc-200 bg-zinc-900 relative items-center font-mono text-sm border flex justify-between p-4 rounded-lg w-full min-h-12'>
                 {getInstallCommand(currentPackageManager)}
                 <Menu>
                     <CopyButton isCopied={copied} />

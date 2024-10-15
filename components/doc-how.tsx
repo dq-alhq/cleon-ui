@@ -36,7 +36,7 @@ export function DocHow({
     // @ts-ignore
     const codeString = jsonPreviews[toUse].raw ?? ''
     return (
-        <div className={cn('not-prose group relative my-4', className)} {...props}>
+        <div className={cn('group relative my-4', className)} {...props}>
             <Tabs aria-label='Packages'>
                 <Tabs.List className='overflow-x-scroll'>
                     <Tabs.Label id='preview'>Preview</Tabs.Label>
@@ -46,7 +46,7 @@ export function DocHow({
                     <div
                         className={cn(
                             !withNoPadding &&
-                                'relative gap-4 rounded-lg border bg-popover p-6',
+                                'relative gap-4 rounded-lg border bg-background p-6',
                             isCenter &&
                                 'preview flex min-h-56 items-center justify-center py-6 sm:py-24 lg:min-h-80'
                         )}
@@ -65,7 +65,7 @@ export function DocHow({
                         </React.Suspense>
                     </div>
                 </Tabs.Content>
-                <Tabs.Content id='code'>
+                <Tabs.Content className='not-prose' id='code'>
                     <Code code={codeString} />
                 </Tabs.Content>
             </Tabs>
